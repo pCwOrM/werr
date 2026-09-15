@@ -268,10 +268,12 @@ html_content = f"""<!DOCTYPE html>
   <div class="paper-title">Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries</div>
   
   <div class="authors-block">
-    <span class="author-name">Volkan Dağlı</span><sup>1,*</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="author-name">Zerrin Dağlı</span><sup>2</sup><br>
-    <span class="author-affil"><sup>1</sup>ITouch Systems, Turkey &bull; Zenodo: <em>@itouch</em></span><br>
+    <span class="author-name">Volkan Dağlı</span><sup>1,*</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="author-name">Zerrin Dağlı</span><sup>2</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="author-name">Dağhan Dağlı</span><sup>3</sup><br>
+    <span class="author-affil"><sup>1</sup>ITouch Systems, Turkey &bull; Zenodo: <em>@itouch</em></span> &nbsp;&bull;&nbsp;
     <span class="author-affil"><sup>2</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6465 &bull; Zenodo: <em>@zdagli</em></span><br>
+    <span class="author-affil"><sup>3</sup>Toros Science College, Turkey &bull; Zenodo: <em>@Lexovian</em></span><br>
     <span style="font-size: 8pt; color: #555;"><sup>*</sup>Correspondence via repository: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
   </div>
 

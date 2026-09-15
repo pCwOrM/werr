@@ -150,7 +150,7 @@ If you use this research or replicate our findings, please cite:
 ```bibtex
 @article{dagli2026fractal,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
-  author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
+  author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   journal={Zenodo / arXiv Preprint},
   year={2026},
   doi={10.5281/zenodo.pending},

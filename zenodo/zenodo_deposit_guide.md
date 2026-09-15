@@ -34,6 +34,7 @@ Bu rehber, **Mandelbrot Fractal Neural Synthesis** çalışmanızı CERN destekl
 * **Authors (Yazarlar - Zenodo'da Dr. gibi unvanlar yazılmaz, Family name / Given names ayrı kutulardır):**
   1. Family name: `Dağlı`, Given names: `Volkan` • Affiliation: `ITouch Systems, Turkey`
   2. Family name: `Dağlı`, Given names: `Zerrin` • Affiliation: `Mersin University, Mersin, Turkey` • ORCID: `0000-0001-9490-6465`
+  3. Family name: `Dağlı`, Given names: `Dağhan` • Affiliation: `Toros Science College, Turkey`
 * **Description (Açıklama):**  
   Aşağıdaki iki dilli metni (İngilizce + Genişletilmiş Türkçe Özet) tek parça halinde Description kutusuna kopyalayıp yapıştırın.
 
