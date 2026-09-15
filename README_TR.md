@@ -14,12 +14,12 @@
 ## 👥 Yazarlar ve Akademik Kurumlar
 
 * **Volkan Dağlı** *(Sorumlu Yazar / Corresponding Author)*  
-  *Teknolojiden Sorumlu Başkan (CTO)*, ITouch Bilişim Sistemleri (ITouch Systems), Türkiye  
-  arXiv: `itouch` | E-posta: `vdagli@aof.anadolu.edu.tr` | Web: [itouch.com.tr](https://itouch.com.tr)
+  ITouch Systems, Türkiye &bull; Zenodo: [`@itouch`](https://zenodo.org/)
 
 * **Dr. Zerrin Dağlı**  
-  *Bilgisayar ve Öğretim Teknolojileri Eğitimi Bölümü*, Mersin Üniversitesi, Mersin, Türkiye  
-  arXiv: `jesmaat` | ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) | E-posta: `21010190002@mersin.edu.tr`
+  Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
+
+*İletişim & Yazışma:* Resmi GitHub araştırma deposu üzerinden yürütülmektedir.
 
 ---
 
