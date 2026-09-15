@@ -21,20 +21,21 @@ Bu rehber, **Mandelbrot Fractal Neural Synthesis** çalışmanızı CERN destekl
 
 ### 2. Adım: Yeni Kayıt (New Upload) Başlatın
 1. Üst menüdeki yeşil **"New upload"** butonuna tıklayın.
-2. Açılan sayfadaki **"Files"** bölümüne şu dosyaları sürükleyip bırakın:
-   * 📄 `zenodo/Mandelbrot_Fractal_Neural_Synthesis_Preprint.pdf` (Nihai Akademik Makale - Türkçe Özet Dahil)
+2. Açılan sayfadaki **"Files"** bölümüne şu 4 dosyayı sürükleyip bırakın:
+   * 📄 `zenodo/Mandelbrot_Fractal_Neural_Synthesis_Preprint.pdf` (Nihai Akademik Makale - Önizleme için ana dosya)
    * 📦 `arxiv/Mandelbrot_Fractal_Paper_arXiv_Bundle.zip` (Tüm LaTeX Kaynakları & Şekiller)
-   * 🌐 `demos/interactive_lab.html` (Müstakil İnteraktif Laboratuvar)
+   * 🌐 `demos/interactive_lab.html` (Müstakil İnteraktif Senaryo Laboratuvarı)
+   * 🌐 `demos/quadrant_visualizer.html` (Teknik 128x128 4-Çeyrek Araştırma Widget'ı)
 
 ### 3. Adım: Temel Bilgileri Doldurun (Otomatik Bilgiler)
-* **Resource type:** `Publication` &rarr; `Preprint` (veya `Technical note`)
+* **Resource type:** `Publication` → `Preprint` (veya `Technical note`)
 * **Title:**  
   `Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries`
-* **Authors (Yazarlar):**
-  1. `Dağlı, Volkan` &bull; Affiliation: `ITouch Bilişim Sistemleri (ITouch Systems), Turkey`
-  2. `Dağlı, Zerrin` &bull; Affiliation: `Department of Computer Education and Instructional Technology, Mersin University, Mersin, Turkey` &bull; ORCID: `0000-0001-9490-6465`
+* **Authors (Yazarlar - Zenodo'da Dr. gibi unvanlar yazılmaz, Family name / Given names ayrı kutulardır):**
+  1. Family name: `Dağlı`, Given names: `Volkan` • Affiliation: `ITouch Systems, Turkey`
+  2. Family name: `Dağlı`, Given names: `Zerrin` • Affiliation: `Mersin University, Mersin, Turkey` • ORCID: `0000-0001-9490-6465`
 * **Description (Açıklama):**  
-  Aşağıdaki iki dilli (İngilizce + Genişletilmiş Türkçe Özet) metni kopyalayıp yapıştırın.
+  Aşağıdaki iki dilli metni (İngilizce + Genişletilmiş Türkçe Özet) tek parça halinde Description kutusuna kopyalayıp yapıştırın.
 
 ---
 
