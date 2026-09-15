@@ -574,7 +574,7 @@ html_content = f"""<!DOCTYPE html>
   <div class="badge-footnote">
     <strong>Open Science Repository & Preprint Verification:</strong><br>
     Source code, interactive laboratories, and datasets available at: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a><br>
-    Deposit Package: DOI: 10.5281/zenodo.pending &bull; CC-BY-4.0 International License &bull; ITouch Systems & Mersin University.
+    Deposit Package: DOI: 10.5281/zenodo.22774935 &bull; CC-BY-4.0 International License &bull; ITouch Systems & Mersin University.
   </div>
 
 </div>

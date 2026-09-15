@@ -38,5 +38,6 @@
       "scheme": "url"
     }
   ],
-  "notes": "Includes full replication source code, interactive offline HTML5 labs, and bilingual (English/Turkish) documentation."
+  "notes": "Includes full replication source code, interactive offline HTML5 labs, and bilingual (English/Turkish) documentation.",
+  "doi": "10.5281/zenodo.22774935"
 }
