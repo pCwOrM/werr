@@ -19,7 +19,10 @@
 * **Zerrin Dağlı**  
   Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
 
-*İletişim & Yazışma:* Resmi GitHub araştırma deposu üzerinden yürütülmektedir.
+* **Dağhan Dağlı**  
+  Toros Fen Lisesi (Toros Science College), Türkiye &bull; Zenodo: [`@Lexovian`](https://zenodo.org/)
+
+*İletişim & Yazışma:* Sorular ve bilimsel iş birlikleri resmi GitHub araştırma deposu veya Zenodo üzerinden yürütülmektedir.
 
 ---
 
