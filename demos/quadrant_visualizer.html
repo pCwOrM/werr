@@ -2,350 +2,656 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  
-<style>
-  :root {
-    --bg-page: #0f172a;
-    --bg-card: #1e293b;
-    --border: #334155;
-    --text-primary: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent: #10b981;
-  }
-  body {
-    background-color: var(--bg-page);
-    color: var(--text-primary);
-    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-    margin: 0;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-  }
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 640px;
-    width: 100%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-    margin-bottom: 16px;
-  }
-  .title { font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
-  .subtitle { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .badge { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-  label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
-  select, input[type=range] { width: 100%; box-sizing: border-box; }
-  select { background: #090d16; color: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font-size: 12px; }
-  .canvas-area { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .canvas-rel { position: relative; width: 136px; height: 136px; }
-  canvas { width: 136px; height: 136px; border-radius: 12px; border: 1px solid var(--border); background: #000; }
-  .split-h { position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgba(255,255,255,0.4); pointer-events: none; }
-  .split-v { position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px dashed rgba(255,255,255,0.4); pointer-events: none; }
-  .q-label { position: absolute; font-size: 9px; font-weight: 800; color: #fff; text-shadow: 0 1px 2px #000; pointer-events: none; }
-  .q-tl { top: 4px; left: 6px; }
-  .q-tr { top: 4px; right: 6px; }
-  .q-bl { bottom: 4px; left: 6px; }
-  .q-br { bottom: 4px; right: 6px; color: #fbbf24; }
-  .weights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .w-card { background: #090d16; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
-  .w-label { font-size: 10px; color: var(--text-muted); }
-  .w-val { font-family: monospace; font-size: 13px; font-weight: 700; color: #10b981; margin: 2px 0; }
-  .w-sub { font-size: 9px; color: var(--text-muted); }
-  .truth-table { background: #090d16; border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-top: 12px; }
-  .truth-header { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; margin-bottom: 6px; }
-  .cases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; font-family: monospace; font-size: 10px; }
-  .case-box { padding: 6px; border-radius: 6px; border: 1px solid var(--border); background: #1e293b; }
-  .case-ok { background: rgba(16,185,129,0.15) !important; border-color: rgba(16,185,129,0.4) !important; color: #34d399 !important; }
-  .case-fail { background: rgba(244,63,94,0.15) !important; border-color: rgba(244,63,94,0.4) !important; color: #fb7185 !important; }
-  .info-note { font-size: 10.5px; color: #94a3b8; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.15); border-radius: 8px; padding: 8px 12px; margin-top: 12px; line-height: 1.5; }
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>128x128 4-Quadrant Fraktal Nöron Deney Laboratuvarı</title>
+  <style>
+    :root {
+      --bg-body: #0a0e17;
+      --bg-card: #131b2e;
+      --bg-inner: #0b1120;
+      --border: #1f2d47;
+      --border-accent: rgba(16, 185, 129, 0.35);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.18);
+      --indigo: #6366f1;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at top center, #162036 0%, var(--bg-body) 70%);
+      color: var(--text-main);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 26px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+      backdrop-filter: blur(12px);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+    }
+    .header-left h1 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      letter-spacing: -0.01em;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 12px var(--emerald);
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+    }
+    .header-left p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    .badges-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+    .badge-mode {
+      background: var(--emerald-glow);
+      color: var(--emerald);
+      border: 1px solid var(--border-accent);
+      padding: 3px 9px;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .badge-doi {
+      font-size: 9.5px;
+      color: #64748b;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      transition: color 0.2s;
+    }
+    .badge-doi:hover { color: var(--emerald); }
+
+    /* Controls */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .field-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    select {
+      width: 100%;
+      background: var(--bg-inner);
+      color: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    select:focus {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 2px var(--emerald-glow);
+    }
+    input[type=range] {
+      width: 100%;
+      height: 6px;
+      background: var(--bg-inner);
+      border-radius: 6px;
+      outline: none;
+      -webkit-appearance: none;
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--emerald);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--emerald);
+      transition: transform 0.1s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Main Display Layout */
+    .display-layout {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    /* Canvas Box */
+    .canvas-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .canvas-wrapper {
+      position: relative;
+      width: 148px;
+      height: 148px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    canvas {
+      width: 148px;
+      height: 148px;
+      display: block;
+      image-rendering: pixelated;
+    }
+    .crosshair-h {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-top: 1px dashed rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+    }
+    .crosshair-v {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      border-left: 1px dashed rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+    }
+    .quad-tag {
+      position: absolute;
+      font-size: 9px;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 0 2px #000;
+      pointer-events: none;
+      font-family: var(--font-mono);
+    }
+    .tag-q1 { top: 4px; left: 6px; }
+    .tag-q2 { top: 4px; right: 6px; }
+    .tag-q3 { bottom: 4px; left: 6px; }
+    .tag-q4 { bottom: 4px; right: 6px; color: #fde047; }
+    .res-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 6px;
+    }
+
+    /* Quadrant Weight Cards */
+    .weights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .weight-card {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .weight-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+    .w-title {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .w-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 800;
+      margin: 4px 0 2px 0;
+    }
+    .val-emerald { color: #34d399; }
+    .val-indigo { color: #818cf8; }
+    .val-amber { color: #fbbf24; }
+    .w-sub {
+      font-size: 9.5px;
+      color: #64748b;
+      font-family: var(--font-mono);
+    }
+
+    /* Truth Table Panel */
+    .truth-table-panel {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .truth-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .truth-title { color: #cbd5e1; }
+    .accuracy-badge {
+      padding: 3px 9px;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+    .badge-ok {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge-warn {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .case-box {
+      border-radius: 8px;
+      padding: 7px 6px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.2s;
+    }
+    .case-success {
+      background: rgba(16, 185, 129, 0.12) !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      color: #34d399 !important;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+    }
+    .case-fail {
+      background: rgba(244, 63, 94, 0.12) !important;
+      border-color: rgba(244, 63, 94, 0.4) !important;
+      color: #fb7185 !important;
+      box-shadow: 0 0 10px rgba(244, 63, 94, 0.1);
+    }
+
+    /* Footer Note */
+    .note-box {
+      font-size: 11px;
+      color: #94a3b8;
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.18);
+      border-radius: 10px;
+      padding: 9px 13px;
+      line-height: 1.5;
+    }
+    .note-box b { color: #f1f5f9; }
+
+    /* Authors Footer */
+    .authors-footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: #64748b;
+    }
+    .authors-footer a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 540px) {
+      .display-layout { grid-template-columns: 1fr; }
+      .controls-grid { grid-template-columns: 1fr; }
+      .cases-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
-<body class="bg-transparent text-[var(--foreground)] antialiased p-3">
-  <div class="bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] rounded-2xl p-4 shadow-lg max-w-2xl mx-auto text-xs">
-    
-    <!-- Başlık -->
-    <div class="flex items-center justify-between border-b border-[var(--border)] pb-2.5 mb-3">
-      <div>
-        <h2 class="text-sm font-bold text-[var(--foreground)] flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-          128x128 4-Quadrant Fraktal Nöron Deney Laboratuvarı
-        </h2>
-        <p class="text-[11px] text-[var(--muted-foreground)]">Tek bir 128x128 Mandelbrot penceresinden w1, w2, w3 ve bias türetimi</p>
-      </div>
-      <span class="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">128x128 Modu</span>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>
+        <span class="status-dot"></span>
+        128x128 4-Quadrant Fraktal Nöron Laboratuvarı
+      </h1>
+      <p>Tek bir 128&times;128 Mandelbrot penceresinden w₁, w₂, w₃ ve bias türetimi</p>
     </div>
-
-    <!-- Kontroller -->
-    <div class="grid grid-cols-2 gap-2.5 mb-3">
-      <div>
-        <label class="block font-medium mb-1 text-[var(--muted-foreground)] text-[11px]">Önayar / Kapı Çözümü</label>
-        <select id="presetSelect" class="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg px-2 py-1 text-xs text-[var(--foreground)] focus:ring-1 focus:ring-emerald-500">
-          <option value="or_gate">OR Kapısı (%100 Çözüm)</option>
-          <option value="and_gate">AND Kapısı (%100 Çözüm)</option>
-          <option value="nand_gate">NAND Kapısı (%100 Çözüm)</option>
-          <option value="nor_gate">NOR Kapısı (%100 Çözüm)</option>
-          <option value="seahorse">Seahorse Valley (Kaos)</option>
-          <option value="elephant">Elephant Valley</option>
-          <option value="minibrot">Mini-Mandelbrot Uydusu</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-medium mb-1 text-[var(--muted-foreground)] text-[11px]">
-          Zoom: <span id="zoomVal" class="text-emerald-500 font-mono font-bold">110.1x</span>
-        </label>
-        <input type="range" id="zoomSlider" min="0.3" max="5.0" step="0.05" value="2.04" class="w-full accent-emerald-500 cursor-pointer">
-      </div>
-    </div>
-
-    <!-- Görsel ve 4-Quadrant Ağırlıkları -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center mb-3">
-      <!-- 128x128 Canvas -->
-      <div class="md:col-span-5 flex flex-col items-center">
-        <div class="relative">
-          <canvas id="fractalCanvas" width="128" height="128" class="rounded-xl border border-[var(--border)] shadow bg-black w-36 h-36"></canvas>
-          <!-- 4 Çeyrek Ayraç Çizgileri -->
-          <div class="absolute inset-x-0 top-1/2 border-t border-white/40 pointer-events-none"></div>
-          <div class="absolute inset-y-0 left-1/2 border-l border-white/40 pointer-events-none"></div>
-          <span class="absolute top-1 left-1.5 text-[9px] font-bold text-white drop-shadow">Q1: w1</span>
-          <span class="absolute top-1 right-1.5 text-[9px] font-bold text-white drop-shadow">Q2: w2</span>
-          <span class="absolute bottom-1 left-1.5 text-[9px] font-bold text-white drop-shadow">Q3: w3</span>
-          <span class="absolute bottom-1 right-1.5 text-[9px] font-bold text-amber-300 drop-shadow">Q4: b</span>
-        </div>
-        <span class="text-[10px] text-[var(--muted-foreground)] mt-1 font-mono">128 × 128 Piksel</span>
-      </div>
-
-      <!-- 4 Çeyrek Ağırlık Kartları -->
-      <div class="md:col-span-7 grid grid-cols-2 gap-2">
-        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
-          <div class="text-[10px] text-[var(--muted-foreground)]">Q1 (Sol Üst) &rarr; w1:</div>
-          <div id="w1Val" class="font-mono font-bold text-emerald-500 text-xs">+3.000</div>
-          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q1Ratio">100%</span></div>
-        </div>
-        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
-          <div class="text-[10px] text-[var(--muted-foreground)]">Q2 (Sağ Üst) &rarr; w2:</div>
-          <div id="w2Val" class="font-mono font-bold text-emerald-500 text-xs">+2.432</div>
-          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q2Ratio">90.5%</span></div>
-        </div>
-        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
-          <div class="text-[10px] text-[var(--muted-foreground)]">Q3 (Sol Alt) &rarr; w3:</div>
-          <div id="w3Val" class="font-mono font-bold text-indigo-400 text-xs">+2.988</div>
-          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q3Ratio">99.8%</span></div>
-        </div>
-        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
-          <div class="text-[10px] text-[var(--muted-foreground)]">Q4 (Sağ Alt) &rarr; Bias:</div>
-          <div id="biasVal" class="font-mono font-bold text-amber-500 text-xs">-0.117</div>
-          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q4Ratio">48.0%</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Canlı Doğruluk Tablosu -->
-    <div class="border border-[var(--border)] rounded-xl p-2.5 bg-[var(--background)] mb-2">
-      <div class="flex justify-between items-center mb-1.5 font-semibold text-[11px]">
-        <span>Seçili Kapı Doğruluk Tablosu (\(\hat{y} = \sigma(w_1 x_1 + w_2 x_2 + b)\))</span>
-        <span id="accBadge" class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-500 font-bold">%100 Başarı</span>
-      </div>
-      <div class="grid grid-cols-4 gap-1.5 text-center font-mono text-[10px]">
-        <div id="case0" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
-          (0,0) &rarr; <span id="out0">0</span>
-        </div>
-        <div id="case1" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
-          (0,1) &rarr; <span id="out1">1</span>
-        </div>
-        <div id="case2" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
-          (1,0) &rarr; <span id="out2">1</span>
-        </div>
-        <div id="case3" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
-          (1,1) &rarr; <span id="out3">1</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-[10px] text-[var(--muted-foreground)] bg-emerald-500/5 border border-emerald-500/10 rounded-lg p-2">
-      ⚡ <b>128x128 Gücü:</b> 32x32'deki pikselleşme gürültüsünü yok eder; 4 çeyreğin karanlık alan dağılımı tek bir fraktal pencereden nöronun tüm ağırlıklarını ve bias'ını kusursuz türetir.
+    <div class="badges-col">
+      <span class="badge-mode">128&times;128 Modu</span>
+      <a class="badge-doi" href="https://doi.org/10.5281/zenodo.22774935" target="_blank">DOI: 10.5281/zenodo.22774935</a>
     </div>
   </div>
 
-  <script>
-    const presets = {
-      or_gate:   { cx: -0.055780, cy: 0.806329, logZ: 2.041, target: [0, 1, 1, 1] },
-      and_gate:  { cx: -0.144732, cy: 0.758854, logZ: 0.653, target: [0, 0, 0, 1] },
-      nand_gate: { cx: -0.740191, cy: 0.174654, logZ: 3.533, target: [1, 1, 1, 0] },
-      nor_gate:  { cx: -0.523561, cy: 0.525212, logZ: 3.050, target: [1, 0, 0, 0] },
-      seahorse:  { cx: -0.743643, cy: 0.131825, logZ: 2.398, target: [0, 1, 1, 1] },
-      elephant:  { cx: 0.270000, cy: 0.005000, logZ: 1.699, target: [0, 1, 1, 1] },
-      minibrot:  { cx: -1.750000, cy: 0.000000, logZ: 1.398, target: [0, 0, 0, 1] }
-    };
+  <!-- Controls -->
+  <div class="controls-grid">
+    <div class="field-group">
+      <label for="presetSelect">Önayar / Kapı Çözümü</label>
+      <select id="presetSelect">
+        <option value="or_gate">OR Kapısı (%100 Çözüm)</option>
+        <option value="and_gate">AND Kapısı (%100 Çözüm)</option>
+        <option value="nand_gate">NAND Kapısı (%100 Çözüm)</option>
+        <option value="nor_gate">NOR Kapısı (%100 Çözüm)</option>
+        <option value="seahorse">Seahorse Valley (Kaos Bölgesi)</option>
+        <option value="elephant">Elephant Valley</option>
+        <option value="minibrot">Mini-Mandelbrot Uydusu</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>
+        <span>Zoom Katsayısı</span>
+        <span id="zoomVal" style="color: var(--emerald); font-family: var(--font-mono); font-weight: 800;">110.1x</span>
+      </label>
+      <input type="range" id="zoomSlider" min="0.3" max="5.0" step="0.02" value="2.00">
+    </div>
+  </div>
 
-    let currentPreset = presets.or_gate;
-    const canvas = document.getElementById('fractalCanvas');
-    const ctx = canvas.getContext('2d');
-    const slider = document.getElementById('zoomSlider');
-    const presetSelect = document.getElementById('presetSelect');
-    const zoomVal = document.getElementById('zoomVal');
+  <!-- Main Canvas & Weights Layout -->
+  <div class="display-layout">
+    <!-- Left: 128x128 Canvas -->
+    <div class="canvas-container">
+      <div class="canvas-wrapper">
+        <canvas id="fractalCanvas" width="128" height="128"></canvas>
+        <div class="crosshair-h"></div>
+        <div class="crosshair-v"></div>
+        <span class="quad-tag tag-q1">Q1: w₁</span>
+        <span class="quad-tag tag-q2">Q2: w₂</span>
+        <span class="quad-tag tag-q3">Q3: w₃</span>
+        <span class="quad-tag tag-q4">Q4: b</span>
+      </div>
+      <span class="res-label">128 &times; 128 Piksel (~15.6 ms)</span>
+    </div>
 
-    const w1El = document.getElementById('w1Val');
-    const w2El = document.getElementById('w2Val');
-    const w3El = document.getElementById('w3Val');
-    const biasEl = document.getElementById('biasVal');
+    <!-- Right: 4 Quadrant Cards -->
+    <div class="weights-grid">
+      <div class="weight-card">
+        <div class="w-title"><span>Q1 (Sol Üst)</span> <span>&rarr; w₁</span></div>
+        <div id="w1Val" class="w-val val-emerald">+3.000</div>
+        <div class="w-sub">Siyah Alan: <span id="q1Ratio">100.0%</span></div>
+      </div>
+      <div class="weight-card">
+        <div class="w-title"><span>Q2 (Sağ Üst)</span> <span>&rarr; w₂</span></div>
+        <div id="w2Val" class="w-val val-emerald">+2.432</div>
+        <div class="w-sub">Siyah Alan: <span id="q2Ratio">90.5%</span></div>
+      </div>
+      <div class="weight-card">
+        <div class="w-title"><span>Q3 (Sol Alt)</span> <span>&rarr; w₃</span></div>
+        <div id="w3Val" class="w-val val-indigo">+2.988</div>
+        <div class="w-sub">Siyah Alan: <span id="q3Ratio">99.8%</span></div>
+      </div>
+      <div class="weight-card">
+        <div class="w-title"><span>Q4 (Sağ Alt)</span> <span>&rarr; Bias</span></div>
+        <div id="biasVal" class="w-val val-amber">-0.117</div>
+        <div class="w-sub">Siyah Alan: <span id="q4Ratio">48.0%</span></div>
+      </div>
+    </div>
+  </div>
 
-    const q1RatioEl = document.getElementById('q1Ratio');
-    const q2RatioEl = document.getElementById('q2Ratio');
-    const q3RatioEl = document.getElementById('q3Ratio');
-    const q4RatioEl = document.getElementById('q4Ratio');
-    const accBadge = document.getElementById('accBadge');
+  <!-- Truth Table Panel -->
+  <div class="truth-table-panel">
+    <div class="truth-header">
+      <span class="truth-title">Canlı Doğruluk Tablosu &bull; &ycirc; = &sigma;(w₁x₁ + w₂x₂ + b)</span>
+      <span id="accBadge" class="accuracy-badge badge-ok">%100 Başarı</span>
+    </div>
+    <div class="cases-grid">
+      <div id="case0" class="case-box case-success">
+        (0,0) &rarr; <span id="out0">0 (p=0.47)</span>
+      </div>
+      <div id="case1" class="case-box case-success">
+        (0,1) &rarr; <span id="out1">1 (p=0.91)</span>
+      </div>
+      <div id="case2" class="case-box case-success">
+        (1,0) &rarr; <span id="out2">1 (p=0.95)</span>
+      </div>
+      <div id="case3" class="case-box case-success">
+        (1,1) &rarr; <span id="out3">1 (p=1.00)</span>
+      </div>
+    </div>
+  </div>
 
-    function render() {
-      const logZ = parseFloat(slider.value);
-      const zoom = Math.pow(10, logZ);
-      zoomVal.innerText = zoom < 10 ? zoom.toFixed(2) + 'x' : (zoom >= 1000 ? zoom.toExponential(1) + 'x' : Math.round(zoom) + 'x');
+  <!-- Note Box -->
+  <div class="note-box">
+    ⚡ <b>128x128 Sweet Spot:</b> Pikselleşme gürültüsünü yok eder, 256x256 kararlılığını %0.08 farkla yakalarken <b>15 kat daha hızlı</b> çalışır. Karar hücresinin kalıcı tensör matrisi <b>0 Byte</b>'tır; yalnızca 24 baytlık koordinat tutulur.
+  </div>
 
-      const cx = currentPreset.cx;
-      const cy = currentPreset.cy;
-      const res = 128;
-      const maxIter = 70;
-      const scale = 1.0 / zoom;
+  <!-- Footer -->
+  <div class="authors-footer">
+    <span>Yazarlar: <b>Volkan Dağlı</b>, <b>Zerrin Dağlı</b>, <b>Dağhan Dağlı</b></span>
+    <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">github.com/pCwOrM &rarr;</a>
+  </div>
+</div>
 
-      const imgData = ctx.createImageData(res, res);
-      const data = imgData.data;
+<script>
+  const presets = {
+    or_gate:   { cx: -0.055780, cy: 0.806329, logZ: 2.000, target: [0, 1, 1, 1] },
+    and_gate:  { cx: -0.144732, cy: 0.758854, logZ: 0.653, target: [0, 0, 0, 1] },
+    nand_gate: { cx: -0.740191, cy: 0.174654, logZ: 3.533, target: [1, 1, 1, 0] },
+    nor_gate:  { cx: -0.523561, cy: 0.525212, logZ: 3.050, target: [1, 0, 0, 0] },
+    seahorse:  { cx: -0.743643, cy: 0.131825, logZ: 2.398, target: [0, 1, 1, 1] },
+    elephant:  { cx: 0.270000, cy: 0.005000, logZ: 1.699, target: [0, 1, 1, 1] },
+    minibrot:  { cx: -1.750000, cy: 0.000000, logZ: 1.398, target: [0, 0, 0, 1] }
+  };
 
-      const mid = res / 2;
-      let qCount = [0, 0, 0, 0];
-      const qTotal = mid * mid;
+  let currentPreset = presets.or_gate;
+  const canvas = document.getElementById('fractalCanvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('zoomSlider');
+  const presetSelect = document.getElementById('presetSelect');
+  const zoomVal = document.getElementById('zoomVal');
 
-      for (let py = 0; py < res; py++) {
-        const y0 = cy - scale + (py / res) * (2 * scale);
-        const isBottom = py >= mid;
-        for (let px = 0; px < res; px++) {
-          const x0 = cx - scale + (px / res) * (2 * scale);
-          const isRight = px >= mid;
-          
-          let qIdx = 0;
-          if (!isBottom && !isRight) qIdx = 0;      // Q1: Sol Üst
-          else if (!isBottom && isRight) qIdx = 1;  // Q2: Sağ Üst
-          else if (isBottom && !isRight) qIdx = 2;  // Q3: Sol Alt
-          else qIdx = 3;                            // Q4: Sağ Alt
+  const w1El = document.getElementById('w1Val');
+  const w2El = document.getElementById('w2Val');
+  const w3El = document.getElementById('w3Val');
+  const biasEl = document.getElementById('biasVal');
 
-          let x = 0.0, y = 0.0, iter = 0;
-          while (x * x + y * y <= 4.0 && iter < maxIter) {
-            const xtemp = x * x - y * y + x0;
-            y = 2.0 * x * y + y0;
-            x = xtemp;
-            iter++;
-          }
+  const q1RatioEl = document.getElementById('q1Ratio');
+  const q2RatioEl = document.getElementById('q2Ratio');
+  const q3RatioEl = document.getElementById('q3Ratio');
+  const q4RatioEl = document.getElementById('q4Ratio');
+  const accBadge = document.getElementById('accBadge');
 
-          const idx = (py * res + px) * 4;
-          if (iter === maxIter) {
-            qCount[qIdx]++;
-            data[idx] = 15;
-            data[idx + 1] = 23;
-            data[idx + 2] = 42;
-            data[idx + 3] = 255;
-          } else {
-            const hue = (iter / maxIter) * 260 + 190;
-            const rgb = hslToRgb(hue / 360, 0.85, 0.5);
-            data[idx] = rgb[0];
-            data[idx + 1] = rgb[1];
-            data[idx + 2] = rgb[2];
-            data[idx + 3] = 255;
-          }
+  function render() {
+    const logZ = parseFloat(slider.value);
+    const zoom = Math.pow(10, logZ);
+    zoomVal.innerText = zoom < 10 ? zoom.toFixed(2) + 'x' : (zoom >= 1000 ? zoom.toExponential(1) + 'x' : Math.round(zoom) + 'x');
+
+    const cx = currentPreset.cx;
+    const cy = currentPreset.cy;
+    const res = 128;
+    const maxIter = 70;
+    const scale = 1.0 / zoom;
+
+    const imgData = ctx.createImageData(res, res);
+    const data = imgData.data;
+
+    const mid = res / 2;
+    let qCount = [0, 0, 0, 0];
+    const qTotal = mid * mid;
+
+    for (let py = 0; py < res; py++) {
+      const y0 = cy - scale + (py / res) * (2 * scale);
+      const isBottom = py >= mid;
+      for (let px = 0; px < res; px++) {
+        const x0 = cx - scale + (px / res) * (2 * scale);
+        const isRight = px >= mid;
+        
+        let qIdx = 0;
+        if (!isBottom && !isRight) qIdx = 0;      // Q1: Sol Üst
+        else if (!isBottom && isRight) qIdx = 1;  // Q2: Sağ Üst
+        else if (isBottom && !isRight) qIdx = 2;  // Q3: Sol Alt
+        else qIdx = 3;                            // Q4: Sağ Alt
+
+        let x = 0.0, y = 0.0, iter = 0;
+        while (x * x + y * y <= 4.0 && iter < maxIter) {
+          const xtemp = x * x - y * y + x0;
+          y = 2.0 * x * y + y0;
+          x = xtemp;
+          iter++;
         }
-      }
 
-      ctx.putImageData(imgData, 0, 0);
-
-      const r1 = qCount[0] / qTotal;
-      const r2 = qCount[1] / qTotal;
-      const r3 = qCount[2] / qTotal;
-      const r4 = qCount[3] / qTotal;
-
-      const w1 = (r1 - 0.5) * 6.0;
-      const w2 = (r2 - 0.5) * 6.0;
-      const w3 = (r3 - 0.5) * 6.0;
-      const bias = (r4 - 0.5) * 6.0;
-
-      w1El.innerText = (w1 >= 0 ? '+' : '') + w1.toFixed(3);
-      w2El.innerText = (w2 >= 0 ? '+' : '') + w2.toFixed(3);
-      w3El.innerText = (w3 >= 0 ? '+' : '') + w3.toFixed(3);
-      biasEl.innerText = (bias >= 0 ? '+' : '') + bias.toFixed(3);
-
-      q1RatioEl.innerText = (r1 * 100).toFixed(1) + '%';
-      q2RatioEl.innerText = (r2 * 100).toFixed(1) + '%';
-      q3RatioEl.innerText = (r3 * 100).toFixed(1) + '%';
-      q4RatioEl.innerText = (r4 * 100).toFixed(1) + '%';
-
-      // Doğruluk Tablosunu Hesapla
-      const testInputs = [[0, 0], [0, 1], [1, 0], [1, 1]];
-      const target = currentPreset.target;
-      let correct = 0;
-
-      testInputs.forEach((inp, idx) => {
-        const z = w1 * inp[0] + w2 * inp[1] + bias;
-        const pred = 1.0 / (1.0 + Math.exp(-z));
-        const lbl = pred >= 0.5 ? 1 : 0;
-        const isOk = (lbl === target[idx]);
-        if (isOk) correct++;
-
-        const el = document.getElementById('case' + idx);
-        const outSpan = document.getElementById('out' + idx);
-        outSpan.innerText = `${lbl} (p=${pred.toFixed(2)})`;
-        if (isOk) {
-          el.className = "p-1.5 rounded border border-emerald-500/40 bg-emerald-500/10 text-emerald-400";
+        const idx = (py * res + px) * 4;
+        if (iter === maxIter) {
+          qCount[qIdx]++;
+          data[idx] = 15;
+          data[idx + 1] = 23;
+          data[idx + 2] = 42;
+          data[idx + 3] = 255;
         } else {
-          el.className = "p-1.5 rounded border border-rose-500/40 bg-rose-500/10 text-rose-400";
+          const hue = (iter / maxIter) * 260 + 190;
+          const rgb = hslToRgb(hue / 360, 0.85, 0.5);
+          data[idx] = rgb[0];
+          data[idx + 1] = rgb[1];
+          data[idx + 2] = rgb[2];
+          data[idx + 3] = 255;
         }
-      });
-
-      const accRate = Math.round((correct / 4) * 100);
-      accBadge.innerText = `%${accRate} Başarı`;
-      accBadge.className = accRate === 100 
-        ? "px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-500 font-bold border border-emerald-500/20"
-        : "px-2 py-0.5 rounded-full text-[10px] bg-amber-500/10 text-amber-500 font-bold border border-amber-500/20";
-    }
-
-    function hslToRgb(h, s, l) {
-      let r, g, b;
-      if (s === 0) r = g = b = l;
-      else {
-        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        const p = 2 * l - q;
-        r = hue2rgb(p, q, h + 1/3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1/3);
       }
-      return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
     }
 
-    function hue2rgb(p, q, t) {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1/6) return p + (q - p) * 6 * t;
-      if (t < 1/2) return q;
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-      return p;
-    }
+    ctx.putImageData(imgData, 0, 0);
 
-    slider.addEventListener('input', render);
-    presetSelect.addEventListener('change', (e) => {
-      currentPreset = presets[e.target.value];
-      slider.value = currentPreset.logZ;
-      render();
+    const r1 = qCount[0] / qTotal;
+    const r2 = qCount[1] / qTotal;
+    const r3 = qCount[2] / qTotal;
+    const r4 = qCount[3] / qTotal;
+
+    const w1 = (r1 - 0.5) * 6.0;
+    const w2 = (r2 - 0.5) * 6.0;
+    const w3 = (r3 - 0.5) * 6.0;
+    const bias = (r4 - 0.5) * 6.0;
+
+    w1El.innerText = (w1 >= 0 ? '+' : '') + w1.toFixed(3);
+    w2El.innerText = (w2 >= 0 ? '+' : '') + w2.toFixed(3);
+    w3El.innerText = (w3 >= 0 ? '+' : '') + w3.toFixed(3);
+    biasEl.innerText = (bias >= 0 ? '+' : '') + bias.toFixed(3);
+
+    q1RatioEl.innerText = (r1 * 100).toFixed(1) + '%';
+    q2RatioEl.innerText = (r2 * 100).toFixed(1) + '%';
+    q3RatioEl.innerText = (r3 * 100).toFixed(1) + '%';
+    q4RatioEl.innerText = (r4 * 100).toFixed(1) + '%';
+
+    // Canlı Doğruluk Tablosu
+    const testInputs = [[0, 0], [0, 1], [1, 0], [1, 1]];
+    const target = currentPreset.target;
+    let correct = 0;
+
+    testInputs.forEach((inp, idx) => {
+      const z = w1 * inp[0] + w2 * inp[1] + bias;
+      const pred = 1.0 / (1.0 + Math.exp(-z));
+      const lbl = pred >= 0.5 ? 1 : 0;
+      const isOk = (lbl === target[idx]);
+      if (isOk) correct++;
+
+      const el = document.getElementById('case' + idx);
+      const outSpan = document.getElementById('out' + idx);
+      outSpan.innerText = `${lbl} (p=${pred.toFixed(2)})`;
+      if (isOk) {
+        el.className = "case-box case-success";
+      } else {
+        el.className = "case-box case-fail";
+      }
     });
 
+    const accRate = Math.round((correct / 4) * 100);
+    accBadge.innerText = `%${accRate} Başarı`;
+    accBadge.className = accRate === 100 ? "accuracy-badge badge-ok" : "accuracy-badge badge-warn";
+  }
+
+  function hslToRgb(h, s, l) {
+    let r, g, b;
+    if (s === 0) r = g = b = l;
+    else {
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1/3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  }
+
+  function hue2rgb(p, q, t) {
+    if (t < 0) t += 1;
+    if (t > 1) t -= 1;
+    if (t < 1/6) return p + (q - p) * 6 * t;
+    if (t < 1/2) return q;
+    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+    return p;
+  }
+
+  slider.addEventListener('input', render);
+  presetSelect.addEventListener('change', (e) => {
+    currentPreset = presets[e.target.value];
+    slider.value = currentPreset.logZ;
     render();
-  </script>
+  });
+
+  render();
+</script>
 </body>
 </html>
