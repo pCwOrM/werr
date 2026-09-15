@@ -1,0 +1,39 @@
+{
+  "title": "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries",
+  "description": "This dataset and research package presents the complete experimental verification, source code, and interactive visualizers for Mandelbrot Fractal Neural Synthesis. By sampling 128x128 patches from the complex Mandelbrot set (z = z^2 + c) using 4-Quadrant Partitioning, synaptic weights (w1, w2, w3) and activation biases (b) are procedurally derived without persistent scalar storage. A functional decision unit is defined by only 24 bytes (three 64-bit coordinates), achieving >99.99999998% memory reduction compared to conventional static neural weight tensors. The repository includes Python verification scripts, high-resolution figures, standalone offline HTML/JS labs, and an extended Turkish academic summary.",
+  "creators": [
+    {
+      "name": "Dağlı, Volkan",
+      "affiliation": "ITouch Bilişim Sistemleri (ITouch Systems), Turkey",
+      "orcid": ""
+    },
+    {
+      "name": "Dağlı, Zerrin",
+      "affiliation": "Department of Computer Education and Instructional Technology, Mersin University, Mersin, Turkey",
+      "orcid": "0000-0001-9490-6465"
+    }
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Fractal Neural Synthesis",
+    "Mandelbrot Set",
+    "Zero-Storage AI",
+    "Procedural Weight Generation",
+    "Non-Linear Decision Boundaries",
+    "Escape Horizon",
+    "Complex Dynamical Systems",
+    "Extreme Parameter Compression"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Includes full replication source code, interactive offline HTML5 labs, and bilingual (English/Turkish) documentation."
+}

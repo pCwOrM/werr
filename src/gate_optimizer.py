@@ -3,7 +3,10 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from mandelbrot_advanced_tests import compute_mandelbrot_patch, extract_quadrant_weights, ARTIFACT_DIR
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mandelbrot_core import compute_mandelbrot_patch, extract_quadrant_weights, FIGURES_DIR as ARTIFACT_DIR, sigmoid
 
 def evaluate_network(params, res=128, max_iter=70):
     cx1, cy1, lz1, cx2, cy2, lz2, cx3, cy3, lz3 = params

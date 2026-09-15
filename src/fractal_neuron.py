@@ -1,6 +1,9 @@
 import os
 import numpy as np
-from mandelbrot_advanced_tests import compute_mandelbrot_patch, extract_quadrant_weights, ARTIFACT_DIR
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mandelbrot_core import compute_mandelbrot_patch, extract_quadrant_weights, FIGURES_DIR as ARTIFACT_DIR, sigmoid
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

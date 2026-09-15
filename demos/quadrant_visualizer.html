@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  
+<style>
+  :root {
+    --bg-page: #0f172a;
+    --bg-card: #1e293b;
+    --border: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #10b981;
+  }
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 640px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .title { font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .subtitle { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .badge { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+  select, input[type=range] { width: 100%; box-sizing: border-box; }
+  select { background: #090d16; color: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font-size: 12px; }
+  .canvas-area { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .canvas-rel { position: relative; width: 136px; height: 136px; }
+  canvas { width: 136px; height: 136px; border-radius: 12px; border: 1px solid var(--border); background: #000; }
+  .split-h { position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed rgba(255,255,255,0.4); pointer-events: none; }
+  .split-v { position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px dashed rgba(255,255,255,0.4); pointer-events: none; }
+  .q-label { position: absolute; font-size: 9px; font-weight: 800; color: #fff; text-shadow: 0 1px 2px #000; pointer-events: none; }
+  .q-tl { top: 4px; left: 6px; }
+  .q-tr { top: 4px; right: 6px; }
+  .q-bl { bottom: 4px; left: 6px; }
+  .q-br { bottom: 4px; right: 6px; color: #fbbf24; }
+  .weights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .w-card { background: #090d16; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+  .w-label { font-size: 10px; color: var(--text-muted); }
+  .w-val { font-family: monospace; font-size: 13px; font-weight: 700; color: #10b981; margin: 2px 0; }
+  .w-sub { font-size: 9px; color: var(--text-muted); }
+  .truth-table { background: #090d16; border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-top: 12px; }
+  .truth-header { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; margin-bottom: 6px; }
+  .cases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; font-family: monospace; font-size: 10px; }
+  .case-box { padding: 6px; border-radius: 6px; border: 1px solid var(--border); background: #1e293b; }
+  .case-ok { background: rgba(16,185,129,0.15) !important; border-color: rgba(16,185,129,0.4) !important; color: #34d399 !important; }
+  .case-fail { background: rgba(244,63,94,0.15) !important; border-color: rgba(244,63,94,0.4) !important; color: #fb7185 !important; }
+  .info-note { font-size: 10.5px; color: #94a3b8; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.15); border-radius: 8px; padding: 8px 12px; margin-top: 12px; line-height: 1.5; }
+</style>
+
+</head>
+<body class="bg-transparent text-[var(--foreground)] antialiased p-3">
+  <div class="bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] rounded-2xl p-4 shadow-lg max-w-2xl mx-auto text-xs">
+    
+    <!-- Başlık -->
+    <div class="flex items-center justify-between border-b border-[var(--border)] pb-2.5 mb-3">
+      <div>
+        <h2 class="text-sm font-bold text-[var(--foreground)] flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+          128x128 4-Quadrant Fraktal Nöron Deney Laboratuvarı
+        </h2>
+        <p class="text-[11px] text-[var(--muted-foreground)]">Tek bir 128x128 Mandelbrot penceresinden w1, w2, w3 ve bias türetimi</p>
+      </div>
+      <span class="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">128x128 Modu</span>
+    </div>
+
+    <!-- Kontroller -->
+    <div class="grid grid-cols-2 gap-2.5 mb-3">
+      <div>
+        <label class="block font-medium mb-1 text-[var(--muted-foreground)] text-[11px]">Önayar / Kapı Çözümü</label>
+        <select id="presetSelect" class="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg px-2 py-1 text-xs text-[var(--foreground)] focus:ring-1 focus:ring-emerald-500">
+          <option value="or_gate">OR Kapısı (%100 Çözüm)</option>
+          <option value="and_gate">AND Kapısı (%100 Çözüm)</option>
+          <option value="nand_gate">NAND Kapısı (%100 Çözüm)</option>
+          <option value="nor_gate">NOR Kapısı (%100 Çözüm)</option>
+          <option value="seahorse">Seahorse Valley (Kaos)</option>
+          <option value="elephant">Elephant Valley</option>
+          <option value="minibrot">Mini-Mandelbrot Uydusu</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-medium mb-1 text-[var(--muted-foreground)] text-[11px]">
+          Zoom: <span id="zoomVal" class="text-emerald-500 font-mono font-bold">110.1x</span>
+        </label>
+        <input type="range" id="zoomSlider" min="0.3" max="5.0" step="0.05" value="2.04" class="w-full accent-emerald-500 cursor-pointer">
+      </div>
+    </div>
+
+    <!-- Görsel ve 4-Quadrant Ağırlıkları -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center mb-3">
+      <!-- 128x128 Canvas -->
+      <div class="md:col-span-5 flex flex-col items-center">
+        <div class="relative">
+          <canvas id="fractalCanvas" width="128" height="128" class="rounded-xl border border-[var(--border)] shadow bg-black w-36 h-36"></canvas>
+          <!-- 4 Çeyrek Ayraç Çizgileri -->
+          <div class="absolute inset-x-0 top-1/2 border-t border-white/40 pointer-events-none"></div>
+          <div class="absolute inset-y-0 left-1/2 border-l border-white/40 pointer-events-none"></div>
+          <span class="absolute top-1 left-1.5 text-[9px] font-bold text-white drop-shadow">Q1: w1</span>
+          <span class="absolute top-1 right-1.5 text-[9px] font-bold text-white drop-shadow">Q2: w2</span>
+          <span class="absolute bottom-1 left-1.5 text-[9px] font-bold text-white drop-shadow">Q3: w3</span>
+          <span class="absolute bottom-1 right-1.5 text-[9px] font-bold text-amber-300 drop-shadow">Q4: b</span>
+        </div>
+        <span class="text-[10px] text-[var(--muted-foreground)] mt-1 font-mono">128 × 128 Piksel</span>
+      </div>
+
+      <!-- 4 Çeyrek Ağırlık Kartları -->
+      <div class="md:col-span-7 grid grid-cols-2 gap-2">
+        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+          <div class="text-[10px] text-[var(--muted-foreground)]">Q1 (Sol Üst) &rarr; w1:</div>
+          <div id="w1Val" class="font-mono font-bold text-emerald-500 text-xs">+3.000</div>
+          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q1Ratio">100%</span></div>
+        </div>
+        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+          <div class="text-[10px] text-[var(--muted-foreground)]">Q2 (Sağ Üst) &rarr; w2:</div>
+          <div id="w2Val" class="font-mono font-bold text-emerald-500 text-xs">+2.432</div>
+          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q2Ratio">90.5%</span></div>
+        </div>
+        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+          <div class="text-[10px] text-[var(--muted-foreground)]">Q3 (Sol Alt) &rarr; w3:</div>
+          <div id="w3Val" class="font-mono font-bold text-indigo-400 text-xs">+2.988</div>
+          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q3Ratio">99.8%</span></div>
+        </div>
+        <div class="p-2 rounded-lg bg-[var(--background)] border border-[var(--border)]">
+          <div class="text-[10px] text-[var(--muted-foreground)]">Q4 (Sağ Alt) &rarr; Bias:</div>
+          <div id="biasVal" class="font-mono font-bold text-amber-500 text-xs">-0.117</div>
+          <div class="text-[9px] text-[var(--muted-foreground)]">Siyah: <span id="q4Ratio">48.0%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canlı Doğruluk Tablosu -->
+    <div class="border border-[var(--border)] rounded-xl p-2.5 bg-[var(--background)] mb-2">
+      <div class="flex justify-between items-center mb-1.5 font-semibold text-[11px]">
+        <span>Seçili Kapı Doğruluk Tablosu (\(\hat{y} = \sigma(w_1 x_1 + w_2 x_2 + b)\))</span>
+        <span id="accBadge" class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-500 font-bold">%100 Başarı</span>
+      </div>
+      <div class="grid grid-cols-4 gap-1.5 text-center font-mono text-[10px]">
+        <div id="case0" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
+          (0,0) &rarr; <span id="out0">0</span>
+        </div>
+        <div id="case1" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
+          (0,1) &rarr; <span id="out1">1</span>
+        </div>
+        <div id="case2" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
+          (1,0) &rarr; <span id="out2">1</span>
+        </div>
+        <div id="case3" class="p-1.5 rounded border border-[var(--border)] bg-[var(--card)]">
+          (1,1) &rarr; <span id="out3">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-[10px] text-[var(--muted-foreground)] bg-emerald-500/5 border border-emerald-500/10 rounded-lg p-2">
+      ⚡ <b>128x128 Gücü:</b> 32x32'deki pikselleşme gürültüsünü yok eder; 4 çeyreğin karanlık alan dağılımı tek bir fraktal pencereden nöronun tüm ağırlıklarını ve bias'ını kusursuz türetir.
+    </div>
+  </div>
+
+  <script>
+    const presets = {
+      or_gate:   { cx: -0.055780, cy: 0.806329, logZ: 2.041, target: [0, 1, 1, 1] },
+      and_gate:  { cx: -0.144732, cy: 0.758854, logZ: 0.653, target: [0, 0, 0, 1] },
+      nand_gate: { cx: -0.740191, cy: 0.174654, logZ: 3.533, target: [1, 1, 1, 0] },
+      nor_gate:  { cx: -0.523561, cy: 0.525212, logZ: 3.050, target: [1, 0, 0, 0] },
+      seahorse:  { cx: -0.743643, cy: 0.131825, logZ: 2.398, target: [0, 1, 1, 1] },
+      elephant:  { cx: 0.270000, cy: 0.005000, logZ: 1.699, target: [0, 1, 1, 1] },
+      minibrot:  { cx: -1.750000, cy: 0.000000, logZ: 1.398, target: [0, 0, 0, 1] }
+    };
+
+    let currentPreset = presets.or_gate;
+    const canvas = document.getElementById('fractalCanvas');
+    const ctx = canvas.getContext('2d');
+    const slider = document.getElementById('zoomSlider');
+    const presetSelect = document.getElementById('presetSelect');
+    const zoomVal = document.getElementById('zoomVal');
+
+    const w1El = document.getElementById('w1Val');
+    const w2El = document.getElementById('w2Val');
+    const w3El = document.getElementById('w3Val');
+    const biasEl = document.getElementById('biasVal');
+
+    const q1RatioEl = document.getElementById('q1Ratio');
+    const q2RatioEl = document.getElementById('q2Ratio');
+    const q3RatioEl = document.getElementById('q3Ratio');
+    const q4RatioEl = document.getElementById('q4Ratio');
+    const accBadge = document.getElementById('accBadge');
+
+    function render() {
+      const logZ = parseFloat(slider.value);
+      const zoom = Math.pow(10, logZ);
+      zoomVal.innerText = zoom < 10 ? zoom.toFixed(2) + 'x' : (zoom >= 1000 ? zoom.toExponential(1) + 'x' : Math.round(zoom) + 'x');
+
+      const cx = currentPreset.cx;
+      const cy = currentPreset.cy;
+      const res = 128;
+      const maxIter = 70;
+      const scale = 1.0 / zoom;
+
+      const imgData = ctx.createImageData(res, res);
+      const data = imgData.data;
+
+      const mid = res / 2;
+      let qCount = [0, 0, 0, 0];
+      const qTotal = mid * mid;
+
+      for (let py = 0; py < res; py++) {
+        const y0 = cy - scale + (py / res) * (2 * scale);
+        const isBottom = py >= mid;
+        for (let px = 0; px < res; px++) {
+          const x0 = cx - scale + (px / res) * (2 * scale);
+          const isRight = px >= mid;
+          
+          let qIdx = 0;
+          if (!isBottom && !isRight) qIdx = 0;      // Q1: Sol Üst
+          else if (!isBottom && isRight) qIdx = 1;  // Q2: Sağ Üst
+          else if (isBottom && !isRight) qIdx = 2;  // Q3: Sol Alt
+          else qIdx = 3;                            // Q4: Sağ Alt
+
+          let x = 0.0, y = 0.0, iter = 0;
+          while (x * x + y * y <= 4.0 && iter < maxIter) {
+            const xtemp = x * x - y * y + x0;
+            y = 2.0 * x * y + y0;
+            x = xtemp;
+            iter++;
+          }
+
+          const idx = (py * res + px) * 4;
+          if (iter === maxIter) {
+            qCount[qIdx]++;
+            data[idx] = 15;
+            data[idx + 1] = 23;
+            data[idx + 2] = 42;
+            data[idx + 3] = 255;
+          } else {
+            const hue = (iter / maxIter) * 260 + 190;
+            const rgb = hslToRgb(hue / 360, 0.85, 0.5);
+            data[idx] = rgb[0];
+            data[idx + 1] = rgb[1];
+            data[idx + 2] = rgb[2];
+            data[idx + 3] = 255;
+          }
+        }
+      }
+
+      ctx.putImageData(imgData, 0, 0);
+
+      const r1 = qCount[0] / qTotal;
+      const r2 = qCount[1] / qTotal;
+      const r3 = qCount[2] / qTotal;
+      const r4 = qCount[3] / qTotal;
+
+      const w1 = (r1 - 0.5) * 6.0;
+      const w2 = (r2 - 0.5) * 6.0;
+      const w3 = (r3 - 0.5) * 6.0;
+      const bias = (r4 - 0.5) * 6.0;
+
+      w1El.innerText = (w1 >= 0 ? '+' : '') + w1.toFixed(3);
+      w2El.innerText = (w2 >= 0 ? '+' : '') + w2.toFixed(3);
+      w3El.innerText = (w3 >= 0 ? '+' : '') + w3.toFixed(3);
+      biasEl.innerText = (bias >= 0 ? '+' : '') + bias.toFixed(3);
+
+      q1RatioEl.innerText = (r1 * 100).toFixed(1) + '%';
+      q2RatioEl.innerText = (r2 * 100).toFixed(1) + '%';
+      q3RatioEl.innerText = (r3 * 100).toFixed(1) + '%';
+      q4RatioEl.innerText = (r4 * 100).toFixed(1) + '%';
+
+      // Doğruluk Tablosunu Hesapla
+      const testInputs = [[0, 0], [0, 1], [1, 0], [1, 1]];
+      const target = currentPreset.target;
+      let correct = 0;
+
+      testInputs.forEach((inp, idx) => {
+        const z = w1 * inp[0] + w2 * inp[1] + bias;
+        const pred = 1.0 / (1.0 + Math.exp(-z));
+        const lbl = pred >= 0.5 ? 1 : 0;
+        const isOk = (lbl === target[idx]);
+        if (isOk) correct++;
+
+        const el = document.getElementById('case' + idx);
+        const outSpan = document.getElementById('out' + idx);
+        outSpan.innerText = `${lbl} (p=${pred.toFixed(2)})`;
+        if (isOk) {
+          el.className = "p-1.5 rounded border border-emerald-500/40 bg-emerald-500/10 text-emerald-400";
+        } else {
+          el.className = "p-1.5 rounded border border-rose-500/40 bg-rose-500/10 text-rose-400";
+        }
+      });
+
+      const accRate = Math.round((correct / 4) * 100);
+      accBadge.innerText = `%${accRate} Başarı`;
+      accBadge.className = accRate === 100 
+        ? "px-2 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-500 font-bold border border-emerald-500/20"
+        : "px-2 py-0.5 rounded-full text-[10px] bg-amber-500/10 text-amber-500 font-bold border border-amber-500/20";
+    }
+
+    function hslToRgb(h, s, l) {
+      let r, g, b;
+      if (s === 0) r = g = b = l;
+      else {
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+      }
+      return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    }
+
+    function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1/6) return p + (q - p) * 6 * t;
+      if (t < 1/2) return q;
+      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+      return p;
+    }
+
+    slider.addEventListener('input', render);
+    presetSelect.addEventListener('change', (e) => {
+      currentPreset = presets[e.target.value];
+      slider.value = currentPreset.logZ;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

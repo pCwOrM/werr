@@ -1,12 +1,13 @@
 # Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries
 
-[![arXiv](https://img.shields.io/badge/arXiv-2609.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2609.xxxxx)
-[![Paper](https://img.shields.io/badge/Paper-IEEE%20Format%20PDF-blue.svg)](./Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.pending-blue.svg)](https://zenodo.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Status: Preprint](https://img.shields.io/badge/Status-arXiv%20Preprint-green.svg)](#)
+[![Status: Preprint](https://img.shields.io/badge/Publication-Zenodo%20%2F%20arXiv%20Preprint-green.svg)](#)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Demos](https://img.shields.io/badge/Interactive%20Labs-100%25%20Standalone-purple.svg)](./demos/)
 
-Official code and experimental replication repository for the research paper:  
-**"Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"**
+> 🌐 **Language Switcher / Dil Seçici:**  
+> **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 ---
 
@@ -22,17 +23,20 @@ Official code and experimental replication repository for the research paper:
 
 ---
 
-## 📌 Abstract
+## 📌 Executive Summary
 
-Modern deep learning architectures store billions or trillions of parameters as independent floating-point scalars across large tensor matrices, optimized via backpropagation. While exceptionally effective, this paradigm suffers from severe parameter redundancy, high memory bandwidth bottlenecks, and excessive energy consumption. 
+Modern deep neural networks store billions or trillions of parameters as unconstrained floating-point scalars across large static tensor matrices. For instance, a 70B parameter LLM demands $\sim 140$ GB of high-speed VRAM simply to hold weights in memory, causing severe memory bandwidth bottlenecks ("the memory wall") and massive power consumption.
 
-In this paper, we propose and empirically validate an alternative weight generation paradigm: **deriving synaptic weights and biases dynamically from the visual morphology of the Mandelbrot fractal set**. By specifying a three-dimensional coordinate window $\Theta = (c_x, c_y, \text{zoom})$ in the complex plane, a $128 \times 128$ pixel patch is sampled and evaluated via the classical iterative quadratic escape test ($z_{n+1} = z_n^2 + c$). 
+This research proposes and empirically demonstrates an alternative paradigm: **deriving synaptic weights and activation thresholds dynamically from the visual morphology of the Mandelbrot fractal set ($\mathcal{M}$)**. 
 
-We introduce a **4-Quadrant Partitioning** method that extracts four independent functional parameters ($w_1, w_2, w_3, \text{bias}$) from the non-escaping "dark area" (black pixel ratio) of a single patch. Our experiments demonstrate that:
-1. **$128 \times 128$ Resolution Standard:** Eliminates boundary discretization noise, achieving within 0.08% of the convergence accuracy of $256 \times 256$ while executing 15 times faster ($\approx 16$ ms).
-2. **100% Linear Separation:** All fundamental logic gates (AND, OR, NAND, NOR) are solved with 100% classification accuracy.
-3. **100% Non-Linear Solution:** The historically intractable XOR problem is solved with 100% accuracy using a two-layer fractal neural network, producing continuous non-linear 2D decision boundaries.
-4. **24-Byte Zero-Weight Storage:** Models store zero persistent tensor matrices; a functional decision cell is fully defined by only 24 bytes (three 64-bit floating point numbers), representing a **99.99999998%+ memory reduction** compared to conventional weight arrays.
+By querying a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \text{zoom})$ in the complex plane, a $128 \times 128$ pixel window is sampled via the classic iterative quadratic escape equation ($z_{n+1} = z_n^2 + c$). Through **4-Quadrant Partitioning**, four functional parameters ($w_1, w_2, w_3, \text{bias}$) are synthesized on demand from the non-escaping "dark area" (black pixel ratio).
+
+### Key Scientific Milestones:
+1. **$128 \times 128$ Resolution Standard:** Matches the convergence precision of $256 \times 256$ within $\pm 0.08\%$ while executing **15 times faster** ($\approx 15.6$ ms).
+2. **100% Linear Gate Classification:** All canonical linear logic gates (AND, OR, NAND, NOR) converged to 100% classification accuracy.
+3. **100% Non-Linear XOR Resolution:** The historically intractable XOR problem was solved with 100% accuracy using a two-layer composite fractal network, generating a continuous non-linear 2D decision contour.
+4. **24-Byte Zero-Weight Footprint:** Eliminates persistent weight tensor storage entirely. A functional decision unit is defined by only **24 bytes** (three Float64 coordinates), representing a **$>99.99999998\%$ memory reduction** over conventional weight matrices.
+5. **The Escape Horizon & Error Boundary Principle:** Formulates how biological motor learning (e.g., mastering hammering in 300 trials instead of 1000 via sharp error boundary feedback) mathematically mirrors the topological boundary $\partial \mathcal{M}$ dividing homeostatic convergence from chaotic divergence.
 
 ---
 
@@ -40,85 +44,116 @@ We introduce a **4-Quadrant Partitioning** method that extracts four independent
 
 | Dimension | Conventional Deep Learning (LLM) | Mandelbrot Fractal Neural Synthesis (Ours) |
 | :--- | :--- | :--- |
-| **Parameter Storage** | Static Weight Tensors (RAM / VRAM) | **Procedural On-Demand Synthesis from Geometry** |
+| **Parameter Storage Model** | Static Weight Tensor Matrix (RAM/VRAM) | **Procedural On-Demand Synthesis from Geometry** |
 | **Storage per Decision Cell** | 12 - 64 Bytes (Weights & Bias Tensors) | **24 Bytes Total $(c_x, c_y, \text{zoom})$** |
 | **Persistent Weight Matrix** | Billions of Float16/Float32 values | **0 Bytes (No matrix written to persistent storage)** |
-| **70B Parameter Footprint** | $\sim 140$ GB VRAM (Memory Wall) | **Compact Coordinate Sequence** |
-| **Memory Reduction** | Baseline (0%) | **99.99999998%+ Storage Savings** |
-| **Hardware Horizon** | Memory-bound GPUs (Von Neumann bottleneck) | **Photonic & Optical Co-processors ($< 1$ ns, zero thermal waste)** |
+| **70B Parameter Equivalent** | $\sim 140$ GB VRAM (Memory Wall Bottleneck) | **Compact Coordinate Sequence** |
+| **Memory Reduction** | Baseline (0%) | **>99.99999998% Storage Savings** |
+| **Hardware Horizon** | Memory-bound GPUs (Von Neumann bottleneck) | **Photonic / Optical Co-processors ($< 1$ ns, zero electrical resistance)** |
 
 ---
 
-## 🔨 The "Error Boundary / Escape Horizon" Principle
-
-A core conceptual pillar of this work connects biological motor learning with non-linear dynamics:
-* **Motor Boundary Learning:** When an apprentice hammers a nail, uniformly safe strikes require thousands of trials to develop an average heuristic. However, a single catastrophic strike to the finger immediately establishes a sharp *Error Boundary* in the motor cortex, accelerating mastery in a fraction of trials.
-* **Fractal Escape Horizon:** The Mandelbrot set boundary $\partial \mathcal{M}$ represents the topological divide between homeostatic convergence ($|z_n| \le 2.0$) and divergent chaotic escape ($|z_n| > 2.0$). Rather than computing billions of unconstrained scalar updates, fractal parameter synthesis directly samples from this intrinsic boundary of stability, yielding sharp discriminative thresholds with zero training overhead.
-
----
-
-## 📂 Repository Structure
+## 📂 Repository Architecture
 
 ```text
-├── arxiv_submission/                   # Complete LaTeX source bundle for arXiv / Overleaf
+mandelbrot-fractal-neural-synthesis/
+│
+├── README.md                           # Primary English Documentation
+├── README_TR.md                        # Kapsamlı Türkçe Dokümantasyon
+├── LICENSE                             # MIT Open Source License
+├── requirements.txt                    # Minimal Python Dependencies
+├── .zenodo.json                        # Zenodo Automated Metadata Standard
+├── .gitignore                          # Clean Version Control Filter
+│
+├── src/                                # Core Simulation & Research Algorithms
+│   ├── mandelbrot_core.py              # 128x128 sampling & dark area integration
+│   ├── fractal_neuron.py               # Single-neuron logic gate solver
+│   ├── xor_composite_network.py        # 2-layer composite non-linear network
+│   ├── gate_optimizer.py               # Evolutionary random-walk coordinate search
+│   └── benchmark_resolutions.py        # 32x32 to 256x256 Pareto trade-off analysis
+│
+├── demos/                              # Interactive Web Labs (100% Offline & Standalone)
+│   ├── interactive_lab.html            # Public outreach scenario interface (Doors, Safes, Lights, Alarms)
+│   └── quadrant_visualizer.html        # Technical 128x128 4-quadrant mathematical research widget
+│
+├── zenodo/                             # Official Zenodo Open Science Publication Deposit Package
+│   ├── .zenodo.json                    # Deposit configuration
+│   ├── zenodo_deposit_guide.md         # 5-minute Zenodo submission & instant DOI guide
+│   └── Mandelbrot_Fractal_Neural_Synthesis_Preprint.pdf # Camera-ready Preprint (Bilingual Abstract)
+│
+├── arxiv/                              # LaTeX Source Package for arXiv / Overleaf
 │   ├── main.tex                        # IEEE format paper source
 │   ├── references.bib                  # BibTeX references
-│   └── figures/                        # High-resolution publication figures
-├── fraktal_noron_halk_arayuzu.html     # Standalone offline interactive demonstration UI
-├── Halka_Anlatim_Rehberi.html          # Public outreach & presentation guide (HTML)
-├── Halka_Anlatim_Rehberi.pdf           # Printable public presentation guide (A4 PDF)
-├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf  # Compiled IEEE-style publication PDF
-├── mandelbrot_experiment.py            # Core Mandelbrot 128x128 sampling script
-├── mandelbrot_perfect_gates.py         # 100% logic gate parameter discovery script
-├── mandelbrot_composite_xor.py         # 2-layer composite XOR neural network solver
-├── package_arxiv.py                    # Automated compilation and packaging script
-├── requirements.txt                    # Minimal Python dependencies
-├── LICENSE                             # MIT Open Source License
-└── README.md                           # Repository documentation
+│   ├── figures/                        # High-resolution figures
+│   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Drag-and-drop submission bundle
+│
+├── docs/                               # Outreach & Academic Monograph Documents
+│   ├── Halka_Anlatim_Rehberi.html      # Public presentation guide
+│   ├── Halka_Anlatim_Rehberi.pdf       # Printable A4 public presentation PDF
+│   ├── halka_anlatim_rehberi.md        # Public guide markdown source
+│   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Full academic technical report
+│   └── Mandelbrot_Akademik_Teknik_Raporu.pdf  # Printable A4 academic report PDF
+│
+└── figures/                            # Publication Figures
+    ├── quadrant_weights_128.png        # 4-Quadrant partitioning schematic
+    ├── resolution_comparison_128.png   # 32x32 to 256x256 benchmark curves
+    ├── gate_solutions_128.png          # Decision planes for OR, AND, NAND, NOR
+    ├── xor_complete_network_128.png    # Composite 2-layer non-linear network
+    ├── zoom_weight_curve.png           # Continuous weight modulation via zoom
+    └── mandelbrot_patches.png          # Morphological landscape patches
 ```
 
 ---
 
-## 🚀 Quick Start & Replication
+## 🎮 Interactive Visualizers (Zero Dependencies)
 
-### 1. Requirements
+The repository provides two self-contained, standalone web applications that require **no server, no installation, and no internet connection**:
+
+1. **Public Outreach Lab (`demos/interactive_lab.html`):**
+   * Real-world decision scenarios: 🚪 Smart Door (OR), 🏦 Bank Vault (AND), 💡 Staircase Switch (XOR), 🚨 Fire Alarm (NAND).
+   * Live biological neuron rendering with active axon firing.
+   * Light/Dark mode switcher with persistent preferences.
+   * One-click `.TXT` 24-byte memory log export.
+2. **Technical 4-Quadrant Research Widget (`demos/quadrant_visualizer.html`):**
+   * Real-time $128 \times 128$ Mandelbrot exploration with dynamic zoom.
+   * Live Quadrant readout ($Q_1 	o w_1, Q_2 	o w_2, Q_3 	o w_3, Q_4 	o b$).
+   * Dynamic boolean truth table verification ($\hat{y} = \sigma(w_1 x_1 + w_2 x_2 + b)$).
+
+---
+
+## 🚀 Reproduction & Quick Start
+
 ```bash
+# Clone the repository
 git clone https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis.git
 cd mandelbrot-fractal-neural-synthesis
+
+# Install minimal requirements
 pip install -r requirements.txt
-```
 
-### 2. Run the Interactive Web Lab (Offline / No Server Required)
-Simply double-click `fraktal_noron_halk_arayuzu.html` in your file manager, or open via your browser:
-```bash
-# Works completely offline with zero dependencies!
-start fraktal_noron_halk_arayuzu.html
-```
+# Run gate verification
+python src/fractal_neuron.py
 
-### 3. Replicate the 100% Gate Optimization
-```bash
-python mandelbrot_perfect_gates.py
-```
+# Run non-linear XOR solution
+python src/xor_composite_network.py
 
-### 4. Replicate the 2-Layer Non-Linear XOR Solver
-```bash
-python mandelbrot_composite_xor.py
+# Open interactive lab directly in your browser
+start demos/interactive_lab.html
 ```
 
 ---
 
 ## 📖 Citation
 
-If you use this work or build upon fractal neural parameter synthesis, please cite our preprint:
+If you use this research or replicate our findings, please cite:
 
 ```bibtex
 @article{dagli2026fractal,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
-  journal={arXiv preprint arXiv:2609.xxxxx},
+  journal={Zenodo / arXiv Preprint},
   year={2026},
-  archivePrefix={arXiv},
-  primaryClass={cs.NE},
+  doi={10.5281/zenodo.pending},
   url={https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}
 }
 ```
@@ -126,4 +161,4 @@ If you use this work or build upon fractal neural parameter synthesis, please ci
 ---
 
 ## 📜 License
-This project is licensed under the [MIT License](LICENSE).
+This project is open-source under the [MIT License](LICENSE).

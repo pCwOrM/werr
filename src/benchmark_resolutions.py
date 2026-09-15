@@ -6,7 +6,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # Artifact çıkış dizini
-ARTIFACT_DIR = r"C:\Users\maat\.gemini\antigravity\brain\be1030f1-5b3e-4e9e-886d-2b41ab9b7de4"
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(SRC_DIR)
+ARTIFACT_DIR = os.path.join(BASE_DIR, "figures")
 os.makedirs(ARTIFACT_DIR, exist_ok=True)
 
 def compute_mandelbrot_patch(cx, cy, zoom, res=128, max_iter=100):
