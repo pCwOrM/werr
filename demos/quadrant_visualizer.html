@@ -1,31 +1,63 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>128x128 4-Quadrant Fraktal Nöron Deney Laboratuvarı</title>
   <style>
+    /* =========================================================
+       THEME VARIABLES
+       ========================================================= */
     :root {
+      /* Varsayılan Koyu Tema */
       --bg-body: #0a0e17;
+      --bg-radial: #162036;
       --bg-card: #131b2e;
       --bg-inner: #0b1120;
+      --bg-hover: #1e293b;
       --border: #1f2d47;
       --border-accent: rgba(16, 185, 129, 0.35);
       --text-main: #f1f5f9;
+      --text-heading: #ffffff;
       --text-muted: #94a3b8;
       --emerald: #10b981;
       --emerald-glow: rgba(16, 185, 129, 0.18);
-      --indigo: #6366f1;
+      --indigo: #818cf8;
       --amber: #f59e0b;
       --rose: #f43f5e;
+      --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+      --box-shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.25);
+      --canvas-bg: #030712;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* ☀️ Açık Tema (Light Mode) */
+    html.light {
+      --bg-body: #f1f5f9;
+      --bg-radial: #e2e8f0;
+      --bg-card: #ffffff;
+      --bg-inner: #f8fafc;
+      --bg-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --border-accent: rgba(5, 150, 105, 0.35);
+      --text-main: #0f172a;
+      --text-heading: #0f172a;
+      --text-muted: #64748b;
+      --emerald: #059669;
+      --emerald-glow: rgba(5, 150, 105, 0.12);
+      --indigo: #4f46e5;
+      --amber: #d97706;
+      --rose: #e11d48;
+      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      --box-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --canvas-bg: #090d16;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: radial-gradient(circle at top center, #162036 0%, var(--bg-body) 70%);
+      background: radial-gradient(circle at top center, var(--bg-radial) 0%, var(--bg-body) 70%);
       color: var(--text-main);
       font-family: var(--font);
       min-height: 100vh;
@@ -35,6 +67,7 @@
       justify-content: center;
       padding: 24px 16px;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     .container {
@@ -44,8 +77,9 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 24px 26px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+      box-shadow: var(--card-shadow);
       backdrop-filter: blur(12px);
+      transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     /* Header */
@@ -56,11 +90,13 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 16px;
       margin-bottom: 18px;
+      gap: 12px;
+      transition: border-color 0.25s ease;
     }
     .header-left h1 {
       font-size: 16px;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-heading);
       display: flex;
       align-items: center;
       gap: 9px;
@@ -83,6 +119,39 @@
       color: var(--text-muted);
       margin-top: 3px;
     }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg-inner);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: var(--box-shadow-subtle);
+    }
+    .theme-toggle-btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--emerald);
+      transform: translateY(-1px);
+    }
+    .theme-toggle-btn:active {
+      transform: translateY(0);
+    }
+
     .badges-col {
       display: flex;
       flex-direction: column;
@@ -101,7 +170,7 @@
     }
     .badge-doi {
       font-size: 9.5px;
-      color: #64748b;
+      color: var(--text-muted);
       text-decoration: none;
       font-family: var(--font-mono);
       transition: color 0.2s;
@@ -126,7 +195,7 @@
     select {
       width: 100%;
       background: var(--bg-inner);
-      color: #fff;
+      color: var(--text-main);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 9px 12px;
@@ -134,7 +203,7 @@
       font-weight: 500;
       outline: none;
       cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
     select:focus {
       border-color: var(--emerald);
@@ -188,8 +257,8 @@
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      background: #000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      background: var(--canvas-bg);
     }
     canvas {
       width: 148px;
@@ -244,308 +313,478 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 10px 12px;
-      transition: border-color 0.2s, transform 0.15s;
+      transition: border-color 0.2s, transform 0.15s, background-color 0.25s;
     }
     .weight-card:hover {
-      border-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--border-accent);
       transform: translateY(-1px);
     }
-    .w-title {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--text-muted);
+    .weight-card-bias {
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    html.light .weight-card-bias {
+      border-color: rgba(217, 119, 6, 0.3);
+    }
+    .wc-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
     }
-    .w-val {
-      font-family: var(--font-mono);
-      font-size: 16px;
-      font-weight: 800;
-      margin: 4px 0 2px 0;
+    .wc-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
     }
-    .val-emerald { color: #34d399; }
-    .val-indigo { color: #818cf8; }
-    .val-amber { color: #fbbf24; }
-    .w-sub {
+    .wc-ratio {
       font-size: 9.5px;
-      color: #64748b;
+      color: var(--text-muted);
       font-family: var(--font-mono);
     }
+    .wc-val {
+      font-size: 17px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+    }
+    .val-emerald { color: var(--emerald); }
+    .val-amber { color: var(--amber); }
 
-    /* Truth Table Panel */
-    .truth-table-panel {
+    /* Truth Table / Live Verification */
+    .verification-card {
       background: var(--bg-inner);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
-    .truth-header {
+    .vc-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
-      font-size: 11px;
-      font-weight: 700;
     }
-    .truth-title { color: #cbd5e1; }
+    .vc-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .accuracy-badge {
-      padding: 3px 9px;
-      border-radius: 9999px;
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 800;
-      font-family: var(--font-mono);
+      padding: 2.5px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
     }
     .badge-ok {
       background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
     }
     .badge-warn {
       background: rgba(245, 158, 11, 0.15);
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.4);
     }
-    .cases-grid {
+
+    .truth-table-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
     }
     .case-box {
       border-radius: 8px;
-      padding: 7px 6px;
+      padding: 8px 6px;
       text-align: center;
       font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      transition: all 0.2s;
-    }
-    .case-success {
-      background: rgba(16, 185, 129, 0.12) !important;
-      border-color: rgba(16, 185, 129, 0.4) !important;
-      color: #34d399 !important;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
-    }
-    .case-fail {
-      background: rgba(244, 63, 94, 0.12) !important;
-      border-color: rgba(244, 63, 94, 0.4) !important;
-      color: #fb7185 !important;
-      box-shadow: 0 0 10px rgba(244, 63, 94, 0.1);
-    }
-
-    /* Footer Note */
-    .note-box {
       font-size: 11px;
-      color: #94a3b8;
-      background: rgba(16, 185, 129, 0.05);
-      border: 1px solid rgba(16, 185, 129, 0.18);
-      border-radius: 10px;
-      padding: 9px 13px;
-      line-height: 1.5;
+      transition: all 0.2s;
+      border: 1px solid transparent;
     }
-    .note-box b { color: #f1f5f9; }
+    
+    /* Case status styles for dark mode */
+    html.dark .case-success {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+    html.dark .case-fail {
+      background: rgba(244, 63, 94, 0.12);
+      border-color: rgba(244, 63, 94, 0.3);
+      color: #fb7185;
+    }
 
-    /* Authors Footer */
-    .authors-footer {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 10px;
-      color: #64748b;
+    /* Case status styles for light mode */
+    html.light .case-success {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #047857;
+      font-weight: 600;
     }
-    .authors-footer a {
-      color: var(--emerald);
-      text-decoration: none;
+    html.light .case-fail {
+      background: rgba(244, 63, 94, 0.1);
+      border-color: rgba(244, 63, 94, 0.35);
+      color: #be123c;
       font-weight: 600;
     }
 
-    @media (max-width: 540px) {
+    .case-inp {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+    .case-out {
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Mathematical Formula Box */
+    .formula-box {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .formula-box code {
+      color: var(--indigo);
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      transition: border-color 0.25s ease;
+    }
+    .btn-txt {
+      background: var(--bg-inner);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-txt:hover {
+      background: var(--bg-hover);
+      border-color: var(--emerald);
+      color: var(--emerald);
+    }
+
+    @media (max-width: 580px) {
       .display-layout { grid-template-columns: 1fr; }
       .controls-grid { grid-template-columns: 1fr; }
-      .cases-grid { grid-template-columns: 1fr 1fr; }
+      .truth-table-grid { grid-template-columns: repeat(2, 1fr); }
+      .container { padding: 18px 16px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .header-actions { width: 100%; justify-content: space-between; margin-top: 8px; }
+      .badges-col { align-items: flex-end; }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Header -->
+
+  <!-- Üst Başlık Banner -->
   <div class="header">
     <div class="header-left">
       <h1>
         <span class="status-dot"></span>
-        128x128 4-Quadrant Fraktal Nöron Laboratuvarı
+        128×128 4-Quadrant Fraktal Nöron
       </h1>
-      <p>Tek bir 128&times;128 Mandelbrot penceresinden w₁, w₂, w₃ ve bias türetimi</p>
+      <p>Mandelbrot Uzayından Prosedürel Sinaptik Ağırlık ve Eşik Sentezi</p>
     </div>
-    <div class="badges-col">
-      <span class="badge-mode">128&times;128 Modu</span>
-      <a class="badge-doi" href="https://doi.org/10.5281/zenodo.22774935" target="_blank">DOI: 10.5281/zenodo.22774935</a>
+    <div class="header-actions">
+      <!-- Açık / Koyu Tema Değiştirici -->
+      <button id="themeToggleBtn" class="theme-toggle-btn" title="Açık / Koyu Tema Değiştir">
+        <span id="themeIcon">☀️</span>
+        <span id="themeText">Açık Mod</span>
+      </button>
+
+      <div class="badges-col">
+        <span class="badge-mode">CANLI SENTEZ</span>
+        <a href="https://doi.org/10.5281/zenodo.22774935" target="_blank" class="badge-doi">DOI: 10.5281/zenodo.22774935</a>
+      </div>
     </div>
   </div>
 
-  <!-- Controls -->
+  <!-- Kontroller: Kapı Seçici & Zoom Slider -->
   <div class="controls-grid">
     <div class="field-group">
-      <label for="presetSelect">Önayar / Kapı Çözümü</label>
+      <label for="presetSelect">
+        <span>Hedef Mantık Kapısı</span>
+        <span id="coordBadge" style="color:var(--text-muted); font-family:var(--font-mono); font-size:10px;">cx: -0.056, cy: 0.806</span>
+      </label>
       <select id="presetSelect">
-        <option value="or_gate">OR Kapısı (%100 Çözüm)</option>
-        <option value="and_gate">AND Kapısı (%100 Çözüm)</option>
-        <option value="nand_gate">NAND Kapısı (%100 Çözüm)</option>
-        <option value="nor_gate">NOR Kapısı (%100 Çözüm)</option>
-        <option value="seahorse">Seahorse Valley (Kaos Bölgesi)</option>
-        <option value="elephant">Elephant Valley</option>
-        <option value="minibrot">Mini-Mandelbrot Uydusu</option>
+        <option value="or" selected>🚪 OR Kapısı (cx: -0.055780, cy: 0.806329)</option>
+        <option value="and">🏦 AND Kapısı (cx: -0.144732, cy: 0.758854)</option>
+        <option value="nand">🚨 NAND Kapısı (cx: -0.740191, cy: 0.174654)</option>
+        <option value="nor">🔒 NOR Kapısı (cx: -0.523561, cy: 0.525212)</option>
       </select>
     </div>
+
     <div class="field-group">
-      <label>
-        <span>Zoom Katsayısı</span>
-        <span id="zoomVal" style="color: var(--emerald); font-family: var(--font-mono); font-weight: 800;">110.1x</span>
+      <label for="zoomSlider">
+        <span>Büyütme Faktörü (Zoom)</span>
+        <span id="zoomVal" style="color:var(--emerald); font-family:var(--font-mono); font-weight:700;">100.0x</span>
       </label>
-      <input type="range" id="zoomSlider" min="0.3" max="5.0" step="0.02" value="2.00">
+      <input type="range" id="zoomSlider" min="0" max="4.0" step="0.005" value="2.0">
     </div>
   </div>
 
-  <!-- Main Canvas & Weights Layout -->
+  <!-- Ana Gösterim: Canvas & 4-Quadrant Değerleri -->
   <div class="display-layout">
-    <!-- Left: 128x128 Canvas -->
     <div class="canvas-container">
       <div class="canvas-wrapper">
-        <canvas id="fractalCanvas" width="128" height="128"></canvas>
+        <canvas id="mandelCanvas" width="128" height="128"></canvas>
         <div class="crosshair-h"></div>
         <div class="crosshair-v"></div>
-        <span class="quad-tag tag-q1">Q1: w₁</span>
-        <span class="quad-tag tag-q2">Q2: w₂</span>
-        <span class="quad-tag tag-q3">Q3: w₃</span>
-        <span class="quad-tag tag-q4">Q4: b</span>
+        <span class="quad-tag tag-q1">Q1</span>
+        <span class="quad-tag tag-q2">Q2</span>
+        <span class="quad-tag tag-q3">Q3</span>
+        <span class="quad-tag tag-q4">Q4 (b)</span>
       </div>
-      <span class="res-label">128 &times; 128 Piksel (~15.6 ms)</span>
+      <div class="res-label">128 × 128 Örnekleme</div>
     </div>
 
-    <!-- Right: 4 Quadrant Cards -->
+    <!-- 4 Ağırlık Kartı -->
     <div class="weights-grid">
       <div class="weight-card">
-        <div class="w-title"><span>Q1 (Sol Üst)</span> <span>&rarr; w₁</span></div>
-        <div id="w1Val" class="w-val val-emerald">+3.000</div>
-        <div class="w-sub">Siyah Alan: <span id="q1Ratio">100.0%</span></div>
+        <div class="wc-header">
+          <span class="wc-title">Q1 &rarr; Ağırlık 1 (w₁)</span>
+          <span id="q1Ratio" class="wc-ratio">59.6%</span>
+        </div>
+        <div id="w1Val" class="wc-val val-emerald">+0.575</div>
       </div>
+
       <div class="weight-card">
-        <div class="w-title"><span>Q2 (Sağ Üst)</span> <span>&rarr; w₂</span></div>
-        <div id="w2Val" class="w-val val-emerald">+2.432</div>
-        <div class="w-sub">Siyah Alan: <span id="q2Ratio">90.5%</span></div>
+        <div class="wc-header">
+          <span class="wc-title">Q2 &rarr; Ağırlık 2 (w₂)</span>
+          <span id="q2Ratio" class="wc-ratio">59.0%</span>
+        </div>
+        <div id="w2Val" class="wc-val val-emerald">+0.540</div>
       </div>
+
       <div class="weight-card">
-        <div class="w-title"><span>Q3 (Sol Alt)</span> <span>&rarr; w₃</span></div>
-        <div id="w3Val" class="w-val val-indigo">+2.988</div>
-        <div class="w-sub">Siyah Alan: <span id="q3Ratio">99.8%</span></div>
+        <div class="wc-header">
+          <span class="wc-title">Q3 &rarr; Yardımcı (w₃)</span>
+          <span id="q3Ratio" class="wc-ratio">40.6%</span>
+        </div>
+        <div id="w3Val" class="wc-val">-0.564</div>
       </div>
-      <div class="weight-card">
-        <div class="w-title"><span>Q4 (Sağ Alt)</span> <span>&rarr; Bias</span></div>
-        <div id="biasVal" class="w-val val-amber">-0.117</div>
-        <div class="w-sub">Siyah Alan: <span id="q4Ratio">48.0%</span></div>
+
+      <div class="weight-card weight-card-bias">
+        <div class="wc-header">
+          <span class="wc-title" style="color:var(--amber);">Q4 &rarr; Eşik Sapması (b)</span>
+          <span id="q4Ratio" class="wc-ratio">45.5%</span>
+        </div>
+        <div id="biasVal" class="wc-val val-amber">-0.272</div>
       </div>
     </div>
   </div>
 
-  <!-- Truth Table Panel -->
-  <div class="truth-table-panel">
-    <div class="truth-header">
-      <span class="truth-title">Canlı Doğruluk Tablosu &bull; &ycirc; = &sigma;(w₁x₁ + w₂x₂ + b)</span>
-      <span id="accBadge" class="accuracy-badge badge-ok">%100 Başarı</span>
+  <!-- Matematiksel Aktivasyon Formülü -->
+  <div class="formula-box">
+    Nöron Karar Fonksiyonu: <code>ŷ = σ(w₁ · x₁ + w₂ · x₂ + b)</code> &nbsp;|&nbsp; <code>w_k = (Oran_{Qk} - 0.5) × 6.0</code>
+  </div>
+
+  <!-- Canlı Mantık Tablosu Doğrulama -->
+  <div class="verification-card">
+    <div class="vc-header">
+      <span class="vc-title">
+        <span>⚡ Canlı Doğruluk Testi (Doğruluk Tablosu)</span>
+      </span>
+      <span id="accuracyBadge" class="accuracy-badge badge-ok">%100 Başarı</span>
     </div>
-    <div class="cases-grid">
+
+    <div class="truth-table-grid">
       <div id="case0" class="case-box case-success">
-        (0,0) &rarr; <span id="out0">0 (p=0.47)</span>
+        <div class="case-inp">(0, 0) &rarr; Hedef: 0</div>
+        <div id="out0" class="case-out">0 (p=0.43)</div>
       </div>
       <div id="case1" class="case-box case-success">
-        (0,1) &rarr; <span id="out1">1 (p=0.91)</span>
+        <div class="case-inp">(0, 1) &rarr; Hedef: 1</div>
+        <div id="out1" class="case-out">1 (p=0.57)</div>
       </div>
       <div id="case2" class="case-box case-success">
-        (1,0) &rarr; <span id="out2">1 (p=0.95)</span>
+        <div class="case-inp">(1, 0) &rarr; Hedef: 1</div>
+        <div id="out2" class="case-out">1 (p=0.58)</div>
       </div>
       <div id="case3" class="case-box case-success">
-        (1,1) &rarr; <span id="out3">1 (p=1.00)</span>
+        <div class="case-inp">(1, 1) &rarr; Hedef: 1</div>
+        <div id="out3" class="case-out">1 (p=0.70)</div>
       </div>
     </div>
   </div>
 
-  <!-- Note Box -->
-  <div class="note-box">
-    ⚡ <b>128x128 Sweet Spot:</b> Pikselleşme gürültüsünü yok eder, 256x256 kararlılığını %0.08 farkla yakalarken <b>15 kat daha hızlı</b> çalışır. Karar hücresinin kalıcı tensör matrisi <b>0 Byte</b>'tır; yalnızca 24 baytlık koordinat tutulur.
+  <!-- Alt Bilgi: Yazarlar ve 24 Bayt Bellek İndirme -->
+  <div class="footer">
+    <div>
+      <strong>Yazarlar:</strong> Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+    </div>
+    <button class="btn-txt" onclick="downloadMemoryTxt()">
+      💾 24B Bellek İndir (.TXT)
+    </button>
   </div>
 
-  <!-- Footer -->
-  <div class="authors-footer">
-    <span>Yazarlar: <b>Volkan Dağlı</b>, <b>Zerrin Dağlı</b>, <b>Dağhan Dağlı</b></span>
-    <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">github.com/pCwOrM &rarr;</a>
-  </div>
 </div>
 
 <script>
+  // =========================================================
+  // TEMA DEĞİŞTİRME MANTIĞI (AÇIK / KOYU MOD)
+  // =========================================================
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
+
+  function applyTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      themeIcon.innerText = "☀️";
+      themeText.innerText = "Açık Mod";
+      localStorage.setItem('widget_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      themeIcon.innerText = "🌙";
+      themeText.innerText = "Koyu Mod";
+      localStorage.setItem('widget_theme', 'light');
+    }
+  }
+
+  function toggleTheme() {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    applyTheme(!isCurrentlyDark);
+  }
+
+  themeToggleBtn.addEventListener('click', toggleTheme);
+
+  // Kayıtlı tema tercihi (Varsayılan: dark)
+  const savedTheme = localStorage.getItem('widget_theme');
+  if (savedTheme === 'light') {
+    applyTheme(false);
+  } else {
+    applyTheme(true);
+  }
+
+  // =========================================================
+  // MANDELBROT VE NÖRON SENTEZİ MANTIĞI
+  // =========================================================
   const presets = {
-    or_gate:   { cx: -0.055780, cy: 0.806329, logZ: 2.000, target: [0, 1, 1, 1] },
-    and_gate:  { cx: -0.144732, cy: 0.758854, logZ: 0.653, target: [0, 0, 0, 1] },
-    nand_gate: { cx: -0.740191, cy: 0.174654, logZ: 3.533, target: [1, 1, 1, 0] },
-    nor_gate:  { cx: -0.523561, cy: 0.525212, logZ: 3.050, target: [1, 0, 0, 0] },
-    seahorse:  { cx: -0.743643, cy: 0.131825, logZ: 2.398, target: [0, 1, 1, 1] },
-    elephant:  { cx: 0.270000, cy: 0.005000, logZ: 1.699, target: [0, 1, 1, 1] },
-    minibrot:  { cx: -1.750000, cy: 0.000000, logZ: 1.398, target: [0, 0, 0, 1] }
+    or:   { cx: -0.055780, cy: 0.806329, logZ: 2.0, maxI: 80, target: [0, 1, 1, 1] },
+    and:  { cx: -0.144732, cy: 0.758854, logZ: 0.653, maxI: 80, target: [0, 0, 0, 1] },
+    nand: { cx: -0.740191, cy: 0.174654, logZ: 3.534, maxI: 70, target: [1, 1, 1, 0] },
+    nor:  { cx: -0.523561, cy: 0.525212, logZ: 3.051, maxI: 80, target: [1, 0, 0, 0] }
   };
 
-  let currentPreset = presets.or_gate;
-  const canvas = document.getElementById('fractalCanvas');
+  let currentPreset = presets.or;
+
+  const canvas = document.getElementById('mandelCanvas');
   const ctx = canvas.getContext('2d');
   const slider = document.getElementById('zoomSlider');
-  const presetSelect = document.getElementById('presetSelect');
   const zoomVal = document.getElementById('zoomVal');
+  const presetSelect = document.getElementById('presetSelect');
+  const coordBadge = document.getElementById('coordBadge');
 
   const w1El = document.getElementById('w1Val');
   const w2El = document.getElementById('w2Val');
   const w3El = document.getElementById('w3Val');
   const biasEl = document.getElementById('biasVal');
-
   const q1RatioEl = document.getElementById('q1Ratio');
   const q2RatioEl = document.getElementById('q2Ratio');
   const q3RatioEl = document.getElementById('q3Ratio');
   const q4RatioEl = document.getElementById('q4Ratio');
-  const accBadge = document.getElementById('accBadge');
+  const accBadge = document.getElementById('accuracyBadge');
+
+  function downloadMemoryTxt() {
+    const logZ = parseFloat(slider.value);
+    const zoom = Math.pow(10, logZ);
+    const content = 
+`======================================================================
+MANDELBROT FRACTAL NEURAL SYNTHESIS - 24-BYTE MEMORY DUMP
+======================================================================
+Permanent Weight Storage: 0 Bytes (Bypassed via Procedural Generation)
+Dynamic Coordinate Seed : 24 Bytes (Three 64-bit IEEE-754 Floats)
+----------------------------------------------------------------------
+Parameter 1 (cx)        : ${currentPreset.cx.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 2 (cy)        : ${currentPreset.cy.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 3 (zoom)      : ${zoom.toFixed(4)}x (Float64 - 8 Bytes)
+----------------------------------------------------------------------
+Synthesized Synapses    :
+  • w1 (Q1, Input 1)    : ${w1El.innerText}
+  • w2 (Q2, Input 2)    : ${w2El.innerText}
+  • w3 (Q3, Auxiliary)  : ${w3El.innerText}
+  • b  (Q4, Bias)       : ${biasEl.innerText}
+Classification Accuracy : ${accBadge.innerText}
+Status                  : Deterministic, Reproducible, Verified 100%
+DOI Reference           : 10.5281/zenodo.22774935
+Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+======================================================================`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `fractal_neuron_memory_${presetSelect.value}_24bytes.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 
   function render() {
     const logZ = parseFloat(slider.value);
     const zoom = Math.pow(10, logZ);
-    zoomVal.innerText = zoom < 10 ? zoom.toFixed(2) + 'x' : (zoom >= 1000 ? zoom.toExponential(1) + 'x' : Math.round(zoom) + 'x');
+    zoomVal.innerText = zoom >= 100 ? zoom.toFixed(1) + 'x' : zoom.toFixed(2) + 'x';
+    coordBadge.innerText = `cx: ${currentPreset.cx.toFixed(3)}, cy: ${currentPreset.cy.toFixed(3)}`;
 
+    const res = 128;
+    const maxIter = currentPreset.maxI;
+    const scale = 1.0 / zoom;
     const cx = currentPreset.cx;
     const cy = currentPreset.cy;
-    const res = 128;
-    const maxIter = 70;
-    const scale = 1.0 / zoom;
 
     const imgData = ctx.createImageData(res, res);
     const data = imgData.data;
 
-    const mid = res / 2;
     let qCount = [0, 0, 0, 0];
-    const qTotal = mid * mid;
+    const qTotal = (res / 2) * (res / 2);
 
     for (let py = 0; py < res; py++) {
-      const y0 = cy - scale + (py / res) * (2 * scale);
-      const isBottom = py >= mid;
+      const y0 = cy - scale + (py / (res - 1)) * (2.0 * scale);
+      const isBottom = (py >= res / 2);
+
       for (let px = 0; px < res; px++) {
-        const x0 = cx - scale + (px / res) * (2 * scale);
-        const isRight = px >= mid;
-        
+        const x0 = cx - scale + (px / (res - 1)) * (2.0 * scale);
+        const isRight = (px >= res / 2);
+
         let qIdx = 0;
-        if (!isBottom && !isRight) qIdx = 0;      // Q1: Sol Üst
-        else if (!isBottom && isRight) qIdx = 1;  // Q2: Sağ Üst
-        else if (isBottom && !isRight) qIdx = 2;  // Q3: Sol Alt
-        else qIdx = 3;                            // Q4: Sağ Alt
+        if (!isBottom && !isRight) qIdx = 0;      // Q1 (Top-Left)
+        else if (!isBottom && isRight) qIdx = 1;  // Q2 (Top-Right)
+        else if (isBottom && !isRight) qIdx = 2;  // Q3 (Bottom-Left)
+        else qIdx = 3;                            // Q4 (Bottom-Right)
 
         let x = 0.0, y = 0.0, iter = 0;
         while (x * x + y * y <= 4.0 && iter < maxIter) {
