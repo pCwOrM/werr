@@ -1,0 +1,22 @@
+# Python virtual environments & caches
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary media & logs
+.tempmediaStorage/
+.system_generated/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep official research PDFs and bundles
+!Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf
+!Halka_Anlatim_Rehberi.pdf
+!Mandelbrot_Fractal_Paper_arXiv_Bundle.zip
