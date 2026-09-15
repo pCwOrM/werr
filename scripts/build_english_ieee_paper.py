@@ -269,7 +269,7 @@ html_content = f"""<!DOCTYPE html>
   
   <div class="authors-block">
     <span class="author-name">Volkan Dağlı</span><sup>1,*</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="author-name">Dr. Zerrin Dağlı</span><sup>2</sup><br>
+    <span class="author-name">Zerrin Dağlı</span><sup>2</sup><br>
     <span class="author-affil"><sup>1</sup>ITouch Systems, Turkey &bull; Zenodo: <em>@itouch</em></span><br>
     <span class="author-affil"><sup>2</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6465 &bull; Zenodo: <em>@zdagli</em></span><br>
     <span style="font-size: 8pt; color: #555;"><sup>*</sup>Correspondence via repository: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
@@ -280,6 +280,13 @@ html_content = f"""<!DOCTYPE html>
     
     <div class="keywords-block">
       <span class="keywords-heading">Keywords:</span> Fractal Neural Synthesis, Mandelbrot Set, Procedural Weight Generation, Zero-Storage AI, Non-Linear Decision Boundaries, Escape Horizon, HyperNEAT, Optical Computing.
+    </div>
+
+    <div style="margin-top: 10px; padding-top: 8px; border-top: 0.5px dashed #ccc; font-size: 8.5pt; color: #222;">
+      <span class="abstract-heading">Özet (Extended Turkish Abstract)</span>—Bu çalışma, derin öğrenme modellerinde milyonlarca parametreyi bellek çiplerinde statik tensörler olarak saklamak yerine, deterministik kaos ve fraktal geometrinin temeli olan Mandelbrot kümesinden (z = z<sup>2</sup> + c) anında canlı türeten yeni bir yapay zeka paradigmasını teorik ve deneysel olarak kanıtlamaktadır. Karmaşık düzlemde üç koordinat &Theta; = (c<sub>x</sub>, c<sub>y</sub>, zoom) seçilerek 4-Quadrant (Dört Çeyrek) metoduyla 128 &times; 128 piksellik pencereden sinaptik ağırlıklar (w<sub>1</sub>, w<sub>2</sub>, w<sub>3</sub>) ve sapma (b) katsayıları türetilmiştir. Model; 128 &times; 128 optimum Pareto çözünürlüğüyle %100 doğrusal kapı (AND, OR, NAND, NOR) ve 2 katmanlı kompozit ağla %100 XOR başarısı göstermiş; kalıcı tensör matrisi boyutunu 0 Bayt'a (yalnızca 24 Bayt koordinat) indirerek %99.99999998+ bellek tasarrufu sağlamıştır.
+      <div style="margin-top: 4px; font-size: 8pt; color: #444;">
+        <strong>Anahtar Kelimeler:</strong> Fraktal Nöral Sentez, Mandelbrot Kümesi, Sıfır-Bellek Yapay Zeka, Prosedürel Ağırlık Türetimi, Kaçış Ufku İlkesi.
+      </div>
     </div>
   </div>
 </div>
@@ -550,14 +557,16 @@ html_content = f"""<!DOCTYPE html>
 
   <h2>References</h2>
   <ol class="references-list">
-    <li>A. Vaswani et al., "Attention is all you need," in <em>Adv. Neural Inf. Process. Syst.</em>, 2017, pp. 5998–6008.</li>
-    <li>B. B. Mandelbrot, "Fractal aspects of the iteration of z &rarr; &lambda;z(1-z) for complex &lambda; and z," <em>Ann. N.Y. Acad. Sci.</em>, vol. 357, pp. 249–259, 1980.</li>
-    <li>B. B. Mandelbrot, <em>The Fractal Geometry of Nature</em>. W. H. Freeman, 1982.</li>
-    <li>K. O. Stanley, D. B. D'Ambrosio, and J. Gauci, "A hypercube-based encoding for evolving large-scale neural networks," <em>Artif. Life</em>, vol. 15, no. 2, pp. 185–212, 2009.</li>
-    <li>D. Ha, A. Dai, and Q. V. Le, "Hypernetworks," in <em>Int. Conf. Learn. Represent. (ICLR)</em>, 2017.</li>
+    <li>A. Vaswani <em>et al.</em>, "Attention is all you need," in <em>Adv. Neural Inf. Process. Syst. (NeurIPS)</em>, vol. 30, 2017, pp. 5998–6008.</li>
+    <li>B. B. Mandelbrot, "Fractal aspects of the iteration of z &rarr; &lambda;z(1-z) for complex &lambda; and z," <em>Ann. N.Y. Acad. Sci.</em>, vol. 357, no. 1, pp. 249–259, 1980. DOI: 10.1111/j.1749-6632.1980.tb22365.x</li>
+    <li>B. B. Mandelbrot, <em>The Fractal Geometry of Nature</em>. New York: W. H. Freeman and Company, 1982. ISBN: 978-0716711865.</li>
+    <li>K. O. Stanley, D. B. D'Ambrosio, and J. Gauci, "A hypercube-based encoding for evolving large-scale neural networks," <em>Artificial Life</em>, vol. 15, no. 2, pp. 185–212, 2009. DOI: 10.1162/artl.2009.15.2.15202</li>
+    <li>D. Ha, A. M. Dai, and Q. V. Le, "HyperNetworks," in <em>Int. Conf. Learn. Represent. (ICLR)</em>, 2017.</li>
     <li>G. Larsson, M. Maire, and G. Shakhnarovich, "FractalNet: Ultra-deep neural networks without residuals," in <em>Int. Conf. Learn. Represent. (ICLR)</em>, 2017.</li>
-    <li>R. Shadmehr, M. A. Smith, and J. W. Krakauer, "Error correction, sensory prediction, and adaptation in motor control," <em>Annu. Rev. Neurosci.</em>, vol. 33, pp. 89–108, 2010.</li>
-    <li>M. Minsky and S. A. Papert, <em>Perceptrons: An Introduction to Computational Geometry</em>. MIT Press, 1969.</li>
+    <li>R. Shadmehr, M. A. Smith, and J. W. Krakauer, "Error correction, sensory prediction, and adaptation in motor control," <em>Annu. Rev. Neurosci.</em>, vol. 33, pp. 89–108, 2010. DOI: 10.1146/annurev-neuro-060909-153135</li>
+    <li>M. Minsky and S. A. Papert, <em>Perceptrons: An Introduction to Computational Geometry</em>. Cambridge, MA: MIT Press, 1969. ISBN: 978-0262630221.</li>
+    <li>H.-O. Peitgen and P. H. Richter, <em>The Beauty of Fractals: Images of Complex Dynamical Systems</em>. Berlin, Heidelberg: Springer-Verlag, 1986. DOI: 10.1007/978-3-642-61717-1.</li>
+    <li>D. H. Wolpert and W. G. Macready, "No free lunch theorems for optimization," <em>IEEE Trans. Evol. Comput.</em>, vol. 1, no. 1, pp. 67–82, 1997. DOI: 10.1109/4235.585892.</li>
   </ol>
 
   <div class="badge-footnote">

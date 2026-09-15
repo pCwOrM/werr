@@ -16,7 +16,7 @@
 * **Volkan Dağlı** *(Corresponding Author)*  
   ITouch Systems, Turkey &bull; Zenodo: [`@itouch`](https://zenodo.org/)
 
-* **Dr. Zerrin Dağlı**  
+* **Zerrin Dağlı**  
   Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
 
 *Correspondence & inquiries:* Please open an issue or contact via the official research repository.

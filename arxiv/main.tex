@@ -21,7 +21,7 @@
 \title{\textbf{\Large Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries}}
 
 \author{
-    \textbf{Volkan Dağlı}\textsuperscript{1,*} \quad \textbf{Dr. Zerrin Dağlı}\textsuperscript{2} \\
+    \textbf{Volkan Dağlı}\textsuperscript{1,*} \quad \textbf{Zerrin Dağlı}\textsuperscript{2} \\
     \textsuperscript{1}\textit{ITouch Systems, Turkey} \quad \textsuperscript{2}\textit{Mersin University, Mersin, Turkey} \\
     \textsuperscript{2}\textit{ORCID: 0000-0001-9490-6465} \\
     \textsuperscript{*}\textit{Correspondence via repository: \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}}
@@ -35,6 +35,9 @@
 
 \begin{abstract}
 \textbf{\textit{Abstract}---Modern deep learning architectures store billions or trillions of parameters as independent floating-point scalars across dense tensor arrays, trained via stochastic gradient descent. While remarkably capable, this paradigm incurs immense storage requirements, memory bandwidth bottlenecks (the ``memory wall''), and high carbon costs. In this paper, we propose and empirically validate an alternative weight generation paradigm: deriving synaptic weights and threshold biases procedurally from the non-linear visual morphology of the Mandelbrot fractal set ($\mathcal{M}$). By specifying a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \text{zoom})$ in the complex plane, a $128 \times 128$ pixel patch is sampled via the quadratic escape recurrence $z_{n+1} = z_n^2 + c$. We introduce a \textit{4-Quadrant Partitioning} method that maps the non-escaping ``dark area'' (convergent pixel ratio) of four sub-quadrants directly to synaptic weights ($w_1, w_2, w_3$) and neuron bias ($b$). Our results show that: (1) a $128 \times 128$ grid represents an optimal Pareto trade-off, matching the convergence precision of $256 \times 256$ within $\pm 0.08\%$ while evaluating 15 times faster ($\approx 15.6$ ms); (2) all linearly separable boolean logic gates (AND, OR, NAND, NOR) are solved with 100\% classification accuracy; (3) the non-linearly separable XOR problem is resolved with 100\% accuracy using a two-layer composite fractal network; and (4) functional decision units require zero persistent weight tensors, retaining only 24 bytes of coordinate metadata (three Float64 values), representing a $>99.99999998\%$ storage reduction relative to conventional tensor arrays. Finally, we formulate the ``Escape Horizon Principle'' linking fractal boundary sharpness to error-driven motor learning in biological systems, and outline prospective implementations on analog optical/photonic processors.}
+
+\vspace{0.15cm}
+\textbf{\textit{Özet (Extended Turkish Abstract)}---Derin öğrenme modellerinde milyonlarca parametreyi bellek çiplerinde statik tensörler olarak saklamak yerine, deterministik kaosun ve fraktal geometrinin temeli olan Mandelbrot kümesinden ($z = z^2 + c$) canlı türeten yeni bir yapay zeka parametrizasyon paradigması önerilmekte ve deneysel olarak kanıtlanmaktadır. Karmaşık düzlemde üç koordinat $(c_x, c_y, \text{zoom})$ seçilerek 4-Quadrant (Dört Çeyrek) metoduyla $128 \times 128$ piksellik pencereden sinaptik ağırlıklar ($w_1, w_2, w_3$) ve sapma ($b$) katsayıları türetilmiştir. Model; $128 \times 128$ optimum Pareto çözünürlüğüyle %100 doğrusal kapı (AND, OR, NAND, NOR) ve 2 katmanlı kompozit ağla %100 XOR başarısı göstermiş; kalıcı tensör matrisi boyutunu 0 Bayt'a (yalnızca 24 Bayt koordinat) indirerek %99.99999998+ bellek tasarrufu sağlamıştır.}
 \end{abstract}
 
 \vspace{0.2cm}
