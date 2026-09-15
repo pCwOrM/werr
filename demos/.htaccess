@@ -1,0 +1,74 @@
+# ====================================================================
+# MANDELBROT FRACTAL NEURAL SYNTHESIS - GUVENLIK VE OPTIMIZASYON .HTACCESS
+# Dizin: /lib/neural-synthesis/
+# ====================================================================
+
+# 1. DIZIN LISTELEMEYI ENGELLE (Directory Browsing Protection)
+# Ziyaretcilerin klasordeki dosya listesini gormesini engeller
+Options -Indexes -MultiViews
+
+# 2. VARSAYILAN ACILIS SAYFASI (DirectoryIndex)
+# http://itouch.com.tr/lib/neural-synthesis/ cagrildiginda ilk calisacak dosya:
+DirectoryIndex quadrant_visualizer.html interactive_lab.html Halka_Anlatim_Rehberi.html index.html
+
+# 3. KARAKTER KODLAMASI ZORUNLULUGU (UTF-8 Encoding)
+# Turkce karakterlerin (s, g, c, o, u, i) sunucuda bozulmasini onler
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .css .js .txt .json
+</IfModule>
+
+# 4. GUVENLIK BASLIKLARI (HTTP Security Headers)
+<IfModule mod_headers.c>
+    # MIME-type sniffing saldirilarini engelle
+    Header set X-Content-Type-Options "nosniff"
+
+    # Clickjacking saldirilarina karsi iframe korumasi (SAMEORIGIN)
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # XSS filtre korumasi
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Guvenli yonlendirme politikasi
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Blob/Canvas bellek indirmelerine ve inline stillere izin veren guvenli CSP
+    Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:;"
+</IfModule>
+
+# 5. HASSAS VE GIZLI DOSYALARA ERISIMI ENGELLE
+# .htaccess, .git, .env, .log, yedek dosyalarina disaridan erisimi engelle
+<FilesMatch "^\.|\.(bak|config|sql|ini|log|sh|inc|swp|dist|env|git)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 6. SADECE GUVENLI HTTP METOTLARINA IZIN VER (GET / HEAD)
+<LimitExcept GET HEAD>
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</LimitExcept>
+
+# 7. PERFORMANS VE SIKISTIRMA (GZIP / Deflate)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# 8. STATIK DOSYA ONBELLEGI (Browser Caching)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 day"
+    ExpiresByType text/html "access plus 2 hours"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/plain "access plus 1 day"
+</IfModule>
