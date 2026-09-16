@@ -1,6 +1,6 @@
 # Fraktal Nöron Sentezi: Mandelbrot Geometrisinden Sıfır-Bellekli Ağırlık ve Karar Türetimi
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774935.svg)](https://doi.org/10.5281/zenodo.22774935)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22802921.svg)](https://doi.org/10.5281/zenodo.22802921)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
 [![Yayın: Zenodo / arXiv](https://img.shields.io/badge/Yayın-Zenodo%20%2F%20arXiv%20Preprint-green.svg)](#)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -159,8 +159,8 @@ Bu araştırmayı çalışmalarınızda kullanmak veya atıfta bulunmak için:
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   journal={Zenodo / arXiv Preprint},
   year={2026},
-  doi={10.5281/zenodo.22774935},
-  url={https://doi.org/10.5281/zenodo.22774935}
+  doi={10.5281/zenodo.22802921},
+  url={https://doi.org/10.5281/zenodo.22802921}
 }
 ```
 
