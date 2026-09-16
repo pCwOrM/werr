@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandelbrot Fractal Neural Synthesis | Research Project & Interactive Labs</title>
+  <meta name="description" content="Official project page and interactive laboratories for Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries.">
+  
+  <style>
+    :root {
+      --bg-page: #0a0e17;
+      --bg-card: #131b2e;
+      --bg-inner: #0b1120;
+      --bg-hover: #1e293b;
+      --border: #1f2d47;
+      --border-accent: rgba(16, 185, 129, 0.35);
+      --text-main: #f1f5f9;
+      --text-heading: #ffffff;
+      --text-muted: #94a3b8;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.18);
+      --indigo: #818cf8;
+      --indigo-glow: rgba(129, 140, 248, 0.15);
+      --amber: #f59e0b;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+
+    html.light {
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-inner: #f1f5f9;
+      --bg-hover: #e2e8f0;
+      --border: #e2e8f0;
+      --border-accent: rgba(5, 150, 105, 0.35);
+      --text-main: #0f172a;
+      --text-heading: #0f172a;
+      --text-muted: #64748b;
+      --emerald: #059669;
+      --emerald-glow: rgba(5, 150, 105, 0.12);
+      --indigo: #4f46e5;
+      --indigo-glow: rgba(79, 70, 229, 0.1);
+      --amber: #d97706;
+      --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at top center, #162036 0%, var(--bg-page) 65%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    html.light body {
+      background: radial-gradient(circle at top center, #e2e8f0 0%, var(--bg-page) 65%);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      color: var(--text-heading);
+      text-decoration: none;
+    }
+    .brand-icon {
+      font-size: 20px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: var(--bg-hover);
+      border-color: var(--emerald);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Header */
+    .hero {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-glow);
+      color: var(--emerald);
+      border: 1px solid var(--border-accent);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--text-heading);
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 40px; }
+    }
+
+    /* Authors */
+    .authors-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 32px;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .author-item {
+      text-align: center;
+    }
+    .author-name {
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+    .author-affil {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .orcid-link {
+      color: #a6c439;
+      text-decoration: none;
+      font-size: 11px;
+      margin-left: 3px;
+    }
+
+    /* Hero Buttons */
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(79, 70, 229, 0.5);
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    /* Main Grid: 2 Interactive Demos */
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .demos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: 768px) {
+      .demos-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .demo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .demo-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    .demo-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .demo-icon {
+      font-size: 32px;
+    }
+    .demo-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-citizen {
+      background: rgba(79, 70, 229, 0.15);
+      color: var(--indigo);
+      border: 1px solid rgba(79, 70, 229, 0.3);
+    }
+    .badge-research {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .demo-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+    }
+    .demo-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .demo-features {
+      list-style: none;
+      font-size: 12px;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .demo-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .demo-features li::before {
+      content: "✓";
+      color: var(--emerald);
+      font-weight: 800;
+    }
+
+    .btn-launch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-launch-citizen {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+    }
+    .btn-launch-citizen:hover {
+      box-shadow: 0 10px 24px rgba(79, 70, 229, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-launch-research {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+    }
+    .btn-launch-research:hover {
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.45);
+      transform: translateY(-1px);
+    }
+
+    /* Abstract Card */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+    }
+    .content-card h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 14px;
+    }
+    .content-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+    @media (min-width: 640px) {
+      .highlight-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .highlight-box {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .hl-val {
+      font-size: 20px;
+      font-weight: 900;
+      font-family: var(--font-mono);
+      color: var(--emerald);
+      margin-bottom: 4px;
+    }
+    .hl-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* BibTeX Box */
+    .bibtex-box {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-muted);
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.5;
+      position: relative;
+    }
+    .btn-copy {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-copy:hover {
+      border-color: var(--emerald);
+      color: var(--emerald);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .footer a {
+      color: var(--indigo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Navigation Bar -->
+  <nav class="top-nav">
+    <a href="#" class="brand">
+      <span class="brand-icon">🌀</span>
+      <span>Fractal Neural Synthesis</span>
+    </a>
+    <div class="nav-actions">
+      <!-- Language Toggle -->
+      <button id="btnLang" class="btn-nav" title="Switch Language / Dili Değiştir">
+        <span>🌐</span>
+        <span id="langLabel">Türkçe</span>
+      </button>
+
+      <!-- Theme Toggle -->
+      <button id="btnTheme" class="btn-nav" title="Toggle Light/Dark Theme">
+        <span id="themeIcon">☀️</span>
+        <span id="themeLabel">Light</span>
+      </button>
+
+      <!-- GitHub Stars / Link -->
+      <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank" class="btn-nav">
+        <span>⭐</span>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="badge-pill">
+      <span id="badgeText">Academic Preprint & Open Research</span>
+    </div>
+    <h1 id="heroTitle">
+      Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries
+    </h1>
+
+    <div class="authors-list">
+      <div class="author-item">
+        <div class="author-name">Volkan Dağlı</div>
+        <div class="author-affil">ITouch Systems, Turkey</div>
+      </div>
+      <div class="author-item">
+        <div class="author-name">
+          Zerrin Dağlı
+          <a href="https://orcid.org/0000-0001-9490-6465" target="_blank" class="orcid-link" title="ORCID ID">🆔</a>
+        </div>
+        <div class="author-affil">Mersin University, Turkey</div>
+      </div>
+      <div class="author-item">
+        <div class="author-name">Dağhan Dağlı</div>
+        <div class="author-affil">Toros Science College, Turkey</div>
+      </div>
+    </div>
+
+    <!-- Quick Action Links -->
+    <div class="hero-links">
+      <a href="docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf" target="_blank" class="btn-hero btn-primary">
+        <span>📄</span>
+        <span id="btnReadPdf">Read IEEE Paper (PDF)</span>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.22774935" target="_blank" class="btn-hero btn-secondary">
+        <span>🏛️</span>
+        <span>DOI: 10.5281/zenodo.22774935</span>
+      </a>
+      <a href="arxiv/Mandelbrot_Fractal_Paper_arXiv_Bundle.zip" class="btn-hero btn-secondary">
+        <span>📦</span>
+        <span id="btnZip">LaTeX Bundle (.ZIP)</span>
+      </a>
+      <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank" class="btn-hero btn-secondary">
+        <span>💻</span>
+        <span id="btnCode">Source Code</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Section: Interactive Live Laboratories -->
+  <section>
+    <div class="section-title">
+      <span>🚀</span>
+      <span id="labsTitle">Interactive Live Laboratories</span>
+    </div>
+    <p id="labsSubtitle" class="section-desc">
+      Explore the procedural fractal synthesis paradigm directly inside your browser. Both labs are 100% client-side, zero-dependency, and fully offline-capable.
+    </p>
+
+    <div class="demos-grid">
+      <!-- Card 1: Citizen & Public Experience Lab -->
+      <div class="demo-card">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">🎭</span>
+            <span class="demo-badge badge-citizen" id="badgeLab1">Public Experience</span>
+          </div>
+          <h3 class="demo-title" id="lab1Title">Citizen & Public Experience Lab</h3>
+          <p class="demo-text" id="lab1Desc">
+            An intuitive walkthrough demonstrating how procedural parameters derive decisions across 4 real-world scenarios: Smart Door (OR), Bank Vault (AND), Staircase Light (XOR), and Fire Alarm (NAND).
+          </p>
+          <ul class="demo-features" id="lab1Feat">
+            <li>Interactive biological neuron firing visualization</li>
+            <li>Dynamic zoom-level physics and visual guidance</li>
+            <li>Live comparison: Conventional LLM vs. Fractal Model</li>
+            <li>Bilingual TR / EN toggle with local preference storage</li>
+          </ul>
+        </div>
+        <a href="demos/interactive_lab.html" class="btn-launch btn-launch-citizen">
+          <span>▶</span>
+          <span id="btnLaunch1">Launch Public Lab (Full Screen)</span>
+        </a>
+      </div>
+
+      <!-- Card 2: 4-Quadrant Academic Visualizer -->
+      <div class="demo-card">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">🔬</span>
+            <span class="demo-badge badge-research" id="badgeLab2">Academic Research</span>
+          </div>
+          <h3 class="demo-title" id="lab2Title">128×128 4-Quadrant Research Lab</h3>
+          <p class="demo-text" id="lab2Desc">
+            Rigorous experimental environment evaluating 4-quadrant area integration, synaptic weight ($w_1, w_2, w_3$) extraction, threshold bias ($b$), and live truth-table accuracy.
+          </p>
+          <ul class="demo-features" id="lab2Feat">
+            <li>128×128 pixel-resolution Mandelbrot escape dynamics</li>
+            <li>Live truth table verification across all 4 logic gates</li>
+            <li>Interactive zoom scale exploration ($10^0$ to $10^4$)</li>
+            <li>One-click 24-byte memory dump download (.TXT)</li>
+          </ul>
+        </div>
+        <a href="demos/quadrant_visualizer.html" class="btn-launch btn-launch-research">
+          <span>▶</span>
+          <span id="btnLaunch2">Launch Research Lab (Full Screen)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Highlights & Metrics -->
+  <section class="content-card">
+    <h2 id="metricsTitle">Key Scientific Contributions & Metrics</h2>
+    <p id="metricsDesc">
+      Modern neural networks incur unsustainable memory bandwidth overhead ("the memory wall") by persisting billions of static parameters. Our methodology eliminates persistent tensor storage by harvesting weights dynamically from the boundary morphology of deterministic chaos.
+    </p>
+
+    <div class="highlight-grid">
+      <div class="highlight-box">
+        <div class="hl-val">24 B</div>
+        <div class="hl-lbl" id="hl1">Seed Metadata Storage</div>
+      </div>
+      <div class="highlight-box">
+        <div class="hl-val">0 B</div>
+        <div class="hl-lbl" id="hl2">Persistent Weight Matrix</div>
+      </div>
+      <div class="highlight-box">
+        <div class="hl-val">100%</div>
+        <div class="hl-lbl" id="hl3">Logic Gate Accuracy</div>
+      </div>
+      <div class="highlight-box">
+        <div class="hl-val">>99.99%</div>
+        <div class="hl-lbl" id="hl4">Memory Footprint Saved</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: BibTeX Citation -->
+  <section class="content-card">
+    <h2 id="citeTitle">Citation (BibTeX)</h2>
+    <p id="citeDesc">If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprint:</p>
+    <div class="bibtex-box" id="bibtexContent">@article{dagli2026mandelbrot,
+  title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
+  author={Da{\u{g}}l{\u{i}}, Volkan and Da{\u{g}}l{\u{i}}, Zerrin and Da{\u{g}}l{\u{i}}, Da{\u{g}}han},
+  journal={Zenodo Preprint},
+  year={2026},
+  doi={10.5281/zenodo.22774935},
+  url={https://doi.org/10.5281/zenodo.22774935}
+}</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      &copy; 2026 <strong>Mandelbrot Fractal Neural Synthesis</strong>. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-4.0</a>.
+    </p>
+    <p style="margin-top: 6px;">
+      Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> &bull; Project Repository: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">pCwOrM/mandelbrot-fractal-neural-synthesis</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // Multilingual Engine (EN / TR)
+  const I18N = {
+    en: {
+      langLabel: "Türkçe",
+      themeLight: "Light",
+      themeDark: "Dark",
+      badgeText: "Academic Preprint & Open Research",
+      heroTitle: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries",
+      btnReadPdf: "Read IEEE Paper (PDF)",
+      btnZip: "LaTeX Bundle (.ZIP)",
+      btnCode: "Source Code",
+      labsTitle: "Interactive Live Laboratories",
+      labsSubtitle: "Explore the procedural fractal synthesis paradigm directly inside your browser. Both labs are 100% client-side, zero-dependency, and fully offline-capable.",
+      badgeLab1: "Public Experience",
+      lab1Title: "Citizen & Public Experience Lab",
+      lab1Desc: "An intuitive walkthrough demonstrating how procedural parameters derive decisions across 4 real-world scenarios: Smart Door (OR), Bank Vault (AND), Staircase Light (XOR), and Fire Alarm (NAND).",
+      lab1Feat: [
+        "Interactive biological neuron firing visualization",
+        "Dynamic zoom-level physics and visual guidance",
+        "Live comparison: Conventional LLM vs. Fractal Model",
+        "Bilingual TR / EN toggle with local preference storage"
+      ],
+      btnLaunch1: "Launch Public Lab (Full Screen)",
+      badgeLab2: "Academic Research",
+      lab2Title: "128×128 4-Quadrant Research Lab",
+      lab2Desc: "Rigorous experimental environment evaluating 4-quadrant area integration, synaptic weight (w1, w2, w3) extraction, threshold bias (b), and live truth-table accuracy.",
+      lab2Feat: [
+        "128×128 pixel-resolution Mandelbrot escape dynamics",
+        "Live truth table verification across all 4 logic gates",
+        "Interactive zoom scale exploration (10⁰ to 10⁴)",
+        "One-click 24-byte memory dump download (.TXT)"
+      ],
+      btnLaunch2: "Launch Research Lab (Full Screen)",
+      metricsTitle: "Key Scientific Contributions & Metrics",
+      metricsDesc: "Modern neural networks incur unsustainable memory bandwidth overhead ('the memory wall') by persisting billions of static parameters. Our methodology eliminates persistent tensor storage by harvesting weights dynamically from the boundary morphology of deterministic chaos.",
+      hl1: "Seed Metadata Storage",
+      hl2: "Persistent Weight Matrix",
+      hl3: "Logic Gate Accuracy",
+      hl4: "Memory Footprint Saved",
+      citeTitle: "Citation (BibTeX)",
+      citeDesc: "If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprint:"
+    },
+    tr: {
+      langLabel: "English",
+      themeLight: "Açık",
+      themeDark: "Koyu",
+      badgeText: "Akademik Ön Baskı & Açık Bilim Araştırması",
+      heroTitle: "Mandelbrot Fraktal Nöral Sentezi: Sıfır-Bellek Prosedürel Ağırlık Türetimi ve Doğrusal Olmayan Karar Sınırları",
+      btnReadPdf: "IEEE Makalesini Oku (PDF)",
+      btnZip: "LaTeX Paketi (.ZIP)",
+      btnCode: "Kaynak Kodlar",
+      labsTitle: "İnteraktif Canlı Laboratuvarlar",
+      labsSubtitle: "Fraktal nöral sentez paradigmasını doğrudan tarayıcınızda deneyimleyin. Her iki laboratuvar da %100 istemci taraflı, sıfır bağımlılıklı ve internetsiz çalışır.",
+      badgeLab1: "Halk Deneyimi",
+      lab1Title: "Halk & Son Kullanıcı Deneyim Laboratuvarı",
+      lab1Desc: "Fraktal parametrelerin 4 gerçek hayat senaryosunda (Akıllı Kapı, Banka Kasası, Merdiven Lambası, Yangın Alarmı) nasıl karar ürettiğini gösteren sezgisel rehber.",
+      lab1Feat: [
+        "İnteraktif biyolojik nöron ateşleme görselleştirmesi",
+        "Dinamik büyüteç fiziği ve canlı rehberlik",
+        "Canlı kıyaslama: Klasik LLM vs. Fraktal Modelimiz",
+        "Çift dilli (TR / EN) geçiş ve tarayıcı hafızası"
+      ],
+      btnLaunch1: "Halk Laboratuvarını Aç (Tam Ekran)",
+      badgeLab2: "Akademik Araştırma",
+      lab2Title: "128×128 4-Quadrant Araştırma Laboratuvarı",
+      lab2Desc: "4-çeyrek alan entegrasyonu, sinaptik ağırlık (w1, w2, w3) türetimi, eşik sapması (b) ve canlı doğruluk tablosunu inceleyen teknik laboratuvar.",
+      lab2Feat: [
+        "128×128 piksel çözünürlükte Mandelbrot kaçış dinamiği",
+        "Tüm mantık kapılarında canlı doğruluk tablosu testi",
+        "Genişletilebilir fraktal büyüteç kontrolü (10⁰ - 10⁴)",
+        "Tek tıkla 24 baytlık sistem bellek kütüğü indirme (.TXT)"
+      ],
+      btnLaunch2: "Araştırma Laboratuvarını Aç (Tam Ekran)",
+      metricsTitle: "Temel Bilimsel Katkılar ve Metrikler",
+      metricsDesc: "Mevcut derin öğrenme modelleri milyarlarca parametreyi RAM'de statik tutarak aşırı bellek ve enerji darboğazına yol açar. Geliştirdiğimiz yöntem, deterministik kaosun geometrisinden anlık ağırlık türeterek kalıcı tensör depolamasını ortadan kaldırır.",
+      hl1: "Kalıcı Koordinat Tohumu",
+      hl2: "Kalıcı Ağırlık Matrisi",
+      hl3: "Mantık Kapısı Başarımı",
+      hl4: "Bellek Tasarruf Oranı",
+      citeTitle: "Akademik Atıf (BibTeX)",
+      citeDesc: "Bu çalışmayı, fraktal sentez yöntemini veya interaktif laboratuvarları çalışmalarınızda kullanırsanız lütfen resmi preprint kaydımıza atıfta bulununuz:"
+    }
+  };
+
+  let currentLang = localStorage.getItem('widget_lang') || 'en';
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('widget_lang', lang);
+    document.documentElement.lang = lang;
+    const d = I18N[lang];
+
+    document.getElementById('langLabel').innerText = d.langLabel;
+    document.getElementById('badgeText').innerText = d.badgeText;
+    document.getElementById('heroTitle').innerText = d.heroTitle;
+    document.getElementById('btnReadPdf').innerText = d.btnReadPdf;
+    document.getElementById('btnZip').innerText = d.btnZip;
+    document.getElementById('btnCode').innerText = d.btnCode;
+
+    document.getElementById('labsTitle').innerText = d.labsTitle;
+    document.getElementById('labsSubtitle').innerText = d.labsSubtitle;
+    document.getElementById('badgeLab1').innerText = d.badgeLab1;
+    document.getElementById('lab1Title').innerText = d.lab1Title;
+    document.getElementById('lab1Desc').innerText = d.lab1Desc;
+    document.getElementById('btnLaunch1').innerText = d.btnLaunch1;
+
+    document.getElementById('badgeLab2').innerText = d.badgeLab2;
+    document.getElementById('lab2Title').innerText = d.lab2Title;
+    document.getElementById('lab2Desc').innerText = d.lab2Desc;
+    document.getElementById('btnLaunch2').innerText = d.btnLaunch2;
+
+    const f1 = document.getElementById('lab1Feat');
+    f1.innerHTML = d.lab1Feat.map(item => `<li>${item}</li>`).join('');
+
+    const f2 = document.getElementById('lab2Feat');
+    f2.innerHTML = d.lab2Feat.map(item => `<li>${item}</li>`).join('');
+
+    document.getElementById('metricsTitle').innerText = d.metricsTitle;
+    document.getElementById('metricsDesc').innerText = d.metricsDesc;
+    document.getElementById('hl1').innerText = d.hl1;
+    document.getElementById('hl2').innerText = d.hl2;
+    document.getElementById('hl3').innerText = d.hl3;
+    document.getElementById('hl4').innerText = d.hl4;
+
+    document.getElementById('citeTitle').innerText = d.citeTitle;
+    document.getElementById('citeDesc').innerText = d.citeDesc;
+
+    // Theme label sync
+    const isDark = document.documentElement.classList.contains('dark');
+    document.getElementById('themeLabel').innerText = isDark ? d.themeLight : d.themeDark;
+  }
+
+  document.getElementById('btnLang').addEventListener('click', () => {
+    applyLanguage(currentLang === 'en' ? 'tr' : 'en');
+  });
+
+  // Theme Toggle
+  const btnTheme = document.getElementById('btnTheme');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+
+  function applyTheme(isDark) {
+    const d = I18N[currentLang] || I18N.en;
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      themeIcon.innerText = "☀️";
+      themeLabel.innerText = d.themeLight;
+      localStorage.setItem('widget_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      themeIcon.innerText = "🌙";
+      themeLabel.innerText = d.themeDark;
+      localStorage.setItem('widget_theme', 'light');
+    }
+  }
+
+  btnTheme.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    applyTheme(!isDark);
+  });
+
+  // Initialize
+  applyLanguage(currentLang);
+  const savedTheme = localStorage.getItem('widget_theme');
+  applyTheme(savedTheme !== 'light');
+</script>
+</body>
+</html>
