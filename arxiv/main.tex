@@ -43,7 +43,7 @@
 \vspace{0.2cm}
 \noindent\textbf{Keywords:} Fractal Neural Synthesis, Mandelbrot Set, Procedural Weight Generation, Zero-Storage AI, Non-Linear Decision Boundaries, Escape Horizon, HyperNEAT.
 
-\footnotetext{Source code, replication scripts, and standalone interactive demonstration available at: \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}}
+\footnotetext{Source code, replication scripts, empirical benchmark datasets, and permanent research archive: GitHub repository: \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}; Zenodo DOI: \href{https://doi.org/10.5281/zenodo.22774935}{10.5281/zenodo.22774935}~\cite{dagli2026mandelbrot}; Interactive demonstration suite: \url{https://itouch.com.tr/lib/neural-synthesis/interactive_lab.html}.}
 
 \section{Introduction}
 Deep neural networks have revolutionized natural language processing, computer vision, and autonomous systems \cite{vaswani2017attention}. A foundational assumption of this architecture is that every synaptic weight must be stored as an unconstrained, explicit numerical variable within a dense tensor matrix. For state-of-the-art models exceeding 70 billion parameters, memory footprints surpass 140 GB of VRAM simply to retain weights in memory, triggering a fundamental ``memory wall'' in hardware execution.
@@ -71,11 +71,11 @@ In this work, we address a primary research hypothesis: \textit{Can the weights 
 \section{The Escape Horizon \& Error Boundary Principle}
 A key cognitive motivation of this paper is the distinction between uniform optimization and boundary-driven learning. In human motor control \cite{shadmehr2010error}, an apprentice hammering a nail does not acquire precision merely by averaging thousands of identical trials. A catastrophic misstrike to the thumb establishes an immediate, sharp \textit{Error Boundary} in the motor cortex. By demarcating the forbidden zone, the motor system achieves calibrated mastery in a fraction of trials ($300$ vs. $1000$ iterations).
 
-Mathematically, the Mandelbrot set $\mathcal{M}$ provides the canonical embodiment of this principle:
+Mathematically, the Mandelbrot set $\mathcal{M}$ provides the canonical analytical embodiment of this principle. By the escape radius theorem, if $|z_k| > 2$ and $|z_k| \ge |c|$ for some iteration $k$, then $|z_{k+1}| \ge |z_k|^2 - |c| > 2|z_k| - |z_k| = |z_k|$, guaranteeing by induction that $|z_n| \to \infty$ as $n \to \infty$. Consequently, the escape boundary:
 \begin{equation}
-\partial \mathcal{M} = \{ c \in \mathbb{C} : \limsup_{n \to \infty} |z_n| = 2.0 \}
+\partial \mathcal{M} = \left\{ c \in \mathbb{C} : \limsup_{n \to \infty} |z_n| = 2.0 \right\}
 \end{equation}
-The boundary $\partial \mathcal{M}$ is the exact topological demarcation between homeostatic stability (bounded orbits, black interior) and chaotic divergence (escaping orbits, colorful exterior). Rather than learning weights via unconstrained stochastic gradient descent across millions of steps, our architecture directly samples from this intrinsic boundary of stability, transforming topological escape thresholds into robust neural decision planes.
+is an exact topological frontier separating asymptotic boundedness (topological core) from runaway divergence. Rather than learning weights via unconstrained stochastic gradient descent across millions of steps, our architecture directly samples from this intrinsic boundary of stability, transforming topological escape thresholds into robust neural decision planes.
 
 \begin{figure}[t]
 \centering
@@ -87,52 +87,71 @@ The boundary $\partial \mathcal{M}$ is the exact topological demarcation between
 \section{Mathematical Formulation}
 
 \subsection{Mandelbrot Dynamical System}
-Consider the sequence in the complex plane $\mathbb{C}$ initialized at the origin:
+Consider the quadratic recurrence in the complex plane $\mathbb{C}$ initialized from the origin:
 \begin{equation}
 z_0 = 0, \quad z_{n+1} = z_n^2 + c, \quad c = c_x + i c_y \in \mathbb{C}
 \end{equation}
-The Mandelbrot set $\mathcal{M}$ consists of those points $c$ for which the sequence remains bounded:
+The Mandelbrot set $\mathcal{M}$ comprises all complex parameter values $c$ whose orbit remains permanently bounded:
 \begin{equation}
 \mathcal{M} = \left\{ c \in \mathbb{C} : \limsup_{n \to \infty} |z_n| \le 2.0 \right\}
 \end{equation}
+For computational synthesis, we truncate evaluation at a maximal iteration cutoff $M_{\text{max}} = 70$. The escape-time index function is defined as:
+\begin{equation}
+K(c) = \min \left\{ n \in \{1, 2, \dots, M_{\text{max}}\} : |z_n(c)| > 2.0 \right\}
+\end{equation}
+with $K(c) = M_{\text{max}}$ if $|z_n(c)| \le 2.0$ for all $n \le M_{\text{max}}$. The binary indicator function for the non-escaping interior core (``dark area'') is:
+\begin{equation}
+I(c) = \begin{cases} 1, & \text{if } K(c) = M_{\text{max}} \\ 0, & \text{if } K(c) < M_{\text{max}} \end{cases}
+\end{equation}
 
 \subsection{Numerical Sampling and Dark Area Integration}
-Because $\mathcal{M}$ possesses non-rectifiable fractal boundaries, its Lebesgue area across arbitrary sub-windows cannot be expressed in closed form. We apply numerical Monte Carlo integration over a discrete grid of resolution $N \times N$, centered at $(c_x, c_y)$ with scale $s = 1 / \text{zoom}$:
+Because $\mathcal{M}$ possesses a non-rectifiable fractal boundary of Hausdorff dimension 2, the area of arbitrary sub-windows cannot be expressed analytically. We perform numerical integration over a uniform discrete grid of resolution $N \times N$, centered at $(c_x, c_y)$ with scale $s = 1 / \text{zoom}$:
 \begin{equation}
 C_{j,k} = \left( c_x - s + \frac{2s \cdot k}{N} \right) + i \left( c_y - s + \frac{2s \cdot j}{N} \right)
 \end{equation}
-Each point is evaluated up to maximum iterations $M_{\text{max}} = 70$. Points that do not exceed $|z| > 2.0$ are classified as the non-escaping internal core (``dark area''):
+for row $j \in \{0, \dots, N-1\}$ and column $k \in \{0, \dots, N-1\}$. The overall dark area density $R_{\text{black}}$ across the entire patch is:
 \begin{equation}
-I_{j,k} = \begin{cases} 1, & \text{if } |z_{M_{\text{max}}}(C_{j,k})| \le 2.0 \\ 0, & \text{otherwise} \end{cases}
-\end{equation}
-The patch black ratio $R_{\text{black}}$ is given by:
-\begin{equation}
-R_{\text{black}} = \frac{1}{N^2} \sum_{j=0}^{N-1} \sum_{k=0}^{N-1} I_{j,k}, \quad R_{\text{black}} \in [0.0, 1.0]
+R_{\text{black}} = \frac{1}{N^2} \sum_{j=0}^{N-1} \sum_{k=0}^{N-1} I(C_{j,k}), \quad R_{\text{black}} \in [0.0, 1.0]
 \end{equation}
 
-\subsection{4-Quadrant Multi-Weight Extraction}
-To prevent querying redundant independent windows for every individual synapse, a single $128 \times 128$ window is partitioned into four equal sub-quadrants of size $64 \times 64$ (Fig. \ref{fig:quadrant}):
-\begin{itemize}
-    \item $Q_1$ (Top-Left) $\implies w_1$
-    \item $Q_2$ (Top-Right) $\implies w_2$
-    \item $Q_3$ (Bottom-Left) $\implies w_3$
-    \item $Q_4$ (Bottom-Right) $\implies b$ (Neuron Bias)
-\end{itemize}
-Parameters are mapped to dynamic operational ranges via linear scaling:
+\subsection{4-Quadrant Multi-Weight Extraction Matrix Formulation}
+To derive multi-dimensional synaptic configurations without querying redundant independent coordinate patches, each $N \times N$ ($N=128$) grid is partitioned into four contiguous, non-overlapping quadrants of dimension $\frac{N}{2} \times \frac{N}{2}$ (Fig. \ref{fig:quadrant}):
 \begin{equation}
-\theta_m = (R_{Q_m} - 0.5) \times \gamma, \quad \gamma = 6.0 \implies \theta_m \in [-3.0, +3.0]
+R_{Q_m} = \frac{4}{N^2} \sum_{(j,k) \in Q_m} I(C_{j,k}), \quad m \in \{1, 2, 3, 4\}
 \end{equation}
+where index regions are explicitly bounded:
+\begin{align}
+Q_1 &= \left\{ (j,k) : 0 \le j < \frac{N}{2}, \; 0 \le k < \frac{N}{2} \right\} \implies w_1 \\
+Q_2 &= \left\{ (j,k) : 0 \le j < \frac{N}{2}, \; \frac{N}{2} \le k < N \right\} \implies w_2 \\
+Q_3 &= \left\{ (j,k) : \frac{N}{2} \le j < N, \; 0 \le k < \frac{N}{2} \right\} \implies w_3 \\
+Q_4 &= \left\{ (j,k) : \frac{N}{2} \le j < N, \; \frac{N}{2} \le k < N \right\} \implies b
+\end{align}
+Let $\mathbf{R}_Q = [R_{Q_1}, R_{Q_2}, R_{Q_3}, R_{Q_4}]^T \in [0,1]^4$. The synthesized neural parameter vector $\boldsymbol{\theta} = [w_1, w_2, w_3, b]^T \in \mathbb{R}^4$ is derived via the affine projection operator:
+\begin{equation}
+\boldsymbol{\theta} = \gamma \left( \mathbf{R}_Q - \frac{1}{2} \mathbf{1}_4 \right)
+\end{equation}
+where $\mathbf{1}_4 = [1, 1, 1, 1]^T$ and $\gamma = 6.0$ establishes the operational dynamic range $\theta_m \in [-3.0, +3.0]$, centered symmetrically around zero.
+
+\subsection{Perceptron Activation and Decision Rules}
+The synthesized weights govern a standard sigmoidal decision unit processing input vectors $\mathbf{x} = [x_1, x_2]^T$:
+\begin{equation}
+a(\mathbf{x}) = w_1 x_1 + w_2 x_2 + b = \mathbf{w}^T \mathbf{x} + b
+\end{equation}
+\begin{equation}
+y = \sigma(a(\mathbf{x})) = \frac{1}{1 + e^{-a(\mathbf{x})}}, \quad \hat{y} = \mathbb{I}(y \ge 0.5)
+\end{equation}
+The decision boundary corresponds to the zero-activation hyperplane $\mathbf{w}^T \mathbf{x} + b = 0$.
 
 \subsection{The 24-Byte Storage Model}
-In conventional architectures, storing a decision cell with three weights and a bias requires four independent 32-bit floats ($16$ bytes), scaling linearly with network depth. In complex models (e.g., $70\text{B}$ LLMs), weights occupy $>140\text{ GB}$ of static VRAM. 
+In conventional architectures, storing a decision cell with three weights and a bias requires four independent 32-bit floating-point scalars ($16$ bytes), scaling linearly with network depth ($O(W)$). In massive deep networks (e.g., $70\text{B}$ LLMs), weights consume $>140\text{ GB}$ of static memory.
 
-In our procedural synthesis engine, the state of an entire functional unit is defined exclusively by a 3-tuple coordinate:
+In our procedural fractal synthesis engine, the state of an entire functional neural unit is defined exclusively by a 3-parameter coordinate tuple:
 \begin{equation}
 \Theta = (c_x, c_y, \log_{10} z) \in \mathbb{R}^3
 \end{equation}
 Allocating IEEE 754 double-precision (64-bit) floats yields:
 \begin{equation}
-\text{Memory Footprint} = 3 \times 8 = 24\text{ Bytes (192 bits)}
+\text{Memory Footprint} = 3 \times 8\text{ bytes} = 24\text{ Bytes (192 bits)}
 \end{equation}
 The persistent weight tensor matrix is exactly \textbf{0 Bytes}. All synaptic values are synthesized procedurally on demand, completely circumventing persistent tensor storage.
 
@@ -176,7 +195,11 @@ As summarized in Table \ref{tab:res} and Figure \ref{fig:res}, $128 \times 128$ 
 \end{figure}
 
 \subsection{Optimization of Linear Logic Gates}
-We applied evolutionary random-walk search across candidate coordinates and zoom levels to solve the four fundamental logic gates.
+We applied a coordinate random-walk evolutionary search over candidate parameter tuples $\Theta = (c_x, c_y, \log_{10} z)$ to synthesize decision boundaries for the four fundamental logic gates. The search operates with a population of $P = 50$ candidate states, evaluating candidate fitness via the Mean Squared Error:
+\begin{equation}
+\mathcal{L}(\Theta) = \frac{1}{4} \sum_{k=1}^4 \left( y_k(\Theta) - t_k \right)^2
+\end{equation}
+where $t_k \in \{0, 1\}$ denotes target boolean outputs. Mutations apply zero-mean Gaussian perturbations to spatial coordinates ($\sigma_c = 10^{-4} \cdot 10^{-\log_{10} z}$) and zoom scale ($\sigma_z = 0.05$). Optimization terminates when empirical classification accuracy achieves 100\% (0 classification error across all truth table inputs).
 
 \begin{table}[t]
 \centering
@@ -237,18 +260,31 @@ The composite network achieves \textbf{100\% empirical accuracy} on XOR, produci
 \section{Theoretical Bottlenecks and Challenges}
 A rigorous assessment reveals four primary limitations:
 \begin{enumerate}
-    \item \textbf{Non-Differentiability:} The step-counting escape metric produces a piecewise-constant function whose partial derivatives $\frac{\partial R}{\partial c_x}$ are zero almost everywhere and undefined at fractal boundaries. Standard gradient backpropagation cannot navigate this landscape directly without soft-escape approximations.
+    \item \textbf{Non-Differentiability:} The step-counting escape metric produces a piecewise-constant function whose partial derivatives $\frac{\partial R}{\partial c_x}$ are zero almost everywhere and undefined at fractal boundaries. Replacing the hard escape criterion with a temperature-scaled soft-escape formulation:
+    \begin{equation}
+    I_{\text{soft}}(c; \tau) = \frac{1}{1 + \exp\left( -\frac{M_{\text{max}} - K(c)}{\tau} \right)}
+    \end{equation}
+    (where $\tau > 0$ controls transition smoothness) yields non-zero gradients $\nabla_\Theta \mathcal{L}$, enabling hybrid gradient-based optimization in future architectures.
     \item \textbf{Computational Latency:} Querying memory in conventional GPUs requires $O(1)$ clock cycles, whereas synthesizing a $128 \times 128$ Mandelbrot patch on CPUs demands $O(N^2 \cdot M_{\text{max}})$ operations ($\approx 1.1 \times 10^6$ FLOPS).
     \item \textbf{Chaotic Sensitivity (Lyapunov Instability):} Near the boundary, perturbations on the order of $\Delta c \sim 10^{-7}$ can induce drastic shifts in parameter values, creating rugged optimization fitness surfaces (Fig. \ref{fig:zoom}).
     \item \textbf{Saturation:} In interior hyperbolic components or exterior basins, the black ratio saturates at $1.0$ or $0.0$, eliminating parameter diversity.
 \end{enumerate}
 
-\section{Future Research & Hardware Horizons}
-\textbf{Differentiable Soft-Escape Formulations:} Replacing the hard boolean test $|z| > 2.0$ with a temperature-scaled continuous thresholding activation enables automatic differentiation via standard autograd engines.
+\section{Future Research \& Hardware Horizons}
+\textbf{Differentiable Soft-Escape Formulations:} Transitioning to soft-escape sigmoid kernels allows end-to-end backpropagation directly through fractal coordinate space.
 
-\textbf{Photonic & Optical Co-processors:} Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction ($< 1\text{ ns}$) with zero electrical resistance and zero thermal dissipation.
+\textbf{Photonic \& Optical Co-processors:} Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction ($< 1\text{ ns}$) with zero electrical resistance and zero thermal dissipation.
 
-\textbf{Steganographic & Obfuscated AI:} Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.
+\textbf{Steganographic \& Obfuscated AI:} Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.
+
+\section{Data, Code, and Reproducibility}
+To ensure complete open-science verifiability and compliance with rigorous replication standards, all simulation scripts, raw benchmark logs, figure generation pipelines, and interactive visualization suites are released under the MIT License:
+\begin{itemize}
+    \item \textbf{GitHub Repository:} \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}
+    \item \textbf{Permanent Research Archive:} Zenodo DOI \href{https://doi.org/10.5281/zenodo.22774935}{10.5281/zenodo.22774935}~\cite{dagli2026mandelbrot}
+    \item \textbf{Interactive Demonstration Lab:} \url{https://itouch.com.tr/lib/neural-synthesis/interactive_lab.html}
+\end{itemize}
+Every empirical figure and table in this paper is directly verifiable via dedicated scripts in the repository (\texttt{python -m src.evaluation}).
 
 \section{Conclusion}
 This paper establishes that fractal geometry can serve as a functional, multi-dimensional parameter generation engine for artificial neural networks. By validating 4-Quadrant extraction, establishing the $128 \times 128$ resolution standard, proving 24-byte zero-storage operation, and solving non-linear decision tasks with 100\% empirical accuracy, this work provides a rigorous foundation for procedural, chaos-driven neural computing.
