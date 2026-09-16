@@ -1,0 +1,50 @@
+<h1>Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries</h1>
+
+<h2>What's New in Version 2.0 (Major Revision &amp; Q1 Readiness)</h2>
+<ul>
+  <li><strong>Systems Trade-Off Framing:</strong> Reframed the central research question from raw parameter fitting to fundamental systems architecture: trading deterministic local compute (<em>O(M)</em> escape iterations) for extreme memory footprint elimination (&gt;99.99999998% reduction).</li>
+  <li><strong>Formal Algorithmic Specification:</strong> Added formal pseudocode (<em>Algorithm 1: Coordinate-Space Evolutionary Synthesis</em>) defining deterministic spatial exploration, quadrant area integration, and synaptic mapping.</li>
+  <li><strong>Quadtree Tensor Scalability (Section IV-F):</strong> Introduced multi-scale 2<sup>p</sup> &times; 2<sup>p</sup> recursive spatial partitioning and seed-offset generation to scale synthesis from single neurons to dense weight matrices (<code>W &isin; &reals;<sup>d_out &times; d_in</sup></code>).</li>
+  <li><strong>Non-Linear Topological Context:</strong> Grounded the non-linear XOR solution within Minsky &amp; Papert's (1969) perceptron limitations.</li>
+  <li><strong>Bilingual Standalone Labs (TR / EN):</strong> Both interactive labs now feature client-side Turkish/English bilingual toggle switches with localStorage persistence.</li>
+</ul>
+
+<hr>
+
+<h2>English Abstract</h2>
+<p>
+Modern deep learning architectures store billions or trillions of parameters as independent floating-point scalars across dense tensor arrays, trained via backpropagation. While exceptionally capable, this paradigm incurs severe storage footprints, memory bandwidth bottlenecks (&ldquo;the memory wall&rdquo;), and excessive energy consumption.
+</p>
+<p>
+In this work, we propose and empirically validate an alternative weight generation paradigm: deriving synaptic weights and threshold biases procedurally from the non-linear visual morphology of the Mandelbrot fractal set. By specifying a 3-parameter coordinate tuple (<code>cx</code>, <code>cy</code>, <code>zoom</code>) in the complex plane, a 128&times;128 pixel patch is sampled via the quadratic escape recurrence <code>z = z<sup>2</sup> + c</code>. Using our 4-Quadrant Partitioning method, non-escaping dark areas directly determine synaptic weights and biases.
+</p>
+
+<h3>Key Results:</h3>
+<ol>
+  <li><strong>128&times;128 resolution</strong> eliminates discretization noise within 0.08% of 256&times;256 while executing 15&times; faster (~15.6 ms).</li>
+  <li>All fundamental linear logic gates (<strong>AND, OR, NAND, NOR</strong>) achieved 100% accuracy.</li>
+  <li>The historically non-linear <strong>XOR problem</strong> was resolved with 100% accuracy using a 2-layer composite fractal network.</li>
+  <li>An entire functional decision cell requires <strong>ZERO persistent weight tensors</strong>, retaining only 24 bytes of coordinate metadata, yielding <strong>&gt;99.99999998% memory reduction</strong> compared to conventional weight arrays.</li>
+  <li>The <strong>&ldquo;Escape Horizon Principle&rdquo;</strong> links biological motor error boundaries (e.g., mastering hammering or balance via catastrophic edge feedback) to the topological boundary of the Mandelbrot set.</li>
+</ol>
+
+<hr>
+
+<h2>Genişletilmiş Türkçe Özet (Extended Turkish Abstract)</h2>
+<p>
+Bu çalışma, derin öğrenme modellerinde milyonlarca parametreyi bellek çiplerinde statik sayılar olarak saklamak yerine; deterministik kaosun ve fraktal geometrinin en bilinen örneği olan Mandelbrot kümesinden (<code>z = z<sup>2</sup> + c</code>) ihtiyaç anında canlı türeten yeni bir yapay zeka paradigmasını teorik ve deneysel olarak kanıtlamaktadır.
+</p>
+
+<h3>Temel Bulgular ve Yenilikler:</h3>
+<ol>
+  <li><strong>24-Bayt Sıfır-Bellek Modeli:</strong> Bir karar hücresi için hiçbir tensör matrisi saklanmaz. Yalnızca 24 baytlık (üç Float64 koordinat: <code>cx</code>, <code>cy</code>, <code>zoom</code>) bir konum tutularak %99.99999998+ bellek tasarrufu sağlanır.</li>
+  <li><strong>Hata Kümesi ve Kaçış Ufku İlkesi:</strong> İnsanın çekiç vururken eline 1-2 kez vurup canı yandığında hata sınırını kilitleyerek 1000 yerine 300 adımda öğrenmesi gibi; Mandelbrot'un matematiksel kaçış sınırı da yapay nörona en keskin karar eşiğini doğal olarak sunar.</li>
+  <li><strong>%100 Doğruluk:</strong> OR, AND, NAND, NOR kapıları tek nöronla; yapay zeka tarihinde tek nöronun çözemediği ünlü XOR problemi ise 2 katmanlı kompozit fraktal ağımızla %100 doğrulukla çözülmüştür.</li>
+  <li><strong>Müstakil Açık Kaynak Laboratuvarı:</strong> Çalışma, hiçbir sunucuya veya harici kütüphaneye ihtiyaç duymadan internetsiz çalışan, Türkçe/İngilizce çift dilli interaktif web simülatörleriyle doğrulanmıştır.</li>
+</ol>
+
+<p>
+<strong>Official GitHub Repository:</strong> <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a><br>
+<strong>Live Interactive Labs:</strong> <a href="https://itouch.com.tr/lib/neural-synthesis/" target="_blank">https://itouch.com.tr/lib/neural-synthesis/</a><br>
+<strong>License:</strong> Creative Commons Attribution 4.0 International (CC-BY-4.0)
+</p>
