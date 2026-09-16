@@ -91,8 +91,11 @@ mandelbrot-fractal-neural-synthesis/
 │   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Tek tıkla yükleme paketi
 │
 ├── docs/                               # Halka Anlatım & Monograf Belgeleri
-│   ├── Halka_Anlatim_Rehberi.html      # Halka sunum rehberi web arayüzü
-│   ├── Halka_Anlatim_Rehberi.pdf       # Yazdırılabilir A4 sunum rehberi (PDF)
+│   ├── Halk_Icin_Kilavuz.html          # Doğrudan halk için popüler bilim kılavuzu (Web arayüzü)
+│   ├── Halk_Icin_Kilavuz.pdf           # Doğrudan halk için kılavuz (Yazdırılabilir A4 PDF)
+│   ├── halk_icin_kilavuz.md            # Halk kılavuzu metin kaynağı
+│   ├── Halka_Anlatim_Rehberi.html      # Konuşmacı/Sunucu halka sunum rehberi web arayüzü
+│   ├── Halka_Anlatim_Rehberi.pdf       # Konuşmacı/Sunucu sunum rehberi (Yazdırılabilir A4 PDF)
 │   ├── halka_anlatim_rehberi.md        # Sunum rehberi metin kaynağı
 │   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Geniş akademik teknik monograf
 │   └── Mandelbrot_Akademik_Teknik_Raporu.pdf  # A4 formatında monograf PDF'i

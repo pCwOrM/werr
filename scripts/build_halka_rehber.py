@@ -42,7 +42,7 @@ md_content = """# Fraktal Yapay Zekayı Halka ve Son Kullanıcıya Anlatım Rehb
 
 ## 3. Adım Adım Çalışma Akışı (Girdi &rarr; Hesaplama &rarr; Çıktı)
 
-Halka açık arayüzümüzü (`fraktal_noron_halk_arayuzu.html`) gösterirken izleyeceğiniz sıra:
+Halka açık arayüzümüzü (`interactive_lab.html`) gösterirken izleyeceğiniz sıra:
 
 1. **Adım 1: Girdi Gelir (Yapay Zekanın Gözleri):**
    * Örnek: Akıllı kapıda "Kart okutuldu mu? (Evet=1 / Hayır=0)" ve "Yüz tanındı mı? (Evet=1 / Hayır=0)".
@@ -98,7 +98,7 @@ Halka açık arayüzümüzü (`fraktal_noron_halk_arayuzu.html`) gösterirken iz
 
 ## 6. Canlı Sunum Senaryosu (5 Dakikalık Akış)
 
-1. **Giriş (1. Dk):** `fraktal_noron_halk_arayuzu.html` uygulamasını büyük ekranda açın. "Bugün size ekran kartlarını ısıtmadan düşünen bir nöron göstereceğim" deyin.
+1. **Giriş (1. Dk):** `interactive_lab.html` uygulamasını büyük ekranda açın. "Bugün size ekran kartlarını ısıtmadan düşünen bir nöron göstereceğim" deyin.
 2. **Girdileri Gösterin (2. Dk):** Akıllı kapı senaryosunu açın. "Kart Yok, Yüz Yok" yapın. Ekranda nöronun kırmızı söndüğünü ve kapının kilitli olduğunu gösterin.
 3. **Fraktalı Açıklayın (3. Dk):** Ortadaki Mandelbrot görseline işaret edin. "Bu resmi tanıdınız mı? İşte bizim yapay zekamız tüm aklını bu resmin içindeki siyah adalardan alıyor" deyin.
 4. **Tetikleyin (4. Dk):** Giriş Kartı butonuna basın ("VAR"). Kablolardan yeşil elektriğin aktığını, nöronun "ATEŞLENDİ!" diye parladığını ve kapının "AÇILDI 🟢" olduğunu gösterin.

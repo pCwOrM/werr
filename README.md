@@ -91,9 +91,12 @@ mandelbrot-fractal-neural-synthesis/
 │   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Drag-and-drop submission bundle
 │
 ├── docs/                               # Outreach & Academic Monograph Documents
-│   ├── Halka_Anlatim_Rehberi.html      # Public presentation guide
-│   ├── Halka_Anlatim_Rehberi.pdf       # Printable A4 public presentation PDF
-│   ├── halka_anlatim_rehberi.md        # Public guide markdown source
+│   ├── Halk_Icin_Kilavuz.html          # Direct citizen handbook (interactive web app)
+│   ├── Halk_Icin_Kilavuz.pdf           # Direct citizen handbook (printable A4 PDF)
+│   ├── halk_icin_kilavuz.md            # Direct citizen handbook markdown source
+│   ├── Halka_Anlatim_Rehberi.html      # Speaker/Presenter guide for public talks
+│   ├── Halka_Anlatim_Rehberi.pdf       # Speaker/Presenter guide (printable A4 PDF)
+│   ├── halka_anlatim_rehberi.md        # Speaker/Presenter guide markdown source
 │   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Full academic technical report
 │   └── Mandelbrot_Akademik_Teknik_Raporu.pdf  # Printable A4 academic report PDF
 │
