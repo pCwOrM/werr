@@ -52,7 +52,7 @@ In biological systems, genetic encoding does not store neural connections point-
 
 Fractal geometry, epitomized by the Mandelbrot set \cite{mandelbrot1980fractal, mandelbrot1982fractal}, presents an extreme mathematical realization of this principle: an elementary iterative equation ($z \leftarrow z^2 + c$) generates infinite structural depth, self-similarity across scales, and rich boundary morphology. 
 
-In this work, we address a primary research hypothesis: \textit{Can the weights and activation thresholds of an artificial neural network be procedurally synthesized from observational windows across a fractal landscape, bypassing explicit scalar storage?}
+In this work, we investigate a fundamental systems and representation question: \textit{How effectively can procedural parameter derivation from Mandelbrot fractal dynamics approximate non-linear neural decision boundaries, and what is the resulting trade-off between persistent memory elimination and computational latency?} Rather than treating procedural synthesis merely as a binary feasibility proof-of-concept, we analyze the Pareto frontier between spatial resolution, parameter convergence, and latency, establishing the theoretical and empirical foundations of zero-tensor parameterization.
 
 \begin{figure}[t]
 \centering
@@ -155,6 +155,23 @@ Allocating IEEE 754 double-precision (64-bit) floats yields:
 \end{equation}
 The persistent weight tensor matrix is exactly \textbf{0 Bytes}. All synaptic values are synthesized procedurally on demand, completely circumventing persistent tensor storage.
 
+\subsection{Scalability to Arbitrary Weight Tensors}
+A key theoretical inquiry regarding procedural parameterization is how the 4-Quadrant extraction generalizes to arbitrary weight matrices $\mathbf{W} \in \mathbb{R}^{M \times K}$. We formulate two analytical scaling paradigms:
+
+\textit{1) Hierarchical $2^p \times 2^p$ Quadtree Partitioning:}
+Instead of extracting four parameters, a single $N \times N$ observational patch ($N=128$) can be recursively subdivided into $P = 2^p \times 2^p$ contiguous sub-tiles ($p \ge 1$):
+\begin{equation}
+W_{u,v} = \gamma \left( R_{Q_{u,v}} - \frac{1}{2} \right), \quad u,v \in \{0, \dots, 2^p-1\}
+\end{equation}
+For depth $p=2$ ($4 \times 4$), 16 independent parameters are synthesized from a single 24-byte coordinate $\Theta$, yielding an amortized storage of $1.5$ bytes per parameter. For $p=3$ ($8 \times 8$), 64 parameters are derived from 24 bytes ($0.375$ bytes/parameter), outperforming 4-bit integer quantization (INT4) while maintaining continuous analytical depth.
+
+\textit{2) Deterministic Seed-Offset Generation for Multi-Layer Networks:}
+For networks comprising $L$ layers with distinct coordinate requirements, layer-specific coordinates are derived deterministically from a single root seed tuple $\Theta_0$ via a parameter displacement recurrence:
+\begin{equation}
+\Theta_\ell = \Theta_0 + \ell \cdot \Delta \boldsymbol{\delta} \pmod{\Omega}
+\end{equation}
+where $\Delta \boldsymbol{\delta} = (\delta_x, \delta_y, \delta_z) \in \mathbb{R}^3$ is an analytical displacement vector and $\Omega$ defines the non-trivial boundary manifold $\partial \mathcal{M}$. Storing only the pair $(\Theta_0, \Delta \boldsymbol{\delta})$ requires exactly $48$ bytes of persistent memory to parameterize an arbitrarily deep network, establishing an asymptotic storage complexity of $O(1)$ with respect to total parameter count $W$.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\columnwidth]{figures/resolution_comparison_128.png}
@@ -195,11 +212,45 @@ As summarized in Table \ref{tab:res} and Figure \ref{fig:res}, $128 \times 128$ 
 \end{figure}
 
 \subsection{Optimization of Linear Logic Gates}
-We applied a coordinate random-walk evolutionary search over candidate parameter tuples $\Theta = (c_x, c_y, \log_{10} z)$ to synthesize decision boundaries for the four fundamental logic gates. The search operates with a population of $P = 50$ candidate states, evaluating candidate fitness via the Mean Squared Error:
+We applied a coordinate random-walk evolutionary search over candidate parameter tuples $\Theta = (c_x, c_y, \log_{10} z)$ to synthesize decision boundaries for the four fundamental logic gates. The procedure is formalized in Algorithm \ref{alg:synth}. The search operates with a population of $P = 50$ candidate states, evaluating candidate fitness via the Mean Squared Error:
 \begin{equation}
 \mathcal{L}(\Theta) = \frac{1}{4} \sum_{k=1}^4 \left( y_k(\Theta) - t_k \right)^2
 \end{equation}
 where $t_k \in \{0, 1\}$ denotes target boolean outputs. Mutations apply zero-mean Gaussian perturbations to spatial coordinates ($\sigma_c = 10^{-4} \cdot 10^{-\log_{10} z}$) and zoom scale ($\sigma_z = 0.05$). Optimization terminates when empirical classification accuracy achieves 100\% (0 classification error across all truth table inputs).
+
+\begin{table}[t]
+\centering
+\caption{Coordinate-Space Evolutionary Synthesis Algorithm}
+\label{alg:synth}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{p{\columnwidth}}
+\toprule
+\textbf{Algorithm 1: Coordinate-Space Evolutionary Synthesis} \\
+\midrule
+\textbf{Input:} Target truth table $T = \{(\mathbf{x}_i, y_i^*)\}_{i=1}^4$, search bounding box $\mathcal{B} \subset \mathbb{C}$, population size $P=50$, mutation scales $\sigma_c, \sigma_z$, maximum generations $G=200$. \\
+\textbf{Output:} Optimal coordinate $\Theta^* = (c_x^*, c_y^*, \log_{10} z^*)$ achieving $\mathcal{L}(\Theta^*) = 0.0$. \\
+\midrule
+1: Initialize population $\mathcal{P}_0 = \{\Theta^{(p)}\}_{p=1}^P$ uniformly over $\mathcal{B}$ with zoom $\log_{10} z \in [0.5, 3.5]$. \\
+2: \textbf{for} generation $g = 1$ to $G$ \textbf{do} \\
+3: \quad \textbf{for} each candidate $\Theta^{(p)} \in \mathcal{P}_{g-1}$ \textbf{do} \\
+4: \qquad Sample $128 \times 128$ grid $C_{j,k}$ via quadratic recurrence: $z_{n+1} = z_n^2 + c$. \\
+5: \qquad Compute quadrant dark ratios: $R_{Q_m} = \frac{4}{N^2} \sum_{(j,k) \in Q_m} I(C_{j,k})$. \\
+6: \qquad Synthesize parameters: $\boldsymbol{\theta}^{(p)} = \gamma (\mathbf{R}_Q - 0.5 \cdot \mathbf{1}_4)$, with $\gamma = 6.0$. \\
+7: \qquad Evaluate MSE loss: $\mathcal{L}(\Theta^{(p)}) = \frac{1}{4} \sum_{i=1}^4 \left( \sigma(\mathbf{w}^T \mathbf{x}_i + b) - y_i^* \right)^2$. \\
+8: \quad \textbf{end for} \\
+9: \quad Sort $\mathcal{P}_{g-1}$ in ascending order of loss $\mathcal{L}$. \\
+10: \quad \textbf{if} $\min_{\Theta} \mathcal{L}(\Theta) == 0.0$ (100\% classification accuracy) \textbf{then} \\
+11: \qquad \textbf{return} $\Theta^* = \arg\min_\Theta \mathcal{L}(\Theta)$ \\
+12: \quad \textbf{end if} \\
+13: \quad Select top $K_{\text{elite}} = 5$ candidates from $\mathcal{P}_{g-1}$. \\
+14: \quad Mutate spatial coordinates: $c \leftarrow c + \mathcal{N}\left(0, \, \sigma_c^2 \cdot 10^{-\log_{10} z}\right)$. \\
+15: \quad Mutate zoom factor: $\log_{10} z \leftarrow \log_{10} z + \mathcal{N}\left(0, \, \sigma_z^2\right)$. \\
+16: \textbf{end for} \\
+17: \textbf{return} Best candidate $\Theta^*$. \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
 \begin{table}[t]
 \centering
@@ -229,7 +280,9 @@ Every gate converged to 100\% accuracy (Table \ref{tab:gates}, Fig. \ref{fig:gat
 \end{figure}
 
 \subsection{Solving the Non-Linear XOR Problem}
-Perceptrons are mathematically incapable of separating the exclusive-OR (XOR) function \cite{minsky1969perceptrons}. To resolve this, we configured a two-layer fractal network combining an OR agent and a NAND agent feeding into an output neuron (Fig. \ref{fig:xor}):
+In their foundational 1969 treatise, Minsky and Papert \cite{minsky1969perceptrons} proved that single-layer perceptrons are strictly incapable of classifying the non-linearly separable exclusive-OR (XOR) problem, establishing a seminal theoretical limit for early neural architectures. Overcoming this topological constraint necessitates constructing non-linear decision manifolds.
+
+To prove that procedural fractal synthesis transcends this classical barrier, we configured a two-layer composite fractal network combining an OR agent and a NAND agent feeding into an output neuron (Fig. \ref{fig:xor}):
 \begin{equation}
 h_1 = \sigma(w_{11} x_1 + w_{12} x_2 + b_1) \quad \text{[OR Sub-network]}
 \end{equation}
@@ -274,6 +327,8 @@ A rigorous assessment reveals four primary limitations:
 \textbf{Differentiable Soft-Escape Formulations:} Transitioning to soft-escape sigmoid kernels allows end-to-end backpropagation directly through fractal coordinate space.
 
 \textbf{Photonic \& Optical Co-processors:} Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction ($< 1\text{ ns}$) with zero electrical resistance and zero thermal dissipation.
+
+\textbf{Continuous Non-Linear Benchmarks (Two-Moons and Two-Spirals):} While the XOR gate resolves the classical discrete non-linearity barrier, extending procedural fractal synthesis to continuous non-convex manifolds represents the primary empirical milestone for multi-layer fractal networks. Evaluating the representation capacity on continuous 2D benchmark datasets—specifically the \textit{Two-Moons} and \textit{Two-Spirals} classification tasks—will validate the expressivity of hierarchical quadtree partitioning without reliance on backpropagation.
 
 \textbf{Steganographic \& Obfuscated AI:} Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.
 

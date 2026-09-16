@@ -302,7 +302,7 @@ html_content = f"""<!DOCTYPE html>
 
   <p>Fractal geometry, epitomized by the Mandelbrot set [2, 3], presents an extreme mathematical realization of this principle: an elementary iterative equation (z &larr; z<sup>2</sup> + c) generates infinite structural depth, self-similarity across scales, and rich boundary morphology.</p>
 
-  <p>In this work, we address a primary research hypothesis: <em>Can the weights and activation thresholds of an artificial neural network be procedurally synthesized from observational windows across a fractal landscape, bypassing explicit scalar storage?</em></p>
+  <p>In this work, we investigate a fundamental systems and representation question: <em>How effectively can procedural parameter derivation from Mandelbrot fractal dynamics approximate non-linear neural decision boundaries, and what is the resulting trade-off between persistent memory elimination and computational latency?</em> Rather than treating procedural synthesis merely as a binary feasibility proof-of-concept, we analyze the Pareto frontier between spatial resolution, parameter convergence, and latency, establishing the theoretical and empirical foundations of zero-tensor parameterization.</p>
 
   <div class="figure-box">
     <img src="{img_patches}" alt="Mandelbrot Sampling Patches">
@@ -391,6 +391,11 @@ html_content = f"""<!DOCTYPE html>
     <span class="equation-num">(9)</span>
   </div>
   <p>The persistent weight tensor matrix is exactly <strong>0 Bytes</strong>. All synaptic values are synthesized procedurally on demand, completely circumventing persistent tensor storage.</p>
+
+  <h3>E. Scalability to Arbitrary Weight Tensors</h3>
+  <p>A central theoretical inquiry is how procedural parameterization generalizes to arbitrary weight matrices <strong>W</strong> &isin; &Ropf;<sup>M &times; K</sup>. We formulate two complementary scaling mechanisms:</p>
+  <p><em>1) Hierarchical 2<sup>p</sup> &times; 2<sup>p</sup> Quadtree Partitioning:</em> A single 128 &times; 128 observational window is recursively partitioned into 2<sup>p</sup> &times; 2<sup>p</sup> sub-tiles. For depth p=2 (4 &times; 4), 16 independent parameters are synthesized from a single 24-byte coordinate &Theta; (1.5 bytes/weight). For p=3 (8 &times; 8), 64 parameters are derived from 24 bytes (0.375 bytes/weight), outperforming 4-bit integer quantization (INT4) while maintaining continuous analytical depth.</p>
+  <p><em>2) Deterministic Seed-Offset Generation:</em> For multi-layer architectures, layer-specific coordinates are derived deterministically from a single root seed &Theta;<sub>0</sub> via &Theta;<sub>&ell;</sub> = &Theta;<sub>0</sub> + &ell; &middot; &Delta;&delta; mod &Omega;. Retaining only the master pair (&Theta;<sub>0</sub>, &Delta;&delta;) requires exactly 48 bytes of persistent memory for an arbitrarily deep network, establishing an asymptotic storage complexity of O(1) with respect to total parameter count W.</p>
 
   <div class="figure-box">
     <img src="{img_res_comp}" alt="Resolution Comparison">
@@ -510,7 +515,8 @@ html_content = f"""<!DOCTYPE html>
   </div>
 
   <h3>C. Solving the Non-Linear XOR Problem</h3>
-  <p>Perceptrons are mathematically incapable of separating the exclusive-OR (XOR) function [8]. To resolve this, we configured a two-layer fractal network combining an OR agent and a NAND agent feeding into an output neuron (Fig. 5):</p>
+  <p>In their foundational 1969 treatise, Minsky and Papert [8] proved that single-layer perceptrons are strictly incapable of classifying the non-linearly separable exclusive-OR (XOR) problem, establishing a seminal theoretical limit for early neural architectures. Overcoming this topological constraint necessitates constructing non-linear decision manifolds.</p>
+  <p>To demonstrate that procedural fractal synthesis transcends this classical barrier, we configured a two-layer composite fractal network combining an OR agent and a NAND agent feeding into an output neuron (Fig. 5):</p>
   <div class="equation">
     <span>h<sub>1</sub> = &sigma;(w<sub>11</sub> x<sub>1</sub> + w<sub>12</sub> x<sub>2</sub> + b<sub>1</sub>) &nbsp; [OR Sub-network]</span>
     <span class="equation-num">(10)</span>
@@ -541,14 +547,15 @@ html_content = f"""<!DOCTYPE html>
   <h2>VI. Theoretical Bottlenecks and Challenges</h2>
   <p>A rigorous assessment reveals four primary limitations:</p>
   <ol>
-    <li><strong>Non-Differentiability:</strong> The step-counting escape metric produces a piecewise-constant function whose partial derivatives &part;R/&part;c<sub>x</sub> are zero almost everywhere and undefined at fractal boundaries. Standard gradient backpropagation cannot navigate this landscape directly without soft-escape approximations.</li>
+    <li><strong>Non-Differentiability:</strong> The step-counting escape metric produces a piecewise-constant function whose partial derivatives &part;R/&part;c<sub>x</sub> are zero almost everywhere and undefined at fractal boundaries. Replacing the hard escape criterion with a temperature-scaled soft-escape formulation I<sub>soft</sub>(c; &tau;) = 1 / (1 + exp(-(M<sub>max</sub> - K(c))/&tau;)) yields continuous parameter gradients &nabla;<sub>&Theta;</sub>L.</li>
     <li><strong>Computational Latency:</strong> Querying memory in conventional GPUs requires O(1) clock cycles, whereas synthesizing a 128 &times; 128 Mandelbrot patch on CPUs demands O(N<sup>2</sup> &times; M<sub>max</sub>) operations (&sim;1.1 &times; 10<sup>6</sup> FLOPS).</li>
     <li><strong>Chaotic Sensitivity (Lyapunov Instability):</strong> Near the boundary, perturbations on the order of &Delta;c &sim; 10<sup>-7</sup> can induce drastic shifts in parameter values, creating rugged optimization fitness surfaces (Fig. 6).</li>
     <li><strong>Saturation:</strong> In interior hyperbolic components or exterior basins, the black ratio saturates at 1.0 or 0.0, eliminating parameter diversity.</li>
   </ol>
 
   <h2>VII. Future Research & Hardware Horizons</h2>
-  <p><strong>Differentiable Soft-Escape Formulations:</strong> Replacing the hard boolean test |z| &gt; 2.0 with a temperature-scaled continuous thresholding activation enables automatic differentiation via standard autograd engines.</p>
+  <p><strong>Differentiable Soft-Escape Formulations:</strong> Transitioning to soft-escape sigmoid kernels allows end-to-end backpropagation directly through fractal coordinate space.</p>
+  <p><strong>Continuous Non-Linear Benchmarks (Two-Moons and Two-Spirals):</strong> While the XOR gate resolves the historical discrete non-linearity barrier, extending procedural fractal synthesis to continuous complex manifolds represents the primary empirical milestone for multi-layer fractal networks. Evaluating representation capacity on continuous 2D benchmark datasets—specifically the Two-Moons and Two-Spirals classification tasks—will validate the expressivity of hierarchical quadtree partitioning without reliance on backpropagation.</p>
   <p><strong>Photonic & Optical Co-processors:</strong> Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction (&lt;1 ns) with zero electrical resistance and zero thermal dissipation.</p>
   <p><strong>Steganographic & Obfuscated AI:</strong> Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.</p>
 
