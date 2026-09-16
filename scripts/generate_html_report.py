@@ -350,6 +350,45 @@ html_content = f"""<!DOCTYPE html>
       color: var(--text-muted);
       font-weight: 500;
     }}
+
+    @media screen and (max-width: 768px) {{
+      .page-container {{
+        padding: 20px 14px !important;
+        margin: 10px 4px !important;
+        border-radius: 8px;
+        box-shadow: none;
+      }}
+      .action-bar {{
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 16px;
+      }}
+      .btn-print {{
+        width: 100%;
+        justify-content: center;
+      }}
+      h1 {{
+        font-size: 20px;
+        line-height: 1.35;
+      }}
+      .meta-grid {{
+        grid-template-columns: 1fr 1fr;
+      }}
+      .grid-2 {{
+        grid-template-columns: 1fr;
+      }}
+      table {{
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }}
+      pre {{
+        font-size: 10px;
+        padding: 10px 12px;
+      }}
+    }}
   </style>
 </head>
 <body>
@@ -755,11 +794,16 @@ def compute_mandelbrot_128(cx, cy, zoom, res=128, max_iter=70):
 report_artifact_path = os.path.join(ARTIFACT_DIR, "Mandelbrot_Fraktal_Noron_Raporu.html")
 report_workspace_path = os.path.join(WORKSPACE_DIR, "Mandelbrot_Fraktal_Noron_Raporu.html")
 
-with open(report_artifact_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
+report_docs_path = os.path.join(WORKSPACE_DIR, "docs", "Mandelbrot_Fraktal_Noron_Raporu.html")
+for p in [report_artifact_path, report_workspace_path, report_docs_path]:
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, "w", encoding="utf-8") as f:
+        f.write(html_content)
 
-with open(report_workspace_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
+q1_desktop = r"C:\Users\maat\Desktop\ZENODO_V3_VEYA_Q1_DERGIYE_HAZIRLIK"
+if os.path.exists(q1_desktop):
+    with open(os.path.join(q1_desktop, "Mandelbrot_Fraktal_Noron_Raporu.html"), "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 print(f"[+] HTML Raporu başarıyla oluşturuldu:")
 print(f"    - Workspace: {report_workspace_path}")

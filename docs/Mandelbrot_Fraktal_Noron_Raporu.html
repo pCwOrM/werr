@@ -329,6 +329,45 @@
       color: var(--text-muted);
       font-weight: 500;
     }
+
+    @media screen and (max-width: 768px) {
+      .page-container {
+        padding: 20px 14px !important;
+        margin: 10px 4px !important;
+        border-radius: 8px;
+        box-shadow: none;
+      }
+      .action-bar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 16px;
+      }
+      .btn-print {
+        width: 100%;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 20px;
+        line-height: 1.35;
+      }
+      .meta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      pre {
+        font-size: 10px;
+        padding: 10px 12px;
+      }
+    }
   </style>
 </head>
 <body>

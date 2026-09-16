@@ -28,6 +28,7 @@ html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries</title>
 <style>
   @page {{
@@ -260,6 +261,32 @@ html_content = f"""<!DOCTYPE html>
     padding-top: 4px;
     margin-top: 12px;
     color: #444;
+  }}
+
+  @media screen and (max-width: 768px) {{
+    body {{
+      padding: 16px 12px !important;
+      font-size: 10.5pt !important;
+    }}
+    .two-column-body {{
+      column-count: 1 !important;
+    }}
+    .abstract-container {{
+      max-width: 100% !important;
+    }}
+    .paper-title {{
+      font-size: 16pt !important;
+    }}
+    table {{
+      display: block !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch;
+    }}
+    img {{
+      max-width: 100% !important;
+      height: auto !important;
+    }}
   }}
 </style>
 </head>

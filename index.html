@@ -453,6 +453,45 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 20px 12px 60px !important;
+      }
+      .top-nav {
+        flex-direction: column !important;
+        gap: 16px !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .nav-actions {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+      }
+      .hero h1 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      .hero-links {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .btn-hero {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .bibtex-box {
+        font-size: 10px !important;
+        padding: 12px !important;
+      }
+      .section-title {
+        font-size: 18px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -515,7 +554,11 @@
 
     <!-- Quick Action Links -->
     <div class="hero-links">
-      <a href="docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf" target="_blank" class="btn-hero btn-primary">
+      <a href="docs/Halka_Sunum_ve_Teorik_Rehber.html" class="btn-hero btn-primary" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+        <span>🗣️</span>
+        <span id="btnSunumRehberi">Halka Sunum &amp; Teorik Rehber</span>
+      </a>
+      <a href="docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf" target="_blank" class="btn-hero btn-secondary">
         <span>📄</span>
         <span id="btnReadPdf">Read IEEE Paper (PDF)</span>
       </a>
@@ -590,6 +633,68 @@
         <a href="demos/quadrant_visualizer.html" class="btn-launch btn-launch-research">
           <span>▶</span>
           <span id="btnLaunch2">Launch Research Lab (Full Screen)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section: Official Reports & Comprehensive Guides -->
+  <section>
+    <div class="section-title">
+      <span>📚</span>
+      <span id="docsSectionTitle">Reports, Guides &amp; Benchmarks</span>
+    </div>
+    <p id="docsSectionSubtitle" class="section-desc">
+      Comprehensive technical monographs, citizen presentation frameworks, and continuous manifold benchmarks.
+    </p>
+
+    <div class="demos-grid">
+      <!-- Doc Card 1: Halka Sunum ve Teorik Rehber -->
+      <div class="demo-card">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">🗣️</span>
+            <span class="demo-badge badge-citizen">Çift Katmanlı Model</span>
+          </div>
+          <h3 class="demo-title">Halka Sunum ve Teorik Rehber</h3>
+          <p class="demo-text">
+            Sıradan dinleyicilere yönelik güçlü metaforlar ve günlük hayat senaryoları (üst katman) ile hemen altında akademik/fiziksel yasa bağıntılarını (alt katman) bir arada sunan başvuru dokümanı.
+          </p>
+          <ul class="demo-features">
+            <li>Ansiklopedi hamalı vs sihirli dürbün metaforu</li>
+            <li>Çekiç acısı ve kara çarşafın ışık hatası teorisi</li>
+            <li>Two-Moons (%99.3) ve Two-Spirals (%98.5) zaferi</li>
+            <li>Von Neumann darboğazı ve Lyapunov kaotik analizi</li>
+          </ul>
+        </div>
+        <a href="docs/Halka_Sunum_ve_Teorik_Rehber.html" class="btn-launch btn-launch-citizen">
+          <span>📖</span>
+          <span>Rehberi İncele (HTML)</span>
+        </a>
+      </div>
+
+      <!-- Doc Card 2: Akademik Teknik Rapor -->
+      <div class="demo-card">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">📄</span>
+            <span class="demo-badge badge-research">Teknik Monograf</span>
+          </div>
+          <h3 class="demo-title">Kapsamlı Akademik Teknik Rapor</h3>
+          <p class="demo-text">
+            128&times;128 4-Quadrant ayrıştırması, Sweet Spot analizleri, mantık kapısı optimizasyonları ve sürekli manifold sınıflandırma deneylerinin tüm detaylarını içeren monograf.
+          </p>
+          <ul class="demo-features">
+            <li>4-Bölge çözünürlük duyarlılığı (%0.08 sapma ispatı)</li>
+            <li>AND, OR, NAND, NOR kapıları (%100 doğruluk)</li>
+            <li>Doğrusal olmayan 2-katmanlı XOR ağ mimarisi</li>
+            <li>Optik/fotonik işlemciler ve kuantum perspektifi</li>
+          </ul>
+        </div>
+        <a href="docs/Mandelbrot_Akademik_Teknik_Raporu.html" class="btn-launch btn-launch-research">
+          <span>🔬</span>
+          <span>Teknik Raporu Aç (HTML)</span>
         </a>
       </div>
     </div>

@@ -216,6 +216,38 @@ html_content = f"""<!DOCTYPE html>
     th, td {{ padding: 9px 12px; text-align: left; border: 1px solid var(--border); }}
     th {{ background: #f1f5f9; font-weight: 600; color: #334155; }}
     tr:nth-child(even) {{ background: #fafafa; }}
+
+    @media screen and (max-width: 768px) {{
+      .container {{
+        padding: 20px 14px !important;
+        margin: 10px 4px !important;
+        border-radius: 8px;
+        box-shadow: none;
+      }}
+      .top-bar {{
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 16px;
+      }}
+      .btn-pdf {{
+        width: 100%;
+        justify-content: center;
+      }}
+      h1 {{
+        font-size: 20px;
+        line-height: 1.35;
+      }}
+      .grid-3 {{
+        grid-template-columns: 1fr !important;
+      }}
+      table {{
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }}
+    }}
   </style>
 </head>
 <body>
@@ -360,11 +392,16 @@ html_content = f"""<!DOCTYPE html>
 </html>
 """
 
-with open(html_guide_path_ws, "w", encoding="utf-8") as f:
-    f.write(html_content)
+html_docs_path = os.path.join(WORKSPACE_DIR, "docs", "Halka_Anlatim_Rehberi.html")
+for p in [html_guide_path_ws, html_guide_path_art, html_docs_path]:
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, "w", encoding="utf-8") as f:
+        f.write(html_content)
 
-with open(html_guide_path_art, "w", encoding="utf-8") as f:
-    f.write(html_content)
+q1_desktop = r"C:\Users\maat\Desktop\ZENODO_V3_VEYA_Q1_DERGIYE_HAZIRLIK"
+if os.path.exists(q1_desktop):
+    with open(os.path.join(q1_desktop, "Halka_Anlatim_Rehberi.html"), "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 print(f"[+] Halka Anlatım HTML Rehberi oluşturuldu: {html_guide_path_ws}")
 
