@@ -124,10 +124,11 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
     
-    /* Theme Toggle Button */
-    .theme-toggle-btn {
+    /* Buttons in header */
+    .action-btn {
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -142,13 +143,14 @@
       outline: none;
       transition: all 0.2s ease;
       box-shadow: var(--box-shadow-subtle);
+      user-select: none;
     }
-    .theme-toggle-btn:hover {
+    .action-btn:hover {
       background: var(--bg-hover);
       border-color: var(--emerald);
       transform: translateY(-1px);
     }
-    .theme-toggle-btn:active {
+    .action-btn:active {
       transform: translateY(0);
     }
 
@@ -511,19 +513,25 @@
     <div class="header-left">
       <h1>
         <span class="status-dot"></span>
-        128×128 4-Quadrant Fraktal Nöron
+        <span id="qvTitle">128×128 4-Quadrant Fraktal Nöron</span>
       </h1>
-      <p>Mandelbrot Uzayından Prosedürel Sinaptik Ağırlık ve Eşik Sentezi</p>
+      <p id="qvSubtitle">Mandelbrot Uzayından Prosedürel Sinaptik Ağırlık ve Eşik Sentezi</p>
     </div>
     <div class="header-actions">
+      <!-- Dil Değiştirici Buton (TR / EN) -->
+      <button id="langToggleBtn" class="action-btn" title="Dili Değiştir / Switch Language">
+        <span id="langIcon">🌐</span>
+        <span id="langText">English</span>
+      </button>
+
       <!-- Açık / Koyu Tema Değiştirici -->
-      <button id="themeToggleBtn" class="theme-toggle-btn" title="Açık / Koyu Tema Değiştir">
+      <button id="themeToggleBtn" class="action-btn" title="Açık / Koyu Tema Değiştir">
         <span id="themeIcon">☀️</span>
         <span id="themeText">Açık Mod</span>
       </button>
 
       <div class="badges-col">
-        <span class="badge-mode">CANLI SENTEZ</span>
+        <span id="badgeMode" class="badge-mode">CANLI SENTEZ</span>
         <a href="https://doi.org/10.5281/zenodo.22774935" target="_blank" class="badge-doi">DOI: 10.5281/zenodo.22774935</a>
       </div>
     </div>
@@ -533,20 +541,20 @@
   <div class="controls-grid">
     <div class="field-group">
       <label for="presetSelect">
-        <span>Hedef Mantık Kapısı</span>
+        <span id="lblTargetGate">Hedef Mantık Kapısı</span>
         <span id="coordBadge" style="color:var(--text-muted); font-family:var(--font-mono); font-size:10px;">cx: -0.056, cy: 0.806</span>
       </label>
       <select id="presetSelect">
-        <option value="or" selected>🚪 OR Kapısı (cx: -0.055780, cy: 0.806329)</option>
-        <option value="and">🏦 AND Kapısı (cx: -0.144732, cy: 0.758854)</option>
-        <option value="nand">🚨 NAND Kapısı (cx: -0.740191, cy: 0.174654)</option>
-        <option value="nor">🔒 NOR Kapısı (cx: -0.523561, cy: 0.525212)</option>
+        <option value="or" selected id="optOr">🚪 OR Kapısı (cx: -0.055780, cy: 0.806329)</option>
+        <option value="and" id="optAnd">🏦 AND Kapısı (cx: -0.144732, cy: 0.758854)</option>
+        <option value="nand" id="optNand">🚨 NAND Kapısı (cx: -0.740191, cy: 0.174654)</option>
+        <option value="nor" id="optNor">🔒 NOR Kapısı (cx: -0.523561, cy: 0.525212)</option>
       </select>
     </div>
 
     <div class="field-group">
       <label for="zoomSlider">
-        <span>Büyütme Faktörü (Zoom)</span>
+        <span id="lblZoom">Büyütme Faktörü (Zoom)</span>
         <span id="zoomVal" style="color:var(--emerald); font-family:var(--font-mono); font-weight:700;">100.0x</span>
       </label>
       <input type="range" id="zoomSlider" min="0" max="4.0" step="0.005" value="2.0">
@@ -565,14 +573,14 @@
         <span class="quad-tag tag-q3">Q3</span>
         <span class="quad-tag tag-q4">Q4 (b)</span>
       </div>
-      <div class="res-label">128 × 128 Örnekleme</div>
+      <div id="resLabel" class="res-label">128 × 128 Örnekleme</div>
     </div>
 
     <!-- 4 Ağırlık Kartı -->
     <div class="weights-grid">
       <div class="weight-card">
         <div class="wc-header">
-          <span class="wc-title">Q1 &rarr; Ağırlık 1 (w₁)</span>
+          <span id="wcTitle1" class="wc-title">Q1 &rarr; Ağırlık 1 (w₁)</span>
           <span id="q1Ratio" class="wc-ratio">59.6%</span>
         </div>
         <div id="w1Val" class="wc-val val-emerald">+0.575</div>
@@ -580,7 +588,7 @@
 
       <div class="weight-card">
         <div class="wc-header">
-          <span class="wc-title">Q2 &rarr; Ağırlık 2 (w₂)</span>
+          <span id="wcTitle2" class="wc-title">Q2 &rarr; Ağırlık 2 (w₂)</span>
           <span id="q2Ratio" class="wc-ratio">59.0%</span>
         </div>
         <div id="w2Val" class="wc-val val-emerald">+0.540</div>
@@ -588,7 +596,7 @@
 
       <div class="weight-card">
         <div class="wc-header">
-          <span class="wc-title">Q3 &rarr; Yardımcı (w₃)</span>
+          <span id="wcTitle3" class="wc-title">Q3 &rarr; Yardımcı (w₃)</span>
           <span id="q3Ratio" class="wc-ratio">40.6%</span>
         </div>
         <div id="w3Val" class="wc-val">-0.564</div>
@@ -596,7 +604,7 @@
 
       <div class="weight-card weight-card-bias">
         <div class="wc-header">
-          <span class="wc-title" style="color:var(--amber);">Q4 &rarr; Eşik Sapması (b)</span>
+          <span id="wcTitle4" class="wc-title" style="color:var(--amber);">Q4 &rarr; Eşik Sapması (b)</span>
           <span id="q4Ratio" class="wc-ratio">45.5%</span>
         </div>
         <div id="biasVal" class="wc-val val-amber">-0.272</div>
@@ -605,7 +613,7 @@
   </div>
 
   <!-- Matematiksel Aktivasyon Formülü -->
-  <div class="formula-box">
+  <div id="formulaBox" class="formula-box">
     Nöron Karar Fonksiyonu: <code>ŷ = σ(w₁ · x₁ + w₂ · x₂ + b)</code> &nbsp;|&nbsp; <code>w_k = (Oran_{Qk} - 0.5) × 6.0</code>
   </div>
 
@@ -613,26 +621,26 @@
   <div class="verification-card">
     <div class="vc-header">
       <span class="vc-title">
-        <span>⚡ Canlı Doğruluk Testi (Doğruluk Tablosu)</span>
+        <span id="vcTitle">⚡ Canlı Doğruluk Testi (Doğruluk Tablosu)</span>
       </span>
       <span id="accuracyBadge" class="accuracy-badge badge-ok">%100 Başarı</span>
     </div>
 
     <div class="truth-table-grid">
       <div id="case0" class="case-box case-success">
-        <div class="case-inp">(0, 0) &rarr; Hedef: 0</div>
+        <div id="caseInp0" class="case-inp">(0, 0) &rarr; Hedef: 0</div>
         <div id="out0" class="case-out">0 (p=0.43)</div>
       </div>
       <div id="case1" class="case-box case-success">
-        <div class="case-inp">(0, 1) &rarr; Hedef: 1</div>
+        <div id="caseInp1" class="case-inp">(0, 1) &rarr; Hedef: 1</div>
         <div id="out1" class="case-out">1 (p=0.57)</div>
       </div>
       <div id="case2" class="case-box case-success">
-        <div class="case-inp">(1, 0) &rarr; Hedef: 1</div>
+        <div id="caseInp2" class="case-inp">(1, 0) &rarr; Hedef: 1</div>
         <div id="out2" class="case-out">1 (p=0.58)</div>
       </div>
       <div id="case3" class="case-box case-success">
-        <div class="case-inp">(1, 1) &rarr; Hedef: 1</div>
+        <div id="caseInp3" class="case-inp">(1, 1) &rarr; Hedef: 1</div>
         <div id="out3" class="case-out">1 (p=0.70)</div>
       </div>
     </div>
@@ -641,16 +649,142 @@
   <!-- Alt Bilgi: Yazarlar ve 24 Bayt Bellek İndirme -->
   <div class="footer">
     <div>
-      <strong>Yazarlar:</strong> Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+      <strong id="lblAuthors">Yazarlar:</strong> Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
     </div>
     <button class="btn-txt" onclick="downloadMemoryTxt()">
-      💾 24B Bellek İndir (.TXT)
+      💾 <span id="btnDownloadText">24B Bellek İndir (.TXT)</span>
     </button>
   </div>
 
 </div>
 
 <script>
+  // =========================================================
+  // ÇOKLU DİL MOTORU (I18N: TR / EN)
+  // =========================================================
+  const I18N = {
+    tr: {
+      pageTitle: "128x128 4-Quadrant Fraktal Nöron Deney Laboratuvarı",
+      qvTitle: "128×128 4-Quadrant Fraktal Nöron",
+      qvSubtitle: "Mandelbrot Uzayından Prosedürel Sinaptik Ağırlık ve Eşik Sentezi",
+      langButton: "English",
+      badgeMode: "CANLI SENTEZ",
+      lblTargetGate: "Hedef Mantık Kapısı",
+      lblZoom: "Büyütme Faktörü (Zoom)",
+      resLabel: "128 × 128 Örnekleme",
+      wcTitle1: "Q1 → Ağırlık 1 (w₁)",
+      wcTitle2: "Q2 → Ağırlık 2 (w₂)",
+      wcTitle3: "Q3 → Yardımcı (w₃)",
+      wcTitle4: "Q4 → Eşik Sapması (b)",
+      formulaBox: 'Nöron Karar Fonksiyonu: <code>ŷ = σ(w₁ · x₁ + w₂ · x₂ + b)</code> &nbsp;|&nbsp; <code>w_k = (Oran_{Qk} - 0.5) × 6.0</code>',
+      vcTitle: "⚡ Canlı Doğruluk Testi (Doğruluk Tablosu)",
+      accOk: "%100 Başarı",
+      accPattern: "%{rate} Başarı",
+      targetLabel: "Hedef",
+      lblAuthors: "Yazarlar:",
+      btnDownloadText: "24B Bellek İndir (.TXT)",
+      themeLight: "Açık Mod",
+      themeDark: "Koyu Mod",
+      presets: {
+        or: "🚪 OR Kapısı (cx: -0.055780, cy: 0.806329)",
+        and: "🏦 AND Kapısı (cx: -0.144732, cy: 0.758854)",
+        nand: "🚨 NAND Kapısı (cx: -0.740191, cy: 0.174654)",
+        nor: "🔒 NOR Kapısı (cx: -0.523561, cy: 0.525212)"
+      },
+      txtDump: {
+        header: "MANDELBROT FRAKTAL NÖRAL SENTEZ - 24 BAYT BELLEK DÖKÜMÜ",
+        permStorage: "Kalıcı Ağırlık Belleği  : 0 Bayt (Prosedürel Sentez ile Baypas Edildi)",
+        dynamicSeed: "Dinamik Koordinat Tohumu : 24 Bayt (Üç adet 64-bit IEEE-754 Float)",
+        synapsesTitle: "Türetilen Sinapslar     :",
+        accuracy: "Sınıflandırma Başarımı   :",
+        status: "Durum                    : Deterministik, Tekrarlanabilir, %100 Doğrulanmış",
+        authors: "Yazarlar                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı"
+      }
+    },
+    en: {
+      pageTitle: "128x128 4-Quadrant Fractal Neuron Laboratory",
+      qvTitle: "128×128 4-Quadrant Fractal Neuron",
+      qvSubtitle: "Procedural Synaptic Weight & Bias Synthesis from Mandelbrot Space",
+      langButton: "Türkçe",
+      badgeMode: "LIVE SYNTHESIS",
+      lblTargetGate: "Target Logic Gate",
+      lblZoom: "Zoom Scale Factor",
+      resLabel: "128 × 128 Sampling",
+      wcTitle1: "Q1 → Weight 1 (w₁)",
+      wcTitle2: "Q2 → Weight 2 (w₂)",
+      wcTitle3: "Q3 → Auxiliary (w₃)",
+      wcTitle4: "Q4 → Threshold Bias (b)",
+      formulaBox: 'Neuron Activation Function: <code>ŷ = σ(w₁ · x₁ + w₂ · x₂ + b)</code> &nbsp;|&nbsp; <code>w_k = (Ratio_{Qk} - 0.5) × 6.0</code>',
+      vcTitle: "⚡ Live Truth Table Verification",
+      accOk: "100% Accuracy",
+      accPattern: "%{rate} Accuracy",
+      targetLabel: "Target",
+      lblAuthors: "Authors:",
+      btnDownloadText: "Download 24B Memory (.TXT)",
+      themeLight: "Light Mode",
+      themeDark: "Dark Mode",
+      presets: {
+        or: "🚪 OR Gate (cx: -0.055780, cy: 0.806329)",
+        and: "🏦 AND Gate (cx: -0.144732, cy: 0.758854)",
+        nand: "🚨 NAND Gate (cx: -0.740191, cy: 0.174654)",
+        nor: "🔒 NOR Gate (cx: -0.523561, cy: 0.525212)"
+      },
+      txtDump: {
+        header: "MANDELBROT FRACTAL NEURAL SYNTHESIS - 24-BYTE MEMORY DUMP",
+        permStorage: "Permanent Weight Storage : 0 Bytes (Bypassed via Procedural Generation)",
+        dynamicSeed: "Dynamic Coordinate Seed  : 24 Bytes (Three 64-bit IEEE-754 Floats)",
+        synapsesTitle: "Synthesized Synapses     :",
+        accuracy: "Classification Accuracy  :",
+        status: "Status                   : Deterministic, Reproducible, Verified 100%",
+        authors: "Authors                  : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı"
+      }
+    }
+  };
+
+  let currentLang = localStorage.getItem('widget_lang') || 'tr';
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    localStorage.setItem('widget_lang', lang);
+
+    const dict = I18N[lang];
+    document.title = dict.pageTitle;
+    document.getElementById('qvTitle').innerText = dict.qvTitle;
+    document.getElementById('qvSubtitle').innerText = dict.qvSubtitle;
+    document.getElementById('langText').innerText = dict.langButton;
+    document.getElementById('badgeMode').innerText = dict.badgeMode;
+    document.getElementById('lblTargetGate').innerText = dict.lblTargetGate;
+    document.getElementById('lblZoom').innerText = dict.lblZoom;
+    document.getElementById('resLabel').innerText = dict.resLabel;
+    document.getElementById('wcTitle1').innerHTML = dict.wcTitle1;
+    document.getElementById('wcTitle2').innerHTML = dict.wcTitle2;
+    document.getElementById('wcTitle3').innerHTML = dict.wcTitle3;
+    document.getElementById('wcTitle4').innerHTML = dict.wcTitle4;
+    document.getElementById('formulaBox').innerHTML = dict.formulaBox;
+    document.getElementById('vcTitle').innerText = dict.vcTitle;
+    document.getElementById('lblAuthors').innerText = dict.lblAuthors;
+    document.getElementById('btnDownloadText').innerText = dict.btnDownloadText;
+
+    // Presets options text
+    document.getElementById('optOr').innerText = dict.presets.or;
+    document.getElementById('optAnd').innerText = dict.presets.and;
+    document.getElementById('optNand').innerText = dict.presets.nand;
+    document.getElementById('optNor').innerText = dict.presets.nor;
+
+    // Update Theme text according to language
+    const isDark = document.documentElement.classList.contains('dark');
+    themeText.innerText = isDark ? dict.themeLight : dict.themeDark;
+
+    render();
+  }
+
+  function toggleLanguage() {
+    applyLanguage(currentLang === 'tr' ? 'en' : 'tr');
+  }
+
+  document.getElementById('langToggleBtn').addEventListener('click', toggleLanguage);
+
   // =========================================================
   // TEMA DEĞİŞTİRME MANTIĞI (AÇIK / KOYU MOD)
   // =========================================================
@@ -659,17 +793,18 @@
   const themeText = document.getElementById('themeText');
 
   function applyTheme(isDark) {
+    const dict = I18N[currentLang] || I18N.tr;
     if (isDark) {
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
       themeIcon.innerText = "☀️";
-      themeText.innerText = "Açık Mod";
+      themeText.innerText = dict.themeLight;
       localStorage.setItem('widget_theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
       themeIcon.innerText = "🌙";
-      themeText.innerText = "Koyu Mod";
+      themeText.innerText = dict.themeDark;
       localStorage.setItem('widget_theme', 'light');
     }
   }
@@ -680,14 +815,6 @@
   }
 
   themeToggleBtn.addEventListener('click', toggleTheme);
-
-  // Kayıtlı tema tercihi (Varsayılan: dark)
-  const savedTheme = localStorage.getItem('widget_theme');
-  if (savedTheme === 'light') {
-    applyTheme(false);
-  } else {
-    applyTheme(true);
-  }
 
   // =========================================================
   // MANDELBROT VE NÖRON SENTEZİ MANTIĞI
@@ -719,35 +846,37 @@
   const accBadge = document.getElementById('accuracyBadge');
 
   function downloadMemoryTxt() {
+    const dict = I18N[currentLang] || I18N.tr;
+    const td = dict.txtDump;
     const logZ = parseFloat(slider.value);
     const zoom = Math.pow(10, logZ);
     const content = 
 `======================================================================
-MANDELBROT FRACTAL NEURAL SYNTHESIS - 24-BYTE MEMORY DUMP
+${td.header}
 ======================================================================
-Permanent Weight Storage: 0 Bytes (Bypassed via Procedural Generation)
-Dynamic Coordinate Seed : 24 Bytes (Three 64-bit IEEE-754 Floats)
+${td.permStorage}
+${td.dynamicSeed}
 ----------------------------------------------------------------------
 Parameter 1 (cx)        : ${currentPreset.cx.toFixed(8)} (Float64 - 8 Bytes)
 Parameter 2 (cy)        : ${currentPreset.cy.toFixed(8)} (Float64 - 8 Bytes)
 Parameter 3 (zoom)      : ${zoom.toFixed(4)}x (Float64 - 8 Bytes)
 ----------------------------------------------------------------------
-Synthesized Synapses    :
+${td.synapsesTitle}
   • w1 (Q1, Input 1)    : ${w1El.innerText}
   • w2 (Q2, Input 2)    : ${w2El.innerText}
   • w3 (Q3, Auxiliary)  : ${w3El.innerText}
   • b  (Q4, Bias)       : ${biasEl.innerText}
-Classification Accuracy : ${accBadge.innerText}
-Status                  : Deterministic, Reproducible, Verified 100%
+${td.accuracy} ${accBadge.innerText}
+${td.status}
 DOI Reference           : 10.5281/zenodo.22774935
-Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+${td.authors}
 ======================================================================`;
 
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `fractal_neuron_memory_${presetSelect.value}_24bytes.txt`;
+    a.download = `fractal_neuron_memory_${presetSelect.value}_${currentLang}_24bytes.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -755,6 +884,7 @@ Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
   }
 
   function render() {
+    const dict = I18N[currentLang] || I18N.tr;
     const logZ = parseFloat(slider.value);
     const zoom = Math.pow(10, logZ);
     zoomVal.innerText = zoom >= 100 ? zoom.toFixed(1) + 'x' : zoom.toFixed(2) + 'x';
@@ -847,7 +977,10 @@ Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
       if (isOk) correct++;
 
       const el = document.getElementById('case' + idx);
+      const caseInpEl = document.getElementById('caseInp' + idx);
       const outSpan = document.getElementById('out' + idx);
+      
+      caseInpEl.innerHTML = `(${inp[0]}, ${inp[1]}) &rarr; ${dict.targetLabel}: ${target[idx]}`;
       outSpan.innerText = `${lbl} (p=${pred.toFixed(2)})`;
       if (isOk) {
         el.className = "case-box case-success";
@@ -857,7 +990,7 @@ Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
     });
 
     const accRate = Math.round((correct / 4) * 100);
-    accBadge.innerText = `%${accRate} Başarı`;
+    accBadge.innerText = accRate === 100 ? dict.accOk : dict.accPattern.replace('{rate}', accRate);
     accBadge.className = accRate === 100 ? "accuracy-badge badge-ok" : "accuracy-badge badge-warn";
   }
 
@@ -890,7 +1023,10 @@ Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
     render();
   });
 
-  render();
+  // Başlangıç Ayarları
+  applyLanguage(currentLang);
+  const savedTheme = localStorage.getItem('widget_theme');
+  applyTheme(savedTheme !== 'light');
 </script>
 </body>
 </html>
