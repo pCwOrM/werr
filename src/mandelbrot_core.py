@@ -73,3 +73,26 @@ def extract_quadrant_weights(escape_iters, max_iter=100):
 
 def sigmoid(x):
     return 1.0 / (1.0 + np.exp(-np.clip(x, -50.0, 50.0)))
+
+def extract_quadtree_features(escape_iters, grid_size=8, max_iter=100):
+    """
+    Hierarchical 2^p x 2^p Quadtree Partitioning (Section IV-F).
+    Subdivides a patch into grid_size x grid_size sub-tiles (e.g., 8x8 = 64 sub-tiles).
+    Returns:
+      - ratios: 1D array of dark area ratios in [0, 1] for each sub-tile
+      - avg_escapes: 1D array of normalized average escape times in [0, 1] for each sub-tile
+    """
+    h, w = escape_iters.shape
+    tile_h = h // grid_size
+    tile_w = w // grid_size
+    ratios = []
+    avg_escapes = []
+    for r in range(grid_size):
+        for c in range(grid_size):
+            tile = escape_iters[r*tile_h:(r+1)*tile_h, c*tile_w:(c+1)*tile_w]
+            dark_ratio = np.sum(tile == max_iter) / tile.size
+            avg_esc = np.mean(tile) / max_iter
+            ratios.append(dark_ratio)
+            avg_escapes.append(avg_esc)
+    return np.array(ratios), np.array(avg_escapes)
+

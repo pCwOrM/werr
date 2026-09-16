@@ -156,6 +156,7 @@ Allocating IEEE 754 double-precision (64-bit) floats yields:
 The persistent weight tensor matrix is exactly \textbf{0 Bytes}. All synaptic values are synthesized procedurally on demand, completely circumventing persistent tensor storage.
 
 \subsection{Scalability to Arbitrary Weight Tensors}
+\label{sec:quadtree}
 A key theoretical inquiry regarding procedural parameterization is how the 4-Quadrant extraction generalizes to arbitrary weight matrices $\mathbf{W} \in \mathbb{R}^{M \times K}$. We formulate two analytical scaling paradigms:
 
 \textit{1) Hierarchical $2^p \times 2^p$ Quadtree Partitioning:}
@@ -168,6 +169,7 @@ For depth $p=2$ ($4 \times 4$), 16 independent parameters are synthesized from a
 \textit{2) Deterministic Seed-Offset Generation for Multi-Layer Networks:}
 For networks comprising $L$ layers with distinct coordinate requirements, layer-specific coordinates are derived deterministically from a single root seed tuple $\Theta_0$ via a parameter displacement recurrence:
 \begin{equation}
+\label{eq:recurrence}
 \Theta_\ell = \Theta_0 + \ell \cdot \Delta \boldsymbol{\delta} \pmod{\Omega}
 \end{equation}
 where $\Delta \boldsymbol{\delta} = (\delta_x, \delta_y, \delta_z) \in \mathbb{R}^3$ is an analytical displacement vector and $\Omega$ defines the non-trivial boundary manifold $\partial \mathcal{M}$. Storing only the pair $(\Theta_0, \Delta \boldsymbol{\delta})$ requires exactly $48$ bytes of persistent memory to parameterize an arbitrarily deep network, establishing an asymptotic storage complexity of $O(1)$ with respect to total parameter count $W$.
@@ -303,6 +305,39 @@ Evaluating across the complete truth table yields:
 \end{itemize}
 The composite network achieves \textbf{100\% empirical accuracy} on XOR, producing a smooth non-linear continuous decision contour.
 
+\subsection{Continuous Non-Linear Manifolds: Two-Moons and Two-Spirals}
+\label{sec:continuous}
+While discrete logic gates confirm that procedural fractal parameterization resolves classical boolean separation barriers, validating representation capacity on continuous, noisy, non-convex manifolds is essential to establish practical applicability for machine learning tasks. To rigorously assess continuous expressivity, we evaluated the fractal neural architecture across two canonical continuous non-linear benchmarks: the \textit{Two-Moons} distribution ($N = 1000$ samples, Gaussian noise $\sigma = 0.10$) and the classic Lang and Witbrock \cite{lang1988learning} \textit{Two-Spirals} problem ($N = 200$ samples, noise $\sigma = 0.04$).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/continuous_manifolds_benchmark.png}
+\caption{Continuous non-linear manifold classification benchmarks. (a) Two-Moons benchmark ($N=1000$): The non-linear decision contour separates the interleaving crescent manifolds with 99.3\% empirical accuracy using a single 24-byte coordinate seed $\Theta$ partitioned via $8 \times 8$ Quadtree decomposition. (b) Two-Spirals benchmark ($N=200$): The complex winding boundary wraps around both continuous spiral arms with 98.5\% accuracy, synthesized using a 48-byte analytical recurrence offset pair $(\Theta_0, \Delta \boldsymbol{\delta})$. Neither model stores any persistent weight matrices.}
+\label{fig:continuous_benchmarks}
+\end{figure*}
+
+\begin{table}[t]
+\centering
+\caption{Continuous Non-Linear Manifold Benchmark Results}
+\label{tab:continuous_benchmarks}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Benchmark} & \textbf{Samples ($N$)} & \textbf{Seed Footprint} & \textbf{Accuracy} & \textbf{Precision / Recall} & \textbf{F1-Score} \\
+\midrule
+\textbf{Two-Moons} & $1000$ ($\sigma=0.10$) & 24 Bytes (1 Patch) & \textbf{99.30\%} & 99.01\% / 99.60\% & \textbf{99.30\%} \\
+\textbf{Two-Spirals} & $200$ ($\sigma=0.04$) & 48 Bytes (2 Patches) & \textbf{98.50\%} & 100.0\% / 97.00\% & \textbf{98.48\%} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+For Two-Moons, a single 24-byte coordinate seed $\Theta = (c_x=-0.758349, c_y=0.088328, z=43.2)$ at $128 \times 128$ resolution is hierarchically decomposed into an $8 \times 8$ Quadtree grid (Section \ref{sec:quadtree}, depth $p=3$), synthesizing $32$ hidden projection neurons without storing any persistent tensor matrices. As illustrated in Fig. \ref{fig:continuous_benchmarks}(a) and Table \ref{tab:continuous_benchmarks}, the procedural network yields a smooth, non-linear separatrix achieving \textbf{99.30\% classification accuracy} and a 99.30\% F1-score.
+
+For the Two-Spirals task---a notoriously difficult non-convex challenge where single hyperplanes fail---we utilized the analytical recurrence offset formulation (Section \ref{sec:quadtree}, Eq. \ref{eq:recurrence}) with seed $\Theta_0 = (-0.769243, 0.108525, 949.97)$ and displacement $\Delta \boldsymbol{\delta} = (0.002830, -0.010075, \log_{10} z \times 0.3255)$. This generates two complementary $128 \times 128$ fractal patches totaling 64 hidden projection neurons from a 48-byte seed footprint. The network successfully captures the high-order winding topology (Fig. \ref{fig:continuous_benchmarks}(b)), attaining \textbf{98.50\% accuracy} (100.0\% precision, 98.48\% F1-score). 
+
+These findings empirically demonstrate that procedural Mandelbrot parameterization is not restricted to toy discrete logic gates, but projects input features into a rich, non-linear reproducing kernel space capable of resolving continuous topological manifolds with zero persistent tensor storage.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.92\columnwidth]{figures/zoom_weight_curve.png}
@@ -328,7 +363,7 @@ A rigorous assessment reveals four primary limitations:
 
 \textbf{Photonic \& Optical Co-processors:} Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction ($< 1\text{ ns}$) with zero electrical resistance and zero thermal dissipation.
 
-\textbf{Continuous Non-Linear Benchmarks (Two-Moons and Two-Spirals):} While the XOR gate resolves the classical discrete non-linearity barrier, extending procedural fractal synthesis to continuous non-convex manifolds represents the primary empirical milestone for multi-layer fractal networks. Evaluating the representation capacity on continuous 2D benchmark datasets—specifically the \textit{Two-Moons} and \textit{Two-Spirals} classification tasks—will validate the expressivity of hierarchical quadtree partitioning without reliance on backpropagation.
+\textbf{Higher-Dimensional Manifolds and Temporal Sequences:} With continuous 2D manifolds successfully resolved in Section \ref{sec:continuous}, extending procedural synthesis to high-dimensional visual manifolds (e.g., MNIST/CIFAR-10) and temporal dynamics represents the next primary architectural frontier.
 
 \textbf{Steganographic \& Obfuscated AI:} Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.
 

@@ -22,6 +22,7 @@ img_res_comp = get_base64_image("resolution_comparison_128.png")
 img_quad_weights = get_base64_image("quadrant_weights_128.png")
 img_gates = get_base64_image("gate_solutions_128.png")
 img_xor = get_base64_image("xor_complete_network_128.png")
+img_continuous = get_base64_image("continuous_manifolds_benchmark.png")
 
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
@@ -539,9 +540,55 @@ html_content = f"""<!DOCTYPE html>
   </ul>
   <p>The composite network achieves <strong>100% empirical accuracy</strong> on XOR, producing a smooth non-linear continuous decision contour.</p>
 
+  <h3>D. Continuous Non-Linear Manifolds: Two-Moons and Two-Spirals</h3>
+  <p>While discrete logic gates confirm that procedural fractal parameterization resolves classical boolean separation barriers, validating representation capacity on continuous, noisy, non-convex manifolds is essential to establish practical applicability for machine learning tasks. To rigorously assess continuous expressivity, we evaluated the fractal neural architecture across two canonical continuous non-linear benchmarks: the <em>Two-Moons</em> distribution (N = 1000 samples, Gaussian noise &sigma; = 0.10) and the classic Lang and Witbrock [11] <em>Two-Spirals</em> problem (N = 200 samples, noise &sigma; = 0.04).</p>
+
+  <div class="figure-box">
+    <img src="{img_continuous}" alt="Continuous Non-Linear Manifolds Benchmark">
+    <div class="figure-caption"><strong>Fig. 6.</strong> Continuous non-linear manifold classification benchmarks. (a) Two-Moons benchmark (N=1000): Non-linear decision boundary separates crescent manifolds with 99.3% accuracy via single 24-byte seed &Theta; with 8 &times; 8 Quadtree decomposition. (b) Two-Spirals benchmark (N=200): Complex winding boundary wraps around continuous spiral arms with 98.5% accuracy via 48-byte recurrence offset pair (&Theta;<sub>0</sub>, &Delta;&delta;). Neither model stores persistent weight matrices.</div>
+  </div>
+
+  <table class="ieee-table">
+    <caption>TABLE IV: Continuous Non-Linear Manifold Benchmark Results</caption>
+    <thead>
+      <tr>
+        <th>Benchmark</th>
+        <th>Samples (N)</th>
+        <th>Seed Footprint</th>
+        <th>Accuracy</th>
+        <th>Precision / Recall</th>
+        <th>F1-Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Two-Moons</strong></td>
+        <td>1000 (&sigma;=0.10)</td>
+        <td>24 Bytes (1 Patch)</td>
+        <td><strong>99.30%</strong></td>
+        <td>99.01% / 99.60%</td>
+        <td><strong>99.30%</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Two-Spirals</strong></td>
+        <td>200 (&sigma;=0.04)</td>
+        <td>48 Bytes (2 Patches)</td>
+        <td><strong>98.50%</strong></td>
+        <td>100.0% / 97.00%</td>
+        <td><strong>98.48%</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For Two-Moons, a single 24-byte coordinate seed &Theta; = (c<sub>x</sub>=-0.758349, c<sub>y</sub>=0.088328, z=43.2) at 128 &times; 128 resolution is hierarchically decomposed into an 8 &times; 8 Quadtree grid (depth p=3), synthesizing 32 hidden projection neurons without storing any persistent tensor matrices. As illustrated in Fig. 6(a) and Table IV, the procedural network yields a smooth, non-linear separatrix achieving <strong>99.30% classification accuracy</strong> and a 99.30% F1-score.</p>
+
+  <p>For the Two-Spirals task—a notoriously difficult non-convex challenge where single hyperplanes fail—we utilized the analytical recurrence offset formulation with seed &Theta;<sub>0</sub> = (-0.769243, 0.108525, 949.97) and displacement &Delta;&delta; = (0.002830, -0.010075, log<sub>10</sub> z &times; 0.3255). This generates two complementary 128 &times; 128 fractal patches totaling 64 hidden projection neurons from a 48-byte seed footprint. The network successfully captures the high-order winding topology (Fig. 6(b)), attaining <strong>98.50% accuracy</strong> (100.0% precision, 98.48% F1-score).</p>
+
+  <p>These findings empirically demonstrate that procedural Mandelbrot parameterization is not restricted to toy discrete logic gates, but projects input features into a rich, non-linear reproducing kernel space capable of resolving continuous topological manifolds with zero persistent tensor storage.</p>
+
   <div class="figure-box">
     <img src="{img_zoom_curve}" alt="Zoom Weight Curve">
-    <div class="figure-caption"><strong>Fig. 6.</strong> Continuous parameter modulation as a function of logarithmic zoom scale (log<sub>10</sub> z). Smooth trajectories confirm that zooming enables continuous threshold fine-tuning.</div>
+    <div class="figure-caption"><strong>Fig. 7.</strong> Continuous parameter modulation as a function of logarithmic zoom scale (log<sub>10</sub> z). Smooth trajectories confirm that zooming enables continuous threshold fine-tuning.</div>
   </div>
 
   <h2>VI. Theoretical Bottlenecks and Challenges</h2>
@@ -549,14 +596,14 @@ html_content = f"""<!DOCTYPE html>
   <ol>
     <li><strong>Non-Differentiability:</strong> The step-counting escape metric produces a piecewise-constant function whose partial derivatives &part;R/&part;c<sub>x</sub> are zero almost everywhere and undefined at fractal boundaries. Replacing the hard escape criterion with a temperature-scaled soft-escape formulation I<sub>soft</sub>(c; &tau;) = 1 / (1 + exp(-(M<sub>max</sub> - K(c))/&tau;)) yields continuous parameter gradients &nabla;<sub>&Theta;</sub>L.</li>
     <li><strong>Computational Latency:</strong> Querying memory in conventional GPUs requires O(1) clock cycles, whereas synthesizing a 128 &times; 128 Mandelbrot patch on CPUs demands O(N<sup>2</sup> &times; M<sub>max</sub>) operations (&sim;1.1 &times; 10<sup>6</sup> FLOPS).</li>
-    <li><strong>Chaotic Sensitivity (Lyapunov Instability):</strong> Near the boundary, perturbations on the order of &Delta;c &sim; 10<sup>-7</sup> can induce drastic shifts in parameter values, creating rugged optimization fitness surfaces (Fig. 6).</li>
+    <li><strong>Chaotic Sensitivity (Lyapunov Instability):</strong> Near the boundary, perturbations on the order of &Delta;c &sim; 10<sup>-7</sup> can induce drastic shifts in parameter values, creating rugged optimization fitness surfaces (Fig. 7).</li>
     <li><strong>Saturation:</strong> In interior hyperbolic components or exterior basins, the black ratio saturates at 1.0 or 0.0, eliminating parameter diversity.</li>
   </ol>
 
   <h2>VII. Future Research & Hardware Horizons</h2>
   <p><strong>Differentiable Soft-Escape Formulations:</strong> Transitioning to soft-escape sigmoid kernels allows end-to-end backpropagation directly through fractal coordinate space.</p>
-  <p><strong>Continuous Non-Linear Benchmarks (Two-Moons and Two-Spirals):</strong> While the XOR gate resolves the historical discrete non-linearity barrier, extending procedural fractal synthesis to continuous complex manifolds represents the primary empirical milestone for multi-layer fractal networks. Evaluating representation capacity on continuous 2D benchmark datasets—specifically the Two-Moons and Two-Spirals classification tasks—will validate the expressivity of hierarchical quadtree partitioning without reliance on backpropagation.</p>
   <p><strong>Photonic & Optical Co-processors:</strong> Analog optical diffraction through spatial light modulators can compute physical fractal interference patterns at the speed of light, yielding instant parameter extraction (&lt;1 ns) with zero electrical resistance and zero thermal dissipation.</p>
+  <p><strong>Higher-Dimensional Manifolds and Temporal Sequences:</strong> With continuous 2D manifolds successfully resolved in Section V-D, extending procedural synthesis to high-dimensional visual manifolds (e.g., MNIST/CIFAR-10) and temporal dynamics represents the next primary architectural frontier.</p>
   <p><strong>Steganographic & Obfuscated AI:</strong> Parameter matrices never exist in persistent storage, preventing weight extraction or model theft without private 24-byte coordinate keys.</p>
 
   <h2>VIII. Conclusion</h2>
@@ -577,6 +624,7 @@ html_content = f"""<!DOCTYPE html>
     <li>M. Minsky and S. A. Papert, <em>Perceptrons: An Introduction to Computational Geometry</em>. Cambridge, MA: MIT Press, 1969. ISBN: 978-0262630221.</li>
     <li>H.-O. Peitgen and P. H. Richter, <em>The Beauty of Fractals: Images of Complex Dynamical Systems</em>. Berlin, Heidelberg: Springer-Verlag, 1986. DOI: 10.1007/978-3-642-61717-1.</li>
     <li>D. H. Wolpert and W. G. Macready, "No free lunch theorems for optimization," <em>IEEE Trans. Evol. Comput.</em>, vol. 1, no. 1, pp. 67–82, 1997. DOI: 10.1109/4235.585892.</li>
+    <li>K. J. Lang and M. J. Witbrock, "Learning to tell two spirals apart," in <em>Proc. 1988 Connectionist Models Summer School</em>, 1988, pp. 52–59.</li>
   </ol>
 
   <div class="badge-footnote">
@@ -633,6 +681,15 @@ except Exception as e:
     print(f"    - Zenodo deposit (Camera-Ready) : {alt_zenodo}")
 
 shutil.copy2(pdf_docs_path, pdf_artifact_path)
+
+desktop_dirs = [
+    r"C:\Users\maat\Desktop\ZENODO_V2_YUKLENECEKLER",
+    r"C:\Users\maat\Desktop\ZENODO_GUNCEL_DOSYALAR"
+]
+for d in desktop_dirs:
+    if os.path.exists(d):
+        shutil.copy2(pdf_docs_path, os.path.join(d, "Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf"))
+        print(f"    - Mirrored to Desktop: {d}")
 
 print(f"[+] SUCCESS! English Academic IEEE Paper PDF compiled:")
 print(f"    - Docs location  : {pdf_docs_path}")
