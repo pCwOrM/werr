@@ -543,7 +543,7 @@ qv_html = """<!DOCTYPE html>
 
       <div class="badges-col">
         <span id="badgeMode" class="badge-mode">CANLI SENTEZ</span>
-        <a href="https://doi.org/10.5281/zenodo.22774935" target="_blank" class="badge-doi">DOI: 10.5281/zenodo.22774935</a>
+        <a href="https://doi.org/10.5281/zenodo.22802921" target="_blank" class="badge-doi">DOI: 10.5281/zenodo.22802921</a>
       </div>
     </div>
   </div>
@@ -879,7 +879,7 @@ ${td.synapsesTitle}
   • b  (Q4, Bias)       : ${biasEl.innerText}
 ${td.accuracy} ${accBadge.innerText}
 ${td.status}
-DOI Reference           : 10.5281/zenodo.22774935
+DOI Reference           : 10.5281/zenodo.22802921
 ${td.authors}
 ======================================================================`;
 

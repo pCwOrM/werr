@@ -117,7 +117,7 @@
 
 ## 7. 5 Dakikalık Canlı Sunum Senaryosu
 
-1. **1. Dakika (Giriş & Şaşırtma):** `interactive_lab.html` sayfasını açın. *"Bugün size trilyonlarca baytlık hafıza kartları olmadan, sadece 24 baytla karar veren bir zeka hücresi göstereceğim"* deyin. Sağ üstteki Koyu/Açık mod butonuna basarak modernliği vurgulayın.
+1. **1. Dakika (Giriş & Şaşırtma):** `interactive_lab.html` sayfasını açın. *"Bugün size trilyonlarca baytlık hafıza kartları olmadan, sadece 24 baytla karar veren bir zeka hücresi göstereceğim"* deyin.
 2. **2. Dakika (Çekiç Metaforunu Anlatın):** *"Normal yapay zeka 1000 kez çivi çakıp ortalama öğrenmeye çalışır. İnsan ise bir kere eline vurup hatanın sınırını çizer. Bizim modelimiz de işte bu Mandelbrot sınırını kullanıyor"* deyin.
 3. **3. Dakika (Kapıyı Test Edin):** Akıllı Kapı sekmesinde "Giriş Kartı YOK" ve "Yüz Tanıma YOK" iken kapının kilitli olduğunu gösterin. "Giriş Kartı OKUTULDU" butonuna basın; kablolardan yeşil elektriğin aktığını ve "KAPI AÇILDI 🟢" uyarısını gösterin.
 4. **4. Dakika (Kanıtı İndirin):** Sayfadaki mor **"💾 .TXT İndir"** butonuna basın. İndirilen metin dosyasını açıp ekrana yansıtın: *"Bakın, sadece 3 sayı sakladık: cx, cy ve zoom! Hafıza boyutu sıfır bayt!"* deyin.

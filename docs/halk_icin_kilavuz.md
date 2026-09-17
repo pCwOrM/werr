@@ -2,7 +2,7 @@
 ### *Mandelbrot Geometrisinden Sıfır Bellekle Yapay Zeka Nasıl Üretilir? (Herkes İçin Bilim ve Keşif Rehberi)*
 
 **Yazarlar:** Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı  
-**Resmi DOI:** [10.5281/zenodo.22774935](https://doi.org/10.5281/zenodo.22774935)  
+**Resmi DOI:** [10.5281/zenodo.22802921](https://doi.org/10.5281/zenodo.22802921)  
 **Açık Kaynak Kod Deposu:** [github.com/pCwOrM/mandelbrot-fractal-neural-synthesis](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
 **Canlı Web Laboratuvarı:** [pcworm.github.io/mandelbrot-fractal-neural-synthesis](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 
@@ -163,7 +163,7 @@ Bu teknoloji laboratuvardan çıkıp endüstriye uygulandığında hayatımızda
 **Cevap:** Mandelbrot kümesinde siyah bölge, formülün sonsuza kaçmayıp kendi içinde sakin ve dengeli kaldığı alandır. Renkli kısımlar ise kaçışın ve kaosun alanıdır. Karar vermek için dengeye ihtiyacımız olduğundan, siyah pikseller nöronun en güvenilir referansıdır.
 
 #### 4. "Bu çalışmanın bilimsel geçerliliği var mı?"
-**Cevap:** Evet. Çalışmamız uluslararası IEEE iki sütunlu akademik makale formatında kaleme alınmış, tüm matematiksel ispatları yapılmış ve **10.5281/zenodo.22774935** kalıcı DOI numarası ile dünya bilim literatürüne tescillenmiştir.
+**Cevap:** Evet. Çalışmamız uluslararası IEEE iki sütunlu akademik makale formatında kaleme alınmış, tüm matematiksel ispatları yapılmış ve **10.5281/zenodo.22802921** kalıcı DOI numarası ile dünya bilim literatürüne tescillenmiştir.
 
 #### 5. "Bu yazılımı kendi bilgisayarımda çalıştırabilir miyim?"
 **Cevap:** Kesinlikle! Çalışmamız %100 açık kaynaklıdır (Açık Bilim felsefesi). GitHub depomuzdan indirebilir veya doğrudan web sitemizden tarayıcınızla hemen deneyebilirsiniz.
@@ -184,7 +184,7 @@ Siz de bu serüvenin bir parçası olmak, kodu incelemek veya tarayıcınızda c
 
 * 🌐 **Canlı Deneyim:** [pcworm.github.io/mandelbrot-fractal-neural-synthesis](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 * 💻 **Açık Kaynak Kodlar:** [github.com/pCwOrM/mandelbrot-fractal-neural-synthesis](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)
-* 📑 **Akademik Ön Baskı:** [doi.org/10.5281/zenodo.22774935](https://doi.org/10.5281/zenodo.22774935)
+* 📑 **Akademik Ön Baskı:** [doi.org/10.5281/zenodo.22802921](https://doi.org/10.5281/zenodo.22802921)
 
 *Bilim ve merakla kalın!*
 
