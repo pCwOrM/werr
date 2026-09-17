@@ -1,10 +1,11 @@
 {
   "title": "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries",
-  "description": "This dataset and research package presents the complete experimental verification, source code, and interactive visualizers for Mandelbrot Fractal Neural Synthesis. By sampling 128x128 patches from the complex Mandelbrot set (z = z^2 + c) using 4-Quadrant Partitioning, synaptic weights (w1, w2, w3) and activation biases (b) are procedurally derived without persistent scalar storage. A functional decision unit is defined by only 24 bytes (three 64-bit coordinates), achieving >99.99999998% memory reduction compared to conventional static neural weight tensors. The repository includes Python verification scripts, high-resolution figures, standalone offline HTML/JS labs, and an extended Turkish academic summary.",
+  "description": "Procedural parameter generation engine deriving neural weights dynamically from Mandelbrot fractal dynamics with zero persistent tensor storage.",
   "creators": [
     {
       "name": "Dağlı, Volkan",
-      "affiliation": "ITouch Systems, Turkey"
+      "affiliation": "ITouch Systems, Mersin, Turkey",
+      "orcid": "0009-0000-1587-8703"
     },
     {
       "name": "Dağlı, Zerrin",
@@ -13,31 +14,16 @@
     },
     {
       "name": "Dağlı, Dağhan",
-      "affiliation": "Toros Science College, Turkey"
+      "affiliation": "Toros Science College, Mersin, Turkey"
     }
   ],
-  "upload_type": "publication",
-  "publication_type": "preprint",
   "access_right": "open",
-  "license": "CC-BY-4.0",
+  "license": "MIT",
   "keywords": [
-    "Fractal Neural Synthesis",
-    "Mandelbrot Set",
-    "Zero-Storage AI",
-    "Procedural Weight Generation",
-    "Non-Linear Decision Boundaries",
-    "Escape Horizon",
-    "Complex Dynamical Systems",
-    "Extreme Parameter Compression"
-  ],
-  "language": "eng",
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    }
-  ],
-  "notes": "Includes full replication source code, interactive offline HTML5 labs, and bilingual (English/Turkish) documentation.",
-  "doi": "10.5281/zenodo.22774935"
+    "fractal neural synthesis",
+    "mandelbrot set",
+    "procedural weight generation",
+    "zero-storage ai",
+    "non-linear decision boundaries"
+  ]
 }

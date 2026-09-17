@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software or cite this research, please cite it as below."
+authors:
+  - family-names: "Dağlı"
+    given-names: "Volkan"
+    orcid: "https://orcid.org/0009-0000-1587-8703"
+    affiliation: "ITouch Systems, Mersin, Turkey"
+  - family-names: "Dağlı"
+    given-names: "Zerrin"
+    orcid: "https://orcid.org/0000-0001-9490-6465"
+    affiliation: "Mersin University, Mersin, Turkey"
+  - family-names: "Dağlı"
+    given-names: "Dağhan"
+    affiliation: "Toros Science College, Mersin, Turkey"
+title: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"
+version: "2.0.0"
+doi: "10.5281/zenodo.22802921"
+date-released: 2026-09-15
+url: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
+repository-code: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
+keywords:
+  - "fractal neural networks"
+  - "mandelbrot set"
+  - "procedural weight generation"
+  - "zero storage ai"
+  - "non-linear decision boundaries"
+  - "neuromorphic computing"
+license: "MIT"

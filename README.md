@@ -14,7 +14,7 @@
 ## 👥 Authors & Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  
-  ITouch Systems, Turkey &bull; Zenodo: [`@itouch`](https://zenodo.org/)
+  ITouch Systems, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; Zenodo: [`@itouch`](https://zenodo.org/)
 
 * **Zerrin Dağlı**  
   Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
