@@ -38,8 +38,7 @@ main_tex_content = r"""\documentclass[10pt,twocolumn]{article}
     \textbf{Volkan Dağlı}\textsuperscript{1,*} \quad \textbf{Zerrin Dağlı}\textsuperscript{2} \quad \textbf{Dağhan Dağlı}\textsuperscript{3} \\
     \textsuperscript{1}\textit{ITouch Systems, Mersin, Turkey} \quad \textsuperscript{2}\textit{Mersin University, Mersin, Turkey} \quad \textsuperscript{3}\textit{Toros Science College, Mersin, Turkey} \\
     \textsuperscript{1}\textit{ORCID: 0009-0000-1587-8703} \quad \textsuperscript{2}\textit{ORCID: 0000-0001-9490-6465} \\
-    \textsuperscript{*}\textit{Corresponding Author: \url{volkan@itouch.com.tr}} \quad \textsuperscript{3}\textit{Author Contact: \url{idaghan@teknosanat.com.tr}} \\
-    \textit{Project Repository: \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}}
+    \textsuperscript{*}\textit{Correspondence via project repository: \url{https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis}}
 }
 
 \date{September 2026}
