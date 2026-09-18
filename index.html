@@ -1106,13 +1106,10 @@ if response.boolean("allow"):
   </div>
 
   <footer>
-    <p>
+    <p id="footer-text">
       <strong>wevv</strong> is part of the 
       <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> 
-      open science research initiative.
-    </p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem;" id="footer-authors">
-      Authors: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin University), Dağhan Dağlı (Toros Science College). MIT License.
+      research initiative. MIT License.
     </p>
   </footer>
 </div>
@@ -1179,7 +1176,7 @@ if response.boolean("allow"):
       tdLicVal: "100% Free & Open Source (MIT)",
       codeInstallLbl: "Install with zero heavy dependencies:",
       codeUsageLbl: "Run the decision engine in just 3 lines:",
-      footerAuthors: "Authors: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin University), Dağhan Dağlı (Toros Science College). MIT License."
+      footerText: '<strong>wevv</strong> is part of the <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> research initiative. MIT License.'
     },
     tr: {
       navGuide: "Halk Rehberi",
@@ -1240,7 +1237,7 @@ if response.boolean("allow"):
       tdLicVal: "%100 Açık Kaynak & Ücretsiz (MIT)",
       codeInstallLbl: "Hiçbir ağır kütüphaneye ihtiyaç duymadan kurun:",
       codeUsageLbl: "Sadece 3 satırda akıllı karar motorunu çalıştırın:",
-      footerAuthors: "Yazarlar: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin Üniversitesi), Dağhan Dağlı (Toros Fen Lisesi). MIT Lisansı."
+      footerText: '<strong>wevv</strong>, <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> araştırma girişiminin bir parçasıdır. MIT Lisansı.'
     }
   };
 
@@ -1321,7 +1318,7 @@ if response.boolean("allow"):
     // Code & Footer
     document.getElementById('code-install-lbl').innerText = t.codeInstallLbl;
     document.getElementById('code-usage-lbl').innerText = t.codeUsageLbl;
-    document.getElementById('footer-authors').innerText = t.footerAuthors;
+    document.getElementById('footer-text').innerHTML = t.footerText;
 
     evaluateDecision();
   }
