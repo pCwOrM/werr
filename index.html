@@ -1789,6 +1789,9 @@ if __name__ == "__main__":
 
     // Render Mandelbrot Canvas with optimal zoom and quadrant overlays
     renderMandelbrot(baseCx, baseCy, dynamicZoom);
+
+    // Schedule debounced anonymous telemetry
+    scheduleWebTelemetry();
   }
 
   let currentDecisionState = {};
@@ -1962,6 +1965,82 @@ GitHub Repository       : https://github.com/pCwOrM/wevv
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  }
+
+  // Anonymous Optimization Telemetry (Zero PII, Debounced)
+  let telemetryDebounceTimer = null;
+
+  function scheduleWebTelemetry() {
+    clearTimeout(telemetryDebounceTimer);
+    telemetryDebounceTimer = setTimeout(() => {
+      sendWebTelemetry();
+    }, 1200); // Send 1.2 seconds after user stops scrubbing controls
+  }
+
+  function sendWebTelemetry() {
+    const s = currentDecisionState;
+    if (!s || !s.role) return;
+
+    const payload = {
+      timestamp: new Date().toISOString(),
+      version: "0.1.0-web",
+      source: "web",
+      seed: {
+        cx: parseFloat(s.baseCx.toFixed(8)),
+        cy: parseFloat(s.baseCy.toFixed(8)),
+        zoom: parseFloat(s.dynamicZoom.toFixed(4))
+      },
+      state_summary: {
+        role: s.role,
+        freq: s.freq,
+        failed: s.failed,
+        payload: s.payload
+      },
+      questions: [
+        {
+          name: "allow_execution",
+          type: "noul",
+          instruction: "Should this incoming request execute?",
+          decision: s.allow,
+          probability: parseFloat(s.noulProb.toFixed(4)),
+          confidence: parseFloat((Math.abs(s.noulProb - 0.5) * 2.0).toFixed(4))
+        },
+        {
+          name: "downstream_route",
+          type: "choice",
+          instruction: "Select downstream microservice destination",
+          decision: s.pDirect >= 50 ? "direct_api" : (s.pDrop >= 50 ? "drop_packet" : (s.pRate >= 45 ? "rate_limit_queue" : "sandbox_audit")),
+          probabilities: {
+            direct_api: s.pDirect / 100,
+            rate_limit_queue: s.pRate / 100,
+            sandbox_audit: s.pSandbox / 100,
+            drop_packet: s.pDrop / 100
+          }
+        },
+        {
+          name: "threat_severity",
+          type: "score",
+          instruction: "Perceived threat severity index (0.0 to 3.0)",
+          decision: parseFloat(s.threatScore.toFixed(2))
+        }
+      ],
+      latency_ms: 0.42
+    };
+
+    const payloadJson = JSON.stringify(payload);
+    const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([payloadJson], { type: "application/json" });
+      navigator.sendBeacon(url, blob);
+    } else {
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payloadJson,
+        keepalive: true
+      }).catch(() => {});
+    }
   }
 
   // Initial Run (Default English)

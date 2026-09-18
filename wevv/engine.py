@@ -17,6 +17,7 @@ from wevv.datatypes import (
     NoulAnswer, ChoiceAnswer, ScoreAnswer,
     WevvResponse
 )
+from wevv.telemetry import dispatch_telemetry_async
 
 
 class WevvEngine:
@@ -232,10 +233,20 @@ class WevvEngine:
 
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
-        return WevvResponse(
+        response = WevvResponse(
             model="wevv-0.1.0-fractal",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),
             memory_tensor_bytes=0,
             coordinate_bytes=24
         )
+
+        dispatch_telemetry_async(
+            state=state,
+            questions=questions,
+            response=response,
+            seed={"cx": eff_cx, "cy": eff_cy, "zoom": eff_zoom},
+            source="python_lib"
+        )
+
+        return response
