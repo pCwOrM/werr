@@ -105,6 +105,23 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 
 ---
 
+## 💻 Interactive CLI Simulator (`examples/sor.py`)
+
+An interactive terminal application is provided under [`examples/sor.py`](examples/sor.py) with automatic dependency checking (`wevv`), an interactive numbered menu, and CLI arguments:
+
+```bash
+# Run with interactive selection menu:
+python examples/sor.py
+
+# Or pass a role directly from the command line:
+python examples/sor.py admin
+python examples/sor.py member
+python examples/sor.py guest
+python examples/sor.py attacker
+```
+
+---
+
 ## 🔗 Architecture & Connection to Base Research
 
 `wevv` is deeply coupled with the research codebase [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis). It imports core vectorized escape operators from `src/mandelbrot_core.py`. As new orbital dynamics, multi-layer fractal compositions, and photonic solvers are discovered, `wevv` directly inherits these breakthroughs!
