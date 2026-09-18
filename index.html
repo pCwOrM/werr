@@ -1032,6 +1032,9 @@
             <div class="hud-value" style="font-size: 0.85rem;" id="hud-seed">24 Bytes</div>
           </div>
         </div>
+        <button class="btn btn-secondary" id="btn-download-seed" onclick="downloadMemorySeedTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download 24-Byte Coordinate Seed & Decision State (.TXT)">
+          💾 <span id="btn-dl-seed-text">Download 24B Seed (.TXT)</span>
+        </button>
       </div>
     </div>
 
@@ -1415,6 +1418,8 @@ if __name__ == "__main__":
       cliDesc: "Standalone terminal simulator with automatic dependency checks (`wevv`), interactive role menu, and CLI arguments:",
       btnDownloadCli: "📥 Download sor.py",
       btnCopyCli: "📋 Copy Code",
+      btnDownloadSeedText: "Download 24B Seed (.TXT)",
+      btnDownloadSeedTitle: "Download 24-Byte Coordinate Seed & Decision State (.TXT)",
       cliRunHint: "<strong>Run in terminal:</strong> <code>python sor.py</code> (interactive menu) or <code>python sor.py member</code> (direct role)",
       footerText: '<strong>wevv</strong> is part of the <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> research initiative. MIT License.'
     },
@@ -1483,6 +1488,8 @@ if __name__ == "__main__":
       cliDesc: "Otomatik kütüphane kontrolü (`wevv`), numaralı rol menüsü ve komut satırı parametreleri içeren hazır simülatör betiği:",
       btnDownloadCli: "📥 sor.py İndir",
       btnCopyCli: "📋 Kodu Kopyala",
+      btnDownloadSeedText: "24B Tohum İndir (.TXT)",
+      btnDownloadSeedTitle: "24 Baytlık Koordinat Tohumu ve Karar Dökümünü İndir (.TXT)",
       cliRunHint: "<strong>Terminalde çalıştırma:</strong> <code>python sor.py</code> (seçim menüsü) veya <code>python sor.py member</code> (doğrudan rol)",
       footerText: '<strong>wevv</strong>, <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> araştırma girişiminin bir parçasıdır. MIT Lisansı.'
     }
@@ -1542,6 +1549,8 @@ if __name__ == "__main__":
     document.getElementById('hud-lbl-lat').innerText = t.hudLblLat;
     document.getElementById('hud-lbl-vram').innerText = t.hudLblVram;
     document.getElementById('hud-lbl-seed').innerText = t.hudLblSeed;
+    document.getElementById('btn-dl-seed-text').innerText = t.btnDownloadSeedText;
+    document.getElementById('btn-download-seed').title = t.btnDownloadSeedTitle;
     document.getElementById('sim-output-title').innerText = t.simOutputTitle;
     document.getElementById('sim-safe-tag').innerText = t.simSafeTag;
     document.getElementById('q1-desc').innerText = t.q1Desc;
@@ -1753,21 +1762,42 @@ if __name__ == "__main__":
       actionIcon.innerText = '🔍';
     }
 
+    // Dynamic coordinate derivation from 24-byte seed preset:
+    // Base: cx=-0.101096, cy=0.956286, zoom=45.0
+    const baseCx = -0.101096 + (netRisk * 0.003);
+    const baseCy = 0.956286 - (netRisk * 0.003);
+    const dynamicZoom = 45.0 * (1.0 + Math.abs(netRisk) * 0.15);
+
+    currentDecisionState = {
+      role: role,
+      freq: freq,
+      failed: failed,
+      payload: payload,
+      netRisk: netRisk,
+      threatScore: threatScore,
+      allow: allow,
+      noulProb: noulProb,
+      pDirect: pDirect,
+      pRate: pRate,
+      pSandbox: pSandbox,
+      pDrop: pDrop,
+      actionDispatch: actionDispatch.innerText,
+      baseCx: baseCx,
+      baseCy: baseCy,
+      dynamicZoom: dynamicZoom
+    };
+
     // Render Mandelbrot Canvas with optimal zoom and quadrant overlays
-    renderMandelbrot(netRisk);
+    renderMandelbrot(baseCx, baseCy, dynamicZoom);
   }
 
-  function renderMandelbrot(riskOffset) {
+  let currentDecisionState = {};
+
+  function renderMandelbrot(baseCx, baseCy, dynamicZoom) {
     const w = canvas.width;
     const h = canvas.height;
     const imgData = ctx.createImageData(w, h);
     const data = imgData.data;
-
-    // Base coordinate from Smart Router preset: cx=-0.101096, cy=0.956286, zoom=45.0
-    // Dynamic perturbation based on incoming net risk
-    const baseCx = -0.101096 + (riskOffset * 0.003);
-    const baseCy = 0.956286 - (riskOffset * 0.003);
-    const dynamicZoom = 45.0 * (1.0 + Math.abs(riskOffset) * 0.15);
     const scale = 2.0 / dynamicZoom;
 
     for (let py = 0; py < h; py++) {
@@ -1821,6 +1851,117 @@ if __name__ == "__main__":
     ctx.fillText('Q2 (w2)', w / 2 + 6, 14);
     ctx.fillText('Q3 (w3)', 6, h / 2 + 14);
     ctx.fillText('Q4 (bias)', w / 2 + 6, h / 2 + 14);
+  }
+
+  // Download 24-Byte Memory & Seed Dump (.TXT)
+  function downloadMemorySeedTxt() {
+    const s = currentDecisionState;
+    if (!s || !s.role) return;
+
+    const now = new Date();
+    const dateStr = now.getFullYear() + "-" + 
+                    String(now.getMonth() + 1).padStart(2, '0') + "-" + 
+                    String(now.getDate()).padStart(2, '0') + " " + 
+                    String(now.getHours()).padStart(2, '0') + ":" + 
+                    String(now.getMinutes()).padStart(2, '0') + ":" + 
+                    String(now.getSeconds()).padStart(2, '0');
+
+    let content = "";
+    if (currentLang === 'tr') {
+      const izinText = s.allow ? "✅ İZİN VERİLDİ (ALLOWED)" : "⛔ ENGELLENDİ (DENIED)";
+      content = `================================================================================
+     WEVV (DALGA & ÇEYREKLEME) - SIFIR-BELLEKLİ KARAR MOTORU
+                 24 BAYTLIK KOORDİNAT TOHUMU DÖKÜMÜ
+================================================================================
+Zaman Damgası           : ${dateStr}
+Sistem Mimarisi         : Prosedürel Fraktal Sistem-1 Refleksi (Mandelbrot Uzayı)
+Çözünürlük / Pertürb.   : 128 x 128 Faz Pertürbasyonu (4 Çeyrekli vv)
+
+[1] BELLEK İZLERİ VE TOHUM BİLGİLERİ
+--------------------------------------------------------------------------------
+Ağırlık Tensör VRAM     : 0 Byte (Sıfır Tensör Belleği, GB'larca Ağırlık Yok)
+Koordinat Tohum Boyutu  : 24 Byte (Üç adet 64-bit IEEE-754 Float64 Parametre)
+
+Parametre 1 (cx)        : ${s.baseCx.toFixed(8)} (Float64 - 8 Bayt)
+Parametre 2 (cy)        : ${(s.baseCy >= 0 ? '+' : '') + s.baseCy.toFixed(8)} (Float64 - 8 Bayt)
+Parametre 3 (zoom)      : ${s.dynamicZoom.toFixed(4)}x (Float64 - 8 Bayt)
+
+[2] GELEN PROGRAM DURUMU (GİRDİLER)
+--------------------------------------------------------------------------------
+Kullanıcı Güvenlik Rolü : ${s.role.toUpperCase()}
+İstek Frekansı          : ${s.freq} istek/sn
+Hatalı Giriş Sayısı     : ${s.failed}
+Gelen Paket Boyutu      : ${s.payload} KB
+Net Risk Katsayısı      : ${s.netRisk.toFixed(4)}
+
+[3] TÜRETİLEN KARARLAR (SİSTEM-1)
+--------------------------------------------------------------------------------
+S1 (noul) - Geçiş İzni  : ${izinText} (p = ${s.noulProb.toFixed(4)}, Güven = %${(s.noulProb * 100).toFixed(1)})
+S2 (choice) - Hedef     : Dağılım [Doğrudan: %${s.pDirect}, Hız Limiti: %${s.pRate}, Karantina: %${s.pSandbox}, Engelle: %${s.pDrop}]
+S3 (score) - Tehlike    : ${s.threatScore.toFixed(2)} / 3.0
+Akıllı Kod Yönlendirme  : ${s.actionDispatch}
+Karar Gecikmesi         : < 0.5 ms (Saf Yerel CPU, Sıfır Ağ Gecikmesi)
+
+[4] AKADEMİK ATIF VE TEKRARLANABİLİRLİK
+--------------------------------------------------------------------------------
+Araştırma Projesi       : Mandelbrot Fractal Neural Synthesis
+Yazarlar                : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+Lisans                  : MIT Lisansı (%100 Açık Kaynak)
+GitHub Deposu           : https://github.com/pCwOrM/wevv
+================================================================================`;
+    } else {
+      const allowText = s.allow ? "✅ ALLOWED" : "⛔ DENIED";
+      content = `================================================================================
+     WEVV (WAVE & VV-SUBDIVISION) - ZERO-MEMORY DECISION ENGINE
+                     24-BYTE COORDINATE SEED DUMP
+================================================================================
+Timestamp               : ${dateStr}
+System Architecture     : Procedural Fractal System-1 Reflex (Mandelbrot Space)
+Resolution / Perturb    : 128 x 128 Phase Perturbation (4-Quadrant vv)
+
+[1] MEMORY FOOTPRINT & SEED SPECS
+--------------------------------------------------------------------------------
+Weight Tensor VRAM      : 0 Bytes (Zero Tensor Memory, No Multi-GB Weights)
+Coordinate Seed Size    : 24 Bytes (Three 64-bit IEEE-754 Float64 Parameters)
+
+Parameter 1 (cx)        : ${s.baseCx.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 2 (cy)        : ${(s.baseCy >= 0 ? '+' : '') + s.baseCy.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 3 (zoom)      : ${s.dynamicZoom.toFixed(4)}x (Float64 - 8 Bytes)
+
+[2] INCOMING PROGRAM STATE (INPUTS)
+--------------------------------------------------------------------------------
+User Security Role      : ${s.role.toUpperCase()}
+Request Frequency       : ${s.freq} req/s
+Failed Auth Count       : ${s.failed}
+Incoming Payload Size   : ${s.payload} KB
+Net Risk Index          : ${s.netRisk.toFixed(4)}
+
+[3] SYNTHESIZED DECISIONS (SYSTEM-ONE)
+--------------------------------------------------------------------------------
+Q1 (noul) - Allow Exec  : ${allowText} (p = ${s.noulProb.toFixed(4)}, Confidence = ${(s.noulProb * 100).toFixed(1)}%)
+Q2 (choice) - Route     : Dist [direct: ${s.pDirect}%, rate_limit: ${s.pRate}%, sandbox: ${s.pSandbox}%, drop: ${s.pDrop}%]
+Q3 (score) - Threat     : ${s.threatScore.toFixed(2)} / 3.0
+Smart If-Statement      : ${s.actionDispatch}
+Decision Latency        : < 0.5 ms (Pure Local CPU, Zero Network Overhead)
+
+[4] SCIENTIFIC CITATION & REPRODUCIBILITY
+--------------------------------------------------------------------------------
+Research Project        : Mandelbrot Fractal Neural Synthesis
+Authors                 : Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+License                 : MIT License (100% Free & Open Source)
+GitHub Repository       : https://github.com/pCwOrM/wevv
+================================================================================`;
+    }
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `wevv_seed_${s.role}_${currentLang}_24bytes.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
 
   // Initial Run (Default English)
