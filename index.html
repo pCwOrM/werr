@@ -365,7 +365,7 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
     }
 
@@ -405,12 +405,162 @@
       color: var(--text-muted);
     }
 
+    /* Simulator Mode Tabs */
+    .sim-tab-bar {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .sim-tab-btn {
+      padding: 0.65rem 1.35rem;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .sim-tab-btn:hover {
+      border-color: var(--cyan);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .sim-tab-btn.active {
+      background: var(--cyan);
+      color: #ffffff;
+      border-color: var(--cyan);
+      box-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    html.dark .sim-tab-btn.active {
+      color: #07090e;
+    }
+
+    /* Preset Chips for Custom Playground */
+    .preset-chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+
+    .preset-chips-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .preset-chip {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .preset-chip:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-1px);
+    }
+
+    .preset-chip.active {
+      border-color: var(--cyan);
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan-glow);
+    }
+
+    .custom-textarea {
+      width: 100%;
+      min-height: 110px;
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      padding: 0.75rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .custom-textarea:focus, .custom-text-input:focus {
+      border-color: var(--cyan);
+    }
+
+    .custom-text-input {
+      width: 100%;
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      padding: 0.5rem 0.75rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .q-builder-box {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .q-builder-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.45rem;
+    }
+
+    /* Privacy Banner */
+    .privacy-banner {
+      margin-top: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
     /* Interactive Lab Grid */
     .lab-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 2rem;
-      margin: 3rem 0;
+      margin: 1.5rem 0 3rem;
     }
 
     /* Responsive Breakpoints & Mobile Optimization */
@@ -419,21 +569,29 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
       }
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
     }
 
     @media (max-width: 900px) {
       .lab-grid {
         grid-template-columns: 1fr;
-        margin: 2rem 0;
+        margin: 1.5rem 0 2rem;
       }
       .nav-links { display: none; }
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      .privacy-banner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
     @media (max-width: 640px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
       .container {
         padding: 1rem 0.75rem;
       }
@@ -938,9 +1096,9 @@
       </div>
     </div>
 
-    <!-- 3 Simple Steps -->
+    <!-- 4 Simple Steps -->
     <div class="steps-box">
-      <div class="steps-title" id="steps-title">💡 How to Use it? (3 Simple Steps)</div>
+      <div class="steps-title" id="steps-title">💡 How to Use it? (4 Simple Steps)</div>
       <div class="steps-grid">
         <div class="step-item">
           <div class="step-num">1</div>
@@ -963,169 +1121,393 @@
             <p id="step3-desc">Get deterministic, type-safe probabilities in &lt; 1 ms to branch your code.</p>
           </div>
         </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <strong id="step4-title">4. Branch Business Logic</strong>
+            <p id="step4-desc">Execute smart if-statements with 0 VRAM and zero cloud latency.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Lab -->
-  <section id="demo" class="lab-grid">
-    <!-- Left Panel: State Inputs & Real-time Canvas -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">
-          <span>🎛️</span> <span id="sim-input-title">Incoming Program State</span>
-        </div>
-        <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="sim-live-tag">Live Input</span>
-      </div>
+  <!-- Simulator Mode Tab Bar -->
+  <div class="sim-tab-bar" id="demo">
+    <button class="sim-tab-btn active" id="btn-sim-preset" onclick="switchSimulatorMode('preset')">
+      <span>⚡</span> <span id="tab-preset-title">Live Simulator (API Gateway)</span>
+    </button>
+    <button class="sim-tab-btn" id="btn-sim-custom" onclick="switchSimulatorMode('custom')">
+      <span>🧪</span> <span id="tab-custom-title">Custom Scenario Playground (Kendi Sorunu Sor)</span>
+    </button>
+  </div>
 
-      <div class="control-group">
-        <label class="control-label" id="lbl-role">User Security Role</label>
-        <select id="input-role" onchange="evaluateDecision()">
-          <option value="admin">System Administrator (auth: true, high trust)</option>
-          <option value="member" selected>Regular Member (auth: true, standard)</option>
-          <option value="guest">Unverified Guest (auth: false, zero trust)</option>
-          <option value="attacker">Hostile Burst IP (auth: false, attacker)</option>
-        </select>
-      </div>
-
-      <div class="control-group">
-        <div class="control-label">
-          <span id="lbl-freq">Request Frequency</span>
-          <span class="val" id="val-freq">12 req/s</span>
-        </div>
-        <input type="range" id="input-freq" min="1" max="200" value="12" oninput="evaluateDecision()">
-      </div>
-
-      <div class="control-group">
-        <div class="control-label">
-          <span id="lbl-failed">Failed Auth Count</span>
-          <span class="val" id="val-failed">0</span>
-        </div>
-        <input type="range" id="input-failed" min="0" max="20" value="0" oninput="evaluateDecision()">
-      </div>
-
-      <div class="control-group">
-        <div class="control-label">
-          <span id="lbl-payload">Payload Size</span>
-          <span class="val" id="val-payload">16 KB</span>
-        </div>
-        <input type="range" id="input-payload" min="1" max="500" value="16" oninput="evaluateDecision()">
-      </div>
-
-      <!-- Canvas Section -->
-      <div class="canvas-container">
-        <canvas id="mandelbrot-canvas" width="128" height="128"></canvas>
-        <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="canvas-desc">
-          Live 4-Quadrant Mandelbrot Phase Perturbation (128x128)
-        </div>
-        <div class="hud-metrics">
-          <div class="hud-box">
-            <div class="hud-label" id="hud-lbl-lat">Latency</div>
-            <div class="hud-value" id="hud-lat">&lt; 0.5 ms</div>
+  <!-- VIEW 1: PRESET API GATEWAY SIMULATOR -->
+  <div id="sim-view-preset">
+    <section class="lab-grid" style="margin-top: 0;">
+      <!-- Left Panel: State Inputs & Real-time Canvas -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>🎛️</span> <span id="sim-input-title">Incoming Program State</span>
           </div>
-          <div class="hud-box">
-            <div class="hud-label" id="hud-lbl-vram">Tensor VRAM</div>
-            <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
+          <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="sim-live-tag">Live Input</span>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" id="lbl-role">User Security Role</label>
+          <select id="input-role" onchange="evaluateDecision()">
+            <option value="admin">System Administrator (auth: true, high trust)</option>
+            <option value="member" selected>Regular Member (auth: true, standard)</option>
+            <option value="guest">Unverified Guest (auth: false, zero trust)</option>
+            <option value="attacker">Hostile Burst IP (auth: false, attacker)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span id="lbl-freq">Request Frequency</span>
+            <span class="val" id="val-freq">12 req/s</span>
           </div>
-          <div class="hud-box">
-            <div class="hud-label" id="hud-lbl-seed">Coordinate Seed</div>
-            <div class="hud-value" style="font-size: 0.85rem;" id="hud-seed">24 Bytes</div>
+          <input type="range" id="input-freq" min="1" max="200" value="12" oninput="evaluateDecision()">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span id="lbl-failed">Failed Auth Count</span>
+            <span class="val" id="val-failed">0</span>
+          </div>
+          <input type="range" id="input-failed" min="0" max="20" value="0" oninput="evaluateDecision()">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span id="lbl-payload">Payload Size</span>
+            <span class="val" id="val-payload">16 KB</span>
+          </div>
+          <input type="range" id="input-payload" min="1" max="500" value="16" oninput="evaluateDecision()">
+        </div>
+
+        <!-- Canvas Section -->
+        <div class="canvas-container">
+          <canvas id="mandelbrot-canvas" width="128" height="128"></canvas>
+          <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="canvas-desc">
+            Live 4-Quadrant Mandelbrot Phase Perturbation (128x128)
+          </div>
+          <div class="hud-metrics">
+            <div class="hud-box">
+              <div class="hud-label" id="hud-lbl-lat">Latency</div>
+              <div class="hud-value" id="hud-lat">&lt; 0.5 ms</div>
+            </div>
+            <div class="hud-box">
+              <div class="hud-label" id="hud-lbl-vram">Tensor VRAM</div>
+              <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
+            </div>
+            <div class="hud-box">
+              <div class="hud-label" id="hud-lbl-seed">Coordinate Seed</div>
+              <div class="hud-value" style="font-size: 0.85rem;" id="hud-seed">24 Bytes</div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="btn-download-seed" onclick="downloadMemorySeedTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download 24-Byte Coordinate Seed & Decision State (.TXT)">
+            💾 <span id="btn-dl-seed-text">Download 24B Seed (.TXT)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Panel: Typed System-1 Decisions -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>⚡</span> <span id="sim-output-title">Synthesized Decisions (System-One)</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="sim-safe-tag">Type-Safe</span>
+        </div>
+
+        <!-- Question 1: Noul -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong>allow_execution</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q1-desc">Question: Should this incoming request execute?</div>
+            </div>
+            <div class="decision-type-badge">noul</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="result-badge allow" id="badge-noul">ALLOWED</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-noul-prob">p = 0.9421</div>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="bar-noul" style="width: 94%;"></div>
           </div>
         </div>
-        <button class="btn btn-secondary" id="btn-download-seed" onclick="downloadMemorySeedTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download 24-Byte Coordinate Seed & Decision State (.TXT)">
-          💾 <span id="btn-dl-seed-text">Download 24B Seed (.TXT)</span>
+
+        <!-- Question 2: Choice -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong>route_target</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q2-desc">Question: Select downstream microservice destination</div>
+            </div>
+            <div class="decision-type-badge">choice</div>
+          </div>
+          
+          <div id="choice-list">
+            <div class="choice-item">
+              <span class="choice-name">direct_api</span>
+              <div class="choice-bar"><div class="choice-bar-fill" id="opt-direct" style="width: 78%;"></div></div>
+              <span class="choice-pct" id="pct-direct">78%</span>
+            </div>
+            <div class="choice-item">
+              <span class="choice-name">rate_limiter</span>
+              <div class="choice-bar"><div class="choice-bar-fill" id="opt-rate" style="width: 14%;"></div></div>
+              <span class="choice-pct" id="pct-rate">14%</span>
+            </div>
+            <div class="choice-item">
+              <span class="choice-name">sandbox_audit</span>
+              <div class="choice-bar"><div class="choice-bar-fill" id="opt-sandbox" style="width: 6%;"></div></div>
+              <span class="choice-pct" id="pct-sandbox">6%</span>
+            </div>
+            <div class="choice-item">
+              <span class="choice-name">drop_packet</span>
+              <div class="choice-bar"><div class="choice-bar-fill" id="opt-drop" style="width: 2%;"></div></div>
+              <span class="choice-pct" id="pct-drop">2%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3: Score -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong>threat_severity</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q3-desc">Question: Perceived threat severity index (0.0 to 3.0)</div>
+            </div>
+            <div class="decision-type-badge">score</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-score">0.24 / 3.0</div>
+            <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-score">Normal / Low Threat</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="bar-score" style="width: 8%; background: var(--emerald);"></div>
+          </div>
+        </div>
+
+        <!-- Real-time Action Dispatcher -->
+        <div class="action-callout">
+          <div>
+            <div class="action-label" id="action-label">Smart if-statement resolution:</div>
+            <div class="action-value" id="action-dispatch">EXECUTE_DIRECT(request)</div>
+          </div>
+          <span style="font-size: 1.5rem;" id="action-icon">🚀</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- VIEW 2: CUSTOM SCENARIO PLAYGROUND -->
+  <div id="sim-view-custom" style="display: none;">
+    <!-- Preset Chips -->
+    <div class="preset-chips-container">
+      <span class="preset-chips-label" id="lbl-presets-title">Quick Presets:</span>
+      <button class="preset-chip active" id="chip-iot" onclick="loadCustomPreset('iot')">
+        <span>🏠</span> <span id="chip-iot-title">Smart Home (IoT)</span>
+      </button>
+      <button class="preset-chip" id="chip-fraud" onclick="loadCustomPreset('fraud')">
+        <span>🛒</span> <span id="chip-fraud-title">E-Commerce (Fraud)</span>
+      </button>
+      <button class="preset-chip" id="chip-npc" onclick="loadCustomPreset('npc')">
+        <span>🎮</span> <span id="chip-npc-title">Game AI (NPC Combat)</span>
+      </button>
+      <button class="preset-chip" id="chip-finance" onclick="loadCustomPreset('finance')">
+        <span>🏦</span> <span id="chip-finance-title">Finance (Credit Scoring)</span>
+      </button>
+    </div>
+
+    <section class="lab-grid" style="margin-top: 0;">
+      <!-- Left Panel: Custom State & Questions Builder -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📝</span> <span id="custom-input-title">Custom State & Questions</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="custom-status-tag">JSON Mode</span>
+        </div>
+
+        <!-- State JSON Editor -->
+        <div class="control-group">
+          <div class="control-label">
+            <span id="lbl-custom-state">Program State (JSON)</span>
+            <span class="val" id="val-json-status" style="font-size: 0.75rem;">Valid JSON ✓</span>
+          </div>
+          <textarea id="custom-state-json" class="custom-textarea" oninput="onCustomStateInput()">{
+  "room": "living_room",
+  "temperature": 27.5,
+  "motion_detected": true,
+  "window_open": false
+}</textarea>
+        </div>
+
+        <!-- Question 1: Noul Builder -->
+        <div class="q-builder-box">
+          <div class="q-builder-header">
+            <strong style="font-size: 0.85rem;" id="lbl-q1-builder">Q1: Boolean Decision (Noul)</strong>
+            <span class="decision-type-badge">noul</span>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem;">
+            <input type="text" id="custom-q1-name" class="custom-text-input" style="flex: 0.4;" value="activate_ac" placeholder="Name">
+            <input type="text" id="custom-q1-instruction" class="custom-text-input" style="flex: 1;" value="Should air conditioner activate based on temp & motion?" placeholder="Instruction / Question">
+          </div>
+        </div>
+
+        <!-- Question 2: Choice Builder -->
+        <div class="q-builder-box">
+          <div class="q-builder-header">
+            <strong style="font-size: 0.85rem;" id="lbl-q2-builder">Q2: Categorical Routing (Choice)</strong>
+            <span class="decision-type-badge">choice</span>
+          </div>
+          <div style="margin-bottom: 0.4rem;">
+            <input type="text" id="custom-q2-name" class="custom-text-input" value="cooling_mode" placeholder="Name" style="margin-bottom: 0.4rem;">
+            <input type="text" id="custom-q2-options" class="custom-text-input" value="turbo_cool: High Speed, eco_mode: Eco Friendly, fan_only: Fan Circulation, idle: Standby" placeholder="Key: Label, Key: Label">
+          </div>
+        </div>
+
+        <!-- Question 3: Score Builder -->
+        <div class="q-builder-box">
+          <div class="q-builder-header">
+            <strong style="font-size: 0.85rem;" id="lbl-q3-builder">Q3: Scalar Severity / Priority (Score)</strong>
+            <span class="decision-type-badge">score</span>
+          </div>
+          <div>
+            <input type="text" id="custom-q3-name" class="custom-text-input" value="energy_priority" placeholder="Name" style="margin-bottom: 0.4rem;">
+            <input type="text" id="custom-q3-levels" class="custom-text-input" value="Eco Saver, Balanced, High Comfort, Maximum Boost" placeholder="Levels (comma separated)">
+          </div>
+        </div>
+
+        <!-- Evaluate Button -->
+        <button class="btn btn-primary" onclick="evaluateCustomDecision()" style="width: 100%; justify-content: center; margin-top: 0.5rem;" id="btn-custom-evaluate">
+          ⚡ Evaluate Custom Decision
         </button>
+
+        <!-- Custom Canvas Section -->
+        <div class="canvas-container" style="margin-top: 1.25rem;">
+          <canvas id="custom-mandelbrot-canvas" width="128" height="128"></canvas>
+          <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="custom-canvas-desc">
+            Dynamic State-Perturbed Fractal Phase Space (128x128)
+          </div>
+          <div class="hud-metrics">
+            <div class="hud-box">
+              <div class="hud-label" id="hud-custom-lat">Latency</div>
+              <div class="hud-value" id="val-custom-lat">&lt; 0.5 ms</div>
+            </div>
+            <div class="hud-box">
+              <div class="hud-label" id="hud-custom-vram">Tensor VRAM</div>
+              <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
+            </div>
+            <div class="hud-box">
+              <div class="hud-label" id="hud-custom-seed">Coordinate Seed</div>
+              <div class="hud-value" style="font-size: 0.85rem;" id="val-custom-seed">24 Bytes</div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" onclick="downloadCustomDecisionTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download Custom Coordinate Seed & Decision State (.TXT)">
+            💾 <span id="btn-custom-dl-text">Download Custom Seed (.TXT)</span>
+          </button>
+        </div>
       </div>
+
+      <!-- Right Panel: Synthesized Custom Decisions -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>⚡</span> <span id="custom-output-title">Synthesized Decisions</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="custom-safe-tag">Type-Safe</span>
+        </div>
+
+        <!-- Custom Question 1: Noul -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong id="custom-q1-display-name">activate_ac</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q1-display-instr">Question: Should air conditioner activate based on temp & motion?</div>
+            </div>
+            <div class="decision-type-badge">noul</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="result-badge allow" id="badge-custom-noul">ALLOWED</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-custom-noul-prob">p = 0.8920</div>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="bar-custom-noul" style="width: 89%;"></div>
+          </div>
+        </div>
+
+        <!-- Custom Question 2: Choice -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong id="custom-q2-display-name">cooling_mode</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q2-display-instr">Question: Select operational mode</div>
+            </div>
+            <div class="decision-type-badge">choice</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);" id="lbl-selected-choice">Selected:</span>
+            <div class="decision-type-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan); font-size: 0.88rem; font-weight: 800;" id="badge-custom-choice">turbo_cool</div>
+          </div>
+          <div id="custom-choice-list"></div>
+        </div>
+
+        <!-- Custom Question 3: Score -->
+        <div class="decision-block">
+          <div class="decision-header">
+            <div>
+              <strong id="custom-q3-display-name">energy_priority</strong>
+              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q3-display-instr">Question: Priority along ordinal scale</div>
+            </div>
+            <div class="decision-type-badge">score</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-custom-score">2.40 / 3.0</div>
+            <span style="font-size: 0.85rem; color: var(--cyan); font-weight: 600;" id="label-custom-score">High Comfort</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="bar-custom-score" style="width: 80%; background: var(--cyan);"></div>
+          </div>
+        </div>
+
+        <!-- Custom Action Dispatcher -->
+        <div class="action-callout">
+          <div>
+            <div class="action-label" id="custom-action-label">Smart if-statement resolution:</div>
+            <div class="action-value" id="custom-action-dispatch">EXECUTE(living_room, turbo_cool)</div>
+          </div>
+          <span style="font-size: 1.5rem;" id="custom-action-icon">💡</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Privacy & Open Science Transparency Banner -->
+  <div class="privacy-banner">
+    <div style="flex: 1;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+        <span style="font-size: 1.2rem;">🔒</span>
+        <strong style="color: var(--text-main); font-size: 1rem;" id="priv-banner-title">Zero-PII Open Telemetry & Science Guarantee</strong>
+        <span class="badge-pill" style="margin-bottom: 0; padding: 0.2rem 0.6rem; font-size: 0.72rem; color: var(--emerald); border-color: var(--emerald);">
+          🟢 Server: mechsrv.itouch.fi:4431
+        </span>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;" id="priv-banner-desc">
+        All decisions evaluated in this simulator and in the Python library anonymously contribute to the universal fractal natural language decision mapping. No IP addresses, cookies, or user identifiers are logged. Sensitive keys (passwords, tokens, emails) are redacted on the client side. Opt-out anytime with <code>WEVV_TELEMETRY=0</code>.
+      </p>
     </div>
-
-    <!-- Right Panel: Typed System-1 Decisions -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">
-          <span>⚡</span> <span id="sim-output-title">Synthesized Decisions (System-One)</span>
-        </div>
-        <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="sim-safe-tag">Type-Safe</span>
-      </div>
-
-      <!-- Question 1: Noul -->
-      <div class="decision-block">
-        <div class="decision-header">
-          <div>
-            <strong>allow_execution</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q1-desc">Question: Should this incoming request execute?</div>
-          </div>
-          <div class="decision-type-badge">noul</div>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <div class="result-badge allow" id="badge-noul">ALLOWED</div>
-          <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-noul-prob">p = 0.9421</div>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="bar-noul" style="width: 94%;"></div>
-        </div>
-      </div>
-
-      <!-- Question 2: Choice -->
-      <div class="decision-block">
-        <div class="decision-header">
-          <div>
-            <strong>route_target</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q2-desc">Question: Select downstream microservice destination</div>
-          </div>
-          <div class="decision-type-badge">choice</div>
-        </div>
-        
-        <div id="choice-list">
-          <div class="choice-item">
-            <span class="choice-name">direct_api</span>
-            <div class="choice-bar"><div class="choice-bar-fill" id="opt-direct" style="width: 78%;"></div></div>
-            <span class="choice-pct" id="pct-direct">78%</span>
-          </div>
-          <div class="choice-item">
-            <span class="choice-name">rate_limiter</span>
-            <div class="choice-bar"><div class="choice-bar-fill" id="opt-rate" style="width: 14%;"></div></div>
-            <span class="choice-pct" id="pct-rate">14%</span>
-          </div>
-          <div class="choice-item">
-            <span class="choice-name">sandbox_audit</span>
-            <div class="choice-bar"><div class="choice-bar-fill" id="opt-sandbox" style="width: 6%;"></div></div>
-            <span class="choice-pct" id="pct-sandbox">6%</span>
-          </div>
-          <div class="choice-item">
-            <span class="choice-name">drop_packet</span>
-            <div class="choice-bar"><div class="choice-bar-fill" id="opt-drop" style="width: 2%;"></div></div>
-            <span class="choice-pct" id="pct-drop">2%</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Question 3: Score -->
-      <div class="decision-block">
-        <div class="decision-header">
-          <div>
-            <strong>threat_severity</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q3-desc">Question: Perceived threat severity index (0.0 to 3.0)</div>
-          </div>
-          <div class="decision-type-badge">score</div>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-score">0.24 / 3.0</div>
-          <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-score">Normal / Low Threat</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="bar-score" style="width: 8%; background: var(--emerald);"></div>
-        </div>
-      </div>
-
-      <!-- Real-time Action Dispatcher -->
-      <div class="action-callout">
-        <div>
-          <div class="action-label" id="action-label">Smart if-statement resolution:</div>
-          <div class="action-value" id="action-dispatch">EXECUTE_DIRECT(request)</div>
-        </div>
-        <span style="font-size: 1.5rem;" id="action-icon">🚀</span>
-      </div>
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+      <a href="https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.82rem; white-space: nowrap;" id="priv-btn-dataset">
+        📊 Download Open Dataset (.JSONL)
+      </a>
     </div>
+  </div>
   </section>
 
   <!-- Comparison Matrix -->
@@ -1331,6 +1713,10 @@ def main():
     print(f" • Tehlike Skoru : {karar.score('tehlike_skoru'):.2f} / 3.0")
     print(f" • Karar Hızı    : {karar.latency_ms:.2f} ms")
     print(f" • Bellek İzleri : 0 Byte Tensör VRAM (24 Byte Koordinat Tohumu)")
+    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, mechsrv.itouch.fi)")
+    print("=" * 50)
+    print(" ℹ️  [Açık Bilim & Gizlilik]: Fraktal optimizasyonu için yalnızca anonim koordinat")
+    print("     ve karar çıktıları kaydedilir. (Kapatmak için: export WEVV_TELEMETRY=0)")
     print("=" * 50 + "\n")
 
 if __name__ == "__main__":
@@ -1351,7 +1737,7 @@ if __name__ == "__main__":
 </div>
 
 <script>
-  // Bilingual Dictionary (Default: English)
+  // Comprehensive Bilingual Dictionary
   const i18n = {
     en: {
       navGuide: "Plain Guide",
@@ -1374,13 +1760,17 @@ if __name__ == "__main__":
       card3Text: "No waiting for cloud API calls or network hops. Runs locally on any cheap CPU, mobile device, or low-power microcontroller with zero electricity waste.",
       card4Title: "3 Simple Question Types",
       card4Text: "<strong>1. noul:</strong> Yes/No ('Should I unlock the door?')<br><strong>2. choice:</strong> Multiple Choice ('Route to Emergency or Clinic?')<br><strong>3. score:</strong> Ranking ('How critical is this threat? 0 to 3 scale')",
-      stepsTitle: "💡 How to Use it? (3 Simple Steps)",
+      stepsTitle: "💡 How to Use it? (4 Simple Steps)",
       step1Title: "1. Provide Program State",
       step1Desc: "Feed your app's variables (e.g., User role, request frequency, failed logins).",
       step2Title: "2. Ask Typed Questions",
       step2Desc: "Ask wevv: 'Is this operation safe?' or 'Which microservice should receive this?'.",
       step3Title: "3. Receive Instant Judgment",
       step3Desc: "Get deterministic, type-safe probabilities in < 1 ms to branch your code.",
+      step4Title: "4. Branch Business Logic",
+      step4Desc: "Execute smart if-statements with 0 VRAM and zero cloud latency.",
+      tabPresetTitle: "Live Simulator (API Gateway)",
+      tabCustomTitle: "Custom Scenario Playground (Kendi Sorunu Sor)",
       simInputTitle: "Incoming Program State",
       simLiveTag: "Live Input",
       lblRole: "User Security Role",
@@ -1399,6 +1789,29 @@ if __name__ == "__main__":
       badgeAllow: "ALLOWED",
       badgeDeny: "DENIED",
       actionLabel: "Smart if-statement resolution:",
+      // Custom Playground Translations
+      lblPresetsTitle: "Quick Presets:",
+      chipIotTitle: "Smart Home (IoT)",
+      chipFraudTitle: "E-Commerce (Fraud)",
+      chipNpcTitle: "Game AI (NPC Combat)",
+      chipFinanceTitle: "Finance (Credit Scoring)",
+      customInputTitle: "Custom State & Questions",
+      customStatusTag: "JSON Mode",
+      lblCustomState: "Program State (JSON)",
+      lblQ1Builder: "Q1: Boolean Decision (Noul)",
+      lblQ2Builder: "Q2: Categorical Routing (Choice)",
+      lblQ3Builder: "Q3: Scalar Severity / Priority (Score)",
+      btnCustomEvaluate: "⚡ Evaluate Custom Decision",
+      customCanvasDesc: "Dynamic State-Perturbed Fractal Phase Space (128x128)",
+      btnCustomDlText: "Download Custom Seed (.TXT)",
+      customOutputTitle: "Synthesized Decisions",
+      customSafeTag: "Type-Safe",
+      lblSelectedChoice: "Selected:",
+      customActionLabel: "Smart if-statement resolution:",
+      privBannerTitle: "Zero-PII Open Telemetry & Science Guarantee",
+      privBannerDesc: "All decisions evaluated in this simulator and in the Python library anonymously contribute to the universal fractal natural language decision mapping. No IP addresses, cookies, or user identifiers are logged. Sensitive keys (passwords, tokens, emails) are redacted on the client side. Opt-out anytime with <code>WEVV_TELEMETRY=0</code>.",
+      privBtnDataset: "📊 Download Open Dataset (.JSONL)",
+      // Comparison & Code
       compTitle: "Why wevv? Zero-Memory vs. LLM Decisions",
       thDim: "Dimension",
       tdMem: "Weight Tensor Memory",
@@ -1444,13 +1857,17 @@ if __name__ == "__main__":
       card3Text: "İnternet sunucularına bağlanıp saniyelerce beklemez. En ucuz bilgisayarda, cep telefonunda veya elektrik tüketmeyen küçük çiplerde bile 1 milisaniyenin altında kararlar üretir.",
       card4Title: "3 Basit Soru Tipi",
       card4Text: "<strong>1. noul:</strong> Evet/Hayır ('Kapıyı açayım mı?')<br><strong>2. choice:</strong> Çoktan Seçmeli ('Hastayı Acile mi, Kliniğe mi yönlendireyim?')<br><strong>3. score:</strong> Dereceleme ('Bu durum ne kadar acil? 0 ile 3 arası puanla')",
-      stepsTitle: "💡 Nasıl Kullanılır? (Çok Basit 3 Adım)",
+      stepsTitle: "💡 Nasıl Kullanılır? (4 Basit Adım)",
       step1Title: "1. Durumu Ver",
       step1Desc: "Yazılımındaki verileri söyle (Örn: Giriş yapan kim? Kaç kez şifreyi yanlış girdi?).",
       step2Title: "2. Sorunu Sor",
       step2Desc: "wevv'e sor: 'Bu işlem güvenli mi?' ya da 'Hangi departmana aktarayım?'.",
       step3Title: "3. Anında Kararı Al",
       step3Desc: "1 milisaniye içinde kesin, tip güvenli ve net kararı koduna bağla.",
+      step4Title: "4. Koda Bağla",
+      step4Desc: "Akıllı if-else dallanmasıyla sistemini anında yönlendir.",
+      tabPresetTitle: "Canlı Simülatör (API Gateway)",
+      tabCustomTitle: "Kendi Sorunu Sor (Özel Oyun Alanı)",
       simInputTitle: "Gelen Program Durumu",
       simLiveTag: "Canlı Girdi",
       lblRole: "Kullanıcı Güvenlik Rolü",
@@ -1469,6 +1886,29 @@ if __name__ == "__main__":
       badgeAllow: "ONAYLANDI",
       badgeDeny: "ENGELLENDİ",
       actionLabel: "Yazılımın akıllı if-else kararı:",
+      // Custom Playground Translations (TR)
+      lblPresetsTitle: "Hızlı Senaryolar:",
+      chipIotTitle: "Akıllı Ev (IoT)",
+      chipFraudTitle: "E-Ticaret (Fraud / Sahtecilik)",
+      chipNpcTitle: "Oyun Yapay Zekası (NPC)",
+      chipFinanceTitle: "Finans (Kredi Kararı)",
+      customInputTitle: "Özel Durum ve Sorular",
+      customStatusTag: "JSON Modu",
+      lblCustomState: "Program Durumu (JSON)",
+      lblQ1Builder: "S1: Evet/Hayır Kararı (Noul)",
+      lblQ2Builder: "S2: Seçenek Yönlendirme (Choice)",
+      lblQ3Builder: "S3: Derecelendirme Skoru (Score)",
+      btnCustomEvaluate: "⚡ Fraktal Karar Üret",
+      customCanvasDesc: "Dinamik Durum Pertürbasyonlu Fraktal Faz Uzayı (128x128)",
+      btnCustomDlText: "Özel Tohumu İndir (.TXT)",
+      customOutputTitle: "Türetilen Kararlar",
+      customSafeTag: "Tip Güvenli",
+      lblSelectedChoice: "Seçilen:",
+      customActionLabel: "Yazılımın akıllı aksiyon kararı:",
+      privBannerTitle: "Sıfır Kişisel Veri Açık Bilim ve Telemetri Güvencesi",
+      privBannerDesc: "Bu simülatörde ve Python kütüphanesinde üretilen kararlar, evrensel fraktal doğal dil karar haritasının açık optimizasyonuna anonim olarak katkıda bulunur. IP adresi, çerez veya kullanıcı kimliği asla kaydedilmez; şifre ve anahtar alanları istemcide otomatik sansürlenir. Dilediğiniz an <code>WEVV_TELEMETRY=0</code> ile kapatabilirsiniz.",
+      privBtnDataset: "📊 Açık Veri Kümesini İndir (.JSONL)",
+      // Comparison & Code (TR)
       compTitle: "Neden wevv? Sıfır-Bellek vs. LLM Kararları",
       thDim: "Boyut",
       tdMem: "Ağırlık Belleği (VRAM)",
@@ -1496,6 +1936,93 @@ if __name__ == "__main__":
   };
 
   let currentLang = 'en';
+  let currentSimMode = 'preset'; // 'preset' or 'custom'
+
+  // Custom Playground Preset Scenarios
+  const PRESET_SCENARIOS = {
+    iot: {
+      en: {
+        state: '{\n  "room": "living_room",\n  "temperature": 27.5,\n  "motion_detected": true,\n  "window_open": false\n}',
+        q1Name: "activate_ac",
+        q1Instr: "Should air conditioner activate based on temp & motion?",
+        q2Name: "cooling_mode",
+        q2Opts: "turbo_cool: High Speed, eco_mode: Eco Friendly, fan_only: Fan Circulation, idle: Standby",
+        q3Name: "energy_priority",
+        q3Levels: "Eco Saver, Balanced, High Comfort, Maximum Boost"
+      },
+      tr: {
+        state: '{\n  "oda": "salon",\n  "sicaklik": 27.5,\n  "hareket_var": true,\n  "pencere_acik": false\n}',
+        q1Name: "klima_calissin_mi",
+        q1Instr: "Sıcaklık ve hareket algısına göre klima çalıştırılsın mı?",
+        q2Name: "fan_modu",
+        q2Opts: "hizli_sogutma: Turbo Soğutma, eko_mod: Eko Tasarruf, hava_sirkulasyon: Yalnızca Fan, bekle: Bekleme",
+        q3Name: "enerji_onceligi",
+        q3Levels: "Tasarruf, Dengeli, Konfor, Maksimum Güç"
+      }
+    },
+    fraud: {
+      en: {
+        state: '{\n  "order_amount": 18500,\n  "is_new_device": true,\n  "vpn_detected": true,\n  "card_country_mismatch": true\n}',
+        q1Name: "allow_transaction",
+        q1Instr: "Should this e-commerce purchase execute immediately?",
+        q2Name: "security_action",
+        q2Opts: "direct_approve: Instant Approval, sms_challenge: 3D Secure SMS, manual_audit: Risk Team Review, block_fraud: Hard Reject",
+        q3Name: "fraud_risk_score",
+        q3Levels: "Clean, Minor Anomaly, High Suspicion, Definite Fraud"
+      },
+      tr: {
+        state: '{\n  "siparis_tutari": 18500,\n  "yeni_cihaz": true,\n  "vpn_kullanimi": true,\n  "kart_ulkesi_farkli": true\n}',
+        q1Name: "islem_onaylansin_mi",
+        q1Instr: "Bu e-ticaret ödemesine doğrudan geçiş izni verilsin mi?",
+        q2Name: "guvenlik_aksiyonu",
+        q2Opts: "hemen_onayla: Doğrudan Onay, sms_dogrulama: 3D Secure SMS, manuel_inceleme: İnceleme Masası, islemi_reddet: Engelle & Reddet",
+        q3Name: "dolandiricilik_riski",
+        q3Levels: "Temiz, Hafif Anomali, Yüksek Risk, Kesin Sahtecilik"
+      }
+    },
+    npc: {
+      en: {
+        state: '{\n  "npc_health": 20,\n  "enemy_distance": 5.2,\n  "ammo_remaining": 0,\n  "cover_nearby": true\n}',
+        q1Name: "continue_fight",
+        q1Instr: "Should the NPC soldier continue aggressive engagement?",
+        q2Name: "tactical_choice",
+        q2Opts: "melee_attack: Melee Rush, take_cover: Take Cover, retreat_safe: Retreat to Bunker, call_backup: Call Reinforcements",
+        q3Name: "panic_level",
+        q3Levels: "Calm, Cautious, Panicking, Desperate"
+      },
+      tr: {
+        state: '{\n  "npc_can": 20,\n  "dusman_mesafe": 5.2,\n  "muhimmat": 0,\n  "siginak_yakin": true\n}',
+        q1Name: "savasa_devam_edilsin_mi",
+        q1Instr: "NPC askeri düşmanla çatışmaya doğrudan devam etsin mi?",
+        q2Name: "taktik_karari",
+        q2Opts: "yakin_dovus: Yakın Hücum, siper_al: Sipere Geç, siginaga_kac: Sığınağa Çekil, destek_cagir: Destek İste",
+        q3Name: "panik_seviyesi",
+        q3Levels: "Sakin, Temkinli, Panik, Çaresiz"
+      }
+    },
+    finance: {
+      en: {
+        state: '{\n  "credit_score": 1520,\n  "monthly_income": 75000,\n  "delinquencies": 0,\n  "requested_amount": 150000\n}',
+        q1Name: "approve_loan",
+        q1Instr: "Should the applicant be pre-approved for the requested loan?",
+        q2Name: "product_tier",
+        q2Opts: "instant_gold: Instant Platinum Loan, standard_tier: Standard Approval, request_guarantor: Collateral Required, reject_loan: Decline",
+        q3Name: "confidence_tier",
+        q3Levels: "Subprime, Fair, Prime, Super Prime"
+      },
+      tr: {
+        state: '{\n  "kredi_notu": 1520,\n  "aylik_gelir": 75000,\n  "gecikme_sayisi": 0,\n  "talep_edilen_tutar": 150000\n}',
+        q1Name: "kredi_onaylansin_mi",
+        q1Instr: "Müşterinin ihtiyaç kredisi başvurusu ön onaylansın mı?",
+        q2Name: "kredi_paketi",
+        q2Opts: "aninda_onay: Hızlı Platin Kredi, standart_onay: Standart Kredi, kefil_iste: Teminat / Kefil Şartı, basvuru_reddi: Reddet",
+        q3Name: "guven_derecesi",
+        q3Levels: "Riskli, Kabul Edilebilir, Yüksek Güven, Kusursuz"
+      }
+    }
+  };
+
+  let activeCustomPreset = 'iot';
 
   function setLanguage(lang) {
     currentLang = lang;
@@ -1537,8 +2064,14 @@ if __name__ == "__main__":
     document.getElementById('step2-desc').innerText = t.step2Desc;
     document.getElementById('step3-title').innerText = t.step3Title;
     document.getElementById('step3-desc').innerText = t.step3Desc;
+    document.getElementById('step4-title').innerText = t.step4Title;
+    document.getElementById('step4-desc').innerText = t.step4Desc;
 
-    // Simulator Labels
+    // Simulator Tab Bar
+    document.getElementById('tab-preset-title').innerText = t.tabPresetTitle;
+    document.getElementById('tab-custom-title').innerText = t.tabCustomTitle;
+
+    // Preset Simulator Labels
     document.getElementById('sim-input-title').innerText = t.simInputTitle;
     document.getElementById('sim-live-tag').innerText = t.simLiveTag;
     document.getElementById('lbl-role').innerText = t.lblRole;
@@ -1557,6 +2090,31 @@ if __name__ == "__main__":
     document.getElementById('q2-desc').innerText = t.q2Desc;
     document.getElementById('q3-desc').innerText = t.q3Desc;
     document.getElementById('action-label').innerText = t.actionLabel;
+
+    // Custom Playground Labels
+    document.getElementById('lbl-presets-title').innerText = t.lblPresetsTitle;
+    document.getElementById('chip-iot-title').innerText = t.chipIotTitle;
+    document.getElementById('chip-fraud-title').innerText = t.chipFraudTitle;
+    document.getElementById('chip-npc-title').innerText = t.chipNpcTitle;
+    document.getElementById('chip-finance-title').innerText = t.chipFinanceTitle;
+    document.getElementById('custom-input-title').innerText = t.customInputTitle;
+    document.getElementById('custom-status-tag').innerText = t.customStatusTag;
+    document.getElementById('lbl-custom-state').innerText = t.lblCustomState;
+    document.getElementById('lbl-q1-builder').innerText = t.lblQ1Builder;
+    document.getElementById('lbl-q2-builder').innerText = t.lblQ2Builder;
+    document.getElementById('lbl-q3-builder').innerText = t.lblQ3Builder;
+    document.getElementById('btn-custom-evaluate').innerText = t.btnCustomEvaluate;
+    document.getElementById('custom-canvas-desc').innerText = t.customCanvasDesc;
+    document.getElementById('btn-custom-dl-text').innerText = t.btnCustomDlText;
+    document.getElementById('custom-output-title').innerText = t.customOutputTitle;
+    document.getElementById('custom-safe-tag').innerText = t.customSafeTag;
+    document.getElementById('lbl-selected-choice').innerText = t.lblSelectedChoice;
+    document.getElementById('custom-action-label').innerText = t.customActionLabel;
+
+    // Privacy Banner
+    document.getElementById('priv-banner-title').innerText = t.privBannerTitle;
+    document.getElementById('priv-banner-desc').innerHTML = t.privBannerDesc;
+    document.getElementById('priv-btn-dataset').innerText = t.privBtnDataset;
 
     // Comparison
     document.getElementById('comp-title').innerText = t.compTitle;
@@ -1583,7 +2141,59 @@ if __name__ == "__main__":
     document.getElementById('code-usage-lbl').innerText = t.codeUsageLbl;
     document.getElementById('footer-text').innerHTML = t.footerText;
 
+    // Update active preset content to match language
+    loadCustomPreset(activeCustomPreset);
+
     evaluateDecision();
+  }
+
+  // Switch Simulator Mode (Preset vs. Custom Playground)
+  function switchSimulatorMode(mode) {
+    currentSimMode = mode;
+    const isPreset = mode === 'preset';
+    document.getElementById('btn-sim-preset').className = 'sim-tab-btn' + (isPreset ? ' active' : '');
+    document.getElementById('btn-sim-custom').className = 'sim-tab-btn' + (!isPreset ? ' active' : '');
+    document.getElementById('sim-view-preset').style.display = isPreset ? 'block' : 'none';
+    document.getElementById('sim-view-custom').style.display = !isPreset ? 'block' : 'none';
+
+    if (!isPreset) {
+      evaluateCustomDecision();
+    }
+  }
+
+  // Load Custom Preset Scenario
+  function loadCustomPreset(presetKey) {
+    activeCustomPreset = presetKey;
+    ['iot', 'fraud', 'npc', 'finance'].forEach(k => {
+      const chip = document.getElementById('chip-' + k);
+      if (chip) chip.className = 'preset-chip' + (k === presetKey ? ' active' : '');
+    });
+
+    const p = PRESET_SCENARIOS[presetKey][currentLang];
+    if (p) {
+      document.getElementById('custom-state-json').value = p.state;
+      document.getElementById('custom-q1-name').value = p.q1Name;
+      document.getElementById('custom-q1-instruction').value = p.q1Instr;
+      document.getElementById('custom-q2-name').value = p.q2Name;
+      document.getElementById('custom-q2-options').value = p.q2Opts;
+      document.getElementById('custom-q3-name').value = p.q3Name;
+      document.getElementById('custom-q3-levels').value = p.q3Levels;
+      onCustomStateInput();
+      evaluateCustomDecision();
+    }
+  }
+
+  function onCustomStateInput() {
+    const txt = document.getElementById('custom-state-json').value;
+    const statusEl = document.getElementById('val-json-status');
+    try {
+      JSON.parse(txt);
+      statusEl.innerText = 'Valid JSON ✓';
+      statusEl.style.color = 'var(--emerald)';
+    } catch (e) {
+      statusEl.innerText = 'Invalid JSON ✗';
+      statusEl.style.color = 'var(--rose)';
+    }
   }
 
   // Code Tab Switcher
@@ -1606,7 +2216,7 @@ if __name__ == "__main__":
     });
   }
 
-  // Theme Toggle (Light / Dark)
+  // Theme Toggle
   function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.classList.contains('dark');
@@ -1623,7 +2233,6 @@ if __name__ == "__main__":
     }
   }
 
-  // Initialize theme from saved preference
   const savedTheme = localStorage.getItem('wevv_theme');
   if (savedTheme === 'light') {
     document.documentElement.classList.remove('dark');
@@ -1631,7 +2240,20 @@ if __name__ == "__main__":
     document.getElementById('btn-theme').innerText = '☀️';
   }
 
-  // Live Fractal Decision Simulator Logic
+  // Text Normalizer for Turkish & English
+  function normalizeSemanticText(s) {
+    s = String(s || '').toLowerCase();
+    const map = {
+      'ı': 'i', 'i̇': 'i', 'ğ': 'g', 'ü': 'u', 'ş': 's', 'ö': 'o', 'ç': 'c',
+      'İ': 'i', 'I': 'i', 'Ğ': 'g', 'Ü': 'u', 'Ş': 's', 'Ö': 'o', 'Ç': 'c'
+    };
+    for (let k in map) {
+      s = s.split(k).join(map[k]);
+    }
+    return s.trim();
+  }
+
+  // Presets & Canvas Logic for Preset View
   const canvas = document.getElementById('mandelbrot-canvas');
   const ctx = canvas.getContext('2d');
 
@@ -1646,11 +2268,6 @@ if __name__ == "__main__":
     document.getElementById('val-failed').innerText = failed;
     document.getElementById('val-payload').innerText = payload + ' KB';
 
-    // Calibrated Risk Function:
-    // Admin: highly trusted baseline (-1.5)
-    // Member: standard trusted baseline (-0.6)
-    // Guest: unverified zero-trust baseline (+0.9)
-    // Attacker: explicitly hostile (+2.5)
     let baseTrust = 0.0;
     if (role === 'admin') baseTrust = -1.5;
     else if (role === 'member') baseTrust = -0.6;
@@ -1662,24 +2279,17 @@ if __name__ == "__main__":
     const payloadPenalty = (payload / 500.0) * 0.8;
 
     const netRisk = baseTrust + freqPenalty + failedPenalty + payloadPenalty;
-
-    // Threat Severity: continuous score from 0.0 to 3.0
     let threatScore = Math.max(0.0, Math.min(3.0, (netRisk + 1.2) * 0.85));
 
-    // Noul Probability (allow_execution):
-    // If threat is high or role is unverified guest/attacker, probability drops sharply
     let noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.2) * 2.2));
     noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
 
-    // Strict Security Constraint:
-    // An unauthenticated guest or any request with threat >= 1.4 cannot be ALLOWED
     let allow = noulProb >= 0.5;
     if (role === 'guest' || role === 'attacker' || threatScore >= 1.4) {
       allow = false;
-      noulProb = Math.min(noulProb, 0.35); // capped
+      noulProb = Math.min(noulProb, 0.35);
     }
 
-    // Choice Distribution (4-Quadrant Routing probabilities)
     let pDirect, pRate, pSandbox, pDrop;
     if (role === 'admin') {
       pDirect = allow ? 82 : 25;
@@ -1692,11 +2302,11 @@ if __name__ == "__main__":
       pSandbox = (failed > 2) ? 65 : 12;
       pDrop = (failed > 8) ? 60 : 3;
     } else if (role === 'guest') {
-      pDirect = 4; // guests can never bypass directly
+      pDirect = 4;
       pRate = (freq > 30) ? 45 : 20;
-      pSandbox = 68; // guest requests go to audit / auth challenge
+      pSandbox = 68;
       pDrop = (failed > 5 || freq > 120) ? 65 : 8;
-    } else { // attacker
+    } else {
       pDirect = 0;
       pRate = 5;
       pSandbox = 15;
@@ -1709,7 +2319,6 @@ if __name__ == "__main__":
     pSandbox = Math.round((pSandbox / total) * 100);
     pDrop = Math.max(0, 100 - (pDirect + pRate + pSandbox));
 
-    // Update UI elements
     const t = i18n[currentLang];
     const badgeNoul = document.getElementById('badge-noul');
     badgeNoul.innerText = allow ? t.badgeAllow : t.badgeDeny;
@@ -1762,8 +2371,6 @@ if __name__ == "__main__":
       actionIcon.innerText = '🔍';
     }
 
-    // Dynamic coordinate derivation from 24-byte seed preset:
-    // Base: cx=-0.101096, cy=0.956286, zoom=45.0
     const baseCx = -0.101096 + (netRisk * 0.003);
     const baseCy = 0.956286 - (netRisk * 0.003);
     const dynamicZoom = 45.0 * (1.0 + Math.abs(netRisk) * 0.15);
@@ -1787,19 +2394,18 @@ if __name__ == "__main__":
       dynamicZoom: dynamicZoom
     };
 
-    // Render Mandelbrot Canvas with optimal zoom and quadrant overlays
-    renderMandelbrot(baseCx, baseCy, dynamicZoom);
-
-    // Schedule debounced anonymous telemetry
+    renderMandelbrot(canvas, ctx, baseCx, baseCy, dynamicZoom);
     scheduleWebTelemetry();
   }
 
   let currentDecisionState = {};
+  let currentCustomDecisionState = {};
 
-  function renderMandelbrot(baseCx, baseCy, dynamicZoom) {
-    const w = canvas.width;
-    const h = canvas.height;
-    const imgData = ctx.createImageData(w, h);
+  function renderMandelbrot(targetCanvas, targetCtx, baseCx, baseCy, dynamicZoom) {
+    if (!targetCanvas || !targetCtx) return;
+    const w = targetCanvas.width;
+    const h = targetCanvas.height;
+    const imgData = targetCtx.createImageData(w, h);
     const data = imgData.data;
     const scale = 2.0 / dynamicZoom;
 
@@ -1820,13 +2426,11 @@ if __name__ == "__main__":
 
         const idx = (py * w + px) * 4;
         if (iter === maxIter) {
-          // Inside Mandelbrot (Dark region / non-escaping kernel)
           data[idx] = 10;
           data[idx + 1] = 14;
           data[idx + 2] = 23;
           data[idx + 3] = 255;
         } else {
-          // Escape glow
           let t = iter / maxIter;
           data[idx] = Math.floor(56 * t + 10);
           data[idx + 1] = Math.floor(189 * t + 20);
@@ -1835,28 +2439,332 @@ if __name__ == "__main__":
         }
       }
     }
-    ctx.putImageData(imgData, 0, 0);
+    targetCtx.putImageData(imgData, 0, 0);
 
-    // Overlay 4-Quadrant Division Lines (vv subdivision)
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(w / 2, 0);
-    ctx.lineTo(w / 2, h);
-    ctx.moveTo(0, h / 2);
-    ctx.lineTo(w, h / 2);
-    ctx.stroke();
+    // 4-Quadrant lines
+    targetCtx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+    targetCtx.lineWidth = 1;
+    targetCtx.beginPath();
+    targetCtx.moveTo(w / 2, 0);
+    targetCtx.lineTo(w / 2, h);
+    targetCtx.moveTo(0, h / 2);
+    targetCtx.lineTo(w, h / 2);
+    targetCtx.stroke();
 
-    // Subtle Quadrant Badges (Q1, Q2, Q3, Q4)
-    ctx.font = '9px JetBrains Mono, monospace';
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-    ctx.fillText('Q1 (w1)', 6, 14);
-    ctx.fillText('Q2 (w2)', w / 2 + 6, 14);
-    ctx.fillText('Q3 (w3)', 6, h / 2 + 14);
-    ctx.fillText('Q4 (bias)', w / 2 + 6, h / 2 + 14);
+    targetCtx.font = '9px JetBrains Mono, monospace';
+    targetCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    targetCtx.fillText('Q1 (w1)', 6, 14);
+    targetCtx.fillText('Q2 (w2)', w / 2 + 6, 14);
+    targetCtx.fillText('Q3 (w3)', 6, h / 2 + 14);
+    targetCtx.fillText('Q4 (bias)', w / 2 + 6, h / 2 + 14);
   }
 
-  // Download 24-Byte Memory & Seed Dump (.TXT)
+  // Evaluate Custom Decision Scenario
+  function evaluateCustomDecision() {
+    let stateObj = {};
+    try {
+      stateObj = JSON.parse(document.getElementById('custom-state-json').value);
+    } catch (e) {
+      return;
+    }
+
+    const q1Name = document.getElementById('custom-q1-name').value.trim() || 'q1_boolean';
+    const q1Instr = document.getElementById('custom-q1-instruction').value.trim();
+    const q2Name = document.getElementById('custom-q2-name').value.trim() || 'q2_choice';
+    const q2OptsRaw = document.getElementById('custom-q2-options').value.trim();
+    const q3Name = document.getElementById('custom-q3-name').value.trim() || 'q3_score';
+    const q3LevelsRaw = document.getElementById('custom-q3-levels').value.trim();
+
+    // Semantic roles in TR and EN
+    const semanticRoles = {
+      admin: -1.5, root: -1.5, superuser: -1.5, system: -1.5,
+      yonetici: -1.5, yetkili: -1.5, kok: -1.5, sistem: -1.5, kurucu: -1.5,
+      member: -0.8, user: -0.8, authenticated: -1.0, auth: -1.0, internal: -1.0,
+      uye: -0.8, kullanici: -0.8, kayitli: -0.8, dogrulanmis: -1.0, ic: -1.0,
+      guest: 0.9, anonymous: 1.0, unverified: 1.0,
+      misafir: 0.9, konuk: 0.9, ziyaretci: 0.9, anonim: 1.0,
+      attacker: 2.5, bot: 2.2, malicious: 2.5, hacker: 2.5, suspicious: 1.8,
+      saldirgan: 2.5, kotuniyetli: 2.5, zararli: 2.5, supheli: 1.8, tehdit: 2.2
+    };
+
+    let netRisk = 0.0;
+    let values = [];
+
+    for (let k in stateObj) {
+      const v = stateObj[k];
+      const kl = normalizeSemanticText(k);
+
+      if (typeof v === 'number') {
+        const norm = 2.0 / (1.0 + Math.exp(-v / 10.0)) - 1.0;
+        values.push(norm);
+        if (['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz'].some(w => kl.includes(w))) {
+          netRisk += (v / 5.0) * 1.5;
+        } else if (['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'temp', 'sicaklik'].some(w => kl.includes(w))) {
+          netRisk += (v / 50.0) * 1.0;
+        } else if (['amount', 'tutar', 'payload', 'byte'].some(w => kl.includes(w))) {
+          netRisk += (v / 500.0) * 0.5;
+        }
+      } else if (typeof v === 'boolean') {
+        values.push(v ? 1.0 : -1.0);
+        if (['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'motion', 'hareket'].some(w => kl.includes(w))) {
+          netRisk += v ? -0.8 : 1.2;
+        }
+      } else if (typeof v === 'string') {
+        const vl = normalizeSemanticText(v);
+        let matched = false;
+        for (let rk in semanticRoles) {
+          if (vl.includes(rk)) {
+            netRisk += semanticRoles[rk];
+            values.push(Math.tanh(semanticRoles[rk]));
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          values.push(0.2);
+        }
+      }
+    }
+
+    // Dynamic fractal coordinates
+    const baseCx = -0.74364 + (netRisk * 0.004);
+    const baseCy = 0.13182 - (netRisk * 0.004);
+    const dynamicZoom = 50.0 * (1.0 + Math.abs(netRisk) * 0.2);
+
+    const customCanvas = document.getElementById('custom-mandelbrot-canvas');
+    if (customCanvas) {
+      const customCtx = customCanvas.getContext('2d');
+      renderMandelbrot(customCanvas, customCtx, baseCx, baseCy, dynamicZoom);
+    }
+
+    // 1. Solve Q1 (Noul)
+    const q1Norm = normalizeSemanticText(q1Instr);
+    const isAllowQ = ['allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve', 'izin', 'onay', 'uygun', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'].some(w => q1Norm.includes(w));
+    const isDenyQ = ['threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban', 'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'].some(w => q1Norm.includes(w));
+
+    let noulProb = 0.5;
+    if (isAllowQ || (netRisk !== 0 && !isDenyQ)) {
+      noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.2) * 2.0));
+    } else if (isDenyQ) {
+      noulProb = 1.0 / (1.0 + Math.exp((-netRisk - 0.2) * 2.0));
+    } else {
+      noulProb = 1.0 / (1.0 + Math.exp(netRisk * 1.5));
+    }
+    noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
+    const isAllowed = noulProb >= 0.5;
+
+    document.getElementById('custom-q1-display-name').innerText = q1Name;
+    document.getElementById('custom-q1-display-instr').innerText = q1Instr;
+    const badgeCustomNoul = document.getElementById('badge-custom-noul');
+    badgeCustomNoul.innerText = isAllowed ? (currentLang === 'tr' ? 'ONAYLANDI' : 'ALLOWED') : (currentLang === 'tr' ? 'ENGELLENDİ' : 'DENIED');
+    badgeCustomNoul.className = 'result-badge ' + (isAllowed ? 'allow' : 'deny');
+    document.getElementById('val-custom-noul-prob').innerText = 'p = ' + noulProb.toFixed(4);
+    document.getElementById('bar-custom-noul').style.width = (noulProb * 100) + '%';
+    document.getElementById('bar-custom-noul').style.background = isAllowed ? 'var(--emerald)' : 'var(--rose)';
+
+    // 2. Solve Q2 (Choice)
+    document.getElementById('custom-q2-display-name').innerText = q2Name;
+    document.getElementById('custom-q2-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kategorik yönlendirme' : 'Question: Categorical choice';
+
+    const parsedOptions = [];
+    q2OptsRaw.split(',').forEach(item => {
+      const parts = item.split(':');
+      if (parts.length >= 2) {
+        parsedOptions.push({ key: parts[0].trim(), label: parts[1].trim() });
+      } else if (parts[0].trim()) {
+        parsedOptions.push({ key: parts[0].trim(), label: parts[0].trim() });
+      }
+    });
+
+    let choiceScores = [];
+    parsedOptions.forEach((opt, idx) => {
+      const onorm = normalizeSemanticText(opt.key + ' ' + opt.label);
+      let s = 1.0 + (idx === 0 ? 0.3 : 0.0);
+      if (['turbo', 'high', 'fast', 'direct', 'onay', 'hizli', 'dogrudan', 'platinum', 'gold'].some(w => onorm.includes(w))) {
+        s += (netRisk < 0.2 ? 3.0 : -2.0);
+      } else if (['eco', 'rate', 'queue', 'sms', 'standard', 'bekle', 'kuyruk', 'dengeli'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 0.0 && netRisk < 1.5 ? 2.5 : 0.5);
+      } else if (['audit', 'sandbox', 'karantina', 'review', 'manual', 'kefil', 'inceleme', 'sigin'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 1.0 && netRisk < 2.5 ? 3.5 : 0.2);
+      } else if (['drop', 'block', 'reject', 'deny', 'reddet', 'engelle', 'fraud'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 2.0 ? 4.0 : -2.5);
+      }
+      choiceScores.push(s);
+    });
+
+    const maxS = Math.max(...choiceScores);
+    const expScores = choiceScores.map(s => Math.exp(s - maxS));
+    const sumExp = expScores.reduce((a, b) => a + b, 0);
+    const choiceProbs = expScores.map(e => e / sumExp);
+
+    let bestChoiceIdx = 0;
+    let maxP = -1;
+    choiceProbs.forEach((p, idx) => {
+      if (p > maxP) {
+        maxP = p;
+        bestChoiceIdx = idx;
+      }
+    });
+
+    const bestChoice = parsedOptions[bestChoiceIdx] || { key: 'default', label: 'Default' };
+    document.getElementById('badge-custom-choice').innerText = bestChoice.key;
+
+    const choiceContainer = document.getElementById('custom-choice-list');
+    choiceContainer.innerHTML = '';
+    parsedOptions.forEach((opt, idx) => {
+      const pct = Math.round(choiceProbs[idx] * 100);
+      const row = document.createElement('div');
+      row.className = 'choice-item';
+      row.innerHTML = `
+        <span class="choice-name" style="width: 140px;" title="${opt.label}">${opt.key}</span>
+        <div class="choice-bar"><div class="choice-bar-fill" style="width: ${pct}%; background: ${idx === bestChoiceIdx ? 'var(--cyan)' : 'var(--indigo)'};"></div></div>
+        <span class="choice-pct">${pct}%</span>
+      `;
+      choiceContainer.appendChild(row);
+    });
+
+    // 3. Solve Q3 (Score)
+    document.getElementById('custom-q3-display-name').innerText = q3Name;
+    document.getElementById('custom-q3-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kademeli skor' : 'Question: Ordinal score';
+
+    const levels = q3LevelsRaw.split(',').map(s => s.trim()).filter(Boolean);
+    const numLevels = Math.max(2, levels.length);
+    let rawScore = (netRisk + 1.5) * ((numLevels - 1) / 3.5);
+    rawScore = Math.max(0.0, Math.min(numLevels - 1, rawScore));
+
+    const scoreIdx = Math.min(numLevels - 1, Math.round(rawScore));
+    const scoreLabel = levels[scoreIdx] || `Level ${scoreIdx}`;
+
+    document.getElementById('val-custom-score').innerText = rawScore.toFixed(2) + ' / ' + (numLevels - 1).toFixed(1);
+    document.getElementById('label-custom-score').innerText = scoreLabel;
+    document.getElementById('bar-custom-score').style.width = (rawScore / (numLevels - 1) * 100) + '%';
+
+    // Action Callout
+    const actionVal = `EXECUTE_${bestChoice.key.toUpperCase()}(${q1Name}=${isAllowed})`;
+    document.getElementById('custom-action-dispatch').innerText = actionVal;
+
+    currentCustomDecisionState = {
+      state: stateObj,
+      q1: { name: q1Name, instruction: q1Instr, allowed: isAllowed, prob: noulProb },
+      q2: { name: q2Name, best: bestChoice.key, options: parsedOptions, probs: choiceProbs },
+      q3: { name: q3Name, score: rawScore, label: scoreLabel, levels: levels },
+      seed: { cx: baseCx, cy: baseCy, zoom: dynamicZoom }
+    };
+
+    scheduleCustomWebTelemetry();
+  }
+
+  // Download Custom Decision Seed Dump (.TXT)
+  function downloadCustomDecisionTxt() {
+    const s = currentCustomDecisionState;
+    if (!s || !s.q1) return;
+
+    const now = new Date().toISOString();
+    let content = `================================================================================
+     WEVV CUSTOM SCENARIO FRACTAL DECISION SEED DUMP
+================================================================================
+Timestamp               : ${now}
+Model                   : wevv-0.1.0-fractal (Procedural Mandelbrot Reflex)
+Tensor VRAM Footprint   : 0 Bytes (Zero Tensor Weights)
+Coordinate Seed Size    : 24 Bytes (Three Float64 values)
+
+[1] COORDINATE SEED
+--------------------------------------------------------------------------------
+Parameter 1 (cx)        : ${s.seed.cx.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 2 (cy)        : ${(s.seed.cy >= 0 ? '+' : '') + s.seed.cy.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 3 (zoom)      : ${s.seed.zoom.toFixed(4)}x (Float64 - 8 Bytes)
+
+[2] PROGRAM STATE (INPUTS)
+--------------------------------------------------------------------------------
+${JSON.stringify(s.state, null, 2)}
+
+[3] SYNTHESIZED DECISIONS (SYSTEM-1)
+--------------------------------------------------------------------------------
+Q1 (noul) - ${s.q1.name} : ${s.q1.allowed ? 'ALLOWED' : 'DENIED'} (p = ${s.q1.prob.toFixed(4)})
+Q2 (choice) - ${s.q2.name}: ${s.q2.best}
+Q3 (score) - ${s.q3.name} : ${s.q3.score.toFixed(2)} (${s.q3.label})
+
+Scientific Initiative   : Mandelbrot Fractal Neural Synthesis
+License                 : MIT License (%100 Free & Open Source)
+GitHub Deposu           : https://github.com/pCwOrM/wevv
+================================================================================`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `wevv_custom_decision_${s.q1.name}_24bytes.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // Telemetry Dispatchers
+  let customTelemetryDebounceTimer = null;
+  function scheduleCustomWebTelemetry() {
+    clearTimeout(customTelemetryDebounceTimer);
+    customTelemetryDebounceTimer = setTimeout(() => {
+      sendCustomWebTelemetry();
+    }, 1500);
+  }
+
+  function sendCustomWebTelemetry() {
+    const s = currentCustomDecisionState;
+    if (!s || !s.q1) return;
+
+    const payload = {
+      timestamp: new Date().toISOString(),
+      version: "wevv-0.1.0-web",
+      source: "web_custom_playground",
+      seed: {
+        cx: parseFloat(s.seed.cx.toFixed(8)),
+        cy: parseFloat(s.seed.cy.toFixed(8)),
+        zoom: parseFloat(s.seed.zoom.toFixed(4))
+      },
+      state_summary: s.state,
+      questions: [
+        {
+          name: s.q1.name,
+          type: "noul",
+          instruction: s.q1.instruction,
+          decision: s.q1.allowed,
+          probability: parseFloat(s.q1.prob.toFixed(4)),
+          confidence: parseFloat((Math.abs(s.q1.prob - 0.5) * 2.0).toFixed(4))
+        },
+        {
+          name: s.q2.name,
+          type: "choice",
+          instruction: "Categorical routing",
+          decision: s.q2.best
+        },
+        {
+          name: s.q3.name,
+          type: "score",
+          instruction: "Ordinal scoring",
+          decision: parseFloat(s.q3.score.toFixed(2))
+        }
+      ],
+      latency_ms: 0.38
+    };
+
+    const payloadJson = JSON.stringify(payload);
+    const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([payloadJson], { type: "application/json" });
+      navigator.sendBeacon(url, blob);
+    } else {
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payloadJson,
+        keepalive: true
+      }).catch(() => {});
+    }
+  }
+
+  // Download 24-Byte Memory & Seed Dump (.TXT) for Preset Simulator
   function downloadMemorySeedTxt() {
     const s = currentDecisionState;
     if (!s || !s.role) return;
@@ -1967,14 +2875,12 @@ GitHub Repository       : https://github.com/pCwOrM/wevv
     URL.revokeObjectURL(url);
   }
 
-  // Anonymous Optimization Telemetry (Zero PII, Debounced)
   let telemetryDebounceTimer = null;
-
   function scheduleWebTelemetry() {
     clearTimeout(telemetryDebounceTimer);
     telemetryDebounceTimer = setTimeout(() => {
       sendWebTelemetry();
-    }, 1200); // Send 1.2 seconds after user stops scrubbing controls
+    }, 1200);
   }
 
   function sendWebTelemetry() {

@@ -105,6 +105,72 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 
 ---
 
+## 🗺️ The Universal Fractal Natural Language Decision Map
+
+`wevv` is pioneering the concept of the **Universal Fractal Natural Language Decision Map**. 
+
+Instead of training dense neural networks that require billions of parameters, any arbitrary program state and natural language questions—in **English, Türkçe**, or domain-specific terminology—are deterministically modulated onto the chaotic boundary of the Mandelbrot set ($\partial \mathcal{M}$).
+
+```
+[Program State / Girdi Durumu]
+       │
+       ▼
+[Deterministic Semantic Modulation (TR/EN)]
+       │
+       ▼
+[24-Byte Coordinate Seed (cx, cy, zoom)]
+       │
+       ▼
+[Instant Fractal Boundary Evaluation (< 0.5 ms)]
+ ├── w1, w2, w3, bias (Quadrant Decomposition)
+ └── Quadtree Escape Integral
+       │
+       ▼
+[Typed Decisions: Noul (Yes/No) | Choice (Routing) | Score (Severity)]
+```
+
+### 🌐 Multi-Domain Application Use-Cases
+
+1. **API Gateway & Microservices:**
+   ```python
+   # State: {"user_role": "guest", "failed_attempts": 3, "req_frequency": 45}
+   # Decision: allow_execution=False | route=sandbox_audit | threat_score=1.45 / 3.0
+   ```
+2. **🏠 Akıllı Ev / Smart Home (IoT):**
+   ```python
+   # State: {"oda": "salon", "sicaklik": 27.5, "hareket_var": True, "pencere_acik": False}
+   # Question: "Klima çalıştırılsın mı?" -> True (p=0.892, Güven=%78.4)
+   ```
+3. **🛒 E-Ticaret & Sahtecilik Tespiti (Fraud Detection):**
+   ```python
+   # State: {"siparis_tutari": 18500, "yeni_cihaz": True, "vpn_kullanimi": True}
+   # Question: "İşlem doğrudan onaylansın mı?" -> False | Rota: "sms_dogrulama"
+   ```
+4. **🎮 Oyun Yapay Zekası / Game AI (NPC Combat Reflexes):**
+   ```python
+   # State: {"npc_can": 20, "dusman_mesafe": 5.2, "muhimmat": 0, "siginak_yakin": True}
+   # Decision: savasa_devam=False | taktik_karari="siginaga_kac" | panik_seviyesi=2.6
+   ```
+5. **🏦 Finans ve Otomatik Kredi Değerlendirme:**
+   ```python
+   # State: {"kredi_notu": 1520, "aylik_gelir": 75000, "gecikme_sayisi": 0}
+   # Decision: kredi_onay=True | kredi_paketi="aninda_onay" | guven=3.0 / 3.0
+   ```
+
+---
+
+## 🇹🇷 First-Class Dual-Language Support (Türkçe & English)
+
+`wevv` natively supports Turkish and English queries without external translation models. Diacritics and character variants (`ı/i`, `ö/o`, `ü/u`, `ş/s`, `ç/c`, `ğ/g`) are normalized seamlessly:
+
+* **Roller:** `yönetici`, `yetkili`, `üye`, `kullanıcı`, `misafir`, `ziyaretçi`, `saldırgan`, `şüpheli`.
+* **Soru Yönergeleri:**
+  * **İzin / Onay:** `izin verilsin mi?`, `onayla`, `geçiş uygun mu?`, `çalıştır`.
+  * **Engelleme / Tehlike:** `engelle`, `yasakla`, `tehlike var mı?`, `riskli mi?`, `saldırı mı?`.
+  * **Yönlendirme Rotası:** `doğrudan`, `hızlı yol`, `kuyruk`, `karantina`, `inceleme`, `reddet`.
+
+---
+
 ## 💻 Interactive CLI Simulator (`examples/sor.py`)
 
 An interactive terminal application is provided under [`examples/sor.py`](examples/sor.py) with automatic dependency checking (`wevv`), an interactive numbered menu, and CLI arguments:
@@ -122,6 +188,46 @@ python examples/sor.py attacker
 
 ---
 
+## 🔬 Open Science Telemetry & Public Benchmark Dataset
+
+To calibrate and continuously optimize the universal fractal decision map, `wevv` includes an asynchronous, non-blocking telemetry client (`wevv.telemetry`).
+
+### 🔒 Zero-PII Privacy Guarantee
+* **No IP addresses** are stored on disk or database.
+* **No cookies, machine IDs, or personal accounts** are collected.
+* **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
+* **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
+
+### 📊 Live Public Dataset
+Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported daily as an open science benchmark:
+
+* 🌐 **Direct Download:** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
+
+### 🛡️ Server Hardening & Defensive Architecture
+The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hardened against abusive bots and brute-force traffic:
+1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
+2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
+3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
+4. **Storage & Disk Quota:** Dual-storage system caps log size at 1 GB and monitors host disk thresholds.
+5. **Systemd Sandboxing:** Runs under an isolated service with `MemoryMax=256M`, `CPUQuota=20%`, `ProtectSystem=full`, and `NoNewPrivileges=true`.
+
+---
+
 ## 🔗 Architecture & Connection to Base Research
 
 `wevv` is deeply coupled with the research codebase [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis). It imports core vectorized escape operators from `src/mandelbrot_core.py`. As new orbital dynamics, multi-layer fractal compositions, and photonic solvers are discovered, `wevv` directly inherits these breakthroughs!
+
+---
+
+## 📄 Academic Citation & Authors
+
+```bibtex
+@software{wevv2026,
+  author = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
+  title = {wevv: Zero-Memory System-One Decision Engine via Fractal Boundary Subdivision},
+  year = {2026},
+  url = {https://github.com/pCwOrM/wevv},
+  doi = {10.5281/zenodo.22802921}
+}
+```

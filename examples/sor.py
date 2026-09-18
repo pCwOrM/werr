@@ -102,6 +102,10 @@ def main():
     print(f" • Tehlike Skoru : {karar.score('tehlike_skoru'):.2f} / 3.0")
     print(f" • Karar Hızı    : {karar.latency_ms:.2f} ms")
     print(f" • Bellek İzleri : 0 Byte Tensör VRAM (24 Byte Koordinat Tohumu)")
+    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, mechsrv.itouch.fi)")
+    print("=" * 50)
+    print(" ℹ️  [Açık Bilim & Gizlilik]: Fraktal optimizasyonu için yalnızca anonim koordinat")
+    print("     ve karar çıktıları kaydedilir. (Kapatmak için: export WEVV_TELEMETRY=0)")
     print("=" * 50 + "\n")
 
 if __name__ == "__main__":

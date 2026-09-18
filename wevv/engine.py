@@ -20,10 +20,26 @@ from wevv.datatypes import (
 from wevv.telemetry import dispatch_telemetry_async
 
 
+def _normalize_text(s: str) -> str:
+    """
+    Normalizes Turkish & English strings by lowercasing and standardizing diacritics.
+    Handles 'ı/i', 'ö/o', 'ü/u', 'ş/s', 'ç/c', 'ğ/g' seamlessly.
+    """
+    s = str(s).lower()
+    mapping = {
+        'ı': 'i', 'i̇': 'i', 'ğ': 'g', 'ü': 'u', 'ş': 's', 'ö': 'o', 'ç': 'c',
+        'İ': 'i', 'I': 'i', 'Ğ': 'g', 'Ü': 'u', 'Ş': 's', 'Ö': 'o', 'Ç': 'c'
+    }
+    for k, v in mapping.items():
+        s = s.replace(k, v)
+    return s.strip()
+
+
 class WevvEngine:
     """
     Zero-Memory System-One Decision Engine.
     Processes arbitrary program state into typed, probabilistic decisions in < 1ms.
+    Supports both English and Turkish semantic queries natively.
     """
     def __init__(
         self,
@@ -46,34 +62,43 @@ class WevvEngine:
         """
         Deterministically converts arbitrary dictionary state (floats, ints, bools, strings)
         into a continuous latent vector [-1.0, 1.0] and computes aggregate semantic risk.
+        Supports multi-lingual (English & Turkish) roles and feature names.
         """
         semantic_roles = {
+            # Admin / Superuser
             "admin": -1.5, "root": -1.5, "superuser": -1.5, "system": -1.5,
+            "yonetici": -1.5, "yetkili": -1.5, "kok": -1.5, "sistem": -1.5, "kurucu": -1.5,
+            # Member / User / Verified
             "member": -0.8, "user": -0.8, "authenticated": -1.0, "auth": -1.0, "internal": -1.0,
+            "uye": -0.8, "kullanici": -0.8, "kayitli": -0.8, "dogrulanmis": -1.0, "ic": -1.0, "calisan": -1.0,
+            # Guest / Anonymous / Unverified
             "guest": 0.9, "anonymous": 1.0, "unverified": 1.0,
-            "attacker": 2.5, "bot": 2.2, "malicious": 2.5, "hacker": 2.5, "suspicious": 1.8
+            "misafir": 0.9, "konuk": 0.9, "ziyaretci": 0.9, "anonim": 1.0, "dogrulanmamis": 1.0,
+            # Attacker / Malicious / Bot
+            "attacker": 2.5, "bot": 2.2, "malicious": 2.5, "hacker": 2.5, "suspicious": 1.8,
+            "saldirgan": 2.5, "kotuniyetli": 2.5, "zararli": 2.5, "supheli": 1.8, "tehdit": 2.2, "casus": 2.5
         }
 
         values = []
         net_risk = 0.0
 
         for k, v in sorted(state.items()):
-            kl = str(k).lower()
+            kl = _normalize_text(k)
             if isinstance(v, (int, float)):
                 norm_val = 2.0 / (1.0 + math.exp(-float(v) / 10.0 if abs(v) < 700 else (-1.0 if v < 0 else 1.0))) - 1.0
                 values.append(norm_val)
-                if any(w in kl for w in ['fail', 'error', 'attempt']):
+                if any(w in kl for w in ['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'deneme']):
                     net_risk += (float(v) / 5.0) * 1.5
-                elif any(w in kl for w in ['freq', 'rate', 'speed']):
+                elif any(w in kl for w in ['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'frekans']):
                     net_risk += (float(v) / 50.0) * 1.0
-                elif any(w in kl for w in ['payload', 'byte', 'kb']):
+                elif any(w in kl for w in ['payload', 'byte', 'kb', 'boyut', 'veri', 'yuk', 'paket']):
                     net_risk += (float(v) / 500.0) * 0.5
             elif isinstance(v, bool):
                 values.append(1.0 if v else -1.0)
-                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified']):
+                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'dogrulanmis', 'onayli', 'aktif']):
                     net_risk += -0.8 if v else 1.2
             elif isinstance(v, str):
-                vl = v.lower()
+                vl = _normalize_text(v)
                 matched_role = False
                 for r_key, r_risk in semantic_roles.items():
                     if r_key in vl:
@@ -109,7 +134,10 @@ class WevvEngine:
 
         # 1. State-to-Wave Modulation
         vec, net_risk = self._state_to_vector(state)
-        role_str = str(state.get("user_role", state.get("role", ""))).lower()
+        role_val = state.get("user_role", state.get("role", state.get("rol", "")))
+        role_str = _normalize_text(str(role_val))
+        is_guest = any(w in role_str for w in ['guest', 'misafir', 'konuk', 'ziyaretci', 'anonim'])
+        is_attacker = any(w in role_str for w in ['attacker', 'bot', 'saldirgan', 'hacker', 'kotuniyetli', 'zararli'])
 
         # Coordinate perturbation
         scale = 1.0 / self.zoom
@@ -138,15 +166,21 @@ class WevvEngine:
         # 3. Answer each typed question
         for q_name, q_obj in questions.items():
             if isinstance(q_obj, NoulQuestion):
-                instr = q_obj.instructions.lower()
-                is_allow_q = any(w in instr for w in ['allow', 'permit', 'grant', 'izin', 'safe', 'valid', 'ok', 'auth', 'pass', 'gecis'])
-                is_deny_q = any(w in instr for w in ['threat', 'danger', 'attack', 'block', 'malicious', 'hata', 'tehlike'])
+                instr = _normalize_text(q_obj.instructions)
+                is_allow_q = any(w in instr for w in [
+                    'allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve',
+                    'izin', 'onay', 'uygun', 'gecerli', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'
+                ])
+                is_deny_q = any(w in instr for w in [
+                    'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban',
+                    'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'
+                ])
 
                 if is_allow_q or (net_risk != 0.0 and not is_deny_q):
                     base_prob = 1.0 / (1.0 + math.exp((net_risk - 0.2) * 2.0))
                     fractal_boost = 0.8 + 0.4 * (1.0 - avg_escape)
                     prob = float(base_prob * fractal_boost)
-                    if 'guest' in role_str or 'attacker' in role_str or net_risk >= 1.4:
+                    if is_guest or is_attacker or net_risk >= 1.4:
                         prob = min(prob, 0.35)
                 elif is_deny_q:
                     prob = 1.0 / (1.0 + math.exp((-net_risk - 0.2) * 2.0))
@@ -172,20 +206,20 @@ class WevvEngine:
 
                 scores = []
                 for i, opt in enumerate(options):
-                    opt_lower = opt.lower()
+                    opt_norm = _normalize_text(opt)
                     q_res = float(quad_ratios[i % 4])
                     feat_idx = (i * 2) % len(vec)
                     st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
                     score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
 
-                    if any(w in opt_lower for w in ['direct', 'prod', 'fast', 'primary', 'ana']):
-                        score_i += 3.0 if (net_risk < 0.2 and 'guest' not in role_str) else -2.5
-                    elif any(w in opt_lower for w in ['rate', 'limiter', 'slow', 'kuyruk']):
+                    if any(w in opt_norm for w in ['direct', 'prod', 'fast', 'primary', 'main', 'dogrudan', 'hizli', 'ana', 'normal', 'oncelikli', 'direkt']):
+                        score_i += 3.0 if (net_risk < 0.2 and not is_guest) else -2.5
+                    elif any(w in opt_norm for w in ['rate', 'limiter', 'slow', 'queue', 'delay', 'kuyruk', 'yavaslat', 'sinirla', 'beklet', 'frenle']):
                         score_i += 2.5 if (net_risk >= 0.5 or state.get('req_frequency', 0) > 30) else 0.0
-                    elif any(w in opt_lower for w in ['sandbox', 'audit', 'quarantine', 'inceleme']):
-                        score_i += 3.5 if ('guest' in role_str or (0.2 <= net_risk < 2.0)) else 0.5
-                    elif any(w in opt_lower for w in ['drop', 'deny', 'block', 'engelle']):
-                        score_i += 4.5 if ('attacker' in role_str or net_risk >= 2.0) else -2.0
+                    elif any(w in opt_norm for w in ['sandbox', 'audit', 'quarantine', 'isolate', 'inspect', 'inceleme', 'karantina', 'gozlem', 'izole', 'denetim']):
+                        score_i += 3.5 if (is_guest or (0.2 <= net_risk < 2.0)) else 0.5
+                    elif any(w in opt_norm for w in ['drop', 'deny', 'block', 'reject', 'abort', 'engelle', 'reddet', 'iptal', 'dusur', 'yasakla', 'at']):
+                        score_i += 4.5 if (is_attacker or net_risk >= 2.0) else -2.0
 
                     scores.append(score_i)
 

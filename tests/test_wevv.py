@@ -125,6 +125,32 @@ class TestWevvEngine(unittest.TestCase):
             resp = eng.decide(self.sample_state, {"n": NoulQuestion("Test")})
             self.assertIsInstance(resp.answers["n"], NoulAnswer, f"Preset {p_name} failed")
 
+    def test_turkish_semantic_support(self):
+        """Verify that Turkish semantic terms for roles and questions evaluate correctly."""
+        # 1. Turkish Admin
+        resp_admin = self.engine.decide(
+            state={"rol": "Yönetici", "hata_sayisi": 0, "hiz": 2.5},
+            questions={
+                "izin": NoulQuestion(instructions="Bu isteğe geçiş izni verilsin mi?"),
+                "rota": ChoiceQuestion(instructions="Yönlendir", criteria={"dogrudan": "Doğrudan", "engelle": "Engelle"}),
+                "risk": ScoreQuestion(instructions="Risk", criteria=["Düşük", "Orta", "Yüksek"])
+            }
+        )
+        self.assertTrue(resp_admin.boolean("izin"))
+        self.assertEqual(resp_admin.choice("rota"), "dogrudan")
+
+        # 2. Turkish Attacker
+        resp_att = self.engine.decide(
+            state={"rol": "Saldırgan Bot", "hata_sayisi": 15, "hiz": 100.0},
+            questions={
+                "izin": NoulQuestion(instructions="İşlem onaylansın mı?"),
+                "rota": ChoiceQuestion(instructions="Yönlendir", criteria={"dogrudan": "Doğrudan", "engelle": "Engelle"}),
+                "risk": ScoreQuestion(instructions="Risk", criteria=["Düşük", "Orta", "Yüksek"])
+            }
+        )
+        self.assertFalse(resp_att.boolean("izin"))
+        self.assertEqual(resp_att.choice("rota"), "engelle")
+
 
 if __name__ == "__main__":
     unittest.main()
