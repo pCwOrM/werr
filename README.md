@@ -209,8 +209,9 @@ The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hard
 1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
 2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
 3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
-4. **Storage & Disk Quota:** Dual-storage system caps log size at 1 GB and monitors host disk thresholds.
-5. **Systemd Sandboxing:** Runs under an isolated service with `MemoryMax=256M`, `CPUQuota=20%`, `ProtectSystem=full`, and `NoNewPrivileges=true`.
+4. **Google reCAPTCHA v3 Shield:** The web simulator and custom scenario playground verify client authenticity via background reCAPTCHA v3 site verification.
+5. **Storage & Disk Quota:** Dual-storage system caps log size at 1 GB and monitors host disk thresholds.
+6. **Systemd Sandboxing:** Runs under an isolated service with `MemoryMax=256M`, `CPUQuota=20%`, `ProtectSystem=full`, and `NoNewPrivileges=true`.
 
 ---
 
