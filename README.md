@@ -1,7 +1,14 @@
 # 🌊 wevv: Zero-Memory Fractal System-One Decision Engine
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/wevv/)
+[![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22802921-green.svg)](https://doi.org/10.5281/zenodo.22802921)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+
 > **Motto:** *"When the Wave hits Error (e), we Subdivide (vv)."*  
 > *"Jev decisions come from 4B-parameter tensors; `wevv` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
+
+🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/wevv/) *(Supports English & Türkçe, Light & Dark mode).*
 
 `wevv` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `wevv` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 
