@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wevv | Zero-Memory Fractal System-One Decision Engine</title>
-  <meta name="description" content="When the Wave hits Error (e), we Subdivide (vv). A 0-byte memory alternative to LLM decision-making based on Mandelbrot geometry.">
+  <title>wevv | Sıfır-Bellekli Fraktal Karar Motoru (Zero-Memory Decision Engine)</title>
+  <meta name="description" content="Dalga hatayla karşılaştığında uzayı parçalarız. Yazılımlar için sıfır-bellekli, refleksif yapay zeka karar motoru.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
   
   <style>
@@ -44,13 +44,83 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .brand span.logo-wave {
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    /* Language Switcher Pill */
+    .lang-switch {
+      display: inline-flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+      cursor: pointer;
+    }
+
+    .lang-btn {
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--cyan);
+      color: #07090e;
+      box-shadow: 0 0 12px var(--cyan-glow);
     }
 
     /* Header & Hero */
     header {
       text-align: center;
-      padding: 3rem 1rem 2.5rem;
+      padding: 2rem 1rem 3rem;
     }
 
     .badge-pill {
@@ -70,7 +140,7 @@
     }
 
     h1.hero-title {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 900;
       letter-spacing: -0.04em;
       background: linear-gradient(135deg, #ffffff 30%, var(--cyan) 70%, var(--indigo) 100%);
@@ -80,22 +150,23 @@
     }
 
     .hero-motto {
-      font-size: 1.35rem;
-      font-weight: 500;
+      font-size: 1.45rem;
+      font-weight: 600;
       color: #e2e8f0;
       margin-bottom: 1rem;
     }
 
     .hero-motto span.highlight {
       color: var(--cyan);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .hero-subtitle {
-      max-width: 780px;
-      margin: 0 auto 2rem;
-      font-size: 1.05rem;
+      max-width: 820px;
+      margin: 0 auto 2.25rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -109,9 +180,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.6rem;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
       transition: all 0.2s ease;
@@ -141,6 +212,135 @@
       transform: translateY(-2px);
     }
 
+    /* Popular Science / Halk Anlatım Bölümü */
+    .halk-section {
+      margin: 4rem 0 3rem;
+      background: linear-gradient(180deg, rgba(15, 20, 34, 0.7) 0%, rgba(10, 13, 23, 0.9) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .halk-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .halk-tag {
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .halk-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .halk-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .halk-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .halk-card {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .halk-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+    }
+
+    .halk-card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .halk-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .halk-card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* 3 Simple Steps */
+    .steps-box {
+      background: rgba(56, 189, 248, 0.03);
+      border: 1px dashed var(--border-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .steps-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--cyan);
+      color: #07090e;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-content p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
     /* Interactive Lab Grid */
     .lab-grid {
       display: grid;
@@ -152,6 +352,7 @@
     @media (max-width: 900px) {
       .lab-grid { grid-template-columns: 1fr; }
       h1.hero-title { font-size: 2.75rem; }
+      .nav-links { display: none; }
     }
 
     .card {
@@ -486,29 +687,126 @@
 <body>
 
 <div class="container">
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="brand">
+      <span class="logo-wave">🌊</span>
+      <span>wevv</span>
+    </a>
+    <div class="nav-links">
+      <a href="#halka-anlatim" id="nav-guide">Halk Rehberi</a>
+      <a href="#demo" id="nav-demo">Simülatör</a>
+      <a href="#karsilastirma" id="nav-comp">Karşılaştırma</a>
+      <a href="#kod" id="nav-code">Hızlı Başlangıç</a>
+      <a href="https://github.com/pCwOrM/wevv" target="_blank">GitHub</a>
+    </div>
+    <!-- Language Toggle Switch -->
+    <div class="lang-switch" role="group" aria-label="Dil Seçimi / Language Selection">
+      <button class="lang-btn active" id="btn-tr" onclick="setLanguage('tr')">🇹🇷 TR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <header>
     <div class="badge-pill">
-      <span>🌊</span> v0.1.0 • Open Source • System-One Decision Engine
+      <span>🌊</span> <span id="hero-badge">v0.1.0 • Açık Kaynak • Sıfır-Bellekli Karar Motoru</span>
     </div>
     <h1 class="hero-title">wevv</h1>
-    <div class="hero-motto">
-      When the Wave hits <span class="highlight">Error (e)</span>, we <span class="highlight">Subdivide (vv)</span>.
+    <div class="hero-motto" id="hero-motto">
+      Dalga <span class="highlight">Hatayla (e)</span> Karşılaştığında, Uzayı <span class="highlight">Parçalarız (vv)</span>.
     </div>
-    <p class="hero-subtitle">
-      Jev decisions come from 4B-parameter tensors. <strong>wevv</strong> decisions come from infinite geometric waves, Euler thresholds, and recursive quadrant subdivision with <strong>0 Bytes weight storage</strong>.
+    <p class="hero-subtitle" id="hero-subtitle">
+      Jev kararları 4 milyar parametreli ağır tensörlerden çıkar; <strong>wevv</strong> kararları ise <strong>0 Byte hafıza</strong> ile doğanın sonsuz fraktal dalgalarından, Euler sınırlarından ve çeyrekleme geometrisinden anında filizlenir.
     </p>
     <div class="hero-actions">
-      <a href="#demo" class="btn btn-primary">⚡ Launch Decision Simulator</a>
+      <a href="#demo" class="btn btn-primary" id="btn-hero-demo">⚡ Canlı Karar Simülatörü</a>
+      <a href="#halka-anlatim" class="btn btn-secondary" id="btn-hero-guide">📖 Halk Dilinde Anlatım (Nedir Bu?)</a>
       <a href="https://github.com/pCwOrM/wevv" target="_blank" class="btn btn-secondary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub Repository
-      </a>
-      <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank" class="btn btn-secondary">
-        📄 Base Research Paper
+        GitHub Deposu
       </a>
     </div>
   </header>
+
+  <!-- Popular Science / Halk Anlatım Bölümü -->
+  <section id="halka-anlatim" class="halk-section">
+    <div class="halk-header">
+      <div class="halk-tag" id="halk-tag">3 DAKİKADA POPÜLER BİLİM</div>
+      <h2 class="halk-title" id="halk-title">Nedir Bu wevv? Ne İşe Yarar?</h2>
+      <p class="halk-desc" id="halk-desc">
+        Teknik terimler olmadan, herkesin anlayabileceği gündelik hayat benzetmeleriyle:
+      </p>
+    </div>
+
+    <div class="halk-cards">
+      <!-- Kart 1 -->
+      <div class="halk-card">
+        <div class="halk-card-icon">🧠⚡</div>
+        <h3 class="halk-card-title" id="card1-title">Sohbet Robotu Değil, Bir Refleks!</h3>
+        <p class="halk-card-text" id="card1-text">
+          ChatGPT gibi modeller düşünerek uzun uzun roman yazar (Sistem-2). <strong>wevv</strong> ise tıpkı eliniz sıcak sobaya değdiğinde düşünmeden elinizi anında geri çekmeniz gibi çalışır (Sistem-1). Yazılımların içine gömülen refleksif, akıllı bir <em>"Evet/Hayır"</em> karar motorudur.
+        </p>
+      </div>
+
+      <!-- Kart 2 -->
+      <div class="halk-card">
+        <div class="halk-card-icon">💾🚫</div>
+        <h3 class="halk-card-title" id="card2-title">Sıfır Hafıza (0 Byte VRAM)</h3>
+        <p class="halk-card-text" id="card2-text">
+          Klasik yapay zekalar hafızasında milyarlarca ağırlık sayısı (GB'larca dosya) saklamak zorundadır. <strong>wevv</strong> hiçbir ağırlık dosyası saklamaz! Kararları doğanın sonsuz Mandelbrot fraktal deseninden ihtiyaç duyulduğu milisaniyede canlı türetir.
+        </p>
+      </div>
+
+      <!-- Kart 3 -->
+      <div class="halk-card">
+        <div class="halk-card-icon">⚡⏱️</div>
+        <h3 class="halk-card-title" id="card3-title">Göz Kırpma Hızında (0.5 ms)</h3>
+        <p class="halk-card-text" id="card3-text">
+          İnternet sunucularına bağlanıp saniyelerce beklemez. En ucuz bilgisayarda, cep telefonunda veya elektrik tüketmeyen küçük çiplerde bile 1 milisaniyenin altında kararlar üretir.
+        </p>
+      </div>
+
+      <!-- Kart 4 -->
+      <div class="halk-card">
+        <div class="halk-card-icon">🎯📐</div>
+        <h3 class="halk-card-title" id="card4-title">3 Basit Soru Tipi</h3>
+        <p class="halk-card-text" id="card4-text">
+          <strong>1. noul:</strong> Evet/Hayır ("Kapıyı açayım mı?")<br>
+          <strong>2. choice:</strong> Çoktan Seçmeli ("Hastayı Acile mi, Kliniğe mi yönlendireyim?")<br>
+          <strong>3. score:</strong> Dereceleme ("Bu durum ne kadar acil? 0 ile 3 arası puanla")
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 Simple Steps -->
+    <div class="steps-box">
+      <div class="steps-title" id="steps-title">💡 Nasıl Kullanılır? (Çok Basit 3 Adım)</div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong id="step1-title">Durumu Ver</strong>
+            <p id="step1-desc">Yazılımındaki verileri söyle (Örn: Giriş yapan kim? Kaç kez şifreyi yanlış girdi?).</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong id="step2-title">Sorunu Sor</strong>
+            <p id="step2-desc">wevv'e sor: "Bu işlem güvenli mi?" ya da "Hangi departmana aktarayım?".</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong id="step3-title">Anında Kararı Al</strong>
+            <p id="step3-desc">1 milisaniye içinde kesin, tip güvenli ve net kararı koduna bağla.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Interactive Lab -->
   <section id="demo" class="lab-grid">
@@ -516,32 +814,32 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">
-          <span>🎛️</span> Incoming Program State
+          <span>🎛️</span> <span id="sim-input-title">Gelen Program Durumu</span>
         </div>
-        <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);">Live Input</span>
+        <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="sim-live-tag">Canlı Girdi</span>
       </div>
 
       <div class="control-group">
-        <label class="control-label">User Security Role</label>
+        <label class="control-label" id="lbl-role">Kullanıcı Güvenlik Rolü</label>
         <select id="input-role" onchange="evaluateDecision()">
-          <option value="admin">System Administrator (auth: true)</option>
-          <option value="member" selected>Regular Member (auth: true)</option>
-          <option value="guest">Guest / Unverified (auth: false)</option>
-          <option value="attacker">High-Risk Burst IP (auth: false)</option>
+          <option value="admin">Sistem Yöneticisi (Admin - auth: true)</option>
+          <option value="member" selected>Kayıtlı Üye (Member - auth: true)</option>
+          <option value="guest">Misafir / Doğrulanmamış (Guest - auth: false)</option>
+          <option value="attacker">Yüksek Riskli Saldırgan IP (Attacker - auth: false)</option>
         </select>
       </div>
 
       <div class="control-group">
         <div class="control-label">
-          <span>Request Frequency</span>
-          <span class="val" id="val-freq">12 req/s</span>
+          <span id="lbl-freq">İstek Frekansı</span>
+          <span class="val" id="val-freq">12 istek/sn</span>
         </div>
         <input type="range" id="input-freq" min="1" max="200" value="12" oninput="evaluateDecision()">
       </div>
 
       <div class="control-group">
         <div class="control-label">
-          <span>Failed Authentication Count</span>
+          <span id="lbl-failed">Hatalı Giriş Sayısı</span>
           <span class="val" id="val-failed">0</span>
         </div>
         <input type="range" id="input-failed" min="0" max="20" value="0" oninput="evaluateDecision()">
@@ -549,7 +847,7 @@
 
       <div class="control-group">
         <div class="control-label">
-          <span>Payload Size</span>
+          <span id="lbl-payload">Paket Boyutu</span>
           <span class="val" id="val-payload">16 KB</span>
         </div>
         <input type="range" id="input-payload" min="1" max="500" value="16" oninput="evaluateDecision()">
@@ -558,20 +856,20 @@
       <!-- Canvas Section -->
       <div class="canvas-container">
         <canvas id="mandelbrot-canvas" width="128" height="128"></canvas>
-        <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;">
-          Live 4-Quadrant Mandelbrot Phase Perturbation ($128 \times 128$)
+        <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="canvas-desc">
+          Canlı 4-Quadrant Mandelbrot Faz Pertürbasyonu (128x128)
         </div>
         <div class="hud-metrics">
           <div class="hud-box">
-            <div class="hud-label">Latency</div>
+            <div class="hud-label" id="hud-lbl-lat">Gecikme</div>
             <div class="hud-value" id="hud-lat">&lt; 0.5 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Tensor VRAM</div>
+            <div class="hud-label" id="hud-lbl-vram">Tensör VRAM</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Coordinate Seed</div>
+            <div class="hud-label" id="hud-lbl-seed">Tohum Koordinatı</div>
             <div class="hud-value" style="font-size: 0.85rem;">24 Bytes</div>
           </div>
         </div>
@@ -582,9 +880,9 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">
-          <span>⚡</span> Synthesized Decisions (System-One)
+          <span>⚡</span> <span id="sim-output-title">Türetilen Kararlar (Sistem-1)</span>
         </div>
-        <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);">Type-Safe</span>
+        <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="sim-safe-tag">Tip Güvenli</span>
       </div>
 
       <!-- Question 1: Noul -->
@@ -592,12 +890,12 @@
         <div class="decision-header">
           <div>
             <strong>allow_execution</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Question: Is this request granted execution?</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q1-desc">Soru: Bu işlemin doğrudan çalışmasına izin verilsin mi?</div>
           </div>
           <div class="decision-type-badge">noul</div>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <div class="result-badge allow" id="badge-noul">ALLOWED</div>
+          <div class="result-badge allow" id="badge-noul">ONAYLANDI</div>
           <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-noul-prob">p = 0.9421</div>
         </div>
         <div class="progress-bar-bg">
@@ -610,7 +908,7 @@
         <div class="decision-header">
           <div>
             <strong>route_target</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Question: Select downstream microservice</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q2-desc">Soru: İsteği hangi alt servise yönlendireyim?</div>
           </div>
           <div class="decision-type-badge">choice</div>
         </div>
@@ -644,13 +942,13 @@
         <div class="decision-header">
           <div>
             <strong>threat_severity</strong>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">Question: Perceived threat index (0.0 to 3.0)</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);" id="q3-desc">Soru: Algılanan tehlike indeksi (0.0 - 3.0)</div>
           </div>
           <div class="decision-type-badge">score</div>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-score">0.24 / 3.0</div>
-          <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-score">Normal / Low Threat</span>
+          <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-score">Normal / Düşük Risk</span>
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="bar-score" style="width: 8%; background: var(--emerald);"></div>
@@ -660,8 +958,8 @@
       <!-- Real-time Action Dispatcher -->
       <div class="action-callout">
         <div>
-          <div class="action-label">Smart if-statement resolution:</div>
-          <div class="action-value" id="action-dispatch">EXECUTE_DIRECT(request)</div>
+          <div class="action-label" id="action-label">Yazılımın akıllı if-else kararı:</div>
+          <div class="action-value" id="action-dispatch">DOĞRUDAN_ÇALIŞTIR(istek)</div>
         </div>
         <span style="font-size: 1.5rem;" id="action-icon">🚀</span>
       </div>
@@ -669,89 +967,297 @@
   </section>
 
   <!-- Comparison Matrix -->
-  <h2 class="section-title">Why wevv? Zero-Memory vs. LLM Decisions</h2>
-  <table class="comparison-table">
+  <h2 class="section-title" id="comp-title">Neden wevv? Sıfır-Bellek vs. LLM Kararları</h2>
+  <table class="comparison-table" id="karsilastirma">
     <thead>
       <tr>
-        <th>Dimension</th>
+        <th id="th-dim">Boyut</th>
         <th>TypeSafe AI (Jev)</th>
         <th>OpenJev / NanoJev (Qwen 4B)</th>
-        <th class="highlight-col">wevv (Fractal System-1)</th>
+        <th class="highlight-col">wevv (Fraktal Sistem-1)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>Weight Memory</strong></td>
-        <td>Multi-GB (Hosted Cloud)</td>
+        <td><strong id="td-mem">Ağırlık Belleği (VRAM)</strong></td>
+        <td>Multi-GB (Bulut Sunucu)</td>
         <td>~8 GB VRAM</td>
-        <td class="highlight-col"><strong>0 Bytes (Zero Tensor Memory)</strong></td>
+        <td class="highlight-col"><strong id="td-mem-val">0 Byte (Sıfır Bellek Matrisi)</strong></td>
       </tr>
       <tr>
-        <td><strong>Coordinate Seed</strong></td>
-        <td>Cloud API Token</td>
-        <td>Model Weights File</td>
-        <td class="highlight-col"><strong>24 Bytes $(c_x, c_y, \text{zoom})$</strong></td>
+        <td><strong id="td-seed">Model Tohumu</strong></td>
+        <td>Bulut API Anahtarı</td>
+        <td>Ağır Model Dosyası</td>
+        <td class="highlight-col"><strong id="td-seed-val">Yalnızca 24 Byte (cx, cy, zoom)</strong></td>
       </tr>
       <tr>
-        <td><strong>Typical Latency</strong></td>
-        <td>~100 ms (HTTP API)</td>
+        <td><strong id="td-lat">Gecikme Süresi</strong></td>
+        <td>~100 ms (İnternet API)</td>
         <td>~15–30 ms (GPU)</td>
-        <td class="highlight-col"><strong>&lt; 1.0 ms (Pure Local CPU)</strong></td>
+        <td class="highlight-col"><strong>&lt; 1.0 ms (Saf Yerel CPU)</strong></td>
       </tr>
       <tr>
-        <td><strong>Hardware Requirement</strong></td>
-        <td>Internet Connection</td>
-        <td>CUDA-capable GPU</td>
-        <td class="highlight-col"><strong>Any CPU / Microcontroller</strong></td>
+        <td><strong id="td-hw">Donanım İhtiyacı</strong></td>
+        <td>Sürekli İnternet</td>
+        <td>Pahalı NVIDIA Ekran Kartı</td>
+        <td class="highlight-col"><strong id="td-hw-val">Herhangi bir İşlemci / Mikroçip</strong></td>
       </tr>
       <tr>
-        <td><strong>License & Pricing</strong></td>
-        <td>Proprietary API ($/token)</td>
-        <td>Open Weights</td>
-        <td class="highlight-col"><strong>100% Free & Open Source (MIT)</strong></td>
+        <td><strong id="td-lic">Lisans & Maliyet</strong></td>
+        <td>Token Başına Ücretli ($)</td>
+        <td>Açık Ağırlıklar</td>
+        <td class="highlight-col"><strong id="td-lic-val">%100 Açık Kaynak & Ücretsiz (MIT)</strong></td>
       </tr>
     </tbody>
   </table>
 
   <!-- Python Quickstart -->
-  <h2 class="section-title">Quickstart in Python</h2>
+  <h2 class="section-title" id="kod">Python ile 30 Saniyede Başlayın</h2>
   <div class="card">
-    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Install with zero heavy dependencies:</div>
+    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="code-install-lbl">Hiçbir ağır kütüphaneye ihtiyaç duymadan kurun:</div>
     <div class="code-box">pip install wevv</div>
     
-    <div style="font-size: 0.9rem; color: var(--text-muted); margin: 1.5rem 0 0.5rem;">Evaluate decisions in 3 lines of code:</div>
+    <div style="font-size: 0.9rem; color: var(--text-muted); margin: 1.5rem 0 0.5rem;" id="code-usage-lbl">Sadece 3 satırda akıllı karar motorunu çalıştırın:</div>
     <div class="code-box">from wevv import create_smart_router, NoulQuestion, ChoiceQuestion
 
-# 1. Initialize 24-byte zero-memory engine
+# 1. 24 baytlık sıfır-bellek motorunu başlat
 engine = create_smart_router()
 
-# 2. Evaluate program state into typed decisions
+# 2. Program durumunu tip güvenli karara dönüştür
 response = engine.decide(
     state={"role": "member", "req_rate": 12.5, "failed": 0},
     questions={
-        "allow": NoulQuestion("Should request execute?"),
-        "route": ChoiceQuestion("Target service", criteria={"prod": "Primary", "deny": "Block"})
+        "allow": NoulQuestion("İstek çalıştırılsın mı?"),
+        "route": ChoiceQuestion("Hedef servis", criteria={"prod": "Ana Sunucu", "deny": "Engelle"})
     }
 )
 
-# 3. Fast smart if-statement:
+# 3. Sıradan kodunuzun içinde akıllı if-statement:
 if response.boolean("allow"):
     dispatch_to(response.choice("route"))</div>
   </div>
 
   <footer>
     <p>
-      <strong>wevv</strong> is part of the 
+      <strong>wevv</strong>, 
       <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> 
-      research initiative.
+      açık bilim araştırmasının bir parçasıdır.
     </p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem;">
-      Authors: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin University), Dağhan Dağlı (Toros Science College). MIT License.
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;" id="footer-authors">
+      Yazarlar: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin Üniversitesi), Dağhan Dağlı (Toros Fen Lisesi). MIT Lisansı.
     </p>
   </footer>
 </div>
 
 <script>
+  // Bilingual Dictionary (TR / EN)
+  const i18n = {
+    tr: {
+      navGuide: "Halk Rehberi",
+      navDemo: "Simülatör",
+      navComp: "Karşılaştırma",
+      navCode: "Hızlı Başlangıç",
+      heroBadge: "v0.1.0 • Açık Kaynak • Sıfır-Bellekli Karar Motoru",
+      heroMotto: 'Dalga <span class="highlight">Hatayla (e)</span> Karşılaştığında, Uzayı <span class="highlight">Parçalarız (vv)</span>.',
+      heroSubtitle: 'Jev kararları 4 milyar parametreli ağır tensörlerden çıkar; <strong>wevv</strong> kararları ise <strong>0 Byte hafıza</strong> ile doğanın sonsuz fraktal dalgalarından, Euler sınırlarından ve çeyrekleme geometrisinden anında filizlenir.',
+      btnHeroDemo: "⚡ Canlı Karar Simülatörü",
+      btnHeroGuide: "📖 Halk Dilinde Anlatım (Nedir Bu?)",
+      halkTag: "3 DAKİKADA POPÜLER BİLİM",
+      halkTitle: "Nedir Bu wevv? Ne İşe Yarar?",
+      halkDesc: "Teknik terimler olmadan, herkesin anlayabileceği gündelik hayat benzetmeleriyle:",
+      card1Title: "Sohbet Robotu Değil, Bir Refleks!",
+      card1Text: "ChatGPT gibi modeller düşünerek uzun uzun roman yazar (Sistem-2). <strong>wevv</strong> ise tıpkı eliniz sıcak sobaya değdiğinde düşünmeden elinizi anında geri çekmeniz gibi çalışır (Sistem-1). Yazılımların içine gömülen refleksif, akıllı bir <em>'Evet/Hayır'</em> karar motorudur.",
+      card2Title: "Sıfır Hafıza (0 Byte VRAM)",
+      card2Text: "Klasik yapay zekalar hafızasında milyarlarca ağırlık sayısı (GB'larca dosya) saklamak zorundadır. <strong>wevv</strong> hiçbir ağırlık dosyası saklamaz! Kararları doğanın sonsuz Mandelbrot fraktal deseninden ihtiyaç duyulduğu milisaniyede canlı türetir.",
+      card3Title: "Göz Kırpma Hızında (0.5 ms)",
+      card3Text: "İnternet sunucularına bağlanıp saniyelerce beklemez. En ucuz bilgisayarda, cep telefonunda veya elektrik tüketmeyen küçük çiplerde bile 1 milisaniyenin altında kararlar üretir.",
+      card4Title: "3 Basit Soru Tipi",
+      card4Text: "<strong>1. noul:</strong> Evet/Hayır ('Kapıyı açayım mı?')<br><strong>2. choice:</strong> Çoktan Seçmeli ('Hastayı Acile mi, Kliniğe mi yönlendireyim?')<br><strong>3. score:</strong> Dereceleme ('Bu durum ne kadar acil? 0 ile 3 arası puanla')",
+      stepsTitle: "💡 Nasıl Kullanılır? (Çok Basit 3 Adım)",
+      step1Title: "Durumu Ver",
+      step1Desc: "Yazılımındaki verileri söyle (Örn: Giriş yapan kim? Kaç kez şifreyi yanlış girdi?).",
+      step2Title: "Sorunu Sor",
+      step2Desc: "wevv'e sor: 'Bu işlem güvenli mi?' ya da 'Hangi departmana aktarayım?'.",
+      step3Title: "Anında Kararı Al",
+      step3Desc: "1 milisaniye içinde kesin, tip güvenli ve net kararı koduna bağla.",
+      simInputTitle: "Gelen Program Durumu",
+      simLiveTag: "Canlı Girdi",
+      lblRole: "Kullanıcı Güvenlik Rolü",
+      lblFreq: "İstek Frekansı",
+      lblFailed: "Hatalı Giriş Sayısı",
+      lblPayload: "Paket Boyutu",
+      canvasDesc: "Canlı 4-Quadrant Mandelbrot Faz Pertürbasyonu (128x128)",
+      hudLblLat: "Gecikme",
+      hudLblVram: "Tensör VRAM",
+      hudLblSeed: "Tohum Koordinatı",
+      simOutputTitle: "Türetilen Kararlar (Sistem-1)",
+      simSafeTag: "Tip Güvenli",
+      q1Desc: "Soru: Bu işlemin doğrudan çalışmasına izin verilsin mi?",
+      q2Desc: "Soru: İsteği hangi alt servise yönlendireyim?",
+      q3Desc: "Soru: Algılanan tehlike indeksi (0.0 - 3.0)",
+      badgeAllow: "ONAYLANDI",
+      badgeDeny: "ENGELLENDİ",
+      actionLabel: "Yazılımın akıllı if-else kararı:",
+      compTitle: "Neden wevv? Sıfır-Bellek vs. LLM Kararları",
+      thDim: "Boyut",
+      tdMem: "Ağırlık Belleği (VRAM)",
+      tdMemVal: "0 Byte (Sıfır Bellek Matrisi)",
+      tdSeed: "Model Tohumu",
+      tdSeedVal: "Yalnızca 24 Byte (cx, cy, zoom)",
+      tdLat: "Gecikme Süresi",
+      tdHw: "Donanım İhtiyacı",
+      tdHwVal: "Herhangi bir İşlemci / Mikroçip",
+      tdLic: "Lisans & Maliyet",
+      tdLicVal: "%100 Açık Kaynak & Ücretsiz (MIT)",
+      codeInstallLbl: "Hiçbir ağır kütüphaneye ihtiyaç duymadan kurun:",
+      codeUsageLbl: "Sadece 3 satırda akıllı karar motorunu çalıştırın:",
+      footerAuthors: "Yazarlar: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin Üniversitesi), Dağhan Dağlı (Toros Fen Lisesi). MIT Lisansı."
+    },
+    en: {
+      navGuide: "Plain Guide",
+      navDemo: "Simulator",
+      navComp: "Comparison",
+      navCode: "Quickstart",
+      heroBadge: "v0.1.0 • Open Source • Zero-Memory Decision Engine",
+      heroMotto: 'When the Wave hits <span class="highlight">Error (e)</span>, we <span class="highlight">Subdivide (vv)</span>.',
+      heroSubtitle: 'Jev decisions come from 4B-parameter tensors; <strong>wevv</strong> decisions come from infinite geometric waves, Euler thresholds, and recursive quadrant subdivision with <strong>0 Bytes memory</strong>.',
+      btnHeroDemo: "⚡ Launch Decision Simulator",
+      btnHeroGuide: "📖 Plain Guide (What is this?)",
+      halkTag: "POPULAR SCIENCE IN 3 MINUTES",
+      halkTitle: "What is wevv? How Does it Work?",
+      halkDesc: "Without dense technical jargon, explained through intuitive real-world analogies:",
+      card1Title: "Not a Chatbot, a Reflex!",
+      card1Text: "LLMs like ChatGPT write long deliberative essays (System-2). <strong>wevv</strong> acts like your hand pulling away when touching a hot stove (System-1). It is an ultra-fast, reflexive smart <em>'Yes/No'</em> decision engine embedded directly inside software.",
+      card2Title: "Zero Memory (0 Byte VRAM)",
+      card2Text: "Traditional AI must store billions of weights (multi-GB files) in VRAM. <strong>wevv</strong> stores 0 weight matrices! Decisions are synthesized on-the-fly from the infinite Mandelbrot fractal pattern in microseconds.",
+      card3Title: "Blink-of-an-Eye Speed (< 0.5 ms)",
+      card3Text: "No waiting for cloud API calls or network hops. Runs locally on any cheap CPU, mobile device, or low-power microcontroller with zero electricity waste.",
+      card4Title: "3 Simple Question Types",
+      card4Text: "<strong>1. noul:</strong> Yes/No ('Should I unlock the door?')<br><strong>2. choice:</strong> Multiple Choice ('Route to Emergency or Clinic?')<br><strong>3. score:</strong> Ranking ('How critical is this threat? 0 to 3 scale')",
+      stepsTitle: "💡 How to Use it? (3 Simple Steps)",
+      step1Title: "1. Provide Program State",
+      step1Desc: "Feed your app's variables (e.g., User role, request frequency, failed logins).",
+      step2Title: "2. Ask Typed Questions",
+      step2Desc: "Ask wevv: 'Is this operation safe?' or 'Which microservice should receive this?'.",
+      step3Title: "3. Receive Instant Judgment",
+      step3Desc: "Get deterministic, type-safe probabilities in < 1 ms to branch your code.",
+      simInputTitle: "Incoming Program State",
+      simLiveTag: "Live Input",
+      lblRole: "User Security Role",
+      lblFreq: "Request Frequency",
+      lblFailed: "Failed Auth Count",
+      lblPayload: "Payload Size",
+      canvasDesc: "Live 4-Quadrant Mandelbrot Phase Perturbation (128x128)",
+      hudLblLat: "Latency",
+      hudLblVram: "Tensor VRAM",
+      hudLblSeed: "Coordinate Seed",
+      simOutputTitle: "Synthesized Decisions (System-One)",
+      simSafeTag: "Type-Safe",
+      q1Desc: "Question: Should this incoming request execute?",
+      q2Desc: "Question: Select downstream microservice destination",
+      q3Desc: "Question: Perceived threat severity index (0.0 to 3.0)",
+      badgeAllow: "ALLOWED",
+      badgeDeny: "DENIED",
+      actionLabel: "Smart if-statement resolution:",
+      compTitle: "Why wevv? Zero-Memory vs. LLM Decisions",
+      thDim: "Dimension",
+      tdMem: "Weight Tensor Memory",
+      tdMemVal: "0 Bytes (Zero Tensor Memory)",
+      tdSeed: "Model Seed",
+      tdSeedVal: "24 Bytes only (cx, cy, zoom)",
+      tdLat: "Typical Latency",
+      tdHw: "Hardware Requirement",
+      tdHwVal: "Any standard CPU / Microcontroller",
+      tdLic: "License & Cost",
+      tdLicVal: "100% Free & Open Source (MIT)",
+      codeInstallLbl: "Install with zero heavy dependencies:",
+      codeUsageLbl: "Run the decision engine in just 3 lines:",
+      footerAuthors: "Authors: Volkan Dağlı (ITouch Systems), Zerrin Dağlı (Mersin University), Dağhan Dağlı (Toros Science College). MIT License."
+    }
+  };
+
+  let currentLang = 'tr';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    const t = i18n[lang];
+
+    // Buttons active state
+    document.getElementById('btn-tr').className = 'lang-btn' + (lang === 'tr' ? ' active' : '');
+    document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+
+    // Nav
+    document.getElementById('nav-guide').innerText = t.navGuide;
+    document.getElementById('nav-demo').innerText = t.navDemo;
+    document.getElementById('nav-comp').innerText = t.navComp;
+    document.getElementById('nav-code').innerText = t.navCode;
+
+    // Hero
+    document.getElementById('hero-badge').innerText = t.heroBadge;
+    document.getElementById('hero-motto').innerHTML = t.heroMotto;
+    document.getElementById('hero-subtitle').innerHTML = t.heroSubtitle;
+    document.getElementById('btn-hero-demo').innerText = t.btnHeroDemo;
+    document.getElementById('btn-hero-guide').innerText = t.btnHeroGuide;
+
+    // Halk Rehberi
+    document.getElementById('halk-tag').innerText = t.halkTag;
+    document.getElementById('halk-title').innerText = t.halkTitle;
+    document.getElementById('halk-desc').innerText = t.halkDesc;
+    document.getElementById('card1-title').innerText = t.card1Title;
+    document.getElementById('card1-text').innerHTML = t.card1Text;
+    document.getElementById('card2-title').innerText = t.card2Title;
+    document.getElementById('card2-text').innerHTML = t.card2Text;
+    document.getElementById('card3-title').innerText = t.card3Title;
+    document.getElementById('card3-text').innerHTML = t.card3Text;
+    document.getElementById('card4-title').innerText = t.card4Title;
+    document.getElementById('card4-text').innerHTML = t.card4Text;
+    document.getElementById('steps-title').innerText = t.stepsTitle;
+    document.getElementById('step1-title').innerText = t.step1Title;
+    document.getElementById('step1-desc').innerText = t.step1Desc;
+    document.getElementById('step2-title').innerText = t.step2Title;
+    document.getElementById('step2-desc').innerText = t.step2Desc;
+    document.getElementById('step3-title').innerText = t.step3Title;
+    document.getElementById('step3-desc').innerText = t.step3Desc;
+
+    // Simulator
+    document.getElementById('sim-input-title').innerText = t.simInputTitle;
+    document.getElementById('sim-live-tag').innerText = t.simLiveTag;
+    document.getElementById('lbl-role').innerText = t.lblRole;
+    document.getElementById('lbl-freq').innerText = t.lblFreq;
+    document.getElementById('lbl-failed').innerText = t.lblFailed;
+    document.getElementById('lbl-payload').innerText = t.lblPayload;
+    document.getElementById('canvas-desc').innerText = t.canvasDesc;
+    document.getElementById('hud-lbl-lat').innerText = t.hudLblLat;
+    document.getElementById('hud-lbl-vram').innerText = t.hudLblVram;
+    document.getElementById('hud-lbl-seed').innerText = t.hudLblSeed;
+    document.getElementById('sim-output-title').innerText = t.simOutputTitle;
+    document.getElementById('sim-safe-tag').innerText = t.simSafeTag;
+    document.getElementById('q1-desc').innerText = t.q1Desc;
+    document.getElementById('q2-desc').innerText = t.q2Desc;
+    document.getElementById('q3-desc').innerText = t.q3Desc;
+    document.getElementById('action-label').innerText = t.actionLabel;
+
+    // Comparison
+    document.getElementById('comp-title').innerText = t.compTitle;
+    document.getElementById('th-dim').innerText = t.thDim;
+    document.getElementById('td-mem').innerText = t.tdMem;
+    document.getElementById('td-mem-val').innerText = t.tdMemVal;
+    document.getElementById('td-seed').innerText = t.tdSeed;
+    document.getElementById('td-seed-val').innerText = t.tdSeedVal;
+    document.getElementById('td-lat').innerText = t.tdLat;
+    document.getElementById('td-hw').innerText = t.tdHw;
+    document.getElementById('td-hw-val').innerText = t.tdHwVal;
+    document.getElementById('td-lic').innerText = t.tdLic;
+    document.getElementById('td-lic-val').innerText = t.tdLicVal;
+
+    // Code & Footer
+    document.getElementById('code-install-lbl').innerText = t.codeInstallLbl;
+    document.getElementById('code-usage-lbl').innerText = t.codeUsageLbl;
+    document.getElementById('footer-authors').innerText = t.footerAuthors;
+
+    evaluateDecision();
+  }
+
   // Live Fractal Decision Simulator Logic
   const canvas = document.getElementById('mandelbrot-canvas');
   const ctx = canvas.getContext('2d');
@@ -762,7 +1268,8 @@ if response.boolean("allow"):
     const failed = parseInt(document.getElementById('input-failed').value);
     const payload = parseFloat(document.getElementById('input-payload').value);
 
-    document.getElementById('val-freq').innerText = freq + ' req/s';
+    const freqUnit = currentLang === 'tr' ? ' istek/sn' : ' req/s';
+    document.getElementById('val-freq').innerText = freq + freqUnit;
     document.getElementById('val-failed').innerText = failed;
     document.getElementById('val-payload').innerText = payload + ' KB';
 
@@ -798,8 +1305,9 @@ if response.boolean("allow"):
     let threatScore = Math.max(0.0, Math.min(3.0, (risk + 0.8) * 0.9));
 
     // Update UI elements
+    const t = i18n[currentLang];
     const badgeNoul = document.getElementById('badge-noul');
-    badgeNoul.innerText = allow ? 'ALLOWED' : 'DENIED';
+    badgeNoul.innerText = allow ? t.badgeAllow : t.badgeDeny;
     badgeNoul.className = 'result-badge ' + (allow ? 'allow' : 'deny');
     document.getElementById('val-noul-prob').innerText = 'p = ' + noulProb.toFixed(4);
     document.getElementById('bar-noul').style.width = (noulProb * 100) + '%';
@@ -819,15 +1327,15 @@ if response.boolean("allow"):
     
     const labelScore = document.getElementById('label-score');
     if (threatScore < 1.0) {
-      labelScore.innerText = 'Normal / Low Threat';
+      labelScore.innerText = currentLang === 'tr' ? 'Normal / Düşük Risk' : 'Normal / Low Threat';
       labelScore.style.color = 'var(--emerald)';
       document.getElementById('bar-score').style.background = 'var(--emerald)';
     } else if (threatScore < 2.0) {
-      labelScore.innerText = 'Elevated Risk';
+      labelScore.innerText = currentLang === 'tr' ? 'Yükselmiş Risk' : 'Elevated Risk';
       labelScore.style.color = 'var(--amber)';
       document.getElementById('bar-score').style.background = 'var(--amber)';
     } else {
-      labelScore.innerText = 'Critical Threat';
+      labelScore.innerText = currentLang === 'tr' ? 'Kritik Tehdit!' : 'Critical Threat!';
       labelScore.style.color = 'var(--rose)';
       document.getElementById('bar-score').style.background = 'var(--rose)';
     }
@@ -835,16 +1343,16 @@ if response.boolean("allow"):
     const actionDispatch = document.getElementById('action-dispatch');
     const actionIcon = document.getElementById('action-icon');
     if (allow && threatScore < 1.2) {
-      actionDispatch.innerText = 'EXECUTE_DIRECT(request)';
+      actionDispatch.innerText = currentLang === 'tr' ? 'DOĞRUDAN_ÇALIŞTIR(istek)' : 'EXECUTE_DIRECT(request)';
       actionIcon.innerText = '🚀';
     } else if (pRate > 40) {
-      actionDispatch.innerText = 'QUEUE_IN_RATE_LIMITER()';
+      actionDispatch.innerText = currentLang === 'tr' ? 'HIZ_LİMİTİ_KUYRUĞUNA_AL()' : 'QUEUE_IN_RATE_LIMITER()';
       actionIcon.innerText = '⏳';
     } else if (pDrop > 50) {
-      actionDispatch.innerText = 'DROP_AND_BLACKLIST_SENDER()';
+      actionDispatch.innerText = currentLang === 'tr' ? 'PAKETİ_DÜŞÜR_VE_KARA_LİSTEYE_AL()' : 'DROP_AND_BLACKLIST_SENDER()';
       actionIcon.innerText = '🛑';
     } else {
-      actionDispatch.innerText = 'ROUTE_TO_SANDBOX_AUDIT()';
+      actionDispatch.innerText = currentLang === 'tr' ? 'GÜVENLİK_İNCELEMESİNE_GÖNDER()' : 'ROUTE_TO_SANDBOX_AUDIT()';
       actionIcon.innerText = '🔍';
     }
 
