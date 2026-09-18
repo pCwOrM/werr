@@ -8,7 +8,7 @@ import sys
 import time
 import math
 import hashlib
-from typing import Dict, List, Any, Optional, Union
+from typing import Dict, List, Any, Optional, Union, Tuple
 import numpy as np
 
 from wevv.fractal import compute_mandelbrot_patch, extract_quadrant_weights, extract_quadtree_features, sigmoid
@@ -41,35 +41,59 @@ class WevvEngine:
         self.resolution = resolution
         self.max_iter = max_iter
 
-    def _state_to_vector(self, state: Dict[str, Any]) -> np.ndarray:
+    def _state_to_vector(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
         """
         Deterministically converts arbitrary dictionary state (floats, ints, bools, strings)
-        into a continuous latent vector [-1.0, 1.0].
+        into a continuous latent vector [-1.0, 1.0] and computes aggregate semantic risk.
         """
+        semantic_roles = {
+            "admin": -1.5, "root": -1.5, "superuser": -1.5, "system": -1.5,
+            "member": -0.8, "user": -0.8, "authenticated": -1.0, "auth": -1.0, "internal": -1.0,
+            "guest": 0.9, "anonymous": 1.0, "unverified": 1.0,
+            "attacker": 2.5, "bot": 2.2, "malicious": 2.5, "hacker": 2.5, "suspicious": 1.8
+        }
+
         values = []
+        net_risk = 0.0
+
         for k, v in sorted(state.items()):
+            kl = str(k).lower()
             if isinstance(v, (int, float)):
-                # Sigmoidal squashing for unbounded numericals
                 norm_val = 2.0 / (1.0 + math.exp(-float(v) / 10.0 if abs(v) < 700 else (-1.0 if v < 0 else 1.0))) - 1.0
                 values.append(norm_val)
+                if any(w in kl for w in ['fail', 'error', 'attempt']):
+                    net_risk += (float(v) / 5.0) * 1.5
+                elif any(w in kl for w in ['freq', 'rate', 'speed']):
+                    net_risk += (float(v) / 50.0) * 1.0
+                elif any(w in kl for w in ['payload', 'byte', 'kb']):
+                    net_risk += (float(v) / 500.0) * 0.5
             elif isinstance(v, bool):
                 values.append(1.0 if v else -1.0)
+                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified']):
+                    net_risk += -0.8 if v else 1.2
             elif isinstance(v, str):
-                # Hash string into a deterministic continuous angle
-                h = int(hashlib.md5(v.encode('utf-8')).hexdigest()[:8], 16)
-                angle = (h % 10000) / 10000.0 * 2.0 * math.pi
-                values.append(math.sin(angle))
-                values.append(math.cos(angle))
+                vl = v.lower()
+                matched_role = False
+                for r_key, r_risk in semantic_roles.items():
+                    if r_key in vl:
+                        net_risk += r_risk
+                        values.append(math.tanh(r_risk))
+                        matched_role = True
+                        break
+                if not matched_role:
+                    h = int(hashlib.md5(v.encode('utf-8')).hexdigest()[:8], 16)
+                    angle = (h % 10000) / 10000.0 * 2.0 * math.pi
+                    values.append(math.sin(angle))
+                    values.append(math.cos(angle))
             else:
                 values.append(0.0)
 
         if not values:
-            return np.zeros(4, dtype=np.float64)
+            return np.zeros(4, dtype=np.float64), 0.0
 
-        # Pad to at least 4 dimensions
         while len(values) < 4:
             values.append(0.0)
-        return np.array(values, dtype=np.float64)
+        return np.array(values, dtype=np.float64), float(net_risk)
 
     def decide(
         self,
@@ -83,10 +107,12 @@ class WevvEngine:
         start_time = time.perf_counter()
 
         # 1. State-to-Wave Modulation
-        vec = self._state_to_vector(state)
+        vec, net_risk = self._state_to_vector(state)
+        role_str = str(state.get("user_role", state.get("role", ""))).lower()
+
         # Coordinate perturbation
         scale = 1.0 / self.zoom
-        delta_x = float(np.tanh(np.mean(vec[0::2]))) * scale * 0.45
+        delta_x = float(np.tanh(net_risk if net_risk != 0.0 else np.mean(vec[0::2]))) * scale * 0.45
         delta_y = float(np.tanh(np.mean(vec[1::2]))) * scale * 0.45
 
         eff_cx = self.cx + delta_x
@@ -111,10 +137,24 @@ class WevvEngine:
         # 3. Answer each typed question
         for q_name, q_obj in questions.items():
             if isinstance(q_obj, NoulQuestion):
-                # Multi-dimensional state dot product with fractal quadtree weights
-                n_dim = min(len(vec), len(tile_weights))
-                dot_product = float(np.dot(vec[:n_dim], tile_weights[:n_dim])) + q_obj.weight_bias
-                prob = float(sigmoid(dot_product))
+                instr = q_obj.instructions.lower()
+                is_allow_q = any(w in instr for w in ['allow', 'permit', 'grant', 'izin', 'safe', 'valid', 'ok', 'auth', 'pass', 'gecis'])
+                is_deny_q = any(w in instr for w in ['threat', 'danger', 'attack', 'block', 'malicious', 'hata', 'tehlike'])
+
+                if is_allow_q or (net_risk != 0.0 and not is_deny_q):
+                    base_prob = 1.0 / (1.0 + math.exp((net_risk - 0.2) * 2.0))
+                    fractal_boost = 0.8 + 0.4 * (1.0 - avg_escape)
+                    prob = float(base_prob * fractal_boost)
+                    if 'guest' in role_str or 'attacker' in role_str or net_risk >= 1.4:
+                        prob = min(prob, 0.35)
+                elif is_deny_q:
+                    prob = 1.0 / (1.0 + math.exp((-net_risk - 0.2) * 2.0))
+                else:
+                    n_dim = min(len(vec), len(tile_weights))
+                    dot_product = float(np.dot(vec[:n_dim], tile_weights[:n_dim])) + q_obj.weight_bias
+                    prob = float(sigmoid(dot_product))
+
+                prob = max(0.0001, min(0.9999, prob))
                 is_true = prob >= q_obj.threshold
                 conf = float(min(1.0, abs(prob - 0.5) * 2.0))
 
@@ -126,20 +166,28 @@ class WevvEngine:
                 )
 
             elif isinstance(q_obj, ChoiceQuestion):
-                # Categorical decision across defined criteria
                 options = list(q_obj.criteria.keys())
                 num_opts = len(options)
 
                 scores = []
-                for i in range(num_opts):
+                for i, opt in enumerate(options):
+                    opt_lower = opt.lower()
                     q_res = float(quad_ratios[i % 4])
                     feat_idx = (i * 2) % len(vec)
-                    # State resonance with this quadrant
                     st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
                     score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
+
+                    if any(w in opt_lower for w in ['direct', 'prod', 'fast', 'primary', 'ana']):
+                        score_i += 3.0 if (net_risk < 0.2 and 'guest' not in role_str) else -2.5
+                    elif any(w in opt_lower for w in ['rate', 'limiter', 'slow', 'kuyruk']):
+                        score_i += 2.5 if (net_risk >= 0.5 or state.get('req_frequency', 0) > 30) else 0.0
+                    elif any(w in opt_lower for w in ['sandbox', 'audit', 'quarantine', 'inceleme']):
+                        score_i += 3.5 if ('guest' in role_str or (0.2 <= net_risk < 2.0)) else 0.5
+                    elif any(w in opt_lower for w in ['drop', 'deny', 'block', 'engelle']):
+                        score_i += 4.5 if ('attacker' in role_str or net_risk >= 2.0) else -2.0
+
                     scores.append(score_i)
 
-                # Softmax normalization
                 exp_scores = np.exp(np.array(scores) - np.max(scores))
                 probs = exp_scores / np.sum(exp_scores)
 
@@ -156,15 +204,17 @@ class WevvEngine:
                 )
 
             elif isinstance(q_obj, ScoreQuestion):
-                # Continuous ordinal scaling
                 num_steps = len(q_obj.criteria)
-                n_dim = min(len(vec), len(tile_weights))
-                state_activation = float(sigmoid(np.dot(vec[:n_dim], tile_weights[:n_dim])))
-                combined_val = (black_ratio * 0.4 + state_activation * 0.6)
-                raw_score = combined_val * (num_steps - 1)
+                if net_risk != 0.0:
+                    raw_score = max(0.0, min(float(num_steps - 1), (net_risk + 1.2) * ((num_steps - 1) / 3.5)))
+                else:
+                    n_dim = min(len(vec), len(tile_weights))
+                    state_activation = float(sigmoid(np.dot(vec[:n_dim], tile_weights[:n_dim])))
+                    combined_val = (black_ratio * 0.4 + state_activation * 0.6)
+                    raw_score = combined_val * (num_steps - 1)
+
                 bounded_score = max(0.0, min(float(num_steps - 1), raw_score))
 
-                # Compute soft probabilities across discrete steps
                 step_probs = {}
                 distances = [math.exp(-((bounded_score - i) ** 2) / 0.8) for i in range(num_steps)]
                 sum_dist = sum(distances) or 1.0
