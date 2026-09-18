@@ -1,6 +1,6 @@
 # 🌊 wevv: Zero-Memory Fractal System-One Decision Engine
 
-> **Motto:** *"When the Wave hits Error ($e$), we Subdivide ($vv$)."*  
+> **Motto:** *"When the Wave hits Error (e), we Subdivide (vv)."*  
 > *"Jev decisions come from 4B-parameter tensors; `wevv` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
 
 `wevv` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `wevv` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
@@ -9,11 +9,11 @@
 
 ## 💡 Naming & The `w-e-vv` Philosophy
 
-* **`w` (Wave / Dalga):** Represents continuous chaotic phase waves, complex potential dynamics ($e^{i\theta}$), and harmonic orbital flow along the boundary of the Mandelbrot set ($\partial \mathcal{M}$).
+* **`w` (Wave / Dalga):** Represents continuous chaotic phase waves, complex potential dynamics, and harmonic orbital flow along the boundary of the Mandelbrot set.
 * **`e` (Error & Euler):**
-  * **Error Boundary:** The sharp edge of escape ($\partial \mathcal{M}$). Just like biological pain/error reflexes, decision boundaries are locked immediately when error thresholds are crossed.
-  * **Euler Constant ($e \approx 2.718$):** The exponential basis governing chaotic divergence rates and Lyapunov escape exponents ($e^{\lambda t}$).
-* **`vv` (Subdivision / Çeyrekleme):** When waves encounter the error threshold, the space is recursively partitioned into 4-Quadrant ($Q_1..Q_4$) and $2^p \times 2^p$ Quadtree sub-regions to extract instantaneous, type-safe decisions.
+  * **Error Boundary:** The sharp edge of escape. Just like biological pain/error reflexes, decision boundaries are locked immediately when error thresholds are crossed.
+  * **Euler Constant (e ≈ 2.718):** The exponential basis governing chaotic divergence rates and Lyapunov escape exponents.
+* **`vv` (Subdivision / Çeyrekleme):** When waves encounter the error threshold, the space is recursively partitioned into 4-Quadrant (Q1–Q4) and Quadtree sub-regions to extract instantaneous, type-safe decisions.
 * **System One Intuition:** Following Daniel Kahneman's model, `wevv` acts as a fast, reflexive "smart if-statement" inside ordinary application code.
 
 ---
