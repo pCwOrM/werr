@@ -309,8 +309,8 @@
 
     .halk-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.15rem;
       margin-bottom: 2.5rem;
     }
 
@@ -318,8 +318,10 @@
       background: var(--bg-inner);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 1.5rem;
+      padding: 1.35rem 1.15rem;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .halk-card:hover {
@@ -328,21 +330,21 @@
     }
 
     .halk-card-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
     }
 
     .halk-card-title {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
       color: var(--text-main);
     }
 
     .halk-card-text {
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     /* 3 Simple Steps */
@@ -363,7 +365,7 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
 
@@ -411,10 +413,88 @@
       margin: 3rem 0;
     }
 
+    /* Responsive Breakpoints & Mobile Optimization */
+    @media (max-width: 1080px) {
+      .halk-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+
     @media (max-width: 900px) {
-      .lab-grid { grid-template-columns: 1fr; }
-      h1.hero-title { font-size: 2.75rem; }
+      .lab-grid {
+        grid-template-columns: 1fr;
+        margin: 2rem 0;
+      }
       .nav-links { display: none; }
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 1rem 0.75rem;
+      }
+      header {
+        padding: 1.5rem 0.5rem 2rem;
+      }
+      h1.hero-title {
+        font-size: 2.3rem;
+      }
+      .hero-motto {
+        font-size: 1.15rem;
+      }
+      .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .halk-section {
+        padding: 1.5rem 1rem;
+        margin: 2.5rem 0 2rem;
+        border-radius: 14px;
+      }
+      .halk-title {
+        font-size: 1.45rem;
+      }
+      .halk-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .card {
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+      }
+      .hud-metrics {
+        gap: 0.4rem;
+      }
+      .hud-box {
+        padding: 0.4rem 0.2rem;
+      }
+      .hud-value {
+        font-size: 0.9rem;
+      }
+      .hud-label {
+        font-size: 0.65rem;
+      }
+      .code-box {
+        padding: 1rem;
+        font-size: 0.82rem;
+      }
+      .comparison-table th, .comparison-table td {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.85rem;
+      }
     }
 
     .card {
@@ -679,15 +759,26 @@
       margin: 4rem 0 1.5rem;
     }
 
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: var(--bg-card);
+    }
+
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
       background: var(--bg-card);
-      border: 1px solid var(--border);
+      min-width: 620px;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
     }
 
     .comparison-table th, .comparison-table td {
@@ -1036,48 +1127,50 @@
 
   <!-- Comparison Matrix -->
   <h2 class="section-title" id="comp-title">Why wevv? Zero-Memory vs. LLM Decisions</h2>
-  <table class="comparison-table" id="karsilastirma">
-    <thead>
-      <tr>
-        <th id="th-dim">Dimension</th>
-        <th>TypeSafe AI (Jev)</th>
-        <th>OpenJev / NanoJev (Qwen 4B)</th>
-        <th class="highlight-col">wevv (Fractal System-1)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong id="td-mem">Weight Tensor Memory</strong></td>
-        <td>Multi-GB (Cloud Hosted)</td>
-        <td>~8 GB VRAM</td>
-        <td class="highlight-col"><strong id="td-mem-val">0 Bytes (Zero Tensor Memory)</strong></td>
-      </tr>
-      <tr>
-        <td><strong id="td-seed">Model Seed</strong></td>
-        <td>Cloud API Token</td>
-        <td>Model Weights Checkpoint</td>
-        <td class="highlight-col"><strong id="td-seed-val">24 Bytes only (cx, cy, zoom)</strong></td>
-      </tr>
-      <tr>
-        <td><strong id="td-lat">Typical Latency</strong></td>
-        <td>~100 ms (HTTP API)</td>
-        <td>~15–30 ms (GPU)</td>
-        <td class="highlight-col"><strong>&lt; 1.0 ms (Pure Local CPU)</strong></td>
-      </tr>
-      <tr>
-        <td><strong id="td-hw">Hardware Requirement</strong></td>
-        <td>Internet Connection</td>
-        <td>CUDA-capable GPU</td>
-        <td class="highlight-col"><strong id="td-hw-val">Any CPU / Microcontroller</strong></td>
-      </tr>
-      <tr>
-        <td><strong id="td-lic">License & Cost</strong></td>
-        <td>Proprietary API ($/token)</td>
-        <td>Open Weights</td>
-        <td class="highlight-col"><strong id="td-lic-val">100% Free & Open Source (MIT)</strong></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container" id="karsilastirma">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th id="th-dim">Dimension</th>
+          <th>TypeSafe AI (Jev)</th>
+          <th>OpenJev / NanoJev (Qwen 4B)</th>
+          <th class="highlight-col">wevv (Fractal System-1)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong id="td-mem">Weight Tensor Memory</strong></td>
+          <td>Multi-GB (Cloud Hosted)</td>
+          <td>~8 GB VRAM</td>
+          <td class="highlight-col"><strong id="td-mem-val">0 Bytes (Zero Tensor Memory)</strong></td>
+        </tr>
+        <tr>
+          <td><strong id="td-seed">Model Seed</strong></td>
+          <td>Cloud API Token</td>
+          <td>Model Weights Checkpoint</td>
+          <td class="highlight-col"><strong id="td-seed-val">24 Bytes only (cx, cy, zoom)</strong></td>
+        </tr>
+        <tr>
+          <td><strong id="td-lat">Typical Latency</strong></td>
+          <td>~100 ms (HTTP API)</td>
+          <td>~15–30 ms (GPU)</td>
+          <td class="highlight-col"><strong>&lt; 1.0 ms (Pure Local CPU)</strong></td>
+        </tr>
+        <tr>
+          <td><strong id="td-hw">Hardware Requirement</strong></td>
+          <td>Internet Connection</td>
+          <td>CUDA-capable GPU</td>
+          <td class="highlight-col"><strong id="td-hw-val">Any CPU / Microcontroller</strong></td>
+        </tr>
+        <tr>
+          <td><strong id="td-lic">License & Cost</strong></td>
+          <td>Proprietary API ($/token)</td>
+          <td>Open Weights</td>
+          <td class="highlight-col"><strong id="td-lic-val">100% Free & Open Source (MIT)</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <!-- Python Quickstart & Examples -->
   <h2 class="section-title" id="kod">Quickstart & Examples</h2>
