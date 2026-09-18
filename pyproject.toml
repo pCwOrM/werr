@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wevv"
+version = "0.1.0"
+authors = [
+  { name="Volkan Dagli", email="contact@itouchsystems.com" },
+  { name="pcworm" }
+]
+description = "Zero-Memory Fractal System-One Decision Engine for Software Applications"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pCwOrM/wevv"
+"Base Research" = "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"

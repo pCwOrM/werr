@@ -1,0 +1,23 @@
+# Python virtual environments & caches
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary media & logs
+.tempmediaStorage/
+.system_generated/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Ignore root-level duplicate PDF (tracked in docs/ and zenodo/)
+/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf
+!docs/*.pdf
+!zenodo/*.pdf
+!arxiv/*.zip
