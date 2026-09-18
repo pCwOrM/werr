@@ -25,3 +25,8 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/pCwOrM/wevv"
 "Base Research" = "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wevv*"]
+exclude = ["dataset*", "tests*", "examples*"]
