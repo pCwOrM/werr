@@ -23,9 +23,7 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
-| 📄 **Academic Technical Monograph** | Full Monograph | Complex Systems & AI | [**Open Technical Report (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
-| 📑 **Preprint Manuscript (HTML)** | Article | Peer Reviewers & Scholars | [**Read Paper Online (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html) |
-| 📥 **Preprint Manuscript (PDF)** | Camera-Ready | Archival Reading | [**Download PDF (2.11 MB)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf) |
+| 🏛️ **Official Preprint (Zenodo v2.0)** | Permanent Archive | Open Science | [**Zenodo DOI: 10.5281/zenodo.22802921**](https://doi.org/10.5281/zenodo.22802921) |
 
 ---
 

@@ -24,8 +24,7 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 | 🔬 **128×128 4-Quadrant Araştırma Laboratuvarı** | Matematiksel Deney | Araştırmacılar & Mühendisler | [**Araştırma Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
-| 📑 **Preprint Makale Metni (HTML)** | Makale | Bilim İnsanları & Hakemler | [**Makaleyi Oku (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html) |
-| 📥 **Baskıya Hazır Makale (PDF)** | 2-Kolon Dergi Formatı | Arşiv & Baskı | [**PDF İndir (2.11 MB)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf) |
+| 🏛️ **Resmi Yayın Arşivi (Zenodo v2.0)** | Kalıcı Arşiv | Açık Bilim | [**Zenodo DOI: 10.5281/zenodo.22802921**](https://doi.org/10.5281/zenodo.22802921) |
 
 ---
 
