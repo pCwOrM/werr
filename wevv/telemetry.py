@@ -56,8 +56,83 @@ def _sanitize_instruction(text: str) -> str:
     return safe
 
 
+_OFFLINE_DIR = os.path.expanduser("~/.wevv")
+_OFFLINE_FILE = os.path.join(_OFFLINE_DIR, "offline_telemetry.jsonl")
+_OFFLINE_LOCK = threading.Lock()
+MAX_OFFLINE_ENTRIES = 500
+
+
+def _save_offline_payload(payload_json: str):
+    """Silently appends unsent payload to local disk buffer with a maximum entry cap."""
+    try:
+        with _OFFLINE_LOCK:
+            os.makedirs(_OFFLINE_DIR, exist_ok=True)
+            entries = []
+            if os.path.exists(_OFFLINE_FILE):
+                with open(_OFFLINE_FILE, "r", encoding="utf-8") as f:
+                    entries = f.readlines()
+            
+            # Keep newest entries up to limit
+            entries.append(payload_json.strip() + "\n")
+            if len(entries) > MAX_OFFLINE_ENTRIES:
+                entries = entries[-MAX_OFFLINE_ENTRIES:]
+            
+            with open(_OFFLINE_FILE, "w", encoding="utf-8") as f:
+                f.writelines(entries)
+    except Exception:
+        pass
+
+
+def _flush_offline_queue():
+    """Flushes buffered offline telemetry records to server once internet is restored."""
+    try:
+        with _OFFLINE_LOCK:
+            if not os.path.exists(_OFFLINE_FILE):
+                return
+            with open(_OFFLINE_FILE, "r", encoding="utf-8") as f:
+                lines = [line.strip() for line in f if line.strip()]
+
+        if not lines:
+            return
+
+        remaining = []
+        for line in lines:
+            try:
+                req = urllib.request.Request(
+                    TELEMETRY_ENDPOINT,
+                    data=line.encode("utf-8"),
+                    headers={
+                        "Content-Type": "application/json",
+                        "User-Agent": "wevv-client/0.1.0-buffered"
+                    },
+                    method="POST"
+                )
+                with urllib.request.urlopen(req, timeout=1.5) as _:
+                    pass
+            except Exception:
+                remaining.append(line)
+                break  # Internet connection dropped again, stop flushing
+
+        with _OFFLINE_LOCK:
+            if remaining:
+                with open(_OFFLINE_FILE, "w", encoding="utf-8") as f:
+                    f.writelines(r + "\n" for r in remaining)
+            else:
+                try:
+                    os.remove(_OFFLINE_FILE)
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+
 def _dispatch_worker(payload_json: str):
-    """Background thread sending the sanitized payload with strict 1.0s timeout."""
+    """
+    Background thread sending the sanitized payload with strict timeout.
+    If connection fails (offline), stores locally in ~/.wevv/offline_telemetry.jsonl.
+    When connection succeeds, automatically flushes previously buffered offline records.
+    """
+    sent = False
     try:
         req = urllib.request.Request(
             TELEMETRY_ENDPOINT,
@@ -68,11 +143,15 @@ def _dispatch_worker(payload_json: str):
             },
             method="POST"
         )
-        # Timeout 1.0s: if offline or slow network, silently abort
-        with urllib.request.urlopen(req, timeout=1.0) as _:
-            pass
+        with urllib.request.urlopen(req, timeout=2.0) as _:
+            sent = True
     except Exception:
-        pass
+        # Offline or server unreachable: buffer locally
+        _save_offline_payload(payload_json)
+
+    if sent:
+        # We are online: attempt to flush any pending offline records
+        _flush_offline_queue()
 
 
 def dispatch_telemetry_async(
