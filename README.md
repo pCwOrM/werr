@@ -1,58 +1,99 @@
 # Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries
 
+[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![Interactive Labs](https://img.shields.io/badge/Interactive%20Labs-100%25%20Client--Side-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22802921.svg)](https://doi.org/10.5281/zenodo.22802921)
+[![arXiv](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-b31b1b.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![Target Journal](https://img.shields.io/badge/Target%20Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Elsevier%20Q1)-blue.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Status: Preprint](https://img.shields.io/badge/Publication-Zenodo%20%2F%20arXiv%20Preprint-green.svg)](#)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Demos](https://img.shields.io/badge/Interactive%20Labs-100%25%20Standalone-purple.svg)](./demos/)
 
 > 🌐 **Language Switcher / Dil Seçici:**  
 > **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 ---
 
+## 🌟 Interactive Live Laboratories & Online Showcase
+
+Explore the procedural fractal neural synthesis paradigm directly inside your web browser. All laboratories are **100% client-side, zero-dependency, and fully offline-capable**:
+
+| Platform / Document | Type | Target Audience | Direct Live Link |
+| :--- | :--- | :--- | :--- |
+| 🌐 **Official Web Portal** | Showcase | Global / Academic | [**Launch Web Portal**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
+| 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
+| 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
+| 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
+| 📄 **Academic Technical Monograph** | Full Monograph | Complex Systems & AI | [**Open Technical Report (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
+| 📑 **Preprint Manuscript (HTML)** | Article | Peer Reviewers & Scholars | [**Read Paper Online (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html) |
+| 📥 **Preprint Manuscript (PDF)** | Camera-Ready | Archival Reading | [**Download PDF (2.11 MB)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf) |
+
+---
+
 ## 👥 Authors & Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  
-  ITouch Systems, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; Zenodo: [`@itouch`](https://zenodo.org/)
+  ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
 
 * **Zerrin Dağlı**  
-  Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
+  Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465)
 
 * **Dağhan Dağlı**  
-  Toros Science College, Turkey &bull; Zenodo: [`@Lexovian`](https://zenodo.org/)
+  Toros Science College, Mersin, Turkey &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
-*Correspondence & inquiries:* Inquiries and collaboration requests should be directed via the official research repository or Zenodo.
+*Correspondence:* Volkan Dağlı ([GitHub Repository](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) / [Zenodo](https://doi.org/10.5281/zenodo.22802921)).
 
 ---
 
 ## 📌 Executive Summary
 
-Modern deep neural networks store billions or trillions of parameters as unconstrained floating-point scalars across large static tensor matrices. For instance, a 70B parameter LLM demands $\sim 140$ GB of high-speed VRAM simply to hold weights in memory, causing severe memory bandwidth bottlenecks ("the memory wall") and massive power consumption.
+Modern deep artificial neural networks store millions or billions of parameters as unconstrained floating-point scalars across dense tensor matrices. While remarkably capable, this paradigm incurs immense storage requirements, memory bandwidth bottlenecks (the **"memory wall"**), and severe thermal/energy dissipation.
 
-This research proposes and empirically demonstrates an alternative paradigm: **deriving synaptic weights and activation thresholds dynamically from the visual morphology of the Mandelbrot fractal set ($\mathcal{M}$)**. 
+In biological systems, genetic encoding does not store neural connectomes point-by-point. The human genome contains approximately 750 MB of genetic code, yet orchestrates the development of an estimated $10^{11}$ neurons and $10^{14}$ synaptic junctions via self-similar recursive developmental rules.
 
-By querying a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \text{zoom})$ in the complex plane, a $128 \times 128$ pixel window is sampled via the classic iterative quadratic escape equation ($z_{n+1} = z_n^2 + c$). Through **4-Quadrant Partitioning**, four functional parameters ($w_1, w_2, w_3, \text{bias}$) are synthesized on demand from the non-escaping "dark area" (black pixel ratio).
+This research proposes and empirically demonstrates an alternative paradigm: **deriving synaptic weights and threshold biases procedurally from the non-linear visual morphology of the Mandelbrot fractal set ($\mathcal{M}$)**.
 
-### Key Scientific Milestones:
-1. **$128 \times 128$ Resolution Standard:** Matches the convergence precision of $256 \times 256$ within $\pm 0.08\%$ while executing **15 times faster** ($\approx 15.6$ ms).
-2. **100% Linear Gate Classification:** All canonical linear logic gates (AND, OR, NAND, NOR) converged to 100% classification accuracy.
-3. **100% Non-Linear XOR Resolution:** The historically intractable XOR problem was solved with 100% accuracy using a two-layer composite fractal network, generating a continuous non-linear 2D decision contour.
-4. **24-Byte Zero-Weight Footprint:** Eliminates persistent weight tensor storage entirely. A functional decision unit is defined by only **24 bytes** (three Float64 coordinates), representing a **$>99.99999998\%$ memory reduction** over conventional weight matrices.
-5. **The Escape Horizon & Error Boundary Principle:** Formulates how biological motor learning (e.g., mastering hammering in 300 trials instead of 1000 via sharp error boundary feedback) mathematically mirrors the topological boundary $\partial \mathcal{M}$ dividing homeostatic convergence from chaotic divergence.
+By specifying a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \text{zoom})$ in the complex plane, a $128 \times 128$ pixel patch is sampled via the quadratic escape recurrence $z_{n+1} = z_n^2 + c$. Through **4-Quadrant Partitioning**, the non-escaping "dark area" (convergent pixel ratio) of four sub-quadrants is mapped directly to synaptic weights ($w_1, w_2, w_3$) and neuron bias ($b$).
+
+```text
+Complex Plane Coordinate: Θ = (cx, cy, log10 z) [24 Bytes]
+                     │
+                     ▼
+       ┌───────────────────────────┐
+       │  z_{n+1} = z_n^2 + c      │ ──► 128×128 Escape Patch
+       └───────────────────────────┘
+                     │
+                     ▼
+        [4-Quadrant Partitioning]
+                     │
+                     ▼
+Synaptic Weights (w1, w2, w3) + Bias (b)  ──► Non-Linear Decision Contours
+(ZERO persistent tensor storage in RAM/VRAM)   (100% Linear Gates, 100% XOR)
+```
 
 ---
 
-## 📊 Benchmark: Conventional LLM vs. Fractal Synthesis
+## 🔬 Key Scientific Milestones (Preprint Scope)
 
-| Dimension | Conventional Deep Learning (LLM) | Mandelbrot Fractal Neural Synthesis (Ours) |
-| :--- | :--- | :--- |
-| **Parameter Storage Model** | Static Weight Tensor Matrix (RAM/VRAM) | **Procedural On-Demand Synthesis from Geometry** |
-| **Storage per Decision Cell** | 12 - 64 Bytes (Weights & Bias Tensors) | **24 Bytes Total $(c_x, c_y, \text{zoom})$** |
-| **Persistent Weight Matrix** | Billions of Float16/Float32 values | **0 Bytes (No matrix written to persistent storage)** |
-| **70B Parameter Equivalent** | $\sim 140$ GB VRAM (Memory Wall Bottleneck) | **Compact Coordinate Sequence** |
-| **Memory Reduction** | Baseline (0%) | **>99.99999998% Storage Savings** |
-| **Hardware Horizon** | Memory-bound GPUs (Von Neumann bottleneck) | **Photonic / Optical Co-processors ($< 1$ ns, zero electrical resistance)** |
+1. **$128 \times 128$ Pareto Resolution Standard:** Matches the convergence precision of $256 \times 256$ within $\pm 0.08\%$ while evaluating **15 times faster** ($\approx 15.6$ ms), completely filtering the quantization noise of lower resolutions ($32 \times 32$).
+2. **100% Linear Boolean Classification:** All canonical linearly separable boolean gates (AND, OR, NAND, NOR) converged to **100% classification accuracy** across independent random seeds ($48 \pm 12$ generations with zero convergence failures).
+3. **100% Non-Linear XOR Resolution:** The historically intractable XOR problem was solved with **100% empirical accuracy** using a two-layer composite fractal network, generating a smooth non-linear 2D decision contour.
+4. **Constant $O(1)$ Storage Scaling vs. Linear $O(W)$:** Conventional neural networks store explicit weight arrays that grow linearly with network depth and width ($O(W)$). In contrast, procedural fractal synthesis maintains a constant **24-byte metadata footprint ($O(1)$)** regardless of synthesized layer width.
+5. **The Systems Compute-Memory Trade-off:** We establish an explicit systems trade-off: persistent storage is completely eliminated ($O(1)$) at the expense of procedural generation latency ($O(N^2 \cdot M_{\max})$ FLOPs). This makes the architecture exceptionally advantageous for **memory-constrained edge microcontrollers**, **steganographic/obfuscated AI**, and **analog optical/photonic co-processors**.
+6. **The Escape Horizon Principle:** Formulates how biological motor learning (e.g., mastering hammering in 300 trials instead of 1000 via sharp error boundary feedback) mathematically mirrors the topological boundary $\partial \mathcal{M}$ (the Julia-Fatou bifurcation locus) dividing homeostatic convergence from chaotic divergence.
+
+---
+
+## 🏛️ Advanced Research Extension (Target Journal)
+
+> **Status:** An extensive experimental and comparative extension of this work has been prepared for submission to **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Impact Factor: 5.3, CiteScore: 9.8)**.
+
+The journal manuscript expands the foundational paradigm to continuous topological manifolds and rigorous comparative baselines:
+
+* **Continuous Topological Manifolds:** Generalization to non-convex, continuous distributions (including **Two-Moons** and **Two-Spirals**) using Quadtree decomposition and analytical recurrence offsets.
+* **Comparative Baseline Evaluation:** Comprehensive benchmarking against standard Multi-Layer Perceptrons (MLPs) trained via Adam/Backpropagation, evaluated across $K=10$ repeated trials with statistical variance, search iteration budgets, and total FLOP analyses.
+* **Attractor Basin Dynamics:** Detailed mathematical analysis of macroscopic functional attractor basins overcoming local Lyapunov micro-sensitivity ($\Delta c \sim 10^{-7}$).
+
+*To preserve journal review integrity and exclusive publication novelty, the complete comparative benchmark tables, analytical recurrence derivations, and continuous manifold callsets will be synchronized with this repository upon formal journal appearance.*
 
 ---
 
@@ -61,103 +102,81 @@ By querying a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \text{zoom})$ in
 ```text
 mandelbrot-fractal-neural-synthesis/
 │
-├── README.md                           # Primary English Documentation
+├── README.md                           # Primary English Documentation (This File)
 ├── README_TR.md                        # Kapsamlı Türkçe Dokümantasyon
+├── index.html                          # GitHub Pages Official Web Portal
 ├── LICENSE                             # MIT Open Source License
 ├── requirements.txt                    # Minimal Python Dependencies
-├── .zenodo.json                        # Zenodo Automated Metadata Standard
+├── .zenodo.json                        # Automated Zenodo Open Science Metadata
 ├── .gitignore                          # Clean Version Control Filter
 │
 ├── src/                                # Core Simulation & Research Algorithms
 │   ├── mandelbrot_core.py              # 128x128 sampling & dark area integration
 │   ├── fractal_neuron.py               # Single-neuron logic gate solver
 │   ├── xor_composite_network.py        # 2-layer composite non-linear network
-│   ├── gate_optimizer.py               # Evolutionary random-walk coordinate search
+│   ├── gate_optimizer.py               # Evolutionary coordinate search engine
 │   └── benchmark_resolutions.py        # 32x32 to 256x256 Pareto trade-off analysis
 │
-├── demos/                              # Interactive Web Labs (100% Offline & Standalone)
-│   ├── interactive_lab.html            # Public outreach scenario interface (Doors, Safes, Lights, Alarms)
-│   └── quadrant_visualizer.html        # Technical 128x128 4-quadrant mathematical research widget
+├── demos/                              # Interactive Web Labs (100% Client-Side & Standalone)
+│   ├── interactive_lab.html            # Scenario interface (Smart Door, Safe, Light, Alarm)
+│   └── quadrant_visualizer.html        # Technical 128x128 4-quadrant mathematical research lab
 │
-├── zenodo/                             # Official Zenodo Open Science Publication Deposit Package
-│   ├── .zenodo.json                    # Deposit configuration
-│   ├── zenodo_deposit_guide.md         # 5-minute Zenodo submission & instant DOI guide
-│   └── Mandelbrot_Fractal_Neural_Synthesis_Preprint.pdf # Camera-ready Preprint (Bilingual Abstract)
+├── docs/                               # Outreach, Technical Reports & Paper Sources
+│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html # Live Paper HTML
+│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf  # Publication PDF (2.11 MB)
+│   ├── Halka_Sunum_ve_Teorik_Rehber.html                      # Dual-layer speaker & theory guide
+│   ├── Mandelbrot_Akademik_Teknik_Raporu.html                 # Comprehensive technical monograph
+│   └── ...                                                    # Markdown sources and guides
 │
-├── arxiv/                              # LaTeX Source Package for arXiv / Overleaf
-│   ├── main.tex                        # IEEE format paper source
-│   ├── references.bib                  # BibTeX references
-│   ├── figures/                        # High-resolution figures
-│   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Drag-and-drop submission bundle
-│
-├── docs/                               # Outreach & Academic Monograph Documents
-│   ├── Halk_Icin_Kilavuz.html          # Direct citizen handbook (interactive web app)
-│   ├── Halk_Icin_Kilavuz.pdf           # Direct citizen handbook (printable A4 PDF)
-│   ├── halk_icin_kilavuz.md            # Direct citizen handbook markdown source
-│   ├── Halka_Anlatim_Rehberi.html      # Speaker/Presenter guide for public talks
-│   ├── Halka_Anlatim_Rehberi.pdf       # Speaker/Presenter guide (printable A4 PDF)
-│   ├── halka_anlatim_rehberi.md        # Speaker/Presenter guide markdown source
-│   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Full academic technical report
-│   └── Mandelbrot_Akademik_Teknik_Raporu.pdf  # Printable A4 academic report PDF
-│
-└── figures/                            # Publication Figures
+└── figures/                            # Publication Figures & Benchmarks
     ├── quadrant_weights_128.png        # 4-Quadrant partitioning schematic
-    ├── resolution_comparison_128.png   # 32x32 to 256x256 benchmark curves
-    ├── gate_solutions_128.png          # Decision planes for OR, AND, NAND, NOR
-    ├── xor_complete_network_128.png    # Composite 2-layer non-linear network
-    ├── zoom_weight_curve.png           # Continuous weight modulation via zoom
-    └── mandelbrot_patches.png          # Morphological landscape patches
+    ├── resolution_comparison_128.png   # Resolution Pareto trade-off curves
+    ├── gate_solutions_128.png          # Linear decision planes (AND, OR, NAND, NOR)
+    ├── xor_complete_network_128.png    # Non-linear XOR 2-layer composite network
+    └── zoom_weight_curve.png           # Continuous parameter modulation via zoom
 ```
 
 ---
 
-## 🎮 Interactive Visualizers (Zero Dependencies)
-
-The repository provides two self-contained, standalone web applications that require **no server, no installation, and no internet connection**:
-
-1. **Public Outreach Lab (`demos/interactive_lab.html`):**
-   * Real-world decision scenarios: 🚪 Smart Door (OR), 🏦 Bank Vault (AND), 💡 Staircase Switch (XOR), 🚨 Fire Alarm (NAND).
-   * Live biological neuron rendering with active axon firing.
-   * Light/Dark mode switcher with persistent preferences.
-   * One-click `.TXT` 24-byte memory log export.
-2. **Technical 4-Quadrant Research Widget (`demos/quadrant_visualizer.html`):**
-   * Real-time $128 \times 128$ Mandelbrot exploration with dynamic zoom.
-   * Live Quadrant readout ($Q_1 	o w_1, Q_2 	o w_2, Q_3 	o w_3, Q_4 	o b$).
-   * Dynamic boolean truth table verification ($\hat{y} = \sigma(w_1 x_1 + w_2 x_2 + b)$).
-
----
-
-## 🚀 Reproduction & Quick Start
+## 🚀 Quick Start & Empirical Replication
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis.git
 cd mandelbrot-fractal-neural-synthesis
 
-# Install minimal requirements
+# 2. Install minimal dependencies
 pip install -r requirements.txt
 
-# Run gate verification
-python src/fractal_neuron.py
+# 3. Verify discrete logic gate convergence (100% accuracy)
+python -m src.fractal_neuron
 
-# Run non-linear XOR solution
-python src/xor_composite_network.py
+# 4. Verify composite non-linear XOR network (100% accuracy)
+python -m src.xor_composite_network
 
-# Open interactive lab directly in your browser
+# 5. Run resolution benchmark analysis
+python -m src.benchmark_resolutions
+
+# 6. Launch interactive lab locally in your default browser (zero server required!)
+# On Windows:
 start demos/interactive_lab.html
+# On macOS:
+open demos/interactive_lab.html
+# On Linux:
+xdg-open demos/interactive_lab.html
 ```
 
 ---
 
 ## 📖 Citation
 
-If you use this research or replicate our findings, please cite:
+If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite:
 
 ```bibtex
-@article{dagli2026fractal,
+@article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={Zenodo / arXiv Preprint},
+  journal={arXiv preprint arXiv:submit/8092292 [cs.NE]},
   year={2026},
   doi={10.5281/zenodo.22802921},
   url={https://doi.org/10.5281/zenodo.22802921}
@@ -166,5 +185,6 @@ If you use this research or replicate our findings, please cite:
 
 ---
 
-## 📜 License
-This project is open-source under the [MIT License](LICENSE).
+## 📜 License & Open Science
+This project is open-source under the [MIT License](LICENSE).  
+The manuscript and technical documentation are distributed under [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).

@@ -1,163 +1,182 @@
 # Fraktal Nöron Sentezi: Mandelbrot Geometrisinden Sıfır-Bellekli Ağırlık ve Karar Türetimi
 
+[![Canlı Web Portalı](https://img.shields.io/badge/Canlı%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![İnteraktif Laboratuvarlar](https://img.shields.io/badge/İnteraktif%20Laboratuvarlar-%25100%20Tarayıcıda%20Çalışır-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22802921.svg)](https://doi.org/10.5281/zenodo.22802921)
+[![arXiv](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-b31b1b.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![Hedef Dergi](https://img.shields.io/badge/Dergi%20Başvurusu-Chaos%2C%20Solitons%20%26%20Fractals%20(Elsevier%20Q1)-blue.svg)](#)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
-[![Yayın: Zenodo / arXiv](https://img.shields.io/badge/Yayın-Zenodo%20%2F%20arXiv%20Preprint-green.svg)](#)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![İnteraktif Laboratuvar](https://img.shields.io/badge/İnteraktif%20Laboratuvar-Sunucusuz%20%26%20Çevrimdışı-purple.svg)](./demos/)
 
 > 🌐 **Dil Seçici / Language Switcher:**  
 > [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (Aktif)**
 
 ---
 
+## 🌟 Canlı İnteraktif Laboratuvarlar ve Çevrimiçi Belgeler
+
+Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tarayıcınızda deneyimleyin. Tüm laboratuvarlar **%100 istemci taraflı (client-side), sıfır bağımlılıklı ve internetsiz/çevrimdışı çalışabilen** mimaridedir:
+
+| Platform / Belge | Tür | Hedef Kitle | Doğrudan Canlı Bağlantı |
+| :--- | :--- | :--- | :--- |
+| 🌐 **Resmi Canlı Web Portalı** | Ana Vitrin | Genel / Akademik | [**Portalı Başlat (GitHub Pages)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
+| 🚀 **Halka Açık Senaryo Laboratuvarı** | Canlı Simülasyon | Toplum & Öğrenciler | [**Halk Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
+| 🔬 **128×128 4-Quadrant Araştırma Laboratuvarı** | Matematiksel Deney | Araştırmacılar & Mühendisler | [**Araştırma Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
+| 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
+| 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
+| 📑 **Preprint Makale Metni (HTML)** | Makale | Bilim İnsanları & Hakemler | [**Makaleyi Oku (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html) |
+| 📥 **Baskıya Hazır Makale (PDF)** | 2-Kolon Dergi Formatı | Arşiv & Baskı | [**PDF İndir (2.11 MB)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf) |
+
+---
+
 ## 👥 Yazarlar ve Akademik Kurumlar
 
 * **Volkan Dağlı** *(Sorumlu Yazar / Corresponding Author)*  
-  ITouch Systems, Türkiye &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; Zenodo: [`@itouch`](https://zenodo.org/)
+  ITouch Systems, Mersin, Türkiye &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
 
 * **Zerrin Dağlı**  
-  Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465) &bull; Zenodo: [`@zdagli`](https://zenodo.org/)
+  Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465)
 
 * **Dağhan Dağlı**  
-  Toros Fen Lisesi (Toros Science College), Türkiye &bull; Zenodo: [`@Lexovian`](https://zenodo.org/)
+  Toros Fen Lisesi (Toros Science College), Mersin, Türkiye &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
-*İletişim & Yazışma:* Sorular ve bilimsel iş birlikleri resmi GitHub araştırma deposu veya Zenodo üzerinden yürütülmektedir.
+*Yazışma & İletişim:* Volkan Dağlı ([GitHub Araştırma Deposu](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) / [Zenodo](https://doi.org/10.5281/zenodo.22802921)).
 
 ---
 
 ## 📌 Yönetici Özeti (Executive Summary)
 
-Günümüz derin öğrenme sistemleri (örneğin ChatGPT gibi Büyük Dil Modelleri), milyarlarca ve trilyonlarca parametreyi bellek çiplerinde (GPU VRAM) bağımsız sayılar olarak saklamak zorundadır. Örneğin 70 milyar parametreli bir model, yalnızca ağırlıklarını bellekte tutabilmek için $\sim 140$ GB yüksek hızlı VRAM tüketir. Bu durum devasa bir bellek bant genişliği darboğazına (*Memory Wall*) ve muazzam enerji israfına yol açar.
+Modern derin yapay sinir ağları, milyonlarca ve milyarlarca parametreyi bellek çiplerinde (GPU VRAM / RAM) bağımsız kayan noktalı skalerler olarak devasa tensör matrislerinde saklar. Bu yaklaşım etkileyici kabiliyetler sunsa da; sürdürülemez depolama gereksinimlerine, bellek bant genişliği darboğazına (**"Memory Wall"**) ve ciddi termal/enerji kayıplarına yol açmaktadır.
 
-Bu araştırma, bu soruna radikal ve doğadan ilham alan bir alternatif sunar: **Yapay sinir ağı ağırlıklarını ve eşik değerlerini bellekte hiç saklamadan, deterministik Mandelbrot fraktal kümesinin ($\mathcal{M}$) görsel morfolojisinden ihtiyaç anında canlı türetmek.**
+Biyolojik sistemlerde ise genetik kodlama sinir hücreleri arasındaki trilyonlarca bağlantıyı tek tek saklamaz. İnsan genomu yalnızca ~750 MB genetik bilgi içermesine rağmen; özyinelemeli ve kendine-benzer (fraktal) gelişim kuralları sayesinde yaklaşık $10^{11}$ nöron ve $10^{14}$ sinaptik kavşağın kusursuz inşasını yönetir.
 
-Karmaşık düzlemdeki üç parametreli bir koordinat penceresi $\Theta = (c_x, c_y, \text{zoom})$ seçilerek, klasik kuadratik kaçış denklemi ($z_{n+1} = z_n^2 + c$) üzerinden $128 \times 128$ piksellik bir fraktal pencere taranır. Geliştirdiğimiz **4-Quadrant (Dört Çeyrek) Bölümleme Metodu** ile, pencerenin dört köşesindeki siyah adacık (ıraksamayan kararlı alan) oranları doğrudan sinir hücresinin ağırlıklarına ($w_1, w_2, w_3$) ve sapma (bias) değerine dönüştürülür.
+Bu araştırma, doğadan ilham alan radikal bir alternatif sunar ve ampirik olarak doğrular: **Yapay sinir ağı ağırlıklarını ve eşik değerlerini bellekte hiç saklamadan, Mandelbrot fraktal kümesinin ($\mathcal{M}$) doğrusal olmayan morfolojisinden ihtiyaç anında prosedürel olarak türetmek.**
 
-### Temel Bilimsel Başarılar:
-1. **$128 \times 128$ Çözünürlük Standardı:** $32 \times 32$'deki pikselleşme gürültüsünü yok ederek $256 \times 256$ çözünürlüğün kararlılığını $\%0.08$ farkla yakalamış ve **15 kat daha hızlı** ($\approx 15.6$ ms) çalışmıştır.
-2. **%100 Mantık Kapısı Başarısı:** Tüm temel doğrusal mantık kapıları (AND, OR, NAND, NOR) %100 sınıflandırma doğruluğuyla çözülmüştür.
-3. **Doğrusal Olmayan XOR Çözümü:** 1969'da Minsky ve Papert'in *"tek katmanlı yapay zeka bunu çözemez"* dediği ünlü XOR problemi, iki katmanlı kompozit fraktal ağımızla **%100 doğrulukla** çözülmüş ve pürüzsüz 2D karar yüzeyi elde edilmiştir.
-4. **24-Bayt Sıfır-Bellek Modeli:** Kalıcı tensör matrisi boyutu **0 Byte**'tır! Fonksiyonel bir karar hücresi yalnızca **24 baytlık** (üç adet Float64 koordinat) bir kütükle tanımlanmakta; geleneksel modellere kıyasla **%99.99999998+ bellek tasarrufu** sağlamaktadır.
-5. **Kaçış Ufku ve Hata Kümesi İlkesi:** İnsanın çekiç vururken parmağına 1-2 kez vurup canı yandığında hata sınırını kilitleyerek 1000 yerine 300 adımda öğrenmesi gibi; Mandelbrot'un matematiksel kaçış sınırı $\partial \mathcal{M}$ de yapay nörona en keskin karar eşiğini doğal olarak sunar.
+Karmaşık düzlemde 3 parametreli bir koordinat demeti $\Theta = (c_x, c_y, \text{zoom})$ tanımlanarak, klasik kuadratik kaçış yinelemesi ($z_{n+1} = z_n^2 + c$) üzerinden $128 \times 128$ piksellik bir yama taranır. Geliştirdiğimiz **4-Quadrant (Dört Çeyrek) Bölümleme Yöntemi** ile, dört alt-çeyreğin ıraksamayan "karanlık alan" (kararlı piksel) oranları doğrudan sinaptik ağırlıklara ($w_1, w_2, w_3$) ve nöron sapma (bias) eşiğine ($b$) dönüştürülür.
 
----
-
-## 📊 Kıyaslama Tablosu: Klasik LLM vs. Fraktal Sentez Modelimiz
-
-| Boyut | Standart Derin Öğrenme (LLM) | Fraktal Nöron Sentez Modelimiz |
-| :--- | :--- | :--- |
-| **Parametre Saklama Modeli** | Statik Ağırlık Matrisi (RAM / VRAM) | **Sonsuz Geometriden Canlı Türetim** |
-| **Karar Hücresi Başına Bellek** | 12 - 64 Byte (Tensör Ağırlıkları) | **Yalnızca 24 Byte $(c_x, c_y, \text{zoom})$** |
-| **Kalıcı Ağırlık Matrisi** | Milyarlarca Float16 / Float32 değeri | **0 Byte (Hiçbir matris diske yazılmaz!)** |
-| **70B Eşdeğer Model İzi** | $\sim 140$ GB VRAM (Memory Wall Sınırı) | **Kompakt Koordinat Dizisi** |
-| **Bellek Tasarrufu** | Referans (%0) | **%99.99999998+ Tasarruf** |
-| **Gelecek Donanım İmkânı** | Isınan GPU'lar, dev santraller | **Fotonik / Optik Çiplerle $< 1$ ns, sıfır elektrik** |
+```text
+Karmaşık Düzlem Koordinatı: Θ = (cx, cy, log10 z) [24 Bayt]
+                          │
+                          ▼
+       ┌─────────────────────────────┐
+       │   z_{n+1} = z_n^2 + c       │ ──► 128×128 Kaçış Yaması
+       └─────────────────────────────┘
+                          │
+                          ▼
+             [4-Quadrant Bölümleme]
+                          │
+                          ▼
+Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüzeyi
+(RAM/VRAM'de SIFIR kalıcı tensör matrisi)   (%100 Mantık Kapıları, %100 XOR)
+```
 
 ---
 
-## 📂 Depo Mimarisi
+## 🔬 Temel Bilimsel Başarılar (Preprint Kapsamı)
+
+1. **$128 \times 128$ Pareto Çözünürlük Standardı:** $32 \times 32$'deki kuantizasyon gürültüsünü tamamen filtrelemiş; $256 \times 256$ çözünürlüğün yakınsama hassasiyetini $\pm\%0.08$ hata payıyla yakalarken **15 kat daha hızlı** ($\approx 15.6$ ms) çalışmıştır.
+2. **%100 Doğrusal Mantık Kapısı Başarısı:** Tüm doğrusal ayrılabilir mantık kapıları (AND, OR, NAND, NOR), bağımsız rastgele tohumlar üzerinde **%100 ampirik doğruluk** ile çözülmüştür ($48 \pm 12$ jenerasyonda sıfır hata ile yakınsama).
+3. **%100 Doğrusal Olmayan XOR Çözümü:** Klasik yapay zekanın ayrışma bariyeri olan XOR problemi, 2 katmanlı kompozit fraktal ağımızla **%100 doğrulukla** çözülmüş ve pürüzsüz 2D karar yüzeyi elde edilmiştir.
+4. **Sabit $O(1)$ Ölçekleme vs. Lineer $O(W)$ Bellek Büyümesi:** Geleneksel yapay sinir ağlarında katman boyutu ve nöron sayısı arttıkça ağırlık depolama ihtiyacı doğrusal ($O(W)$) olarak artar. Fraktal sentezde ise katman genişliğinden bağımsız olarak model boyutu **sabit 24 Bayt ($O(1)$)** kalır.
+5. **Hesaplama-Hafıza Sistem Ödünleşimi (*Compute-Memory Trade-off*):** Çalışmamız açık bir sistem ödünleşimi formüle eder: Kalıcı bellek depolaması tamamen yok edilir ($O(1)$), ancak bunun bedeli olarak anlık fraktal yama üretimi ($O(N^2 \cdot M_{\max})$ FLOP) doğar. Bu özellik yaklaşımımızı devasa bulut sunucularından ziyade; **aşırı bellek kısıtlı uç mikrodenetleyiciler (edge microcontrollers)**, **şifreli/steganografik yapay zeka** ve **analog optik/fotonik eş-işlemciler** için benzersiz kılar.
+6. **Kaçış Ufku İlkesi (*Escape Horizon*):** İnsanın motor öğrenmede hata sınırını kilitleyerek binlerce adım yerine yüzlerce adımda öğrenmesi gibi; Mandelbrot sınırının ($\partial \mathcal{M}$, Julia-Fatou çatallanma odağı) sunduğu ekstrem kontrastın yapay zekaya en keskin karar hiperdüzlemlerini doğal olarak sunduğu kanıtlanmıştır.
+
+---
+
+## 🏛️ İleri Araştırma Ufku (Hedef Dergi)
+
+> **Yayın Durumu:** Bu çalışmanın genişletilmiş ampirik ve karşılaştırmalı versiyonu, alanın saygın dergilerinden **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Etki Faktörü: 5.3, CiteScore: 9.8)** yayını için sunulmak üzere hazırlanmıştır.
+
+Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir ağlarıyla (MLP) kıyaslamaya genişletmektedir:
+
+* **Sürekli Topolojik Manifoldlar:** Dışbükey olmayan, sürekli ve kıvrımlı veri dağılımlarına (**Two-Moons** ve **Two-Spirals**) Quadtree ayrıştırması ve analitik özyineleme ofsetleri ile genelleme.
+* **Karşılaştırmalı Temel Değerlendirmesi (Baseline):** Adam optimizasyonuyla eğitilen standart MLP mimarileriyle $K=10$ bağımsız tekrarlı çalıştırma üzerinden istatistiksel varyans, arama adımı ve toplam FLOP mukayesesi.
+* **Çekici Havzaları Dinamiği:** Kaotik sınır mikro-hassasiyetine ($\Delta c \sim 10^{-7}$) rağmen evrimsel aramanın makroskopik fonksiyonel çekici havzalarına (*attractor basins*) kilitlendiğinin kuramsal analizi.
+
+*Derginin hakemlik sürecinin bağımsızlığını ve yayın özgünlüğünü korumak adına; tam karşılaştırmalı tablolar, analitik ofset formülasyonları ve sürekli manifold betikleri makalenin resmi dergi basımıyla eşzamanlı olarak depoda erişime açılacaktır.*
+
+---
+
+## 📂 Depo Dizin Mimarisi
 
 ```text
 mandelbrot-fractal-neural-synthesis/
 │
 ├── README.md                           # Ana İngilizce Dokümantasyon
 ├── README_TR.md                        # Kapsamlı Türkçe Dokümantasyon (Bu Dosya)
+├── index.html                          # GitHub Pages Resmi Web Portalı
 ├── LICENSE                             # MIT Açık Kaynak Lisansı
 ├── requirements.txt                    # Minimal Python Bağımlılıkları
-├── .zenodo.json                        # Zenodo Otomatik Metadata Standardı
+├── .zenodo.json                        # Zenodo Otomatik Açık Bilim Metadatası
 ├── .gitignore                          # Sürüm Kontrol Filtresi
 │
-├── src/                                # Temel Araştırma & Simülasyon Kodları
+├── src/                                # Temel Simülasyon & Araştırma Algoritmaları
 │   ├── mandelbrot_core.py              # 128x128 tarama ve karanlık alan integrali
 │   ├── fractal_neuron.py               # Tek nöronlu mantık kapısı çözücü
 │   ├── xor_composite_network.py        # 2 katmanlı kompozit XOR ağı
-│   ├── gate_optimizer.py               # Rastgele yürüyüşlü koordinat arama motoru
+│   ├── gate_optimizer.py               # Evrimsel koordinat arama motoru
 │   └── benchmark_resolutions.py        # 32x32 - 256x256 Pareto başarım analizi
 │
-├── demos/                              # İnteraktif Web Laboratuvarları (%100 Çevrimdışı & Bağımsız)
+├── demos/                              # İnteraktif Web Laboratuvarları (%100 Tarayıcıda Çalışır)
 │   ├── interactive_lab.html            # Senaryo arayüzü (Akıllı Kapı, Kasa, Lamba, Alarm)
-│   └── quadrant_visualizer.html        # İlk geliştirilen 128x128 teknik 4-çeyrek araştırma widget'ı
+│   └── quadrant_visualizer.html        # 128x128 4-çeyrek teknik matematiksel araştırma labı
 │
-├── zenodo/                             # Resmi Zenodo Açık Bilim Yayın Paketi
-│   ├── .zenodo.json                    # Zenodo metadata şablonu
-│   ├── zenodo_deposit_guide.md         # 5 dakikada Zenodo yükleme ve kalıcı DOI rehberi
-│   └── Mandelbrot_Fractal_Neural_Synthesis_Preprint.pdf # Baskıya hazır makale (Türkçe Özetli)
+├── docs/                               # Halka Anlatım, Raporlar & Makale Kaynakları
+│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html # Canlı Makale HTML'i
+│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf  # Yayın PDF'i (2.11 MB)
+│   ├── Halka_Sunum_ve_Teorik_Rehber.html                      # Çift katmanlı sunum ve teori rehberi
+│   ├── Mandelbrot_Akademik_Teknik_Raporu.html                 # Geniş akademik teknik monograf
+│   └── ...                                                    # Markdown kaynakları ve rehberler
 │
-├── arxiv/                              # arXiv / Overleaf LaTeX Kaynak Paketi
-│   ├── main.tex                        # IEEE formatında makale kaynak kodu
-│   ├── references.bib                  # BibTeX kaynakçası
-│   ├── figures/                        # 6 adet yüksek çözünürlüklü makale şekli
-│   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Tek tıkla yükleme paketi
-│
-├── docs/                               # Halka Anlatım & Monograf Belgeleri
-│   ├── Halk_Icin_Kilavuz.html          # Doğrudan halk için popüler bilim kılavuzu (Web arayüzü)
-│   ├── Halk_Icin_Kilavuz.pdf           # Doğrudan halk için kılavuz (Yazdırılabilir A4 PDF)
-│   ├── halk_icin_kilavuz.md            # Halk kılavuzu metin kaynağı
-│   ├── Halka_Anlatim_Rehberi.html      # Konuşmacı/Sunucu halka sunum rehberi web arayüzü
-│   ├── Halka_Anlatim_Rehberi.pdf       # Konuşmacı/Sunucu sunum rehberi (Yazdırılabilir A4 PDF)
-│   ├── halka_anlatim_rehberi.md        # Sunum rehberi metin kaynağı
-│   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Geniş akademik teknik monograf
-│   └── Mandelbrot_Akademik_Teknik_Raporu.pdf  # A4 formatında monograf PDF'i
-│
-└── figures/                            # Yayın Şekilleri
+└── figures/                            # Yayın Şekilleri ve Grafik Çıktıları
     ├── quadrant_weights_128.png        # 4-Quadrant şematik gösterimi
-    ├── resolution_comparison_128.png   # Çözünürlük başarım eğrileri
-    ├── gate_solutions_128.png          # OR, AND, NAND, NOR karar düzlemleri
+    ├── resolution_comparison_128.png   # Çözünürlük Pareto ödünleşim eğrileri
+    ├── gate_solutions_128.png          # Doğrusal karar düzlemleri (AND, OR, NAND, NOR)
     ├── xor_complete_network_128.png    # 2 katmanlı kompozit XOR ağı
-    ├── zoom_weight_curve.png           # Zoom ile sürekli ağırlık modülasyonu
-    └── mandelbrot_patches.png          # Fraktal morfoloji örnekleme pencereleri
+    └── zoom_weight_curve.png           # Zoom ile sürekli parametre modülasyonu
 ```
-
----
-
-## 🎮 İnteraktif Laboratuvarlar (Sıfır Bağımlılık)
-
-Depoda, hiçbir sunucu kurulumu gerektirmeden, internetsiz ortamda doğrudan çift tıklanarak çalışan **iki bağımsız görsel simülatör** yer alır:
-
-1. **Halka Açık Deneyim Laboratuvarı (`demos/interactive_lab.html`):**
-   * 4 gerçek hayat senaryosu: 🚪 Akıllı Kapı (OR), 🏦 Banka Kasası (AND), 💡 Merdiven Lambası (XOR), 🚨 Yangın Alarmı (NAND).
-   * Biyolojik nöron çizimi ve canlı akson ateşleme animasyonu.
-   * ☀️ Açık Mod / 🌙 Koyu Mod değiştirici.
-   * Tek tıkla 24 baytlık `.TXT` hafıza kütüğü indirme.
-2. **Teknik 4-Quadrant Araştırma Widget'ı (`demos/quadrant_visualizer.html`):**
-   * Canlı $128 \times 128$ Mandelbrot tuvali ve hassas Zoom kaydırıcısı.
-   * 4 çeyrek ($Q_1 	o w_1, Q_2 	o w_2, Q_3 	o w_3, Q_4 	o b$) canlı katsayı panelleri.
-   * Anlık doğruluk tablosu hesabı ($\hat{y} = \sigma(w_1 x_1 + w_2 x_2 + b)$).
 
 ---
 
 ## 🚀 Hızlı Başlangıç & Deneyleri Tekrarlama
 
 ```bash
-# Depoyu klonlayın
+# 1. Depoyu klonlayın
 git clone https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis.git
 cd mandelbrot-fractal-neural-synthesis
 
-# Gerekli minimal kütüphaneleri yükleyin
+# 2. Minimal kütüphaneleri yükleyin
 pip install -r requirements.txt
 
-# Mantık kapıları deneyini çalıştırın
-python src/fractal_neuron.py
+# 3. Mantık kapıları deneyini çalıştırın (%100 doğruluk)
+python -m src.fractal_neuron
 
-# 2 katmanlı XOR ağını çalıştırın
-python src/xor_composite_network.py
+# 4. 2 katmanlı doğrusal olmayan XOR ağını çalıştırın (%100 doğruluk)
+python -m src.xor_composite_network
 
-# İnteraktif arayüzü doğrudan tarayıcınızda açın (Sunucu gerekmez!)
+# 5. Çözünürlük Pareto analizini çalıştırın
+python -m src.benchmark_resolutions
+
+# 6. İnteraktif laboratuvarı doğrudan varsayılan tarayıcınızda açın (Sunucu gerekmez!)
+# Windows'ta:
 start demos/interactive_lab.html
+# macOS'te:
+open demos/interactive_lab.html
+# Linux'ta:
+xdg-open demos/interactive_lab.html
 ```
 
 ---
 
-## 📖 Atıf (Citation)
+## 📖 Akademik Alıntı (Citation)
 
-Bu araştırmayı çalışmalarınızda kullanmak veya atıfta bulunmak için:
+Bu araştırmayı, prosedürel ağırlık üretim yöntemini veya interaktif laboratuvarları çalışmalarınızda kullanırsanız lütfen alıntılayınız:
 
 ```bibtex
-@article{dagli2026fractal,
+@article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={Zenodo / arXiv Preprint},
+  journal={arXiv preprint arXiv:submit/8092292 [cs.NE]},
   year={2026},
   doi={10.5281/zenodo.22802921},
   url={https://doi.org/10.5281/zenodo.22802921}
@@ -166,5 +185,6 @@ Bu araştırmayı çalışmalarınızda kullanmak veya atıfta bulunmak için:
 
 ---
 
-## 📜 Lisans
-Bu araştırma ve kod tabanı [MIT Lisansı](LICENSE) kapsamında açık kaynak olarak sunulmuştur.
+## 📜 Lisans & Açık Bilim
+Bu projenin yazılım kodları [MIT Lisansı](LICENSE) ile lisanslanmıştır.  
+Akademik makale ve dokümantasyon metinleri ise [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/) kapsamında korunmaktadır.
