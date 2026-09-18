@@ -54,6 +54,13 @@ Like Jev, `wevv` answers three fundamental question types without producing conv
 
 ---
 
+## 📦 Installation
+
+```bash
+# Install directly from GitHub:
+pip install git+https://github.com/pCwOrM/wevv.git
+```
+
 ## 🚀 Quickstart
 
 ```python
