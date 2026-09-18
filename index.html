@@ -7,6 +7,9 @@
   <meta name="description" content="When the Wave hits Error (e), we Subdivide (vv). A 0-byte memory alternative to LLM decision-making based on Mandelbrot geometry.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
   
+  <!-- Google reCAPTCHA v3 for Telemetry Ingestion Protection -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux" async defer></script>
+  
   <style>
     :root {
       --bg-page: #07090e;
@@ -2700,7 +2703,33 @@ GitHub Deposu           : https://github.com/pCwOrM/wevv
     URL.revokeObjectURL(url);
   }
 
-  // Telemetry Dispatchers
+  // Telemetry Dispatchers & Google reCAPTCHA v3 Protection
+  const RECAPTCHA_SITE_KEY = "6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux";
+
+  function getRecaptchaToken(action = "wevv_eval") {
+    return new Promise((resolve) => {
+      try {
+        if (typeof grecaptcha !== 'undefined' && grecaptcha.ready) {
+          grecaptcha.ready(function() {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
+              .then(function(token) {
+                resolve(token);
+              })
+              .catch(function(err) {
+                console.warn("[wevv] reCAPTCHA token execution failed:", err);
+                resolve(null);
+              });
+          });
+        } else {
+          resolve(null);
+        }
+      } catch (e) {
+        console.warn("[wevv] reCAPTCHA exception:", e);
+        resolve(null);
+      }
+    });
+  }
+
   let customTelemetryDebounceTimer = null;
   function scheduleCustomWebTelemetry() {
     clearTimeout(customTelemetryDebounceTimer);
@@ -2709,14 +2738,17 @@ GitHub Deposu           : https://github.com/pCwOrM/wevv
     }, 1500);
   }
 
-  function sendCustomWebTelemetry() {
+  async function sendCustomWebTelemetry() {
     const s = currentCustomDecisionState;
     if (!s || !s.q1) return;
+
+    const token = await getRecaptchaToken("custom_playground");
 
     const payload = {
       timestamp: new Date().toISOString(),
       version: "wevv-0.1.0-web",
-      source: "web_custom_playground",
+      source: "web",
+      recaptcha_token: token || undefined,
       seed: {
         cx: parseFloat(s.seed.cx.toFixed(8)),
         cy: parseFloat(s.seed.cy.toFixed(8)),
@@ -2750,18 +2782,17 @@ GitHub Deposu           : https://github.com/pCwOrM/wevv
 
     const payloadJson = JSON.stringify(payload);
     const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
-
-    if (navigator.sendBeacon) {
-      const blob = new Blob([payloadJson], { type: "application/json" });
-      navigator.sendBeacon(url, blob);
-    } else {
-      fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: payloadJson,
-        keepalive: true
-      }).catch(() => {});
+    const headers = { "Content-Type": "application/json" };
+    if (token) {
+      headers["X-Recaptcha-Token"] = token;
     }
+
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: payloadJson,
+      keepalive: true
+    }).catch(() => {});
   }
 
   // Download 24-Byte Memory & Seed Dump (.TXT) for Preset Simulator
@@ -2883,14 +2914,17 @@ GitHub Repository       : https://github.com/pCwOrM/wevv
     }, 1200);
   }
 
-  function sendWebTelemetry() {
+  async function sendWebTelemetry() {
     const s = currentDecisionState;
     if (!s || !s.role) return;
+
+    const token = await getRecaptchaToken("preset_simulator");
 
     const payload = {
       timestamp: new Date().toISOString(),
       version: "0.1.0-web",
       source: "web",
+      recaptcha_token: token || undefined,
       seed: {
         cx: parseFloat(s.baseCx.toFixed(8)),
         cy: parseFloat(s.baseCy.toFixed(8)),
@@ -2935,18 +2969,17 @@ GitHub Repository       : https://github.com/pCwOrM/wevv
 
     const payloadJson = JSON.stringify(payload);
     const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
-
-    if (navigator.sendBeacon) {
-      const blob = new Blob([payloadJson], { type: "application/json" });
-      navigator.sendBeacon(url, blob);
-    } else {
-      fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: payloadJson,
-        keepalive: true
-      }).catch(() => {});
+    const headers = { "Content-Type": "application/json" };
+    if (token) {
+      headers["X-Recaptcha-Token"] = token;
     }
+
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: payloadJson,
+      keepalive: true
+    }).catch(() => {});
   }
 
   // Initial Run (Default English)
