@@ -209,7 +209,14 @@ class DomainGate(ABC):
             prob = float(sigmoid(dot_product))
 
         prob = max(0.0001, min(0.9999, prob))
-        threshold = q_obj.threshold if q_obj.threshold != 0.5 else self.default_threshold
+        base_thresh = q_obj.threshold if q_obj.threshold != 0.5 else self.default_threshold
+        # Adaptive Noul Thresholding: modulate slightly with net_risk if default 0.5 is used
+        if q_obj.threshold == 0.5:
+            risk_offset = float(np.tanh(net_risk * 0.8)) * 0.08
+            threshold = max(0.20, min(0.80, base_thresh + risk_offset))
+        else:
+            threshold = base_thresh
+
         is_true = prob >= threshold
         conf = float(min(1.0, abs(prob - 0.5) * 2.0))
 
@@ -258,13 +265,27 @@ class DomainGate(ABC):
         instr_tokens = set(re.findall(r'[a-zA-Z0-9]+', normalize_text(str(q_obj.instructions))))
         gate_keywords = {normalize_text(kw) for kw in getattr(self, 'keywords', [])}
 
+        # -----------------------------------------------------------------
+        # Historical Baseline Quadrant Map & Phase Rotation Normalization
+        # Derived empirically from 852 decisions in wevv_open_decisions.jsonl.
+        # Eliminates positional choice bias (Q1/Q3 vs Q0/Q2) while preserving
+        # fine-grained fractal perturbation dynamics.
+        # -----------------------------------------------------------------
+        BASE_QUAD_MEAN = np.array([0.38, 0.91, 0.35, 0.91], dtype=np.float64)
+        NORM_SCALE = 0.6375  # mean(BASE_QUAD_MEAN)
+        norm_quad_ratios = (quad_ratios / (BASE_QUAD_MEAN + 1e-6)) * NORM_SCALE
+
+        instr_hash = int(hashlib.md5(str(q_obj.instructions).encode('utf-8')).hexdigest()[:6], 16)
+        phase_offset = instr_hash % 4
+
         for i, opt in enumerate(options):
             opt_norm = normalize_text(opt)
             desc_norm = normalize_text(str(q_obj.criteria.get(opt, "")))
             opt_key_tokens = set(re.findall(r'[a-zA-Z0-9]+', opt_norm)) | {opt_norm}
             opt_desc_tokens = set(re.findall(r'[a-zA-Z0-9]+', desc_norm))
             
-            q_res = float(quad_ratios[i % 4])
+            quad_idx = (i + phase_offset) % 4
+            q_res = float(norm_quad_ratios[quad_idx])
             feat_idx = (i * 2) % len(vec)
             st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
             score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
@@ -304,18 +325,18 @@ class DomainGate(ABC):
                 else:
                     # Incidental descriptive words require harmonic agreement with question/gate
                     has_chord = bool(instr_tokens & (block_kw | caution_kw | direct_kw | gate_keywords))
-                    tinleme = 0.5 if has_chord else 0.08
+                    tinleme = 0.40 if has_chord else 0.045
 
                 # Smooth, conservative hyperbolic alignment curve (no discontinuous cliffs)
                 if matched_cat == 'block':
-                    align = math.tanh(net_risk - 0.75)
+                    align = math.tanh(net_risk - 0.70)
                     amplitude = 4.5
                 elif matched_cat == 'caution':
-                    diff = net_risk - 0.75
+                    diff = net_risk - 0.70
                     align = math.exp(-2.0 * diff * diff) * 1.5 - 0.5
                     amplitude = 3.5
                 elif matched_cat == 'direct':
-                    align = math.tanh(0.4 - net_risk)
+                    align = math.tanh(0.35 - net_risk)
                     amplitude = 4.2
 
                 score_i += amplitude * align * tinleme

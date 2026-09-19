@@ -213,7 +213,14 @@ class WevvEngine:
                     prob = float(sigmoid(dot_product))
 
                 prob = max(0.0001, min(0.9999, prob))
-                is_true = prob >= q_obj.threshold
+                base_thresh = q_obj.threshold
+                if q_obj.threshold == 0.5:
+                    risk_offset = float(np.tanh(net_risk * 0.8)) * 0.08
+                    effective_thresh = max(0.20, min(0.80, 0.5 + risk_offset))
+                else:
+                    effective_thresh = base_thresh
+
+                is_true = prob >= effective_thresh
                 conf = float(min(1.0, abs(prob - 0.5) * 2.0))
 
                 answers[q_name] = NoulAnswer(
@@ -227,10 +234,19 @@ class WevvEngine:
                 options = list(q_obj.criteria.keys())
                 num_opts = len(options)
 
+                # Baseline Quadrant Normalization & Deterministic Phase Rotation
+                BASE_QUAD_MEAN = np.array([0.38, 0.91, 0.35, 0.91], dtype=np.float64)
+                NORM_SCALE = 0.6375
+                norm_quad_ratios = (quad_ratios / (BASE_QUAD_MEAN + 1e-6)) * NORM_SCALE
+
+                instr_hash = int(hashlib.md5(str(q_obj.instructions).encode('utf-8')).hexdigest()[:6], 16)
+                phase_offset = instr_hash % 4
+
                 scores = []
                 for i, opt in enumerate(options):
                     opt_norm = _normalize_text(opt)
-                    q_res = float(quad_ratios[i % 4])
+                    quad_idx = (i + phase_offset) % 4
+                    q_res = float(norm_quad_ratios[quad_idx])
                     feat_idx = (i * 2) % len(vec)
                     st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
                     score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5

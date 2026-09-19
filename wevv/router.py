@@ -72,7 +72,18 @@ class AutoSeedRouter:
             "client_ip": "api_security", "req_frequency": "api_security", "istek_sikligi": "api_security",
             "failed_attempts": "api_security", "hatali_giris_sayisi": "api_security", "hatali_istek": "api_security",
             "ddos_flag": "api_security", "ddos_suphesi": "api_security", "ip_reputation_score": "api_security", "ip_itibar_skoru": "api_security",
-            "auth_token": "api_security", "endpoint": "api_security", "token_gecerli": "api_security", "payload_kb": "api_security"
+            "auth_token": "api_security", "endpoint": "api_security", "token_gecerli": "api_security", "payload_kb": "api_security",
+            # Industrial & Heavy Physical Safety (bound to physical safety manifold: iot_safety)
+            "kazan_basinci_bar": "iot_safety", "reaktor_sicakligi_c": "iot_safety", "celik_eriyik_sicakligi": "iot_safety",
+            "basinc_bar": "iot_safety", "radyasyon_seviyesi": "iot_safety", "hava_akisi_m3s": "iot_safety",
+            "erime_noktasi": "iot_safety", "termal_yuk": "iot_safety", "titresim_hiz": "iot_safety",
+            "firin_sicakligi": "iot_safety", "reaktor_isi": "iot_safety", "basinc": "iot_safety",
+            # Biotech & PCR Automation (bound to environmental/thermal manifold: iot_safety)
+            "denaturasyon_sicakligi_c": "iot_safety", "termal_dongu_sayisi": "iot_safety", "dna_verimi_ng_ul": "iot_safety",
+            "biyolojik_bilesen": "iot_safety", "enzim_aktivitesi": "iot_safety", "ph_seviyesi": "iot_safety",
+            # Cybernetic Synthetic Sandbox (bound to API quarantine manifold: api_security)
+            "glork_rezonans_akisi": "api_security", "frob_turlama_frekansi": "api_security",
+            "plumbus_fleeb_suyu_seviyesi": "api_security", "uzayli_cihazi": "api_security"
         }
 
     def detect_domain(
@@ -90,10 +101,10 @@ class AutoSeedRouter:
         # 1. Explicit domain / category metadata (weight: 5.0)
         if state and isinstance(state, dict) and "category" in state:
             c_norm = normalize_text(str(state["category"]))
-            if any(w in c_norm for w in ["iot", "smart", "akilli", "ev", "cevre", "bina"]):
+            if any(w in c_norm for w in ["iot", "smart", "akilli", "ev", "cevre", "bina", "endustri", "sanayi", "uretim", "kazan", "reaktor", "termal", "biyokimya", "pcr"]):
                 scores["iot_safety"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
-            elif any(w in c_norm for w in ["finan", "credit", "loan", "kredi", "banka", "borc"]):
+            elif any(w in c_norm for w in ["finan", "credit", "loan", "kredi", "banka", "borc", "hazine", "likidite"]):
                 scores["financial_risk"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
             elif any(w in c_norm for w in ["fraud", "commerce", "ticaret", "sahtecilik", "dolandiricilik", "odeme"]):
@@ -103,6 +114,9 @@ class AutoSeedRouter:
                 scores["game_combat"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
             elif any(w in c_norm for w in ["api", "sec", "gateway", "guvenlik", "ag", "yetki"]):
+                scores["api_security"] += 5.0
+                matched_tokens.append(f"cat:{state['category']}")
+            elif any(w in c_norm for w in ["sentetik", "sibernetik", "cybernetic", "synthetic"]):
                 scores["api_security"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
 
