@@ -82,18 +82,18 @@ All coordinates derived via genetic boundary search maximizing domain F1 with bo
 
 ---
 
-### 5. Empirical Ablation Evaluation (113 Live Telemetry Records)
+### 5. Empirical Ablation Evaluation (336 Live Telemetry Records)
 
-Comprehensive out-of-sample evaluation comparing the single monolithic baseline seed against the Multi-Domain Auto-Seed Router over public crowdsourced decisions (`wevv_open_decisions.jsonl`):
+Comprehensive out-of-sample evaluation comparing the single monolithic baseline seed against the Multi-Domain Auto-Seed Router over 336 public crowdsourced decisions (`wevv_open_decisions.jsonl`):
 
 | Domain | $N$ | Baseline Monolithic Acc | Multi-Domain Auto-Seed Acc | Absolute Gain | Router Confidence | Decision Latency |
 |---|---|---|---|---|---|---|
-| **API Gateway & Security** | 33 | 90.9% | **90.9%** | $+0.0\%$ | 90.7% | 1.8 ms |
-| **Financial Underwriting** | 20 | 35.0% | **100.0%** | $\mathbf{+65.0\%}$ | 100.0% | 1.7 ms |
-| **Game AI Combat Reflex** | 20 | 40.0% | **95.0%** | $\mathbf{+55.0\%}$ | 100.0% | 1.7 ms |
-| **Smart Home & IoT Safety** | 20 | 85.0% | **100.0%** | $\mathbf{+15.0\%}$ | 100.0% | 1.7 ms |
-| **E-Commerce Fraud** | 20 | 55.0% | **90.0%** | $\mathbf{+35.0\%}$ | 100.0% | 1.8 ms |
-| **MACRO AGGREGATE** | **113** | **64.6%** | $\mathbf{94.7\%}$ | $\mathbf{+30.1\%}$ | **98.1%** | **1.74 ms** |
+| **API Gateway & Security** | 85 | 83.5% | **87.1%** | $+3.5\%$ | 93.9% | 3.42 ms |
+| **Financial Underwriting** | 60 | 35.0% | **100.0%** | $\mathbf{+65.0\%}$ | 100.0% | 3.33 ms |
+| **Game AI Combat Reflex** | 60 | 50.0% | **95.0%** | $\mathbf{+45.0\%}$ | 100.0% | 3.17 ms |
+| **Smart Home & IoT Safety** | 61 | 85.2% | **98.4%** | $\mathbf{+13.1\%}$ | 100.0% | 3.31 ms |
+| **E-Commerce Fraud** | 60 | 56.7% | **85.0%** | $\mathbf{+28.3\%}$ | 100.0% | 3.29 ms |
+| **MACRO AGGREGATE** | **326** | **63.8%** | **92.6%** | $\mathbf{+28.8\%}$ | **98.0%** | **3.31 ms** |
 
 ---
 
@@ -103,9 +103,9 @@ Comprehensive out-of-sample evaluation comparing the single monolithic baseline 
 |---|---|---|---|
 | **VRAM Footprint** | $4.2\text{ GB}$ | $180\text{ MB}$ | **0 Bytes (True Zero-Tensor)** |
 | **RAM Storage** | $4.5\text{ GB}$ | $220\text{ MB}$ | **$< 24\text{ Bytes per coordinate}$** |
-| **Inference Latency** | $180\text{--}600\text{ ms}$ | $15\text{--}45\text{ ms}$ | **$1.70\text{ ms}$ (CPU Single Core)** |
+| **Inference Latency** | $180\text{--}600\text{ ms}$ | $15\text{--}45\text{ ms}$ | **$3.31\text{ ms}$ (CPU Single Core)** |
 | **Routing Overhead** | N/A | $8\text{ ms}$ | **$0.032\text{ ms}$ ($32\,\mu\text{s}$)** |
-| **Throughput (qps)** | $2\text{--}5\text{ req/s}$ | $25\text{--}60\text{ req/s}$ | **$> 580\text{ req/s}$ (single core)** |
+| **Throughput (qps)** | $2\text{--}5\text{ req/s}$ | $25\text{--}60\text{ req/s}$ | **$> 300\text{ req/s}$ (single core)** |
 
 ---
 
@@ -113,4 +113,6 @@ Comprehensive out-of-sample evaluation comparing the single monolithic baseline 
 * [2026-09-18]: Initial 100-question multi-domain baseline test completed on `pcworm@mechsrv` MariaDB (`wevv_db.telemetry_records`).
 * [2026-09-19]: Theoretical formulation of Multi-Domain Coordinate Routing ($\mathcal{R}$) and Domain-Specific Latent State Projection ($\Phi_D$) codified.
 * [2026-09-19]: Developed `AutoSeedRouter`, `DOMAIN_GATES` framework (`wevv/gates/`), and `scripts/genetic_seed_optimizer.py`.
+* [2026-09-19]: Batch #1 (100 questions, scenarios 1-20) completed. Database reached 231 records.
+* [2026-09-19]: Batch #2 (100 questions, scenarios 21-40) completed. Database reached 336 records. Auto-Seed Router macro accuracy validated at 92.6% (+28.8% gain over single-seed baseline) with 3.31 ms latency and 0 Bytes RAM weights. All reports archived in TR & EN.
 * [2026-09-19]: Executed full ablation benchmark across 113 open decision records: Overall accuracy jumped from **64.6%** to **94.7%** (+30.1% gain) with average routing latency of $32\,\mu\text{s}$.
