@@ -1963,14 +1963,14 @@ if __name__ == "__main__":
   let currentLang = 'en';
   let activeUnifiedPreset = 'api';
 
-  // Calibrated Domain Gates (v0.2.0 Universal Seed Router)
+  // Calibrated Domain Gates (v0.2.0 Universal Seed Router - Fractal Dendrite Antenna Manifold)
   const DOMAIN_GATES = {
-    api: { gate: "gate_api_security", cx: -0.747024, cy: 0.131933, zoom: 108.0 },
-    iot: { gate: "gate_iot_safety", cx: -0.747446, cy: 0.108974, zoom: 78.9 },
-    fraud: { gate: "gate_ecommerce_fraud", cx: -0.755587, cy: 0.079838, zoom: 63.1 },
-    npc: { gate: "gate_game_combat", cx: -0.751381, cy: 0.120816, zoom: 58.6 },
-    finance: { gate: "gate_financial_risk", cx: -0.743020, cy: 0.061135, zoom: 54.1 },
-    custom: { gate: "gate_universal_custom", cx: -0.743644, cy: 0.131826, zoom: 65.0 }
+    api: { gate: "gate_api_security", cx: -0.101096, cy: 0.956286, zoom: 45.0 },
+    iot: { gate: "gate_iot_safety", cx: -0.104250, cy: 0.954820, zoom: 50.0 },
+    fraud: { gate: "gate_ecommerce_fraud", cx: -0.098420, cy: 0.958100, zoom: 48.0 },
+    npc: { gate: "gate_game_combat", cx: -0.106500, cy: 0.951500, zoom: 50.0 },
+    finance: { gate: "gate_financial_risk", cx: -0.095300, cy: 0.961200, zoom: 46.0 },
+    custom: { gate: "gate_universal_custom", cx: -0.101096, cy: 0.956286, zoom: 44.0 }
   };
 
   // Preset Scenarios (Bilingual)
@@ -2307,6 +2307,7 @@ if __name__ == "__main__":
   }
 
   // Universal Mandelbrot Canvas & 4-Quadrant Phase Space Renderer
+  // Universal Mandelbrot Canvas & 4-Quadrant Phase Space Renderer (Fractal Tree "Ağaç" Manifold)
   function renderMandelbrot(targetCanvas, targetCtx, baseCx, baseCy, dynamicZoom) {
     if (!targetCanvas || !targetCtx) return;
     const w = targetCanvas.width;
@@ -2321,7 +2322,7 @@ if __name__ == "__main__":
         let y0 = baseCy + (py - h / 2) * (scale / h);
         let x = 0.0, y = 0.0;
         let iter = 0;
-        const maxIter = 40;
+        const maxIter = 42;
 
         while (x * x + y * y <= 4.0 && iter < maxIter) {
           let xTemp = x * x - y * y + x0;
@@ -2338,17 +2339,17 @@ if __name__ == "__main__":
           data[idx + 3] = 255;
         } else {
           let t = iter / maxIter;
-          data[idx] = Math.floor(56 * t + 10);
-          data[idx + 1] = Math.floor(189 * t + 20);
-          data[idx + 2] = Math.floor(248 * t + 50);
+          data[idx] = Math.min(255, Math.floor(56 * t + 10));
+          data[idx + 1] = Math.min(255, Math.floor(189 * t + 20));
+          data[idx + 2] = Math.min(255, Math.floor(248 * t + 50));
           data[idx + 3] = 255;
         }
       }
     }
     targetCtx.putImageData(imgData, 0, 0);
 
-    // 4-Quadrant Partition Grid Lines
-    targetCtx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+    // 4-Quadrant Partition Grid Lines (vv subdivision)
+    targetCtx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
     targetCtx.lineWidth = 1;
     targetCtx.beginPath();
     targetCtx.moveTo(w / 2, 0);
@@ -2357,8 +2358,9 @@ if __name__ == "__main__":
     targetCtx.lineTo(w, h / 2);
     targetCtx.stroke();
 
+    // Subtle Quadrant Badges
     targetCtx.font = '9px JetBrains Mono, monospace';
-    targetCtx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+    targetCtx.fillStyle = 'rgba(255, 255, 255, 0.7)';
     targetCtx.fillText('Q1 (w1)', 6, 14);
     targetCtx.fillText('Q2 (w2)', w / 2 + 6, 14);
     targetCtx.fillText('Q3 (w3)', 6, h / 2 + 14);
@@ -2367,7 +2369,7 @@ if __name__ == "__main__":
 
   let currentUnifiedDecisionRecord = null;
 
-  // Primary Evaluator: Synthesizes System-1 Decisions Across Heterogeneous Domains
+  // Primary Evaluator: Synthesizes System-1 Decisions Across Heterogeneous Operational Domains
   function evaluateUnifiedDecision() {
     let stateObj = {};
     const stateJsonRaw = document.getElementById('unified-state-json').value;
@@ -2384,65 +2386,231 @@ if __name__ == "__main__":
     const q3Name = document.getElementById('unified-q3-name').value.trim() || 'q3_score';
     const q3LevelsRaw = document.getElementById('unified-q3-levels').value.trim();
 
-    // Semantic roles & risk ontology (TR & EN)
-    const semanticRoles = {
-      admin: -1.6, root: -1.6, superuser: -1.6, system: -1.5,
-      yonetici: -1.6, yetkili: -1.5, kok: -1.6, sistem: -1.5, kurucu: -1.5,
-      member: -0.7, user: -0.7, authenticated: -0.9, auth: -0.9, internal: -1.0,
-      uye: -0.7, kullanici: -0.7, kayitli: -0.7, dogrulanmis: -0.9, ic: -1.0,
-      guest: 0.9, anonymous: 1.0, unverified: 1.0,
-      misafir: 0.9, konuk: 0.9, ziyaretci: 0.9, anonim: 1.0,
-      attacker: 2.6, bot: 2.2, malicious: 2.6, hacker: 2.6, suspicious: 1.8,
-      saldirgan: 2.6, kotuniyetli: 2.6, zararli: 2.6, supheli: 1.8, tehdit: 2.2,
-      dormant: 1.5, revived: 1.2, enterprise: -1.2, crawler: 0.8, auditor: -1.0
-    };
+    // Domain inference: determine domain by active preset or domain-specific semantic state signatures
+    let domain = activeUnifiedPreset || 'api';
+    const stateKeys = Object.keys(stateObj).map(k => normalizeSemanticText(k));
+    const allText = (stateKeys.join(' ') + ' ' + normalizeSemanticText(q1Instr) + ' ' + JSON.stringify(stateObj)).toLowerCase();
 
-    let netRisk = 0.0;
-    for (let k in stateObj) {
-      const v = stateObj[k];
-      const kl = normalizeSemanticText(k);
-
-      if (typeof v === 'number') {
-        if (['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'delinquenc', 'gecikme', 'threat', 'panic', 'panik'].some(w => kl.includes(w))) {
-          netRisk += (v / 5.0) * 1.5;
-        } else if (['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'temp', 'sicaklik'].some(w => kl.includes(w))) {
-          netRisk += (v / 60.0) * 1.1;
-        } else if (['amount', 'tutar', 'payload', 'byte', 'order'].some(w => kl.includes(w))) {
-          netRisk += (v / 10000.0) * 0.8;
-        } else if (['credit', 'kredi', 'score', 'not', 'health', 'can', 'income', 'gelir'].some(w => kl.includes(w))) {
-          netRisk -= (v / 1000.0) * 0.6;
-        }
-      } else if (typeof v === 'boolean') {
-        if (['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'cover', 'siginak'].some(w => kl.includes(w))) {
-          netRisk += v ? -0.9 : 1.2;
-        } else if (['vpn', 'mismatch', 'farkli', 'risk', 'danger', 'tehlike', 'motion', 'hareket', 'new_device'].some(w => kl.includes(w))) {
-          netRisk += v ? 1.3 : -0.4;
-        }
-      } else if (typeof v === 'string') {
-        const vl = normalizeSemanticText(v);
-        let matched = false;
-        for (let rk in semanticRoles) {
-          if (vl.includes(rk)) {
-            netRisk += semanticRoles[rk];
-            matched = true;
-            break;
-          }
-        }
-        if (!matched && ['attack', 'burst', 'flood', 'saldiri', 'anomali'].some(w => vl.includes(w))) {
-          netRisk += 2.0;
-        }
-      }
+    if (['temp', 'sicaklik', 'room', 'oda', 'motion', 'hareket', 'smoke', 'duman', 'window', 'pencere', 'klima', 'thermostat'].some(w => allText.includes(w))) {
+      domain = 'iot';
+    } else if (['npc', 'combat', 'enemy', 'dusman', 'ammo', 'muhimmat', 'cover', 'siginak', 'savas', 'saldir'].some(w => allText.includes(w))) {
+      domain = 'npc';
+    } else if (['vpn', 'fraud', 'sahte', 'order', 'siparis', 'mismatch', 'chargeback'].some(w => allText.includes(w))) {
+      domain = 'fraud';
+    } else if (['credit', 'kredi', 'income', 'gelir', 'delinquen', 'gecikme', 'loan', 'borc'].some(w => allText.includes(w))) {
+      domain = 'finance';
+    } else if (['role', 'rol', 'auth', 'frequency', 'frekans', 'hiz', 'ddos', 'payload', 'paket'].some(w => allText.includes(w))) {
+      domain = 'api';
     }
 
-    // Retrieve Calibrated Domain Seed
-    const gateInfo = DOMAIN_GATES[activeUnifiedPreset] || DOMAIN_GATES.api;
-    const domainCx = gateInfo.cx;
-    const domainCy = gateInfo.cy;
-    const domainZoom = gateInfo.zoom;
+    let netMod = 0.0;
+    let noulProb = 0.5;
+    let isAllowed = true;
+    let domainScores = {};
+    let rawScore = 0.0;
 
-    const baseCx = domainCx + (netRisk * (0.45 / domainZoom));
-    const baseCy = domainCy - (netRisk * (0.45 / domainZoom));
-    const dynamicZoom = domainZoom * (1.0 + Math.abs(netRisk) * 0.15);
+    // 1. Domain-Specific State Projection Phi_D
+    if (domain === 'iot') {
+      // IoT & Smart Home / HVAC Life Safety
+      const temp = parseFloat(stateObj.temperature ?? stateObj.temp ?? stateObj.sicaklik ?? 22.0);
+      const motion = Boolean(stateObj.motion_detected ?? stateObj.motion ?? stateObj.hareket_var ?? false);
+      const windowOpen = Boolean(stateObj.window_open ?? stateObj.pencere_acik ?? false);
+      const smoke = Boolean(stateObj.smoke_detected ?? stateObj.smoke ?? stateObj.duman ?? false);
+
+      let acNeed = 0.0;
+      if (temp > 24.0) {
+        acNeed += (temp - 24.0) * 0.7; // Warm/hot room: activates cooling
+      } else if (temp < 19.0) {
+        acNeed += (19.0 - temp) * 0.7; // Cold room: activates heating
+      } else {
+        acNeed -= 1.0;
+      }
+
+      if (motion) acNeed += 1.6; else acNeed -= 1.4; // Occupancy modulation
+      if (windowOpen) acNeed -= 3.0;                  // Open window suppresses AC to conserve power
+      if (smoke) acNeed -= 5.0;                       // Environmental hazard override
+
+      netMod = -acNeed;
+      noulProb = 1.0 / (1.0 + Math.exp(-acNeed * 1.4));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        turbo_cool: temp >= 28.0 && motion && !windowOpen ? 4.0 : 1.0,
+        eco_mode: temp >= 24.5 && motion && !windowOpen ? 4.5 : 1.5,
+        fan_only: temp >= 22.0 && motion ? 2.5 : 0.8,
+        idle: !motion || windowOpen || temp < 23.0 ? 3.5 : 0.5,
+        hizli_sogutma: temp >= 28.0 && motion && !windowOpen ? 4.0 : 1.0,
+        eko_mod: temp >= 24.5 && motion && !windowOpen ? 4.5 : 1.5,
+        hava_sirkulasyon: temp >= 22.0 && motion ? 2.5 : 0.8,
+        bekle: !motion || windowOpen || temp < 23.0 ? 3.5 : 0.5
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (temp - 21.0) / 2.5 + (motion ? 0.8 : 0.0)));
+    } else if (domain === 'npc') {
+      // Game Combat AI & Tactical Reflex
+      const hp = parseFloat(stateObj.npc_health ?? stateObj.health ?? stateObj.hp ?? stateObj.npc_can ?? 100);
+      const ammo = parseFloat(stateObj.ammo_remaining ?? stateObj.ammo ?? stateObj.mermi ?? stateObj.muhimmat ?? 50);
+      const dist = parseFloat(stateObj.enemy_distance ?? stateObj.dusman_mesafe ?? 10);
+      const cover = Boolean(stateObj.cover_nearby ?? stateObj.siginak_yakin ?? false);
+
+      let combatHazard = 0.0;
+      if (hp < 25) combatHazard += 3.2;
+      else if (hp < 50) combatHazard += 1.5;
+      else combatHazard -= 1.0;
+
+      if (ammo <= 0) combatHazard += 3.2;
+      else if (ammo < 10) combatHazard += 1.5;
+      else combatHazard -= 1.0;
+
+      if (dist < 8) combatHazard += 1.2;
+      if (cover) combatHazard += 0.5;
+
+      netMod = combatHazard;
+      // High hazard suppresses aggressive engagement
+      noulProb = 1.0 / (1.0 + Math.exp((combatHazard - 1.2) * 1.6));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        take_cover: cover && (hp < 35 || ammo <= 0) ? 5.0 : 1.0,
+        siper_al: cover && (hp < 35 || ammo <= 0) ? 5.0 : 1.0,
+        retreat_safe: (hp < 35 || ammo <= 0) ? 4.2 : 1.0,
+        siginaga_kac: (hp < 35 || ammo <= 0) ? 4.2 : 1.0,
+        melee_attack: hp >= 60 && ammo <= 0 && dist < 3 ? 3.5 : 0.2,
+        yakin_dovus: hp >= 60 && ammo <= 0 && dist < 3 ? 3.5 : 0.2,
+        call_backup: combatHazard > 2.0 ? 3.2 : 1.0,
+        destek_cagir: combatHazard > 2.0 ? 3.2 : 1.0
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (combatHazard / 7.0) * 3.0));
+    } else if (domain === 'fraud') {
+      // E-Commerce Payment Fraud Detection
+      const amount = parseFloat(stateObj.order_amount ?? stateObj.siparis_tutari ?? 0);
+      const newDev = Boolean(stateObj.is_new_device ?? stateObj.yeni_cihaz ?? false);
+      const vpn = Boolean(stateObj.vpn_detected ?? stateObj.vpn_kullanimi ?? false);
+      const mismatch = Boolean(stateObj.card_country_mismatch ?? stateObj.kart_ulkesi_farkli ?? false);
+
+      let fraudScore = 0.0;
+      if (amount > 10000) fraudScore += 1.8;
+      else if (amount > 3000) fraudScore += 0.8;
+      if (newDev) fraudScore += 1.0;
+      if (vpn) fraudScore += 1.5;
+      if (mismatch) fraudScore += 1.6;
+
+      netMod = fraudScore;
+      noulProb = 1.0 / (1.0 + Math.exp((fraudScore - 1.2) * 1.8));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        block_fraud: fraudScore > 3.0 ? 5.0 : 0.5,
+        islemi_reddet: fraudScore > 3.0 ? 5.0 : 0.5,
+        manual_audit: fraudScore > 1.8 && fraudScore <= 3.0 ? 4.5 : 1.0,
+        manuel_inceleme: fraudScore > 1.8 && fraudScore <= 3.0 ? 4.5 : 1.0,
+        sms_challenge: fraudScore > 0.8 && fraudScore <= 1.8 ? 4.0 : 1.0,
+        sms_dogrulama: fraudScore > 0.8 && fraudScore <= 1.8 ? 4.0 : 1.0,
+        direct_approve: fraudScore <= 0.8 ? 5.0 : 0.2,
+        hemen_onayla: fraudScore <= 0.8 ? 5.0 : 0.2
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (fraudScore / 5.5) * 3.0));
+    } else if (domain === 'finance') {
+      // Financial Credit Underwriting
+      const credit = parseFloat(stateObj.credit_score ?? stateObj.kredi_notu ?? 1000);
+      const income = parseFloat(stateObj.monthly_income ?? stateObj.aylik_gelir ?? 20000);
+      const delinquencies = parseFloat(stateObj.delinquencies ?? stateObj.gecikme_sayisi ?? 0);
+      const loan = parseFloat(stateObj.requested_amount ?? stateObj.talep_edilen_tutar ?? 50000);
+
+      let primeScore = 0.0;
+      if (credit >= 1450) primeScore += 2.2;
+      else if (credit >= 1200) primeScore += 1.0;
+      else primeScore -= 2.0;
+
+      const dti = loan / Math.max(1, income * 12);
+      if (dti <= 0.35) primeScore += 1.5;
+      else if (dti > 0.75) primeScore -= 2.0;
+
+      if (delinquencies === 0) primeScore += 1.2;
+      else primeScore -= delinquencies * 1.8;
+
+      netMod = -primeScore;
+      noulProb = 1.0 / (1.0 + Math.exp(-primeScore * 1.5));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        instant_gold: primeScore >= 3.0 ? 5.0 : 0.5,
+        aninda_onay: primeScore >= 3.0 ? 5.0 : 0.5,
+        standard_tier: primeScore >= 1.2 && primeScore < 3.0 ? 4.5 : 1.0,
+        standart_onay: primeScore >= 1.2 && primeScore < 3.0 ? 4.5 : 1.0,
+        request_guarantor: primeScore >= -0.5 && primeScore < 1.2 ? 4.0 : 0.8,
+        kefil_iste: primeScore >= -0.5 && primeScore < 1.2 ? 4.0 : 0.8,
+        reject_loan: primeScore < -0.5 ? 5.0 : 0.2,
+        basvuru_reddi: primeScore < -0.5 ? 5.0 : 0.2
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (primeScore + 1.5) * 0.65));
+    } else if (domain === 'api') {
+      // API Gateway & Cybersecurity
+      const role = String(stateObj.role ?? stateObj.rol ?? 'member').toLowerCase();
+      const freq = parseFloat(stateObj.request_frequency ?? stateObj.istek_frekansi ?? 10);
+      const fails = parseFloat(stateObj.failed_auth_count ?? stateObj.hatali_giris_sayisi ?? 0);
+
+      let threat = 0.0;
+      if (['admin', 'yonetici', 'root', 'internal'].some(r => role.includes(r))) threat -= 1.6;
+      else if (['member', 'user', 'uye'].some(r => role.includes(r))) threat -= 0.8;
+      else if (['attacker', 'saldirgan', 'bot', 'hacker'].some(r => role.includes(r))) threat += 2.8;
+      else threat += 0.8;
+
+      threat += fails * 0.9;
+      if (freq > 40) threat += 2.0;
+      else if (freq > 15) threat += 0.6;
+
+      netMod = threat;
+      noulProb = 1.0 / (1.0 + Math.exp((threat - 0.2) * 1.8));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        direct_api: threat < 0.0 ? 5.0 : 0.5,
+        dogrudan_gecis: threat < 0.0 ? 5.0 : 0.5,
+        rate_limiter: threat >= 0.0 && threat < 1.5 ? 4.5 : 1.0,
+        hiz_limiti: threat >= 0.0 && threat < 1.5 ? 4.5 : 1.0,
+        sandbox_audit: threat >= 1.5 && threat < 2.5 ? 4.5 : 1.0,
+        karantina_inceleme: threat >= 1.5 && threat < 2.5 ? 4.5 : 1.0,
+        drop_packet: threat >= 2.5 ? 5.0 : 0.2,
+        paketi_dusur: threat >= 2.5 ? 5.0 : 0.2
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (threat + 1.0) * 0.75));
+    } else {
+      // Universal Custom Workflow
+      const score = parseFloat(stateObj.importance_score ?? stateObj.onem_derecesi ?? 5);
+      const emergency = Boolean(stateObj.is_emergency ?? stateObj.acil_durum ?? false);
+
+      let customWeight = (score / 10.0) * 2.0 + (emergency ? 2.0 : 0.0);
+      netMod = -customWeight;
+
+      noulProb = 1.0 / (1.0 + Math.exp(-(customWeight - 1.0) * 1.5));
+      isAllowed = noulProb >= 0.5;
+
+      domainScores = {
+        slack_alert: emergency ? 5.0 : 1.0,
+        anlik_bildirim: emergency ? 5.0 : 1.0,
+        webhook_call: !emergency && score > 6 ? 4.5 : 1.0,
+        webhook_cagrisi: !emergency && score > 6 ? 4.5 : 1.0,
+        email_digest: !emergency && score <= 6 ? 4.0 : 1.0,
+        e_posta_ozet: !emergency && score <= 6 ? 4.0 : 1.0,
+        log_silent: score < 3 ? 4.0 : 0.5,
+        sessiz_kayit: score < 3 ? 4.0 : 0.5
+      };
+
+      rawScore = Math.max(0.0, Math.min(3.0, (customWeight / 4.0) * 3.0));
+    }
+
+    noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
+
+    // 2. Retrieve Calibrated Domain Seed & Render Fractal Tree
+    const gateInfo = DOMAIN_GATES[activeUnifiedPreset] || DOMAIN_GATES[domain] || DOMAIN_GATES.api;
+    const baseCx = gateInfo.cx + (netMod * 0.0018);
+    const baseCy = gateInfo.cy - (netMod * 0.0018);
+    const dynamicZoom = gateInfo.zoom * (1.0 + Math.abs(netMod) * 0.06);
 
     // Update Gate Header Display
     const gateCoordsEl = document.getElementById('active-gate-coords');
@@ -2457,22 +2625,7 @@ if __name__ == "__main__":
       renderMandelbrot(canvas, ctx, baseCx, baseCy, dynamicZoom);
     }
 
-    // 1. Solve Q1 (Noul)
-    const q1Norm = normalizeSemanticText(q1Instr);
-    const isAllowQ = ['allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve', 'trigger', 'izin', 'onay', 'uygun', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis', 'tetikle'].some(w => q1Norm.includes(w));
-    const isDenyQ = ['threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban', 'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'].some(w => q1Norm.includes(w));
-
-    let noulProb = 0.5;
-    if (isAllowQ || (netRisk !== 0 && !isDenyQ)) {
-      noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.15) * 2.1));
-    } else if (isDenyQ) {
-      noulProb = 1.0 / (1.0 + Math.exp((-netRisk - 0.15) * 2.1));
-    } else {
-      noulProb = 1.0 / (1.0 + Math.exp(netRisk * 1.6));
-    }
-    noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
-    const isAllowed = noulProb >= 0.5;
-
+    // 3. UI Update: Question 1 (Noul)
     document.getElementById('unified-q1-display-name').innerText = q1Name;
     document.getElementById('unified-q1-display-instr').innerText = q1Instr;
     const badgeNoul = document.getElementById('badge-unified-noul');
@@ -2482,7 +2635,7 @@ if __name__ == "__main__":
     document.getElementById('bar-unified-noul').style.width = (noulProb * 100) + '%';
     document.getElementById('bar-unified-noul').style.background = isAllowed ? 'var(--emerald)' : 'var(--rose)';
 
-    // 2. Solve Q2 (Choice)
+    // 4. UI Update: Question 2 (Choice)
     document.getElementById('unified-q2-display-name').innerText = q2Name;
     document.getElementById('unified-q2-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kategorik yönlendirme' : 'Question: Categorical choice';
 
@@ -2496,22 +2649,7 @@ if __name__ == "__main__":
       }
     });
 
-    let choiceScores = [];
-    parsedOptions.forEach((opt, idx) => {
-      const onorm = normalizeSemanticText(opt.key + ' ' + opt.label);
-      let s = 1.0 + (idx === 0 ? 0.3 : 0.0);
-      if (['direct', 'turbo', 'instant', 'pass', 'high', 'gold', 'platinum', 'dogrudan', 'hizli', 'aninda', 'onay'].some(w => onorm.includes(w))) {
-        s += (netRisk < 0.3 ? 3.2 : -2.2);
-      } else if (['rate', 'eco', 'queue', 'sms', 'standard', 'bekle', 'kuyruk', 'eko', 'dengeli', 'standart'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 0.0 && netRisk < 1.6 ? 2.6 : 0.3);
-      } else if (['audit', 'sandbox', 'karantina', 'review', 'manual', 'kefil', 'guarantor', 'inceleme', 'siper', 'cover'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 0.9 && netRisk < 2.5 ? 3.4 : 0.2);
-      } else if (['drop', 'block', 'reject', 'deny', 'reddet', 'engelle', 'fraud', 'retreat', 'kac', 'sigin'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 1.8 ? 4.2 : -2.8);
-      }
-      choiceScores.push(s);
-    });
-
+    const choiceScores = parsedOptions.map(opt => domainScores[opt.key] ?? domainScores[normalizeSemanticText(opt.key)] ?? 1.0);
     const maxS = Math.max(...choiceScores);
     const expScores = choiceScores.map(s => Math.exp(s - maxS));
     const sumExp = expScores.reduce((a, b) => a + b, 0);
@@ -2545,13 +2683,12 @@ if __name__ == "__main__":
       choiceContainer.appendChild(row);
     });
 
-    // 3. Solve Q3 (Score)
+    // 5. UI Update: Question 3 (Score)
     document.getElementById('unified-q3-display-name').innerText = q3Name;
     document.getElementById('unified-q3-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kademeli skor' : 'Question: Ordinal score';
 
     const levels = q3LevelsRaw.split(',').map(s => s.trim()).filter(Boolean);
     const numLevels = Math.max(2, levels.length);
-    let rawScore = (netRisk + 1.4) * ((numLevels - 1) / 3.4);
     rawScore = Math.max(0.0, Math.min(numLevels - 1, rawScore));
 
     const scoreIdx = Math.min(numLevels - 1, Math.round(rawScore));
@@ -2564,23 +2701,38 @@ if __name__ == "__main__":
     const barScoreEl = document.getElementById('bar-unified-score');
     barScoreEl.style.width = pctScore + '%';
 
-    if (pctScore < 35) {
-      labelScoreEl.style.color = 'var(--emerald)';
-      barScoreEl.style.background = 'var(--emerald)';
-    } else if (pctScore < 70) {
-      labelScoreEl.style.color = 'var(--amber)';
-      barScoreEl.style.background = 'var(--amber)';
+    if (domain === 'api' || domain === 'fraud') {
+      // Lower is better (clean/safe)
+      if (pctScore < 35) {
+        labelScoreEl.style.color = 'var(--emerald)';
+        barScoreEl.style.background = 'var(--emerald)';
+      } else if (pctScore < 70) {
+        labelScoreEl.style.color = 'var(--amber)';
+        barScoreEl.style.background = 'var(--amber)';
+      } else {
+        labelScoreEl.style.color = 'var(--rose)';
+        barScoreEl.style.background = 'var(--rose)';
+      }
     } else {
-      labelScoreEl.style.color = 'var(--rose)';
-      barScoreEl.style.background = 'var(--rose)';
+      // Higher is stronger / boost / prime / power
+      if (pctScore > 65) {
+        labelScoreEl.style.color = 'var(--emerald)';
+        barScoreEl.style.background = 'var(--emerald)';
+      } else if (pctScore > 35) {
+        labelScoreEl.style.color = 'var(--cyan)';
+        barScoreEl.style.background = 'var(--cyan)';
+      } else {
+        labelScoreEl.style.color = 'var(--text-muted)';
+        barScoreEl.style.background = 'var(--indigo)';
+      }
     }
 
-    // Action Dispatcher Resolution
+    // 6. Action Dispatcher Resolution
     const actionVal = `EXECUTE_${bestChoice.key.toUpperCase()}(${q1Name}=${isAllowed})`;
     document.getElementById('unified-action-dispatch').innerText = actionVal;
     const iconMap = {
       api: isAllowed ? '🚀' : '🛑',
-      iot: isAllowed ? '💡' : '🔒',
+      iot: isAllowed ? '❄️' : '🔒',
       fraud: isAllowed ? '✅' : '🚨',
       npc: isAllowed ? '⚔️' : '🛡️',
       finance: isAllowed ? '💳' : '📋',
@@ -2588,7 +2740,7 @@ if __name__ == "__main__":
     };
     document.getElementById('unified-action-icon').innerText = iconMap[activeUnifiedPreset] || '⚡';
 
-    // Construct Universal Decision Record
+    // 7. Construct Universal Decision Record
     const recordId = "wevv-" + Date.now().toString(36) + "-" + Math.random().toString(36).substring(2, 7);
     currentUnifiedDecisionRecord = {
       id: recordId,
