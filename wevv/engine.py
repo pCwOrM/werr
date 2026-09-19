@@ -19,6 +19,7 @@ from wevv.datatypes import (
     WevvResponse
 )
 from wevv.telemetry import dispatch_telemetry_async
+from wevv.calibration import DynamicCalibration
 
 
 def _normalize_text(s: str) -> str:
@@ -58,6 +59,7 @@ class WevvEngine:
         self.zoom = base_zoom
         self.resolution = resolution
         self.max_iter = max_iter
+        self.calibration = DynamicCalibration()
 
     def _state_to_vector(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
         """
@@ -140,7 +142,7 @@ class WevvEngine:
         """
         if auto_route:
             from wevv.router import AutoSeedRouter
-            router = AutoSeedRouter()
+            router = AutoSeedRouter(calibration=self.calibration)
             resp, domain, _ = router.route_and_evaluate(state=state, questions=questions, preferred_domain=preferred_domain)
             seed = getattr(resp, 'active_coordinates', None) or {"cx": self.cx, "cy": self.cy, "zoom": self.zoom}
             dispatch_telemetry_async(
@@ -234,10 +236,12 @@ class WevvEngine:
                 options = list(q_obj.criteria.keys())
                 num_opts = len(options)
 
-                # Baseline Quadrant Normalization & Deterministic Phase Rotation
-                BASE_QUAD_MEAN = np.array([0.38, 0.91, 0.35, 0.91], dtype=np.float64)
-                NORM_SCALE = 0.6375
-                norm_quad_ratios = (quad_ratios / (BASE_QUAD_MEAN + 1e-6)) * NORM_SCALE
+                # Organic Dynamic Calibration & Phase Rotation Normalization
+                if not hasattr(self, 'calibration') or self.calibration is None:
+                    self.calibration = DynamicCalibration()
+
+                norm_quad_ratios = self.calibration.normalize_quadrants(quad_ratios)
+                self.calibration.update(quad_ratios)
 
                 instr_hash = int(hashlib.md5(str(q_obj.instructions).encode('utf-8')).hexdigest()[:6], 16)
                 phase_offset = instr_hash % 4

@@ -18,16 +18,22 @@ from wevv.gates import (
 from wevv.datatypes import NoulQuestion, ChoiceQuestion, ScoreQuestion
 
 
+from wevv.calibration import DynamicCalibration
+
+
 class AutoSeedRouter:
     """
     Sub-millisecond intent router that dynamically binds queries to domain coordinates.
     Employs an inverted semantic index over domain keywords and state variable signatures.
     """
-    def __init__(self, default_domain: str = "api_security"):
+    def __init__(self, default_domain: str = "api_security", calibration: Optional[DynamicCalibration] = None):
         self.default_domain = default_domain
+        self.calibration = calibration or DynamicCalibration()
         self._gate_instances: Dict[str, DomainGate] = {
             name: cls() for name, cls in DOMAIN_GATES.items()
         }
+        for gate in self._gate_instances.values():
+            gate.calibration = self.calibration
 
         # Build reverse index for fast O(1) keyword lookup
         self._keyword_index: Dict[str, List[str]] = {}

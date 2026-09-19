@@ -13,6 +13,7 @@ from wevv.datatypes import (
     WevvResponse,
 )
 from wevv.engine import WevvEngine
+from wevv.calibration import DynamicCalibration
 from wevv.presets import (
     create_security_guard,
     create_smart_router,
@@ -29,9 +30,10 @@ from wevv.gates import (
     GameCombatGate,
 )
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 __all__ = [
     "WevvEngine",
+    "DynamicCalibration",
     "AutoSeedRouter",
     "DomainGate",
     "DOMAIN_GATES",

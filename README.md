@@ -279,18 +279,18 @@ To calibrate and continuously optimize the universal fractal decision map, `wevv
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
 * **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
 
-### 📊 Live Public Dataset (852+ Decisions)
+### 📊 Live Public Dataset (969+ Decisions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (852+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (969+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
 
-### 🎼 Chordial Semantic Resonance & Quadrant Phase Normalization (v0.2.1)
-Derived empirically from the 852-decision open benchmark dataset, `wevv` v0.2.1 incorporates four fundamental mathematical fine-tunings:
-1. **Quadrant Phase Rotation & Normalization:** Eliminates positional option bias across Mandelbrot quadrants ($Q_1/Q_3$ vs. $Q_0/Q_2$) via deterministic instruction-hash phase shifting and empirical baseline normalization ($\bar{\mathcal{Q}} = [0.38, 0.91, 0.35, 0.91]$).
-2. **Domain & Risk Adaptive Noul Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net\_risk})$Coupling, making high-risk contexts strictly defensive while enabling smooth approvals in benign/OOD regimes.
-3. **Refined Acoustic Tinleme Index:** Dampens isolated descriptive trap keywords down to $\mathcal{T}_{\text{desc}} = 0.045$, neutralizing adversarial prompt traps with zero butterfly spikes.
-4. **Expanded Industrial & Biotech State Signatures:** Native multi-domain state signatures for high-temperature industrial kilns, reactor pressures, PCR automations, and cybernetic OOV sandboxes.
+### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2)
+While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `wevv` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
+* **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
+* **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
+* **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net\_risk} \cdot 0.8)$.
+* **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
 The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hardened against abusive bots and brute-force traffic:

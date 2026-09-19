@@ -14,6 +14,7 @@ from wevv.datatypes import (
     NoulQuestion, ChoiceQuestion, ScoreQuestion,
     NoulAnswer, ChoiceAnswer, ScoreAnswer, WevvResponse
 )
+from wevv.calibration import DynamicCalibration
 
 
 def normalize_text(s: str) -> str:
@@ -79,6 +80,7 @@ class DomainGate(ABC):
         self.max_iter = max_iter
         if threshold is not None:
             self.default_threshold = threshold
+        self.calibration = DynamicCalibration()
 
     @abstractmethod
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
@@ -266,14 +268,15 @@ class DomainGate(ABC):
         gate_keywords = {normalize_text(kw) for kw in getattr(self, 'keywords', [])}
 
         # -----------------------------------------------------------------
-        # Historical Baseline Quadrant Map & Phase Rotation Normalization
-        # Derived empirically from 852 decisions in wevv_open_decisions.jsonl.
-        # Eliminates positional choice bias (Q1/Q3 vs Q0/Q2) while preserving
-        # fine-grained fractal perturbation dynamics.
+        # Organic Dynamic Calibration & Phase Rotation Normalization
+        # Adapts continuous empirical baselines via Exponential Moving Average (EMA)
+        # Eliminates positional choice bias (Q1/Q3 vs Q0/Q2) organically.
         # -----------------------------------------------------------------
-        BASE_QUAD_MEAN = np.array([0.38, 0.91, 0.35, 0.91], dtype=np.float64)
-        NORM_SCALE = 0.6375  # mean(BASE_QUAD_MEAN)
-        norm_quad_ratios = (quad_ratios / (BASE_QUAD_MEAN + 1e-6)) * NORM_SCALE
+        if not hasattr(self, 'calibration') or self.calibration is None:
+            self.calibration = DynamicCalibration()
+
+        norm_quad_ratios = self.calibration.normalize_quadrants(quad_ratios)
+        self.calibration.update(quad_ratios)
 
         instr_hash = int(hashlib.md5(str(q_obj.instructions).encode('utf-8')).hexdigest()[:6], 16)
         phase_offset = instr_hash % 4
