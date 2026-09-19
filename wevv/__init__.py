@@ -18,10 +18,28 @@ from wevv.presets import (
     create_smart_router,
     create_risk_evaluator,
 )
+from wevv.router import AutoSeedRouter
+from wevv.gates import (
+    DomainGate,
+    DOMAIN_GATES,
+    APISecurityGate,
+    FinancialRiskGate,
+    IoTSafetyGate,
+    EcommerceFraudGate,
+    GameCombatGate,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
     "WevvEngine",
+    "AutoSeedRouter",
+    "DomainGate",
+    "DOMAIN_GATES",
+    "APISecurityGate",
+    "FinancialRiskGate",
+    "IoTSafetyGate",
+    "EcommerceFraudGate",
+    "GameCombatGate",
     "NoulQuestion",
     "ChoiceQuestion",
     "ScoreQuestion",

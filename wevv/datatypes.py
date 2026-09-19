@@ -65,7 +65,8 @@ class ScoreAnswer:
     """
     type: str = "score"
     score: float = 0.0
-    probabilities: Dict[int, float] = field(default_factory=dict)
+    level: str = ""
+    probabilities: Dict[Union[int, str], float] = field(default_factory=dict)
     confidence: float = 0.0
 
 
@@ -75,10 +76,14 @@ class WevvResponse:
     Standardized response returned by WevvEngine.
     """
     model: str = "wevv-0.1.0-fractal"
+    domain: str = "api_security"
     answers: Dict[str, Union[NoulAnswer, ChoiceAnswer, ScoreAnswer]] = field(default_factory=dict)
     latency_ms: float = 0.0
     memory_tensor_bytes: int = 0  # True Zero-Memory: 0 bytes!
     coordinate_bytes: int = 24     # (cx, cy, zoom) in Float64
+    escape_entropy: float = 0.0
+    quadrant_entropy: float = 0.0
+    active_coordinates: Dict[str, float] = field(default_factory=dict)
 
     def noul(self, key: str) -> float:
         ans = self.answers.get(key)

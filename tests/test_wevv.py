@@ -152,5 +152,100 @@ class TestWevvEngine(unittest.TestCase):
         self.assertEqual(resp_att.choice("rota"), "engelle")
 
 
+class TestMultiDomainRouting(unittest.TestCase):
+    """
+    Tests the Multi-Domain Auto-Seed Router and heterogeneous domain gates.
+    """
+    def setUp(self):
+        from wevv.router import AutoSeedRouter
+        from wevv.gates import (
+            APISecurityGate,
+            FinancialRiskGate,
+            IoTSafetyGate,
+            EcommerceFraudGate,
+            GameCombatGate
+        )
+        self.router = AutoSeedRouter()
+        self.fin_gate = FinancialRiskGate()
+        self.iot_gate = IoTSafetyGate()
+        self.fraud_gate = EcommerceFraudGate()
+        self.combat_gate = GameCombatGate()
+
+    def test_router_domain_detection(self):
+        # 1. Financial
+        d, conf, _ = self.router.detect_domain(
+            query="Approve credit facility for applicant?",
+            state={"income": 50000, "debt_ratio": 0.25}
+        )
+        self.assertEqual(d, "financial_risk")
+        self.assertTrue(conf >= 0.8)
+
+        # 2. IoT Safety
+        d, conf, _ = self.router.detect_domain(
+            query="Hazard alert: evacuate building?",
+            state={"temp_c": 75.0, "smoke_detected": True}
+        )
+        self.assertEqual(d, "iot_safety")
+        self.assertTrue(conf >= 0.8)
+
+        # 3. E-Commerce
+        d, conf, _ = self.router.detect_domain(
+            query="Flag suspicious transaction on checkout?",
+            state={"order_amount": 1200.0, "velocity_1h": 5}
+        )
+        self.assertEqual(d, "ecommerce_fraud")
+        self.assertTrue(conf >= 0.8)
+
+        # 4. Game Combat
+        d, conf, _ = self.router.detect_domain(
+            query="Tactical reflex: engage enemy?",
+            state={"ammo": 40, "enemy_count": 1}
+        )
+        self.assertEqual(d, "game_combat")
+        self.assertTrue(conf >= 0.8)
+
+    def test_financial_gate_decisions(self):
+        # Good profile -> Approve
+        resp_good = self.fin_gate.evaluate_state_and_questions(
+            state={"income": 85000, "debt_ratio": 0.20, "requested_amount": 10000, "credit_score": 750},
+            questions={"loan": NoulQuestion("Approve credit facility?")}
+        )
+        self.assertTrue(resp_good.boolean("loan"))
+
+        # Toxic profile -> Reject
+        resp_bad = self.fin_gate.evaluate_state_and_questions(
+            state={"income": 18000, "debt_ratio": 0.75, "requested_amount": 25000, "credit_score": 510, "late_payments": 3},
+            questions={"loan": NoulQuestion("Approve credit facility?")}
+        )
+        self.assertFalse(resp_bad.boolean("loan"))
+
+    def test_iot_gate_decisions(self):
+        # Safe -> No alert
+        resp_safe = self.iot_gate.evaluate_state_and_questions(
+            state={"temp": 22.0, "smoke_detected": False, "gas_ppm": 10.0},
+            questions={"hazard": NoulQuestion("Hazard alert detected?")}
+        )
+        self.assertFalse(resp_safe.boolean("hazard"))
+
+        # Fire Emergency -> Alert
+        resp_fire = self.iot_gate.evaluate_state_and_questions(
+            state={"temp": 82.0, "smoke_detected": True, "gas_ppm": 550.0},
+            questions={"hazard": NoulQuestion("Hazard alert detected?")}
+        )
+        self.assertTrue(resp_fire.boolean("hazard"))
+
+    def test_engine_auto_route_seamless(self):
+        engine = WevvEngine()
+        # Call with auto_route=True on IoT emergency state
+        resp = engine.decide(
+            state={"temp": 88.0, "smoke_detected": True},
+            questions={"alert": NoulQuestion("Hazard alert detected?")},
+            auto_route=True
+        )
+        self.assertTrue(resp.boolean("alert"))
+        self.assertEqual(resp.memory_tensor_bytes, 0)
+        self.assertEqual(resp.coordinate_bytes, 24)
+
+
 if __name__ == "__main__":
     unittest.main()

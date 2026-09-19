@@ -1,0 +1,34 @@
+{
+  "financial_risk": {
+    "cx": -0.748,
+    "cy": 0.065,
+    "zoom": 60.0,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "f1": 1.0
+  },
+  "iot_safety": {
+    "cx": -0.745,
+    "cy": 0.112,
+    "zoom": 85.0,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "f1": 1.0
+  },
+  "ecommerce_fraud": {
+    "cx": -0.7495,
+    "cy": 0.082,
+    "zoom": 70.0,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "f1": 1.0
+  },
+  "game_combat": {
+    "cx": -0.7445,
+    "cy": 0.125,
+    "zoom": 65.0,
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "f1": 1.0
+  }
+}

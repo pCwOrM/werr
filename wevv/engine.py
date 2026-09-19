@@ -7,6 +7,7 @@ import os
 import sys
 import time
 import math
+import re
 import hashlib
 from typing import Dict, List, Any, Optional, Union, Tuple
 import numpy as np
@@ -124,12 +125,21 @@ class WevvEngine:
     def decide(
         self,
         state: Dict[str, Any],
-        questions: Dict[str, Union[NoulQuestion, ChoiceQuestion, ScoreQuestion]]
+        questions: Dict[str, Union[NoulQuestion, ChoiceQuestion, ScoreQuestion]],
+        auto_route: bool = False,
+        preferred_domain: Optional[str] = None
     ) -> WevvResponse:
         """
         Evaluates a bundle of typed questions against a single program state.
         All questions are answered in a single parallel pass.
+        If auto_route=True, delegates to the optimal domain gate coordinate via AutoSeedRouter.
         """
+        if auto_route:
+            from wevv.router import AutoSeedRouter
+            router = AutoSeedRouter()
+            resp, domain, _ = router.route_and_evaluate(state=state, questions=questions, preferred_domain=preferred_domain)
+            return resp
+
         start_time = time.perf_counter()
 
         # 1. State-to-Wave Modulation
@@ -167,14 +177,15 @@ class WevvEngine:
         for q_name, q_obj in questions.items():
             if isinstance(q_obj, NoulQuestion):
                 instr = _normalize_text(q_obj.instructions)
-                is_allow_q = any(w in instr for w in [
+                tokens = set(re.findall(r'\b\w+\b', instr))
+                is_allow_q = bool(tokens & {
                     'allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve',
                     'izin', 'onay', 'uygun', 'gecerli', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'
-                ])
-                is_deny_q = any(w in instr for w in [
+                })
+                is_deny_q = bool(tokens & {
                     'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban',
                     'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'
-                ])
+                })
 
                 if is_allow_q or (net_risk != 0.0 and not is_deny_q):
                     base_prob = 1.0 / (1.0 + math.exp((net_risk - 0.2) * 2.0))
