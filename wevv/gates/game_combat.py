@@ -23,7 +23,8 @@ class GameCombatGate(DomainGate):
         "attack", "cover", "tactical", "weapon", "shield", "game", "bot", "sniper", "boss",
         "savas", "dovus", "saldir", "kac", "can", "mermi", "dusman", "siper", "silah", "kalkan",
         "taktik", "dusman_sayisi", "can_puani", "kalan_mermi", "sarjor", "ates_altinda",
-        "keskin_nisanci", "elebasi", "dron", "hasar", "yakin_dovus"
+        "keskin_nisanci", "elebasi", "dron", "hasar", "yakin_dovus",
+        "skirmish", "assault", "bunker", "damage", "patrol", "reinforcements"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:

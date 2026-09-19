@@ -23,7 +23,7 @@ class IoTSafetyGate(DomainGate):
         "hazard", "evacuate", "alarm", "thermostat", "hvac", "smart_home", "furnace", "air_conditioner",
         "sicaklik", "duman", "gaz", "yangin", "kacak", "tehlike", "alarm", "tahliye", "sensor",
         "akilli_ev", "klima", "termostat", "havalandirma", "nem", "duman_dedektoru", "hareket",
-        "pencere", "kapi", "su_baskini", "donma_riski"
+        "pencere", "kapi", "su_baskini", "donma_riski", "freeze", "boiler", "ventilation", "occupancy", "presence", "motion", "flood"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:

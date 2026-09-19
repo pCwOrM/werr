@@ -23,7 +23,7 @@ class EcommerceFraudGate(DomainGate):
         "chargeback", "billing", "shipping", "carding", "stolen", "proxy", "vpn",
         "siparis", "sepet", "odeme", "dolandiricilik", "sahtecilik", "kart", "fatura", "islem",
         "sepet_tutari", "siparis_tutari", "ters_ibraz", "vekil_sunucu", "yabanci_kart", "calinti_kart",
-        "guvenlik_kodu", "cvv", "adres_uyusmazligi", "yeni_cihaz"
+        "guvenlik_kodu", "cvv", "adres_uyusmazligi", "yeni_cihaz", "dispute", "stolen_card", "address_mismatch"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:

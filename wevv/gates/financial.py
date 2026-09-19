@@ -23,18 +23,21 @@ class FinancialRiskGate(DomainGate):
         "mortgage", "lender", "repayment", "default", "interest", "facility", "liquidity",
         "kredi", "borc", "gelir", "finans", "taksit", "odeme", "risk", "teminat", "limit",
         "findeks", "kredi_notu", "maas", "aylik_gelir", "ihtiyac_kredisi", "konut_kredisi",
-        "tasit_kredisi", "kefil", "ipotek", "borclanma", "faiz", "subprime", "prime"
+        "tasit_kredisi", "kefil", "ipotek", "borclanma", "faiz", "subprime", "prime",
+        "annual_income", "monthly_income", "debt_ratio", "collateral", "delinquency"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
         employment_risks = {
             "civil_servant": -1.2, "government": -1.2, "kamu": -1.2, "memur": -1.2, "devlet": -1.2,
             "corporate": -0.8, "salaried": -0.7, "maasli": -0.7, "calisan": -0.7, "ozel_sektor": -0.7,
-            "professional": -0.9, "doktor": -1.0, "muhendis": -0.8, "avukat": -0.8, "ogretmen": -0.8,
+            "professional": -0.9, "doktor": -1.0, "doctor": -1.0, "muhendis": -0.8, "engineer": -0.8,
+            "avukat": -0.8, "lawyer": -0.8, "ogretmen": -0.8, "teacher": -0.8,
+            "executive": -1.0, "manager": -0.8, "consultant": -0.7,
             "pensioner": -0.6, "retired": -0.6, "emekli": -0.6,
             "entrepreneur": 0.2, "girisimci": 0.2, "freelance": 0.4, "serbest": 0.3, "serbest_meslek": 0.3,
             "contractor": 0.3, "esnaf": 0.2, "sozlesmeli": 0.2,
-            "unemployed": 2.5, "issiz": 2.5, "part_time": 1.2, "ogrenci": 1.5, "student": 1.5, "stajyer": 1.0
+            "unemployed": 2.5, "issiz": 2.5, "part_time": 1.2, "ogrenci": 1.5, "student": 1.5, "stajyer": 1.0, "intern": 1.0
         }
 
         values = []

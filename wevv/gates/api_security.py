@@ -23,7 +23,8 @@ class APISecurityGate(DomainGate):
         "permission", "access", "ip", "client_ip", "request", "security", "firewall", "waf",
         "yetki", "erisim", "istek", "guvenlik", "ag", "anahtar", "dogrulama", "ag_gecidi",
         "saldirgan", "denetci", "tarayici", "guvenlik_duvari", "istek_sikligi", "ddos", "waf",
-        "crawler", "pentester", "auditor", "threat", "ip_itibari"
+        "crawler", "pentester", "auditor", "threat", "ip_itibari",
+        "exploit", "injection", "botnet", "brute_force"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
