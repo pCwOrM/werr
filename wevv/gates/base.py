@@ -162,17 +162,23 @@ class DomainGate(ABC):
         tile_weights: np.ndarray
     ) -> NoulAnswer:
         instr = normalize_text(q_obj.instructions)
-        tokens = set(re.findall(r'\b\w+\b', instr))
+        tokens = set(re.findall(r'[a-zA-Z0-9]+', instr)) | {instr}
 
         allow_keywords = {
             'allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve',
-            'clear', 'cleared', 'clean', 'sustain', 'proceed',
-            'izin', 'onay', 'uygun', 'gecerli', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis', 'engage'
+            'clear', 'cleared', 'clean', 'sustain', 'proceed', 'enable', 'accept', 'authorize',
+            'confirm', 'eligible', 'trust', 'trusted', 'normal', 'continue', 'activate', 'release',
+            'izin', 'izin_ver', 'onay', 'onayla', 'onaylandi', 'uygun', 'gecerli', 'calistir',
+            'ac', 'evet', 'dogrula', 'dogrulandi', 'kabul', 'gecis', 'surdur', 'aktif', 'guvenli',
+            'yetkili', 'temiz', 'devam', 'verilsin', 'edilsin', 'tahsis_et', 'engage'
         }
         deny_keywords = {
-            'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban', 'hazard', 'fraud', 'fire',
-            'suspicious', 'retreat', 'evacuate',
-            'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli', 'yangin', 'tahliye'
+            'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban', 'hazard',
+            'fraud', 'fire', 'suspicious', 'retreat', 'evacuate', 'alarm', 'violation', 'abusive',
+            'unauthorized', 'critical', 'stop', 'halt', 'drop', 'freeze', 'quarantine',
+            'tehlike', 'risk', 'engelle', 'engellensin', 'yasak', 'yasakla', 'saldiri', 'hata',
+            'kapat', 'hayir', 'reddet', 'reddedilsin', 'supheli', 'zararli', 'yangin', 'tahliye',
+            'alarm', 'kac', 'durdur', 'iptal', 'sahte', 'dolandirici', 'ihlali', 'dondur', 'kes'
         }
 
         is_allow_q = bool(tokens & allow_keywords)
@@ -180,7 +186,7 @@ class DomainGate(ABC):
 
         # Disambiguate when prompt title mentions risk/threat/fraud but interrogative asks for clearance
         if is_allow_q and is_deny_q:
-            if bool(tokens & {'clear', 'cleared', 'permit', 'allow', 'approve', 'safe', 'valid', 'pass', 'sustain', 'izin', 'onay'}):
+            if bool(tokens & {'clear', 'cleared', 'permit', 'allow', 'approve', 'safe', 'valid', 'pass', 'sustain', 'izin', 'onay', 'kabul', 'tahsis_et'}):
                 is_deny_q = False
 
         if is_allow_q or (net_risk != 0.0 and not is_deny_q):
@@ -227,25 +233,44 @@ class DomainGate(ABC):
         num_opts = len(options)
         scores = []
 
-        direct_kw = {'direct', 'prod', 'fast', 'allow', 'approve', 'engage', 'normal', 'safe', 'dogrudan', 'onayla', 'saldir'}
-        caution_kw = {'rate', 'limiter', 'slow', 'caution', 'warning', 'review', 'sinirla', 'incele', 'uyar', 'isolate'}
-        block_kw = {'reject', 'deny', 'block', 'quarantine', 'alarm', 'retreat', 'evacuate', 'engelle', 'reddet', 'kac', 'tahliye'}
+        direct_kw = {
+            'direct', 'direct_api', 'prod', 'fast', 'allow', 'approve', 'auto_approve', 'engage',
+            'normal', 'safe', 'instant', 'proceed', 'forward', 'uretim',
+            'dogrudan', 'direkt', 'onayla', 'otomatik_onay', 'saldir', 'gecis',
+            'calistir', 'izin_ver'
+        }
+        caution_kw = {
+            'rate', 'limiter', 'rate_limiter', 'slow', 'caution', 'warning', 'review', 'manual',
+            'underwrite', 'manual_underwrite', 'counter_offer', 'sandbox', 'sandbox_audit',
+            'audit', 'verify', 'isolate', 'sms', 'challenge', 'step_up', 'quarantine', 'kuyruk',
+            'sinirla', 'hiz_sinirlayici', 'incele', 'inceleme', 'uyar', 'uyari', 'karantina',
+            'manuel', 'denetle', 'beklet', 'dogrulama', 'karsi_teklif', 'gozden_gecir',
+            'guvenlik_incelemesi', 'ikincil', 'eko', 'eko_mod', 'kefil', 'kefil_iste'
+        }
+        block_kw = {
+            'reject', 'deny', 'block', 'drop', 'drop_packet', 'blacklist', 'alarm', 'retreat',
+            'evacuate', 'adverse', 'reject_adverse', 'terminate', 'freeze',
+            'engelle', 'reddet', 'kac', 'tahliye', 'dusur', 'kara_liste', 'durdur',
+            'baglantiyi_kes', 'hesabi_dondur', 'ret', 'acil_tahliye', 'panik', 'bloke',
+            'kes', 'siginaga_kac', 'paketi_dusur', 'islemi_reddet', 'basvuru_reddi'
+        }
 
         for i, opt in enumerate(options):
             opt_norm = normalize_text(opt)
-            opt_tokens = set(re.findall(r'\b\w+\b', opt_norm))
+            desc_norm = normalize_text(str(q_obj.criteria.get(opt, "")))
+            opt_tokens = set(re.findall(r'[a-zA-Z0-9]+', opt_norm)) | set(re.findall(r'[a-zA-Z0-9]+', desc_norm)) | {opt_norm}
             q_res = float(quad_ratios[i % 4])
             feat_idx = (i * 2) % len(vec)
             st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
             score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
 
-            # Semantic alignment
-            if bool(opt_tokens & direct_kw):
-                score_i += 3.0 if net_risk < 0.2 else -3.0
+            # Semantic alignment prioritizing defensive block / caution / direct
+            if bool(opt_tokens & block_kw):
+                score_i += 4.5 if net_risk >= 0.8 else -4.0
             elif bool(opt_tokens & caution_kw):
-                score_i += 2.5 if (0.2 <= net_risk < 1.5) else 0.0
-            elif bool(opt_tokens & block_kw):
-                score_i += 3.5 if net_risk >= 1.2 else -2.0
+                score_i += 3.5 if (0.2 <= net_risk < 1.4) else -1.5
+            elif bool(opt_tokens & direct_kw):
+                score_i += 4.0 if net_risk < 0.3 else -4.0
 
             scores.append(score_i)
 

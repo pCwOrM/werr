@@ -41,33 +41,38 @@ class AutoSeedRouter:
         # State key signatures that strongly suggest specific domains
         self._state_signatures: Dict[str, str] = {
             # Financial
-            "debt_ratio": "financial_risk", "borc_orani": "financial_risk",
-            "debt_to_income_ratio": "financial_risk", "annual_income_usd": "financial_risk",
+            "debt_ratio": "financial_risk", "borc_orani": "financial_risk", "borc_gelir_orani": "financial_risk",
+            "debt_to_income_ratio": "financial_risk", "annual_income_usd": "financial_risk", "yillik_gelir": "financial_risk",
             "loan_amount_requested": "financial_risk", "late_payments_last_2yrs": "financial_risk",
-            "income": "financial_risk", "gelir": "financial_risk",
-            "credit_score": "financial_risk", "kredi_notu": "financial_risk",
-            "requested_amount": "financial_risk", "kredi_tutari": "financial_risk",
-            "delinquencies": "financial_risk", "late_payments": "financial_risk",
+            "income": "financial_risk", "gelir": "financial_risk", "aylik_gelir": "financial_risk", "maas": "financial_risk",
+            "credit_score": "financial_risk", "kredi_notu": "financial_risk", "findeks": "financial_risk", "findeks_notu": "financial_risk",
+            "requested_amount": "financial_risk", "kredi_tutari": "financial_risk", "talep_edilen_kredi": "financial_risk",
+            "delinquencies": "financial_risk", "late_payments": "financial_risk", "gecikmis_odeme_sayisi": "financial_risk",
+            "gecikme_adedi": "financial_risk", "ihtiyac_kredisi": "financial_risk", "ev_sahibi": "financial_risk",
             # IoT Safety
-            "smoke_detected": "iot_safety", "duman": "iot_safety",
-            "gas_ppm": "iot_safety", "co_ppm": "iot_safety", "co2_ppm": "iot_safety", "gaz": "iot_safety",
-            "water_leak": "iot_safety", "su_kacagi": "iot_safety",
-            "temp_c": "iot_safety", "temperature_c": "iot_safety", "temperature": "iot_safety",
-            "humidity_pct": "iot_safety",
+            "smoke_detected": "iot_safety", "duman": "iot_safety", "duman_algilandi": "iot_safety",
+            "gas_ppm": "iot_safety", "co_ppm": "iot_safety", "co2_ppm": "iot_safety", "gaz": "iot_safety", "co2_seviyesi": "iot_safety",
+            "water_leak": "iot_safety", "su_kacagi": "iot_safety", "su_baskini": "iot_safety", "alev_algilandi": "iot_safety",
+            "temp_c": "iot_safety", "temperature_c": "iot_safety", "temperature": "iot_safety", "sicaklik": "iot_safety", "oda_sicakligi": "iot_safety",
+            "humidity_pct": "iot_safety", "nem_orani": "iot_safety", "nem": "iot_safety",
+            "motion_detected": "iot_safety", "hareket_var": "iot_safety", "hareket_algilandi": "iot_safety", "pencere_acik": "iot_safety",
             # E-Commerce Fraud
-            "order_amount": "ecommerce_fraud", "order_amount_usd": "ecommerce_fraud", "sepet_tutari": "ecommerce_fraud",
-            "velocity_1h": "ecommerce_fraud", "velocity_last_hour": "ecommerce_fraud",
-            "cvv_match": "ecommerce_fraud", "vpn_used": "ecommerce_fraud", "foreign_card": "ecommerce_fraud",
+            "order_amount": "ecommerce_fraud", "order_amount_usd": "ecommerce_fraud", "sepet_tutari": "ecommerce_fraud", "siparis_tutari": "ecommerce_fraud", "odeme_tutari": "ecommerce_fraud",
+            "velocity_1h": "ecommerce_fraud", "velocity_last_hour": "ecommerce_fraud", "islem_adedi": "ecommerce_fraud", "saatlik_islem": "ecommerce_fraud", "islem_sayisi": "ecommerce_fraud",
+            "cvv_match": "ecommerce_fraud", "vpn_used": "ecommerce_fraud", "foreign_card": "ecommerce_fraud", "yabanci_kart": "ecommerce_fraud",
+            "kart_ulkesi_farkli": "ecommerce_fraud", "vekil_sunucu": "ecommerce_fraud", "vpn_kullanimi": "ecommerce_fraud", "yeni_cihaz": "ecommerce_fraud",
             "billing_shipping_match": "ecommerce_fraud", "billing_shipping_mismatch": "ecommerce_fraud", "is_proxy": "ecommerce_fraud",
+            "ters_ibraz": "ecommerce_fraud", "fatura_teslimat_uyusmazligi": "ecommerce_fraud",
             # Game Combat
-            "ammo": "game_combat", "ammo_pct": "game_combat", "bullets": "game_combat", "mermi": "game_combat",
-            "health_pct": "game_combat", "enemy_distance_m": "game_combat", "cover_available": "game_combat",
-            "enemy_count": "game_combat", "dusman_sayisi": "game_combat",
-            "has_cover": "game_combat", "siperde": "game_combat",
+            "ammo": "game_combat", "ammo_pct": "game_combat", "bullets": "game_combat", "mermi": "game_combat", "kalan_mermi": "game_combat", "sarjor": "game_combat",
+            "health_pct": "game_combat", "enemy_distance_m": "game_combat", "cover_available": "game_combat", "can_yuzdesi": "game_combat", "can_puani": "game_combat",
+            "enemy_count": "game_combat", "dusman_sayisi": "game_combat", "hedef_sayisi": "game_combat",
+            "has_cover": "game_combat", "siperde": "game_combat", "siper_mevcut": "game_combat", "ates_altinda": "game_combat", "dusman_turu": "game_combat",
             # API Security
-            "client_ip": "api_security", "req_frequency": "api_security",
-            "failed_attempts": "api_security", "ddos_flag": "api_security", "ip_reputation_score": "api_security",
-            "auth_token": "api_security", "endpoint": "api_security"
+            "client_ip": "api_security", "req_frequency": "api_security", "istek_sikligi": "api_security",
+            "failed_attempts": "api_security", "hatali_giris_sayisi": "api_security", "hatali_istek": "api_security",
+            "ddos_flag": "api_security", "ddos_suphesi": "api_security", "ip_reputation_score": "api_security", "ip_itibar_skoru": "api_security",
+            "auth_token": "api_security", "endpoint": "api_security", "token_gecerli": "api_security", "payload_kb": "api_security"
         }
 
     def detect_domain(
@@ -85,19 +90,19 @@ class AutoSeedRouter:
         # 1. Explicit domain / category metadata (weight: 5.0)
         if state and isinstance(state, dict) and "category" in state:
             c_norm = normalize_text(str(state["category"]))
-            if "iot" in c_norm or "smart" in c_norm:
+            if any(w in c_norm for w in ["iot", "smart", "akilli", "ev", "cevre", "bina"]):
                 scores["iot_safety"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
-            elif "finan" in c_norm or "credit" in c_norm or "loan" in c_norm:
+            elif any(w in c_norm for w in ["finan", "credit", "loan", "kredi", "banka", "borc"]):
                 scores["financial_risk"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
-            elif "fraud" in c_norm or "commerce" in c_norm:
+            elif any(w in c_norm for w in ["fraud", "commerce", "ticaret", "sahtecilik", "dolandiricilik", "odeme"]):
                 scores["ecommerce_fraud"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
-            elif "game" in c_norm or "combat" in c_norm:
+            elif any(w in c_norm for w in ["game", "combat", "oyun", "savas", "catisma", "taktik", "npc"]):
                 scores["game_combat"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
-            elif "api" in c_norm or "sec" in c_norm or "gateway" in c_norm:
+            elif any(w in c_norm for w in ["api", "sec", "gateway", "guvenlik", "ag", "yetki"]):
                 scores["api_security"] += 5.0
                 matched_tokens.append(f"cat:{state['category']}")
 

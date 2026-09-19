@@ -20,19 +20,22 @@ class GameCombatGate(DomainGate):
 
     keywords = [
         "combat", "fight", "npc", "retreat", "health", "hp", "ammo", "enemy", "enemies",
-        "attack", "cover", "tactical", "weapon", "shield", "game", "bot",
-        "savas", "dovus", "saldir", "kac", "can", "mermi", "dusman", "siper", "silah", "kalkan"
+        "attack", "cover", "tactical", "weapon", "shield", "game", "bot", "sniper", "boss",
+        "savas", "dovus", "saldir", "kac", "can", "mermi", "dusman", "siper", "silah", "kalkan",
+        "taktik", "dusman_sayisi", "can_puani", "kalan_mermi", "sarjor", "ates_altinda",
+        "keskin_nisanci", "elebasi", "dron", "hasar", "yakin_dovus"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
         values = []
         net_risk = 0.0  # In combat: high risk means critical hazard (favor retreat/cover)
 
-        hp = safe_float(state.get("health_pct", state.get("health", state.get("hp", state.get("can", 100.0)))), default=100.0)
-        ammo = safe_float(state.get("ammo_pct", state.get("ammo", state.get("bullets", state.get("mermi", 50.0)))), default=50.0)
-        enemies = safe_float(state.get("enemy_count", state.get("enemies", state.get("dusman_sayisi", 1.0))), default=1.0)
-        has_cover = state.get("cover_available", state.get("has_cover", state.get("in_cover", state.get("siperde", False))))
-        under_fire = state.get("under_fire", False)
+        hp = safe_float(state.get("health_pct", state.get("health", state.get("hp", state.get("can_yuzdesi", state.get("can", state.get("saglik", 100.0)))))), default=100.0)
+        ammo = safe_float(state.get("ammo_pct", state.get("ammo", state.get("bullets", state.get("mermi", state.get("kalan_mermi", state.get("sarjor", 50.0)))))), default=50.0)
+        enemies = safe_float(state.get("enemy_count", state.get("enemies", state.get("dusman_sayisi", state.get("hedef_sayisi", 1.0)))), default=1.0)
+        has_cover = state.get("cover_available", state.get("has_cover", state.get("in_cover", state.get("siper_mevcut", state.get("siperde", False)))))
+        under_fire = state.get("under_fire", state.get("ates_altinda", state.get("saldiri_altinda", False)))
+        enemy_cls = normalize_text(str(state.get("enemy_type", state.get("enemy_class", state.get("dusman_turu", state.get("dusman_sinifi", ""))))))
 
         # 1. Health Status (0 - 100)
         if hp < 25.0:
@@ -75,6 +78,14 @@ class GameCombatGate(DomainGate):
             values.append(-0.8)
         else:
             values.append(0.4)
+
+        # 5. Under Fire / Enemy Tier Modifiers
+        if bool(under_fire):
+            net_risk += 0.8
+        if any(b in enemy_cls for b in ['boss', 'elebasi', 'heavy', 'agir_piyade', 'sniper', 'keskin_nisanci']):
+            net_risk += 1.2
+        elif any(d in enemy_cls for d in ['drone', 'dron', 'scout', 'gozcu']):
+            net_risk += 0.3
 
         while len(values) < 4:
             values.append(0.0)

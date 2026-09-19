@@ -68,16 +68,20 @@ class WevvEngine:
         semantic_roles = {
             # Admin / Superuser
             "admin": -1.5, "root": -1.5, "superuser": -1.5, "system": -1.5,
-            "yonetici": -1.5, "yetkili": -1.5, "kok": -1.5, "sistem": -1.5, "kurucu": -1.5,
-            # Member / User / Verified
+            "yonetici": -1.5, "yetkili": -1.5, "kok": -1.5, "sistem": -1.5, "kurucu": -1.5, "sistem_yoneticisi": -1.5,
+            # Member / User / Verified / Internal
             "member": -0.8, "user": -0.8, "authenticated": -1.0, "auth": -1.0, "internal": -1.0,
+            "developer": -1.2, "gelistirici": -1.2, "auditor": -1.0, "denetci": -1.0, "guvenlik_denetcisi": -1.0,
             "uye": -0.8, "kullanici": -0.8, "kayitli": -0.8, "dogrulanmis": -1.0, "ic": -1.0, "calisan": -1.0,
-            # Guest / Anonymous / Unverified
-            "guest": 0.9, "anonymous": 1.0, "unverified": 1.0,
-            "misafir": 0.9, "konuk": 0.9, "ziyaretci": 0.9, "anonim": 1.0, "dogrulanmamis": 1.0,
-            # Attacker / Malicious / Bot
+            "partner": -0.8, "is_ortagi": -0.8, "abone": -0.8, "service_bot": -0.5, "servis_botu": -0.5, "tester": -0.4,
+            # Guest / Anonymous / Unverified / Dormant
+            "guest": 0.9, "anonymous": 1.0, "unverified": 1.0, "dormant": 0.7, "dormant_revived": 0.9,
+            "misafir": 0.9, "konuk": 0.9, "ziyaretci": 0.9, "anonim": 1.0, "dogrulanmamis": 1.0, "uyuyan": 0.7,
+            # Attacker / Malicious / Bot / Pentester / Crawler
             "attacker": 2.5, "bot": 2.2, "malicious": 2.5, "hacker": 2.5, "suspicious": 1.8,
-            "saldirgan": 2.5, "kotuniyetli": 2.5, "zararli": 2.5, "supheli": 1.8, "tehdit": 2.2, "casus": 2.5
+            "saldirgan": 2.5, "kotuniyetli": 2.5, "zararli": 2.5, "supheli": 1.8, "tehdit": 2.2, "casus": 2.5,
+            "pentester": 1.2, "sizma_testi": 1.2, "crawler": 1.8, "spider": 1.8, "tarayici": 1.8, "web_kaziyici": 1.8,
+            "malware_agent": 2.5, "zararli_yazilim": 2.5, "botnet": 2.5, "korsan": 2.5, "davetsiz_misafir": 2.2
         }
 
         values = []

@@ -2513,16 +2513,26 @@ if __name__ == "__main__":
 
       rawScore = Math.max(0.0, Math.min(3.0, (fraudScore / 5.5) * 3.0));
     } else if (domain === 'finance') {
-      // Financial Credit Underwriting
-      const credit = parseFloat(stateObj.credit_score ?? stateObj.kredi_notu ?? 1000);
-      const income = parseFloat(stateObj.monthly_income ?? stateObj.aylik_gelir ?? 20000);
-      const delinquencies = parseFloat(stateObj.delinquencies ?? stateObj.gecikme_sayisi ?? 0);
-      const loan = parseFloat(stateObj.requested_amount ?? stateObj.talep_edilen_tutar ?? 50000);
+      // Financial Credit Underwriting (Findeks 0-1900 / FICO 300-850)
+      const credit = parseFloat(stateObj.credit_score ?? stateObj.kredi_notu ?? stateObj.findeks ?? stateObj.findeks_notu ?? 1000);
+      const income = parseFloat(stateObj.monthly_income ?? stateObj.aylik_gelir ?? stateObj.income ?? stateObj.gelir ?? 20000);
+      const delinquencies = parseFloat(stateObj.delinquencies ?? stateObj.gecikme_sayisi ?? stateObj.late_payments ?? 0);
+      const loan = parseFloat(stateObj.requested_amount ?? stateObj.talep_edilen_tutar ?? stateObj.kredi_tutari ?? 50000);
 
       let primeScore = 0.0;
-      if (credit >= 1450) primeScore += 2.2;
-      else if (credit >= 1200) primeScore += 1.0;
-      else primeScore -= 2.0;
+      if (credit > 900) {
+        // Turkish Findeks scale
+        if (credit >= 1700) primeScore += 2.8;
+        else if (credit >= 1500) primeScore += 1.8;
+        else if (credit >= 1200) primeScore += 0.5;
+        else if (credit >= 950) primeScore -= 1.2;
+        else primeScore -= 2.5;
+      } else {
+        // FICO scale
+        if (credit >= 740) primeScore += 2.2;
+        else if (credit >= 670) primeScore += 1.0;
+        else primeScore -= 2.0;
+      }
 
       const dti = loan / Math.max(1, income * 12);
       if (dti <= 0.35) primeScore += 1.5;
@@ -2550,13 +2560,14 @@ if __name__ == "__main__":
     } else if (domain === 'api') {
       // API Gateway & Cybersecurity
       const role = String(stateObj.role ?? stateObj.rol ?? 'member').toLowerCase();
-      const freq = parseFloat(stateObj.request_frequency ?? stateObj.istek_frekansi ?? 10);
-      const fails = parseFloat(stateObj.failed_auth_count ?? stateObj.hatali_giris_sayisi ?? 0);
+      const freq = parseFloat(stateObj.request_frequency ?? stateObj.istek_frekansi ?? stateObj.req_frequency ?? stateObj.istek_sikligi ?? 10);
+      const fails = parseFloat(stateObj.failed_auth_count ?? stateObj.hatali_giris_sayisi ?? stateObj.failed_attempts ?? 0);
 
       let threat = 0.0;
-      if (['admin', 'yonetici', 'root', 'internal'].some(r => role.includes(r))) threat -= 1.6;
-      else if (['member', 'user', 'uye'].some(r => role.includes(r))) threat -= 0.8;
-      else if (['attacker', 'saldirgan', 'bot', 'hacker'].some(r => role.includes(r))) threat += 2.8;
+      if (['admin', 'yonetici', 'root', 'internal', 'sistem', 'developer', 'gelistirici', 'auditor', 'denetci'].some(r => role.includes(r))) threat -= 1.6;
+      else if (['member', 'user', 'uye', 'partner', 'service', 'abone'].some(r => role.includes(r))) threat -= 0.8;
+      else if (['attacker', 'saldirgan', 'bot', 'hacker', 'malware', 'zararli', 'korsan'].some(r => role.includes(r))) threat += 2.8;
+      else if (['pentester', 'crawler', 'tarayici', 'spider', 'sizma_testi'].some(r => role.includes(r))) threat += 1.6;
       else threat += 0.8;
 
       threat += fails * 0.9;

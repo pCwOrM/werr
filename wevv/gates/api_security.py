@@ -21,18 +21,24 @@ class APISecurityGate(DomainGate):
     keywords = [
         "api", "gateway", "token", "auth", "authorize", "rate_limit", "endpoint", "bearer",
         "permission", "access", "ip", "client_ip", "request", "security", "firewall", "waf",
-        "yetki", "erisim", "istek", "guvenlik", "ag", "anahtar", "dogrulama"
+        "yetki", "erisim", "istek", "guvenlik", "ag", "anahtar", "dogrulama", "ag_gecidi",
+        "saldirgan", "denetci", "tarayici", "guvenlik_duvari", "istek_sikligi", "ddos", "waf",
+        "crawler", "pentester", "auditor", "threat", "ip_itibari"
     ]
 
     def project_state(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
         semantic_roles = {
             "admin": -1.5, "root": -1.5, "superuser": -1.5, "system": -1.5,
-            "yonetici": -1.5, "yetkili": -1.5, "kok": -1.5, "sistem": -1.5,
+            "yonetici": -1.5, "yetkili": -1.5, "kok": -1.5, "sistem": -1.5, "sistem_yoneticisi": -1.5,
+            "developer": -1.2, "gelistirici": -1.2, "auditor": -1.0, "denetci": -1.0, "guvenlik_denetcisi": -1.0,
             "member": -0.8, "user": -0.8, "authenticated": -1.0, "auth": -1.0, "internal": -1.0,
-            "uye": -0.8, "kullanici": -0.8, "dogrulanmis": -1.0,
+            "uye": -0.8, "kullanici": -0.8, "dogrulanmis": -1.0, "abone": -0.8, "partner": -0.8, "is_ortagi": -0.8,
+            "service_bot": -0.5, "servis_botu": -0.5, "tester": -0.4, "test_uzmani": -0.4,
             "guest": 0.9, "anonymous": 1.0, "unverified": 1.0, "misafir": 0.9, "anonim": 1.0,
+            "pentester": 1.2, "sizma_testi": 1.2, "crawler": 1.8, "spider": 1.8, "tarayici": 1.8, "web_kaziyici": 1.8,
             "attacker": 2.5, "bot": 2.2, "malicious": 2.5, "hacker": 2.5, "suspicious": 1.8,
-            "saldirgan": 2.5, "kotuniyetli": 2.5, "zararli": 2.5, "supheli": 1.8
+            "saldirgan": 2.5, "kotuniyetli": 2.5, "zararli": 2.5, "supheli": 1.8,
+            "malware_agent": 2.5, "zararli_yazilim": 2.5, "botnet": 2.5, "korsan": 2.5, "davetsiz_misafir": 2.2
         }
 
         values = []
@@ -43,16 +49,18 @@ class APISecurityGate(DomainGate):
             if isinstance(v, (int, float)):
                 norm_val = 2.0 / (1.0 + math.exp(-float(v) / 10.0 if abs(v) < 700 else (-1.0 if v < 0 else 1.0))) - 1.0
                 values.append(norm_val)
-                if any(w in kl for w in ['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz']):
+                if any(w in kl for w in ['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'deneme']):
                     net_risk += (float(v) / 5.0) * 1.5
                 elif any(w in kl for w in ['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'frekans']):
                     net_risk += (float(v) / 50.0) * 1.0
-                elif any(w in kl for w in ['payload', 'byte', 'kb', 'boyut', 'paket']):
+                elif any(w in kl for w in ['payload', 'byte', 'kb', 'boyut', 'paket', 'veri']):
                     net_risk += (float(v) / 500.0) * 0.5
             elif isinstance(v, bool):
                 values.append(1.0 if v else -1.0)
-                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified', 'guvenli', 'onayli']):
+                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified', 'guvenli', 'onayli', 'gecerli', 'admin']):
                     net_risk += -0.8 if v else 1.2
+                elif any(w in kl for w in ['ddos', 'attack', 'malicious', 'supheli', 'saldiri']):
+                    net_risk += 2.5 if v else -0.5
             elif isinstance(v, str):
                 vl = normalize_text(v)
                 matched = False
