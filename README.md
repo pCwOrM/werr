@@ -279,17 +279,22 @@ To calibrate and continuously optimize the universal fractal decision map, `wevv
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
 * **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
 
-### 📊 Live Public Dataset (969+ Decisions)
+### 📊 Live Public Dataset (1,090+ Decisions / 3,000+ Questions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (969+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
+* 📑 **Empirical Test Reports:**
+  - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
+  - [Batch #2 (Scenarios 21–40)](docs/reports/batch2_telemetry_report_en.md) | [Türkçe](docs/reports/batch2_telemetry_report_tr.md)
+  - [Batch #3: 100-Question Dynamic Calibration & Stress Test](docs/reports/batch3_dynamic_calibration_100q_report_en.md) | [Türkçe](docs/reports/batch3_dynamic_calibration_100q_report_tr.md)
 
 ### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2)
 While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `wevv` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
 * **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
 * **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net\_risk} \cdot 0.8)$.
+* **Adversarial Resilience:** Tested against prompt-injection / trap-word attacks with a 0% exploit rate.
 * **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
