@@ -164,16 +164,16 @@ Instead of training dense neural networks that require billions of parameters, a
 In version 0.2.0, `wevv` introduces the **Multi-Domain Auto-Seed Router** (`AutoSeedRouter`). While earlier iterations used a monolithic boundary seed ($c_x \approx -0.747, c_y \approx 0.131$), evaluating distinct domains requires dynamically hopping into the topological coordinates where each domain's feature derivatives resonate with maximum sensitivity.
 
 ### 🔬 Empirical Ablation Study (Monolithic Seed vs. Auto-Seed Router)
-Evaluated across $N = 231$ empirical telemetry decisions from production traffic and validation sets:
+Evaluated across $N = 336$ empirical telemetry decisions from production traffic and multi-batch validation sets:
 
 | Operational Domain | Sample Size ($N$) | Monolithic Seed Acc | **Auto-Seed Router Acc** | Net Gain ($\Delta$) | Avg Confidence | Inference Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **API Gateway & Security** | 63 | 88.9% | **90.5%** | $+1.6\%$ | 91.8% | 5.21 ms |
-| **Smart Home & IoT Safety** | 40 | 85.0% | **100.0%** | $+15.0\%$ | 100.0% | 5.56 ms |
-| **E-Commerce Fraud** | 40 | 55.0% | **90.0%** | $+35.0\%$ | 100.0% | 5.32 ms |
-| **Game AI & NPC Combat** | 40 | 40.0% | **95.0%** | $+55.0\%$ | 100.0% | 4.51 ms |
-| **Financial Risk & Credit** | 40 | 35.0% | **100.0%** | $+65.0\%$ | 100.0% | 7.27 ms |
-| **OVERALL MACRO ACCURACY** | **223** | **63.7%** | **94.6%** | **+30.9%** | **98.4%** | **5.54 ms** |
+| **API Gateway & Security** | 85 | 83.5% | **87.1%** | $+3.5\%$ | 93.9% | 3.42 ms |
+| **Smart Home & IoT Safety** | 61 | 85.2% | **98.4%** | $+13.1\%$ | 100.0% | 3.31 ms |
+| **E-Commerce Fraud** | 60 | 56.7% | **85.0%** | $+28.3\%$ | 100.0% | 3.29 ms |
+| **Game AI & NPC Combat** | 60 | 50.0% | **95.0%** | $+45.0\%$ | 100.0% | 3.17 ms |
+| **Financial Risk & Credit** | 60 | 35.0% | **100.0%** | $+65.0\%$ | 100.0% | 3.33 ms |
+| **OVERALL MACRO ACCURACY** | **326** | **63.8%** | **92.6%** | **+28.8%** | **98.0%** | **3.31 ms** |
 
 *All inferences executed with **0 Bytes of neural tensor memory** (VRAM/RAM) and strict determinism.*
 
@@ -218,10 +218,10 @@ To calibrate and continuously optimize the universal fractal decision map, `wevv
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
 * **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
 
-### 📊 Live Public Dataset (231+ Decisions)
+### 📊 Live Public Dataset (336+ Decisions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported daily as an open science benchmark:
 
-* 🌐 **Direct Download (231+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (336+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
 
 ### 🛡️ Server Hardening & Defensive Architecture
