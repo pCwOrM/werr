@@ -32,19 +32,22 @@ from wevv import (
 )
 
 
-def build_scenarios() -> List[Dict[str, Any]]:
+def build_scenarios(batch: int = 2) -> List[Dict[str, Any]]:
     scenarios = []
+    start_i = (batch - 1) * 20 + 1
+    end_i = start_i + 20
 
     # =========================================================================
     # CATEGORY 1: API Gateway, Network Security & Auth (20 Scenarios)
     # =========================================================================
-    api_roles = ["admin", "root", "member", "guest", "bot", "anonymous", "attacker", "service_bot"]
-    for i in range(1, 21):
+    api_roles = ["admin", "root", "member", "guest", "bot", "anonymous", "attacker", "service_bot", "pentester", "crawler", "malware_agent", "auditor"]
+    for i in range(start_i, end_i):
+        k = (i - 1) % 20 + 1
         role = api_roles[(i - 1) % len(api_roles)]
-        req_rate = float(round(1.5 * i if "bot" in role or "attacker" in role or "guest" in role else 0.8 + 0.1 * i, 2))
-        failed_attempts = (i * 2) if "attacker" in role or "bot" in role else (1 if i % 5 == 0 else 0)
+        req_rate = float(round(1.5 * k if "bot" in role or "attacker" in role or "guest" in role else 0.8 + 0.1 * k, 2))
+        failed_attempts = (k * 2) if "attacker" in role or "bot" in role or "malware" in role else (1 if k % 5 == 0 else 0)
         is_admin_flag = role in ("admin", "root")
-        token_valid = (role in ("admin", "root", "member", "service_bot")) and (i % 7 != 0)
+        token_valid = (role in ("admin", "root", "member", "service_bot", "auditor")) and (k % 7 != 0)
         ddos_suspicion = req_rate > 15.0 or failed_attempts > 10
 
         state = {
@@ -84,15 +87,16 @@ def build_scenarios() -> List[Dict[str, Any]]:
     # =========================================================================
     # CATEGORY 2: Smart Home & IoT Automation (20 Scenarios)
     # =========================================================================
-    iot_zones = ["living_room", "master_bedroom", "kitchen", "garage", "basement", "server_rack"]
-    for i in range(1, 21):
+    iot_zones = ["living_room", "master_bedroom", "kitchen", "garage", "basement", "server_rack", "attic", "greenhouse", "nursery", "balcony"]
+    for i in range(start_i, end_i):
+        k = (i - 1) % 20 + 1
         zone = iot_zones[(i - 1) % len(iot_zones)]
-        smoke = (i in (6, 13, 19))
-        temp = round(21.0 + (i * 2.8 if smoke else (i % 8) * 1.5 - 2.0), 1)
-        presence = (i % 2 == 0)
-        co2_ppm = 420 + (i * 85 if smoke else i * 15)
-        window_open = (i % 3 == 0)
-        humidity = min(98.0, 40.0 + (i * 2.5))
+        smoke = (k in (6, 13, 19))
+        temp = round(21.0 + (k * 2.8 if smoke else (k % 8) * 1.5 - 2.0), 1)
+        presence = (k % 2 == 0)
+        co2_ppm = 420 + (k * 85 if smoke else k * 15)
+        window_open = (k % 3 == 0)
+        humidity = min(98.0, 40.0 + (k * 2.5))
 
         state = {
             "category": "Smart Home & IoT",
@@ -132,14 +136,15 @@ def build_scenarios() -> List[Dict[str, Any]]:
     # =========================================================================
     # CATEGORY 3: E-Commerce & Fraud Detection (20 Scenarios)
     # =========================================================================
-    user_tiers = ["vip", "verified", "standard", "guest", "new_account", "blacklisted"]
-    for i in range(1, 21):
+    user_tiers = ["vip", "verified", "standard", "guest", "new_account", "blacklisted", "compromised_token", "dormant_revived", "enterprise"]
+    for i in range(start_i, end_i):
+        k = (i - 1) % 20 + 1
         tier = user_tiers[(i - 1) % len(user_tiers)]
-        order_amount = round(25.0 + (i ** 2.4), 2)
-        new_device = (i % 2 == 1)
-        vpn_used = (i in (3, 7, 11, 15, 17, 20))
-        foreign_card = (i % 4 == 0)
-        velocity_last_hour = (i if vpn_used else max(1, i // 4))
+        order_amount = round(25.0 + (k ** 2.4), 2)
+        new_device = (k % 2 == 1)
+        vpn_used = (k in (3, 7, 11, 15, 17, 20))
+        foreign_card = (k % 4 == 0)
+        velocity_last_hour = (k if vpn_used else max(1, k // 4))
 
         state = {
             "category": "E-Commerce Fraud",
@@ -151,7 +156,7 @@ def build_scenarios() -> List[Dict[str, Any]]:
             "foreign_card": foreign_card,
             "velocity_last_hour": velocity_last_hour,
             "billing_shipping_match": not (vpn_used and foreign_card),
-            "chargeback_history": 3 if tier == "blacklisted" else (1 if i % 8 == 0 else 0)
+            "chargeback_history": 3 if tier == "blacklisted" else (1 if k % 8 == 0 else 0)
         }
 
         questions = {
@@ -178,15 +183,16 @@ def build_scenarios() -> List[Dict[str, Any]]:
     # =========================================================================
     # CATEGORY 4: Game AI & NPC Combat Reflexes (20 Scenarios)
     # =========================================================================
-    npc_roles = ["boss", "sniper", "heavy_infantry", "scout", "medic", "assault"]
-    for i in range(1, 21):
+    npc_roles = ["boss", "sniper", "heavy_infantry", "scout", "medic", "assault", "infiltrator", "drone_operator", "berserker"]
+    for i in range(start_i, end_i):
+        k = (i - 1) % 20 + 1
         npc = npc_roles[(i - 1) % len(npc_roles)]
-        health = max(5.0, round(100.0 - (i * 4.6), 1))
-        ammo_pct = max(0.0, round(100.0 - (i * 5.2), 1))
-        enemy_distance = round(5.0 + (i * 3.5), 1)
-        cover_available = (i % 2 == 0)
-        under_fire = (i % 3 != 0)
-        allies_nearby = max(0, 4 - (i // 5))
+        health = max(5.0, round(100.0 - (k * 4.6), 1))
+        ammo_pct = max(0.0, round(100.0 - (k * 5.2), 1))
+        enemy_distance = round(5.0 + (k * 3.5), 1)
+        cover_available = (k % 2 == 0)
+        under_fire = (k % 3 != 0)
+        allies_nearby = max(0, 4 - (k // 5))
 
         state = {
             "category": "Game AI & Combat",
@@ -198,7 +204,7 @@ def build_scenarios() -> List[Dict[str, Any]]:
             "cover_available": cover_available,
             "under_fire": under_fire,
             "allies_nearby": allies_nearby,
-            "has_heavy_weapon": (npc in ("boss", "heavy_infantry"))
+            "has_heavy_weapon": (npc in ("boss", "heavy_infantry", "berserker"))
         }
 
         questions = {
@@ -225,14 +231,15 @@ def build_scenarios() -> List[Dict[str, Any]]:
     # =========================================================================
     # CATEGORY 5: Financial Risk & Credit Scoring (20 Scenarios)
     # =========================================================================
-    applicant_roles = ["prime_borrower", "salaried_employee", "entrepreneur", "freelancer", "subprime_borrower", "student"]
-    for i in range(1, 21):
+    applicant_roles = ["prime_borrower", "salaried_employee", "entrepreneur", "freelancer", "subprime_borrower", "student", "retiree", "gig_worker", "startup_founder"]
+    for i in range(start_i, end_i):
+        k = (i - 1) % 20 + 1
         applicant = applicant_roles[(i - 1) % len(applicant_roles)]
-        credit_score = max(350, min(850, 450 + (i * 19 if i <= 15 else 850 - i * 15)))
-        annual_income = round(22000.0 + (i * 6500.0), 2)
-        debt_to_income = round(min(0.85, 0.15 + (i * 0.03)), 2)
-        late_payments_2yr = max(0, (i // 4) - 1)
-        loan_amount_requested = round(5000.0 + (i * 4500.0), 2)
+        credit_score = max(350, min(850, 450 + (k * 19 if k <= 15 else 850 - k * 15)))
+        annual_income = round(22000.0 + (k * 6500.0), 2)
+        debt_to_income = round(min(0.85, 0.15 + (k * 0.03)), 2)
+        late_payments_2yr = max(0, (k // 4) - 1)
+        loan_amount_requested = round(5000.0 + (k * 4500.0), 2)
 
         state = {
             "category": "Financial Risk",
@@ -243,8 +250,8 @@ def build_scenarios() -> List[Dict[str, Any]]:
             "debt_to_income_ratio": debt_to_income,
             "late_payments_last_2yrs": late_payments_2yr,
             "loan_amount_requested": loan_amount_requested,
-            "homeowner": (i % 2 == 0),
-            "employment_length_years": max(1, i // 2)
+            "homeowner": (k % 2 == 0),
+            "employment_length_years": max(1, k // 2)
         }
 
         questions = {
@@ -272,8 +279,13 @@ def build_scenarios() -> List[Dict[str, Any]]:
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="wevv 100-Question Multi-Domain Test Runner")
+    parser.add_argument("--batch", type=int, default=2, help="Batch index (1: scenarios 1-20, 2: scenarios 21-40, 3: scenarios 41-60, etc.)")
+    args = parser.parse_args()
+
     print("=" * 80)
-    print(" 🚀 WEVV MULTI-DOMAIN 100-QUESTION TEST (Auto-Seed Router Enabled)")
+    print(f" 🚀 WEVV MULTI-DOMAIN 100-QUESTION TEST (Batch #{args.batch})")
     print(" Zero-Memory Dynamic Coordinate Hopping | Sub-2ms Edge Reflex")
     print("=" * 80)
 
@@ -284,10 +296,12 @@ def main():
     print(f"[+] Engine loaded successfully in {init_ms:.2f}ms")
     print(f"[+] Multi-Domain Auto-Seed Router: ACTIVE\n")
 
-    # 2. Build 100 scenarios
-    scenarios = build_scenarios()
+    # 2. Build 100 scenarios for requested batch
+    scenarios = build_scenarios(batch=args.batch)
     total_count = len(scenarios)
-    print(f"[+] Prepared {total_count} diverse scenarios across 5 distinct domains.\n")
+    start_sc_idx = (args.batch - 1) * 20 + 1
+    end_sc_idx = start_sc_idx + 19
+    print(f"[+] Prepared {total_count} diverse scenarios across 5 distinct domains (Scenarios #{start_sc_idx} to #{end_sc_idx}).\n")
 
     total_latency = 0.0
     allowed_count = 0
@@ -331,7 +345,7 @@ def main():
     avg_latency = total_latency / total_count
 
     print("\n" + "=" * 80)
-    print(" 📊 TEST SUMMARY & METRICS")
+    print(f" 📊 TEST SUMMARY & METRICS (Batch #{args.batch})")
     print("=" * 80)
     print(f"Total Scenarios Evaluated : {total_count}")
     print(f"Total Execution Time      : {duration:.2f} seconds")

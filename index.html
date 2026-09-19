@@ -2529,10 +2529,21 @@ if __name__ == "__main__":
       }
     }
 
-    // Dynamic fractal coordinates
-    const baseCx = -0.74364 + (netRisk * 0.004);
-    const baseCy = 0.13182 - (netRisk * 0.004);
-    const dynamicZoom = 50.0 * (1.0 + Math.abs(netRisk) * 0.2);
+    // Calibrated multi-domain coordinate seeds (v0.2.0 Auto-Seed Router)
+    let domainCx = -0.747024, domainCy = 0.131933, domainZoom = 108.0; // default api_security
+    if (activeCustomPreset === 'iot') {
+      domainCx = -0.747446; domainCy = 0.108974; domainZoom = 78.9;
+    } else if (activeCustomPreset === 'fraud') {
+      domainCx = -0.755587; domainCy = 0.079838; domainZoom = 63.1;
+    } else if (activeCustomPreset === 'npc') {
+      domainCx = -0.751381; domainCy = 0.120816; domainZoom = 58.6;
+    } else if (activeCustomPreset === 'finance') {
+      domainCx = -0.743020; domainCy = 0.061135; domainZoom = 54.1;
+    }
+
+    const baseCx = domainCx + (netRisk * (0.45 / domainZoom));
+    const baseCy = domainCy - (netRisk * (0.45 / domainZoom));
+    const dynamicZoom = domainZoom * (1.0 + Math.abs(netRisk) * 0.15);
 
     const customCanvas = document.getElementById('custom-mandelbrot-canvas');
     if (customCanvas) {
@@ -2746,7 +2757,7 @@ GitHub Deposu           : https://github.com/pCwOrM/wevv
 
     const payload = {
       timestamp: new Date().toISOString(),
-      version: "wevv-0.1.0-web",
+      version: "wevv-0.2.0-web",
       source: "web",
       recaptcha_token: token || undefined,
       seed: {
