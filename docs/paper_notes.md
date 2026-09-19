@@ -27,24 +27,27 @@ Türkçenin ve Ural-Altay dillerinin fonetiği diğer dillere kıyasla en katık
 1. **Tınlama / Tinleme Sesi (Pozitif Sinyal):** Sert sessizlerin ($T, P, Ç, K$) akustik enerjisini koruduğu, net rezonans üreten sinyal yapısıdır.
 2. **İnleme Sesi (Negatif Sinyal / Erozyon):** Hint-Avrupa dillerinde görülen ses yumuşamasıdır. $T$ sesinden parçacık ve enerji kaçışı yaşandığında ses $D$'ye döner; $P$ sesinde kaçış olduğunda $F$'ye döner (patlak hale gelir). Bu durum dilin erozyona uğraması, enerjisinin boşalması ve sinyalin gürültüye teslim olmasıdır.
 
-*Yapay Zekadaki Karşılığı:* Metin işleme ve karar triyajında açıklamalara gizlenen truva atı veya tuzak kelimeler sinyali erozyona uğratır. Bu prensipten hareketle **Akustik Tınlama İndeksi ($\mathcal{T}$)** ve **Harmonik Akor Rezonansı ($\mathcal{H} = \Phi \otimes \Psi \otimes \Omega$)** geliştirilmiştir. Şıkkın ana kök tonu tam güçle rezonansa sokulurken ($\mathcal{T}_{\text{key}} = 1.0$), açıklamalardaki tuzak ve süs kelimeler $\mathcal{T}_{\text{desc}} = 0.045$ katsayısıyla sönümlenerek tuzak kelimelerin kararı zehirlemesi (%0 exploit rate) engellenmiştir.
+#### 2.2 Çapraz Alan Semantik Entrainment: "Alandışındaki Birbirini Görme ve Ağırlık Kayırma"
+Sistem alan dışına (Out-Of-Domain - OOD) düştüğünde ortaya çıkan en tehlikeli olgu, alt kapılardaki veya şıklardaki bazı kelimelerin bağlam düşeni görerek "birbiriyle titreşmesi / birbirini görmesi" ve bunun sonucunda haksız bir **ağırlık kayırmacılığı (weight favoritism / bias)** yaratmasıdır. Örneğin, sıradan bir kimya veya uzay sorusu içinde geçen masum bir "acil", "doğrudan" veya "kritik" ifadesi, güvenlik kapısının refleksini tetikleyerek sanki bir siber saldırı varmış gibi o şıkka ağırlık iltiması geçer. 
 
-#### 2.2 Bakırın Direnci, Kablo Isınması ve Ekolojik / Anti-Sömürü Duruşu
+*Yapay Zekadaki Karşılığı:* Bu tehlikeyi bertaraf etmek için **Akustik Tınlama İndeksi ($\mathcal{T}$)** ve **Harmonik Akor Rezonansı ($\mathcal{H} = \Phi \otimes \Psi \otimes \Omega$)** geliştirilmiştir. Şıkkın ana kök tonu tam güçle rezonansa sokulurken ($\mathcal{T}_{\text{key}} = 1.0$), açıklamalardaki tuzak ve süs kelimeler $\mathcal{T}_{\text{desc}} = 0.045$ katsayısıyla sönümlenir. Durum (State), Soru (Question) ve Şık (Option) üçlüsü aynı harmonik akorda buluşmadıkça alan dışı sahte titreşimler sönümlenir ve ağırlık kayırmacılığı (%0 exploit rate) imkansız kılınır.
+
+#### 2.3 Bakırın Direnci, Kablo Isınması ve Ekolojik / Anti-Sömürü Duruşu
 Merkezi LLM sağlayıcıları (TypeSafe, OpenAI vb.) ve bulut API modelleri, geliştiricileri sürekli paralı bekleme kuyruklarına ve request/response bağımlılığına mahkum eden rant odaklı yapılardır. Milyarlarca insanın en basit operasyonel kararlar için bile kıtalararası kabloları, uyduları ve bant genişliğini tüketmesi fiziksel olarak sürdürülemezdir. Bakır kabloların bir elektriksel direnci ve termodinamik ısınma sınırı vardır; gereksiz her ağ sinyali gezegene ısı ve entropi yayar.
 
 *Yapay Zekadaki Karşılığı:* Kararı fiziksel uç cihazda (edge), 0 Byte ağırlık tensörü ve 24 baytlık koordinat tohumu ile deterministik olarak üretmek; bakırı ısıtmayan, bant genişliğini tüketmeyen ve sermaye tekellerine bağımlı olmayan ekolojik bir özgürleşmedir.
 
-#### 2.3 Soba Refleksi (Kahneman Sistem-1 Biyolojik Refleks Arkı)
+#### 2.4 Soba Refleksi (Kahneman Sistem-1 Biyolojik Refleks Arkı)
 İnsan eli kızgın bir sobaya değdiğinde, somatik sinir sistemi beynin korteksindeki dil ve felsefi muhakeme merkezini (Sistem-2) uyandırıp "Bu yüzeyin sıcaklığı nedir, elimi çekmeli miyim?" diye düşünmez. Omurilikteki refleks arkı milisaniyeler içinde kasları kasarak eli geri çeker.
 
 *Yapay Zekadaki Karşılığı:* Ağ geçitleri, robotik sistemler ve endüstriyel fırınlar için deterministik bir Sistem-1 refleks kapısı oluşturmaktır. Kararlar ağır dil modellerine gitmeden önce 3-7 ms içinde tip güvenli (`noul`, `choice`, `score`) olarak triyaj edilir.
 
-#### 2.4 Hata Sınırıyla Motor Öğrenme (Çekiç-Parmak ve Bisiklet Sürme)
+#### 2.5 Hata Sınırıyla Motor Öğrenme (Çekiç-Parmak ve Bisiklet Sürme)
 İnsan beyni motor becerileri (bisiklet sürmeyi veya çekiçle çivi çakmayı) milyonlarca homojen ağırlık matrisinde yüz binlerce kör gradyan inişi yaparak öğrenmez. Çekiç bir kez parmağa vurduğunda oluşan keskin *hata sınırı (error boundary)* sayesinde motor refleks yaklaşık 300 odaklanmış denemede kalibre olur.
 
 *Yapay Zekadaki Karşılığı:* Mandelbrot kümesinin kaotik sınırı ($\partial \mathcal{M}$), tam olarak bu içsel kararlılık (başarı) ile dışsal kaçış (hata) arasındaki Lyapunov sınırını temsil eder.
 
-#### 2.5 W-E-VV Prensibi
+#### 2.6 W-E-VV Prensibi
 * **W (Wave):** Karmaşık faz uzayında salınan sürekli dinamik yörünge.
 * **E (Error):** Euler kaçış eşiği ($|Z_n| > 2$).
 * **VV (Subdivide):** 4 kuadranlı özyinelemeli fraktal ayrışma.
