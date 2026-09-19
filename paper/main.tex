@@ -213,20 +213,24 @@ The engine executes natural language parsing through two synchronized layers:
 
 \section{Algorithmic Innovations (v0.2.x)}
 
-\subsection{Phonetic Mechanics: The Acoustic Tınlama Principle}
-In human linguistics, acoustic signal transmission exhibits varying degrees of fidelity. In Turkish and Ural-Altaic phonetics, consonants ($T, P, Ç, K$) are pronounced with sharp, metallic, explosive acoustic releases (referred to as \textit{tınlama} or pure resonance), preserving maximal signal energy and phonetic clarity. In contrast, phonetic erosion in many Indo-European dialects softens unvoiced plosives into voiced fricatives ($T \to D, P \to F$), dissipating energy into acoustic entropy (\textit{inleme} or decaying signal).
+\subsection{Phonetic Mechanics: Acoustic Tınlama (Resonance) vs. İnleme (Dispersion)}
+In human linguistics, acoustic signal transmission exhibits varying degrees of fidelity and physical coherence. In Turkish and Ural-Altaic phonetics, consonants ($T, P, Ç, K$) are articulated with sharp, metallic, explosive acoustic releases (referred to as \textit{tınlama} or coherent metallic resonance), preserving maximal signal energy and phonetic clarity. In contrast, phonetic erosion across many Indo-European dialects softens unvoiced plosives into voiced fricatives ($T \to D, P \to F$). This transformation represents a physical leakage of momentum and acoustic particles, dissipating coherent signal energy into acoustic dispersion, entropy, and spatial scattering (termed \textit{inleme}, decaying signal, or dissipative dispersion).
 
-In natural language decision systems, a parallel vulnerability occurs: when descriptive question prose contains incidental high-salience words (e.g., ``emergency'', ``nuclear'', ``critical''), naive keyword parsers suffer from \textit{semantic resonance leakage}, erroneously selecting unrelated options.
+In natural language decision systems, a direct structural analogy emerges:
+\begin{itemize}
+    \item \textbf{Tınlama (Coherent Key Signal):} Canonical option keys and core action verbs carry unattenuated, high-integrity decision energy ($\mathcal{T}_{\text{key}} = 1.0$), resonating cleanly through the gate.
+    \item \textbf{İnleme (Dissipative Dispersion \& Semantic Leakage):} Incidental descriptive filler, verbose prose, and adversarial decoy tokens lack cohesive structural backing. If left unconstrained, they dissipate energy across gate boundaries, inducing \textit{semantic resonance leakage} and triggering false positive decisions.
+\end{itemize}
 
-To preserve signal integrity, we formulate \textbf{Chordial Semantic Resonance}. An operational decision is evaluated as a harmonic musical triad $\mathcal{H}$:
+To preserve signal integrity and suppress this dissipative dispersion (\textit{inleme}), we formulate \textbf{Chordial Semantic Resonance}. An operational decision is evaluated as a harmonic musical triad $\mathcal{H}$:
 \begin{equation}
 \mathcal{H} = \Phi(\text{State}) \otimes \Psi(\text{Question}) \otimes \Omega(\text{Option})
 \end{equation}
-Unless all three components align in harmonic polarity, isolated keywords are treated as acoustic noise. We introduce the \textbf{Acoustic Tınlama Index} $\mathcal{T}$, which assigns undamped unit gain ($\mathcal{T}_{\text{key}} = 1.0$) to canonical option keys while heavily attenuating secondary descriptive filler:
+Unless all three components align in harmonic polarity, isolated keywords are treated as dispersed acoustic noise. We introduce the \textbf{Acoustic Tınlama Index} $\mathcal{T}$, which assigns undamped unit gain ($\mathcal{T}_{\text{key}} = 1.0$) to canonical option keys while heavily attenuating secondary descriptive filler:
 \begin{equation}
 \mathcal{T}_{\text{desc}} = 0.045
 \end{equation}
-This $95.5\%$ attenuation strips Trojan decoy words of malicious influence, protecting the engine from adversarial prompt-injection.
+This $95.5\%$ attenuation quenches the dissipative leakage of \textit{inleme}, stripping Trojan decoy words of malicious influence and protecting the engine from adversarial prompt-injection (0\% vulnerability).
 
 \paragraph{Cross-Domain Entrainment \& Mitigation of Weight Favoritism}
 When inputs fall outside calibrated training domains (Out-Of-Domain / OOD), an unmitigated keyword parser risks \textit{cross-domain semantic entrainment}---a phenomenon where peripheral tokens in unrelated fields (e.g., an incidental mention of ``direct action'' in astrophysics) accidentally couple with active sub-gate triggers in cybersecurity. In unstructured systems, this creates severe \textit{weight favoritism} (spurious bias toward whatever domain shares incidental vocabulary with the prompt). Under Chordial Resonance, orthogonal harmonic decoupling ensures that unless the state context $\Phi(\text{State})$ and option semantics $\Omega(\text{Option})$ corroborate the signal in a unified musical chord, out-of-domain cross-talk is suppressed, eliminating weight favoritism without brittle regex blacklists.

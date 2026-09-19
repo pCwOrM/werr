@@ -532,24 +532,31 @@ window.MathJax = {
 
   <h2>IV. Algorithmic Innovations (v0.2.x)</h2>
 
-  <h3>A. Phonetic Mechanics: The Acoustic Tınlama Principle</h3>
+  <h3>A. Phonetic Mechanics: Acoustic Tınlama (Resonance) vs. İnleme (Dispersion)</h3>
   <p>
-    In human linguistics, acoustic signal transmission exhibits varying fidelity. In Turkish and Ural-Altaic phonetics, consonants (\(T, P, Ç, K\)) are pronounced with sharp, metallic acoustic releases (<em>tınlama</em> or pure resonance), preserving maximal signal energy. In contrast, phonetic softening in many Indo-European dialects softens unvoiced plosives into voiced fricatives (\(T \to D, P \to F\)), dissipating energy into acoustic entropy (<em>inleme</em> or decaying signal).
+    In human linguistics, acoustic signal transmission exhibits varying degrees of fidelity and physical coherence. In Turkish and Ural-Altaic phonetics, consonants (\(T, P, Ç, K\)) are articulated with sharp, metallic, explosive releases (referred to as <em>tınlama</em> or coherent metallic resonance), preserving maximal signal energy and phonetic clarity. In contrast, phonetic softening across many Indo-European dialects softens unvoiced plosives into voiced fricatives (\(T \to D, P \to F\)). This transformation represents a physical leakage of momentum and acoustic particles, dissipating coherent signal energy into acoustic dispersion, entropy, and spatial scattering (termed <em>inleme</em>, decaying signal, or dissipative dispersion).
   </p>
   <p>
-    In natural language triage, a parallel vulnerability occurs: when descriptive prose contains incidental high-salience words (e.g., &ldquo;emergency&rdquo;, &ldquo;critical&rdquo;), naive parsers suffer from semantic resonance leakage. To preserve signal integrity, we formulate <strong>Chordial Semantic Resonance</strong>:
+    In natural language decision systems, a direct structural analogy emerges:
+  </p>
+  <p>
+    &bull; <strong>Tınlama (Coherent Key Signal):</strong> Canonical option keys and core action verbs carry unattenuated, high-integrity decision energy (\(\mathcal{T}_{\text{key}} = 1.0\)), resonating cleanly through the gate.<br>
+    &bull; <strong>İnleme (Dissipative Dispersion & Semantic Leakage):</strong> Incidental descriptive filler, verbose prose, and adversarial decoy tokens lack cohesive structural backing. If left unconstrained, they dissipate energy across gate boundaries, inducing <em>semantic resonance leakage</em> and triggering false positive decisions.
+  </p>
+  <p>
+    To preserve signal integrity and suppress this dissipative dispersion (<em>inleme</em>), we formulate <strong>Chordial Semantic Resonance</strong>:
   </p>
   <div class="equation">
     \(\mathcal{H} = \Phi(\text{State}) \otimes \Psi(\text{Question}) \otimes \Omega(\text{Option})\)
   </div>
   <p>
-    We introduce the <strong>Acoustic Tınlama Index</strong> \(\mathcal{T}\), assigning undamped unit gain (\(\mathcal{T}_{\text{key}} = 1.0\)) to option keys while heavily attenuating secondary descriptive filler:
+    We introduce the <strong>Acoustic Tınlama Index</strong> \(\mathcal{T}\), assigning undamped unit gain (\(\mathcal{T}_{\text{key}} = 1.0\)) to canonical option keys while heavily attenuating secondary descriptive filler:
   </p>
   <div class="equation">
     \(\mathcal{T}_{\text{desc}} = 0.045\)
   </div>
   <p>
-    This 95.5% attenuation neutralizes Trojan decoy words, achieving 0% exploit vulnerability.
+    This 95.5% attenuation quenches the dissipative leakage of <em>inleme</em>, stripping Trojan decoy words of malicious influence and protecting the engine from adversarial prompt-injection (0% vulnerability).
   </p>
 
   <h3>B. Cross-Domain Entrainment & Weight Favoritism Mitigation</h3>
