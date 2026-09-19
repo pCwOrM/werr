@@ -437,27 +437,14 @@
     .sim-tab-btn:hover {
       border-color: var(--cyan);
       color: var(--text-main);
-      transform: translateY(-1px);
-    }
-
-    .sim-tab-btn.active {
-      background: var(--cyan);
-      color: #ffffff;
-      border-color: var(--cyan);
-      box-shadow: 0 0 16px var(--cyan-glow);
-    }
-
-    html.dark .sim-tab-btn.active {
-      color: #07090e;
-    }
-
-    /* Preset Chips for Custom Playground */
+    /* Unified Preset Sector Chips */
     .preset-chips-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
       align-items: center;
+      padding: 0.25rem 0;
     }
 
     .preset-chips-label {
@@ -466,34 +453,191 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      margin-right: 0.25rem;
     }
 
     .preset-chip {
-      background: var(--bg-inner);
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 9999px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.82rem;
+      padding: 0.45rem 0.95rem;
+      font-size: 0.84rem;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
+      user-select: none;
     }
 
     .preset-chip:hover {
       border-color: var(--cyan);
-      color: var(--cyan);
+      color: var(--text-main);
       transform: translateY(-1px);
     }
 
     .preset-chip.active {
       border-color: var(--cyan);
-      background: rgba(56, 189, 248, 0.12);
+      background: rgba(56, 189, 248, 0.14);
       color: var(--cyan);
-      box-shadow: 0 0 10px var(--cyan-glow);
+      box-shadow: 0 0 14px var(--cyan-glow);
+    }
+
+    /* Active Domain Gate Bar */
+    .active-gate-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 12px;
+      padding: 0.65rem 1.15rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .active-gate-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      display: inline-block;
+      animation: pulseAnimation 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseAnimation {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.2); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .active-gate-coords {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      background: rgba(56, 189, 248, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .btn-evaluate-pulse {
+      width: 100%;
+      justify-content: center;
+      padding: 0.9rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin: 1.1rem 0;
+      letter-spacing: 0.03em;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--cyan), var(--indigo));
+      box-shadow: 0 4px 20px var(--cyan-glow);
+    }
+
+    .btn-evaluate-pulse:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+    }
+
+    /* Full Telemetry JSON Inspector */
+    .json-inspector-box {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    .json-inspector-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .json-inspector-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .json-code-container {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      max-height: 280px;
+      overflow: auto;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #38bdf8;
+    }
+
+    html.light .json-code-container {
+      background: #f1f5f9;
+      color: #0369a1;
+      border-color: #cbd5e1;
+    }
+
+    .json-code-container pre {
+      margin: 0;
+      white-space: pre;
+    }
+
+    .json-btn-toolbar {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-sm {
+      padding: 0.42rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .toast-popup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--emerald);
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .toast-popup.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .custom-textarea {
@@ -587,6 +731,35 @@
       .privacy-banner {
         flex-direction: column;
         align-items: flex-start;
+      }
+      .preset-chips-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+        scrollbar-width: thin;
+      }
+      .preset-chip {
+        flex-shrink: 0;
+      }
+      .custom-textarea, .custom-text-input {
+        font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+      }
+      .json-code-container {
+        max-height: 220px;
+        font-size: 0.74rem;
+      }
+      .active-gate-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .json-btn-toolbar {
+        flex-direction: column;
+      }
+      .json-btn-toolbar .btn-sm {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -1135,360 +1308,235 @@
     </div>
   </section>
 
-  <!-- Simulator Mode Tab Bar -->
-  <div class="sim-tab-bar" id="demo">
-    <button class="sim-tab-btn active" id="btn-sim-preset" onclick="switchSimulatorMode('preset')">
-      <span>⚡</span> <span id="tab-preset-title">Live Simulator (API Gateway)</span>
-    </button>
-    <button class="sim-tab-btn" id="btn-sim-custom" onclick="switchSimulatorMode('custom')">
-      <span>🧪</span> <span id="tab-custom-title">Custom Scenario Playground (Kendi Sorunu Sor)</span>
-    </button>
-  </div>
-
-  <!-- VIEW 1: PRESET API GATEWAY SIMULATOR -->
-  <div id="sim-view-preset">
-    <section class="lab-grid" style="margin-top: 0;">
-      <!-- Left Panel: State Inputs & Real-time Canvas -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <span>🎛️</span> <span id="sim-input-title">Incoming Program State</span>
-          </div>
-          <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="sim-live-tag">Live Input</span>
-        </div>
-
-        <div class="control-group">
-          <label class="control-label" id="lbl-role">User Security Role</label>
-          <select id="input-role" onchange="evaluateDecision()">
-            <option value="admin">System Administrator (auth: true, high trust)</option>
-            <option value="member" selected>Regular Member (auth: true, standard)</option>
-            <option value="guest">Unverified Guest (auth: false, zero trust)</option>
-            <option value="attacker">Hostile Burst IP (auth: false, attacker)</option>
-          </select>
-        </div>
-
-        <div class="control-group">
-          <div class="control-label">
-            <span id="lbl-freq">Request Frequency</span>
-            <span class="val" id="val-freq">12 req/s</span>
-          </div>
-          <input type="range" id="input-freq" min="1" max="200" value="12" oninput="evaluateDecision()">
-        </div>
-
-        <div class="control-group">
-          <div class="control-label">
-            <span id="lbl-failed">Failed Auth Count</span>
-            <span class="val" id="val-failed">0</span>
-          </div>
-          <input type="range" id="input-failed" min="0" max="20" value="0" oninput="evaluateDecision()">
-        </div>
-
-        <div class="control-group">
-          <div class="control-label">
-            <span id="lbl-payload">Payload Size</span>
-            <span class="val" id="val-payload">16 KB</span>
-          </div>
-          <input type="range" id="input-payload" min="1" max="500" value="16" oninput="evaluateDecision()">
-        </div>
-
-        <!-- Canvas Section -->
-        <div class="canvas-container">
-          <canvas id="mandelbrot-canvas" width="128" height="128"></canvas>
-          <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="canvas-desc">
-            Live 4-Quadrant Mandelbrot Phase Perturbation (128x128)
-          </div>
-          <div class="hud-metrics">
-            <div class="hud-box">
-              <div class="hud-label" id="hud-lbl-lat">Latency</div>
-              <div class="hud-value" id="hud-lat">&lt; 0.5 ms</div>
-            </div>
-            <div class="hud-box">
-              <div class="hud-label" id="hud-lbl-vram">Tensor VRAM</div>
-              <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
-            </div>
-            <div class="hud-box">
-              <div class="hud-label" id="hud-lbl-seed">Coordinate Seed</div>
-              <div class="hud-value" style="font-size: 0.85rem;" id="hud-seed">24 Bytes</div>
-            </div>
-          </div>
-          <button class="btn btn-secondary" id="btn-download-seed" onclick="downloadMemorySeedTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download 24-Byte Coordinate Seed & Decision State (.TXT)">
-            💾 <span id="btn-dl-seed-text">Download 24B Seed (.TXT)</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Right Panel: Typed System-1 Decisions -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <span>⚡</span> <span id="sim-output-title">Synthesized Decisions (System-One)</span>
-          </div>
-          <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="sim-safe-tag">Type-Safe</span>
-        </div>
-
-        <!-- Question 1: Noul -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong>allow_execution</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q1-desc">Question: Should this incoming request execute?</div>
-            </div>
-            <div class="decision-type-badge">noul</div>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="result-badge allow" id="badge-noul">ALLOWED</div>
-            <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-noul-prob">p = 0.9421</div>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="bar-noul" style="width: 94%;"></div>
-          </div>
-        </div>
-
-        <!-- Question 2: Choice -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong>route_target</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q2-desc">Question: Select downstream microservice destination</div>
-            </div>
-            <div class="decision-type-badge">choice</div>
-          </div>
-          
-          <div id="choice-list">
-            <div class="choice-item">
-              <span class="choice-name">direct_api</span>
-              <div class="choice-bar"><div class="choice-bar-fill" id="opt-direct" style="width: 78%;"></div></div>
-              <span class="choice-pct" id="pct-direct">78%</span>
-            </div>
-            <div class="choice-item">
-              <span class="choice-name">rate_limiter</span>
-              <div class="choice-bar"><div class="choice-bar-fill" id="opt-rate" style="width: 14%;"></div></div>
-              <span class="choice-pct" id="pct-rate">14%</span>
-            </div>
-            <div class="choice-item">
-              <span class="choice-name">sandbox_audit</span>
-              <div class="choice-bar"><div class="choice-bar-fill" id="opt-sandbox" style="width: 6%;"></div></div>
-              <span class="choice-pct" id="pct-sandbox">6%</span>
-            </div>
-            <div class="choice-item">
-              <span class="choice-name">drop_packet</span>
-              <div class="choice-bar"><div class="choice-bar-fill" id="opt-drop" style="width: 2%;"></div></div>
-              <span class="choice-pct" id="pct-drop">2%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Question 3: Score -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong>threat_severity</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="q3-desc">Question: Perceived threat severity index (0.0 to 3.0)</div>
-            </div>
-            <div class="decision-type-badge">score</div>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-score">0.24 / 3.0</div>
-            <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-score">Normal / Low Threat</span>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="bar-score" style="width: 8%; background: var(--emerald);"></div>
-          </div>
-        </div>
-
-        <!-- Real-time Action Dispatcher -->
-        <div class="action-callout">
-          <div>
-            <div class="action-label" id="action-label">Smart if-statement resolution:</div>
-            <div class="action-value" id="action-dispatch">EXECUTE_DIRECT(request)</div>
-          </div>
-          <span style="font-size: 1.5rem;" id="action-icon">🚀</span>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- VIEW 2: CUSTOM SCENARIO PLAYGROUND -->
-  <div id="sim-view-custom" style="display: none;">
-    <!-- Preset Chips -->
+  <!-- UNIFIED DECISION LAB (API Gateway + Multi-Domain + Custom Playground) -->
+  <div id="demo" style="scroll-margin-top: 2rem;">
+    <!-- Sector Chips Bar -->
     <div class="preset-chips-container">
-      <span class="preset-chips-label" id="lbl-presets-title">Quick Presets:</span>
-      <button class="preset-chip active" id="chip-iot" onclick="loadCustomPreset('iot')">
+      <span class="preset-chips-label" id="lbl-presets-title">Domain Gate:</span>
+      <button class="preset-chip active" id="chip-api" onclick="loadUnifiedPreset('api')">
+        <span>🛡️</span> <span id="chip-api-title">API Gateway</span>
+      </button>
+      <button class="preset-chip" id="chip-iot" onclick="loadUnifiedPreset('iot')">
         <span>🏠</span> <span id="chip-iot-title">Smart Home (IoT)</span>
       </button>
-      <button class="preset-chip" id="chip-fraud" onclick="loadCustomPreset('fraud')">
-        <span>🛒</span> <span id="chip-fraud-title">E-Commerce (Fraud)</span>
+      <button class="preset-chip" id="chip-fraud" onclick="loadUnifiedPreset('fraud')">
+        <span>🛒</span> <span id="chip-fraud-title">E-Commerce Fraud</span>
       </button>
-      <button class="preset-chip" id="chip-npc" onclick="loadCustomPreset('npc')">
-        <span>🎮</span> <span id="chip-npc-title">Game AI (NPC Combat)</span>
+      <button class="preset-chip" id="chip-npc" onclick="loadUnifiedPreset('npc')">
+        <span>🎮</span> <span id="chip-npc-title">Game AI (Combat)</span>
       </button>
-      <button class="preset-chip" id="chip-finance" onclick="loadCustomPreset('finance')">
-        <span>🏦</span> <span id="chip-finance-title">Finance (Credit Scoring)</span>
+      <button class="preset-chip" id="chip-finance" onclick="loadUnifiedPreset('finance')">
+        <span>🏦</span> <span id="chip-finance-title">Financial Risk</span>
+      </button>
+      <button class="preset-chip" id="chip-custom" onclick="loadUnifiedPreset('custom')">
+        <span>✏️</span> <span id="chip-custom-title">Custom Playground</span>
       </button>
     </div>
 
-    <section class="lab-grid" style="margin-top: 0;">
-      <!-- Left Panel: Custom State & Questions Builder -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <span>📝</span> <span id="custom-input-title">Custom State & Questions</span>
-          </div>
-          <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="custom-status-tag">JSON Mode</span>
-        </div>
+    <!-- Active Gate Info Bar -->
+    <div class="active-gate-bar">
+      <div class="active-gate-badge">
+        <span class="pulse-dot"></span>
+        <span id="lbl-active-gate">Active Gate:</span>
+        <strong id="active-gate-name" style="color: var(--cyan);">gate_api_security</strong>
+      </div>
+      <div class="active-gate-coords" id="active-gate-coords">
+        cx: -0.747024 | cy: +0.131933 | zoom: 108.0x
+      </div>
+    </div>
 
-        <!-- State JSON Editor -->
-        <div class="control-group">
-          <div class="control-label">
-            <span id="lbl-custom-state">Program State (JSON)</span>
-            <span class="val" id="val-json-status" style="font-size: 0.75rem;">Valid JSON ✓</span>
+    <!-- Unified Lab Grid -->
+    <div id="sim-unified-lab">
+      <section class="lab-grid" style="margin-top: 0;">
+        <!-- Left Panel: State Inputs, Questions Builder & Fractal Canvas -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <span>🎛️</span> <span id="unified-input-title">Program State & Questions</span>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--cyan); font-family: var(--font-mono);" id="unified-status-tag">Live State</span>
           </div>
-          <textarea id="custom-state-json" class="custom-textarea" oninput="onCustomStateInput()">{
-  "room": "living_room",
-  "temperature": 27.5,
-  "motion_detected": true,
-  "window_open": false
+
+          <!-- State JSON Editor -->
+          <div class="control-group">
+            <div class="control-label">
+              <span id="lbl-unified-state">Incoming Program State (JSON)</span>
+              <span class="val" id="val-unified-json-status" style="font-size: 0.75rem;">Valid JSON ✓</span>
+            </div>
+            <textarea id="unified-state-json" class="custom-textarea" oninput="onUnifiedStateInput()">{
+  "role": "member",
+  "request_frequency": 12,
+  "failed_auth_count": 0,
+  "payload_size_kb": 16
 }</textarea>
-        </div>
+          </div>
 
-        <!-- Question 1: Noul Builder -->
-        <div class="q-builder-box">
-          <div class="q-builder-header">
-            <strong style="font-size: 0.85rem;" id="lbl-q1-builder">Q1: Boolean Decision (Noul)</strong>
-            <span class="decision-type-badge">noul</span>
-          </div>
-          <div style="display: flex; gap: 0.5rem; margin-bottom: 0.4rem;">
-            <input type="text" id="custom-q1-name" class="custom-text-input" style="flex: 0.4;" value="activate_ac" placeholder="Name">
-            <input type="text" id="custom-q1-instruction" class="custom-text-input" style="flex: 1;" value="Should air conditioner activate based on temp & motion?" placeholder="Instruction / Question">
-          </div>
-        </div>
-
-        <!-- Question 2: Choice Builder -->
-        <div class="q-builder-box">
-          <div class="q-builder-header">
-            <strong style="font-size: 0.85rem;" id="lbl-q2-builder">Q2: Categorical Routing (Choice)</strong>
-            <span class="decision-type-badge">choice</span>
-          </div>
-          <div style="margin-bottom: 0.4rem;">
-            <input type="text" id="custom-q2-name" class="custom-text-input" value="cooling_mode" placeholder="Name" style="margin-bottom: 0.4rem;">
-            <input type="text" id="custom-q2-options" class="custom-text-input" value="turbo_cool: High Speed, eco_mode: Eco Friendly, fan_only: Fan Circulation, idle: Standby" placeholder="Key: Label, Key: Label">
-          </div>
-        </div>
-
-        <!-- Question 3: Score Builder -->
-        <div class="q-builder-box">
-          <div class="q-builder-header">
-            <strong style="font-size: 0.85rem;" id="lbl-q3-builder">Q3: Scalar Severity / Priority (Score)</strong>
-            <span class="decision-type-badge">score</span>
-          </div>
-          <div>
-            <input type="text" id="custom-q3-name" class="custom-text-input" value="energy_priority" placeholder="Name" style="margin-bottom: 0.4rem;">
-            <input type="text" id="custom-q3-levels" class="custom-text-input" value="Eco Saver, Balanced, High Comfort, Maximum Boost" placeholder="Levels (comma separated)">
-          </div>
-        </div>
-
-        <!-- Evaluate Button -->
-        <button class="btn btn-primary" onclick="evaluateCustomDecision()" style="width: 100%; justify-content: center; margin-top: 0.5rem;" id="btn-custom-evaluate">
-          ⚡ Evaluate Custom Decision
-        </button>
-
-        <!-- Custom Canvas Section -->
-        <div class="canvas-container" style="margin-top: 1.25rem;">
-          <canvas id="custom-mandelbrot-canvas" width="128" height="128"></canvas>
-          <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="custom-canvas-desc">
-            Dynamic State-Perturbed Fractal Phase Space (128x128)
-          </div>
-          <div class="hud-metrics">
-            <div class="hud-box">
-              <div class="hud-label" id="hud-custom-lat">Latency</div>
-              <div class="hud-value" id="val-custom-lat">&lt; 0.5 ms</div>
+          <!-- Question 1: Noul Builder -->
+          <div class="q-builder-box">
+            <div class="q-builder-header">
+              <strong style="font-size: 0.85rem;" id="lbl-unified-q1">Q1: Boolean Gate (Noul)</strong>
+              <span class="decision-type-badge">noul</span>
             </div>
-            <div class="hud-box">
-              <div class="hud-label" id="hud-custom-vram">Tensor VRAM</div>
-              <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
-            </div>
-            <div class="hud-box">
-              <div class="hud-label" id="hud-custom-seed">Coordinate Seed</div>
-              <div class="hud-value" style="font-size: 0.85rem;" id="val-custom-seed">24 Bytes</div>
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" id="unified-q1-name" class="custom-text-input" style="flex: 0.4;" value="allow_execution" placeholder="Name">
+              <input type="text" id="unified-q1-instruction" class="custom-text-input" style="flex: 1;" value="Should incoming request execute based on security role and rate?" placeholder="Instruction / Question">
             </div>
           </div>
-          <button class="btn btn-secondary" onclick="downloadCustomDecisionTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download Custom Coordinate Seed & Decision State (.TXT)">
-            💾 <span id="btn-custom-dl-text">Download Custom Seed (.TXT)</span>
+
+          <!-- Question 2: Choice Builder -->
+          <div class="q-builder-box">
+            <div class="q-builder-header">
+              <strong style="font-size: 0.85rem;" id="lbl-unified-q2">Q2: Categorical Routing (Choice)</strong>
+              <span class="decision-type-badge">choice</span>
+            </div>
+            <div style="margin-bottom: 0.4rem;">
+              <input type="text" id="unified-q2-name" class="custom-text-input" value="route_target" placeholder="Name" style="margin-bottom: 0.4rem;">
+              <input type="text" id="unified-q2-options" class="custom-text-input" value="direct_api: Direct Pass, rate_limiter: Rate Limiter Queue, sandbox_audit: Sandbox Audit, drop_packet: Drop & Blacklist" placeholder="Key: Label, Key: Label">
+            </div>
+          </div>
+
+          <!-- Question 3: Score Builder -->
+          <div class="q-builder-box">
+            <div class="q-builder-header">
+              <strong style="font-size: 0.85rem;" id="lbl-unified-q3">Q3: Scalar Severity / Risk (Score)</strong>
+              <span class="decision-type-badge">score</span>
+            </div>
+            <div>
+              <input type="text" id="unified-q3-name" class="custom-text-input" value="threat_severity" placeholder="Name" style="margin-bottom: 0.4rem;">
+              <input type="text" id="unified-q3-levels" class="custom-text-input" value="Normal / Safe, Low Threat, Elevated Risk, Critical Threat" placeholder="Levels (comma separated)">
+            </div>
+          </div>
+
+          <!-- Primary Evaluate Action Button -->
+          <button class="btn btn-primary btn-evaluate-pulse" onclick="evaluateUnifiedDecision()" id="btn-unified-evaluate">
+            ⚡ <span id="btn-unified-eval-text">Synthesize Decision Reflex (System-1)</span>
           </button>
-        </div>
-      </div>
 
-      <!-- Right Panel: Synthesized Custom Decisions -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">
-            <span>⚡</span> <span id="custom-output-title">Synthesized Decisions</span>
-          </div>
-          <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="custom-safe-tag">Type-Safe</span>
-        </div>
-
-        <!-- Custom Question 1: Noul -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong id="custom-q1-display-name">activate_ac</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q1-display-instr">Question: Should air conditioner activate based on temp & motion?</div>
+          <!-- Real-time Mandelbrot Canvas & Metrics -->
+          <div class="canvas-container" style="margin-top: 1.25rem;">
+            <canvas id="unified-mandelbrot-canvas" width="128" height="128"></canvas>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;" id="unified-canvas-desc">
+              Universal Fractal Phase Space Resonance (128x128)
             </div>
-            <div class="decision-type-badge">noul</div>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="result-badge allow" id="badge-custom-noul">ALLOWED</div>
-            <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-custom-noul-prob">p = 0.8920</div>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="bar-custom-noul" style="width: 89%;"></div>
-          </div>
-        </div>
-
-        <!-- Custom Question 2: Choice -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong id="custom-q2-display-name">cooling_mode</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q2-display-instr">Question: Select operational mode</div>
+            <div class="hud-metrics">
+              <div class="hud-box">
+                <div class="hud-label" id="hud-lbl-lat">Latency</div>
+                <div class="hud-value" id="val-unified-lat">&lt; 0.5 ms</div>
+              </div>
+              <div class="hud-box">
+                <div class="hud-label" id="hud-lbl-vram">Tensor VRAM</div>
+                <div class="hud-value" style="color: var(--emerald);">0 Bytes</div>
+              </div>
+              <div class="hud-box">
+                <div class="hud-label" id="hud-lbl-seed">Coordinate Seed</div>
+                <div class="hud-value" style="font-size: 0.85rem;" id="val-unified-seed">24 Bytes</div>
+              </div>
             </div>
-            <div class="decision-type-badge">choice</div>
+            <button class="btn btn-secondary" onclick="downloadUnifiedSeedTxt()" style="width: 100%; margin-top: 0.65rem; padding: 0.5rem 0.85rem; font-size: 0.82rem; justify-content: center; gap: 0.45rem;" title="Download 24-Byte Coordinate Seed & Decision State (.TXT)" id="btn-unified-dl-seed">
+              💾 <span id="btn-unified-dl-seed-text">Download 24B Seed (.TXT)</span>
+            </button>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <span style="font-size: 0.85rem; color: var(--text-muted);" id="lbl-selected-choice">Selected:</span>
-            <div class="decision-type-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan); font-size: 0.88rem; font-weight: 800;" id="badge-custom-choice">turbo_cool</div>
-          </div>
-          <div id="custom-choice-list"></div>
         </div>
 
-        <!-- Custom Question 3: Score -->
-        <div class="decision-block">
-          <div class="decision-header">
-            <div>
-              <strong id="custom-q3-display-name">energy_priority</strong>
-              <div style="font-size: 0.78rem; color: var(--text-muted);" id="custom-q3-display-instr">Question: Priority along ordinal scale</div>
+        <!-- Right Panel: Synthesized System-1 Decisions & Live JSON Inspector -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <span>⚡</span> <span id="unified-output-title">Synthesized Decisions (System-One)</span>
             </div>
-            <div class="decision-type-badge">score</div>
+            <span style="font-size: 0.8rem; color: var(--emerald); font-family: var(--font-mono);" id="unified-safe-tag">Type-Safe</span>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-custom-score">2.40 / 3.0</div>
-            <span style="font-size: 0.85rem; color: var(--cyan); font-weight: 600;" id="label-custom-score">High Comfort</span>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="bar-custom-score" style="width: 80%; background: var(--cyan);"></div>
-          </div>
-        </div>
 
-        <!-- Custom Action Dispatcher -->
-        <div class="action-callout">
-          <div>
-            <div class="action-label" id="custom-action-label">Smart if-statement resolution:</div>
-            <div class="action-value" id="custom-action-dispatch">EXECUTE(living_room, turbo_cool)</div>
+          <!-- Question 1: Noul -->
+          <div class="decision-block">
+            <div class="decision-header">
+              <div>
+                <strong id="unified-q1-display-name">allow_execution</strong>
+                <div style="font-size: 0.78rem; color: var(--text-muted);" id="unified-q1-display-instr">Question: Should incoming request execute?</div>
+              </div>
+              <div class="decision-type-badge">noul</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="result-badge allow" id="badge-unified-noul">ALLOWED</div>
+              <div style="font-family: var(--font-mono); font-size: 0.9rem;" id="val-unified-noul-prob">p = 0.9421</div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="bar-unified-noul" style="width: 94%;"></div>
+            </div>
           </div>
-          <span style="font-size: 1.5rem;" id="custom-action-icon">💡</span>
+
+          <!-- Question 2: Choice -->
+          <div class="decision-block">
+            <div class="decision-header">
+              <div>
+                <strong id="unified-q2-display-name">route_target</strong>
+                <div style="font-size: 0.78rem; color: var(--text-muted);" id="unified-q2-display-instr">Question: Select downstream microservice destination</div>
+              </div>
+              <div class="decision-type-badge">choice</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.85rem; color: var(--text-muted);" id="lbl-unified-selected-choice">Selected:</span>
+              <div class="decision-type-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan); font-size: 0.88rem; font-weight: 800;" id="badge-unified-choice">direct_api</div>
+            </div>
+            <div id="unified-choice-list"></div>
+          </div>
+
+          <!-- Question 3: Score -->
+          <div class="decision-block">
+            <div class="decision-header">
+              <div>
+                <strong id="unified-q3-display-name">threat_severity</strong>
+                <div style="font-size: 0.78rem; color: var(--text-muted);" id="unified-q3-display-instr">Question: Perceived threat severity index</div>
+              </div>
+              <div class="decision-type-badge">score</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800;" id="val-unified-score">0.24 / 3.0</div>
+              <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;" id="label-unified-score">Normal / Safe</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="bar-unified-score" style="width: 8%; background: var(--emerald);"></div>
+            </div>
+          </div>
+
+          <!-- Real-time Action Dispatcher Callout -->
+          <div class="action-callout">
+            <div>
+              <div class="action-label" id="unified-action-label">Smart if-statement resolution:</div>
+              <div class="action-value" id="unified-action-dispatch">EXECUTE_DIRECT_API(allow_execution=true)</div>
+            </div>
+            <span style="font-size: 1.5rem;" id="unified-action-icon">🚀</span>
+          </div>
+
+          <!-- Full Telemetry JSON Record Inspector -->
+          <div class="json-inspector-box">
+            <div class="json-inspector-header">
+              <div class="json-inspector-title">
+                <span>📋</span>
+                <span id="lbl-json-inspector-title">Telemetry JSON Record Inspector (Live Schema)</span>
+              </div>
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                Schema: MariaDB &amp; wevv_open_decisions.jsonl
+              </span>
+            </div>
+            <div class="json-code-container">
+              <pre id="json-record-display">// Run evaluation to view serialized telemetry record</pre>
+            </div>
+            <div class="json-btn-toolbar">
+              <button class="btn btn-secondary btn-sm" onclick="copyDecisionJson()" id="btn-copy-json" title="Copy serialized JSON to clipboard">
+                📋 <span id="btn-copy-json-text">Copy JSON</span>
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadDecisionJson()" id="btn-dl-json" title="Download decision as JSON file">
+                📥 <span id="btn-dl-json-text">Download JSON</span>
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="downloadUnifiedSeedTxt()" id="btn-dl-seed-sm" title="Download 24-Byte Coordinate Seed (.TXT)">
+                💾 <span id="btn-dl-seed-sm-text">Download 24B Seed (.TXT)</span>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 
   <!-- Privacy & Open Science Transparency Banner -->
@@ -1792,25 +1840,36 @@ if __name__ == "__main__":
       badgeAllow: "ALLOWED",
       badgeDeny: "DENIED",
       actionLabel: "Smart if-statement resolution:",
-      // Custom Playground Translations
-      lblPresetsTitle: "Quick Presets:",
+      // Unified Decision Lab Translations (EN)
+      lblPresetsTitle: "Domain Gate:",
+      chipApiTitle: "API Gateway",
       chipIotTitle: "Smart Home (IoT)",
-      chipFraudTitle: "E-Commerce (Fraud)",
-      chipNpcTitle: "Game AI (NPC Combat)",
-      chipFinanceTitle: "Finance (Credit Scoring)",
-      customInputTitle: "Custom State & Questions",
-      customStatusTag: "JSON Mode",
-      lblCustomState: "Program State (JSON)",
-      lblQ1Builder: "Q1: Boolean Decision (Noul)",
-      lblQ2Builder: "Q2: Categorical Routing (Choice)",
-      lblQ3Builder: "Q3: Scalar Severity / Priority (Score)",
-      btnCustomEvaluate: "⚡ Evaluate Custom Decision",
-      customCanvasDesc: "Dynamic State-Perturbed Fractal Phase Space (128x128)",
-      btnCustomDlText: "Download Custom Seed (.TXT)",
-      customOutputTitle: "Synthesized Decisions",
-      customSafeTag: "Type-Safe",
-      lblSelectedChoice: "Selected:",
-      customActionLabel: "Smart if-statement resolution:",
+      chipFraudTitle: "E-Commerce Fraud",
+      chipNpcTitle: "Game AI (Combat)",
+      chipFinanceTitle: "Financial Risk",
+      chipCustomTitle: "Custom Playground",
+      lblActiveGate: "Active Gate:",
+      unifiedInputTitle: "Program State & Questions",
+      unifiedStatusTag: "Live State",
+      lblUnifiedState: "Incoming Program State (JSON)",
+      lblUnifiedQ1: "Q1: Boolean Gate (Noul)",
+      lblUnifiedQ2: "Q2: Categorical Routing (Choice)",
+      lblUnifiedQ3: "Q3: Scalar Severity / Risk (Score)",
+      btnUnifiedEvalText: "Synthesize Decision Reflex (System-1)",
+      unifiedCanvasDesc: "Universal Fractal Phase Space Resonance (128x128)",
+      hudLblLat: "Latency",
+      hudLblVram: "Tensor VRAM",
+      hudLblSeed: "Coordinate Seed",
+      btnUnifiedDlSeedText: "Download 24B Seed (.TXT)",
+      unifiedOutputTitle: "Synthesized Decisions (System-One)",
+      unifiedSafeTag: "Type-Safe",
+      lblUnifiedSelectedChoice: "Selected:",
+      unifiedActionLabel: "Smart if-statement resolution:",
+      lblJsonInspectorTitle: "Telemetry JSON Record Inspector (Live Schema)",
+      btnCopyJsonText: "Copy JSON",
+      btnDlJsonText: "Download JSON",
+      btnDlSeedSmText: "Download 24B Seed (.TXT)",
+      toastCopiedJson: "Serialized JSON record copied to clipboard!",
       privBannerTitle: "Zero-PII Open Telemetry & Science Guarantee",
       privBannerDesc: "All decisions evaluated in this simulator and in the Python library anonymously contribute to the universal fractal natural language decision mapping. No IP addresses, cookies, or user identifiers are logged. Sensitive keys (passwords, tokens, emails) are redacted on the client side. Opt-out anytime with <code>WEVV_TELEMETRY=0</code>.",
       privBtnDataset: "📊 Download Open Dataset (.JSONL)",
@@ -1869,45 +1928,38 @@ if __name__ == "__main__":
       step3Desc: "1 milisaniye içinde kesin, tip güvenli ve net kararı koduna bağla.",
       step4Title: "4. Koda Bağla",
       step4Desc: "Akıllı if-else dallanmasıyla sistemini anında yönlendir.",
-      tabPresetTitle: "Canlı Simülatör (API Gateway)",
-      tabCustomTitle: "Kendi Sorunu Sor (Özel Oyun Alanı)",
-      simInputTitle: "Gelen Program Durumu",
-      simLiveTag: "Canlı Girdi",
-      lblRole: "Kullanıcı Güvenlik Rolü",
-      lblFreq: "İstek Frekansı",
-      lblFailed: "Hatalı Giriş Sayısı",
-      lblPayload: "Paket Boyutu",
-      canvasDesc: "Canlı 4-Quadrant Mandelbrot Faz Pertürbasyonu (128x128)",
+      badgeAllow: "ONAYLANDI",
+      badgeDeny: "ENGELLENDİ",
+      // Birleşik Karar Laboratuvarı Çevirileri (TR)
+      lblPresetsTitle: "Domain Sektörü:",
+      chipApiTitle: "API Gateway",
+      chipIotTitle: "Akıllı Ev (IoT)",
+      chipFraudTitle: "E-Ticaret Sahtecilik",
+      chipNpcTitle: "Oyun Yapay Zekası",
+      chipFinanceTitle: "Finansal Risk",
+      chipCustomTitle: "Serbest Soru Alanı",
+      lblActiveGate: "Aktif Karar Kapısı:",
+      unifiedInputTitle: "Program Durumu ve Sorular",
+      unifiedStatusTag: "Canlı Durum",
+      lblUnifiedState: "Gelen Program Durumu (JSON)",
+      lblUnifiedQ1: "S1: Mantıksal Karar Kapısı (Noul)",
+      lblUnifiedQ2: "S2: Kategorik Yönlendirme (Choice)",
+      lblUnifiedQ3: "S3: Derecelendirme Skoru (Score)",
+      btnUnifiedEvalText: "Fraktal Karar Refleksini Türet (Sistem-1)",
+      unifiedCanvasDesc: "Evrensel Fraktal Faz Uzayı Rezonansı (128x128)",
       hudLblLat: "Gecikme",
       hudLblVram: "Tensör VRAM",
       hudLblSeed: "Tohum Koordinatı",
-      simOutputTitle: "Türetilen Kararlar (Sistem-1)",
-      simSafeTag: "Tip Güvenli",
-      q1Desc: "Soru: Bu işlemin doğrudan çalışmasına izin verilsin mi?",
-      q2Desc: "Soru: İsteği hangi alt servise yönlendireyim?",
-      q3Desc: "Soru: Algılanan tehlike indeksi (0.0 - 3.0)",
-      badgeAllow: "ONAYLANDI",
-      badgeDeny: "ENGELLENDİ",
-      actionLabel: "Yazılımın akıllı if-else kararı:",
-      // Custom Playground Translations (TR)
-      lblPresetsTitle: "Hızlı Senaryolar:",
-      chipIotTitle: "Akıllı Ev (IoT)",
-      chipFraudTitle: "E-Ticaret (Fraud / Sahtecilik)",
-      chipNpcTitle: "Oyun Yapay Zekası (NPC)",
-      chipFinanceTitle: "Finans (Kredi Kararı)",
-      customInputTitle: "Özel Durum ve Sorular",
-      customStatusTag: "JSON Modu",
-      lblCustomState: "Program Durumu (JSON)",
-      lblQ1Builder: "S1: Evet/Hayır Kararı (Noul)",
-      lblQ2Builder: "S2: Seçenek Yönlendirme (Choice)",
-      lblQ3Builder: "S3: Derecelendirme Skoru (Score)",
-      btnCustomEvaluate: "⚡ Fraktal Karar Üret",
-      customCanvasDesc: "Dinamik Durum Pertürbasyonlu Fraktal Faz Uzayı (128x128)",
-      btnCustomDlText: "Özel Tohumu İndir (.TXT)",
-      customOutputTitle: "Türetilen Kararlar",
-      customSafeTag: "Tip Güvenli",
-      lblSelectedChoice: "Seçilen:",
-      customActionLabel: "Yazılımın akıllı aksiyon kararı:",
+      btnUnifiedDlSeedText: "24B Tohum İndir (.TXT)",
+      unifiedOutputTitle: "Türetilen Kararlar (Sistem-1)",
+      unifiedSafeTag: "Tip Güvenli",
+      lblUnifiedSelectedChoice: "Seçilen:",
+      unifiedActionLabel: "Yazılımın akıllı if-else kararı:",
+      lblJsonInspectorTitle: "Telemetri JSON Kayıt İnceleyici (Canlı Şema)",
+      btnCopyJsonText: "JSON'ı Kopyala",
+      btnDlJsonText: "JSON İndir",
+      btnDlSeedSmText: "24B Tohum İndir (.TXT)",
+      toastCopiedJson: "Serileştirilmiş JSON kaydı panoya kopyalandı!",
       privBannerTitle: "Sıfır Kişisel Veri Açık Bilim ve Telemetri Güvencesi",
       privBannerDesc: "Bu simülatörde ve Python kütüphanesinde üretilen kararlar, evrensel fraktal doğal dil karar haritasının açık optimizasyonuna anonim olarak katkıda bulunur. IP adresi, çerez veya kullanıcı kimliği asla kaydedilmez; şifre ve anahtar alanları istemcide otomatik sansürlenir. Dilediğiniz an <code>WEVV_TELEMETRY=0</code> ile kapatabilirsiniz.",
       privBtnDataset: "📊 Açık Veri Kümesini İndir (.JSONL)",
@@ -1939,10 +1991,40 @@ if __name__ == "__main__":
   };
 
   let currentLang = 'en';
-  let currentSimMode = 'preset'; // 'preset' or 'custom'
+  let activeUnifiedPreset = 'api';
 
-  // Custom Playground Preset Scenarios
+  // Calibrated Domain Gates (v0.2.0 Universal Seed Router)
+  const DOMAIN_GATES = {
+    api: { gate: "gate_api_security", cx: -0.747024, cy: 0.131933, zoom: 108.0 },
+    iot: { gate: "gate_iot_safety", cx: -0.747446, cy: 0.108974, zoom: 78.9 },
+    fraud: { gate: "gate_ecommerce_fraud", cx: -0.755587, cy: 0.079838, zoom: 63.1 },
+    npc: { gate: "gate_game_combat", cx: -0.751381, cy: 0.120816, zoom: 58.6 },
+    finance: { gate: "gate_financial_risk", cx: -0.743020, cy: 0.061135, zoom: 54.1 },
+    custom: { gate: "gate_universal_custom", cx: -0.743644, cy: 0.131826, zoom: 65.0 }
+  };
+
+  // Preset Scenarios (Bilingual)
   const PRESET_SCENARIOS = {
+    api: {
+      en: {
+        state: '{\n  "role": "member",\n  "request_frequency": 12,\n  "failed_auth_count": 0,\n  "payload_size_kb": 16\n}',
+        q1Name: "allow_execution",
+        q1Instr: "Should incoming request execute based on security role and rate?",
+        q2Name: "route_target",
+        q2Opts: "direct_api: Direct Pass, rate_limiter: Rate Limiter Queue, sandbox_audit: Sandbox Audit, drop_packet: Drop & Blacklist",
+        q3Name: "threat_severity",
+        q3Levels: "Normal / Safe, Low Threat, Elevated Risk, Critical Threat"
+      },
+      tr: {
+        state: '{\n  "rol": "uye",\n  "istek_frekansi": 12,\n  "hatali_giris_sayisi": 0,\n  "paket_boyutu_kb": 16\n}',
+        q1Name: "islem_calissin_mi",
+        q1Instr: "Gelen istek güvenlik rolü ve hızına göre çalıştırılsın mı?",
+        q2Name: "hedef_servis",
+        q2Opts: "dogrudan_gecis: Doğrudan Geçiş, hiz_limiti: Hız Limiti Kuyruğu, karantina_inceleme: Karantina İnceleme, paketi_dusur: Paketi Düşür & Engelle",
+        q3Name: "tehdit_seviyesi",
+        q3Levels: "Normal / Güvenli, Düşük Risk, Yükselmiş Risk, Kritik Tehdit"
+      }
+    },
     iot: {
       en: {
         state: '{\n  "room": "living_room",\n  "temperature": 27.5,\n  "motion_detected": true,\n  "window_open": false\n}',
@@ -2022,10 +2104,28 @@ if __name__ == "__main__":
         q3Name: "guven_derecesi",
         q3Levels: "Riskli, Kabul Edilebilir, Yüksek Güven, Kusursuz"
       }
+    },
+    custom: {
+      en: {
+        state: '{\n  "event_type": "user_action",\n  "importance_score": 8,\n  "is_emergency": false,\n  "context": "office_hours"\n}',
+        q1Name: "should_trigger",
+        q1Instr: "Should automated workflow trigger based on context and priority?",
+        q2Name: "dispatch_channel",
+        q2Opts: "email_digest: Email Digest, slack_alert: Slack Immediate, webhook_call: Webhook Trigger, log_silent: Silent Log",
+        q3Name: "action_urgency",
+        q3Levels: "Informational, Low Urgency, High Urgency, Immediate Action"
+      },
+      tr: {
+        state: '{\n  "olay_tipi": "kullanici_islemi",\n  "onem_derecesi": 8,\n  "acil_durum": false,\n  "baglam": "mesai_saatleri"\n}',
+        q1Name: "tetiklensin_mi",
+        q1Instr: "Otomasyon akışı bağlam ve önceliğe göre tetiklensin mi?",
+        q2Name: "bildirim_kanali",
+        q2Opts: "e_posta_ozet: E-Posta Özeti, anlik_bildirim: Anlık Bildirim, webhook_cagrisi: Webhook Çağrısı, sessiz_kayit: Sessiz Kayıt",
+        q3Name: "islem_aciliyeti",
+        q3Levels: "Bilgilendirme, Düşük Aciliyet, Yüksek Aciliyet, Anında Müdahale"
+      }
     }
   };
-
-  let activeCustomPreset = 'iot';
 
   function setLanguage(lang) {
     currentLang = lang;
@@ -2070,49 +2170,37 @@ if __name__ == "__main__":
     document.getElementById('step4-title').innerText = t.step4Title;
     document.getElementById('step4-desc').innerText = t.step4Desc;
 
-    // Simulator Tab Bar
-    document.getElementById('tab-preset-title').innerText = t.tabPresetTitle;
-    document.getElementById('tab-custom-title').innerText = t.tabCustomTitle;
-
-    // Preset Simulator Labels
-    document.getElementById('sim-input-title').innerText = t.simInputTitle;
-    document.getElementById('sim-live-tag').innerText = t.simLiveTag;
-    document.getElementById('lbl-role').innerText = t.lblRole;
-    document.getElementById('lbl-freq').innerText = t.lblFreq;
-    document.getElementById('lbl-failed').innerText = t.lblFailed;
-    document.getElementById('lbl-payload').innerText = t.lblPayload;
-    document.getElementById('canvas-desc').innerText = t.canvasDesc;
-    document.getElementById('hud-lbl-lat').innerText = t.hudLblLat;
-    document.getElementById('hud-lbl-vram').innerText = t.hudLblVram;
-    document.getElementById('hud-lbl-seed').innerText = t.hudLblSeed;
-    document.getElementById('btn-dl-seed-text').innerText = t.btnDownloadSeedText;
-    document.getElementById('btn-download-seed').title = t.btnDownloadSeedTitle;
-    document.getElementById('sim-output-title').innerText = t.simOutputTitle;
-    document.getElementById('sim-safe-tag').innerText = t.simSafeTag;
-    document.getElementById('q1-desc').innerText = t.q1Desc;
-    document.getElementById('q2-desc').innerText = t.q2Desc;
-    document.getElementById('q3-desc').innerText = t.q3Desc;
-    document.getElementById('action-label').innerText = t.actionLabel;
-
-    // Custom Playground Labels
+    // Unified Lab Labels
     document.getElementById('lbl-presets-title').innerText = t.lblPresetsTitle;
+    document.getElementById('chip-api-title').innerText = t.chipApiTitle;
     document.getElementById('chip-iot-title').innerText = t.chipIotTitle;
     document.getElementById('chip-fraud-title').innerText = t.chipFraudTitle;
     document.getElementById('chip-npc-title').innerText = t.chipNpcTitle;
     document.getElementById('chip-finance-title').innerText = t.chipFinanceTitle;
-    document.getElementById('custom-input-title').innerText = t.customInputTitle;
-    document.getElementById('custom-status-tag').innerText = t.customStatusTag;
-    document.getElementById('lbl-custom-state').innerText = t.lblCustomState;
-    document.getElementById('lbl-q1-builder').innerText = t.lblQ1Builder;
-    document.getElementById('lbl-q2-builder').innerText = t.lblQ2Builder;
-    document.getElementById('lbl-q3-builder').innerText = t.lblQ3Builder;
-    document.getElementById('btn-custom-evaluate').innerText = t.btnCustomEvaluate;
-    document.getElementById('custom-canvas-desc').innerText = t.customCanvasDesc;
-    document.getElementById('btn-custom-dl-text').innerText = t.btnCustomDlText;
-    document.getElementById('custom-output-title').innerText = t.customOutputTitle;
-    document.getElementById('custom-safe-tag').innerText = t.customSafeTag;
-    document.getElementById('lbl-selected-choice').innerText = t.lblSelectedChoice;
-    document.getElementById('custom-action-label').innerText = t.customActionLabel;
+    document.getElementById('chip-custom-title').innerText = t.chipCustomTitle;
+    document.getElementById('lbl-active-gate').innerText = t.lblActiveGate;
+
+    document.getElementById('unified-input-title').innerText = t.unifiedInputTitle;
+    document.getElementById('unified-status-tag').innerText = t.unifiedStatusTag;
+    document.getElementById('lbl-unified-state').innerText = t.lblUnifiedState;
+    document.getElementById('lbl-unified-q1').innerText = t.lblUnifiedQ1;
+    document.getElementById('lbl-unified-q2').innerText = t.lblUnifiedQ2;
+    document.getElementById('lbl-unified-q3').innerText = t.lblUnifiedQ3;
+    document.getElementById('btn-unified-eval-text').innerText = t.btnUnifiedEvalText;
+    document.getElementById('unified-canvas-desc').innerText = t.unifiedCanvasDesc;
+    document.getElementById('hud-lbl-lat').innerText = t.hudLblLat;
+    document.getElementById('hud-lbl-vram').innerText = t.hudLblVram;
+    document.getElementById('hud-lbl-seed').innerText = t.hudLblSeed;
+    document.getElementById('btn-unified-dl-seed-text').innerText = t.btnUnifiedDlSeedText;
+    document.getElementById('unified-output-title').innerText = t.unifiedOutputTitle;
+    document.getElementById('unified-safe-tag').innerText = t.unifiedSafeTag;
+    document.getElementById('lbl-unified-selected-choice').innerText = t.lblUnifiedSelectedChoice;
+    document.getElementById('unified-action-label').innerText = t.unifiedActionLabel;
+
+    document.getElementById('lbl-json-inspector-title').innerText = t.lblJsonInspectorTitle;
+    document.getElementById('btn-copy-json-text').innerText = t.btnCopyJsonText;
+    document.getElementById('btn-dl-json-text').innerText = t.btnDlJsonText;
+    document.getElementById('btn-dl-seed-sm-text').innerText = t.btnDlSeedSmText;
 
     // Privacy Banner
     document.getElementById('priv-banner-title').innerText = t.privBannerTitle;
@@ -2145,56 +2233,48 @@ if __name__ == "__main__":
     document.getElementById('footer-text').innerHTML = t.footerText;
 
     // Update active preset content to match language
-    loadCustomPreset(activeCustomPreset);
-
-    evaluateDecision();
+    loadUnifiedPreset(activeUnifiedPreset);
   }
 
-  // Switch Simulator Mode (Preset vs. Custom Playground)
-  function switchSimulatorMode(mode) {
-    currentSimMode = mode;
-    const isPreset = mode === 'preset';
-    document.getElementById('btn-sim-preset').className = 'sim-tab-btn' + (isPreset ? ' active' : '');
-    document.getElementById('btn-sim-custom').className = 'sim-tab-btn' + (!isPreset ? ' active' : '');
-    document.getElementById('sim-view-preset').style.display = isPreset ? 'block' : 'none';
-    document.getElementById('sim-view-custom').style.display = !isPreset ? 'block' : 'none';
-
-    if (!isPreset) {
-      evaluateCustomDecision();
-    }
-  }
-
-  // Load Custom Preset Scenario
-  function loadCustomPreset(presetKey) {
-    activeCustomPreset = presetKey;
-    ['iot', 'fraud', 'npc', 'finance'].forEach(k => {
+  // Load Unified Domain Preset Scenario
+  function loadUnifiedPreset(presetKey) {
+    activeUnifiedPreset = presetKey;
+    ['api', 'iot', 'fraud', 'npc', 'finance', 'custom'].forEach(k => {
       const chip = document.getElementById('chip-' + k);
       if (chip) chip.className = 'preset-chip' + (k === presetKey ? ' active' : '');
     });
 
-    const p = PRESET_SCENARIOS[presetKey][currentLang];
+    const gateInfo = DOMAIN_GATES[presetKey] || DOMAIN_GATES.api;
+    const gateNameEl = document.getElementById('active-gate-name');
+    const gateCoordsEl = document.getElementById('active-gate-coords');
+    if (gateNameEl) gateNameEl.innerText = gateInfo.gate;
+    if (gateCoordsEl) {
+      gateCoordsEl.innerText = `cx: ${gateInfo.cx.toFixed(6)} | cy: ${(gateInfo.cy >= 0 ? '+' : '') + gateInfo.cy.toFixed(6)} | zoom: ${gateInfo.zoom.toFixed(1)}x`;
+    }
+
+    const p = PRESET_SCENARIOS[presetKey][currentLang] || PRESET_SCENARIOS[presetKey]['en'];
     if (p) {
-      document.getElementById('custom-state-json').value = p.state;
-      document.getElementById('custom-q1-name').value = p.q1Name;
-      document.getElementById('custom-q1-instruction').value = p.q1Instr;
-      document.getElementById('custom-q2-name').value = p.q2Name;
-      document.getElementById('custom-q2-options').value = p.q2Opts;
-      document.getElementById('custom-q3-name').value = p.q3Name;
-      document.getElementById('custom-q3-levels').value = p.q3Levels;
-      onCustomStateInput();
-      evaluateCustomDecision();
+      document.getElementById('unified-state-json').value = p.state;
+      document.getElementById('unified-q1-name').value = p.q1Name;
+      document.getElementById('unified-q1-instruction').value = p.q1Instr;
+      document.getElementById('unified-q2-name').value = p.q2Name;
+      document.getElementById('unified-q2-options').value = p.q2Opts;
+      document.getElementById('unified-q3-name').value = p.q3Name;
+      document.getElementById('unified-q3-levels').value = p.q3Levels;
+      onUnifiedStateInput();
+      evaluateUnifiedDecision();
     }
   }
 
-  function onCustomStateInput() {
-    const txt = document.getElementById('custom-state-json').value;
-    const statusEl = document.getElementById('val-json-status');
+  function onUnifiedStateInput() {
+    const txt = document.getElementById('unified-state-json').value;
+    const statusEl = document.getElementById('val-unified-json-status');
     try {
       JSON.parse(txt);
-      statusEl.innerText = 'Valid JSON ✓';
+      statusEl.innerText = currentLang === 'tr' ? 'Geçerli JSON ✓' : 'Valid JSON ✓';
       statusEl.style.color = 'var(--emerald)';
     } catch (e) {
-      statusEl.innerText = 'Invalid JSON ✗';
+      statusEl.innerText = currentLang === 'tr' ? 'Geçersiz JSON ✗' : 'Invalid JSON ✗';
       statusEl.style.color = 'var(--rose)';
     }
   }
@@ -2256,154 +2336,7 @@ if __name__ == "__main__":
     return s.trim();
   }
 
-  // Presets & Canvas Logic for Preset View
-  const canvas = document.getElementById('mandelbrot-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function evaluateDecision() {
-    const role = document.getElementById('input-role').value;
-    const freq = parseFloat(document.getElementById('input-freq').value);
-    const failed = parseInt(document.getElementById('input-failed').value);
-    const payload = parseFloat(document.getElementById('input-payload').value);
-
-    const freqUnit = currentLang === 'tr' ? ' istek/sn' : ' req/s';
-    document.getElementById('val-freq').innerText = freq + freqUnit;
-    document.getElementById('val-failed').innerText = failed;
-    document.getElementById('val-payload').innerText = payload + ' KB';
-
-    let baseTrust = 0.0;
-    if (role === 'admin') baseTrust = -1.5;
-    else if (role === 'member') baseTrust = -0.6;
-    else if (role === 'guest') baseTrust = 0.9;
-    else if (role === 'attacker') baseTrust = 2.5;
-
-    const freqPenalty = (freq / 200.0) * 1.5;
-    const failedPenalty = (failed / 20.0) * 3.0;
-    const payloadPenalty = (payload / 500.0) * 0.8;
-
-    const netRisk = baseTrust + freqPenalty + failedPenalty + payloadPenalty;
-    let threatScore = Math.max(0.0, Math.min(3.0, (netRisk + 1.2) * 0.85));
-
-    let noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.2) * 2.2));
-    noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
-
-    let allow = noulProb >= 0.5;
-    if (role === 'guest' || role === 'attacker' || threatScore >= 1.4) {
-      allow = false;
-      noulProb = Math.min(noulProb, 0.35);
-    }
-
-    let pDirect, pRate, pSandbox, pDrop;
-    if (role === 'admin') {
-      pDirect = allow ? 82 : 25;
-      pRate = (freq > 100) ? 50 : 10;
-      pSandbox = (failed > 3) ? 55 : 6;
-      pDrop = 2;
-    } else if (role === 'member') {
-      pDirect = allow ? 78 : 10;
-      pRate = (freq > 80) ? 60 : 15;
-      pSandbox = (failed > 2) ? 65 : 12;
-      pDrop = (failed > 8) ? 60 : 3;
-    } else if (role === 'guest') {
-      pDirect = 4;
-      pRate = (freq > 30) ? 45 : 20;
-      pSandbox = 68;
-      pDrop = (failed > 5 || freq > 120) ? 65 : 8;
-    } else {
-      pDirect = 0;
-      pRate = 5;
-      pSandbox = 15;
-      pDrop = 80;
-    }
-
-    const total = pDirect + pRate + pSandbox + pDrop;
-    pDirect = Math.round((pDirect / total) * 100);
-    pRate = Math.round((pRate / total) * 100);
-    pSandbox = Math.round((pSandbox / total) * 100);
-    pDrop = Math.max(0, 100 - (pDirect + pRate + pSandbox));
-
-    const t = i18n[currentLang];
-    const badgeNoul = document.getElementById('badge-noul');
-    badgeNoul.innerText = allow ? t.badgeAllow : t.badgeDeny;
-    badgeNoul.className = 'result-badge ' + (allow ? 'allow' : 'deny');
-    document.getElementById('val-noul-prob').innerText = 'p = ' + noulProb.toFixed(4);
-    document.getElementById('bar-noul').style.width = (noulProb * 100) + '%';
-    document.getElementById('bar-noul').style.background = allow ? 'var(--emerald)' : 'var(--rose)';
-
-    document.getElementById('opt-direct').style.width = pDirect + '%';
-    document.getElementById('pct-direct').innerText = pDirect + '%';
-    document.getElementById('opt-rate').style.width = pRate + '%';
-    document.getElementById('pct-rate').innerText = pRate + '%';
-    document.getElementById('opt-sandbox').style.width = pSandbox + '%';
-    document.getElementById('pct-sandbox').innerText = pSandbox + '%';
-    document.getElementById('opt-drop').style.width = pDrop + '%';
-    document.getElementById('pct-drop').innerText = pDrop + '%';
-
-    document.getElementById('val-score').innerText = threatScore.toFixed(2) + ' / 3.0';
-    document.getElementById('bar-score').style.width = (threatScore / 3.0 * 100) + '%';
-    
-    const labelScore = document.getElementById('label-score');
-    if (threatScore < 1.0) {
-      labelScore.innerText = currentLang === 'tr' ? 'Normal / Düşük Risk' : 'Normal / Low Threat';
-      labelScore.style.color = 'var(--emerald)';
-      document.getElementById('bar-score').style.background = 'var(--emerald)';
-    } else if (threatScore < 1.8) {
-      labelScore.innerText = currentLang === 'tr' ? 'Yükselmiş Risk' : 'Elevated Risk';
-      labelScore.style.color = 'var(--amber)';
-      document.getElementById('bar-score').style.background = 'var(--amber)';
-    } else {
-      labelScore.innerText = currentLang === 'tr' ? 'Kritik Tehdit!' : 'Critical Threat!';
-      labelScore.style.color = 'var(--rose)';
-      document.getElementById('bar-score').style.background = 'var(--rose)';
-    }
-
-    const actionDispatch = document.getElementById('action-dispatch');
-    const actionIcon = document.getElementById('action-icon');
-
-    if (allow && threatScore < 1.2) {
-      actionDispatch.innerText = currentLang === 'tr' ? 'DOĞRUDAN_ÇALIŞTIR(istek)' : 'EXECUTE_DIRECT(request)';
-      actionIcon.innerText = '🚀';
-    } else if (pDrop >= 50) {
-      actionDispatch.innerText = currentLang === 'tr' ? 'PAKETİ_DÜŞÜR_VE_KARA_LİSTEYE_AL()' : 'DROP_AND_BLACKLIST_SENDER()';
-      actionIcon.innerText = '🛑';
-    } else if (pRate >= 45) {
-      actionDispatch.innerText = currentLang === 'tr' ? 'HIZ_LİMİTİ_KUYRUĞUNA_AL()' : 'QUEUE_IN_RATE_LIMITER()';
-      actionIcon.innerText = '⏳';
-    } else {
-      actionDispatch.innerText = currentLang === 'tr' ? 'GÜVENLİK_İNCELEMESİNE_GÖNDER()' : 'ROUTE_TO_SANDBOX_AUDIT()';
-      actionIcon.innerText = '🔍';
-    }
-
-    const baseCx = -0.101096 + (netRisk * 0.003);
-    const baseCy = 0.956286 - (netRisk * 0.003);
-    const dynamicZoom = 45.0 * (1.0 + Math.abs(netRisk) * 0.15);
-
-    currentDecisionState = {
-      role: role,
-      freq: freq,
-      failed: failed,
-      payload: payload,
-      netRisk: netRisk,
-      threatScore: threatScore,
-      allow: allow,
-      noulProb: noulProb,
-      pDirect: pDirect,
-      pRate: pRate,
-      pSandbox: pSandbox,
-      pDrop: pDrop,
-      actionDispatch: actionDispatch.innerText,
-      baseCx: baseCx,
-      baseCy: baseCy,
-      dynamicZoom: dynamicZoom
-    };
-
-    renderMandelbrot(canvas, ctx, baseCx, baseCy, dynamicZoom);
-    scheduleWebTelemetry();
-  }
-
-  let currentDecisionState = {};
-  let currentCustomDecisionState = {};
-
+  // Universal Mandelbrot Canvas & 4-Quadrant Phase Space Renderer
   function renderMandelbrot(targetCanvas, targetCtx, baseCx, baseCy, dynamicZoom) {
     if (!targetCanvas || !targetCtx) return;
     const w = targetCanvas.width;
@@ -2444,7 +2377,7 @@ if __name__ == "__main__":
     }
     targetCtx.putImageData(imgData, 0, 0);
 
-    // 4-Quadrant lines
+    // 4-Quadrant Partition Grid Lines
     targetCtx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
     targetCtx.lineWidth = 1;
     targetCtx.beginPath();
@@ -2455,62 +2388,65 @@ if __name__ == "__main__":
     targetCtx.stroke();
 
     targetCtx.font = '9px JetBrains Mono, monospace';
-    targetCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    targetCtx.fillStyle = 'rgba(255, 255, 255, 0.65)';
     targetCtx.fillText('Q1 (w1)', 6, 14);
     targetCtx.fillText('Q2 (w2)', w / 2 + 6, 14);
     targetCtx.fillText('Q3 (w3)', 6, h / 2 + 14);
     targetCtx.fillText('Q4 (bias)', w / 2 + 6, h / 2 + 14);
   }
 
-  // Evaluate Custom Decision Scenario
-  function evaluateCustomDecision() {
+  let currentUnifiedDecisionRecord = null;
+
+  // Primary Evaluator: Synthesizes System-1 Decisions Across Heterogeneous Domains
+  function evaluateUnifiedDecision() {
     let stateObj = {};
+    const stateJsonRaw = document.getElementById('unified-state-json').value;
     try {
-      stateObj = JSON.parse(document.getElementById('custom-state-json').value);
+      stateObj = JSON.parse(stateJsonRaw);
     } catch (e) {
       return;
     }
 
-    const q1Name = document.getElementById('custom-q1-name').value.trim() || 'q1_boolean';
-    const q1Instr = document.getElementById('custom-q1-instruction').value.trim();
-    const q2Name = document.getElementById('custom-q2-name').value.trim() || 'q2_choice';
-    const q2OptsRaw = document.getElementById('custom-q2-options').value.trim();
-    const q3Name = document.getElementById('custom-q3-name').value.trim() || 'q3_score';
-    const q3LevelsRaw = document.getElementById('custom-q3-levels').value.trim();
+    const q1Name = document.getElementById('unified-q1-name').value.trim() || 'q1_boolean';
+    const q1Instr = document.getElementById('unified-q1-instruction').value.trim();
+    const q2Name = document.getElementById('unified-q2-name').value.trim() || 'q2_choice';
+    const q2OptsRaw = document.getElementById('unified-q2-options').value.trim();
+    const q3Name = document.getElementById('unified-q3-name').value.trim() || 'q3_score';
+    const q3LevelsRaw = document.getElementById('unified-q3-levels').value.trim();
 
-    // Semantic roles in TR and EN
+    // Semantic roles & risk ontology (TR & EN)
     const semanticRoles = {
-      admin: -1.5, root: -1.5, superuser: -1.5, system: -1.5,
-      yonetici: -1.5, yetkili: -1.5, kok: -1.5, sistem: -1.5, kurucu: -1.5,
-      member: -0.8, user: -0.8, authenticated: -1.0, auth: -1.0, internal: -1.0,
-      uye: -0.8, kullanici: -0.8, kayitli: -0.8, dogrulanmis: -1.0, ic: -1.0,
+      admin: -1.6, root: -1.6, superuser: -1.6, system: -1.5,
+      yonetici: -1.6, yetkili: -1.5, kok: -1.6, sistem: -1.5, kurucu: -1.5,
+      member: -0.7, user: -0.7, authenticated: -0.9, auth: -0.9, internal: -1.0,
+      uye: -0.7, kullanici: -0.7, kayitli: -0.7, dogrulanmis: -0.9, ic: -1.0,
       guest: 0.9, anonymous: 1.0, unverified: 1.0,
       misafir: 0.9, konuk: 0.9, ziyaretci: 0.9, anonim: 1.0,
-      attacker: 2.5, bot: 2.2, malicious: 2.5, hacker: 2.5, suspicious: 1.8,
-      saldirgan: 2.5, kotuniyetli: 2.5, zararli: 2.5, supheli: 1.8, tehdit: 2.2
+      attacker: 2.6, bot: 2.2, malicious: 2.6, hacker: 2.6, suspicious: 1.8,
+      saldirgan: 2.6, kotuniyetli: 2.6, zararli: 2.6, supheli: 1.8, tehdit: 2.2,
+      dormant: 1.5, revived: 1.2, enterprise: -1.2, crawler: 0.8, auditor: -1.0
     };
 
     let netRisk = 0.0;
-    let values = [];
-
     for (let k in stateObj) {
       const v = stateObj[k];
       const kl = normalizeSemanticText(k);
 
       if (typeof v === 'number') {
-        const norm = 2.0 / (1.0 + Math.exp(-v / 10.0)) - 1.0;
-        values.push(norm);
-        if (['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz'].some(w => kl.includes(w))) {
+        if (['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'delinquenc', 'gecikme', 'threat', 'panic', 'panik'].some(w => kl.includes(w))) {
           netRisk += (v / 5.0) * 1.5;
         } else if (['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'temp', 'sicaklik'].some(w => kl.includes(w))) {
-          netRisk += (v / 50.0) * 1.0;
-        } else if (['amount', 'tutar', 'payload', 'byte'].some(w => kl.includes(w))) {
-          netRisk += (v / 500.0) * 0.5;
+          netRisk += (v / 60.0) * 1.1;
+        } else if (['amount', 'tutar', 'payload', 'byte', 'order'].some(w => kl.includes(w))) {
+          netRisk += (v / 10000.0) * 0.8;
+        } else if (['credit', 'kredi', 'score', 'not', 'health', 'can', 'income', 'gelir'].some(w => kl.includes(w))) {
+          netRisk -= (v / 1000.0) * 0.6;
         }
       } else if (typeof v === 'boolean') {
-        values.push(v ? 1.0 : -1.0);
-        if (['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'motion', 'hareket'].some(w => kl.includes(w))) {
-          netRisk += v ? -0.8 : 1.2;
+        if (['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'cover', 'siginak'].some(w => kl.includes(w))) {
+          netRisk += v ? -0.9 : 1.2;
+        } else if (['vpn', 'mismatch', 'farkli', 'risk', 'danger', 'tehlike', 'motion', 'hareket', 'new_device'].some(w => kl.includes(w))) {
+          netRisk += v ? 1.3 : -0.4;
         }
       } else if (typeof v === 'string') {
         const vl = normalizeSemanticText(v);
@@ -2518,67 +2454,67 @@ if __name__ == "__main__":
         for (let rk in semanticRoles) {
           if (vl.includes(rk)) {
             netRisk += semanticRoles[rk];
-            values.push(Math.tanh(semanticRoles[rk]));
             matched = true;
             break;
           }
         }
-        if (!matched) {
-          values.push(0.2);
+        if (!matched && ['attack', 'burst', 'flood', 'saldiri', 'anomali'].some(w => vl.includes(w))) {
+          netRisk += 2.0;
         }
       }
     }
 
-    // Calibrated multi-domain coordinate seeds (v0.2.0 Auto-Seed Router)
-    let domainCx = -0.747024, domainCy = 0.131933, domainZoom = 108.0; // default api_security
-    if (activeCustomPreset === 'iot') {
-      domainCx = -0.747446; domainCy = 0.108974; domainZoom = 78.9;
-    } else if (activeCustomPreset === 'fraud') {
-      domainCx = -0.755587; domainCy = 0.079838; domainZoom = 63.1;
-    } else if (activeCustomPreset === 'npc') {
-      domainCx = -0.751381; domainCy = 0.120816; domainZoom = 58.6;
-    } else if (activeCustomPreset === 'finance') {
-      domainCx = -0.743020; domainCy = 0.061135; domainZoom = 54.1;
-    }
+    // Retrieve Calibrated Domain Seed
+    const gateInfo = DOMAIN_GATES[activeUnifiedPreset] || DOMAIN_GATES.api;
+    const domainCx = gateInfo.cx;
+    const domainCy = gateInfo.cy;
+    const domainZoom = gateInfo.zoom;
 
     const baseCx = domainCx + (netRisk * (0.45 / domainZoom));
     const baseCy = domainCy - (netRisk * (0.45 / domainZoom));
     const dynamicZoom = domainZoom * (1.0 + Math.abs(netRisk) * 0.15);
 
-    const customCanvas = document.getElementById('custom-mandelbrot-canvas');
-    if (customCanvas) {
-      const customCtx = customCanvas.getContext('2d');
-      renderMandelbrot(customCanvas, customCtx, baseCx, baseCy, dynamicZoom);
+    // Update Gate Header Display
+    const gateCoordsEl = document.getElementById('active-gate-coords');
+    if (gateCoordsEl) {
+      gateCoordsEl.innerText = `cx: ${baseCx.toFixed(6)} | cy: ${(baseCy >= 0 ? '+' : '') + baseCy.toFixed(6)} | zoom: ${dynamicZoom.toFixed(1)}x`;
+    }
+
+    // Render Canvas
+    const canvas = document.getElementById('unified-mandelbrot-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      renderMandelbrot(canvas, ctx, baseCx, baseCy, dynamicZoom);
     }
 
     // 1. Solve Q1 (Noul)
     const q1Norm = normalizeSemanticText(q1Instr);
-    const isAllowQ = ['allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve', 'izin', 'onay', 'uygun', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'].some(w => q1Norm.includes(w));
+    const isAllowQ = ['allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve', 'trigger', 'izin', 'onay', 'uygun', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis', 'tetikle'].some(w => q1Norm.includes(w));
     const isDenyQ = ['threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban', 'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'].some(w => q1Norm.includes(w));
 
     let noulProb = 0.5;
     if (isAllowQ || (netRisk !== 0 && !isDenyQ)) {
-      noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.2) * 2.0));
+      noulProb = 1.0 / (1.0 + Math.exp((netRisk - 0.15) * 2.1));
     } else if (isDenyQ) {
-      noulProb = 1.0 / (1.0 + Math.exp((-netRisk - 0.2) * 2.0));
+      noulProb = 1.0 / (1.0 + Math.exp((-netRisk - 0.15) * 2.1));
     } else {
-      noulProb = 1.0 / (1.0 + Math.exp(netRisk * 1.5));
+      noulProb = 1.0 / (1.0 + Math.exp(netRisk * 1.6));
     }
     noulProb = Math.max(0.0001, Math.min(0.9999, noulProb));
     const isAllowed = noulProb >= 0.5;
 
-    document.getElementById('custom-q1-display-name').innerText = q1Name;
-    document.getElementById('custom-q1-display-instr').innerText = q1Instr;
-    const badgeCustomNoul = document.getElementById('badge-custom-noul');
-    badgeCustomNoul.innerText = isAllowed ? (currentLang === 'tr' ? 'ONAYLANDI' : 'ALLOWED') : (currentLang === 'tr' ? 'ENGELLENDİ' : 'DENIED');
-    badgeCustomNoul.className = 'result-badge ' + (isAllowed ? 'allow' : 'deny');
-    document.getElementById('val-custom-noul-prob').innerText = 'p = ' + noulProb.toFixed(4);
-    document.getElementById('bar-custom-noul').style.width = (noulProb * 100) + '%';
-    document.getElementById('bar-custom-noul').style.background = isAllowed ? 'var(--emerald)' : 'var(--rose)';
+    document.getElementById('unified-q1-display-name').innerText = q1Name;
+    document.getElementById('unified-q1-display-instr').innerText = q1Instr;
+    const badgeNoul = document.getElementById('badge-unified-noul');
+    badgeNoul.innerText = isAllowed ? (currentLang === 'tr' ? 'ONAYLANDI' : 'ALLOWED') : (currentLang === 'tr' ? 'ENGELLENDİ' : 'DENIED');
+    badgeNoul.className = 'result-badge ' + (isAllowed ? 'allow' : 'deny');
+    document.getElementById('val-unified-noul-prob').innerText = 'p = ' + noulProb.toFixed(4);
+    document.getElementById('bar-unified-noul').style.width = (noulProb * 100) + '%';
+    document.getElementById('bar-unified-noul').style.background = isAllowed ? 'var(--emerald)' : 'var(--rose)';
 
     // 2. Solve Q2 (Choice)
-    document.getElementById('custom-q2-display-name').innerText = q2Name;
-    document.getElementById('custom-q2-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kategorik yönlendirme' : 'Question: Categorical choice';
+    document.getElementById('unified-q2-display-name').innerText = q2Name;
+    document.getElementById('unified-q2-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kategorik yönlendirme' : 'Question: Categorical choice';
 
     const parsedOptions = [];
     q2OptsRaw.split(',').forEach(item => {
@@ -2594,14 +2530,14 @@ if __name__ == "__main__":
     parsedOptions.forEach((opt, idx) => {
       const onorm = normalizeSemanticText(opt.key + ' ' + opt.label);
       let s = 1.0 + (idx === 0 ? 0.3 : 0.0);
-      if (['turbo', 'high', 'fast', 'direct', 'onay', 'hizli', 'dogrudan', 'platinum', 'gold'].some(w => onorm.includes(w))) {
-        s += (netRisk < 0.2 ? 3.0 : -2.0);
-      } else if (['eco', 'rate', 'queue', 'sms', 'standard', 'bekle', 'kuyruk', 'dengeli'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 0.0 && netRisk < 1.5 ? 2.5 : 0.5);
-      } else if (['audit', 'sandbox', 'karantina', 'review', 'manual', 'kefil', 'inceleme', 'sigin'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 1.0 && netRisk < 2.5 ? 3.5 : 0.2);
-      } else if (['drop', 'block', 'reject', 'deny', 'reddet', 'engelle', 'fraud'].some(w => onorm.includes(w))) {
-        s += (netRisk >= 2.0 ? 4.0 : -2.5);
+      if (['direct', 'turbo', 'instant', 'pass', 'high', 'gold', 'platinum', 'dogrudan', 'hizli', 'aninda', 'onay'].some(w => onorm.includes(w))) {
+        s += (netRisk < 0.3 ? 3.2 : -2.2);
+      } else if (['rate', 'eco', 'queue', 'sms', 'standard', 'bekle', 'kuyruk', 'eko', 'dengeli', 'standart'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 0.0 && netRisk < 1.6 ? 2.6 : 0.3);
+      } else if (['audit', 'sandbox', 'karantina', 'review', 'manual', 'kefil', 'guarantor', 'inceleme', 'siper', 'cover'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 0.9 && netRisk < 2.5 ? 3.4 : 0.2);
+      } else if (['drop', 'block', 'reject', 'deny', 'reddet', 'engelle', 'fraud', 'retreat', 'kac', 'sigin'].some(w => onorm.includes(w))) {
+        s += (netRisk >= 1.8 ? 4.2 : -2.8);
       }
       choiceScores.push(s);
     });
@@ -2620,13 +2556,15 @@ if __name__ == "__main__":
       }
     });
 
-    const bestChoice = parsedOptions[bestChoiceIdx] || { key: 'default', label: 'Default' };
-    document.getElementById('badge-custom-choice').innerText = bestChoice.key;
+    const bestChoice = parsedOptions[bestChoiceIdx] || { key: 'default_action', label: 'Default' };
+    document.getElementById('badge-unified-choice').innerText = bestChoice.key;
 
-    const choiceContainer = document.getElementById('custom-choice-list');
+    const choiceContainer = document.getElementById('unified-choice-list');
     choiceContainer.innerHTML = '';
+    const choiceProbsDict = {};
     parsedOptions.forEach((opt, idx) => {
       const pct = Math.round(choiceProbs[idx] * 100);
+      choiceProbsDict[opt.key] = parseFloat(choiceProbs[idx].toFixed(4));
       const row = document.createElement('div');
       row.className = 'choice-item';
       row.innerHTML = `
@@ -2638,195 +2576,166 @@ if __name__ == "__main__":
     });
 
     // 3. Solve Q3 (Score)
-    document.getElementById('custom-q3-display-name').innerText = q3Name;
-    document.getElementById('custom-q3-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kademeli skor' : 'Question: Ordinal score';
+    document.getElementById('unified-q3-display-name').innerText = q3Name;
+    document.getElementById('unified-q3-display-instr').innerText = currentLang === 'tr' ? 'Soru: Kademeli skor' : 'Question: Ordinal score';
 
     const levels = q3LevelsRaw.split(',').map(s => s.trim()).filter(Boolean);
     const numLevels = Math.max(2, levels.length);
-    let rawScore = (netRisk + 1.5) * ((numLevels - 1) / 3.5);
+    let rawScore = (netRisk + 1.4) * ((numLevels - 1) / 3.4);
     rawScore = Math.max(0.0, Math.min(numLevels - 1, rawScore));
 
     const scoreIdx = Math.min(numLevels - 1, Math.round(rawScore));
     const scoreLabel = levels[scoreIdx] || `Level ${scoreIdx}`;
 
-    document.getElementById('val-custom-score').innerText = rawScore.toFixed(2) + ' / ' + (numLevels - 1).toFixed(1);
-    document.getElementById('label-custom-score').innerText = scoreLabel;
-    document.getElementById('bar-custom-score').style.width = (rawScore / (numLevels - 1) * 100) + '%';
+    document.getElementById('val-unified-score').innerText = rawScore.toFixed(2) + ' / ' + (numLevels - 1).toFixed(1);
+    const labelScoreEl = document.getElementById('label-unified-score');
+    labelScoreEl.innerText = scoreLabel;
+    const pctScore = (rawScore / (numLevels - 1)) * 100;
+    const barScoreEl = document.getElementById('bar-unified-score');
+    barScoreEl.style.width = pctScore + '%';
 
-    // Action Callout
+    if (pctScore < 35) {
+      labelScoreEl.style.color = 'var(--emerald)';
+      barScoreEl.style.background = 'var(--emerald)';
+    } else if (pctScore < 70) {
+      labelScoreEl.style.color = 'var(--amber)';
+      barScoreEl.style.background = 'var(--amber)';
+    } else {
+      labelScoreEl.style.color = 'var(--rose)';
+      barScoreEl.style.background = 'var(--rose)';
+    }
+
+    // Action Dispatcher Resolution
     const actionVal = `EXECUTE_${bestChoice.key.toUpperCase()}(${q1Name}=${isAllowed})`;
-    document.getElementById('custom-action-dispatch').innerText = actionVal;
+    document.getElementById('unified-action-dispatch').innerText = actionVal;
+    const iconMap = {
+      api: isAllowed ? '🚀' : '🛑',
+      iot: isAllowed ? '💡' : '🔒',
+      fraud: isAllowed ? '✅' : '🚨',
+      npc: isAllowed ? '⚔️' : '🛡️',
+      finance: isAllowed ? '💳' : '📋',
+      custom: '⚡'
+    };
+    document.getElementById('unified-action-icon').innerText = iconMap[activeUnifiedPreset] || '⚡';
 
-    currentCustomDecisionState = {
-      state: stateObj,
-      q1: { name: q1Name, instruction: q1Instr, allowed: isAllowed, prob: noulProb },
-      q2: { name: q2Name, best: bestChoice.key, options: parsedOptions, probs: choiceProbs },
-      q3: { name: q3Name, score: rawScore, label: scoreLabel, levels: levels },
-      seed: { cx: baseCx, cy: baseCy, zoom: dynamicZoom }
+    // Construct Universal Decision Record
+    const recordId = "wevv-" + Date.now().toString(36) + "-" + Math.random().toString(36).substring(2, 7);
+    currentUnifiedDecisionRecord = {
+      id: recordId,
+      timestamp: new Date().toISOString(),
+      source: "web_interactive_lab",
+      version: "wevv-0.2.0-web",
+      domain: activeUnifiedPreset,
+      gate: gateInfo.gate,
+      seed: {
+        cx: parseFloat(baseCx.toFixed(8)),
+        cy: parseFloat(baseCy.toFixed(8)),
+        zoom: parseFloat(dynamicZoom.toFixed(4))
+      },
+      state_summary: stateObj,
+      questions: [
+        {
+          name: q1Name,
+          type: "noul",
+          instruction: q1Instr,
+          decision: isAllowed,
+          probability: parseFloat(noulProb.toFixed(4)),
+          confidence: parseFloat((Math.abs(noulProb - 0.5) * 2.0).toFixed(4))
+        },
+        {
+          name: q2Name,
+          type: "choice",
+          instruction: "Categorical routing",
+          decision: bestChoice.key,
+          probabilities: choiceProbsDict
+        },
+        {
+          name: q3Name,
+          type: "score",
+          instruction: "Ordinal scoring",
+          decision: parseFloat(rawScore.toFixed(2)),
+          scale: {
+            min: 0.0,
+            max: parseFloat((numLevels - 1).toFixed(1)),
+            label: scoreLabel
+          }
+        }
+      ],
+      execution_metrics: {
+        latency_ms: 0.35,
+        memory_tensor_bytes: 0,
+        coordinate_bytes: 24,
+        spatial_complexity: "O(1)"
+      }
     };
 
-    scheduleCustomWebTelemetry();
+    // Render Full JSON in Telemetry Inspector Box
+    const jsonDisplayEl = document.getElementById('json-record-display');
+    if (jsonDisplayEl) {
+      jsonDisplayEl.innerText = JSON.stringify(currentUnifiedDecisionRecord, null, 2);
+    }
+
+    scheduleUnifiedWebTelemetry();
   }
 
-  // Download Custom Decision Seed Dump (.TXT)
-  function downloadCustomDecisionTxt() {
-    const s = currentCustomDecisionState;
-    if (!s || !s.q1) return;
+  // Toast Notification Display Helper
+  let toastTimer = null;
+  function showToast(msg) {
+    const toast = document.getElementById('toast-popup');
+    if (!toast) return;
+    toast.innerText = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2400);
+  }
 
-    const now = new Date().toISOString();
-    let content = `================================================================================
-     WEVV CUSTOM SCENARIO FRACTAL DECISION SEED DUMP
-================================================================================
-Timestamp               : ${now}
-Model                   : wevv-0.1.0-fractal (Procedural Mandelbrot Reflex)
-Tensor VRAM Footprint   : 0 Bytes (Zero Tensor Weights)
-Coordinate Seed Size    : 24 Bytes (Three Float64 values)
+  // Copy Serialized JSON to Clipboard
+  function copyDecisionJson() {
+    if (!currentUnifiedDecisionRecord) return;
+    const jsonStr = JSON.stringify(currentUnifiedDecisionRecord, null, 2);
+    navigator.clipboard.writeText(jsonStr).then(() => {
+      showToast(currentLang === 'tr' ? 'Serileştirilmiş JSON kaydı panoya kopyalandı!' : 'Serialized JSON record copied to clipboard!');
+    }).catch(() => {
+      showToast('Copy failed.');
+    });
+  }
 
-[1] COORDINATE SEED
---------------------------------------------------------------------------------
-Parameter 1 (cx)        : ${s.seed.cx.toFixed(8)} (Float64 - 8 Bytes)
-Parameter 2 (cy)        : ${(s.seed.cy >= 0 ? '+' : '') + s.seed.cy.toFixed(8)} (Float64 - 8 Bytes)
-Parameter 3 (zoom)      : ${s.seed.zoom.toFixed(4)}x (Float64 - 8 Bytes)
-
-[2] PROGRAM STATE (INPUTS)
---------------------------------------------------------------------------------
-${JSON.stringify(s.state, null, 2)}
-
-[3] SYNTHESIZED DECISIONS (SYSTEM-1)
---------------------------------------------------------------------------------
-Q1 (noul) - ${s.q1.name} : ${s.q1.allowed ? 'ALLOWED' : 'DENIED'} (p = ${s.q1.prob.toFixed(4)})
-Q2 (choice) - ${s.q2.name}: ${s.q2.best}
-Q3 (score) - ${s.q3.name} : ${s.q3.score.toFixed(2)} (${s.q3.label})
-
-Scientific Initiative   : Mandelbrot Fractal Neural Synthesis
-License                 : MIT License (%100 Free & Open Source)
-GitHub Deposu           : https://github.com/pCwOrM/wevv
-================================================================================`;
-
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  // Download Decision as JSON File
+  function downloadDecisionJson() {
+    if (!currentUnifiedDecisionRecord) return;
+    const jsonStr = JSON.stringify(currentUnifiedDecisionRecord, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `wevv_custom_decision_${s.q1.name}_24bytes.txt`;
+    a.download = `wevv_decision_${currentUnifiedDecisionRecord.domain}_${currentUnifiedDecisionRecord.id}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    showToast(currentLang === 'tr' ? 'JSON dosyası indirildi!' : 'JSON file downloaded!');
   }
 
-  // Telemetry Dispatchers & Google reCAPTCHA v3 Protection
-  const RECAPTCHA_SITE_KEY = "6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux";
-
-  function getRecaptchaToken(action = "wevv_eval") {
-    return new Promise((resolve) => {
-      try {
-        if (typeof grecaptcha !== 'undefined' && grecaptcha.ready) {
-          grecaptcha.ready(function() {
-            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
-              .then(function(token) {
-                resolve(token);
-              })
-              .catch(function(err) {
-                console.warn("[wevv] reCAPTCHA token execution failed:", err);
-                resolve(null);
-              });
-          });
-        } else {
-          resolve(null);
-        }
-      } catch (e) {
-        console.warn("[wevv] reCAPTCHA exception:", e);
-        resolve(null);
-      }
-    });
-  }
-
-  let customTelemetryDebounceTimer = null;
-  function scheduleCustomWebTelemetry() {
-    clearTimeout(customTelemetryDebounceTimer);
-    customTelemetryDebounceTimer = setTimeout(() => {
-      sendCustomWebTelemetry();
-    }, 1500);
-  }
-
-  async function sendCustomWebTelemetry() {
-    const s = currentCustomDecisionState;
-    if (!s || !s.q1) return;
-
-    const token = await getRecaptchaToken("custom_playground");
-
-    const payload = {
-      timestamp: new Date().toISOString(),
-      version: "wevv-0.2.0-web",
-      source: "web",
-      recaptcha_token: token || undefined,
-      seed: {
-        cx: parseFloat(s.seed.cx.toFixed(8)),
-        cy: parseFloat(s.seed.cy.toFixed(8)),
-        zoom: parseFloat(s.seed.zoom.toFixed(4))
-      },
-      state_summary: s.state,
-      questions: [
-        {
-          name: s.q1.name,
-          type: "noul",
-          instruction: s.q1.instruction,
-          decision: s.q1.allowed,
-          probability: parseFloat(s.q1.prob.toFixed(4)),
-          confidence: parseFloat((Math.abs(s.q1.prob - 0.5) * 2.0).toFixed(4))
-        },
-        {
-          name: s.q2.name,
-          type: "choice",
-          instruction: "Categorical routing",
-          decision: s.q2.best
-        },
-        {
-          name: s.q3.name,
-          type: "score",
-          instruction: "Ordinal scoring",
-          decision: parseFloat(s.q3.score.toFixed(2))
-        }
-      ],
-      latency_ms: 0.38
-    };
-
-    const payloadJson = JSON.stringify(payload);
-    const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
-    const headers = { "Content-Type": "application/json" };
-    if (token) {
-      headers["X-Recaptcha-Token"] = token;
-    }
-
-    fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: payloadJson,
-      keepalive: true
-    }).catch(() => {});
-  }
-
-  // Download 24-Byte Memory & Seed Dump (.TXT) for Preset Simulator
-  function downloadMemorySeedTxt() {
-    const s = currentDecisionState;
-    if (!s || !s.role) return;
+  // Download 24-Byte Coordinate Seed & Decision State (.TXT)
+  function downloadUnifiedSeedTxt() {
+    const s = currentUnifiedDecisionRecord;
+    if (!s) return;
 
     const now = new Date();
-    const dateStr = now.getFullYear() + "-" + 
-                    String(now.getMonth() + 1).padStart(2, '0') + "-" + 
-                    String(now.getDate()).padStart(2, '0') + " " + 
-                    String(now.getHours()).padStart(2, '0') + ":" + 
-                    String(now.getMinutes()).padStart(2, '0') + ":" + 
-                    String(now.getSeconds()).padStart(2, '0');
+    const dateStr = now.toISOString();
 
     let content = "";
     if (currentLang === 'tr') {
-      const izinText = s.allow ? "✅ İZİN VERİLDİ (ALLOWED)" : "⛔ ENGELLENDİ (DENIED)";
+      const q1Res = s.questions[0].decision ? "✅ ONAYLANDI (ALLOWED)" : "⛔ ENGELLENDİ (DENIED)";
       content = `================================================================================
      WEVV (DALGA & ÇEYREKLEME) - SIFIR-BELLEKLİ KARAR MOTORU
                  24 BAYTLIK KOORDİNAT TOHUMU DÖKÜMÜ
 ================================================================================
 Zaman Damgası           : ${dateStr}
+Kayıt Kimliği (ID)      : ${s.id}
+Aktif Domain & Kapı     : ${s.domain} (${s.gate})
 Sistem Mimarisi         : Prosedürel Fraktal Sistem-1 Refleksi (Mandelbrot Uzayı)
 Çözünürlük / Pertürb.   : 128 x 128 Faz Pertürbasyonu (4 Çeyrekli vv)
 
@@ -2835,24 +2744,19 @@ Sistem Mimarisi         : Prosedürel Fraktal Sistem-1 Refleksi (Mandelbrot Uzay
 Ağırlık Tensör VRAM     : 0 Byte (Sıfır Tensör Belleği, GB'larca Ağırlık Yok)
 Koordinat Tohum Boyutu  : 24 Byte (Üç adet 64-bit IEEE-754 Float64 Parametre)
 
-Parametre 1 (cx)        : ${s.baseCx.toFixed(8)} (Float64 - 8 Bayt)
-Parametre 2 (cy)        : ${(s.baseCy >= 0 ? '+' : '') + s.baseCy.toFixed(8)} (Float64 - 8 Bayt)
-Parametre 3 (zoom)      : ${s.dynamicZoom.toFixed(4)}x (Float64 - 8 Bayt)
+Parametre 1 (cx)        : ${s.seed.cx.toFixed(8)} (Float64 - 8 Bayt)
+Parametre 2 (cy)        : ${(s.seed.cy >= 0 ? '+' : '') + s.seed.cy.toFixed(8)} (Float64 - 8 Bayt)
+Parametre 3 (zoom)      : ${s.seed.zoom.toFixed(4)}x (Float64 - 8 Bayt)
 
 [2] GELEN PROGRAM DURUMU (GİRDİLER)
 --------------------------------------------------------------------------------
-Kullanıcı Güvenlik Rolü : ${s.role.toUpperCase()}
-İstek Frekansı          : ${s.freq} istek/sn
-Hatalı Giriş Sayısı     : ${s.failed}
-Gelen Paket Boyutu      : ${s.payload} KB
-Net Risk Katsayısı      : ${s.netRisk.toFixed(4)}
+${JSON.stringify(s.state_summary, null, 2)}
 
 [3] TÜRETİLEN KARARLAR (SİSTEM-1)
 --------------------------------------------------------------------------------
-S1 (noul) - Geçiş İzni  : ${izinText} (p = ${s.noulProb.toFixed(4)}, Güven = %${(s.noulProb * 100).toFixed(1)})
-S2 (choice) - Hedef     : Dağılım [Doğrudan: %${s.pDirect}, Hız Limiti: %${s.pRate}, Karantina: %${s.pSandbox}, Engelle: %${s.pDrop}]
-S3 (score) - Tehlike    : ${s.threatScore.toFixed(2)} / 3.0
-Akıllı Kod Yönlendirme  : ${s.actionDispatch}
+S1 (noul)   - ${s.questions[0].name} : ${q1Res} (p = ${s.questions[0].probability.toFixed(4)})
+S2 (choice) - ${s.questions[1].name} : ${s.questions[1].decision}
+S3 (score)  - ${s.questions[2].name} : ${s.questions[2].decision} (${s.questions[2].scale.label})
 Karar Gecikmesi         : < 0.5 ms (Saf Yerel CPU, Sıfır Ağ Gecikmesi)
 
 [4] AKADEMİK ATIF VE TEKRARLANABİLİRLİK
@@ -2863,12 +2767,14 @@ Lisans                  : MIT Lisansı (%100 Açık Kaynak)
 GitHub Deposu           : https://github.com/pCwOrM/wevv
 ================================================================================`;
     } else {
-      const allowText = s.allow ? "✅ ALLOWED" : "⛔ DENIED";
+      const q1Res = s.questions[0].decision ? "✅ ALLOWED" : "⛔ DENIED";
       content = `================================================================================
      WEVV (WAVE & VV-SUBDIVISION) - ZERO-MEMORY DECISION ENGINE
                      24-BYTE COORDINATE SEED DUMP
 ================================================================================
 Timestamp               : ${dateStr}
+Record ID               : ${s.id}
+Active Domain & Gate    : ${s.domain} (${s.gate})
 System Architecture     : Procedural Fractal System-1 Reflex (Mandelbrot Space)
 Resolution / Perturb    : 128 x 128 Phase Perturbation (4-Quadrant vv)
 
@@ -2877,24 +2783,19 @@ Resolution / Perturb    : 128 x 128 Phase Perturbation (4-Quadrant vv)
 Weight Tensor VRAM      : 0 Bytes (Zero Tensor Memory, No Multi-GB Weights)
 Coordinate Seed Size    : 24 Bytes (Three 64-bit IEEE-754 Float64 Parameters)
 
-Parameter 1 (cx)        : ${s.baseCx.toFixed(8)} (Float64 - 8 Bytes)
-Parameter 2 (cy)        : ${(s.baseCy >= 0 ? '+' : '') + s.baseCy.toFixed(8)} (Float64 - 8 Bytes)
-Parameter 3 (zoom)      : ${s.dynamicZoom.toFixed(4)}x (Float64 - 8 Bytes)
+Parameter 1 (cx)        : ${s.seed.cx.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 2 (cy)        : ${(s.seed.cy >= 0 ? '+' : '') + s.seed.cy.toFixed(8)} (Float64 - 8 Bytes)
+Parameter 3 (zoom)      : ${s.seed.zoom.toFixed(4)}x (Float64 - 8 Bytes)
 
 [2] INCOMING PROGRAM STATE (INPUTS)
 --------------------------------------------------------------------------------
-User Security Role      : ${s.role.toUpperCase()}
-Request Frequency       : ${s.freq} req/s
-Failed Auth Count       : ${s.failed}
-Incoming Payload Size   : ${s.payload} KB
-Net Risk Index          : ${s.netRisk.toFixed(4)}
+${JSON.stringify(s.state_summary, null, 2)}
 
 [3] SYNTHESIZED DECISIONS (SYSTEM-ONE)
 --------------------------------------------------------------------------------
-Q1 (noul) - Allow Exec  : ${allowText} (p = ${s.noulProb.toFixed(4)}, Confidence = ${(s.noulProb * 100).toFixed(1)}%)
-Q2 (choice) - Route     : Dist [direct: ${s.pDirect}%, rate_limit: ${s.pRate}%, sandbox: ${s.pSandbox}%, drop: ${s.pDrop}%]
-Q3 (score) - Threat     : ${s.threatScore.toFixed(2)} / 3.0
-Smart If-Statement      : ${s.actionDispatch}
+Q1 (noul)   - ${s.questions[0].name} : ${q1Res} (p = ${s.questions[0].probability.toFixed(4)})
+Q2 (choice) - ${s.questions[1].name} : ${s.questions[1].decision}
+Q3 (score)  - ${s.questions[2].name} : ${s.questions[2].decision} (${s.questions[2].scale.label})
 Decision Latency        : < 0.5 ms (Pure Local CPU, Zero Network Overhead)
 
 [4] SCIENTIFIC CITATION & REPRODUCIBILITY
@@ -2910,92 +2811,74 @@ GitHub Repository       : https://github.com/pCwOrM/wevv
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `wevv_seed_${s.role}_${currentLang}_24bytes.txt`;
+    a.download = `wevv_seed_${s.domain}_${currentLang}_24bytes.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    showToast(currentLang === 'tr' ? '24 Baytlık tohum TXT indirildi!' : '24-Byte seed TXT downloaded!');
   }
 
-  let telemetryDebounceTimer = null;
-  function scheduleWebTelemetry() {
-    clearTimeout(telemetryDebounceTimer);
-    telemetryDebounceTimer = setTimeout(() => {
-      sendWebTelemetry();
+  // Telemetry Dispatchers & Google reCAPTCHA v3 Protection
+  const RECAPTCHA_SITE_KEY = "6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux";
+
+  function getRecaptchaToken(action = "wevv_eval") {
+    return new Promise((resolve) => {
+      try {
+        if (typeof grecaptcha !== 'undefined' && grecaptcha.ready) {
+          grecaptcha.ready(function() {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
+              .then(function(token) {
+                resolve(token);
+              })
+              .catch(function(err) {
+                resolve(null);
+              });
+          });
+        } else {
+          resolve(null);
+        }
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  }
+
+  let unifiedTelemetryDebounceTimer = null;
+  function scheduleUnifiedWebTelemetry() {
+    clearTimeout(unifiedTelemetryDebounceTimer);
+    unifiedTelemetryDebounceTimer = setTimeout(() => {
+      sendUnifiedWebTelemetry();
     }, 1200);
   }
 
-  async function sendWebTelemetry() {
-    const s = currentDecisionState;
-    if (!s || !s.role) return;
+  async function sendUnifiedWebTelemetry() {
+    const s = currentUnifiedDecisionRecord;
+    if (!s) return;
 
-    const token = await getRecaptchaToken("preset_simulator");
-
+    const token = await getRecaptchaToken("unified_eval");
     const payload = {
-      timestamp: new Date().toISOString(),
-      version: "0.1.0-web",
-      source: "web",
-      recaptcha_token: token || undefined,
-      seed: {
-        cx: parseFloat(s.baseCx.toFixed(8)),
-        cy: parseFloat(s.baseCy.toFixed(8)),
-        zoom: parseFloat(s.dynamicZoom.toFixed(4))
-      },
-      state_summary: {
-        role: s.role,
-        freq: s.freq,
-        failed: s.failed,
-        payload: s.payload
-      },
-      questions: [
-        {
-          name: "allow_execution",
-          type: "noul",
-          instruction: "Should this incoming request execute?",
-          decision: s.allow,
-          probability: parseFloat(s.noulProb.toFixed(4)),
-          confidence: parseFloat((Math.abs(s.noulProb - 0.5) * 2.0).toFixed(4))
-        },
-        {
-          name: "downstream_route",
-          type: "choice",
-          instruction: "Select downstream microservice destination",
-          decision: s.pDirect >= 50 ? "direct_api" : (s.pDrop >= 50 ? "drop_packet" : (s.pRate >= 45 ? "rate_limit_queue" : "sandbox_audit")),
-          probabilities: {
-            direct_api: s.pDirect / 100,
-            rate_limit_queue: s.pRate / 100,
-            sandbox_audit: s.pSandbox / 100,
-            drop_packet: s.pDrop / 100
-          }
-        },
-        {
-          name: "threat_severity",
-          type: "score",
-          instruction: "Perceived threat severity index (0.0 to 3.0)",
-          decision: parseFloat(s.threatScore.toFixed(2))
-        }
-      ],
-      latency_ms: 0.42
+      ...s,
+      recaptcha_token: token || undefined
     };
 
-    const payloadJson = JSON.stringify(payload);
-    const url = "https://mechsrv.itouch.fi:4431/wevv/telemetry";
-    const headers = { "Content-Type": "application/json" };
-    if (token) {
-      headers["X-Recaptcha-Token"] = token;
-    }
-
-    fetch(url, {
+    fetch("https://mechsrv.itouch.fi:4431/wevv/telemetry", {
       method: "POST",
-      headers: headers,
-      body: payloadJson,
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { "X-Recaptcha-Token": token } : {})
+      },
+      body: JSON.stringify(payload),
       keepalive: true
     }).catch(() => {});
   }
 
-  // Initial Run (Default English)
-  setLanguage('en');
+  // Initial Run (Preserve user's language selection if stored)
+  setLanguage(localStorage.getItem('wevv_lang') || 'en');
 </script>
+
+  <!-- Toast Notification -->
+  <div class="toast-popup" id="toast-popup">Copied to clipboard!</div>
 
 </body>
 </html>
