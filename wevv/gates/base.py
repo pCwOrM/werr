@@ -255,22 +255,70 @@ class DomainGate(ABC):
             'kes', 'siginaga_kac', 'paketi_dusur', 'islemi_reddet', 'basvuru_reddi'
         }
 
+        instr_tokens = set(re.findall(r'[a-zA-Z0-9]+', normalize_text(str(q_obj.instructions))))
+        gate_keywords = {normalize_text(kw) for kw in getattr(self, 'keywords', [])}
+
         for i, opt in enumerate(options):
             opt_norm = normalize_text(opt)
             desc_norm = normalize_text(str(q_obj.criteria.get(opt, "")))
-            opt_tokens = set(re.findall(r'[a-zA-Z0-9]+', opt_norm)) | set(re.findall(r'[a-zA-Z0-9]+', desc_norm)) | {opt_norm}
+            opt_key_tokens = set(re.findall(r'[a-zA-Z0-9]+', opt_norm)) | {opt_norm}
+            opt_desc_tokens = set(re.findall(r'[a-zA-Z0-9]+', desc_norm))
+            
             q_res = float(quad_ratios[i % 4])
             feat_idx = (i * 2) % len(vec)
             st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
             score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
 
-            # Semantic alignment prioritizing defensive block / caution / direct
-            if bool(opt_tokens & block_kw):
-                score_i += 4.5 if net_risk >= 0.8 else -4.0
-            elif bool(opt_tokens & caution_kw):
-                score_i += 3.5 if (0.2 <= net_risk < 1.4) else -1.5
-            elif bool(opt_tokens & direct_kw):
-                score_i += 4.0 if net_risk < 0.3 else -4.0
+            # -----------------------------------------------------------------
+            # Chordial Semantic Resonance & Phase-Coherence Modulation
+            # Prevents butterfly spikes from isolated descriptive words while
+            # preserving harmonic affinity (Tinleme Index) and sub-gate resonance.
+            # -----------------------------------------------------------------
+            matched_cat = None
+            in_key = False
+
+            if bool(opt_key_tokens & block_kw):
+                matched_cat = 'block'
+                in_key = True
+            elif bool(opt_desc_tokens & block_kw):
+                matched_cat = 'block'
+                in_key = False
+            elif bool(opt_key_tokens & caution_kw):
+                matched_cat = 'caution'
+                in_key = True
+            elif bool(opt_desc_tokens & caution_kw):
+                matched_cat = 'caution'
+                in_key = False
+            elif bool(opt_key_tokens & direct_kw):
+                matched_cat = 'direct'
+                in_key = True
+            elif bool(opt_desc_tokens & direct_kw):
+                matched_cat = 'direct'
+                in_key = False
+
+            if matched_cat is not None:
+                # Acoustic Tinleme Index (T):
+                # Primary key matches carry full metallic sharpness (T = 1.0)
+                if in_key:
+                    tinleme = 1.0
+                else:
+                    # Incidental descriptive words require harmonic agreement with question/gate
+                    has_chord = bool(instr_tokens & (block_kw | caution_kw | direct_kw | gate_keywords))
+                    tinleme = 0.5 if has_chord else 0.08
+
+                # Smooth, conservative hyperbolic alignment curve (no discontinuous cliffs)
+                if matched_cat == 'block':
+                    align = math.tanh(net_risk - 0.75)
+                    amplitude = 4.5
+                elif matched_cat == 'caution':
+                    diff = net_risk - 0.75
+                    align = math.exp(-2.0 * diff * diff) * 1.5 - 0.5
+                    amplitude = 3.5
+                elif matched_cat == 'direct':
+                    align = math.tanh(0.4 - net_risk)
+                    amplitude = 4.2
+
+                score_i += amplitude * align * tinleme
 
             scores.append(score_i)
 
