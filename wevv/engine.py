@@ -138,6 +138,14 @@ class WevvEngine:
             from wevv.router import AutoSeedRouter
             router = AutoSeedRouter()
             resp, domain, _ = router.route_and_evaluate(state=state, questions=questions, preferred_domain=preferred_domain)
+            seed = getattr(resp, 'active_coordinates', None) or {"cx": self.cx, "cy": self.cy, "zoom": self.zoom}
+            dispatch_telemetry_async(
+                state=state,
+                questions=questions,
+                response=resp,
+                seed=seed,
+                source="python_lib"
+            )
             return resp
 
         start_time = time.perf_counter()
