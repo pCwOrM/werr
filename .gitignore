@@ -24,3 +24,8 @@ Desktop.ini
 !docs/*.pdf
 !zenodo/*.pdf
 !arxiv/*.zip
+
+# Do not track paper PDFs or generated HTML in git prior to Q1 release
+paper/*.pdf
+paper/*.html
+scratch/

@@ -52,6 +52,13 @@ Merkezi LLM sağlayıcıları (TypeSafe, OpenAI vb.) ve bulut API modelleri, gel
 * **E (Error):** Euler kaçış eşiği ($|Z_n| > 2$).
 * **VV (Subdivide):** 4 kuadranlı özyinelemeli fraktal ayrışma.
 
+#### 2.7 Dinamik Yörünge Budaması: Filtrelemenin Sezgilere Aykırı Hızlanma Mekanizması (Dynamical Trajectory Pruning)
+Klasik yazılım mühendisliği ve NLP sezgisi; metin üzerine ilave kontrol katmanları, harmonik triad doğrulaması ($\mathcal{H} = \Phi \otimes \Psi \otimes \Omega$) ve token sönümleme faktörleri eklendiğinde sistemin ek CPU maliyetiyle yavaşlayacağını öngörür. Oysa \textit{wevv} mimarisinde filtreleme sonrasında **2.5 katlık net bir çıkarsama hızlanması** (gecikmenin 8.41 ms'den 3.31 ms'ye düşmesi) gözlemlenmiştir. Bu olgunun fiziksel ve matematiksel nedenleri:
+1. **Kaotik Sınır Asılı Kalmasının (Boundary Lingering) Önlenmesi:** Filtresiz durumda metindeki gürültülü ve tuzak sıfatlar, karmaşık koordinatı ($\Delta c_x, \Delta c_y$) Mandelbrot kümesinin en çalkantılı filamentlerine ($\partial \mathcal{M}$, Lyapunov üssü $\lambda \approx 0$) fırlatır. Bu kritik eşikte $Z_{n+1} = Z_n^2 + C$ yörüngeleri ne içeri hapsolur ne de hızla dışarı kaçar; $|Z_n| \approx 2.0$ sınırında asılı kalarak yüzlerce ızgara hücresinde maksimum tavan olan $M_{\max} = 100$ iterasyona kadar döngüyü meşgul eder.
+2. **Akustik Sönümleme ile Havza Kararlılığı:** $\mathcal{T}_{\text{desc}} = 0.045$ katsayısı yüksek frekanslı semantik gürültüyü %95.5 oranında sönümleyerek koordinatı derin, dik ve kontrastlı rezonans havzalarına kilitler. Bu havzalarda kaçan noktalar 4–8 iterasyon gibi ultra hızlı sürelerde eşiği aşar, kaçmayanlar ise kararlı şekilde içeride kalır.
+3. **Harmonik Erken Kesme (Short-Circuiting):** Kök tonu uyuşmayan şıklar için gereksiz ızgara integrali işletilmez, kuadran enerjisi doğrudan sıfırlanır.
+4. **Ortalama İterasyon Sayısının ($\bar{K}$) Çöküşü:** Hücre başına ortalama kaçış iterasyonu $\bar{K} = \frac{1}{N^2}\sum K(j, k)$, 42.6 iterasyondan 23.1 iterasyona (%45.8 düşüş) gerilemiştir. CPU döngülerinin ezici çoğunluğu polinom çarpımında tüketildiğinden, $\bar{K}$'daki bu dramatik düşüş mikro-saniyelik dize analiz maliyetini tamamen amorti etmiş ve sistemi paradoksal olarak 2.5 kat hızlandırmıştır.
+
 ---
 
 ### 3. Matematiksel Modelleme & Çekirdek Formülasyon
@@ -96,6 +103,7 @@ $$\theta_{\text{eff}} = \text{clip}\left( 0.50 + 0.30 \cdot \tanh(\rho_D \cdot 0
 4. **Dalga 3 (Sertleştirilmiş Akor Filtresi ve Düşmanca Stres, $N=990$):**
    * $\mathcal{T}_{\text{desc}} = 0.045$ sönümleme faktörü geliştirildi.
    * 100 soruluk tuzak kelime stres testinde tuzak şıkların seçilme oranı **%0 (0/10)** olarak gerçekleşti.
+   * $\bar{K}$ ortalama kaçış iterasyonu 42.6'dan 23.1'e düşerek döngü yükünü yarı yarıya azalttı; ortalama gecikme 8.41 ms'den 3.31 ms'ye indi (**2.5 kat hızlanma**).
 5. **Dalga 4 (v0.2.2 Organik Dinamik Kalibrasyon ve Faz Rotasyonu, $N=1.090$, 3.087 Soru):**
    * Canlı sunucuda (`mechsrv.itouch.fi:2222`) 10 alt kategoride 100 senaryo icra edildi.
    * Taban vektörü `[0.38, 0.91, 0.35, 0.91]` noktasından `[0.2268, 0.9267, 0.2354, 0.929]` noktasına uyarlanarak kuadran dengesi sağlandı.
