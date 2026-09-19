@@ -212,6 +212,12 @@ For real-world production domains, `wevv` incorporates an ultra-compact, calibra
 * **Operational Action Tiers:** `direct` (`dogrudan`), `rate_limiter` (`sinirla`), `sandbox_audit` (`incele`), `drop_packet` (`reddet` / `engelle`)...
 * **Domain Feature Handlers:** Full dual-scale credit scoring (FICO 300–850 and Turkish Findeks 0–1900), IoT HVAC/comfort and life-safety hazard triage, payment fraud heuristics, and NPC tactical combat states.
 
+### 3. 🎼 Chordial Semantic Resonance & Acoustic Tinleme Index Filter
+To prevent incidental words (such as `"Direct butane..."` or `"...proceed on escape trajectory"`) from triggering false keyword spikes in out-of-domain contexts without using crude, destructive string blacklists, `wevv` implements the **Chordial Semantic Resonance Field**:
+* **Triad Harmonic Agreement ($\mathcal{H} = \Phi(S) \otimes \Psi(Q) \otimes \Omega(C)$):** Semantics are evaluated as a musical triad across the State context $\Phi(S)$, Question intent $\Psi(Q)$, and Option declaration $\Omega(C)$. Isolated words lacking chordial support from state and question are treated as acoustic noise and damped.
+* **Acoustic Tinleme Index ($\mathcal{T}$):** Primary option keys carry sharp, high-integrity metallic signal ($\mathcal{T} = 1.0$), while incidental descriptive words in arbitrary text are dynamically damped ($\mathcal{T} \le 0.08$).
+* **Conservative Smooth Coupling ($C^\infty$):** Discontinuous if-else steps are replaced by smooth hyperbolic tangent potentials ($\Delta S = \mathcal{A}_{\max} \cdot \tanh(\Delta \text{risk}) \cdot \mathcal{T}$), mathematically eliminating chaotic butterfly explosions along the fractal boundary.
+
 ---
 
 ## 🧭 Multi-Domain Auto-Seed Router & Empirical Benchmark (v0.2.0)
@@ -273,10 +279,10 @@ To calibrate and continuously optimize the universal fractal decision map, `wevv
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
 * **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
 
-### 📊 Live Public Dataset (336+ Decisions)
+### 📊 Live Public Dataset (586+ Decisions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported daily as an open science benchmark:
 
-* 🌐 **Direct Download (336+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (586+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
 
 ### 🛡️ Server Hardening & Defensive Architecture
