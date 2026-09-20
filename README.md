@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/answerr_werr_twin_ecosystem.svg" alt="answerr & werr Twin Ecosystem Banner" width="100%" />
+  <img src="assets/werr_answerr_twin_ecosystem.svg" alt="werr & answerr Twin Cognitive Ecosystem Banner" width="100%" />
 </p>
 
 <p align="center">
-  <img src="assets/werr_logo_core_fav_trans.svg" alt="werr Core 3D Crystal Logo" width="160" height="160" />
+  <img src="assets/werr_logo_core_fav_trans.svg" alt="werr Core 3D Crystal Logo" width="150" height="150" />
 </p>
 
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
@@ -13,6 +13,8 @@
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22802921-green.svg)](https://doi.org/10.5281/zenodo.22802921)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Brand Guide](https://img.shields.io/badge/Design-Terminology%20Guide-purple.svg)](./docs/werr_terminology_guide.md)
+[![Vector Logos](https://img.shields.io/badge/Vector%20Logos-SVG%20Collection-f59e0b.svg)](./docs/werr_vector_logos.md)
+[![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
 > *"Werr is the reflex? Ver! (werr)."*  
@@ -46,6 +48,17 @@
   * **`answerr`** ([answerr.me](https://answerr.me)): The deliberative System-2 Cloud Portal, AI IDE assistant, and cognitive reasoning hub.
   * **`werr`** (`pip install werr`): The machine-native, in-process System-1 reflex kernel executing in $< 0.5$ ms with 0 Bytes of VRAM.
   * 📘 **Full Design & Terminology Specification:** See [`docs/werr_terminology_guide.md`](docs/werr_terminology_guide.md).
+
+### 🎨 Official Vector Logos & Design Assets
+
+| Asset Type | Graphic Preview | File Link | Specifications |
+| :--- | :---: | :--- | :--- |
+| **Twin Ecosystem Banner** | `werr` &larr;&rarr; `answerr` | [`assets/werr_answerr_twin_ecosystem.svg`](assets/werr_answerr_twin_ecosystem.svg) | 1200×650 SVG &bull; Complete Dual Architecture |
+| **werr Core Symbol (Badge)** | 3D Crystal "W" | [`assets/werr_logo_core.svg`](assets/werr_logo_core.svg) | 800×800 SVG &bull; Full Badge with Typography |
+| **werr Icon (Transparent)** | Translucent "W" | [`assets/werr_logo_core_fav_trans.svg`](assets/werr_logo_core_fav_trans.svg) | 514×452 SVG &bull; Ideal for Dark UI & Web Headers |
+| **werr Icon (Dark Slate)** | Solid Dark Base | [`assets/werr_logo_core_fav_black.svg`](assets/werr_logo_core_fav_black.svg) | 514×452 SVG &bull; High-Contrast Favicon / App Icon |
+| **answerr Portal (Trans)** | Neon Aperture | [`assets/answerr_logo_portal_fav_trans.svg`](assets/answerr_logo_portal_fav_trans.svg) | 514×452 SVG &bull; Transparent Cloud SaaS Emblem |
+| **answerr Portal (Dark)** | Cosmic Void Base | [`assets/answerr_logo_portal_fav_black.svg`](assets/answerr_logo_portal_fav_black.svg) | 514×452 SVG &bull; High-Contrast Favicon / App Icon |
 
 ---
 

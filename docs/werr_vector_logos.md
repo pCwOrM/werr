@@ -41,15 +41,15 @@
 
 ---
 
-## 3. `answerr & werr` Ekosistem Uyumu (Twin Banner - 1200x650)
+## 3. `werr & answerr` Ekosistem Uyumu (Twin Banner - 1200x650)
 
 > *"Geliştirici Platformu (Bulut API) ve Gömülü Motor (Yerel Refleks) Yan Yana"*
 
-![answerr & werr Twin Ecosystem HD](C:/Users/maat/.gemini/antigravity/brain/aa160f53-4a97-4f95-8d12-fb01d7356431/rendered_answerr_werr_twin_ecosystem.png)
-
-* **Vektör Dosyası:** [`assets/answerr_werr_twin_ecosystem.svg`](file:///c:/Users/maat/Documents/antigravity/wevv/assets/answerr_werr_twin_ecosystem.svg)
+* **Vektör Dosyaları:**
+  * **Birincil (werr Solda, answerr Sağda):** [`assets/werr_answerr_twin_ecosystem.svg`](file:///c:/Users/maat/Documents/antigravity/wevv/assets/werr_answerr_twin_ecosystem.svg) *(GitHub README & Site Varsayılanı)*
+  * **Alternatif (answerr Solda, werr Sağda):** [`assets/answerr_werr_twin_ecosystem.svg`](file:///c:/Users/maat/Documents/antigravity/wevv/assets/answerr_werr_twin_ecosystem.svg) *(Cloud Öncelikli Yayınlar İçin)*
 * **Ölçüler:** 1200 x 650 px (GitHub Header, answerr.me Hero Görseli, Makale Banner'ı)
-* **Tasarım Dengesi:** Sol tarafta bulut dünyası (`answerr`), sağ tarafta gömülü yerel çekirdek (`werr`), ortada zarif kesikli siber bağlantı ve `&` düğümü.
+* **Tasarım Dengesi:** Bir tarafta yerel refleks çekirdeği (`werr`), diğer tarafta bulut diyalog dünyası (`answerr`), ortada zarif kesikli siber bağlantı ve `&` düğümü.
 
 ---
 
