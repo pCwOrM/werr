@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Dark Tech Radial Background -->
+    <radialGradient id="bg-glow-werr" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#0e172a" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#070a12" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#030508" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Crystal Glow Filter -->
+    <filter id="crystal-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="facet-shine" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Facet Shading Gradients (Cyan, Deep Blue, Gold, Amber) -->
+    <!-- Left Wing Outer Facet (Cyan Highlight) -->
+    <linearGradient id="facet-c1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Left Wing Inner Facet (Deep Ocean Blue) -->
+    <linearGradient id="facet-c2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="60%" stop-color="#0c4a6e" />
+      <stop offset="100%" stop-color="#082f49" />
+    </linearGradient>
+
+    <!-- Center Spine Facet (Pure Cyan Prism) -->
+    <linearGradient id="facet-spine-c" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Center Spine Gold Reflection (The Error Boundary Interface) -->
+    <linearGradient id="facet-spine-g" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Right Wing Inner Facet (Amber Shadow) -->
+    <linearGradient id="facet-g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <!-- Right Wing Outer Facet (Gold Highlight) -->
+    <linearGradient id="facet-g2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Bottom V Keel Facet -->
+    <linearGradient id="facet-keel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#075985" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="600" fill="url(#bg-glow-werr)" rx="16" />
+
+  <!-- Subtle Diamond Lattice / Coordinate Ticks -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="400" y1="80" x2="400" y2="440" stroke-dasharray="4,6" />
+    <line x1="180" y1="250" x2="620" y2="250" stroke-dasharray="4,6" />
+    <polygon points="400,100 600,250 400,400 200,250" fill="none" stroke-dasharray="3,7" />
+  </g>
+
+  <!-- ================= LOGO SYMBOL: THE CRYSTALLINE REFLEX CORE ================= -->
+  <!-- Ambient Core Glow underlay -->
+  <g id="crystal-underglow" filter="url(#crystal-glow)">
+    <polygon points="250,140 400,90 550,140 400,410" fill="#38bdf8" opacity="0.2" />
+    <polygon points="400,90 550,140 475,320 400,210" fill="#fbbf24" opacity="0.25" />
+  </g>
+
+  <!-- 3D Precision Faceted "W" Crystal Core -->
+  <g id="crystal-facets" stroke="#070a12" stroke-width="1.5" stroke-linejoin="round" filter="url(#facet-shine)">
+
+    <!-- ====== LEFT TOWER (W LEFT WING - WAVE) ====== -->
+    <!-- Outer Peak 1 Left (Cyan Highlight) -->
+    <polygon points="245,140 315,225 245,285 200,210" fill="url(#facet-c1)" />
+    <!-- Outer Peak 1 Right (Cyan Deep) -->
+    <polygon points="245,140 315,225 320,330 245,285" fill="url(#facet-c2)" />
+
+    <!-- ====== CENTER SPINE (CENTRAL PEAK - ERROR INTERFACE) ====== -->
+    <!-- Central Apex Peak -->
+    <!-- Left Flank of Center Peak (Cyan-lit) -->
+    <polygon points="400,90 315,225 400,210" fill="url(#facet-spine-c)" />
+    <!-- Right Flank of Center Peak (Gold-lit) -->
+    <polygon points="400,90 400,210 485,225" fill="url(#facet-spine-g)" />
+
+    <!-- Center Deep Cleft Facets -->
+    <polygon points="315,225 400,210 400,320 320,330" fill="url(#facet-c2)" />
+    <polygon points="485,225 400,210 400,320 480,330" fill="url(#facet-g1)" />
+
+    <!-- ====== RIGHT TOWER (W RIGHT WING - REFLEX/RECURSE) ====== -->
+    <!-- Outer Peak 2 Left (Gold Deep) -->
+    <polygon points="555,140 485,225 480,330 555,285" fill="url(#facet-g1)" />
+    <!-- Outer Peak 2 Right (Gold Highlight) -->
+    <polygon points="555,140 485,225 555,285 600,210" fill="url(#facet-g2)" />
+
+    <!-- ====== BOTTOM REFLEX KEEL (V-POINT TERMINAL) ====== -->
+    <!-- Left Bottom Facet (Cyan/Keel) -->
+    <polygon points="320,330 400,320 400,410 350,380" fill="url(#facet-c1)" />
+    <!-- Right Bottom Facet (Gold/Keel) -->
+    <polygon points="480,330 400,320 400,410 450,380" fill="url(#facet-g2)" />
+    <!-- Deep Keel Spine (Keel Center Triangle) -->
+    <polygon points="400,320 350,380 400,410" fill="url(#facet-keel)" />
+    <polygon points="400,320 450,380 400,410" fill="url(#facet-g1)" />
+
+  </g>
+
+  <!-- Crystal Edge Highlights (Specular Sharp Edges) -->
+  <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6">
+    <!-- Center Apex Leading Edge -->
+    <line x1="400" y1="90" x2="400" y2="210" />
+    <line x1="400" y1="210" x2="400" y2="320" opacity="0.4" />
+    <line x1="400" y1="320" x2="400" y2="410" />
+    <!-- Left Wing Ridge -->
+    <line x1="245" y1="140" x2="315" y2="225" />
+    <!-- Right Wing Ridge -->
+    <line x1="555" y1="140" x2="485" y2="225" />
+  </g>
+
+  <!-- Specular Vertex Glimmers (Sparks) -->
+  <circle cx="400" cy="90" r="4.5" fill="#ffffff" filter="url(#facet-shine)" />
+  <circle cx="245" cy="140" r="3.5" fill="#e0f2fe" filter="url(#facet-shine)" />
+  <circle cx="555" cy="140" r="3.5" fill="#fef08a" filter="url(#facet-shine)" />
+  <circle cx="400" cy="410" r="4" fill="#38bdf8" filter="url(#facet-shine)" />
+
+  <!-- ================= TYPOGRAPHY & WORDMARK ================= -->
+  <g id="brand-text-werr" text-anchor="middle">
+    <!-- Brand Title: werr -->
+    <text x="400" y="495" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'JetBrains Mono', monospace" 
+          font-size="64" 
+          font-weight="900" 
+          letter-spacing="-0.03em">
+      <tspan fill="#38bdf8">w</tspan><tspan fill="#e2e8f0">e</tspan><tspan fill="#fbbf24">rr</tspan>
+    </text>
+
+    <!-- Subtitle / Architecture Tagline -->
+    <text x="400" y="534" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'JetBrains Mono', monospace" 
+          font-size="13" 
+          font-weight="700" 
+          letter-spacing="0.25em" 
+          fill="#38bdf8">
+      GEOMETRIC REFLEX CORE
+    </text>
+
+    <!-- Kernel & Zero-Memory Metadata -->
+    <text x="400" y="560" 
+          font-family="'JetBrains Mono', monospace" 
+          font-size="11" 
+          font-weight="600" 
+          letter-spacing="0.12em" 
+          fill="#64748b">
+      LOCAL EMBEDDED RUNTIME &bull; 0-BYTE VRAM &bull; &lt; 0.5 MS
+    </text>
+  </g>
+</svg>

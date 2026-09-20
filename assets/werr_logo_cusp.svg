@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-glow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#07090e" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur1" />
+      <feGaussianBlur stdDeviation="16" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradients -->
+    <!-- Wave Cyan Gradient -->
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Fractal Cusp Amber Gradient -->
+    <linearGradient id="cusp-grad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="30%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <!-- Bifurcation Upper rr Violet Gradient -->
+    <linearGradient id="rr-upper-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="40%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Bifurcation Lower rr Indigo Gradient -->
+    <linearGradient id="rr-lower-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="40%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="600" fill="url(#bg-glow)" rx="16" />
+
+  <!-- Subtle Coordinate Grid Lines -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="100" y1="260" x2="700" y2="260" stroke-dasharray="4,6" />
+    <line x1="400" y1="80" x2="400" y2="440" stroke-dasharray="4,6" />
+    <circle cx="400" cy="260" r="140" fill="none" stroke-dasharray="2,8" />
+  </g>
+
+  <!-- ================= LOGO SYMBOL: RESONANT CUSP ================= -->
+  <g id="symbol-group">
+
+    <!-- 1. Left Wing: Analog Sine Wave (Wave) -->
+    <!-- Underglow Trace -->
+    <path d="M 120 260 C 160 260, 180 140, 230 140 C 275 140, 290 340, 335 340 C 365 340, 380 280, 400 260"
+          fill="none" stroke="#06b6d4" stroke-width="14" opacity="0.3" filter="url(#neon-glow)" stroke-linecap="round" />
+    <!-- Core Bright Trace -->
+    <path d="M 120 260 C 160 260, 180 140, 230 140 C 275 140, 290 340, 335 340 C 365 340, 380 280, 400 260"
+          fill="none" stroke="url(#wave-grad)" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Wave Node Beads -->
+    <circle cx="230" cy="140" r="5" fill="#e0f2fe" filter="url(#soft-glow)" />
+    <circle cx="335" cy="340" r="5" fill="#e0f2fe" filter="url(#soft-glow)" />
+
+    <!-- 2. Center: Mandelbrot Cardioid Cusp & Escape Boundary (|Z|=2) -->
+    <g id="mandelbrot-cusp" filter="url(#neon-glow)">
+      <!-- Cardioid Cusp Facets -->
+      <polygon points="400,260 435,215 450,260 435,305" fill="url(#cusp-grad)" opacity="0.25" />
+      
+      <!-- Spikes / Micro-filaments representing fractal boundary recursion -->
+      <path d="M 390 260 
+               L 405 242 L 400 248 L 415 230 L 410 240 L 428 220 L 422 234 L 442 215
+               L 435 238 L 452 245 L 440 252 L 460 260
+               L 440 268 L 452 275 L 435 282 L 442 305
+               L 422 286 L 428 300 L 410 280 L 415 290 L 400 272 L 405 278 Z"
+            fill="url(#cusp-grad)" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round" />
+
+      <!-- Center Singularity / Focal Point -->
+      <circle cx="400" cy="260" r="4" fill="#ffffff" filter="url(#soft-glow)" />
+      <circle cx="460" cy="260" r="6" fill="#fef08a" filter="url(#soft-glow)" />
+    </g>
+
+    <!-- 3. Right Wing: Resonant Bifurcation (Double-R Trill / Recurse) -->
+    <!-- Upper Resonant Harmonic Branch (r1) -->
+    <!-- Glow -->
+    <path d="M 460 260 C 490 220, 530 150, 590 150 C 640 150, 675 190, 680 230"
+          fill="none" stroke="#a855f7" stroke-width="12" opacity="0.3" filter="url(#neon-glow)" stroke-linecap="round" />
+    <!-- Core -->
+    <path d="M 460 260 C 490 220, 530 150, 590 150 C 640 150, 675 190, 680 230"
+          fill="none" stroke="url(#rr-upper-grad)" stroke-width="5.5" stroke-linecap="round" />
+
+    <!-- Parallel Upper Harmonic (Echo 1) -->
+    <path d="M 480 250 C 510 200, 550 130, 610 130 C 660 130, 695 170, 700 210"
+          fill="none" stroke="#c084fc" stroke-width="3" opacity="0.7" stroke-dasharray="8,4" />
+
+    <!-- Lower Resonant Harmonic Branch (r2) -->
+    <!-- Glow -->
+    <path d="M 460 260 C 490 300, 530 370, 590 370 C 640 370, 675 330, 680 290"
+          fill="none" stroke="#6366f1" stroke-width="12" opacity="0.3" filter="url(#neon-glow)" stroke-linecap="round" />
+    <!-- Core -->
+    <path d="M 460 260 C 490 300, 530 370, 590 370 C 640 370, 675 330, 680 290"
+          fill="none" stroke="url(#rr-lower-grad)" stroke-width="5.5" stroke-linecap="round" />
+
+    <!-- Parallel Lower Harmonic (Echo 2) -->
+    <path d="M 480 270 C 510 320, 550 390, 610 390 C 660 390, 695 350, 700 310"
+          fill="none" stroke="#818cf8" stroke-width="3" opacity="0.7" stroke-dasharray="8,4" />
+
+    <!-- Terminal Resonance Nodes -->
+    <circle cx="680" cy="230" r="4" fill="#f5d0fe" filter="url(#soft-glow)" />
+    <circle cx="680" cy="290" r="4" fill="#c7d2fe" filter="url(#soft-glow)" />
+    <circle cx="700" cy="210" r="3" fill="#ffffff" />
+    <circle cx="700" cy="310" r="3" fill="#ffffff" />
+
+  </g>
+
+  <!-- ================= TYPOGRAPHY & WORDMARK ================= -->
+  <!-- Main Brand Name: werr -->
+  <g id="brand-text" text-anchor="middle">
+    <text x="400" y="495" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'JetBrains Mono', 'Helvetica Neue', Arial, sans-serif" 
+          font-size="68" 
+          font-weight="900" 
+          letter-spacing="-0.03em">
+      <!-- 'w' in Electric Cyan -->
+      <tspan fill="#38bdf8">w</tspan>
+      <!-- 'e' in Mandelbrot Amber -->
+      <tspan fill="#fbbf24">e</tspan>
+      <!-- 'rr' in Resonant Violet -->
+      <tspan fill="#a855f7">rr</tspan>
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="400" y="535" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'JetBrains Mono', monospace" 
+          font-size="13" 
+          font-weight="700" 
+          letter-spacing="0.28em" 
+          fill="#94a3b8">
+      WAVE-ERROR REFLEX RUNTIME
+    </text>
+
+    <!-- Micro Metadata Badges -->
+    <text x="400" y="560" 
+          font-family="'JetBrains Mono', monospace" 
+          font-size="11" 
+          font-weight="600" 
+          letter-spacing="0.1em" 
+          fill="#64748b">
+      0-BYTE VRAM &bull; EMBEDDED SYSTEM-1 KERNEL
+    </text>
+  </g>
+</svg>
