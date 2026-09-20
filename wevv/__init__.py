@@ -1,55 +1,9 @@
 """
-wevv: Zero-Memory Fractal System-One Decision Engine
-Open-source machine-native intuitive decision framework for software.
+wevv (Legacy Compatibility Shim):
+Redirects legacy 'import wevv' directly to the primary 'werr' package.
 """
 
-from wevv.datatypes import (
-    NoulQuestion,
-    ChoiceQuestion,
-    ScoreQuestion,
-    NoulAnswer,
-    ChoiceAnswer,
-    ScoreAnswer,
-    WevvResponse,
-)
-from wevv.engine import WevvEngine
-from wevv.calibration import DynamicCalibration
-from wevv.presets import (
-    create_security_guard,
-    create_smart_router,
-    create_risk_evaluator,
-)
-from wevv.router import AutoSeedRouter
-from wevv.gates import (
-    DomainGate,
-    DOMAIN_GATES,
-    APISecurityGate,
-    FinancialRiskGate,
-    IoTSafetyGate,
-    EcommerceFraudGate,
-    GameCombatGate,
-)
+from werr import *
+from werr.engine import WerrEngine as WevvEngine
 
-__version__ = "0.2.2"
-__all__ = [
-    "WevvEngine",
-    "DynamicCalibration",
-    "AutoSeedRouter",
-    "DomainGate",
-    "DOMAIN_GATES",
-    "APISecurityGate",
-    "FinancialRiskGate",
-    "IoTSafetyGate",
-    "EcommerceFraudGate",
-    "GameCombatGate",
-    "NoulQuestion",
-    "ChoiceQuestion",
-    "ScoreQuestion",
-    "NoulAnswer",
-    "ChoiceAnswer",
-    "ScoreAnswer",
-    "WevvResponse",
-    "create_security_guard",
-    "create_smart_router",
-    "create_risk_evaluator",
-]
+__version__ = "0.3.0"

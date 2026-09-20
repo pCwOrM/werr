@@ -1,0 +1,47 @@
+"""
+wevv: Pre-calibrated Fractal Gate Presets
+Resonant coordinates discovered on the Mandelbrot boundary (dM) for specific System-One decision tasks.
+"""
+from werr.engine import WevvEngine
+
+
+def create_security_guard(resolution: int = 64) -> WevvEngine:
+    """
+    Creates an engine calibrated for high-sensitivity security, access-control,
+    and fraud detection (sharp boundary transitions).
+    """
+    return WevvEngine(
+        base_cx=-0.7436438870371587,
+        base_cy=0.1318259042053119,
+        base_zoom=120.0,
+        resolution=resolution,
+        max_iter=60
+    )
+
+
+def create_smart_router(resolution: int = 64) -> WevvEngine:
+    """
+    Creates an engine calibrated with balanced 4-Quadrant entropy
+    for multi-way routing and dispatching decisions.
+    """
+    return WevvEngine(
+        base_cx=-0.10109636384562,
+        base_cy=0.95628651080914,
+        base_zoom=45.0,
+        resolution=resolution,
+        max_iter=50
+    )
+
+
+def create_risk_evaluator(resolution: int = 64) -> WevvEngine:
+    """
+    Creates an engine calibrated for smooth gradient escape times,
+    ideal for continuous score and priority rankings.
+    """
+    return WevvEngine(
+        base_cx=-0.75,
+        base_cy=0.1,
+        base_zoom=25.0,
+        resolution=resolution,
+        max_iter=40
+    )

@@ -1,33 +1,31 @@
-# 🌊 wevv: Zero-Memory Fractal System-One Decision Engine
+# ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/wevv/)
+[![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22802921-green.svg)](https://doi.org/10.5281/zenodo.22802921)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 
 > **Motto:** *"When the Wave hits Error (e), we Subdivide (vv)."*  
-> *"Jev decisions come from 4B-parameter tensors; `wevv` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
+> *"Jev decisions come from 4B-parameter tensors; `werr` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
 
-🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/wevv/) *(Supports English & Türkçe, Light & Dark mode).*
+🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*
 
-`wevv` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `wevv` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
+`werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 
 ---
 
-## 💡 Naming & The `w-e-vv` Philosophy
+## 💡 The 4-Dimension WERR Philosophy
 
-* **`w` (Wave / Dalga):** Represents continuous chaotic phase waves, complex potential dynamics, and harmonic orbital flow along the boundary of the Mandelbrot set.
-* **`e` (Error & Euler):**
-  * **Error Boundary:** The sharp edge of escape. Just like biological pain/error reflexes, decision boundaries are locked immediately when error thresholds are crossed.
-  * **Euler Constant (e ≈ 2.718):** The exponential basis governing chaotic divergence rates and Lyapunov escape exponents.
-* **`vv` (Subdivision / Çeyrekleme):** When waves encounter the error threshold, the space is recursively partitioned into 4-Quadrant (Q1–Q4) and Quadtree sub-regions to extract instantaneous, type-safe decisions.
-* **System One Intuition:** Following Daniel Kahneman's model, `wevv` acts as a fast, reflexive "smart if-statement" inside ordinary application code.
+* **1. Dynamical Synthesis (`W`aves & `Err`ors):** Continuous complex polynomial trajectories colliding with catastrophic Euler error divergence thresholds ($|Z_n| > 2$). When the wave meets error, we recurse (**WERR**).
+* **2. Spatial Inquiry (*"Werr is the point?"*):** Homophonous with English *"Where"*, operational edge triage is modeled as identifying the exact resonant coordinate seed along the infinite filamentary branches of the Mandelbrot set ($\partial \mathcal{M}$).
+* **3. Actionable Imperative (Turkish *"Ver!"*):** In Turkish phonetics, *ver* is the definitive command for action: *"Karar werr!"* (decide!), *"Yanıt werr!"* (answer!), *"Tepki werr!"* (react!). Captures the biological spinal reflex arc executing in $< 3$~ms without deliberative cerebral hesitation.
+* **4. Dual-Cognition Ecosystem Synergy:** `werr` serves as the zero-tensor mathematical backbone for **A.N.S.W.E.R.R.** (*Adaptive Non-tensor Signal Wave & Error Reflex Resonator*), available live at [answerr.me](https://answerr.me).
 
 ---
 
 ## 📊 Comparison: Jev (TypeSafe AI) vs. wevv
 
-| Dimension | TypeSafe AI (Jev) | OpenJev / NanoJev | **wevv (Fractal System-1)** |
+| Dimension | TypeSafe AI (Jev) | OpenJev / NanoJev | **werr (Fractal System-1)** |
 | :--- | :--- | :--- | :--- |
 | **Foundation** | Proprietary LLM | Qwen / Gemma (4B) | **Mandelbrot Boundary ($\partial \mathcal{M}$)** |
 | **Weight Tensor Memory** | Multi-GB (Cloud) | ~8 GB VRAM | **0 Bytes (Zero Tensor Memory!)** |
@@ -40,7 +38,7 @@
 
 ## ⚡ The Three Decision Primitives
 
-Like Jev, `wevv` answers three fundamental question types without producing conversational prose:
+Like Jev, `werr` answers three fundamental question types without producing conversational prose:
 
 1. **`noul` (Boolean Probability):**
    * Computes binary probability $p \in [0.0, 1.0]$, decision `True/False`, and confidence.
@@ -58,14 +56,15 @@ Like Jev, `wevv` answers three fundamental question types without producing conv
 
 ```bash
 # Install directly from GitHub:
-pip install git+https://github.com/pCwOrM/wevv.git
+pip install git+https://github.com/pCwOrM/werr.git
 ```
 
 ## 🚀 Quickstart
 
 ```python
-from wevv import (
-    WevvEngine,
+import werr as wr
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion,
@@ -107,7 +106,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 
 ## 🗺️ The Universal Fractal Natural Language Decision Map
 
-`wevv` is pioneering the concept of the **Universal Fractal Natural Language Decision Map**. 
+`werr` is pioneering the concept of the **Universal Fractal Natural Language Decision Map**. 
 
 Instead of training dense neural networks that require billions of parameters, any arbitrary program state and natural language questions—in **English, Türkçe**, or domain-specific terminology—are deterministically modulated onto the chaotic boundary of the Mandelbrot set ($\partial \mathcal{M}$).
 
@@ -161,11 +160,11 @@ Instead of training dense neural networks that require billions of parameters, a
 
 ## 🔒 100% Air-Gapped Autonomous Operation & Zero-Network Guarantee
 
-When an engineer downloads or installs `wevv`, **it operates 100% locally and completely offline**:
+When an engineer downloads or installs `werr`, **it operates 100% locally and completely offline**:
 
-* **Zero Inbound Network Calls:** `wevv` never downloads external weights, models, embeddings, or schemas from remote servers. There are no Hugging Face model checkpoints, no cloud API endpoints, and no server-side dependencies.
+* **Zero Inbound Network Calls:** `werr` never downloads external weights, models, embeddings, or schemas from remote servers. There are no Hugging Face model checkpoints, no cloud API endpoints, and no server-side dependencies.
 * **100% Local Text Normalization:** All text processing—including Turkish diacritic normalization (`ı/i`, `ö/o`, `ü/u`, `ş/s`, `ç/c`, `ğ/g`), token extraction, and mathematical projections—is executed entirely in-process on the local CPU in microseconds.
-* **Passive Outbound Telemetry (100% Opt-Out):** The only network capability in `wevv` is an optional, passive background telemetry dispatcher used for open-science benchmark calibration. It never blocks decision execution, sends zero PII, and can be completely shut off at any time:
+* **Passive Outbound Telemetry (100% Opt-Out):** The only network capability in `werr` is an optional, passive background telemetry dispatcher used for open-science benchmark calibration. It never blocks decision execution, sends zero PII, and can be completely shut off at any time:
   ```bash
   export WEVV_TELEMETRY=0
   ```
@@ -174,9 +173,9 @@ When an engineer downloads or installs `wevv`, **it operates 100% locally and co
 
 ## 🧠 Dual-Layer Cognitive Inference Architecture
 
-How does `wevv` understand and decide upon arbitrary inputs? Does it search for specific keywords, or can it synthesize meaning from completely unseen words?
+How does `werr` understand and decide upon arbitrary inputs? Does it search for specific keywords, or can it synthesize meaning from completely unseen words?
 
-`wevv` operates on an innovative **Dual-Layer Cognitive Mechanism**:
+`werr` operates on an innovative **Dual-Layer Cognitive Mechanism**:
 
 ```
            [Arbitrary State & Question]
@@ -200,20 +199,20 @@ How does `wevv` understand and decide upon arbitrary inputs? Does it search for 
 ### 1. Layer 1: Universal Geometric Phase-Space Resonator (Zero-VRAM Fallback)
 * **What happens if you pass alien, fictional, or completely unknown tokens?**  
   *(e.g., `glork_factor: "frobnicate_the_wozzer"`, synthetic telemetry keys, or foreign jargon).*
-* Unlike Large Language Models (which hallucinate or throw Out-Of-Vocabulary / OOD errors), `wevv` **never crashes and never fails to decide**.
+* Unlike Large Language Models (which hallucinate or throw Out-Of-Vocabulary / OOD errors), `werr` **never crashes and never fails to decide**.
 * Unrecognized strings are mapped to continuous trigonometric phase angles $(\sin \theta, \cos \theta)$ via Fourier projection of their cryptographic byte-entropy onto the complex plane $\mathbb{C}$.
 * These phase vectors deterministically modulate the Mandelbrot boundary seed coordinates $(c_x, c_y)$ and evaluate quadrant escape dynamics ($w_1, w_2, w_3, \text{bias}$).
 * **Result:** 100% deterministic, type-safe decisions with 0 Bytes of GPU VRAM, even for inputs the system has never seen before!
 
 ### 2. Layer 2: Calibrated Bilingual Root Ontology (Cognitive Shortcut)
-For real-world production domains, `wevv` incorporates an ultra-compact, calibrated root ontology in **English and Türkçe**:
+For real-world production domains, `werr` incorporates an ultra-compact, calibrated root ontology in **English and Türkçe**:
 * **Directionality & Authorization:** `allow`, `permit`, `safe`, `valid`, `approve`, `izin`, `onay`, `uygun`, `gecerli`, `calistir`, `ac`, `dogrula`, `kabul`...
 * **Threat & Risk Polarities:** `threat`, `attack`, `block`, `deny`, `hazard`, `fraud`, `fire`, `tehlike`, `risk`, `engelle`, `yasak`, `saldiri`, `yangin`, `tahliye`...
 * **Operational Action Tiers:** `direct` (`dogrudan`), `rate_limiter` (`sinirla`), `sandbox_audit` (`incele`), `drop_packet` (`reddet` / `engelle`)...
 * **Domain Feature Handlers:** Full dual-scale credit scoring (FICO 300–850 and Turkish Findeks 0–1900), IoT HVAC/comfort and life-safety hazard triage, payment fraud heuristics, and NPC tactical combat states.
 
 ### 3. 🎼 Chordial Semantic Resonance & Acoustic Tinleme Index Filter
-To prevent incidental words (such as `"Direct butane..."` or `"...proceed on escape trajectory"`) from triggering false keyword spikes in out-of-domain contexts without using crude, destructive string blacklists, `wevv` implements the **Chordial Semantic Resonance Field**:
+To prevent incidental words (such as `"Direct butane..."` or `"...proceed on escape trajectory"`) from triggering false keyword spikes in out-of-domain contexts without using crude, destructive string blacklists, `werr` implements the **Chordial Semantic Resonance Field**:
 * **Triad Harmonic Agreement ($\mathcal{H} = \Phi(S) \otimes \Psi(Q) \otimes \Omega(C)$):** Semantics are evaluated as a musical triad across the State context $\Phi(S)$, Question intent $\Psi(Q)$, and Option declaration $\Omega(C)$. Isolated words lacking chordial support from state and question are treated as acoustic noise and damped.
 * **Acoustic Tinleme Index ($\mathcal{T}$):** Primary option keys carry sharp, high-integrity metallic signal ($\mathcal{T} = 1.0$), while incidental descriptive words in arbitrary text are dynamically damped ($\mathcal{T} \le 0.08$).
 * **Conservative Smooth Coupling ($C^\infty$):** Discontinuous if-else steps are replaced by smooth hyperbolic tangent potentials ($\Delta S = \mathcal{A}_{\max} \cdot \tanh(\Delta \text{risk}) \cdot \mathcal{T}$), mathematically eliminating chaotic butterfly explosions along the fractal boundary.
@@ -222,7 +221,7 @@ To prevent incidental words (such as `"Direct butane..."` or `"...proceed on esc
 
 ## 🧭 Multi-Domain Auto-Seed Router & Empirical Benchmark (v0.2.0)
 
-In version 0.2.0, `wevv` introduces the **Multi-Domain Auto-Seed Router** (`AutoSeedRouter`). While earlier iterations used a monolithic boundary seed ($c_x \approx -0.747, c_y \approx 0.131$), evaluating distinct domains requires dynamically hopping into the topological coordinates where each domain's feature derivatives resonate with maximum sensitivity.
+In version 0.2.0, `werr` introduces the **Multi-Domain Auto-Seed Router** (`AutoSeedRouter`). While earlier iterations used a monolithic boundary seed ($c_x \approx -0.747, c_y \approx 0.131$), evaluating distinct domains requires dynamically hopping into the topological coordinates where each domain's feature derivatives resonate with maximum sensitivity.
 
 ### 🔬 Empirical Ablation Study (Monolithic Seed vs. Auto-Seed Router)
 Evaluated across $N = 336$ empirical telemetry decisions from production traffic and multi-batch validation sets:
@@ -242,7 +241,7 @@ Evaluated across $N = 336$ empirical telemetry decisions from production traffic
 
 ## 🇹🇷 First-Class Dual-Language Support (Türkçe & English)
 
-`wevv` natively supports Turkish and English queries without external translation models. Diacritics and character variants (`ı/i`, `ö/o`, `ü/u`, `ş/s`, `ç/c`, `ğ/g`) are normalized seamlessly:
+`werr` natively supports Turkish and English queries without external translation models. Diacritics and character variants (`ı/i`, `ö/o`, `ü/u`, `ş/s`, `ç/c`, `ğ/g`) are normalized seamlessly:
 
 * **Roller:** `yönetici`, `yetkili`, `üye`, `kullanıcı`, `misafir`, `ziyaretçi`, `saldırgan`, `şüpheli`.
 * **Soru Yönergeleri:**
@@ -254,7 +253,7 @@ Evaluated across $N = 336$ empirical telemetry decisions from production traffic
 
 ## 💻 Interactive CLI Simulator (`examples/sor.py`)
 
-An interactive terminal application is provided under [`examples/sor.py`](examples/sor.py) with automatic dependency checking (`wevv`), an interactive numbered menu, and CLI arguments:
+An interactive terminal application is provided under [`examples/sor.py`](examples/sor.py) with automatic dependency checking (`werr`), an interactive numbered menu, and CLI arguments:
 
 ```bash
 # Run with interactive selection menu:
@@ -271,7 +270,7 @@ python examples/sor.py attacker
 
 ## 🔬 Open Science Telemetry & Public Benchmark Dataset
 
-To calibrate and continuously optimize the universal fractal decision map, `wevv` includes an asynchronous, non-blocking telemetry client (`wevv.telemetry`).
+To calibrate and continuously optimize the universal fractal decision map, `werr` includes an asynchronous, non-blocking telemetry client (`wevv.telemetry`).
 
 ### 🔒 Zero-PII Privacy Guarantee
 * **No IP addresses** are stored on disk or database.
@@ -282,7 +281,7 @@ To calibrate and continuously optimize the universal fractal decision map, `wevv
 ### 📊 Live Public Dataset (1,090+ Decisions / 3,000+ Questions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
 * 📑 **Empirical Test Reports:**
   - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
@@ -290,7 +289,7 @@ Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouc
   - [Batch #3: 100-Question Dynamic Calibration & Stress Test](docs/reports/batch3_dynamic_calibration_100q_report_en.md) | [Türkçe](docs/reports/batch3_dynamic_calibration_100q_report_tr.md)
 
 ### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2)
-While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `wevv` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
+While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `werr` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
 * **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
 * **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net-risk} \cdot 0.8)$.
@@ -298,7 +297,7 @@ While v0.2.1 initialized empirical quadrant normalization from static benchmarks
 * **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
-The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hardened against abusive bots and brute-force traffic:
+The remote ingestion endpoint on `mechsrv.itouch.fi:4431/werr/telemetry` is hardened against abusive bots and brute-force traffic:
 1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
 2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
 3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
@@ -310,7 +309,7 @@ The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hard
 
 ## 🔗 Architecture & Connection to Base Research
 
-`wevv` is deeply coupled with the research codebase [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis). It imports core vectorized escape operators from `src/mandelbrot_core.py`. As new orbital dynamics, multi-layer fractal compositions, and photonic solvers are discovered, `wevv` directly inherits these breakthroughs!
+`werr` is deeply coupled with the research codebase [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis). It imports core vectorized escape operators from `src/mandelbrot_core.py`. As new orbital dynamics, multi-layer fractal compositions, and photonic solvers are discovered, `werr` directly inherits these breakthroughs!
 
 ---
 
@@ -321,7 +320,7 @@ The remote ingestion endpoint on `mechsrv.itouch.fi:4431/wevv/telemetry` is hard
   author = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
   title = {wevv: Zero-Memory System-One Decision Engine via Fractal Boundary Subdivision},
   year = {2026},
-  url = {https://github.com/pCwOrM/wevv},
+  url = {https://github.com/pCwOrM/werr},
   doi = {10.5281/zenodo.22802921}
 }
 ```

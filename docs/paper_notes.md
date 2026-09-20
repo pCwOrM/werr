@@ -59,6 +59,14 @@ Klasik yazılım mühendisliği ve NLP sezgisi; metin üzerine ilave kontrol kat
 3. **Harmonik Erken Kesme (Short-Circuiting):** Kök tonu uyuşmayan şıklar için gereksiz ızgara integrali işletilmez, kuadran enerjisi doğrudan sıfırlanır.
 4. **Ortalama İterasyon Sayısının ($\bar{K}$) Çöküşü:** Hücre başına ortalama kaçış iterasyonu $\bar{K} = \frac{1}{N^2}\sum K(j, k)$, 42.6 iterasyondan 23.1 iterasyona (%45.8 düşüş) gerilemiştir. CPU döngülerinin ezici çoğunluğu polinom çarpımında tüketildiğinden, $\bar{K}$'daki bu dramatik düşüş mikro-saniyelik dize analiz maliyetini tamamen amorti etmiş ve sistemi paradoksal olarak 2.5 kat hızlandırmıştır.
 
+#### 2.8 WERR Dönüşümü ve 4 Boyutlu Anlamsal Matris (Waves, Errors & Reflex Runtime)
+Projenin temel motor ismi, `wevv`'den çok daha güçlü bir rezonansa ve global ürün ailesi kimliğine sahip olan **`werr`** ismine evrilmiştir:
+* **Motto:** *"When the **W**ave meets **Err**or, we **R**ecurse (**werr})."*
+* **1. Boyut (Fiziksel / Dinamik):** **W**aves & **Err**ors (**WERR**). Karmaşık polinom dalgalarının Euler hata sınırıyla ($|Z_n| > 2$) çarpışarak karar üretmesi.
+* **2. Boyut (Fonetik & Uzamsal Arama):** İngilizcedeki *"Where"* fonetiği ile *"Werr is the point?"* metaforu. Sonsuz fraktal karar ağacında doğru koordinat tohumunun ve kaçış kuadranının tespiti.
+* **3. Boyut (Türkçe Eylemsel Emir Kipi):** Türkçedeki *"Ver!"* fiili: *"Karar werr! / Cevap werr! / Yanıt werr! / Tepki werr!"* İnsan elinin sıcak sobaya değdiğinde beynin düşünmesini beklemeden omurilikten kaslara giden o katıksız, < 3 ms'lik Sistem-1 refleks emri.
+* **4. Boyut (Çift-Bilişsel Ekosistem Sinerjisi):** **werr** motoru, **A.N.S.W.E.R.R.** (*Adaptive Non-tensor Signal Wave & Error Reflex Resonator*, `answerr.me`) platformunun 0-VRAM matematiksel omurgasını oluşturur.
+
 ---
 
 ### 3. Matematiksel Modelleme & Çekirdek Formülasyon

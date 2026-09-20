@@ -283,18 +283,18 @@ window.MathJax = {
       <sup>3</sup>Toros Science College, Mersin, Turkey
     </span><br>
     <span class="author-contact">
-      ORCID: 0009-0000-1587-8703 &bull; 0000-0001-9490-6465 &bull; *Correspondence: https://github.com/pCwOrM/wevv
+      ORCID: 0009-0000-1587-8703 &bull; 0000-0001-9490-6465 &bull; *Correspondence: https://github.com/pCwOrM/werr
     </span>
   </div>
 </div>
 
 <div class="abstract-container">
   <p class="no-indent">
-    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4 GB VRAM), and unsustainable thermodynamic dissipation through continuous network transmission and copper cable heating. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>wevv</strong> machine-native edge decision engine. Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. Drawing inspiration from biological System-One reflex arcs, the engine enforces three primary architectural contributions: (i) an <em>Auto-Seed Router</em> with a dual-layer cognitive architecture; (ii) a <em>Chordial Semantic Resonance</em> filter grounded in phonetic signal integrity and an acoustic damping factor (\(\mathcal{T}_{\text{desc}} = 0.045\)) that eliminates adversarial prompt-injection exploits (0% vulnerability); crucially, this damping stabilizes chaotic boundary coordinates, reducing mean escape loop iterations by 45.8% and paradoxically accelerating inference throughput by 2.5&times; (median latency 3.31 ms vs. 8.41 ms) rather than incurring computational overhead; and (iii) an <em>Organic Dynamic Calibration</em> framework tracking streaming operational statistics via an \(O(1)\) Exponential Moving Average (EMA, \(\alpha=0.03\)) and executing deterministic quadrant phase rotation to eliminate geometric positional bias. Benchmarked on bare-metal production infrastructure (<code>mechsrv.itouch.fi</code>) across an open corpus of 1,090 verified multi-domain decisions (3,087 evaluated questions), the framework achieves 92.6% macro-accuracy (+28.8% over monolithic baselines) with a median latency of 7.08 ms on commodity CPU hardware. Finally, we formulate the structural blueprint for deploying this 24-byte architecture as a gas-efficient, decentralized on-chain decision oracle for Web3 smart contracts.
+    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4 GB VRAM), and unsustainable thermodynamic dissipation through continuous network transmission and copper cable heating. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>werr</strong> (Waves & Errors) machine-native edge reflex runtime. Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. Drawing inspiration from biological System-One reflex arcs, the engine enforces three primary architectural contributions: (i) an <em>Auto-Seed Router</em> with a dual-layer cognitive architecture; (ii) a <em>Chordial Semantic Resonance</em> filter grounded in phonetic signal integrity and an acoustic damping factor (\(\mathcal{T}_{\text{desc}} = 0.045\)) that eliminates adversarial prompt-injection exploits (0% vulnerability); crucially, this damping stabilizes chaotic boundary coordinates, reducing mean escape loop iterations by 45.8% and paradoxically accelerating inference throughput by 2.5&times; (median latency 3.31 ms vs. 8.41 ms) rather than incurring computational overhead; and (iii) an <em>Organic Dynamic Calibration</em> framework tracking streaming operational statistics via an \(O(1)\) Exponential Moving Average (EMA, \(\alpha=0.03\)) and executing deterministic quadrant phase rotation to eliminate geometric positional bias. Benchmarked on bare-metal production infrastructure (<code>mechsrv.itouch.fi</code>) across an open corpus of 1,090 verified multi-domain decisions (3,087 evaluated questions), the framework achieves 92.6% macro-accuracy (+28.8% over monolithic baselines) with a median latency of 7.08 ms on commodity CPU hardware. Finally, we formulate the structural blueprint for deploying this 24-byte architecture as a gas-efficient, decentralized on-chain decision oracle for Web3 smart contracts.
   </p>
   
   <div class="turkish-abstract">
-    <strong>Özet (Extended Turkish Abstract)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini ve <strong>wevv</strong> uç triyaj motorunu sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Biyolojik Sistem-1 omurilik refleks arkından ve hata sınırıyla motor öğrenme prensibinden ilham alan sistem; Kuadran Faz Rotasyonu, Türkçenin madeni akustik ses yapısından türetilen Sertleştirilmiş Akor Filtresi (\(\mathcal{T}_{\text{desc}} = 0.045\)) ve çevrimiçi Üstel Hareketli Ortalama (EMA, \(\alpha=0.03\)) tabanlı Organik Dinamik Kalibrasyon mekanizmalarını içermektedir. Belirtmek gerekir ki akor filtresi, öngörülenin aksine hesaplama yükü getirmemiş; kaotik sınır saçılmalarını sönümleyip kaçış döngüsü iterasyonlarını %45.8 oranında budayarak çıkarsama hızını 2.5 kat artırmıştır (3.31 ms). Canlı telemetri sunucusu (<code>mechsrv.itouch.fi</code>) üzerinde 1.090 karar ve 3.087 soru içeren açık veri kümesinde yapılan deneysel çalışmalarda; %92.6 makro doğruluk, 7.08 ms medyan gecikme ve düşmanca yönlendirmelere karşı %0 saldırı başarı oranı elde edilmiştir. Ayrıca, 24 baytlık tohum yapısının blokzincir akıllı sözleşmelerinde (EVM/Solana) 5 ms altında çalışan doğrulanabilir bir merkeziyetsiz yapay zeka kahini (Decentralized On-Chain AI Oracle) olarak kullanım fizibilitesi ortaya konmuştur.
+    <strong>Özet (Extended Turkish Abstract)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini ve <strong>werr</strong> (Waves & Errors) uç refleks motorunu sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Biyolojik Sistem-1 omurilik refleks arkından ve hata sınırıyla motor öğrenme prensibinden ilham alan sistem; Kuadran Faz Rotasyonu, Türkçenin madeni akustik ses yapısından türetilen Sertleştirilmiş Akor Filtresi (\(\mathcal{T}_{\text{desc}} = 0.045\)) ve çevrimiçi Üstel Hareketli Ortalama (EMA, \(\alpha=0.03\)) tabanlı Organik Dinamik Kalibrasyon mekanizmalarını içermektedir. Belirtmek gerekir ki akor filtresi, öngörülenin aksine hesaplama yükü getirmemiş; kaotik sınır saçılmalarını sönümleyip kaçış döngüsü iterasyonlarını %45.8 oranında budayarak çıkarsama hızını 2.5 kat artırmıştır (3.31 ms). Canlı telemetri sunucusu (<code>mechsrv.itouch.fi</code>) üzerinde 1.090 karar ve 3.087 soru içeren açık veri kümesinde yapılan deneysel çalışmalarda; %92.6 makro doğruluk, 7.08 ms medyan gecikme ve düşmanca yönlendirmelere karşı %0 saldırı başarı oranı elde edilmiştir. Ayrıca, 24 baytlık tohum yapısının blokzincir akıllı sözleşmelerinde (EVM/Solana) 5 ms altında çalışan doğrulanabilir bir merkeziyetsiz yapay zeka kahini (Decentralized On-Chain AI Oracle) olarak kullanım fizibilitesi ortaya konmuştur.
   </div>
 
   <div class="keywords-block">
@@ -310,7 +310,7 @@ window.MathJax = {
         <th>Dimension / Metric</th>
         <th>TypeSafe AI (Jev)</th>
         <th>Local Compact LLM (OpenJev 4B)</th>
-        <th>wevv (Universal Fractal Map)</th>
+        <th>werr (Universal Fractal Map)</th>
       </tr>
     </thead>
     <tbody>
@@ -388,21 +388,24 @@ window.MathJax = {
     Biological motor acquisition&mdash;such as learning to drive a nail with a hammer or balance on a bicycle&mdash;does not proceed via millions of unconstrained, infinitesimal gradient updates across homogeneous weight matrices. Instead, learning is anchored by sharp, catastrophic <em>error boundaries</em>: striking one's thumb with a hammer creates an indelible boundary condition, allowing sensorimotor reflexes to calibrate in approximately 300 focused iterations rather than hundreds of thousands.
   </p>
   <p>
-    In this work, we operationalize the mathematical principle that non-linear decision boundaries can be synthesized procedurally from the boundary of the Mandelbrot set \(\partial \mathcal{M}\) without storing weight tensors [1]. The governing paradigm of our engine, <strong>wevv</strong>, is formalized as:
+    In this work, we operationalize the mathematical principle that non-linear decision boundaries can be synthesized procedurally from the boundary of the Mandelbrot set \(\partial \mathcal{M}\) without storing weight tensors [1]. The governing paradigm of our engine, <strong>werr</strong> (Waves & Errors / Wave-Error Reflex Runtime), is formalized as:
   </p>
   
   <div class="quote-box">
-    &ldquo;When the <strong>W</strong>ave hits <strong>E</strong>rror (e), we Subdi<strong>v</strong>ide (vv).&rdquo;
+    &ldquo;When the <strong>W</strong>ave meets <strong>Err</strong>or, we <strong>R</strong>ecurse (werr).&rdquo;
   </div>
 
   <p>
-    Here, wave (\(w\)) represents continuous trajectories in complex phase space; error (\(e\)) denotes the divergence threshold (\(|Z_n| &gt; 2\)); and subdivision (\(vv\)) represents the recursive 4-quadrant discretization that translates chaotic escape behavior into strongly-typed decision primitives.
+    Here, wave (\(w\)) represents continuous dynamical trajectories in complex phase space; error (\(e\)) denotes the sharp Euler divergence threshold (\(|Z_n| &gt; 2\)); and recursion (\(rr\)) represents the recursive 4-quadrant discretization that resolves chaotic escape behavior into strongly-typed decision primitives.
+  </p>
+  <p>
+    The nomenclature of <strong>werr</strong> embodies four synchronized dimensions: (1) <em>Dynamical Synthesis</em> (<strong>W</strong>aves &amp; <strong>Err</strong>ors); (2) <em>Spatial Inquiry</em> (homophonous with &ldquo;Where&rdquo;, <em>&ldquo;Werr is the point?&rdquo;</em> along fractal coordinate branches); (3) <em>Actionable Imperative</em> (Turkish <em>&ldquo;Ver!&rdquo;</em> &mdash; <em>Karar werr!</em> / <em>Yanıt werr!</em>, the instantaneous System-One reflex); and (4) <em>Dual-Cognition Synergy</em> (powering the <strong>A.N.S.W.E.R.R.</strong> platform at <a href="https://answerr.me">answerr.me</a>).
   </p>
 
   <div class="figure-box">
     <img src="__IMG_TRADEOFF__" alt="Memory vs Latency Tradeoff">
     <div class="figure-caption">
-      <strong>Fig. 1.</strong> Memory footprint vs. inference latency tradeoff. <em>wevv</em> occupies the true zero-tensor boundary (0 Bytes VRAM, 24 Bytes seed) while executing in sub-10 ms real-time latency on commodity CPUs.
+      <strong>Fig. 1.</strong> Memory footprint vs. inference latency tradeoff. <em>werr</em> occupies the true zero-tensor boundary (0 Bytes VRAM, 24 Bytes seed) while executing in sub-10 ms real-time latency on commodity CPUs.
     </div>
   </div>
 
@@ -462,7 +465,7 @@ window.MathJax = {
     \(S = S_{\max} \cdot \left( \frac{1}{N^2 \cdot M_{\max}} \sum_{j,k} K(j,k) \right)^\gamma\)
   </div>
 
-  <h2>III. System Architecture</h2>
+  <h2>III. System Architecture: The WERR Decision Engine</h2>
   
   <h3>A. Multi-Domain Auto-Seed Router</h3>
   <p>
@@ -587,7 +590,7 @@ window.MathJax = {
 
   <h3>F. Organic Dynamic Calibration (Online EMA)</h3>
   <p>
-    Rather than enforcing static normalization constants, <em>wevv</em> v0.2.2 continuously tracks its operational environment via an online Exponential Moving Average (EMA, \(\alpha=0.03\)) over quadrant densities \(\mathbf{q}_t\):
+    Rather than enforcing static normalization constants, <em>werr</em> v0.3.0 continuously tracks its operational environment via an online Exponential Moving Average (EMA, \(\alpha=0.03\)) over quadrant densities \(\mathbf{q}_t\):
   </p>
   <div class="equation">
     \(\bar{\mathcal{Q}}_t = (1 - \alpha) \cdot \bar{\mathcal{Q}}_{t-1} + \alpha \cdot \mathbf{q}_t\)
@@ -790,7 +793,7 @@ window.MathJax = {
     Decentralized applications (dApps) in DeFi, autonomous governance, and blockchain gaming lack native cognitive capabilities because running large neural models inside the Ethereum Virtual Machine (EVM) or Solana runtime is economically and technically impossible.
   </p>
   <p>
-    <em>wevv</em> resolves the on-chain AI dilemma:
+    <em>werr</em> resolves the on-chain AI dilemma:
   </p>
   <p>
     <strong>1) 24-Byte State Payload:</strong> A complete decision model is fully defined by its 24-byte coordinate seed \((c_x, c_y, \text{zoom})\), fitting in a single 32-byte EVM storage slot.
@@ -805,14 +808,14 @@ window.MathJax = {
   <h2>VII. Reproducibility & Open Science</h2>
   <p class="no-indent">
     In commitment to open research, all assets are publicly accessible:<br>
-    &bull; <strong>Codebase:</strong> <a href="https://github.com/pCwOrM/wevv">https://github.com/pCwOrM/wevv</a><br>
-    &bull; <strong>Open Telemetry Dataset (1,090+ Decisions):</strong> <a href="https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl">https://mechsrv.itouch.fi:4431/wevv/dataset/wevv_open_decisions.jsonl</a><br>
-    &bull; <strong>Interactive Web Simulation Lab:</strong> <a href="https://pcworm.github.io/wevv/">https://pcworm.github.io/wevv/</a>
+    &bull; <strong>Codebase:</strong> <a href="https://github.com/pCwOrM/werr">https://github.com/pCwOrM/werr</a><br>
+    &bull; <strong>Open Telemetry Dataset (1,090+ Decisions):</strong> <a href="https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl">https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl</a><br>
+    &bull; <strong>Interactive Web Simulation Lab:</strong> <a href="https://pcworm.github.io/werr/">https://pcworm.github.io/werr/</a>
   </p>
 
   <h2>VIII. Conclusion</h2>
   <p>
-    The <strong>Universal Fractal Natural Language Decision Map</strong> proves that real-time edge triage can be synthesized directly from the chaotic boundary of the Mandelbrot set without persistent weight tensors. By unifying Multi-Domain Auto-Seed Routing, Chordial Semantic Resonance, Quadrant Phase Rotation, and Organic Dynamic Calibration, <em>wevv</em> achieves 92.6% accuracy and sub-10ms response times across 30+ domains on commodity hardware. Delivering deterministic triage at the physical edge, the architecture respects the thermodynamic limits of communication infrastructure while laying the groundwork for verifiable, on-chain decentralized artificial intelligence.
+    The <strong>Universal Fractal Natural Language Decision Map</strong> proves that real-time edge triage can be synthesized directly from the chaotic boundary of the Mandelbrot set without persistent weight tensors. By unifying Multi-Domain Auto-Seed Routing, Chordial Semantic Resonance, Quadrant Phase Rotation, and Organic Dynamic Calibration, <em>werr</em> achieves 92.6% accuracy and sub-10ms response times across 30+ domains on commodity hardware. Delivering deterministic triage at the physical edge, the architecture respects the thermodynamic limits of communication infrastructure while laying the groundwork for verifiable, on-chain decentralized artificial intelligence.
   </p>
 
   <div class="footnote-box">
