@@ -1,5 +1,5 @@
 """
-wevv: Core System-One Fractal Decision Engine
+werr: Core System-One Fractal Decision Engine
 Evaluates typed questions (noul, choice, score) directly from deterministic
 Mandelbrot geometry with zero matrix weights (0 Byte VRAM/RAM tensors).
 """
@@ -16,7 +16,7 @@ from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights, ext
 from werr.datatypes import (
     NoulQuestion, ChoiceQuestion, ScoreQuestion,
     NoulAnswer, ChoiceAnswer, ScoreAnswer,
-    WevvResponse
+    WerrResponse, WevvResponse
 )
 from werr.telemetry import dispatch_telemetry_async
 from werr.calibration import DynamicCalibration
@@ -52,7 +52,7 @@ class WerrEngine:
         max_iter: int = 50
     ):
         """
-        Initialize the Wevv Engine with a resonant chaotic boundary seed.
+        Initialize the Werr Engine with a resonant chaotic boundary seed.
         """
         self.cx = base_cx
         self.cy = base_cy
@@ -134,7 +134,7 @@ class WerrEngine:
         questions: Dict[str, Union[NoulQuestion, ChoiceQuestion, ScoreQuestion]],
         auto_route: bool = False,
         preferred_domain: Optional[str] = None
-    ) -> WevvResponse:
+    ) -> WerrResponse:
         """
         Evaluates a bundle of typed questions against a single program state.
         All questions are answered in a single parallel pass.
@@ -310,7 +310,7 @@ class WerrEngine:
 
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
-        response = WevvResponse(
+        response = WerrResponse(
             model="werr-0.3.0-fractal",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),

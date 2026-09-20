@@ -1,5 +1,5 @@
 """
-wevv: Domain Gate Base Interface
+werr: Domain Gate Base Interface
 Defines the contract for domain-specific latent projections and fractal coordinates.
 """
 from abc import ABC, abstractmethod
@@ -12,7 +12,7 @@ import numpy as np
 from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights, extract_quadtree_features, sigmoid
 from werr.datatypes import (
     NoulQuestion, ChoiceQuestion, ScoreQuestion,
-    NoulAnswer, ChoiceAnswer, ScoreAnswer, WevvResponse
+    NoulAnswer, ChoiceAnswer, ScoreAnswer, WerrResponse, WevvResponse
 )
 from werr.calibration import DynamicCalibration
 
@@ -95,7 +95,7 @@ class DomainGate(ABC):
         self,
         state: Dict[str, Any],
         questions: Dict[str, Union[NoulQuestion, ChoiceQuestion, ScoreQuestion]]
-    ) -> WevvResponse:
+    ) -> WerrResponse:
         """
         Executes a single forward evaluation pass over the gate's fractal coordinate manifold.
         Zero matrix tensors allocated (0 Bytes VRAM).
@@ -144,7 +144,7 @@ class DomainGate(ABC):
 
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
-        return WevvResponse(
+        return WerrResponse(
             domain=self.name,
             answers=answers,
             latency_ms=round(elapsed_ms, 3),

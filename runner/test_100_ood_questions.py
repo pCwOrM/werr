@@ -281,7 +281,7 @@ def main():
     t_start = time.perf_counter()
     engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
-    print(f"[+] Wevv Decision Engine initialized ({init_ms:.2f} ms)")
+    print(f"[+] Werr Decision Engine initialized ({init_ms:.2f} ms)")
     print(f"[+] Autonomous Fallback Phase-Angle Modulator: ACTIVE\n")
 
     # 2. Build 100 Exotic Scenarios

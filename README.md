@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/answerr_werr_twin_ecosystem.svg" alt="answerr & werr Twin Ecosystem Banner" width="100%">
+  <img src="assets/answerr_werr_twin_ecosystem.svg" alt="answerr & werr Twin Ecosystem Banner" width="100%" />
 </p>
 
 <p align="center">
-  <img src="assets/werr_logo_core.svg" alt="werr core logo" width="130">
+  <img src="assets/werr_logo_core.svg" alt="werr Core 3D Crystal Logo" width="160" height="160" />
 </p>
 
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
@@ -12,9 +12,10 @@
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22802921-green.svg)](https://doi.org/10.5281/zenodo.22802921)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Brand Guide](https://img.shields.io/badge/Design-Terminology%20Guide-purple.svg)](./docs/werr_terminology_guide.md)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
-> *"Where is the reflex? Ver! (werr)."*  
+> *"Werr is the reflex? Ver! (werr)."*  
 > *"Jev decisions come from 4B-parameter tensors; `werr` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*
@@ -23,12 +24,28 @@
 
 ---
 
-## 💡 The 4-Dimension WERR Philosophy
+## 💡 The 4-Dimension WERR Philosophy & Terminology
 
 * **1. Dynamical Synthesis (`W`aves & `Err`ors):** Continuous complex polynomial trajectories colliding with catastrophic Euler error divergence thresholds ($|Z_n| > 2$). When the wave meets error, we recurse (**WERR**).
-* **2. Spatial Inquiry (*"Werr is the point?"*):** Homophonous with English *"Where"*, operational edge triage is modeled as identifying the exact resonant coordinate seed along the infinite filamentary branches of the Mandelbrot set ($\partial \mathcal{M}$).
-* **3. Actionable Imperative (Turkish *"Ver!"*):** In Turkish phonetics, *ver* is the definitive command for action: *"Karar werr!"* (decide!), *"Yanıt werr!"* (answer!), *"Tepki werr!"* (react!). Captures the biological spinal reflex arc executing in $< 3$~ms without deliberative cerebral hesitation.
-* **4. Dual-Cognition Ecosystem Synergy:** `werr` serves as the zero-tensor mathematical backbone for **A.N.S.W.E.R.R.** (*Adaptive Non-tensor Signal Wave & Error Reflex Resonator*), available live at [answerr.me](https://answerr.me).
+* **2. Spatial Inquiry (*"Where" $\to$ "Werr"*):** Homophonous with English *"Where"*, operational edge questions map directly to fractal coordinate topology:
+  * *"Werr is the point?"* $\to$ Finding the exact resonant coordinate seed $(c_x, c_y)$ along $\partial \mathcal{M}$.
+  * *"Werr is the error?"* $\to$ Instant microsecond fault isolation and boundary divergence detection.
+  * *"Werr is the answerr?"* $\to$ Deciding whether a problem requires instant reflex (`werr`) or deliberate reasoning (`answerr`).
+  * *"Werr is the result?"* $\to$ Sub-millisecond typed decision output (`noul`, `choice`, `score`).
+  * *"Werr is the boundary?"* $\to$ The fundamental mathematical threshold ($|Z| = 2.0$) dividing stability from chaos.
+* **3. Actionable Imperative (Turkish *"Ver!"* & Dual-Engine Action Model):** In Turkish phonetics, *ver* is the definitive command for action: *"Karar werr!"* (decide!), *"Cevap werr!"* (answer!), *"İzin werr!"* (authorize!).
+  * **English UI Pair:**
+    * **`[ 💬 Answerr It! ]`** $\to$ System-2 Conversational Reasoning / Code Generation / Solution Design.
+    * **`[ ⚡ Werr It! ]`** $\to$ System-1 Instant Reflex / 0-Byte VRAM / Microsecond Gate Execution.
+    * Contextual Gates: **`[ 🛡️ Gate It! ]`**, **`[ 🚀 Rank It! ]`**.
+  * **Turkish UI Pair:**
+    * **`[ 💬 Cevap Werr ]`** $\to$ Sistem-2 Sohbet ve Kod Çözümü.
+    * **`[ ⚡ Karar Werr ]`** $\to$ Sistem-1 Anlık Fraktal Karar ve Refleks.
+    * Ekstra Kapılar: **`[ 🛡️ İzin Werr ]`**, **`[ 🚀 Öncelik Werr ]`**.
+* **4. Twin Cognitive Ecosystem Synergy (`answerr` $\leftrightarrow$ `werr`):**
+  * **`answerr`** ([answerr.me](https://answerr.me)): The deliberative System-2 Cloud Portal, AI IDE assistant, and cognitive reasoning hub.
+  * **`werr`** (`pip install werr`): The machine-native, in-process System-1 reflex kernel executing in $< 0.5$ ms with 0 Bytes of VRAM.
+  * 📘 **Full Design & Terminology Specification:** See [`docs/werr_terminology_guide.md`](docs/werr_terminology_guide.md).
 
 ---
 

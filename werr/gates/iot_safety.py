@@ -1,5 +1,5 @@
 """
-wevv: IoT Life Safety & Industrial Hazard Domain Gate
+werr: IoT Life Safety & Industrial Hazard Domain Gate
 Calibrated for sub-millisecond environmental hazard triage (smoke, fire, gas leaks, extreme temperature).
 """
 from typing import Dict, Any, Tuple

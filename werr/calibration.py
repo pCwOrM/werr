@@ -1,5 +1,5 @@
 """
-wevv: Organic Dynamic Calibration & Local Homeostasis
+werr: Organic Dynamic Calibration & Local Homeostasis
 Maintains continuous exponential moving averages (EMA) of quadrant escape ratios
 and risk distributions, allowing the decision engine to organically adapt to local
 operational domains without allocating neural tensors (0 Bytes VRAM).

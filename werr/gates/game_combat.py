@@ -1,5 +1,5 @@
 """
-wevv: Game AI & Tactical Combat Reflex Domain Gate
+werr: Game AI & Tactical Combat Reflex Domain Gate
 Calibrated for sub-millisecond NPC decision reflex (engage, tactical retreat, take cover, deploy ultimate).
 """
 from typing import Dict, Any, Tuple

@@ -1,5 +1,5 @@
 """
-wevv.gates: Domain-specific System-One decision gates.
+werr.gates: Domain-specific System-One decision gates.
 """
 from typing import Dict, Type
 from werr.gates.base import DomainGate, normalize_text

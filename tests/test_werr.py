@@ -1,5 +1,5 @@
 """
-Unit tests for the wevv System-One Fractal Decision Engine.
+Unit tests for the werr System-One Fractal Decision Engine.
 """
 import unittest
 import sys

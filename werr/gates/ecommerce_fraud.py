@@ -1,5 +1,5 @@
 """
-wevv: E-Commerce Transaction Fraud & Carding Domain Gate
+werr: E-Commerce Transaction Fraud & Carding Domain Gate
 Calibrated for sub-millisecond payment authorization, card testing prevention, and velocity triage.
 """
 from typing import Dict, Any, Tuple

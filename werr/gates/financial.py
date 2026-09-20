@@ -1,5 +1,5 @@
 """
-wevv: Financial Underwriting & Credit Risk Domain Gate
+werr: Financial Underwriting & Credit Risk Domain Gate
 Calibrated for sub-10ms credit approvals, loan underwriting, and default probability estimation.
 """
 from typing import Dict, Any, Tuple

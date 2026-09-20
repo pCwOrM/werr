@@ -1,5 +1,5 @@
 """
-wevv: Semantic Intent Classifier & Auto-Seed Router
+werr: Semantic Intent Classifier & Auto-Seed Router
 Routes incoming natural language prompts and environment states to the optimal
 fractal boundary coordinate gate in < 0.1 ms with zero GPU tensors (O(1) memory).
 """
@@ -186,7 +186,7 @@ class AutoSeedRouter:
     ) -> Tuple[Any, str, float]:
         """
         Routes the request to the optimal domain gate and evaluates it in a single pass.
-        Returns: (WevvResponse, domain_name, routing_confidence)
+        Returns: (WerrResponse, domain_name, routing_confidence)
         """
         if preferred_domain and preferred_domain in self._gate_instances:
             domain = preferred_domain

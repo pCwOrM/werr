@@ -271,7 +271,7 @@ def main():
     t_start = time.perf_counter()
     engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
-    print(f"[+] Wevv Karar Motoru başlatıldı ({init_ms:.2f} ms)")
+    print(f"[+] Werr Karar Motoru başlatıldı ({init_ms:.2f} ms)")
     print(f"[+] Akor Rezonansı ve Tinleme İndeksi Modülatörü: AKTİF\n")
 
     # 2. 100 Stres Senaryosunu Oluştur

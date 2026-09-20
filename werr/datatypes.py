@@ -1,5 +1,5 @@
 """
-wevv: Type-safe System-One Fractal Decision Data Types
+werr: Type-safe System-One Fractal Decision Data Types
 Zero-Memory Fractal Decision Engine inspired by System-1 intuition.
 """
 from dataclasses import dataclass, field
@@ -24,34 +24,34 @@ class ChoiceQuestion:
     Selects one option among defined criteria with full probability distribution.
     """
     instructions: str
-    criteria: Dict[str, str]  # e.g. {"allow": "Safe request", "block": "Harmful request"}
+    criteria: Union[Dict[str, str], List[str]]
+    temperature: float = 0.0
 
 
 @dataclass
 class ScoreQuestion:
     """
-    Scalar ranking/scoring question along a defined ordinal scale.
+    Continuous or ordinal score judgment question.
+    Projects state into a continuous scalar [0.0, max_level].
     """
     instructions: str
-    criteria: List[str]  # e.g. ["Low risk", "Moderate risk", "Critical risk"]
+    criteria: Optional[List[str]] = None
+    min_val: float = 0.0
+    max_val: float = 3.0
 
 
 @dataclass
 class NoulAnswer:
-    """
-    Boolean answer with probability and confidence.
-    """
+    """Answer for a Boolean judgment question."""
     type: str = "noul"
-    noul: float = 0.0  # Probability in [0.0, 1.0]
     decision: bool = False
+    noul: float = 0.0
     confidence: float = 0.0
 
 
 @dataclass
 class ChoiceAnswer:
-    """
-    Choice answer with selected option, probability breakdown, and confidence.
-    """
+    """Answer for a categorical decision question."""
     type: str = "choice"
     choice: str = ""
     probabilities: Dict[str, float] = field(default_factory=dict)
@@ -60,9 +60,7 @@ class ChoiceAnswer:
 
 @dataclass
 class ScoreAnswer:
-    """
-    Score answer with scalar score, bucket probabilities, and confidence.
-    """
+    """Answer for a continuous or ordinal score judgment question."""
     type: str = "score"
     score: float = 0.0
     level: str = ""
@@ -71,9 +69,9 @@ class ScoreAnswer:
 
 
 @dataclass
-class WevvResponse:
+class WerrResponse:
     """
-    Standardized response returned by WevvEngine.
+    Standardized response returned by WerrEngine.
     """
     model: str = "werr-0.3.0-fractal"
     domain: str = "api_security"
@@ -108,3 +106,7 @@ class WevvResponse:
         if isinstance(ans, ScoreAnswer) or getattr(ans, "type", None) == "score":
             return ans.score
         raise KeyError(f"Question '{key}' is not a ScoreAnswer")
+
+
+# Backward compatibility alias
+WevvResponse = WerrResponse

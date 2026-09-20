@@ -1,5 +1,5 @@
 """
-wevv Demo: Smart API Gateway & Safety Inspector
+werr Demo: Smart API Gateway & Safety Inspector
 Simulates the 'System-One Smart if-statement' pattern using Zero-Memory Fractal Geometry.
 Demonstrates sub-millisecond execution, 0-byte matrix storage, and type-safe outputs.
 """
@@ -11,7 +11,7 @@ if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
 from werr import (
-    WevvEngine,
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion,
@@ -28,7 +28,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 def run_demo():
     print("=" * 70)
-    print(" ~*~ wevv (Wave & VV-Subdivision): Zero-Memory System-One Decision Engine")
+    print(" ~*~ werr (Waves & Errors): Zero-Memory System-One Decision Engine")
     print("=" * 70)
 
     # 1. Initialize our pre-calibrated fractal router

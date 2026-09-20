@@ -2,12 +2,18 @@
 <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<<<<<<< HEAD
 	 width="600px" height="495px" viewBox="0 0 600 495" enable-background="new 0 0 600 495" xml:space="preserve">
 <radialGradient id="SVGID_1_" cx="1.0092" cy="599.9808" r="0.65" gradientTransform="matrix(600 0 0 -495 -305.5 297168.7188)" gradientUnits="userSpaceOnUse">
+=======
+	 width="498px" height="495px" viewBox="51 0 498 495" enable-background="new 51 0 498 495" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="1.5183" cy="-51.6818" r="0.65" gradientTransform="matrix(498 0 0 495 -456.1308 25760.7188)" gradientUnits="userSpaceOnUse">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 	<stop  offset="0" style="stop-color:#11132D"/>
 	<stop  offset="0.5" style="stop-color:#070914"/>
 	<stop  offset="1" style="stop-color:#020306"/>
 </radialGradient>
+<<<<<<< HEAD
 <path fill="url(#SVGID_1_)" d="M27,0h546c14.912,0,27,9.973,27,22.275v450.45C600,485.027,587.912,495,573,495H27
 	c-14.912,0-27-9.973-27-22.275V22.275C0,9.973,12.088,0,27,0z"/>
 <g id="answerr-portal-symbol">
@@ -1675,10 +1681,19 @@ HAAAAAAEBwAAAADBAQAAAAQHAAAAAMEBAAAAQHAAAAAAEBwAAAAABAcAAAAQHAAAAAAEBwAAAADB
 AQAAAEBwAAAAABAcAAAAQHAAAAAAEBwAAAAABAcAAAAAwQEAAABAcAAAAAAQHAAAAEBwAAAAABAc
 AAAAAAQHAAAAAMEBAAAAQHAAAAAAwQEAAABAcAAAAAAQHAAAAAAEBwAAAADBAQAAAAQHAAAAAMEB
 AAAAQHAAAAAAzsr/CzAAa7blgELWJX4AAAAASUVORK5CYII=" transform="matrix(1 0 0 1 16.5 -36)">
+=======
+<path fill="url(#SVGID_1_)" d="M73.41,0h453.18C538.967,0,549,9.973,549,22.275v450.45C549,485.027,538.967,495,526.59,495H73.41
+	C61.033,495,51,485.027,51,472.725V22.275C51,9.973,61.033,0,73.41,0z"/>
+<g id="answerr-portal-symbol">
+	<g opacity="0.12" enable-background="new    ">
+		
+			<image overflow="visible" enable-background="new    " width="568" height="568" xlink:href="A0A0465C.png"  transform="matrix(0.9982 0 0 0.9982 16.5 -36)">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 		</image>
 	</g>
 	<g opacity="0.15" enable-background="new    ">
 		
+<<<<<<< HEAD
 			<image overflow="visible" width="405" height="405" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZYAAAGWCAYAAABb+KWWAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAA7OFJREFUeNrsvdmOJEeWJShXVM08
 nEsxSWZWNaYyZwACZC6DfOqneeND/Rcj/6uArn9ooNGYBAoY1ExXdScymUuQEeFmKjJ6N5EroqJq
@@ -2745,6 +2760,9 @@ V4/0uQaIjDVO4LHGGsfsAI+xxhrAMtY4rgdojDXWWGONNdZYY4011lhjjTXWWGONNdZYY4011lhj
 jTXWWGONNdZYY4011lhjjTXWWGONNdZYY4011lhjjTXWWGONNdZYY4011lhjjTXWWGONNdZYY401
 1lhjjTXWWGONNdZYY4011lhjjTXWWGONNdZYY4011lhjjTXWWGONNdZYY4011lhjjTXWWGONNdZY
 Y4011lhjjTXWWGONNdZYY4011lhjjTXWI13/vwADAGHEuHb2wp0oAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 97.5 45)">
+=======
+			<image overflow="visible" enable-background="new    " width="406" height="406" xlink:href="A0A0465D.png"  transform="matrix(0.9975 0 0 0.9975 97.5 45)">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 		</image>
 	</g>
 	<g opacity="0.75" enable-background="new    ">
@@ -3047,6 +3065,7 @@ Y4011lhjjTXWWGONNdZYY4011lhjjTXWI13/vwADAGHEuHb2wp0oAAAAAElFTkSuQmCC" transform=
 	</g>
 	<g opacity="0.35" enable-background="new    ">
 		
+<<<<<<< HEAD
 			<image overflow="visible" width="425" height="425" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaoAAAGqCAYAAABajwD2AAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAB8YVJREFUeNrsvcuyJFd2JXYe7hH3
 3kwgkfUAChBpbJWsSTZlRRRZA2kiGgatCQcc0EzD4ki/IQPKONVXFP6AI5mpZCXrkSZt3VUwdTcn
@@ -5284,10 +5303,14 @@ FhYWFhYGVBYWFhYWBlQWFhYWFhYGVBYWFhYWFgZUFhYWFhYGVBYWFhYWFgZUFhYWFhYGVBYWFhYW
 FgZUFhYWFhYWBlQWFhYWFgZUFhYWFhYWBlQWFhYWFgZUFhYWFhYWBlQWFhYWFhYGVBYWFhYWBlQW
 FhYWFhYGVBYWFhYWBlQWFhYWFhYGVBYWFhYWFgZUFhYWFhYGVBYWFhYWFgZUFhYWFhYGVBYWFhYW
 Fl/j+P8CDAD8P1hRJB6R7wAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 87.6 35.1)">
+=======
+			<image overflow="visible" enable-background="new    " width="426" height="426" xlink:href="A0A0465B.png"  transform="matrix(0.9977 0 0 0.9977 87.6 35.1)">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 		</image>
 	</g>
 	<g opacity="0.85" enable-background="new    ">
 		
+<<<<<<< HEAD
 			<image overflow="visible" width="333" height="333" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAU4AAAFOCAYAAADpU/RpAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAgV9JREFUeNrsvd+TZMeV33fOyby3
 fnT3/AJAEFzQMEGurSUU8gPDlmjFwvgNLrjL/WGFwxHrZew/QYcfDAtrRPjBePST3hRUKMK2ZO3y
@@ -6434,6 +6457,28 @@ GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAH9JREFUeNqMz80Jg0AQhuGZqEdv
 FpAGtJkU5sUOPIl2kwKCaAWeFNHxXZiAaA754GHZ3Y/9UTOLRSTBAwpzO1ZV3UIhRYEnIi+s+OCN
 STgpQ2X3dMjFr4h8vOblfm7eEkqbu2bEcC71vngulGjDJPxuQY35+wbSofFf/pdDgAEAXsk49hPi
 QrYAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 296.0625 97.3125)">
+=======
+			<image overflow="visible" enable-background="new    " width="334" height="334" xlink:href="A0A04664.png"  transform="matrix(0.997 0 0 0.997 133.5 81)">
+		</image>
+	</g>
+	
+		<image overflow="visible" enable-background="new    " width="266" height="75" xlink:href="A0A04667.png"  transform="matrix(0.9962 0 0 0.9867 167.25 127.7167)">
+	</image>
+	
+		<image overflow="visible" enable-background="new    " width="289" height="94" xlink:href="A0A04665.png"  transform="matrix(0.9965 0 0 0.9894 156 274.6907)">
+	</image>
+	
+		<image overflow="visible" enable-background="new    " width="128" height="19" xlink:href="A0A0466B.png"  transform="matrix(0.9922 0 0 0.9474 232.5 134.6131)">
+	</image>
+	
+		<image overflow="visible" enable-background="new    " width="33" height="33" xlink:href="A0A0466C.png"  transform="matrix(0.9697 0 0 0.9697 370.25 137.75)">
+	</image>
+	
+		<image overflow="visible" enable-background="new    " width="33" height="33" xlink:href="A0A0466F.png"  transform="matrix(0.9697 0 0 0.9697 182.75 310.25)">
+	</image>
+	
+		<image overflow="visible" enable-background="new    " width="9" height="9" xlink:href="372A2BAB.png"  transform="matrix(0.8889 0 0 0.8889 296.0625 97.3125)">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 	</image>
 	<g opacity="0.7" enable-background="new    ">
 		<circle fill="#818CF8" cx="300" cy="393.75" r="2.25"/>
@@ -6445,11 +6490,15 @@ QrYAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 296.0625 97.3125)">
 		<circle fill="#C084FC" cx="446.25" cy="247.5" r="2.25"/>
 	</g>
 	
+<<<<<<< HEAD
 		<image overflow="visible" width="12" height="12" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKhJREFUeNq8kdEOgjAMRds59QWN
 foBv+Md+qQmaTGa9k5Y0c/DoTU4YbLe7tCwiHREdwRZEsAEMBGTwcgzM/CyHghp2Sm0K7r2ssRI5
 gyu4SVvlew8u4EDqDBprqvIrS2IJ5oMWoSWuWKy+KjO99UdbErcvZrK25gWT7Y9qJkZHyoxOYO9a
 Tq7lyXHHnB7RVbKq9ZxGd9M3XtQrkz5z1ZzsjHO8/+kjwABGCGB4TSWjsAAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 294 241.5)">
+=======
+		<image overflow="visible" enable-background="new    " width="13" height="13" xlink:href="372A2BA9.png"  transform="matrix(0.9231 0 0 0.9231 294 241.5)">
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 	</image>
 	<g opacity="0.8" enable-background="new    ">
 		<circle fill="#E0F2FE" cx="247.5" cy="202.5" r="1.125"/>
@@ -6465,6 +6514,7 @@ Tq7lyXHHnB7RVbKq9ZxGd9M3XtQrkz5z1ZzsjHO8/+kjwABGCGB4TSWjsAAAAABJRU5ErkJggg==" tr
 	</g>
 </g>
 <g id="answerr-brand" display="none">
+<<<<<<< HEAD
 	
 		<text transform="matrix(1 0 0 1 180.4067 479.9999)" display="inline" fill="#F8FAFC" font-family="'Arial-Black'" font-size="57" letter-spacing="-1">answe</text>
 	
@@ -6473,6 +6523,13 @@ Tq7lyXHHnB7RVbKq9ZxGd9M3XtQrkz5z1ZzsjHO8/+kjwABGCGB4TSWjsAAAAABJRU5ErkJggg==" tr
 		<text transform="matrix(1 0 0 1 396.0039 479.9999)" display="inline" fill="#C084FC" font-family="'Arial-Black'" font-size="57" letter-spacing="-1">r</text>
 	
 		<text transform="matrix(1 0 0 1 134.6621 515.9999)" display="inline" fill="#818CF8" font-family="'Arial-BoldMT'" font-size="10.875" letter-spacing="3">CONVERSATIONAL DECISION PLATFORM</text>
+=======
+	<text transform="matrix(1 0 0 1 180.4067 479.9999)" display="inline" fill="#F8FAFC" font-family="'Arial-Black'" font-size="57">answe</text>
+	<text transform="matrix(1 0 0 1 372.414 479.9999)" display="inline" fill="#38BDF8" font-family="'Arial-Black'" font-size="57">r</text>
+	<text transform="matrix(1 0 0 1 396.0039 479.9999)" display="inline" fill="#C084FC" font-family="'Arial-Black'" font-size="57">r</text>
+	
+		<text transform="matrix(1 0 0 1 134.6621 515.9999)" display="inline" fill="#818CF8" font-family="'Arial-BoldMT'" font-size="10.875" letter-spacing="2">CONVERSATIONAL DECISION PLATFORM</text>
+>>>>>>> edbad12 (feat: complete brand modernization, twin ecosystem architecture, and Answerr It / Werr It terminology)
 	
 		<text transform="matrix(1 0 0 1 161.4024 541.4999)" display="inline" fill="#94A3B8" font-family="'FiraCode-Medium'" font-size="10.5">&quot;Zero-Hallucination System-1 Decision Cloud&quot;</text>
 	<text transform="matrix(1 0 0 1 181.6591 566.9999)" display="inline" fill="#64748B" font-family="'ArialMT'" font-size="9.375">CLOUD REST &amp; SSE API • api.answerr.me • answerr.me</text>

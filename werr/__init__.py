@@ -10,6 +10,7 @@ from werr.datatypes import (
     NoulAnswer,
     ChoiceAnswer,
     ScoreAnswer,
+    WerrResponse,
     WevvResponse,
 )
 from werr.engine import WerrEngine, WevvEngine
@@ -49,6 +50,7 @@ __all__ = [
     "NoulAnswer",
     "ChoiceAnswer",
     "ScoreAnswer",
+    "WerrResponse",
     "WevvResponse",
     "create_security_guard",
     "create_smart_router",

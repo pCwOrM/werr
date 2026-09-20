@@ -1,5 +1,5 @@
 """
-wevv: API Security & Access Control Domain Gate
+werr: API Security & Access Control Domain Gate
 Calibrated for sub-millisecond API rate limiting, auth token inspection, and zero-day attack mitigation.
 """
 from typing import Dict, Any, Tuple

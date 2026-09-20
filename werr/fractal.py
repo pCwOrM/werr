@@ -1,5 +1,5 @@
 """
-wevv Fractal Kernel: Vectorized Mandelbrot generator and quadrant/quadtree feature extractors.
+werr Fractal Kernel: Vectorized Mandelbrot generator and quadrant/quadtree feature extractors.
 Self-contained, pure NumPy implementation for Zero-Memory System-One Decision Engine.
 """
 import math
