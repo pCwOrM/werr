@@ -23,7 +23,7 @@
 
 ---
 
-## 📊 Comparison: Jev (TypeSafe AI) vs. wevv
+## 📊 Comparison: Jev (TypeSafe AI) vs. werr
 
 | Dimension | TypeSafe AI (Jev) | OpenJev / NanoJev | **werr (Fractal System-1)** |
 | :--- | :--- | :--- | :--- |
@@ -166,7 +166,7 @@ When an engineer downloads or installs `werr`, **it operates 100% locally and co
 * **100% Local Text Normalization:** All text processing—including Turkish diacritic normalization (`ı/i`, `ö/o`, `ü/u`, `ş/s`, `ç/c`, `ğ/g`), token extraction, and mathematical projections—is executed entirely in-process on the local CPU in microseconds.
 * **Passive Outbound Telemetry (100% Opt-Out):** The only network capability in `werr` is an optional, passive background telemetry dispatcher used for open-science benchmark calibration. It never blocks decision execution, sends zero PII, and can be completely shut off at any time:
   ```bash
-  export WEVV_TELEMETRY=0
+  export WERR_TELEMETRY=0
   ```
 
 ---
@@ -270,26 +270,26 @@ python examples/sor.py attacker
 
 ## 🔬 Open Science Telemetry & Public Benchmark Dataset
 
-To calibrate and continuously optimize the universal fractal decision map, `werr` includes an asynchronous, non-blocking telemetry client (`wevv.telemetry`).
+To calibrate and continuously optimize the universal fractal decision map, `werr` includes an asynchronous, non-blocking telemetry client (`werr.telemetry`).
 
 ### 🔒 Zero-PII Privacy Guarantee
 * **No IP addresses** are stored on disk or database.
 * **No cookies, machine IDs, or personal accounts** are collected.
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
-* **100% Opt-Out:** Set the environment variable `WEVV_TELEMETRY=0` to disable telemetry completely.
+* **100% Opt-Out:** Set the environment variable `WERR_TELEMETRY=0` (or `WEVV_TELEMETRY=0`) to disable telemetry completely.
 
 ### 📊 Live Public Dataset (1,090+ Decisions / 3,000+ Questions)
 Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl)
-* 📂 **Repository Mirror:** [`dataset/wevv_open_decisions.jsonl`](dataset/wevv_open_decisions.jsonl)
+* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/werr/dataset/werr_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/werr/dataset/werr_open_decisions.jsonl)
+* 📂 **Repository Mirror:** [`dataset/werr_open_decisions.jsonl`](dataset/werr_open_decisions.jsonl)
 * 📑 **Empirical Test Reports:**
   - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
   - [Batch #2 (Scenarios 21–40)](docs/reports/batch2_telemetry_report_en.md) | [Türkçe](docs/reports/batch2_telemetry_report_tr.md)
   - [Batch #3: 100-Question Dynamic Calibration & Stress Test](docs/reports/batch3_dynamic_calibration_100q_report_en.md) | [Türkçe](docs/reports/batch3_dynamic_calibration_100q_report_tr.md)
 
 ### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2)
-While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `werr` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
+While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `werr` v0.2.2 introduces **Organic Dynamic Calibration** (`werr.calibration.DynamicCalibration`):
 * **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
 * **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net-risk} \cdot 0.8)$.
@@ -316,9 +316,9 @@ The remote ingestion endpoint on `mechsrv.itouch.fi:4431/werr/telemetry` is hard
 ## 📄 Academic Citation & Authors
 
 ```bibtex
-@software{wevv2026,
+@software{werr2026,
   author = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
-  title = {wevv: Zero-Memory System-One Decision Engine via Fractal Boundary Subdivision},
+  title = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
   year = {2026},
   url = {https://github.com/pCwOrM/werr},
   doi = {10.5281/zenodo.22802921}

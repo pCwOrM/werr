@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-wevv: İnteraktif Karar Simülatörü (Interactive Decision CLI)
+werr: İnteraktif Karar Simülatörü (Interactive Decision CLI)
 Mandelbrot Fraktal Geometrisi ile Sıfır-Bellekli (0 Byte VRAM) Karar Motoru.
 """
 import sys
@@ -13,13 +13,13 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 # 1. Gerekli Kütüphane Kontrolü (Dependency Check)
 try:
-    import wevv
+    import werr
 except ImportError:
     print("\n" + "=" * 60)
-    print(" [!] HATA: 'wevv' karar motoru kütüphanesi kurulu değil!")
+    print(" [!] HATA: 'werr' karar motoru kütüphanesi kurulu değil!")
     print("=" * 60)
     print(" Bu betiği çalıştırabilmek için lütfen önce şu komutla kurun:")
-    print("   pip install git+https://github.com/pCwOrM/wevv.git")
+    print("   pip install git+https://github.com/pCwOrM/werr.git")
     print("=" * 60 + "\n")
     sys.exit(1)
 
@@ -50,7 +50,7 @@ def main():
             sys.exit(1)
     else:
         print("\n" + "=" * 50)
-        print("    🌊 WEVV İNTERAKTİF KARAR MOTORU SİMÜLATÖRÜ")
+        print("    🌊 WERR İNTERAKTİF KARAR MOTORU SİMÜLATÖRÜ")
         print("=" * 50)
         print(" Lütfen test etmek istediğiniz güvenlik rolünü seçin:")
         for num, (r_name, r_desc, _, _) in ROLLER.items():
@@ -62,8 +62,8 @@ def main():
         else:
             secilen_rol, _, hata_sayisi, istek_hizi = ROLLER["2"]
 
-    # 3. wevv Motorunu Başlat (24-byte seed, 0 byte VRAM)
-    engine = wevv.create_smart_router()
+    # 3. werr Motorunu Başlat (24-byte seed, 0 byte VRAM)
+    engine = werr.create_smart_router()
 
     durum = {
         "user_role": secilen_rol,
@@ -75,14 +75,14 @@ def main():
     karar = engine.decide(
         state=durum,
         questions={
-            "gecis_izni": wevv.NoulQuestion("İşleme izin verilsin mi?"),
-            "hedef_rota": wevv.ChoiceQuestion("Yönlendirilecek mikroservis", criteria={
+            "gecis_izni": werr.NoulQuestion("İşleme izin verilsin mi?"),
+            "hedef_rota": werr.ChoiceQuestion("Yönlendirilecek mikroservis", criteria={
                 "direct_api": "Doğrudan API (Hızlı Yol)",
                 "rate_limiter": "Hız Sınırlayıcı Kuyruk",
                 "sandbox_audit": "İnceleme Odası (Karantina / Auth Challenge)",
                 "drop_packet": "Engelle & Paketi Düşür"
             }),
-            "tehlike_skoru": wevv.ScoreQuestion("Tehlike Derecesi (0-3 Skalası)", criteria=[
+            "tehlike_skoru": werr.ScoreQuestion("Tehlike Derecesi (0-3 Skalası)", criteria=[
                 "Normal/Temiz", "Hafif Anomali", "Yüksek Risk", "Kritik Tehdit"
             ])
         }
