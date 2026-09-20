@@ -1,280 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient -->
-    <radialGradient id="bg-glow-core" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#0e172a" stop-opacity="1"/>
-      <stop offset="45%" stop-color="#080b14" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#030408" stop-opacity="1"/>
+
+    <!-- Background Gradients -->
+    <radialGradient id="bg-radial-werr" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#0e172a" />
+      <stop offset="50%" stop-color="#070a12" />
+      <stop offset="100%" stop-color="#020306" />
     </radialGradient>
 
-    <!-- Neon Glow Filters -->
-    <filter id="core-glow-heavy" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="12" result="blur1" />
-      <feGaussianBlur stdDeviation="24" result="blur2" />
+    <radialGradient id="bg-radial-answerr" cx="50%" cy="36%" r="65%">
+      <stop offset="0%" stop-color="#11132d" />
+      <stop offset="50%" stop-color="#070914" />
+      <stop offset="100%" stop-color="#020306" />
+    </radialGradient>
+
+    <radialGradient id="bg-radial-twin" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#0f1527" />
+      <stop offset="50%" stop-color="#070910" />
+      <stop offset="100%" stop-color="#020306" />
+    </radialGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="bloom-heavy" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="b1" />
+      <feGaussianBlur stdDeviation="26" result="b2" />
       <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
+        <feMergeNode in="b2" />
+        <feMergeNode in="b1" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <filter id="core-glow-fine" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <filter id="bloom-fine" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3.5" result="bf" />
       <feMerge>
-        <feMergeNode in="blur" />
+        <feMergeNode in="bf" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <filter id="flare-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <filter id="star-sparkle" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="bs" />
       <feMerge>
-        <feMergeNode in="blur" />
+        <feMergeNode in="bs" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <!-- Cyan Crystalline Facet Gradients (Left Half - Wave Dynamics) -->
-    <linearGradient id="c-top-bright" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a5f3fc" />
-      <stop offset="40%" stop-color="#38bdf8" />
+    <!-- Cyan/Teal Crystalline Facet Gradients -->
+    <linearGradient id="c-crest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd" />
       <stop offset="100%" stop-color="#0284c7" />
     </linearGradient>
-
-    <linearGradient id="c-top-mid" x1="100%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="c-inner-spine" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="60%" stop-color="#0369a1" />
-      <stop offset="100%" stop-color="#075985" />
-    </linearGradient>
-
-    <linearGradient id="c-mid-deep" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7" />
-      <stop offset="50%" stop-color="#0369a1" />
-      <stop offset="100%" stop-color="#0c4a6e" />
-    </linearGradient>
-
-    <linearGradient id="c-dark-shadow" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#082f49" />
-      <stop offset="60%" stop-color="#0f172a" />
       <stop offset="100%" stop-color="#0369a1" />
     </linearGradient>
+    <linearGradient id="c-bevel-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#082f49" />
+    </linearGradient>
+    <linearGradient id="c-outer-wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0c4a6e" />
+    </linearGradient>
+    <linearGradient id="c-specular" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0f9ff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="c-inner-shade" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#082f49" />
+    </linearGradient>
 
-    <!-- Gold / Amber Crystalline Facet Gradients (Right Half - Error / Recurse) -->
-    <linearGradient id="g-top-bright" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Amber/Gold Crystalline Facet Gradients -->
+    <linearGradient id="g-crest" x1="100%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#fef08a" />
-      <stop offset="40%" stop-color="#fbbf24" />
-      <stop offset="100%" stop-color="#f59e0b" />
-    </linearGradient>
-
-    <linearGradient id="g-top-mid" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#fde047" />
-      <stop offset="60%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#b45309" />
-    </linearGradient>
-
-    <linearGradient id="g-mid-deep" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="50%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#92400e" />
-    </linearGradient>
-
-    <linearGradient id="g-dark-shadow" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#451a03" />
-      <stop offset="60%" stop-color="#18181b" />
-      <stop offset="100%" stop-color="#78350f" />
-    </linearGradient>
-
-    <!-- Center Spine Apex Facets (Fault line between Wave & Error) -->
-    <linearGradient id="spine-apex-c" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="35%" stop-color="#67e8f9" />
-      <stop offset="100%" stop-color="#0284c7" />
-    </linearGradient>
-
-    <linearGradient id="spine-apex-g" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="35%" stop-color="#fef08a" />
       <stop offset="100%" stop-color="#d97706" />
     </linearGradient>
-
-    <!-- Wordmark Gradient -->
-    <linearGradient id="text-werr-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="45%" stop-color="#ffffff" />
-      <stop offset="70%" stop-color="#fbbf24" />
-      <stop offset="100%" stop-color="#f59e0b" />
+    <linearGradient id="g-inner-spine" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#b45309" />
     </linearGradient>
+    <linearGradient id="g-bevel-dark" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+    <linearGradient id="g-outer-wing" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <linearGradient id="g-specular" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="g-inner-shade" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+
+    <!-- answerr Portal Gradients -->
+    <linearGradient id="portal-plasma" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="45%" stop-color="#818cf8" />
+      <stop offset="80%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="portal-fiber-top" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="60%" stop-color="#e879f9" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="portal-fiber-bot" x1="0%" y1="100%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.2" />
+    </linearGradient>
+
   </defs>
+  <rect width="800" height="800" rx="36" fill="url(#bg-radial-werr)" />
 
-  <!-- Background -->
-  <rect width="800" height="650" fill="url(#bg-glow-core)" rx="20" />
+  <g id="werr-crystal-symbol">
+    <!-- Ambient Backlight -->
+    <circle cx="330" cy="330" r="160" fill="#0284c7" opacity="0.16" filter="url(#bloom-heavy)" />
+    <circle cx="470" cy="330" r="160" fill="#d97706" opacity="0.16" filter="url(#bloom-heavy)" />
 
-  <!-- Subtle Cybernetic Lattice & Coordinate Markings -->
-  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
-    <line x1="100" y1="260" x2="700" y2="260" stroke-dasharray="4,8" />
-    <line x1="400" y1="40" x2="400" y2="480" stroke-dasharray="4,8" />
-    <circle cx="400" cy="260" r="180" fill="none" stroke-dasharray="2,6" />
-    <circle cx="400" cy="260" r="230" fill="none" stroke-dasharray="8,12" />
+    <!-- Technical Circuit Guides -->
+    <g stroke="#1e293b" stroke-width="1" fill="none" opacity="0.4">
+      <path d="M 60 200 L 155 200 L 175 200" />
+      <path d="M 740 200 L 645 200 L 625 200" />
+      <path d="M 90 305 L 130 305" />
+      <path d="M 710 305 L 670 305" />
+      <path d="M 130 435 L 195 435" />
+      <path d="M 670 435 L 605 435" />
+      <circle cx="60" cy="200" r="2.5" fill="#38bdf8" />
+      <circle cx="740" cy="200" r="2.5" fill="#fbbf24" />
+      <circle cx="90" cy="305" r="2" fill="#38bdf8" />
+      <circle cx="710" cy="305" r="2" fill="#fbbf24" />
+      <circle cx="130" cy="435" r="2" fill="#38bdf8" />
+      <circle cx="670" cy="435" r="2" fill="#fbbf24" />
+    </g>
+
+    <!-- ================= LEFT HALF (ELECTRIC CYAN) ================= -->
+    <g id="cyan-facets">
+      <!-- Outer Wing Prisms -->
+      <polygon points="175,200 130,305 245,370" fill="url(#c-outer-wing)" stroke="#38bdf8" stroke-width="0.8" />
+      <polygon points="175,200 245,370 295,335" fill="url(#c-crest)" stroke="#a5f3fc" stroke-width="0.8" />
+      <polygon points="130,305 195,435 245,370" fill="url(#c-bevel-dark)" stroke="#0284c7" stroke-width="0.8" />
+      <polygon points="195,435 315,545 245,370" fill="url(#c-inner-spine)" stroke="#38bdf8" stroke-width="0.8" />
+
+      <!-- Inner Left Stroke Prisms -->
+      <polygon points="295,335 245,370 315,545" fill="url(#c-crest)" stroke="#38bdf8" stroke-width="0.8" />
+      <polygon points="295,335 315,545 355,420" fill="url(#c-inner-spine)" stroke="#38bdf8" stroke-width="0.8" />
+      <polygon points="295,335 355,420 400,275" fill="url(#c-inner-shade)" stroke="#0369a1" stroke-width="0.8" />
+      <polygon points="295,335 400,275 400,110" fill="url(#c-crest)" stroke="#a5f3fc" stroke-width="0.8" />
+
+      <!-- Central Spine & Notch Prisms -->
+      <polygon points="400,110 400,275 355,420" fill="url(#c-specular)" stroke="#e0f2fe" stroke-width="0.5" />
+      <polygon points="355,420 315,545 400,425" fill="url(#c-inner-spine)" stroke="#38bdf8" stroke-width="0.8" />
+      <polygon points="400,275 355,420 400,425" fill="url(#c-bevel-dark)" stroke="#0284c7" stroke-width="0.8" />
+    </g>
+
+    <!-- ================= RIGHT HALF (RADIANT GOLD) ================= -->
+    <g id="gold-facets">
+      <!-- Outer Wing Prisms -->
+      <polygon points="625,200 670,305 555,370" fill="url(#g-outer-wing)" stroke="#fbbf24" stroke-width="0.8" />
+      <polygon points="625,200 555,370 505,335" fill="url(#g-crest)" stroke="#fef08a" stroke-width="0.8" />
+      <polygon points="670,305 605,435 555,370" fill="url(#g-bevel-dark)" stroke="#d97706" stroke-width="0.8" />
+      <polygon points="605,435 485,545 555,370" fill="url(#g-inner-spine)" stroke="#fbbf24" stroke-width="0.8" />
+
+      <!-- Inner Right Stroke Prisms -->
+      <polygon points="505,335 555,370 485,545" fill="url(#g-crest)" stroke="#fbbf24" stroke-width="0.8" />
+      <polygon points="505,335 485,545 445,420" fill="url(#g-inner-spine)" stroke="#fbbf24" stroke-width="0.8" />
+      <polygon points="505,335 445,420 400,275" fill="url(#g-inner-shade)" stroke="#b45309" stroke-width="0.8" />
+      <polygon points="505,335 400,275 400,110" fill="url(#g-crest)" stroke="#fef08a" stroke-width="0.8" />
+
+      <!-- Central Spine & Notch Prisms -->
+      <polygon points="400,110 400,275 445,420" fill="url(#g-specular)" stroke="#fef9c3" stroke-width="0.5" />
+      <polygon points="445,420 485,545 400,425" fill="url(#g-inner-spine)" stroke="#fbbf24" stroke-width="0.8" />
+      <polygon points="400,275 445,420 400,425" fill="url(#g-bevel-dark)" stroke="#d97706" stroke-width="0.8" />
+    </g>
+
+    <!-- Central Chisel Fault Line -->
+    <line x1="400" y1="110" x2="400" y2="425" stroke="#ffffff" stroke-width="2.5" filter="url(#bloom-fine)" />
+
+    <!-- Neon Contour Glow Ribbons -->
+    <path d="M 175 200 L 130 305 L 195 435 L 315 545 L 400 425" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linejoin="round" filter="url(#bloom-heavy)" opacity="0.75" />
+    <path d="M 175 200 L 295 335 L 400 110" fill="none" stroke="#a5f3fc" stroke-width="2.2" stroke-linejoin="round" filter="url(#bloom-fine)" />
+
+    <path d="M 625 200 L 670 305 L 605 435 L 485 545 L 400 425" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linejoin="round" filter="url(#bloom-heavy)" opacity="0.75" />
+    <path d="M 625 200 L 505 335 L 400 110" fill="none" stroke="#fef08a" stroke-width="2.2" stroke-linejoin="round" filter="url(#bloom-fine)" />
+
+    <!-- Specular Starburst Flares -->
+    <g transform="translate(400, 110)" filter="url(#star-sparkle)">
+      <circle cx="0" cy="0" r="5" fill="#ffffff" />
+      <polygon points="0,-16 3,-3 16,0 3,3 0,16 -3,3 -16,0 -3,-3" fill="#ffffff" />
+    </g>
+    <g transform="translate(175, 200)" filter="url(#star-sparkle)">
+      <circle cx="0" cy="0" r="4.5" fill="#ffffff" />
+      <polygon points="0,-13 2.5,-2.5 13,0 2.5,2.5 0,13 -2.5,2.5 -13,0 -2.5,-2.5" fill="#38bdf8" />
+    </g>
+    <g transform="translate(625, 200)" filter="url(#star-sparkle)">
+      <circle cx="0" cy="0" r="4.5" fill="#ffffff" />
+      <polygon points="0,-13 2.5,-2.5 13,0 2.5,2.5 0,13 -2.5,2.5 -13,0 -2.5,-2.5" fill="#fbbf24" />
+    </g>
+    <g transform="translate(315, 545)" filter="url(#star-sparkle)">
+      <circle cx="0" cy="0" r="4" fill="#ffffff" />
+      <polygon points="0,-11 2,-2 11,0 2,2 0,11 -2,2 -11,0 -2,-2" fill="#38bdf8" />
+    </g>
+    <g transform="translate(485, 545)" filter="url(#star-sparkle)">
+      <circle cx="0" cy="0" r="4" fill="#ffffff" />
+      <polygon points="0,-11 2,-2 11,0 2,2 0,11 -2,2 -11,0 -2,-2" fill="#fbbf24" />
+    </g>
+    <circle cx="400" cy="425" r="3.5" fill="#ffffff" filter="url(#bloom-fine)" />
   </g>
 
-  <!-- Circuit Micro-traces -->
-  <g opacity="0.12" stroke="#67e8f9" stroke-width="1" fill="none">
-    <path d="M 160 120 L 220 120 L 250 150" />
-    <path d="M 640 120 L 580 120 L 550 150" />
-    <path d="M 180 380 L 230 380 L 270 340" />
-    <path d="M 620 380 L 570 380 L 530 340" />
-    <circle cx="160" cy="120" r="2.5" fill="#38bdf8" />
-    <circle cx="640" cy="120" r="2.5" fill="#fbbf24" />
-  </g>
-
-  <!-- ================= 3D MULTIFACETED CRYSTALLINE W CORE ================= -->
-  <!-- 1. Ambient Volumetric Underglow -->
-  <g id="volumetric-backlight" filter="url(#core-glow-heavy)">
-    <polygon points="210,130 400,60 590,130 400,430" fill="#38bdf8" opacity="0.25" />
-    <polygon points="400,60 590,130 500,320 400,210" fill="#fbbf24" opacity="0.3" />
-    <circle cx="400" cy="245" r="90" fill="#0284c7" opacity="0.2" />
-  </g>
-
-  <!-- 2. High-Definition Precision Facets -->
-  <g id="crystal-mesh" stroke="#050811" stroke-width="1.2" stroke-linejoin="round">
-
-    <!-- ===== LEFT TOWER: ELECTRIC CYAN PRISM (WAVE) ===== -->
-    <!-- Peak 1 Apex: (210, 130) -->
-    <!-- Facet L1: Top Outer Left Flank -->
-    <polygon points="210,130 145,215 220,225" fill="url(#c-top-bright)" />
-    <!-- Facet L2: Top Outer Ridge -->
-    <polygon points="210,130 220,225 295,195" fill="url(#c-top-mid)" />
-    <!-- Facet L3: Lower Outer Left Flank -->
-    <polygon points="145,215 200,310 220,225" fill="url(#c-mid-deep)" />
-    <!-- Facet L4: Outer Wing Tip Bottom Edge -->
-    <polygon points="145,215 130,230 185,325 200,310" fill="url(#c-dark-shadow)" />
-    <!-- Facet L5: Left Valley Inner Face -->
-    <polygon points="220,225 200,310 290,325 295,195" fill="url(#c-mid-deep)" />
-
-    <!-- ===== CENTER SPINE: APEX CROWN (FAULT-LINE) ===== -->
-    <!-- Center Apex Point: (400, 55) -->
-    <!-- Center Inner Valley Left: (295, 195), Center Inner Valley Right: (505, 195) -->
-    <!-- Facet C1: Central Left Apex Flank (Cyan lit) -->
-    <polygon points="400,55 295,195 400,180" fill="url(#spine-apex-c)" />
-    <!-- Facet C2: Central Right Apex Flank (Gold lit) -->
-    <polygon points="400,55 400,180 505,195" fill="url(#spine-apex-g)" />
-
-    <!-- Central Mid-Rib Keel -->
-    <!-- Facet C3: Center Mid Valley Left -->
-    <polygon points="295,195 400,180 400,305 310,325" fill="url(#c-dark-shadow)" />
-    <!-- Facet C4: Center Mid Valley Right -->
-    <polygon points="505,195 400,180 400,305 490,325" fill="url(#g-dark-shadow)" />
-
-    <!-- ===== RIGHT TOWER: RADIANT GOLD PRISM (ERROR / RECURSE) ===== -->
-    <!-- Peak 2 Apex: (590, 130) -->
-    <!-- Facet R1: Top Inner Ridge -->
-    <polygon points="590,130 505,195 580,225" fill="url(#g-top-mid)" />
-    <!-- Facet R2: Top Outer Right Flank -->
-    <polygon points="590,130 580,225 655,215" fill="url(#g-top-bright)" />
-    <!-- Facet R3: Right Valley Inner Face -->
-    <polygon points="505,195 510,325 600,310 580,225" fill="url(#g-mid-deep)" />
-    <!-- Facet R4: Lower Outer Right Flank -->
-    <polygon points="580,225 600,310 655,215" fill="url(#g-mid-deep)" />
-    <!-- Facet R5: Outer Wing Tip Bottom Edge -->
-    <polygon points="655,215 670,230 615,325 600,310" fill="url(#g-dark-shadow)" />
-
-    <!-- ===== LOWER REFLEX KEEL (BOTTOM V ANCHOR) ===== -->
-    <!-- Bottom Terminal Apex: (400, 425) -->
-    <!-- Facet B1: Lower Left Keel Flank -->
-    <polygon points="310,325 400,305 400,425 345,395" fill="url(#c-top-mid)" />
-    <!-- Facet B2: Lower Right Keel Flank -->
-    <polygon points="490,325 400,305 400,425 455,395" fill="url(#g-top-mid)" />
-    <!-- Facet B3: Bottom Left Terminal Tip -->
-    <polygon points="200,310 290,325 345,395 270,380" fill="url(#c-mid-deep)" />
-    <!-- Facet B4: Bottom Right Terminal Tip -->
-    <polygon points="600,310 490,325 455,395 530,380" fill="url(#g-mid-deep)" />
-    <!-- Facet B5: Center Keel Blade Left -->
-    <polygon points="400,305 345,395 400,425" fill="url(#c-top-bright)" />
-    <!-- Facet B6: Center Keel Blade Right -->
-    <polygon points="400,305 455,395 400,425" fill="url(#g-top-bright)" />
-
-  </g>
-
-  <!-- 3. Specular Ridge Lines & Sharp Edge Highlights -->
-  <g stroke="#ffffff" stroke-linecap="round" opacity="0.85" filter="url(#core-glow-fine)">
-    <!-- Central Spine Blade -->
-    <line x1="400" y1="55" x2="400" y2="180" stroke-width="2.5" />
-    <line x1="400" y1="305" x2="400" y2="425" stroke-width="2.5" />
-
-    <!-- Left Wing Leading Ridges -->
-    <line x1="210" y1="130" x2="220" y2="225" stroke-width="2" stroke="#e0f2fe" />
-    <line x1="210" y1="130" x2="145" y2="215" stroke-width="1.5" stroke="#bae6fd" />
-    <line x1="220" y1="225" x2="200" y2="310" stroke-width="1.8" stroke="#7dd3fc" />
-
-    <!-- Right Wing Leading Ridges -->
-    <line x1="590" y1="130" x2="580" y2="225" stroke-width="2" stroke="#fef9c3" />
-    <line x1="590" y1="130" x2="655" y2="215" stroke-width="1.5" stroke="#fef08a" />
-    <line x1="580" y1="225" x2="600" y2="310" stroke-width="1.8" stroke="#fde047" />
-
-    <!-- Valley Junctions -->
-    <line x1="295" y1="195" x2="310" y2="325" stroke-width="1.5" stroke="#38bdf8" />
-    <line x1="505" y1="195" x2="490" y2="325" stroke-width="1.5" stroke="#fbbf24" />
-  </g>
-
-  <!-- 4. Luminous Vertex Stars & Specular Glints -->
-  <g filter="url(#flare-glow)">
-    <!-- Main Center Apex Starburst (400, 55) -->
-    <circle cx="400" cy="55" r="5" fill="#ffffff" />
-    <polygon points="400,42 403,55 416,55 405,58 408,70 400,61 392,70 395,58 384,55 397,55" fill="#ffffff" opacity="0.9" />
-
-    <!-- Left Wing Peak Glint (210, 130) -->
-    <circle cx="210" cy="130" r="4" fill="#ffffff" />
-    <polygon points="210,122 212,130 220,130 213,132 215,140 210,134 205,140 207,132 200,130 208,130" fill="#a5f3fc" opacity="0.8" />
-
-    <!-- Right Wing Peak Glint (590, 130) -->
-    <circle cx="590" cy="130" r="4" fill="#ffffff" />
-    <polygon points="590,122 592,130 600,130 593,132 595,140 590,134 585,140 587,132 580,130 588,130" fill="#fef08a" opacity="0.8" />
-
-    <!-- Bottom Keel Glint (400, 425) -->
-    <circle cx="400" cy="425" r="4.5" fill="#ffffff" />
-    <polygon points="400,415 402,425 412,425 404,427 406,437 400,430 394,437 396,427 388,425 398,425" fill="#38bdf8" opacity="0.8" />
-  </g>
-
-  <!-- ================= TYPOGRAPHY & WORDMARK ================= -->
-  <g id="brand-text-werr" text-anchor="middle">
-    <!-- Brand Title: werr -->
-    <text x="400" y="520" 
-          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'JetBrains Mono', monospace" 
-          font-size="68" 
-          font-weight="900" 
-          letter-spacing="-0.04em">
-      <tspan fill="#38bdf8">w</tspan><tspan fill="#f1f5f9">e</tspan><tspan fill="#fbbf24">rr</tspan>
+  <!-- Typography -->
+  <g id="werr-brand" text-anchor="middle">
+    <text x="400" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="76" font-weight="900" letter-spacing="-0.03em">
+      <tspan fill="#38bdf8">w</tspan><tspan fill="#f8fafc">e</tspan><tspan fill="#fbbf24">rr</tspan>
     </text>
-
-    <!-- Subtitle / Architecture Role -->
-    <text x="400" y="560" 
-          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'JetBrains Mono', monospace" 
-          font-size="13" 
-          font-weight="800" 
-          letter-spacing="0.32em" 
-          fill="#38bdf8">
+    <text x="400" y="688" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="800" letter-spacing="0.32em" fill="#38bdf8">
       GEOMETRIC REFLEX CORE
     </text>
-
-    <!-- Architectural Motto -->
-    <text x="400" y="588" 
-          font-family="'JetBrains Mono', monospace" 
-          font-size="11.5" 
-          font-weight="600" 
-          letter-spacing="0.1em" 
-          fill="#94a3b8">
+    <text x="400" y="722" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="14" font-weight="600" fill="#94a3b8">
       "Don't call an API. Embed the reflex."
     </text>
-
-    <!-- Micro Metadata -->
-    <text x="400" y="612" 
-          font-family="'JetBrains Mono', monospace" 
-          font-size="10" 
-          font-weight="600" 
-          letter-spacing="0.14em" 
-          fill="#64748b">
-      0-BYTE VRAM &#8226; &lt; 0.5 MS &#8226; pip install werr &#8226; werr.h
+    <text x="400" y="756" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" font-weight="500" fill="#64748b">
+      0-Byte Tensor Memory &#8226; &lt; 0.5 ms Latency &#8226; pip install werr &#8226; werr.h
     </text>
   </g>
 </svg>
