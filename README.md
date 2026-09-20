@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="assets/answerr_werr_twin_ecosystem.svg" alt="answerr & werr Twin Ecosystem Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/werr_logo_core.svg" alt="werr core logo" width="130">
+</p>
+
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
