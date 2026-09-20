@@ -21,3 +21,15 @@ Desktop.ini
 !docs/*.pdf
 !zenodo/*.pdf
 !arxiv/*.zip
+
+# Sensitive runner scripts and credentials (STRICTLY EXCLUDED FROM GIT)
+runner/
+wevv/
+werr/
+answerr/
+tests/
+*ssh*
+*password*
+*.pem
+*.key
+*.env
