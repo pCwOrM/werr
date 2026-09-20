@@ -57,13 +57,26 @@
 
 `werr` ismi tesadüfi bir kısaltma değil; hem matematiksel, hem felsefi, hem fonetik hem de iki dilli (Türkçe & İngilizce) derin anlamsal köklere sahip çok katmanlı bir sistem metaforudur:
 
-```mermaid
-graph TD
-    WERR["werr (Karar & Refleks Çekirdeği)"]
-    WERR --> DYN["1. Matematiksel Dinamik<br/>Waves & Errors (W-ERR)"]
-    WERR --> TR["2. Türkçe Eylemsel Buyruk<br/>'Ver!' (Cevap werr, Karar werr)"]
-    WERR --> EN["3. İngilizce Uzamsal Arama<br/>'Where' (Werr is the point?)"]
-    WERR --> DUAL["4. Çift Çekirdek Rezonansı<br/>Ortak 'rr' Genetiği (werr & answerr)"]
+```
+                      ┌───────────────────────────────────────────────┐
+                      │        werr (Karar & Refleks Çekirdeği)       │
+                      │    0-Byte VRAM • Fraktal Refleks Rezonatörü   │
+                      └───────┬──────────────┬─────────────┬──────────┘
+                              │              │             │
+        ┌─────────────────────┘              │             └─────────────────────┐
+        ▼                                    ▼                                   ▼
+┌──────────────────────────────┐ ┌──────────────────────────────┐ ┌──────────────────────────────┐
+│  1. Matematiksel Dinamik     │ │  2. Türkçe Eylemsel Buyruk   │ │  3. İngilizce Uzamsal Arama  │
+│  Waves & Errors (W-ERR)      │ │  "Ver!" (Karar / Cevap werr) │ │  "Where" (Werr is the point?)│
+└──────────────┬───────────────┘ └──────────────┬───────────────┘ └──────────────┬───────────────┘
+               │                                │                                │
+               └──────────────────────────────┐ │ ┌──────────────────────────────┘
+                                              ▼ ▼ ▼
+                               ┌──────────────────────────────────┐
+                               │   4. Çift Çekirdek Rezonansı     │
+                               │   Ortak 'rr' Genetik Çatallanması│
+                               │      (werr  &  answerr)          │
+                               └──────────────────────────────────┘
 ```
 
 ---
