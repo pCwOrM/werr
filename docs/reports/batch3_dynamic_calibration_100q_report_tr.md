@@ -19,7 +19,7 @@ v0.2.2 ile hayata geçirilen 4 ana iyileştirme ve 10 alt kategoride 100 senaryo
    - Sabit taban yerine, her canlı sorguyla $O(1)$ karmaşıklıkta güncellenen Üstel Hareketli Ortalama (EMA, $\alpha = 0.03$) devreye alınmıştır.
    - 100 sorgu boyunca taban `[0.38, 0.91, 0.35, 0.91]` noktasından `[0.2268, 0.9267, 0.2354, 0.929]` noktasına pürüzsüzce evrilmiştir.
 3. **Adaptif Noul Eşikleme (Adaptive Noul Thresholding):**
-   - Statik $\theta = 0.5$ yerine, bağlamın net riskine göre $\theta_{\text{eff}} = \text{clip}(0.5 + 0.3 \times \tanh(\text{net\_risk} \cdot 0.8), 0.15, 0.85)$ uygulanmıştır.
+   - Statik $\theta = 0.5$ yerine, bağlamın net riskine göre $\theta_{\text{eff}} = \text{clip}(0.5 + 0.3 \times \tanh(\text{net-risk} \cdot 0.8), 0.15, 0.85)$ uygulanmıştır.
    - Yüksek riskli ve saldırgan senaryolarda eşik yükseltilmiş, meşru trafik ile saldırgan trafik arasında %50-%50 kusursuz ayrım sağlanmıştır.
 4. **Sertleştirilmiş Akor Filtresi (Hardened Chord Filter):**
    - Açıklama metni sönümleme katsayısı $\mathcal{T}_{\text{desc}} = 0.045$ değerine çekilmiştir.

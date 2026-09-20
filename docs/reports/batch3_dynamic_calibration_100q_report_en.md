@@ -19,7 +19,7 @@ In v0.2.2, 4 architectural improvements across 10 subcategories (100 scenarios) 
    - Replaced static baseline with a real-time $O(1)$ Exponential Moving Average (EMA, $\alpha = 0.03$).
    - Over 100 consecutive queries, baseline adjusted from `[0.38, 0.91, 0.35, 0.91]` to `[0.2268, 0.9267, 0.2354, 0.929]`.
 3. **Adaptive Noul Thresholding:**
-   - Dynamic thresholding: $\theta_{\text{eff}} = \text{clip}(0.5 + 0.3 \times \tanh(\text{net\_risk} \cdot 0.8), 0.15, 0.85)$.
+   - Dynamic thresholding: $\theta_{\text{eff}} = \text{clip}(0.5 + 0.3 \times \tanh(\text{net-risk} \cdot 0.8), 0.15, 0.85)$.
    - Delivered a clean 50%/50% separation between malicious and authorized traffic.
 4. **Hardened Chord Filter:**
    - Description attenuation coefficient tightened to $\mathcal{T}_{\text{desc}} = 0.045$.

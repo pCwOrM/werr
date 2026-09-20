@@ -293,7 +293,7 @@ Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouc
 While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `wevv` v0.2.2 introduces **Organic Dynamic Calibration** (`wevv.calibration.DynamicCalibration`):
 * **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
-* **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net\_risk} \cdot 0.8)$.
+* **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net-risk} \cdot 0.8)$.
 * **Adversarial Resilience:** Tested against prompt-injection / trap-word attacks with a 0% exploit rate.
 * **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
