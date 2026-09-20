@@ -1517,7 +1517,7 @@
         <span style="font-size: 1.2rem;">🔒</span>
         <strong style="color: var(--text-main); font-size: 1rem;" id="priv-banner-title">Zero-PII Open Telemetry & Science Guarantee</strong>
         <span class="badge-pill" style="margin-bottom: 0; padding: 0.2rem 0.6rem; font-size: 0.72rem; color: var(--emerald); border-color: var(--emerald);">
-          🟢 Server: mechsrv.itouch.fi:4431
+          🟢 Server: api.answerr.me:4431
         </span>
       </div>
       <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;" id="priv-banner-desc">
@@ -1525,7 +1525,7 @@
       </p>
     </div>
     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-      <a href="https://mechsrv.itouch.fi:4431/werr/dataset/werr_open_decisions.jsonl" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.82rem; white-space: nowrap;" id="priv-btn-dataset">
+      <a href="https://api.answerr.me:4431/wevv/dataset/werr_open_decisions.jsonl" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.82rem; white-space: nowrap;" id="priv-btn-dataset">
         📊 Download Open Dataset (.JSONL)
       </a>
     </div>
@@ -1734,7 +1734,7 @@ def main():
     print(f" • Tehlike Skoru : {karar.score('tehlike_skoru'):.2f} / 3.0")
     print(f" • Karar Hızı    : {karar.latency_ms:.2f} ms")
     print(f" • Bellek İzleri : 0 Byte Tensör VRAM (24 Byte Koordinat Tohumu)")
-    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, mechsrv.itouch.fi)")
+    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, api.answerr.me)")
     print("=" * 50)
     print(" ℹ️  [Açık Bilim & Gizlilik]: Fraktal optimizasyonu için yalnızca anonim koordinat")
     print("     ve karar çıktıları kaydedilir. (Kapatmak için: export WERR_TELEMETRY=0)")
@@ -2995,7 +2995,7 @@ GitHub Repository       : https://github.com/pCwOrM/werr
       recaptcha_token: token || undefined
     };
 
-    fetch("https://mechsrv.itouch.fi:4431/werr/telemetry", {
+    fetch("https://api.answerr.me:4431/wevv/telemetry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

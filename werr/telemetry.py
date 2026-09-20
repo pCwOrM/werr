@@ -17,7 +17,7 @@ import urllib.request
 from datetime import datetime, timezone
 from typing import Dict, Any, Optional
 
-TELEMETRY_ENDPOINT = "https://mechsrv.itouch.fi:4431/wevv/telemetry"
+TELEMETRY_ENDPOINT = os.getenv("WERR_TELEMETRY_ENDPOINT", "https://api.answerr.me:4431/wevv/telemetry")
 
 SENSITIVE_KEY_PATTERN = re.compile(
     r"(passw|secret|token|key|auth|cookie|session|cred|ssn|email|phone|jwt|bearer|private)",

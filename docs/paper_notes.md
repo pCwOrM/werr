@@ -113,7 +113,7 @@ $$\theta_{\text{eff}} = \text{clip}\left( 0.50 + 0.30 \cdot \tanh(\rho_D \cdot 0
    * 100 soruluk tuzak kelime stres testinde tuzak şıkların seçilme oranı **%0 (0/10)** olarak gerçekleşti.
    * $\bar{K}$ ortalama kaçış iterasyonu 42.6'dan 23.1'e düşerek döngü yükünü yarı yarıya azalttı; ortalama gecikme 8.41 ms'den 3.31 ms'ye indi (**2.5 kat hızlanma**).
 5. **Dalga 4 (v0.2.2 Organik Dinamik Kalibrasyon ve Faz Rotasyonu, $N=1.090$, 3.087 Soru):**
-   * Canlı sunucuda (`mechsrv.itouch.fi:2222`) 10 alt kategoride 100 senaryo icra edildi.
+   * Canlı küme sunucusunda (`api.answerr.me`, bare-metal Xeon node) 10 alt kategoride 100 senaryo icra edildi.
    * Taban vektörü `[0.38, 0.91, 0.35, 0.91]` noktasından `[0.2268, 0.9267, 0.2354, 0.929]` noktasına uyarlanarak kuadran dengesi sağlandı.
    * Adaptif eşikleme ile meşru vs. saldırgan isteklerde %50/%50 kusursuz ayrım teyit edildi.
    * Genel medyan gecikme: 7.08 ms.

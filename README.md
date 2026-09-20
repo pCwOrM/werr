@@ -279,9 +279,9 @@ To calibrate and continuously optimize the universal fractal decision map, `werr
 * **100% Opt-Out:** Set the environment variable `WERR_TELEMETRY=0` (or `WEVV_TELEMETRY=0`) to disable telemetry completely.
 
 ### 📊 Live Public Dataset (1,090+ Decisions / 3,000+ Questions)
-Telemetry records are aggregated in MariaDB on the dedicated node `mechsrv.itouch.fi` and exported as an open science benchmark:
+Telemetry records are aggregated in MariaDB on the dedicated cluster node `api.answerr.me` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (1,090+ Records):** [https://mechsrv.itouch.fi:4431/werr/dataset/werr_open_decisions.jsonl](https://mechsrv.itouch.fi:4431/werr/dataset/werr_open_decisions.jsonl)
+* 🌐 **Direct Download (1,090+ Records):** [https://api.answerr.me:4431/wevv/dataset/werr_open_decisions.jsonl](https://api.answerr.me:4431/wevv/dataset/werr_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/werr_open_decisions.jsonl`](dataset/werr_open_decisions.jsonl)
 * 📑 **Empirical Test Reports:**
   - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
@@ -297,7 +297,7 @@ While v0.2.1 initialized empirical quadrant normalization from static benchmarks
 * **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
-The remote ingestion endpoint on `mechsrv.itouch.fi:4431/werr/telemetry` is hardened against abusive bots and brute-force traffic:
+The remote ingestion endpoint on `api.answerr.me:4431/wevv/telemetry` is hardened against abusive bots and brute-force traffic:
 1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
 2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
 3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
