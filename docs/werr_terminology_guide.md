@@ -89,7 +89,8 @@ Hem motor hem de platform adının sonunda çift **`rr`** yer alır:
 |  | "Where is the decision?"  |   | [ 0 Bytes VRAM ] [ 0.42 ms ]      |  |
 |  +---------------------------+   +-----------------------------------+  |
 |                                                                         |
-|  Actions: [ ⚡ Karar Werr ]   [ 💬 Cevap Werr ]   [ 🛡️ Güvenlik Werr ]  |
+|  Actions: [ ⚡ Karar Werr ]   [ 💬 Cevap Werr ]   [ 🛡️ İzin Werr ]       |
+|  (EN UI): [ ⚡ Werr It! ]     [ 💬 Answerr It! ]  [ 🛡️ Gate It! ]        |
 |                                                                         |
 |  Console: "Werr is the point? -> Seed (cx=-0.745, cy=0.112) locked."    |
 |           "Werr to route: api_security gate -> ALLOWED"                 |
@@ -97,10 +98,23 @@ Hem motor hem de platform adının sonunda çift **`rr`** yer alır:
 ```
 
 ### 1. Karar ve Eylem Butonları (Primary Action Buttons)
-* **Genel Karar Butonu:** `[ ⚡ Karar Werr ]` *(İngilizce UI: `[ ⚡ Werr It! ]`)*
-* **Soru-Cevap / Diyalog Butonu:** `[ 💬 Cevap Werr ]` *(İngilizce UI: `[ 💬 Answer Werr ]`)*
-* **Güvenlik & Kod Denetimi Butonu:** `[ 🛡️ İzin Werr ]` veya `[ 🔍 Tehdit Puanı Werr ]`
-* **Hızlı Triage / Önceliklendirme:** `[ 🚀 Öncelik Werr ]`
+AI IDE ve web araçlarındaki birincil butonlarda geleneksel *"Submit / Run / Execute"* yerine sistemin ikili zihnini yansıtan eylemsel terminoloji tercih edilmelidir:
+
+* **Soru-Cevap & Kod Üretimi (System-2):**  
+  `[ 💬 Cevap Werr ]` *(İngilizce UI: `[ 💬 Answerr It! ]`)*  
+  *İşlev:* LLM / Answerr bulut zekasını tetikler; çözümü detaylıca açıklar, kodu yazar.
+* **Anlık Karar & Refleks Sentezi (System-1):**  
+  `[ ⚡ Karar Werr ]` *(İngilizce UI: `[ ⚡ Werr It! ]`)*  
+  *İşlev:* 0-Bayt VRAM ile $< 0.5$ ms içinde Mandelbrot faz düzleminde deterministik kararı bağlar.
+* **Güvenlik & Kod Denetimi (Gatekeeper):**  
+  `[ 🛡️ İzin Werr ]` veya `[ 🔍 Tehdit Puanı Werr ]` *(İngilizce UI: `[ 🛡️ Gate It! ]`)*  
+  *İşlev:* Güvenlik ağ geçidinden paket veya API erişim iznini doğrular.
+* **Hızlı Triage & Önceliklendirme:**  
+  `[ 🚀 Öncelik Werr ]` *(İngilizce UI: `[ 🚀 Rank It! ]`)*  
+  *İşlev:* Sıralama ve öncelik derecesini mikro-saniyede puanlar.
+
+> **💡 İkili Simetri (`Answerr It!` $\leftrightarrow$ `Werr It!`):**  
+> İngilizce arayüzde diyalog için **`Answerr It!`**, anlık refleks karar için **`Werr It!`** kullanımı; Türkçe arayüzde ise **`Cevap Werr`** $\leftrightarrow$ **`Karar Werr`** dengesi kusursuz bir marka ritmi yaratır.
 
 ### 2. UI Boş Durumları (Empty States) & Placeholder Metinleri
 * **Soru / Komut Satırı Placeholder:**  
