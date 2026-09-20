@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="434px" height="434px" viewBox="83 30.5 434 434" enable-background="new 83 30.5 434 434" xml:space="preserve">
+<filter  width="200%" height="200%" y="-50%" x="-50%" id="star-sparkle">
+	<feGaussianBlur  result="bs" stdDeviation="4"></feGaussianBlur>
+	<feMerge>
+		<feMergeNode  in="bs"></feMergeNode>
+		<feMergeNode  in="SourceGraphic"></feMergeNode>
+	</feMerge>
+</filter>
+<filter  width="180%" height="180%" y="-40%" x="-40%" id="bloom-heavy">
+	<feGaussianBlur  result="b1" stdDeviation="12"></feGaussianBlur>
+	<feGaussianBlur  result="b2" stdDeviation="26"></feGaussianBlur>
+	<feMerge>
+		<feMergeNode  in="b2"></feMergeNode>
+		<feMergeNode  in="b1"></feMergeNode>
+		<feMergeNode  in="SourceGraphic"></feMergeNode>
+	</feMerge>
+</filter>
+<filter  width="150%" height="150%" y="-25%" x="-25%" id="bloom-fine">
+	<feGaussianBlur  result="bf" stdDeviation="3.5"></feGaussianBlur>
+	<feMerge>
+		<feMergeNode  in="bf"></feMergeNode>
+		<feMergeNode  in="SourceGraphic"></feMergeNode>
+	</feMerge>
+</filter>
+<radialGradient id="SVGID_1_" cx="1.0092" cy="599.9808" r="0.65" gradientTransform="matrix(434 0 0 -434 -137.9783 260578.4219)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#11132D"/>
+	<stop  offset="0.5" style="stop-color:#070914"/>
+	<stop  offset="1" style="stop-color:#020306"/>
+</radialGradient>
+<path fill="url(#SVGID_1_)" d="M102.53,30.5h394.94c10.786,0,19.53,8.744,19.53,19.53v394.94c0,10.786-8.744,19.53-19.53,19.53
+	H102.53c-10.786,0-19.53-8.744-19.53-19.53V50.03C83,39.244,91.744,30.5,102.53,30.5z"/>
+<g id="answerr-portal-symbol">
+	<g opacity="0.12" filter="url(#bloom-heavy)" enable-background="new    ">
+		<circle fill="#6366F1" cx="300" cy="247.5" r="157.5"/>
+	</g>
+	<g opacity="0.15" filter="url(#bloom-heavy)" enable-background="new    ">
+		<circle fill="#06B6D4" cx="300" cy="247.5" r="112.5"/>
+	</g>
+	<circle opacity="0.75" fill="#030712" enable-background="new    " cx="300" cy="247.5" r="63.75"/>
+	
+		<circle opacity="0.5" fill="none" stroke="#334155" stroke-width="0.8" stroke-dasharray="4,8" enable-background="new    " cx="300" cy="247.5" r="146.25"/>
+	
+		<circle opacity="0.6" fill="none" stroke="#475569" stroke-dasharray="2,12" enable-background="new    " cx="300" cy="247.5" r="123.75"/>
+	
+		<circle opacity="0.4" fill="none" stroke="#38BDF8" stroke-width="0.9" stroke-dasharray="2,8" enable-background="new    " cx="300" cy="247.5" r="86.25"/>
+	
+		<circle opacity="0.35" fill="none" stroke="#818CF8" stroke-width="0.8" stroke-dasharray="3,7" enable-background="new    " cx="300" cy="247.5" r="56.25"/>
+	
+		<circle opacity="0.3" fill="none" stroke="#38BDF8" stroke-width="0.6" stroke-dasharray="1,5" enable-background="new    " cx="300" cy="247.5" r="33.75"/>
+	<line opacity="0.4" fill="none" stroke="#38BDF8" enable-background="new    " x1="135" y1="247.5" x2="165" y2="247.5"/>
+	<line opacity="0.4" fill="none" stroke="#C084FC" enable-background="new    " x1="435" y1="247.5" x2="465" y2="247.5"/>
+	<line opacity="0.4" fill="none" stroke="#818CF8" enable-background="new    " x1="300" y1="82.5" x2="300" y2="112.5"/>
+	<line opacity="0.4" fill="none" stroke="#38BDF8" enable-background="new    " x1="300" y1="382.5" x2="300" y2="412.5"/>
+	<g opacity="0.35" filter="url(#bloom-heavy)" enable-background="new    ">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1.0077" y1="599.5638" x2="1.0447" y2="599.5267" gradientTransform="matrix(210 0 0 -210 84.5 126152)">
+			<stop  offset="0" style="stop-color:#C084FC"/>
+			<stop  offset="0.45" style="stop-color:#818CF8"/>
+			<stop  offset="0.8" style="stop-color:#38BDF8"/>
+			<stop  offset="1" style="stop-color:#22D3EE"/>
+		</linearGradient>
+		<circle fill="none" stroke="url(#SVGID_2_)" stroke-width="26" cx="300" cy="247.5" r="105"/>
+	</g>
+	<g opacity="0.85" filter="url(#bloom-fine)" enable-background="new    ">
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="0.9877" y1="599.5837" x2="1.0647" y2="599.5068" gradientTransform="matrix(210 0 0 -210 84.5 126152)">
+			<stop  offset="0" style="stop-color:#C084FC"/>
+			<stop  offset="0.45" style="stop-color:#818CF8"/>
+			<stop  offset="0.8" style="stop-color:#38BDF8"/>
+			<stop  offset="1" style="stop-color:#22D3EE"/>
+		</linearGradient>
+		<circle fill="none" stroke="url(#SVGID_3_)" stroke-width="12" cx="300" cy="247.5" r="105"/>
+	</g>
+	<g filter="url(#bloom-fine)">
+		
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="0.941" y1="597.8837" x2="1.1228" y2="597.8837" gradientTransform="matrix(172.5 0 0 -45.1267 122 27145.4414)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.6" style="stop-color:#E879F9;stop-opacity:0.9"/>
+			<stop  offset="1" style="stop-color:#818CF8;stop-opacity:0.2"/>
+		</linearGradient>
+		<path fill="none" stroke="url(#SVGID_4_)" stroke-width="4.5" stroke-linecap="round" d="M213.75,187.5
+			c33.072-47.635,98.498-59.44,146.133-26.367c10.292,7.146,19.222,16.075,26.367,26.367"/>
+	</g>
+	<g filter="url(#bloom-fine)">
+		
+			<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="0.9384" y1="598.3459" x2="1.1202" y2="598.3459" gradientTransform="matrix(187.5 0 0 -57.737 107 34868.0664)">
+			<stop  offset="0" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.6" style="stop-color:#38BDF8;stop-opacity:0.9"/>
+			<stop  offset="1" style="stop-color:#0284C7;stop-opacity:0.2"/>
+		</linearGradient>
+		<path fill="none" stroke="url(#SVGID_5_)" stroke-width="4.5" stroke-linecap="round" d="M393.75,292.5
+			c-26.115,51.777-89.259,72.579-141.036,46.464c-20.06-10.118-36.346-26.404-46.464-46.464"/>
+	</g>
+	<g filter="url(#bloom-fine)">
+		<path fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" d="M255,148.5
+			c26.04-11.979,55.846-12.792,82.5-2.25"/>
+	</g>
+	<g transform="translate(515, 205)" filter="url(#star-sparkle)">
+		<circle opacity="0.6" fill="none" stroke="#38BDF8" enable-background="new    " cx="-128.75" cy="-51.25" r="7.5"/>
+		<circle fill="#FFFFFF" cx="-128.75" cy="-51.25" r="3.75"/>
+	</g>
+	<g transform="translate(265, 435)" filter="url(#star-sparkle)">
+		<circle opacity="0.6" fill="none" stroke="#E879F9" enable-background="new    " cx="-66.25" cy="-108.75" r="7.5"/>
+		<circle fill="#FFFFFF" cx="-66.25" cy="-108.75" r="3.75"/>
+	</g>
+	<g filter="url(#bloom-fine)">
+		<circle fill="#FFFFFF" cx="300" cy="101.25" r="2.625"/>
+	</g>
+	<circle opacity="0.7" fill="#818CF8" enable-background="new    " cx="300" cy="393.75" r="2.25"/>
+	<circle opacity="0.7" fill="#38BDF8" enable-background="new    " cx="153.75" cy="247.5" r="2.25"/>
+	<circle opacity="0.7" fill="#C084FC" enable-background="new    " cx="446.25" cy="247.5" r="2.25"/>
+	<g filter="url(#star-sparkle)">
+		<circle fill="#FFFFFF" cx="300" cy="247.5" r="3"/>
+	</g>
+	<circle opacity="0.8" fill="#E0F2FE" enable-background="new    " cx="247.5" cy="202.5" r="1.125"/>
+	<circle opacity="0.8" fill="#FDF4FF" enable-background="new    " cx="352.5" cy="195" r="1.125"/>
+	<circle opacity="0.8" fill="#BAE6FD" enable-background="new    " cx="337.5" cy="292.5" r="1.125"/>
+	<circle opacity="0.8" fill="#E879F9" enable-background="new    " cx="262.5" cy="300" r="1.125"/>
+</g>
+<g id="answerr-brand" display="none">
+	
+		<text transform="matrix(1 0 0 1 180.4067 479.9999)" display="inline" fill="#F8FAFC" font-family="'Arial-Black'" font-size="57" letter-spacing="-1">answe</text>
+	
+		<text transform="matrix(1 0 0 1 372.414 479.9999)" display="inline" fill="#38BDF8" font-family="'Arial-Black'" font-size="57" letter-spacing="-1">r</text>
+	
+		<text transform="matrix(1 0 0 1 396.0039 479.9999)" display="inline" fill="#C084FC" font-family="'Arial-Black'" font-size="57" letter-spacing="-1">r</text>
+	
+		<text transform="matrix(1 0 0 1 134.6621 515.9999)" display="inline" fill="#818CF8" font-family="'Arial-BoldMT'" font-size="10.875" letter-spacing="3">CONVERSATIONAL DECISION PLATFORM</text>
+	
+		<text transform="matrix(1 0 0 1 161.4024 541.4999)" display="inline" fill="#94A3B8" font-family="'FiraCode-Medium'" font-size="10.5">&quot;Zero-Hallucination System-1 Decision Cloud&quot;</text>
+	<text transform="matrix(1 0 0 1 181.6591 566.9999)" display="inline" fill="#64748B" font-family="'ArialMT'" font-size="9.375">CLOUD REST &amp; SSE API • api.answerr.me • answerr.me</text>
+</g>
+</svg>

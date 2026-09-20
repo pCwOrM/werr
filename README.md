@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/werr_logo_core_fav2.svg" alt="werr Core 3D Crystal Logo" width="160" height="160" />
+  <img src="assets/werr_logo_core_fav_trans.svg" alt="werr Core 3D Crystal Logo" width="160" height="160" />
 </p>
 
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
