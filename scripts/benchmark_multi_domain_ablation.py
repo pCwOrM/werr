@@ -1,5 +1,5 @@
 """
-wevv: Multi-Domain Ablation Study & Empirical Evaluation
+werr: Multi-Domain Ablation Study & Empirical Evaluation
 Compares Single Monolithic Boundary Seed against Multi-Domain Auto-Seed Router
 across heterogeneous operational domains from empirical telemetry records.
 """
@@ -14,9 +14,9 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv.engine import WevvEngine
-from wevv.router import AutoSeedRouter
-from wevv.datatypes import NoulQuestion, ChoiceQuestion, ScoreQuestion
+from werr.engine import WerrEngine
+from werr.router import AutoSeedRouter
+from werr.datatypes import NoulQuestion, ChoiceQuestion, ScoreQuestion
 
 
 def infer_domain_and_ground_truth(state: Dict[str, Any], questions: List[Dict[str, Any]]) -> Tuple[str, bool]:
@@ -26,7 +26,7 @@ def infer_domain_and_ground_truth(state: Dict[str, Any], questions: List[Dict[st
     st_keys = set(state.keys())
     q_instr = " ".join([q.get("instruction", "") for q in questions]).lower()
 
-    from wevv.gates.base import safe_float
+    from werr.gates.base import safe_float
 
     # 1. IoT Safety: "Is environmental state within safe operating parameters?"
     if any(k in st_keys for k in ["smoke_detected", "co2_ppm", "temp", "temp_c", "temperature_c"]):
@@ -75,7 +75,9 @@ def infer_domain_and_ground_truth(state: Dict[str, Any], questions: List[Dict[st
 
 
 def main():
-    dataset_path = os.path.join(ROOT_DIR, "dataset", "wevv_open_decisions.jsonl")
+    primary_dataset = os.path.join(ROOT_DIR, "dataset", "werr_open_decisions.jsonl")
+    fallback_dataset = os.path.join(ROOT_DIR, "dataset", "wevv_open_decisions.jsonl")
+    dataset_path = primary_dataset if os.path.exists(primary_dataset) else fallback_dataset
     if not os.path.exists(dataset_path):
         print(f"Error: dataset file not found at {dataset_path}")
         return
@@ -86,7 +88,7 @@ def main():
     print(f"Loaded {len(records)} records from {dataset_path}")
 
     # Initialize Model A (Baseline Monolithic Engine) and Model B (Multi-Domain Auto-Seed Router)
-    baseline_engine = WevvEngine(resolution=32, max_iter=35)
+    baseline_engine = WerrEngine(resolution=32, max_iter=35)
     router = AutoSeedRouter()
 
     domain_stats = defaultdict(lambda: {

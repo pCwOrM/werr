@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-WEVV 100-Question Out-Of-Domain (OOD) & Out-Of-Vocabulary (OOV) Robustness Test Suite
+WERR 100-Question Out-Of-Domain (OOD) & Out-Of-Vocabulary (OOV) Robustness Test Suite
 Evaluates 100 exotic, unfamiliar, and alien scenarios across 5 non-standard domains:
 1. Quantum Computing & Particle Physics (20 scenarios)
 2. Deep Space Navigation & Orbital Mechanics (20 scenarios)
@@ -25,8 +25,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion
@@ -268,18 +268,18 @@ def build_ood_scenarios() -> List[Dict[str, Any]]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="wevv 100-Question Out-Of-Domain (OOD) Robustness Runner")
+    parser = argparse.ArgumentParser(description="werr 100-Question Out-Of-Domain (OOD) Robustness Runner")
     parser.add_argument("--limit", type=int, default=100, help="Maximum number of scenarios to evaluate (default: 100)")
     args = parser.parse_args()
 
     print("=" * 85)
-    print(" 🌌 WEVV 100-QUESTION OUT-OF-DOMAIN (OOD) & ALIEN VOCABULARY ROBUSTNESS SUITE")
+    print(" 🌌 WERR 100-QUESTION OUT-OF-DOMAIN (OOD) & ALIEN VOCABULARY ROBUSTNESS SUITE")
     print(" Validating Layer 1: Universal Geometric Phase-Space Resonator (Zero-VRAM Fallback)")
     print("=" * 85)
 
     # 1. Initialize Engine
     t_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[+] Wevv Decision Engine initialized ({init_ms:.2f} ms)")
     print(f"[+] Autonomous Fallback Phase-Angle Modulator: ACTIVE\n")

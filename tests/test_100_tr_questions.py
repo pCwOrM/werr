@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-WEVV 100-Soru Türkçe Çoklu Alan (Multi-Domain) Otomasyon Test Paketi
+WERR 100-Soru Türkçe Çoklu Alan (Multi-Domain) Otomasyon Test Paketi
 100 senaryo, 5 operasyonel alan üzerinden AutoSeedRouter ve Geometrik Karar Kapıları ile icra edilir:
 1. API Ağ Geçidi, Ağ Güvenliği ve Yetkilendirme (20 soru)
 2. Akıllı Ev ve Nesnelerin İnterneti (IoT) Güvenliği (20 soru)
@@ -23,8 +23,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion,
@@ -328,19 +328,19 @@ def build_turkish_scenarios(batch: int = 1) -> List[Dict[str, Any]]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="wevv 100-Soru Türkçe Çoklu Alan Test Çalıştırıcısı")
+    parser = argparse.ArgumentParser(description="werr 100-Soru Türkçe Çoklu Alan Test Çalıştırıcısı")
     parser.add_argument("--domain", type=str, default="all", help="Test edilecek alan filtresi ('all', 'api', 'iot', 'fraud', 'npc', 'finance')")
     parser.add_argument("--limit", type=int, default=100, help="Test edilecek maksimum senaryo sayısı (varsayılan: 100)")
     args = parser.parse_args()
 
     print("=" * 85)
-    print(" 🇹🇷 WEVV 100-SORU TÜRKÇE ÇOKLU ALAN (MULTI-DOMAIN) TEST PAKETİ")
+    print(" 🇹🇷 WERR 100-SORU TÜRKÇE ÇOKLU ALAN (MULTI-DOMAIN) TEST PAKETİ")
     print(" Sıfır Bellek | Geometrik Faz Alanı Rezonansı | < 1.5ms Karar Hızı")
     print("=" * 85)
 
     # 1. Motor Başlatma
     t_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[+] Wevv Karar Motoru başlatıldı ({init_ms:.2f} ms)")
     print(f"[+] Otomatik Tohum Yönlendirici (AutoSeedRouter): AKTİF\n")

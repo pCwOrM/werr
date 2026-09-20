@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MECHSRV 100-Question Automation Test for wevv (Multi-Domain System-One Engine)
+MECHSRV 100-Question Automation Test for werr (Multi-Domain System-One Engine)
 Evaluates 100 scenarios across 5 distinct domains using dynamic Auto-Seed Routing:
 1. API Gateway, Network Security & Auth (20 questions)
 2. Smart Home & IoT Automation (20 questions)
@@ -23,8 +23,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion,
@@ -280,18 +280,18 @@ def build_scenarios(batch: int = 2) -> List[Dict[str, Any]]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="wevv 100-Question Multi-Domain Test Runner")
+    parser = argparse.ArgumentParser(description="werr 100-Question Multi-Domain Test Runner")
     parser.add_argument("--batch", type=int, default=2, help="Batch index (1: scenarios 1-20, 2: scenarios 21-40, 3: scenarios 41-60, etc.)")
     args = parser.parse_args()
 
     print("=" * 80)
-    print(f" 🚀 WEVV MULTI-DOMAIN 100-QUESTION TEST (Batch #{args.batch})")
+    print(f" 🚀 WERR MULTI-DOMAIN 100-QUESTION TEST (Batch #{args.batch})")
     print(" Zero-Memory Dynamic Coordinate Hopping | Sub-2ms Edge Reflex")
     print("=" * 80)
 
     # 1. Initialize Engine
     t_init_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_init_start) * 1000.0
     print(f"[+] Engine loaded successfully in {init_ms:.2f}ms")
     print(f"[+] Multi-Domain Auto-Seed Router: ACTIVE\n")

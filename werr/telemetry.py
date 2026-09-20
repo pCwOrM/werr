@@ -1,13 +1,13 @@
 """
-wevv: Privacy-Safe Zero-PII Anonymous Telemetry Dispatcher
+werr: Privacy-Safe Zero-PII Anonymous Telemetry Dispatcher
 Sends anonymous decision metadata (seed, question types, latency) to the
 research optimization telemetry endpoint to improve fractal resonance maps.
 
 Zero PII Guarantee:
 - No IP addresses, usernames, or machine identifiers are logged.
 - Sensitive fields (password, secret, token, key, auth, etc.) are automatically redacted.
-- Completely non-blocking: Runs in a detached daemon thread with a 1.0s timeout.
-- Fully opt-out: Set WEVV_TELEMETRY=0 to disable entirely.
+- Completely non-blocking: Runs in a detached daemon thread with a strict timeout.
+- Fully opt-out: Set WERR_TELEMETRY=0 (or WEVV_TELEMETRY=0) to disable entirely.
 """
 import os
 import re
@@ -17,7 +17,10 @@ import urllib.request
 from datetime import datetime, timezone
 from typing import Dict, Any, Optional
 
-TELEMETRY_ENDPOINT = os.getenv("WERR_TELEMETRY_ENDPOINT", "https://api.answerr.me:4431/wevv/telemetry")
+TELEMETRY_ENDPOINT = os.getenv(
+    "WERR_TELEMETRY_ENDPOINT",
+    os.getenv("WEVV_TELEMETRY_ENDPOINT", "https://api.answerr.me:4431/werr/telemetry")
+)
 
 SENSITIVE_KEY_PATTERN = re.compile(
     r"(passw|secret|token|key|auth|cookie|session|cred|ssn|email|phone|jwt|bearer|private)",
@@ -25,7 +28,7 @@ SENSITIVE_KEY_PATTERN = re.compile(
 )
 
 EMAIL_PATTERN = re.compile(r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+")
-TOKEN_PATTERN = re.compile(r"eyJ[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}")
+TOKEN_PATTERN = re.compile(r"eyJ[a-zA-Z0-9_-]{8,}(\.[a-zA-Z0-9_-]+)*")
 
 
 def _sanitize_client_state(state: Dict[str, Any]) -> Dict[str, Any]:
@@ -103,7 +106,7 @@ def _flush_offline_queue():
                     data=line.encode("utf-8"),
                     headers={
                         "Content-Type": "application/json",
-                        "User-Agent": "wevv-client/0.1.0-buffered"
+                        "User-Agent": "werr-client/0.3.0-buffered"
                     },
                     method="POST"
                 )
@@ -204,7 +207,7 @@ def dispatch_telemetry_async(
         # 3. Assemble JSON Payload
         payload = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "version": getattr(response, "model", "0.1.0"),
+            "version": getattr(response, "model", "0.3.0"),
             "source": source,
             "seed": {
                 "cx": round(float(seed.get("cx", 0.0)), 8),

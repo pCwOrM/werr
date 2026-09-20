@@ -1,5 +1,5 @@
 """
-wevv: Genetic Boundary Coordinate & Hyperparameter Optimizer
+werr: Genetic Boundary Coordinate & Hyperparameter Optimizer
 Discovers optimal Mandelbrot boundary seeds (cx, cy, zoom, threshold) for heterogeneous domains
 using evolutionary algorithms guided by domain F1 score and Lyapunov boundary entropy.
 """
@@ -15,9 +15,9 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv.gates.base import DomainGate
-from wevv.gates import DOMAIN_GATES
-from wevv.datatypes import NoulQuestion
+from werr.gates.base import DomainGate
+from werr.gates import DOMAIN_GATES
+from werr.datatypes import NoulQuestion
 
 
 # --------------------------------------------------------------------------
@@ -203,7 +203,7 @@ def run_genetic_search(
 
 def main():
     print("================================================================================")
-    print("wevv: Multi-Domain Genetic Coordinate Optimizer")
+    print("werr: Multi-Domain Genetic Coordinate Optimizer")
     print("Calibrating Mandelbrot Phase Boundaries across Heterogeneous Edge Domains")
     print("================================================================================\n")
 
@@ -219,7 +219,7 @@ def main():
             "f1": opt.f1
         }
 
-    out_file = os.path.join(ROOT_DIR, "wevv", "gates", "discovered_seeds.json")
+    out_file = os.path.join(ROOT_DIR, "werr", "gates", "discovered_seeds.json")
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     print(f"[SUCCESS] Calibrated coordinates written to: {out_file}")

@@ -5,7 +5,8 @@
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22802921-green.svg)](https://doi.org/10.5281/zenodo.22802921)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 
-> **Motto:** *"When the Wave hits Error (e), we Subdivide (vv)."*  
+> **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
+> *"Where is the reflex? Ver! (werr)."*  
 > *"Jev decisions come from 4B-parameter tensors; `werr` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*
@@ -278,18 +279,18 @@ To calibrate and continuously optimize the universal fractal decision map, `werr
 * **Sensitive keys & values** (`password`, `token`, `secret`, `key`, `auth`, `email`, `jwt`) are automatically sanitized and redacted (`[REDACTED]`) on the client side before dispatch.
 * **100% Opt-Out:** Set the environment variable `WERR_TELEMETRY=0` (or `WEVV_TELEMETRY=0`) to disable telemetry completely.
 
-### 📊 Live Public Dataset (1,090+ Decisions / 3,000+ Questions)
-Telemetry records are aggregated in MariaDB on the dedicated cluster node `api.answerr.me` and exported as an open science benchmark:
+### 📊 Live Public Dataset (1,150+ Decisions / 3,000+ Questions)
+Telemetry records are aggregated in MariaDB (`werr_db`) on the dedicated cluster node `api.answerr.me` and exported as an open science benchmark:
 
-* 🌐 **Direct Download (1,090+ Records):** [https://api.answerr.me:4431/wevv/dataset/werr_open_decisions.jsonl](https://api.answerr.me:4431/wevv/dataset/werr_open_decisions.jsonl)
+* 🌐 **Direct Download (1,150+ Records):** [https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl](https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/werr_open_decisions.jsonl`](dataset/werr_open_decisions.jsonl)
 * 📑 **Empirical Test Reports:**
   - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
   - [Batch #2 (Scenarios 21–40)](docs/reports/batch2_telemetry_report_en.md) | [Türkçe](docs/reports/batch2_telemetry_report_tr.md)
   - [Batch #3: 100-Question Dynamic Calibration & Stress Test](docs/reports/batch3_dynamic_calibration_100q_report_en.md) | [Türkçe](docs/reports/batch3_dynamic_calibration_100q_report_tr.md)
 
-### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2)
-While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `werr` v0.2.2 introduces **Organic Dynamic Calibration** (`werr.calibration.DynamicCalibration`):
+### 🧬 Organic Dynamic Calibration & Local Homeostasis (v0.2.2 - v0.3.0)
+While v0.2.1 initialized empirical quadrant normalization from static benchmarks, `werr` v0.2.2+ introduces **Organic Dynamic Calibration** (`werr.calibration.DynamicCalibration`):
 * **Local Homeostasis:** Runs an $O(1)$ continuous Exponential Moving Average (EMA) of quadrant escape ratios across live queries. The decision engine organically self-calibrates to its local operational domain (e.g. industrial plants vs. high-frequency trading) with strict 0 Byte VRAM allocation.
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
 * **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net-risk} \cdot 0.8)$.
@@ -297,13 +298,44 @@ While v0.2.1 initialized empirical quadrant normalization from static benchmarks
 * **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
-The remote ingestion endpoint on `api.answerr.me:4431/wevv/telemetry` is hardened against abusive bots and brute-force traffic:
+The remote ingestion endpoint on `api.answerr.me:4431/werr/telemetry` (with backward-compatible alias `/wevv/telemetry`) is hardened against abusive bots and brute-force traffic:
 1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
 2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
 3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
 4. **Google reCAPTCHA v3 Shield:** The web simulator and custom scenario playground verify client authenticity via background reCAPTCHA v3 site verification.
 5. **Storage & Disk Quota:** Dual-storage system caps log size at 1 GB and monitors host disk thresholds.
 6. **Systemd Sandboxing:** Runs under an isolated service with `MemoryMax=256M`, `CPUQuota=20%`, `ProtectSystem=full`, and `NoNewPrivileges=true`.
+
+---
+
+## 🏛️ Production Runtime & Isolated Architecture (`mechsrv` / `api.answerr.me`)
+
+The live production deployment on `mechsrv` (`api.answerr.me:4431`) is engineered with **complete physical and OS-level sandbox isolation** between production APIs and developer experimentation:
+
+| Layer / Component | Location & Service | Isolation & Security Guarantee |
+| :--- | :--- | :--- |
+| **Production Decision Engine** | `/opt/apps/answerr/` (`engine`, `api`, `venv`) | 🔒 **Full Sandbox (`ProtectHome=true`, `ProtectSystem=full`)** |
+| **Developer Workspace** | `/home/pcworm/werr` + independent `venv` | 🛠️ **Free Testing & Benchmarking** |
+| **Verified Production Deploy** | `/home/pcworm/deploy_to_prod.sh` | 🚀 **Automated Sanity Gate $\to$ Rsync $\to$ Restart $\to$ Health Check** |
+| **Global Terminal CLI** | `/usr/local/bin/werr` | ⚡ **Instant System-wide Reflex Execution** |
+| **Telemetry Ingestion DB** | MariaDB `werr_db` (1,150+ records) | 💾 **Isolated `werr_user` with zero client IP logging** |
+| **Telemetry Ingestion Daemon** | `werr-telemetry.service` (Port 8550) | 🟢 **Hardened FastAPI Collector (`/werr/telemetry`)** |
+| **Open Decision Dataset** | `/home/pcworm/werr_telemetry/dataset` | 🌐 **Served via Apache at `/werr/dataset`** |
+
+### Global CLI Commands (`/usr/local/bin/werr`)
+
+```bash
+# 1. Check werr version
+werr --version
+# Output: werr 0.3.0 (0-VRAM Fractal System-One Decision Engine)
+
+# 2. Test security roles
+werr admin       # Allowed (0.00ms latency, zero memory)
+werr attacker    # Denied (Instant reflex block)
+
+# 3. Interactive Decision Simulator
+werr             # Interactive terminal simulator
+```
 
 ---
 

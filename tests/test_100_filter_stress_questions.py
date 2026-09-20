@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-WEVV 100-Soru Akor Semantik Rezonans ve Tinleme İndeksi Stres ve Doğrulama Test Paketi
+WERR 100-Soru Akor Semantik Rezonans ve Tinleme İndeksi Stres ve Doğrulama Test Paketi
 Filtrenin kayırma yapıp yapmadığını, kelebek etkisini önleyip önlemediğini ve
 bağlam düşenini koruyup korumadığını 5 özel stres kategorisinde (20'şer soru) sınar:
 
@@ -25,8 +25,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion
@@ -258,18 +258,18 @@ def build_filter_stress_scenarios() -> List[Dict[str, Any]]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="wevv 100-Soru Filtre Stres ve Doğrulama Koşucusu")
+    parser = argparse.ArgumentParser(description="werr 100-Soru Filtre Stres ve Doğrulama Koşucusu")
     parser.add_argument("--limit", type=int, default=100, help="Değerlendirilecek maksimum senaryo sayısı (varsayılan: 100)")
     args = parser.parse_args()
 
     print("=" * 85)
-    print(" 🛡️ WEVV 100-SORU AKOR SEMANTİK REZONANS VE TİNLEME FİLTRESİ STRES TESTİ")
+    print(" 🛡️ WERR 100-SORU AKOR SEMANTİK REZONANS VE TİNLEME FİLTRESİ STRES TESTİ")
     print(" Kategori Bazlı Tuzak, Sahte Rezonans, Çatışma ve Bağlam Düşeni Sınavı")
     print("=" * 85)
 
     # 1. Motor Başlatma
     t_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[+] Wevv Karar Motoru başlatıldı ({init_ms:.2f} ms)")
     print(f"[+] Akor Rezonansı ve Tinleme İndeksi Modülatörü: AKTİF\n")

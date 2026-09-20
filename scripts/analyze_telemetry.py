@@ -1,11 +1,11 @@
 """
-wevv Decision Engine - Telemetry & Domain Boundary Analyzer
+werr Decision Engine - Telemetry & Domain Boundary Analyzer
 Analyzes open telemetry benchmark records (JSONL or MariaDB) to evaluate
 decision accuracy, latency percentiles, and domain-shift anomalies.
 
 Usage:
   python scripts/analyze_telemetry.py
-  python scripts/analyze_telemetry.py --file dataset/wevv_open_decisions.jsonl
+  python scripts/analyze_telemetry.py --file dataset/werr_open_decisions.jsonl
 """
 import os
 import sys
@@ -46,7 +46,7 @@ def analyze_records(records: List[Dict[str, Any]]):
         return
 
     print("=" * 78)
-    print("      [wevv] TELEMETRY & DOMAIN BOUNDARY BENCHMARK ANALYSIS")
+    print("      [werr] TELEMETRY & DOMAIN BOUNDARY BENCHMARK ANALYSIS")
     print("=" * 78)
     print(f"* Total Records Analyzed : {total}")
     
@@ -186,17 +186,17 @@ def analyze_records(records: List[Dict[str, Any]]):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="wevv Telemetry & Domain Boundary Analyzer")
-    default_dataset = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "dataset",
-        "wevv_open_decisions.jsonl"
-    )
+    parser = argparse.ArgumentParser(description="werr Telemetry & Domain Boundary Analyzer")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    primary_dataset = os.path.join(base_dir, "dataset", "werr_open_decisions.jsonl")
+    fallback_dataset = os.path.join(base_dir, "dataset", "wevv_open_decisions.jsonl")
+    default_dataset = primary_dataset if os.path.exists(primary_dataset) else fallback_dataset
+
     parser.add_argument(
         "--file",
         "-f",
         default=default_dataset,
-        help="Path to telemetry JSONL dataset file (default: dataset/wevv_open_decisions.jsonl)"
+        help="Path to telemetry JSONL dataset file (default: dataset/werr_open_decisions.jsonl)"
     )
     args = parser.parse_args()
 

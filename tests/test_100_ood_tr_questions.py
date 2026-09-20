@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-WEVV 100-Soru Türkçe Alan Dışı (OOD) ve Egzotik/Sentetik Jargon Dayanıklılık Test Paketi
+WERR 100-Soru Türkçe Alan Dışı (OOD) ve Egzotik/Sentetik Jargon Dayanıklılık Test Paketi
 5 sıra dışı alanda 100 egzotik senaryo üzerinden Layer 1 Faz-Uzayı Rezonatörünü sınar:
 1. Kuantum Bilişimi ve Atomaltı Parçacık Fiziği (20 soru: 1-20)
 2. Derin Uzay Seyrüseferi ve Yörünge Mekaniği (20 soru: 21-40)
@@ -25,8 +25,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion
@@ -268,18 +268,18 @@ def build_turkish_ood_scenarios() -> List[Dict[str, Any]]:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="wevv 100-Soru Türkçe Alan Dışı (OOD) Dayanıklılık Koşucusu")
+    parser = argparse.ArgumentParser(description="werr 100-Soru Türkçe Alan Dışı (OOD) Dayanıklılık Koşucusu")
     parser.add_argument("--limit", type=int, default=100, help="Değerlendirilecek maksimum senaryo sayısı (varsayılan: 100)")
     args = parser.parse_args()
 
     print("=" * 85)
-    print(" 🇹🇷 WEVV 100-SORU TÜRKÇE ALAN DIŞI (OOD) VE EGZOTİK JARGON TESTİ")
+    print(" 🇹🇷 WERR 100-SORU TÜRKÇE ALAN DIŞI (OOD) VE EGZOTİK JARGON TESTİ")
     print(" Layer 1: Evrensel Geometrik Faz-Uzayı Rezonatörü & Akor Titreşimi Sınavı")
     print("=" * 85)
 
     # 1. Motor Başlatma
     t_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[+] Wevv Karar Motoru başlatıldı ({init_ms:.2f} ms)")
     print(f"[+] Otonom Faz-Açısı Modülatörü ve Akor Rezonansı: AKTİF\n")

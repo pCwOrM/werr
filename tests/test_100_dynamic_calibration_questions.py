@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-WEVV 100-Soru Organik Dinamik Kalibrasyon, Fine-Tuning ve Evrensel Doğrulama Test Paketi
+WERR 100-Soru Organik Dinamik Kalibrasyon, Fine-Tuning ve Evrensel Doğrulama Test Paketi
 
 Dağılım:
 - 70 Soru: Fine-Tuning Odaklı Testler (Kuadran Faz Rotasyonu, Dinamik EMA Kalibrasyon Kayması,
@@ -23,8 +23,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from wevv import (
-    WevvEngine,
+from werr import (
+    WerrEngine,
     NoulQuestion,
     ChoiceQuestion,
     ScoreQuestion
@@ -398,18 +398,18 @@ def build_100_test_scenarios() -> List[Dict[str, Any]]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="WEVV 100-Soru Dinamik Kalibrasyon ve Evrensel Test")
+    parser = argparse.ArgumentParser(description="WERR 100-Soru Dinamik Kalibrasyon ve Evrensel Test")
     parser.add_argument("--limit", type=int, default=100, help="Çalıştırılacak senaryo sayısı (1-100)")
     args = parser.parse_args()
 
     print("=" * 90)
-    print(" 🧬 WEVV 100-SORU ORGANİK DİNAMİK KALİBRASYON VE EVRENSEL TEST SUITE (v0.2.2)")
+    print(" 🧬 WERR 100-SORU ORGANİK DİNAMİK KALİBRASYON VE EVRENSEL TEST SUITE (v0.2.2)")
     print(" 70 Soru: Fine-Tuning Odaklı | 30 Soru: Genel/Amaçsız Evrensel Kararlar")
     print("=" * 90)
 
     # 1. Motor Başlatma
     t_start = time.perf_counter()
-    engine = WevvEngine(resolution=32, max_iter=35)
+    engine = WerrEngine(resolution=32, max_iter=35)
     init_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[+] Wevv Karar Motoru başlatıldı ({init_ms:.2f} ms)")
     print(f"[+] Organik Dinamik Kalibratör: AKTİF (Başlangıç Tabanı: {engine.calibration.to_dict()['quad_mean']})\n")
