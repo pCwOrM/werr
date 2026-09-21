@@ -35,7 +35,10 @@ shutil.copy2(pdf_src, pdf_dest)
 print(f"[+] Mirrored Camera-Ready PDF to Zenodo Package: {pdf_dest} ({os.path.getsize(pdf_dest) // 1024} KB)")
 
 # Also copy PDF to arXiv package for easy author reference
-shutil.copy2(pdf_src, os.path.join(ARXIV_PKG_DIR, "Universal_Fractal_Natural_Language_Decision_Map_AuthorReview.pdf"))
+try:
+    shutil.copy2(pdf_src, os.path.join(ARXIV_PKG_DIR, "Universal_Fractal_Natural_Language_Decision_Map_AuthorReview.pdf"))
+except Exception as e:
+    print(f"[*] Notice: AuthorReview.pdf is in use ({e}), skipping overwrite.")
 
 # 2. Generate Zenodo Description HTML
 zenodo_html = """<h2>Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains</h2>
