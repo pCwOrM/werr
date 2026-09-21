@@ -461,10 +461,9 @@ This research has been submitted to peer-reviewed international scientific venue
 
 * **Journal Submission (Under Peer Review):**  
   * **Journal:** *Chaos, Solitons & Fractals: the interdisciplinary journal of Nonlinear Science, and Nonequilibrium and Complex Phenomena* (Elsevier, Q1)  
-  * **Manuscript Ref. No.:** `CHAOS-D-26-09598`  
+  * **Status:** Under formal peer review  
   * **Title:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
   * **Lead Author:** Volkan Dağlı ([ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
-  * **Editor Handling:** Active Editorial Review  
 
 * **Preprint Status (arXiv):**  
   * **Identifier:** `submit/8092292`  
@@ -603,7 +602,7 @@ werr             # Interactive terminal simulator
 @article{dagli2026werr,
   author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals, Ref: CHAOS-D-26-09598)},
+  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals)},
   year = {2026},
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426},
