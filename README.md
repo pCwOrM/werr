@@ -2,9 +2,10 @@
 
 [![Live Web Portal](https://img.shields.io/badge/Live%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 [![Interactive Labs](https://img.shields.io/badge/Interactive%20Labs-100%25%20Client--Side-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22802921.svg)](https://doi.org/10.5281/zenodo.22802921)
+[![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
 [![arXiv](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-b31b1b.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
-[![Target Journal](https://img.shields.io/badge/Target%20Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Elsevier%20Q1)-blue.svg)](#)
+[![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -23,22 +24,22 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
-| 🏛️ **Official Preprint (Zenodo v2.0)** | Permanent Archive | Open Science | [**Zenodo DOI: 10.5281/zenodo.22802921**](https://doi.org/10.5281/zenodo.22802921) |
+| 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
 
 ---
 
 ## 👥 Authors & Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  
-  ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
+  Anadolu University, Eskişehir, Turkey & ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
 
 * **Zerrin Dağlı**  
-  Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6465](https://orcid.org/0000-0001-9490-6465)
+  Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Science College, Mersin, Turkey &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros Science College, Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
-*Correspondence:* Volkan Dağlı ([GitHub Repository](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) / [Zenodo](https://doi.org/10.5281/zenodo.22802921)).
+*Correspondence:* Volkan Dağlı ([GitHub Repository](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) / [Zenodo Concept](https://doi.org/10.5281/zenodo.22774934)).
 
 ---
 
@@ -174,10 +175,11 @@ If you utilize this research, procedural weight generation methodology, or inter
 @article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={arXiv preprint arXiv:submit/8092292 [cs.NE]},
+  journal={Under review in Chaos, Solitons \& Fractals (Ref: CHAOS-D-26-09598); arXiv:submit/8092292 [cs.NE]},
   year={2026},
-  doi={10.5281/zenodo.22802921},
-  url={https://doi.org/10.5281/zenodo.22802921}
+  doi={10.5281/zenodo.22774934},
+  url={https://doi.org/10.5281/zenodo.22774934},
+  note={Zenodo v3.0: https://doi.org/10.5281/zenodo.22867037}
 }
 ```
 

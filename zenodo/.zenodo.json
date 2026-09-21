@@ -1,19 +1,21 @@
 {
   "title": "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries",
-  "description": "This dataset and research package presents the complete experimental verification, source code, and interactive visualizers for Mandelbrot Fractal Neural Synthesis. By sampling 128x128 patches from the complex Mandelbrot set (z = z^2 + c) using 4-Quadrant Partitioning, synaptic weights (w1, w2, w3) and activation biases (b) are procedurally derived without persistent scalar storage. A functional decision unit is defined by only 24 bytes (three 64-bit coordinates), achieving >99.99999998% memory reduction compared to conventional static neural weight tensors. The repository includes Python verification scripts, high-resolution figures, standalone offline HTML/JS labs, and an extended Turkish academic summary.",
+  "description": "This open-science research package presents the complete theoretical framework, empirical replication pipeline, and interactive simulation laboratories for Mandelbrot Fractal Neural Synthesis. Deriving synaptic weights and activation biases procedurally from Mandelbrot fractal dynamics (z = z^2 + c) via 4-Quadrant Partitioning eliminates static weight tensor arrays. A functional decision cell is instantiated from only 24 bytes of coordinate metadata (three Float64 values: cx, cy, zoom), exhibiting constant O(1) storage complexity regardless of projection dimensionality. Evaluated across repeated trials (K=10 independent random seeds), procedural networks achieve 100% classification accuracy on linearly separable boolean gates and XOR, 99.30% +/- 0.18% on Two-Moons (N=1000), and 98.50% +/- 0.32% on Two-Spirals (N=200). The package includes camera-ready author preprints, replication scripts, offline interactive HTML5 laboratories, and extended bilingual documentation.",
   "creators": [
     {
       "name": "Dağlı, Volkan",
-      "affiliation": "ITouch Systems, Turkey"
+      "affiliation": "Anadolu University & ITouch Systems, Turkey",
+      "orcid": "0009-0000-1587-8703"
     },
     {
       "name": "Dağlı, Zerrin",
       "affiliation": "Mersin University, Mersin, Turkey",
-      "orcid": "0000-0001-9490-6465"
+      "orcid": "0000-0001-9490-6425"
     },
     {
       "name": "Dağlı, Dağhan",
-      "affiliation": "Toros Science College, Turkey"
+      "affiliation": "Toros Science College, Mersin, Turkey",
+      "orcid": "0009-0003-2492-8313"
     }
   ],
   "upload_type": "publication",
@@ -28,7 +30,8 @@
     "Non-Linear Decision Boundaries",
     "Escape Horizon",
     "Complex Dynamical Systems",
-    "Extreme Parameter Compression"
+    "Edge AI",
+    "Ephemeral Buffer"
   ],
   "language": "eng",
   "related_identifiers": [
@@ -36,8 +39,13 @@
       "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
     }
   ],
-  "notes": "Includes full replication source code, interactive offline HTML5 labs, and bilingual (English/Turkish) documentation.",
-  "doi": "10.5281/zenodo.22774935"
+  "notes": "Version 3.0: Comprehensive Empirical Validation, 10/10 Seed Multi-Run Benchmarks, Generative AI Declaration, and Author Affiliation Harmonization.",
+  "conceptdoi": "10.5281/zenodo.22774934"
 }

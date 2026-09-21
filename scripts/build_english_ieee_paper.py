@@ -296,13 +296,13 @@ html_content = f"""<!DOCTYPE html>
   <div class="paper-title">Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries</div>
   
   <div class="authors-block">
-    <span class="author-name">Volkan Dağlı</span><sup>1,*</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="author-name">Zerrin Dağlı</span><sup>2</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="author-name">Dağhan Dağlı</span><sup>3</sup><br>
-    <span class="author-affil"><sup>1</sup>ITouch Systems, Turkey &bull; ORCID: 0009-0000-1587-8703 &bull; Zenodo: <em>@itouch</em></span> &nbsp;&bull;&nbsp;
-    <span class="author-affil"><sup>2</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6465 &bull; Zenodo: <em>@zdagli</em></span><br>
-    <span class="author-affil"><sup>3</sup>Toros Science College, Turkey &bull; Zenodo: <em>@Lexovian</em></span><br>
-    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Correspondence via repository: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
+    <span class="author-name">Volkan Dağlı</span><sup>1,2,*</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="author-name">Zerrin Dağlı</span><sup>3</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="author-name">Dağhan Dağlı</span><sup>4</sup><br>
+    <span class="author-affil"><sup>1</sup>Anadolu University, Eskişehir, Turkey &bull; <sup>2</sup>ITouch Systems, Mersin, Turkey &bull; ORCID: 0009-0000-1587-8703</span><br>
+    <span class="author-affil"><sup>3</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6425</span> &nbsp;&bull;&nbsp;
+    <span class="author-affil"><sup>4</sup>Toros Science College, Mersin, Turkey &bull; ORCID: 0009-0003-2492-8313 &bull; GitHub: <em>@Lexovian</em></span><br>
+    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Corresponding Author. Under review in <em>Chaos, Solitons &amp; Fractals</em> (Ref: CHAOS-D-26-09598). Correspondence: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
   </div>
 
   <div class="abstract-container">
@@ -658,7 +658,7 @@ html_content = f"""<!DOCTYPE html>
     <strong>Open Science Repository & Preprint Verification:</strong><br>
     Source code & replication archive: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a><br>
     Interactive Laboratories & Project Portal: <a href="https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/" style="color: #004499; text-decoration: none;">https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/</a><br>
-    Deposit Package: DOI: 10.5281/zenodo.22802921 &bull; CC-BY-4.0 International License &bull; ITouch Systems & Mersin University.
+    Deposit Package: Zenodo Concept DOI: 10.5281/zenodo.22774934 &bull; Release v3.0: 10.5281/zenodo.22867037 &bull; CC-BY-4.0 International License &bull; Anadolu University, ITouch Systems & Mersin University.
   </div>
 
 </div>
