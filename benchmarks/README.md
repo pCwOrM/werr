@@ -202,5 +202,6 @@ benchmarks/
 * 📜 **Base Research Paper & Labs:** [Mandelbrot Fractal Neural Synthesis Portal](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 * ⚡ **WERR Engine Home:** [werr Main Repository](https://github.com/pCwOrM/werr)
 * 🧠 **Live Dual-Cognition API:** [answerr Platform (answerr.me)](https://answerr.me)
-* 🏛️ **Permanent Zenodo Archive:** [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426)
-* 📑 **Academic Submission:** *Submitted to Chaos, Solitons & Fractals (Elsevier) — Under Peer Review*
+* 🏛️ **Permanent Zenodo WERR Archive:** [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426)
+* 📜 **Companion Foundational Paper Archive:** [DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)
+* 📑 **Research Status:** *Open Science Research & Permanent Zenodo Archive*
