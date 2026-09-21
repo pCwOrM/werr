@@ -1,5 +1,9 @@
 # 🐍 Werr vs Laya-MLX: Real-Time Snake AI Reflex Benchmark
 
+<p align="center">
+  <img src="../../assets/werr_snake_benchmark.gif" alt="WERR Snake Real-Time Reflex Benchmark" width="620">
+</p>
+
 This directory contains the **complete, standalone, reproducible benchmark harness** evaluating **Werr (0-Byte VRAM Fractal System-One)** against **Laya-MLX (ModernBERT 421M)** and **TypeSafe Jev** on continuous real-time Snake decision gameplay.
 
 ---
@@ -12,7 +16,12 @@ Clone and run directly on any commodity CPU (macOS, Linux, or Windows):
 git clone https://github.com/pCwOrM/werr.git
 cd werr
 pip install numpy
+
+# Run full comparative benchmark (600 steps):
 python benchmarks/snake/benchmark_snake.py --steps 600 --mode compare
+
+# Optional: Watch live with retro terminal HUD & record GIF:
+python benchmarks/snake/visualize_snake.py --steps 90 --fps 10 --record snake.gif
 ```
 
 ---
@@ -64,6 +73,7 @@ benchmarks/snake/
 ├── snake_game.py          # Deterministic Snake environment & Hamiltonian cycles
 ├── werr_snake_policy.py   # Werr 0-VRAM System-One policy with 24-byte boundary seed
 ├── benchmark_snake.py     # Reproducible CLI runner (Baseline vs Optimized)
+├── visualize_snake.py     # Terminal visualizer & automatic GIF recorder
 └── README.md              # Full benchmark documentation & replication guide
 ```
 
