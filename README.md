@@ -22,12 +22,17 @@
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
+[![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22867037-green.svg)](https://doi.org/10.5281/zenodo.22867037)
+[![answerr Platform](https://img.shields.io/badge/answerr-Platform%20Repo-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
 > *"Werr is the reflex? Ver! (werr)."*  
 > *"Jev decisions come from 4B-parameter tensors; `werr` decisions come from infinite geometric waves, Euler thresholds, and recursive subdivision."*
+
+🌐 **Language Switcher / Dil Seçici:**  
+**English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*
 
@@ -554,9 +559,13 @@ werr             # Interactive terminal simulator
 
 ---
 
-## 🔗 Architecture & Connection to Base Research
+## 🔗 Ecosystem Architecture & Connections
 
-`werr` is deeply coupled with the research codebase [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis). It imports core vectorized escape operators from `src/mandelbrot_core.py`. As new orbital dynamics, multi-layer fractal compositions, and photonic solvers are discovered, `werr` directly inherits these breakthroughs!
+1. **Foundational Scientific Theory:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
+   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (*Chaos, Solitons & Fractals*, Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)).
+
+2. **Dual-Cognition Production Workspace:** [`answerr`](https://github.com/pCwOrM/answerr)  
+   The fullstack conversational platform and high-throughput production API ([answerr.me](https://answerr.me)) that pairs `werr` System-1 spinal reflexes with Google Gemini Flash System-2 deliberation.
 
 ---
 
@@ -584,5 +593,13 @@ werr             # Interactive terminal simulator
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426},
   note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; arXiv tracking ID: submit/8106948 [cs.AI]; Companion Concept: 10.5281/zenodo.22774934}
+}
+
+@software{werr2026,
+  author    = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
+  title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
+  year      = {2026},
+  url       = {https://github.com/pCwOrM/werr},
+  doi       = {10.5281/zenodo.22867426}
 }
 ```

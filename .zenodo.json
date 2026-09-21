@@ -1,0 +1,70 @@
+{
+  "title": "werr: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)",
+  "description": "Deterministic, zero-tensor memory System-One reflex decision engine deriving typed decisions (noul, choice, score) from Mandelbrot escape dynamics.",
+  "creators": [
+    {
+      "name": "Dağlı, Volkan",
+      "affiliation": "Anadolu University & ITouch Systems, Turkey",
+      "orcid": "0009-0000-1587-8703"
+    },
+    {
+      "name": "Dağlı, Zerrin",
+      "affiliation": "Mersin University, Mersin, Turkey",
+      "orcid": "0000-0001-9490-6425"
+    },
+    {
+      "name": "Dağlı, Dağhan",
+      "affiliation": "Toros Science College, Mersin, Turkey",
+      "orcid": "0009-0003-2492-8313"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "fractal decision engine",
+    "system-1",
+    "zero-memory ai",
+    "mandelbrot set",
+    "edge triage",
+    "neuromorphic computing",
+    "waves and errors"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/pCwOrM/werr",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://pcworm.github.io/werr/",
+      "relation": "isDocumentedBy",
+      "resource_type": "interactive-resource",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.22867037",
+      "relation": "isDerivedFrom",
+      "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
+      "relation": "isDerivedFrom",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://answerr.me",
+      "relation": "isDocumentedBy",
+      "resource_type": "interactive-resource",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/pCwOrM/answerr",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}

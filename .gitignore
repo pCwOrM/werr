@@ -29,3 +29,14 @@ Desktop.ini
 paper/*.pdf
 paper/*.html
 scratch/
+
+# Sensitive runner scripts and cluster endpoints (STRICTLY EXCLUDED FROM GIT)
+runner/
+*ssh*
+*password*
+*.pem
+*.key
+*.env
+
+# Scrap/temporary graphic generation slices
+assets/[0-9A-F][0-9A-F]*.png
