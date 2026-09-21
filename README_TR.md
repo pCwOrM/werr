@@ -3,10 +3,8 @@
 [![Canlı Web Portalı](https://img.shields.io/badge/Canlı%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 [![İnteraktif Laboratuvarlar](https://img.shields.io/badge/İnteraktif%20Laboratuvarlar-%25100%20Tarayıcıda%20Çalışır-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![Zenodo Çatı DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
-[![arXiv Durumu](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Hakem%20Sürecinde)-b31b1b.svg)](https://arxiv.org/)
-[![Dergi Başvurusu](https://img.shields.io/badge/Dergi%20Başvurusu-Chaos%2C%20Solitons%20%26%20Fractals%20(Hakem%20Sürecinde)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
-[![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
+[![Ön Baskı](https://img.shields.io/badge/Ön%20Baskı-Açık%20Bilim%20Arşivi-blue.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR-8b5cf6.svg)](https://github.com/pCwOrM/werr)
 [![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Kardeş Platform: answerr](https://img.shields.io/badge/Kardeş%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
@@ -96,7 +94,7 @@ Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüze
 
 ## 🏛️ İleri Araştırma Ufku (Hedef Dergi)
 
-> **Yayın Durumu:** Uluslararası saygın bir **Elsevier Q1 dergisine** (_Chaos, Solitons & Fractals_, Etki Faktörü: 5.3, CiteScore: 9.8) resmi başvurusu yapılmış olup hakem değerlendirme sürecindedir.
+> **Yayın Durumu:** Hakem değerlendirme sürecinde olup yazar ön-baskısı ve tam replikasyon paketi [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) kalıcı Concept DOI ile açık bilim arşivinde tescillenmiştir.
 
 Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir ağlarıyla (MLP) kıyaslamaya genişletmektedir:
 
@@ -214,11 +212,10 @@ Bu araştırmayı, prosedürel ağırlık üretim yöntemini veya interaktif lab
 @article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={Chaos, Solitons \& Fractals (Hakem Sürecinde); arXiv:submit/8092292 [cs.NE]},
+  journal={Zenodo Open Science Archive},
   year={2026},
   doi={10.5281/zenodo.22774934},
-  url={https://doi.org/10.5281/zenodo.22774934},
-  note={Zenodo v3.0: https://doi.org/10.5281/zenodo.22867037}
+  url={https://doi.org/10.5281/zenodo.22774934}
 }
 ```
 
