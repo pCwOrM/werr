@@ -31,7 +31,7 @@ Mandelbrot Fraktal Sinir Sentezi deposu **teorik temel ve araştırma makalesi p
 | 🌐 İnteraktif Web Arenası | [benchmarks.html (GitHub Pages)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
 | 📜 Araştırma Portalı | [Mandelbrot Fraktal Sinir Sentezi](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🧠 Canlı API | [answerr.me](https://answerr.me) |
-| 🏛️ Zenodo Arşivi | [DOI: 10.5281/zenodo.15783307](https://doi.org/10.5281/zenodo.15783307) |
+| 🏛️ Zenodo Arşivi | [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426) |
 
 ---
 
