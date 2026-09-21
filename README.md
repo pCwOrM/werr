@@ -21,6 +21,7 @@
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![JevBench World #1](https://img.shields.io/badge/JevBench%20Score-81.65%20(%231%20World)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
+[![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22867037-green.svg)](https://doi.org/10.5281/zenodo.22867037)

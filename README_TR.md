@@ -15,6 +15,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![Canlı Kıyaslama Arenası](https://img.shields.io/badge/Canlı%20Kıyaslama-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
+[![Tau-Bench Araç Çağrımı](https://img.shields.io/badge/Tau--Bench-%25100%20Ara%C3%A7%20Sadakati-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
 > *"Refleks nerede? Karar Werr!"*  
