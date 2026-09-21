@@ -869,11 +869,11 @@
       <div class="bench-card">
         <div>
           <div class="bench-card-head">
-            <div class="bench-card-title">⚖️ JevBench World Record</div>
+            <div class="bench-card-title">⚖️ JevBench World Record (<a href="https://github.com/fstandhartinger/jevbench/issues/10" target="_blank" style="color: var(--cyan); text-decoration: underline;">Issue #10</a>)</div>
             <div class="bench-metric-badge">#1 (0.4 ms)</div>
           </div>
           <p class="bench-card-body" id="jevCardBody">
-            Formal REST wire format protocol benchmark (<code>POST /v1/systemone</code>) measuring discrete decision velocity, schema contracts (<code>noul</code>, <code>choice</code>, <code>score</code>), and memory footprint. WERR holds the undisputed #1 world record.
+            Formal REST wire format protocol benchmark (<code>POST /v1/systemone</code>) measuring discrete decision velocity, schema contracts (<code>noul</code>, <code>choice</code>, <code>score</code>), and memory footprint. WERR holds the undisputed #1 world record (<a href="https://github.com/fstandhartinger/jevbench/issues/10" target="_blank" style="color: var(--cyan); text-decoration: underline;">Issue #10</a>).
           </p>
           <div class="bench-stats-row">
             <div class="bench-stat-item">
@@ -894,10 +894,16 @@
             </div>
           </div>
         </div>
-        <a href="werr/index.html#benchmarks" class="btn-bench-action">
-          <span>⚡</span>
-          <span id="btnJevLive">Run JevBench Live in Browser</span>
-        </a>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/fstandhartinger/jevbench/issues/10" target="_blank" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🔗</span>
+            <span id="btnJevIssue">View JevBench Issue #10</span>
+          </a>
+          <a href="werr/index.html#benchmark-arena" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>⚡</span>
+            <span id="btnJevLive">Run JevBench Live in Browser</span>
+          </a>
+        </div>
       </div>
 
       <!-- 3. Gymnasium Snake Reflex -->
@@ -1253,7 +1259,8 @@
       sec2Badge: "Q1 Peer Review Grounding",
       wtCardBody: "Official benchmark testing agentic web action selection across 8 real-world production web applications (HackerNews, GitHub, Wikipedia, E-commerce, Linear, etc.). WERR solved every single task with 0 failures, 0 VRAM, and zero dollar cost.",
       btnWtIssue: "View WindTunnel Issue #25",
-      jevCardBody: "Formal REST wire format protocol benchmark (<code>POST /v1/systemone</code>) measuring discrete decision velocity, schema contracts (<code>noul</code>, <code>choice</code>, <code>score</code>), and memory footprint. WERR holds the undisputed #1 world record.",
+      jevCardBody: "Formal REST wire format protocol benchmark (<code>POST /v1/systemone</code>) measuring discrete decision velocity, schema contracts (<code>noul</code>, <code>choice</code>, <code>score</code>), and memory footprint. WERR holds the undisputed #1 world record (<a href=\"https://github.com/fstandhartinger/jevbench/issues/10\" target=\"_blank\" style=\"color: var(--cyan); text-decoration: underline;\">Issue #10</a>).",
+      btnJevIssue: "View JevBench Issue #10",
       btnJevLive: "Run JevBench Live in Browser",
       gymCardBody: "Standard reinforcement learning benchmark without training loops, replay buffers, or weights. Coordinates (cx=-0.7445, cy=0.1250, zoom=65x) guide the snake autonomously with 1.8ms latency and zero wall collisions.",
       btnSnakeArena: "Open 1v1 Snake Arena",
@@ -1303,7 +1310,8 @@
       sec2Badge: "Q1 Hakem İncelemesi Temeli",
       wtCardBody: "8 gerçek dünya web uygulamasında (HackerNews, GitHub, Wikipedia, E-ticaret, Linear vb.) ajan eylemi seçimini ölçen resmi kıyaslama. WERR sıfır hata, sıfır VRAM ve $0 maliyetle tüm 49 görevi çözmüştür.",
       btnWtIssue: "WindTunnel Issue #25 İncele",
-      jevCardBody: "Kesikli karar hızını, tip-güvenli şema sözleşmelerini (<code>noul</code>, <code>choice</code>, <code>score</code>) ve bellek tüketimini ölçen resmi REST tel formatı (<code>POST /v1/systemone</code>) testi. WERR #1 dünya rekorunu elinde tutar.",
+      jevCardBody: "Kesikli karar hızını, tip-güvenli şema sözleşmelerini (<code>noul</code>, <code>choice</code>, <code>score</code>) ve bellek tüketimini ölçen resmi REST tel formatı (<code>POST /v1/systemone</code>) testi. WERR #1 dünya rekorunu (<a href=\"https://github.com/fstandhartinger/jevbench/issues/10\" target=\"_blank\" style=\"color: var(--cyan); text-decoration: underline;\">Issue #10</a>) elinde tutar.",
+      btnJevIssue: "JevBench Issue #10 İncele",
       btnJevLive: "JevBench'i Tarayıcıda Canlı Koş",
       gymCardBody: "Eğitim döngüsü, hafıza tamponu veya yapay sinir ağı ağırlığı olmadan çalışan standart RL kıyaslaması. Fraktal koordinatlar (cx=-0.7445, cy=0.1250, zoom=65x) yılanı 1.8ms tepkiyle duvara çarpmadan yönetir.",
       btnSnakeArena: "1v1 Yılan Arenasını Aç",
@@ -1360,6 +1368,7 @@
     document.getElementById('wtCardBody').innerHTML = t.wtCardBody;
     document.getElementById('btnWtIssue').innerText = t.btnWtIssue;
     document.getElementById('jevCardBody').innerHTML = t.jevCardBody;
+    if (document.getElementById('btnJevIssue')) document.getElementById('btnJevIssue').innerText = t.btnJevIssue;
     document.getElementById('btnJevLive').innerText = t.btnJevLive;
     document.getElementById('gymCardBody').innerHTML = t.gymCardBody;
     document.getElementById('btnSnakeArena').innerText = t.btnSnakeArena;
