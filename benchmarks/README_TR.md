@@ -2,9 +2,9 @@
 
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![JevBench Dünya Rekoru](https://img.shields.io/badge/JevBench%20Rekoru-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
-[![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](./snake/)
-[![Tau-Bench](https://img.shields.io/badge/Tau--Bench-10%2F10%20Ge%C3%A7ti-brightgreen.svg)](https://github.com/pCwOrM/werr)
-[![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-27.8x%20H%C4%B1zl%C4%B1-brightgreen.svg)](./jevenator2/)
+[![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
+[![Tau-Bench](https://img.shields.io/badge/Tau--Bench-10%2F10%20Ge%C3%A7ti-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
+[![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-27.8x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Canlı Web Arenası](https://img.shields.io/badge/Canl%C4%B1%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](../LICENSE)
 
@@ -107,7 +107,7 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 
 ---
 
-### 3. 🐍 Farama Gymnasium RL: Yılan Otonom Refleksi ([Alt Dizin: `./snake/`](./snake/))
+### 3. 🐍 Farama Gymnasium RL: Yılan Otonom Refleksi ([Alt Dizin: `./snake/`](./snake/) │ [Issue: mizorewww/laya-mlx#3](https://github.com/mizorewww/laya-mlx/issues/3))
 * **Kapsam:** Kesintisiz ızgara navigasyonu ve engelden kaçınma.
 * **Mimari:** Durum-Dalga modülasyonunun koordinat tohumuna izdüşümü:
   $$c = -0.7436438870371587 + 0.1318259042053119i \quad (\text{Büyütme: } 65\times)$$
@@ -116,14 +116,14 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 
 ---
 
-### 4. 🤖 Tau-Bench Çok Turlu Araç Çağrısı (UC Berkeley AI Research & Sierra)
+### 4. 🤖 Tau-Bench Çok Turlu Araç Çağrısı ([Issue: sierra-research/tau-bench#95](https://github.com/sierra-research/tau-bench/issues/95))
 * **Kapsam:** Katı operasyonel kurallar altında çok adımlı araç yönetimi (DOT 24 saatlik uçuş iptali, koltuk yükseltme, perakende RMA iadeleri, kupon birleştirme).
 * **Doğruluk:** **10 / 10 benchmark senaryosu başarıyla geçti**.
 * **Avantaj:** Deterministik kural kısıtları hızlı omurilik refleksiyle süzülerek bulut LLM token maliyeti %100 oranında sıfırlanır.
 
 ---
 
-### 5. 🎯 Jevenator 2: Pertürbasyon Stresi & Video Takibi ([Alt Dizin: `./jevenator2/`](./jevenator2/))
+### 5. 🎯 Jevenator 2: Pertürbasyon Stresi & Video Takibi ([Alt Dizin: `./jevenator2/`](./jevenator2/) │ [Issue: mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1))
 * **Kapsam:** 24 karelik video takibi (840 karar) ve Gauss gürültüsü ($\sigma = 0.50$) altında uzamsal bölge taraması.
 * **Kıyaslama:** Maisa djev (Diffusion-Gemma 8GB VRAM) modeline karşı test edilmiştir.
 * **Sonuç:** **27.8 kat daha hızlı**, %0.00 semantik kayma ve sinir ağlarının çöktüğü yüksek gürültüde sıfır unutma.

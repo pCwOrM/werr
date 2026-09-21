@@ -2,9 +2,9 @@
 
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![JevBench World Record](https://img.shields.io/badge/JevBench%20Record-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
-[![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](./snake/)
-[![Tau-Bench Pass](https://img.shields.io/badge/Tau--Bench-10%2F10%20Passed-brightgreen.svg)](https://github.com/pCwOrM/werr)
-[![Jevenator 2 Vision](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](./jevenator2/)
+[![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
+[![Tau-Bench Pass](https://img.shields.io/badge/Tau--Bench-10%2F10%20Passed-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
+[![Jevenator 2 Vision](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Live Web Arena](https://img.shields.io/badge/Interactive%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
 
@@ -119,7 +119,7 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 
 ---
 
-### 3. 🐍 Farama Gymnasium RL: Snake Autonomous Reflex ([Subdirectory: `./snake/`](./snake/))
+### 3. 🐍 Farama Gymnasium RL: Snake Autonomous Reflex ([Subdirectory: `./snake/`](./snake/) │ [Issue: mizorewww/laya-mlx#3](https://github.com/mizorewww/laya-mlx/issues/3))
 * **Scope:** Continuous game-state grid navigation and obstacle avoidance.
 * **Architecture:** State-to-Wave complex modulation mapped onto coordinate seed:
   $$c = -0.7436438870371587 + 0.1318259042053119i \quad (\text{Zoom: } 65\times)$$
@@ -128,14 +128,14 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 
 ---
 
-### 4. 🤖 Tau-Bench Agentic Tool Calling (UC Berkeley AI Research & Sierra)
+### 4. 🤖 Tau-Bench Agentic Tool Calling ([Issue: sierra-research/tau-bench#95](https://github.com/sierra-research/tau-bench/issues/95))
 * **Scope:** Multi-turn tool orchestration under rigid operational constraints (DOT 24h airline cancellations, rebooking, seat upgrades, retail RMA returns, coupon stacking).
 * **Fidelity:** **10 / 10 benchmark scenarios passed**.
 * **Advantage:** Fast-path discrete reflex routing intercepts deterministic constraints instantly, saving 100% of LLM token costs.
 
 ---
 
-### 5. 🎯 Jevenator 2: Adversarial Stress & Vision Tracking ([Subdirectory: `./jevenator2/`](./jevenator2/))
+### 5. 🎯 Jevenator 2: Adversarial Stress & Vision Tracking ([Subdirectory: `./jevenator2/`](./jevenator2/) │ [Issue: mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1))
 * **Scope:** 24-frame video tracking (840 decisions) and spatial region-scan localization under Gaussian noise ($\sigma = 0.50$).
 * **Comparison:** Evaluated against Maisa djev (Diffusion-Gemma 8GB VRAM).
 * **Result:** **27.8x speedup**, 0.00% semantic drift, and zero catastrophic forgetting under noise perturbation where neural nets collapse.
