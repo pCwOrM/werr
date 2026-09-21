@@ -12,10 +12,9 @@
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
-[![arXiv Werr](https://img.shields.io/badge/arXiv-cs.AI%20[submit%2F8106948]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
-[![Zenodo Concept DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
-[![arXiv Companion](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-gray.svg)](https://arxiv.org/)
+[![Paper DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Preprint Status](https://img.shields.io/badge/Preprint-Under%20Peer%20Review-blue.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
@@ -24,7 +23,6 @@
 [![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](./benchmarks/snake/)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](./benchmarks/jevenator2/)
-[![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22867037-green.svg)](https://doi.org/10.5281/zenodo.22867037)
 [![answerr Platform](https://img.shields.io/badge/answerr-Platform%20Repo-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
@@ -458,13 +456,17 @@ python tests/test_jevenator2_isolated.py
 
 ## 📄 Academic Publication & Preprint Status
 
-This research builds upon and extends peer-reviewed open science preprints:
+This research builds upon peer-reviewed open science preprints and is currently under academic review:
 
-* **Foundational Companion Research:**  
-  * **Title:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
+* **Primary Paper:** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Lead Author: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
+  * **Status:** Submitted for international peer review and arXiv moderation.
+
+* **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934))  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
-  * **Preprint / Archive:** arXiv (`submit/8092292` [cs.NE]) &bull; Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) (Release v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037))
-  * **Lead Author:** Volkan Dağlı ([ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
+  * **Status:** Under academic review.  
 
 ---
 
@@ -570,7 +572,7 @@ werr             # Interactive terminal simulator
 ## 🔗 Ecosystem Architecture & Connections
 
 1. **Foundational Scientific Theory & Interactive Client Labs:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
-   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
+   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
 
 2. **Machine-Native Reflex Engine & Benchmarks (This Repository):** [`werr`](https://github.com/pCwOrM/werr)  
    The in-process System-1 reflex kernel running on standard CPU with 0 Bytes VRAM, providing terminal benchmark visualizers (`benchmarks/snake/visualize_snake.py`) and verified world-record benchmark suites (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2).
@@ -599,11 +601,11 @@ werr             # Interactive terminal simulator
 @article{dagli2026werr,
   author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Zenodo DOI: 10.5281/zenodo.22774934)},
+  journal = {Zenodo Preprint},
   year = {2026},
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426},
-  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; arXiv tracking ID: submit/8106948 [cs.AI]; Companion Concept: 10.5281/zenodo.22774934}
+  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
 }
 
 @software{werr2026,

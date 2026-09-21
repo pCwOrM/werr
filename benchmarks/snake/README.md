@@ -111,7 +111,7 @@ benchmarks/snake/
 @article{dagli2026werr,
   author = {Volkan Da{\u{g}}l{\i} and Zerrin Da{\u{g}}l{\i} and Da{\u{g}}han Da{\u{g}}l{\i}},
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {arXiv:submit/8106948 [cs.AI]; Companion Benchmark Suite to Mandelbrot Fractal Neural Synthesis},
+  journal = {Zenodo Preprint},
   year = {2026},
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426}

@@ -723,7 +723,7 @@ window.MathJax = {
 
   <h2>References</h2>
   <ol class="ref-list">
-    <li>V. Dağlı, Z. Dağlı, and D. Dağlı, &ldquo;Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries,&rdquo; preprint, Zenodo, DOI: 10.5281/zenodo.22774934; arXiv:submit/8092292 [cs.NE]; Release v3.0: 10.5281/zenodo.22867037, 2026.</li>
+    <li>V. Dağlı, Z. Dağlı, and D. Dağlı, &ldquo;Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries,&rdquo; <em>Zenodo Preprint</em>, DOI: 10.5281/zenodo.22774934, 2026.</li>
     <li>A. Vaswani et al., &ldquo;Attention is All You Need,&rdquo; in <em>Proc. NeurIPS</em>, vol. 30, 2017.</li>
     <li>H. Touvron et al., &ldquo;Llama 2: Open Foundation and Fine-Tuned Chat Models,&rdquo; <em>arXiv:2307.09288</em>, 2023.</li>
     <li>D. Kahneman, <em>Thinking, Fast and Slow</em>, Farrar, Straus and Giroux, 2011.</li>
