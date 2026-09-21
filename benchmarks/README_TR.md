@@ -8,6 +8,20 @@
 [![Canlı Web Arenası](https://img.shields.io/badge/Canl%C4%B1%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](../LICENSE)
 
+<p align="center">
+  <a href="https://pcworm.github.io/werr/#benchmark-arena">
+    <img src="https://img.shields.io/badge/▶%20CANLI%20DEMO-pcworm.github.io%2Fwerr%20%23benchmark--arena-0284c7?style=for-the-badge&logo=github&logoColor=white" alt="Canlı Kıyaslama Arenası">
+  </a>
+</p>
+
+<p align="center">
+  <strong>
+    <a href="https://pcworm.github.io/werr/#benchmark-arena">
+      🌐 werr | Sıfır-Bellekli Fraktal System-One Karar Motoru — Benchmark'ları Tarayıcıda Çalıştır ↗
+    </a>
+  </strong>
+</p>
+
 > 🌐 **Dil Seçici / Language Switcher:**  
 > [🇬🇧 English Documentation (README.md)](README.md) │ **Türkçe (Aktif)**
 

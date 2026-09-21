@@ -8,6 +8,20 @@
 [![Live Web Arena](https://img.shields.io/badge/Interactive%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
 
+<p align="center">
+  <a href="https://pcworm.github.io/werr/#benchmark-arena">
+    <img src="https://img.shields.io/badge/▶%20CANLI%20DEMO-pcworm.github.io%2Fwerr%20%23benchmark--arena-0284c7?style=for-the-badge&logo=github&logoColor=white" alt="Live Benchmark Arena">
+  </a>
+</p>
+
+<p align="center">
+  <strong>
+    <a href="https://pcworm.github.io/werr/#benchmark-arena">
+      🌐 werr | Zero-Memory Fractal System-One Decision Engine — Run Benchmarks Live in Browser ↗
+    </a>
+  </strong>
+</p>
+
 > 🌐 **Language Switcher / Dil Seçici:**  
 > **English (Default)** │ [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
