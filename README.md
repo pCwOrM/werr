@@ -7,7 +7,7 @@
 [![arXiv Status](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
-[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867425.svg)](https://doi.org/10.5281/zenodo.22867425)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -27,6 +27,7 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
+| ⚡ **Companion Paper: WERR (NLP Triage)** | Applied Edge NLP | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867425**](https://doi.org/10.5281/zenodo.22867425) &bull; [**Live Engine (answerr.me)**](https://answerr.me) |
 
 ---
 
@@ -86,7 +87,7 @@ Synaptic Weights (w1, w2, w3) + Bias (b)  ──► Non-Linear Decision Contours
 
 ## 🏛️ Advanced Research Extension (Target Journal)
 
-> **Status:** An extensive experimental and comparative extension of this work has been prepared for submission to **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Impact Factor: 5.3, CiteScore: 9.8)**.
+> **Status:** Submitted and under peer review in **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Impact Factor: 5.3, CiteScore: 9.8)** [Ref: CHAOS-D-26-09598].
 
 The journal manuscript expands the foundational paradigm to continuous topological manifolds and rigorous comparative baselines:
 
@@ -95,6 +96,22 @@ The journal manuscript expands the foundational paradigm to continuous topologic
 * **Attractor Basin Dynamics:** Detailed mathematical analysis of macroscopic functional attractor basins overcoming local Lyapunov micro-sensitivity ($\Delta c \sim 10^{-7}$).
 
 *To preserve journal review integrity and exclusive publication novelty, the complete comparative benchmark tables, analytical recurrence derivations, and continuous manifold callsets will be synchronized with this repository upon formal journal appearance.*
+
+---
+
+## 🌐 Companion Applied Research: Universal Fractal Natural Language Decision Map (WERR)
+
+Building upon the foundational zero-storage fractal parameter synthesis introduced in this project, our research group has engineered an applied companion architecture for high-throughput natural language edge triage and reflex classification:
+
+> **Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains**  
+> *Authors:* Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+> *Zenodo Permanent Concept DOI:* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867425.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Submission:* `arXiv:submit/8106948`  
+> *GitHub Repository:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Live Engine:* [answerr.me](https://answerr.me)
+
+### Key Synergies & Cross-Domain Translation
+1. **From Geometric Boundaries to NLP Reflex Triage:** While this foundational work derives synaptic weights from $128 \times 128$ Mandelbrot escape patches for decision boundaries, WERR translates fractal boundary dynamics into ultra-fast, zero-tensor semantic triage (System-1 reflex arcs).
+2. **Deterministic Edge AI Resilience:** Both architectures eliminate persistent multi-gigabyte weight matrices, enabling sub-millisecond execution directly on microcontrollers, edge routers, and resource-constrained nodes without cloud API reliance.
+3. **Reproducibility & Open Science:** Complete replication packages, dynamic calibration filters, and acoustic damping models are openly accessible across both Zenodo repositories.
 
 ---
 

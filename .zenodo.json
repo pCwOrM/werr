@@ -4,17 +4,18 @@
   "creators": [
     {
       "name": "Dağlı, Volkan",
-      "affiliation": "ITouch Systems, Mersin, Turkey",
+      "affiliation": "Anadolu University & ITouch Systems, Turkey",
       "orcid": "0009-0000-1587-8703"
     },
     {
       "name": "Dağlı, Zerrin",
       "affiliation": "Mersin University, Mersin, Turkey",
-      "orcid": "0000-0001-9490-6465"
+      "orcid": "0000-0001-9490-6425"
     },
     {
       "name": "Dağlı, Dağhan",
-      "affiliation": "Toros Science College, Mersin, Turkey"
+      "affiliation": "Toros Science College, Mersin, Turkey",
+      "orcid": "0009-0003-2492-8313"
     }
   ],
   "access_right": "open",
@@ -24,6 +25,41 @@
     "mandelbrot set",
     "procedural weight generation",
     "zero-storage ai",
-    "non-linear decision boundaries"
+    "non-linear decision boundaries",
+    "escape horizon",
+    "edge ai",
+    "ephemeral buffer"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/",
+      "relation": "isDocumentedBy",
+      "resource_type": "interactive-resource",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.22867425",
+      "relation": "isBasisFor",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/pCwOrM/werr",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://answerr.me",
+      "relation": "isDocumentedBy",
+      "resource_type": "interactive-resource",
+      "scheme": "url"
+    }
   ]
 }

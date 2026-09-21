@@ -7,7 +7,7 @@
 [![arXiv Durumu](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Hakem%20Sürecinde)-b31b1b.svg)](https://arxiv.org/)
 [![Dergi Başvurusu](https://img.shields.io/badge/Dergi%20Başvurusu-Chaos%2C%20Solitons%20%26%20Fractals%20(Hakem%20Sürecinde)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
-[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867425.svg)](https://doi.org/10.5281/zenodo.22867425)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -28,6 +28,7 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
 | 🏛️ **Resmi Yayın Arşivi (Zenodo v3.0)** | Kalıcı Arşiv | Açık Bilim | [**Zenodo Çatı DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Yayında**](https://zenodo.org/records/22867037) |
+| ⚡ **Kardeş Makale: WERR (NLP Triyaj)** | Uç Birim Doğal Dil İşleme | Küresel / Uygulamalı Yapay Zeka | [**Zenodo: 10.5281/zenodo.22867425**](https://doi.org/10.5281/zenodo.22867425) &bull; [**Canlı Motor (answerr.me)**](https://answerr.me) |
 
 ---
 
@@ -87,7 +88,7 @@ Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüze
 
 ## 🏛️ İleri Araştırma Ufku (Hedef Dergi)
 
-> **Yayın Durumu:** Bu çalışmanın genişletilmiş ampirik ve karşılaştırmalı versiyonu, alanın saygın dergilerinden **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Etki Faktörü: 5.3, CiteScore: 9.8)** yayını için sunulmak üzere hazırlanmıştır.
+> **Yayın Durumu:** Saygın **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Etki Faktörü: 5.3, CiteScore: 9.8)** dergisine resmi başvurusu yapılmış olup hakem ve editör değerlendirme sürecindedir [Takip Ref: CHAOS-D-26-09598].
 
 Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir ağlarıyla (MLP) kıyaslamaya genişletmektedir:
 
@@ -96,6 +97,22 @@ Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir
 * **Çekici Havzaları Dinamiği:** Kaotik sınır mikro-hassasiyetine ($\Delta c \sim 10^{-7}$) rağmen evrimsel aramanın makroskopik fonksiyonel çekici havzalarına (*attractor basins*) kilitlendiğinin kuramsal analizi.
 
 *Derginin hakemlik sürecinin bağımsızlığını ve yayın özgünlüğünü korumak adına; tam karşılaştırmalı tablolar, analitik ofset formülasyonları ve sürekli manifold betikleri makalenin resmi dergi basımıyla eşzamanlı olarak depoda erişime açılacaktır.*
+
+---
+
+## 🌐 Kardeş Uygulamalı Araştırma: Evrensel Fraktal Doğal Dil Karar Haritası (WERR)
+
+Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimarisi üzerinde yükselen araştırma grubumuz, doğal dil işleme ve yüksek hızlı uç birim triyajı için kardeş bir uygulamalı sistem geliştirmiştir:
+
+> **Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains**  
+> *Yazarlar:* Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+> *Zenodo Kalıcı Çatı DOI:* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867425.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Başvurusu:* `arXiv:submit/8106948`  
+> *GitHub Açık Kaynak Kod:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Canlı Motor:* [answerr.me](https://answerr.me)
+
+### Temel Sinerjiler ve Alanlar Arası Geçiş
+1. **Geometrik Sınırlardan Doğal Dil Refleks Triyajına:** Bu kuramsal çalışma $128 \times 128$ Mandelbrot kaçış yamalarından yapay zeka ağırlıkları türetirken; WERR fraktal sınır dinamiklerini ultra-hızlı, tensörsüz semantik triyaja (Sistem-1 refleks arkı) dönüştürür.
+2. **Deterministik Uç Yapay Zeka (Edge AI):** Her iki mimari de devasa gigabaytlık ağırlık matrislerini ortadan kaldırarak; bulut API'lerine veya GPU sunucularına muhtaç kalmaksızın mikrodenetleyiciler ve uç yönlendiriciler üzerinde milisaniye-altı sınıflandırma sağlar.
+3. **Tekrarlanabilirlik ve Açık Bilim:** Eksiksiz replikasyon paketleri, dinamik kalibrasyon filtreleri ve akustik sönümleme modelleri her iki Zenodo arşivi üzerinden dünya bilim camiasının erişimine açıktır.
 
 ---
 
