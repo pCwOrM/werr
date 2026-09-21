@@ -1,0 +1,42 @@
+name: "🔬 Empirical Replication Report"
+description: "Share benchmark reproduction results, independent seed runs, or hardware validation metrics."
+title: "[Replication]: "
+labels: ["reproducibility", "empirical-benchmark"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to open scientific reproducibility! Please share your empirical reproduction details below.
+  - type: input
+    id: benchmark_type
+    attributes:
+      label: Target Benchmark
+      description: Which experimental benchmark did you reproduce?
+      placeholder: "e.g., Two-Moons (N=1000), Two-Spirals (N=200), Pareto 128x128 vs 256x256, XOR Gate, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: hardware_spec
+    attributes:
+      label: Hardware & Execution Environment
+      description: CPU / GPU / Microcontroller / Embedded architecture, operating system, and execution environment.
+      placeholder: "e.g., Apple M2 Max / AMD Ryzen 9 7950X / Raspberry Pi 4 / ESP32, Ubuntu 22.04"
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Empirical Metrics & Accuracy
+      description: What classification accuracy, iteration count, latency, and memory footprint did you observe?
+      placeholder: |
+        - Accuracy: 99.30%
+        - Evaluation Latency: 15.6 ms
+        - Memory Storage: 24 bytes metadata
+        - Seed count: 10/10 seeds converged
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Observations & Deviations
+      description: Any interesting anomalies, Pareto trade-offs, or optimization insights discovered during testing.

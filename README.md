@@ -10,6 +10,7 @@
 [![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
+[![CI Workflow](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 

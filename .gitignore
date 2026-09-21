@@ -27,7 +27,8 @@ runner/
 wevv/
 werr/
 answerr/
-tests/
+tests/*
+!tests/test_fractal_core.py
 *ssh*
 *password*
 *.pem

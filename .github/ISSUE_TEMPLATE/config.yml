@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 General Discussions & Questions"
+    url: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/discussions"
+    about: "Ask questions, share conceptual ideas, or discuss fractal AI theories."
+  - name: "🏛️ Permanent Zenodo Archive"
+    url: "https://doi.org/10.5281/zenodo.22774934"
+    about: "Access published papers, BibTeX records, and DOI metadata."
+  - name: "🌐 Live Web Demonstrations"
+    url: "https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/"
+    about: "Run client-side fractal neural synthesis simulations in your browser."

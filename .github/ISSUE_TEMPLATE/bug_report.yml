@@ -1,0 +1,53 @@
+name: "🐛 Bug Report"
+description: "Report an issue, unexpected calculation, or runtime exception in core algorithms or visualizers."
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please fill in the details below to help us reproduce and fix it promptly.
+  - type: input
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which part of the repository has the bug?
+      placeholder: "e.g., src/mandelbrot_core.py, demos/interactive_lab.html, demos/quadrant_visualizer.html"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: "When running compute_mandelbrot_patch with zoom=... an unexpected NaN occurred..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps or minimal Python / JavaScript snippet to reproduce the behavior.
+      placeholder: |
+        1. Run `python -m src.fractal_neuron`
+        2. Set parameter ...
+        3. Observe error ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment & Hardware
+      description: OS version, Python version, NumPy version, browser (if web demo).
+      placeholder: "Windows 11 / Ubuntu 22.04, Python 3.10.12, NumPy 1.26.0, Chrome 128"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checks
+      options:
+        - label: "I have verified this issue is not already reported in existing issues."
+          required: true
+        - label: "I have provided a minimal reproducible example."
+          required: true

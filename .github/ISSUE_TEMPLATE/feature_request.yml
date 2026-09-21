@@ -1,0 +1,37 @@
+name: "💡 Feature Request / Research Proposal"
+description: "Suggest a new procedural synthesis capability, optimizer enhancement, or visualizer feature."
+title: "[Feature]: "
+labels: ["enhancement", "research-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome ideas for extending the zero-storage fractal parameter synthesis framework.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Motivation & Problem Statement
+      description: Is your feature request related to a specific limitation or a prospective hardware deployment?
+      placeholder: "A clear and concise description of what the limitation is or what hardware (e.g. RISC-V edge device) would benefit..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Architectural Concept
+      description: Describe how the new capability would work mathematically or programmatically.
+      placeholder: "Integrate a new Julia set boundary offset or Quadtree partition scheme..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Considered Alternatives
+      description: Any alternative designs or standard baseline methods you considered.
+  - type: checkboxes
+    id: contribution_interest
+    attributes:
+      label: Contribution
+      options:
+        - label: "I am willing to submit a Pull Request implementing this feature."
+          required: false
