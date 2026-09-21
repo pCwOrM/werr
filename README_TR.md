@@ -8,6 +8,7 @@
 [![Dergi Başvurusu](https://img.shields.io/badge/Dergi%20Başvurusu-Chaos%2C%20Solitons%20%26%20Fractals%20(Hakem%20Sürecinde)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
 [![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Kardeş Platform: answerr](https://img.shields.io/badge/Kardeş%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-27.8x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![CI Süreci](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
@@ -31,7 +32,8 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
 | 🏛️ **Resmi Yayın Arşivi (Zenodo v3.0)** | Kalıcı Arşiv | Açık Bilim | [**Zenodo Çatı DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Yayında**](https://zenodo.org/records/22867037) |
-| ⚡ **Kardeş Makale: WERR (Uç Triyaj)** | Uç Doğal Dil & Görsel İşleme | Küresel / Uygulamalı Yapay Zeka | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**WindTunnel: %100**](https://github.com/nekuda-ai/WindTunnel/issues/25) &bull; [**Jevenator 2: 27.8×**](https://github.com/mmastrac/jevenator2/issues/1) |
+| ⚡ **Kardeş Makale: WERR (Uç Triyaj)** | Uç Doğal Dil & Görsel İşleme | Küresel / Uygulamalı Yapay Zeka | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
+| 🧠 **Canlı İkili Bilişsel Platform (answerr)** | Üretim Platformu & API | Geliştiriciler & Son Kullanıcılar | [**answerr.me**](https://answerr.me) &bull; [**GitHub: pCwOrM/answerr**](https://github.com/pCwOrM/answerr) &bull; [**Canlı REST API**](https://api.answerr.me:4431/v1/health) |
 
 ---
 
@@ -103,19 +105,21 @@ Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir
 
 ---
 
-## 🌐 Kardeş Uygulamalı Araştırma: Evrensel Fraktal Doğal Dil Karar Haritası (WERR)
+## 🌐 Kardeş Uygulamalı Ekosistem: WERR (Refleks Motoru) ve answerr (İkili Bilişsel Platform)
 
 Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimarisi üzerinde yükselen araştırma grubumuz, doğal dil işleme ve yüksek hızlı uç birim triyajı için kardeş bir uygulamalı sistem geliştirmiştir:
 
 > **Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains**  
 > *Yazarlar:* Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 > *Zenodo Kalıcı Çatı DOI:* [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867425-024dad.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Başvurusu:* `arXiv:submit/8106948`  
-> *GitHub Açık Kaynak Kod:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Canlı Motor:* [answerr.me](https://answerr.me)
+> *Motor Deposu:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Canlı Karar Laboratuvarı:* [pcworm.github.io/werr](https://pcworm.github.io/werr/)  
+> *Platform & Çalışma Alanı:* [github.com/pCwOrM/answerr](https://github.com/pCwOrM/answerr) &bull; *Üretim Portalı:* [answerr.me](https://answerr.me)
 
 ### Temel Sinerjiler ve Alanlar Arası Geçiş
-1. **Geometrik Sınırlardan Doğal Dil Refleks Triyajına:** Bu kuramsal çalışma $128 \times 128$ Mandelbrot kaçış yamalarından yapay zeka ağırlıkları türetirken; WERR fraktal sınır dinamiklerini ultra-hızlı, tensörsüz semantik triyaja (Sistem-1 refleks arkı) dönüştürür.
-2. **Deterministik Uç Yapay Zeka (Edge AI):** Her iki mimari de devasa gigabaytlık ağırlık matrislerini ortadan kaldırarak; bulut API'lerine veya GPU sunucularına muhtaç kalmaksızın mikrodenetleyiciler ve uç yönlendiriciler üzerinde milisaniye-altı sınıflandırma sağlar.
-3. **Tekrarlanabilirlik ve Açık Bilim:** Eksiksiz replikasyon paketleri, dinamik kalibrasyon filtreleri ve akustik sönümleme modelleri her iki Zenodo arşivi üzerinden dünya bilim camiasının erişimine açıktır.
+1. **Geometrik Sınırlardan Doğal Dil Refleks Triyajına:** Bu kuramsal çalışma $128 \times 128$ Mandelbrot kaçış yamalarından yapay zeka ağırlıkları türetirken; [werr](https://github.com/pCwOrM/werr) fraktal sınır dinamiklerini ultra-hızlı, tensörsüz semantik triyaja (Sistem-1 refleks arkı) dönüştürür.
+2. **İkili Bilişsel Çalışma Alanı Entegrasyonu:** [answerr](https://github.com/pCwOrM/answerr), mikrosaniyelik `werr` reflekslerini bulut LLM (Google Gemini) müzakeresiyle birleştirerek `api.answerr.me:4431` üzerinde üretim REST API'si ve cam efektli çalışma alanı sunar.
+3. **Deterministik Uç Yapay Zeka (Edge AI):** Her iki mimari de devasa gigabaytlık ağırlık matrislerini ortadan kaldırarak; bulut API'lerine veya GPU sunucularına muhtaç kalmaksızın mikrodenetleyiciler ve uç yönlendiriciler üzerinde milisaniye-altı sınıflandırma sağlar.
+4. **Tekrarlanabilirlik ve Açık Bilim:** Eksiksiz replikasyon paketleri, dinamik kalibrasyon filtreleri ve akustik sönümleme modelleri her iki Zenodo arşivi üzerinden dünya bilim camiasının erişimine açıktır.
 
 ---
 

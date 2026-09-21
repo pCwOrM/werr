@@ -8,6 +8,7 @@
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
 [![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Companion Platform: answerr](https://img.shields.io/badge/Companion%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![CI Workflow](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
@@ -30,7 +31,8 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
-| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**WindTunnel: 100%**](https://github.com/nekuda-ai/WindTunnel/issues/25) &bull; [**Jevenator 2: 27.8×**](https://github.com/mmastrac/jevenator2/issues/1) |
+| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
+| 🧠 **Live Dual-Cognition AI (answerr)** | Production Platform & API | Developers & End Users | [**answerr.me**](https://answerr.me) &bull; [**GitHub: pCwOrM/answerr**](https://github.com/pCwOrM/answerr) &bull; [**Live Production REST API**](https://api.answerr.me:4431/v1/health) |
 
 ---
 
@@ -102,19 +104,21 @@ The journal manuscript expands the foundational paradigm to continuous topologic
 
 ---
 
-## 🌐 Companion Applied Research: Universal Fractal Natural Language Decision Map (WERR)
+## 🌐 Companion Applied Ecosystem: WERR (Reflex Engine) & answerr (Dual-Cognition Platform)
 
-Building upon the foundational zero-storage fractal parameter synthesis introduced in this project, our research group has engineered an applied companion architecture for high-throughput natural language edge triage and reflex classification:
+Building upon the foundational zero-storage fractal parameter synthesis introduced in this project, our research team has engineered an applied companion architecture for high-throughput edge triage and dual-cognition software execution:
 
 > **Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains**  
 > *Authors:* Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 > *Zenodo Permanent Concept DOI:* [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867425-024dad.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Submission:* `arXiv:submit/8106948`  
-> *GitHub Repository:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Live Engine:* [answerr.me](https://answerr.me)
+> *Engine Repository:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Live Decision Lab:* [pcworm.github.io/werr](https://pcworm.github.io/werr/)  
+> *Platform & Workspace:* [github.com/pCwOrM/answerr](https://github.com/pCwOrM/answerr) &bull; *Production Portal:* [answerr.me](https://answerr.me)
 
 ### Key Synergies & Cross-Domain Translation
-1. **From Geometric Boundaries to NLP Reflex Triage:** While this foundational work derives synaptic weights from $128 \times 128$ Mandelbrot escape patches for decision boundaries, WERR translates fractal boundary dynamics into ultra-fast, zero-tensor semantic triage (System-1 reflex arcs).
-2. **Deterministic Edge AI Resilience:** Both architectures eliminate persistent multi-gigabyte weight matrices, enabling sub-millisecond execution directly on microcontrollers, edge routers, and resource-constrained nodes without cloud API reliance.
-3. **Reproducibility & Open Science:** Complete replication packages, dynamic calibration filters, and acoustic damping models are openly accessible across both Zenodo repositories.
+1. **From Geometric Boundaries to NLP Reflex Triage:** While this foundational work derives synaptic weights from $128 \times 128$ Mandelbrot escape patches for decision boundaries, [werr](https://github.com/pCwOrM/werr) translates fractal boundary dynamics into ultra-fast, zero-tensor semantic triage (System-1 reflex arcs).
+2. **Dual-Cognition Workspace Integration:** [answerr](https://github.com/pCwOrM/answerr) pairs microsecond `werr` reflexes with cloud LLM (Google Gemini) deliberation, providing a production glassmorphic workspace and REST API at `api.answerr.me:4431`.
+3. **Deterministic Edge AI Resilience:** The ecosystem eliminates persistent multi-gigabyte weight matrices, enabling sub-millisecond execution directly on microcontrollers, edge routers, and resource-constrained nodes without cloud API reliance.
+4. **Reproducibility & Open Science:** Complete replication packages, dynamic calibration filters, and open telemetry benchmarks are openly accessible across our Zenodo archives.
 
 ---
 
