@@ -1,7 +1,7 @@
 # ⚔️ The Zero-VRAM Gauntlet: Official Benchmark Suite & Showdown
 
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
-[![JevBench World Record](https://img.shields.io/badge/JevBench%20Record-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/pCwOrM/werr#benchmarks)
+[![JevBench World Record](https://img.shields.io/badge/JevBench%20Record-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](./snake/)
 [![Tau-Bench Pass](https://img.shields.io/badge/Tau--Bench-10%2F10%20Passed-brightgreen.svg)](https://github.com/pCwOrM/werr)
 [![Jevenator 2 Vision](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](./jevenator2/)
@@ -111,7 +111,7 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 
 ---
 
-### 2. ⚖️ JevBench World Record (Issue #10)
+### 2. ⚖️ JevBench World Record ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
 * **Scope:** RFC-compliant REST wire protocol (`POST /v1/systemone`) validating structured type contracts (`noul`, `choice`, `score`).
 * **Velocity:** **0.40 ms execution latency** (#1 World Record).
 * **Memory:** **0 MB weight files** loaded into memory.
