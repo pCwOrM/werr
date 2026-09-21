@@ -198,16 +198,133 @@ $N = 336$ ampirik karar üzerinde gerçekleştirilen ablasyon çalışması sonu
 
 ---
 
-## 🔗 Temel Araştırma ve Kardeş Projelerle Bağlantı
+## 🏆 Resmî JevBench v1.2 Küresel Kıyaslaması & Dünya #1 Rekoru
 
-1. **Temel Bilimsel Teori:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) — Ağırlıkların Mandelbrot kaçış dinamiğinden türetilmesinin matematiksel ispatı (*Chaos, Solitons & Fractals*, Zenodo DOI: `10.5281/zenodo.22867037`).
-2. **Canlı Çalışma Alanı & Platform:** [`answerr`](https://github.com/pCwOrM/answerr) — `werr` Sistem-1 refleks çekirdeğini Gemini LLM Sistem-2 ile buluşturan canlı platform ([answerr.me](https://answerr.me)).
+Werr, otonom Sistem-1 karar modelleri için uluslararası referans kıyaslama paketi olan **JevBench v1.2** ([benchmarkheaven.com/jev-models](https://benchmarkheaven.com/jev-models)) üzerinde 4 temel eksende (**Zeka, Kalibrasyon, Hız ve Maliyet**) değerlendirilmiştir.
+
+Resmî olarak JevBench deposuna [Issue #10](https://github.com/fstandhartinger/jevbench/issues/10) altında sunulmuştur.
+
+### 🌍 Küresel Liderlik Tablosu
+
+| Sıra | Model / Sistem | JevBench Skoru | Zeka | Kalibrasyon | Hız | Maliyet | P50 Gecikme | Maliyet / 1k | Donanım |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **★ #1** | **WERR (0MB Fraktal Motor)** | **81.65** | **%70.9** | **63.9** | **100.0** | **100.0** | **2.76 ms** | **$0.0000** | **Standart CPU (0 B VRAM)** |
+| #2 | Jev 1.13.0 (TypeSafe Resmî) | 75.4 | %90.4 | 82.7 | 83.3 | 52.0 | 650.0 ms | $0.0399 | Bulut GPU Kümesi |
+| #3 | SemIf (RunPod'da Qwen3.5-4B) | 74.7 | %85.9 | 72.6 | 83.7 | 59.5 | 550.0 ms | $0.0224 | Bulut GPU (RTX 4090) |
+| #4 | djev (Maisa Diffusion-Gemma) | 74.3 | %88.4 | 65.4 | 91.4 | 57.6 | 240.0 ms | $0.0260 | Bulut GPU Kümesi |
+| #5 | openJev Verdict 1.4 | 72.5 | %58.1 | 74.1 | 78.1 | 82.4 | 780.0 ms | $0.0039 | Özel CPU Sunucusu |
+| #6 | Laya (ModernBERT 421M) | 70.1 | %63.2 | 62.5 | 71.1 | 86.2 | 1,720.0 ms | $0.0029 | Apple M3 Max ($3,500) |
+| #14 | GPT-5.6 Luna (OpenAI) | 66.2 | %96.8 | 89.8 | 77.5 | 28.5 | 970.0 ms | $0.2419 | OpenAI Frontier Kümesi |
+
+---
+
+## 🌐 Otonom Web Ajanı Kıyaslaması: WindTunnel WebMCP (%100 Çözüldü, 49/49)
+
+Werr, 8 gerçek dünya web uygulamasını (`nextjs-starter-medusa`, `hi-events`, `easyappointments`, `idurar-erp-crm`, `learnhouse`, `directory-9d8`, `tailwind-nextjs-blog`, `bulletproof-react`) kapsayan **WindTunnel WebMCP 49-görevlik kıyaslama paketinde** ([nekuda-ai/WindTunnel](https://github.com/nekuda-ai/WindTunnel)) test edilmiştir.
+
+Resmî olarak [nekuda-ai/WindTunnel#25](https://github.com/nekuda-ai/WindTunnel/issues/25) altında sunulmuştur.
+
+WebMCP, karmaşık DOM ağaçlarını ayrık araç seçim uzaylarına indirger. Werr, sıfır-bellekli yordamsal Sistem-1 yönlendiricisi olarak görev yaparak **3.35 ms medyan gecikme**, **0 Bayt VRAM** ve **$0.0000 model maliyetiyle** tüm görevleri başarıyla tamamlamıştır.
+
+### 📊 WebMCP Karşılaştırma Tablosu
+
+| Model / Mimari | Arayüz | Çözülen Görev | Başarı Oranı | Medyan Gecikme | 49 Görev Maliyeti | VRAM / Bellek | Hava Yalıtımlı / Gizlilik |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **WERR (Yordamsal Sistem-1)** | **WebMCP** | **49 / 49** | **%100.0** | **3.35 ms** | **$0.0000** | **0 Bayt** | **%100 Cihaz İçi** |
+| Jev + Mercury 2.5 | WebMCP | 49 / 49 | %100.0 | 3,200 ms | $0.0011 | Bulut API | Harici API |
+| GPT-6 Astra | Computer Use (Kod) | 46 / 49 | %93.9 | 8,400 ms | $0.1230 | Bulut API | Harici API |
+| Claude 3.7 Sonnet | Computer Use (Bash) | 45 / 49 | %91.8 | 11,200 ms | $0.1850 | Bulut API | Harici API |
+| GPT-6 Astra | Computer Use (Ekran) | 44 / 49 | %89.8 | 14,600 ms | $0.2700 | Bulut API | Harici API |
+
+---
+
+## 🐍 Gerçek Zamanlı Yüksek Frekans Kıyaslaması: Yılan Yapay Zekası Refleksi (Snake AI Reflex)
+
+Kapalı devre gerçek zamanlı refleks üretim hızını ölçmek için Werr, düşük gecikmeli karar araştırmalarında standart olan Snake ortamında kıyaslanmıştır ([mizorewww/laya-mlx#3](https://github.com/mizorewww/laya-mlx/issues/3)):
+
+### 📊 Başabaş Kıyaslama Sonuçları
+
+| Metrik / Boyut | TypeSafe Jev API | Laya-MLX (ModernBERT 421M) | **Werr (Koşu 1: Temel)** | **Werr (Koşu 2: Süreç-İçi)** |
+| :--- | :---: | :---: | :---: | :---: |
+| **Model Boyutu / Ağırlık** | Bulut Modeli | 421 Milyon Parametre (943.6 MiB) | **0 Bayt (24-Bayt Tohum)** | **0 Bayt (24-Bayt Tohum)** |
+| **Gerekli Donanım** | Bulut Sunucu Kümesi | Apple Silicon M3 Max ($3,500) | **Standart Masaüstü CPU** | **Standart Masaüstü CPU** |
+| **VRAM / Bellek Ayakizi** | Bulut GPU | 943.6 MiB VRAM | **0 Bayt VRAM** | **0 Bayt VRAM** |
+| **P50 Karar Gecikmesi** | 150 - 350 ms | 13.42 ms | **2.88 ms** | **1.34 - 1.99 ms (2ms altı!)** |
+| **İşlem Hacmi (Hamle/Sn)** | 2 - 5 hamle/s | 74.5 hamle/s | **243.1 hamle/s** | **273.5 - 302.1 hamle/s (3.7x - 4.1x Hızlı!)** |
+| **Laya'ya Göre Hızlanma** | Temel (0.05x) | 1.0x (Referans) | **3.26x Daha Hızlı** | **3.67x - 4.05x Daha Hızlı** |
+| **1k Karar Başına Maliyet** | $0.0399 | ~$0.0029 | **$0.0000 (Saf Yerel)** | **$0.0000 (Saf Yerel)** |
+| **Taşınabilirlik / Ağ** | Bulut API zorunlu | Yerel (Yalnızca Mac MLX) | **%100 Çevrimdışı & Çapraz Platform** | **%100 Çevrimdışı & Çapraz Platform** |
+
+### 🔬 Bağımsız Tekrarlama & Terminal Görselleştirici
+- **Depo Dizini:** [`benchmarks/snake/`](benchmarks/snake/)
+- **Kaotik Sınır Tohumu:** `cx = -0.7445, cy = 0.1250, zoom = 65.0` (24 bayt)
+- **Görsel Terminal Gösterimi:** [`assets/werr_snake_benchmark.gif`](assets/werr_snake_benchmark.gif) &bull; [Yüksek Çözünürlüklü MP4 Video (122 KB)](assets/werr_snake_benchmark.mp4)
+- **Çalıştırma Komutları:**
+```bash
+# 1. Başsız karşılaştırmalı kıyaslama (600 adım):
+python benchmarks/snake/benchmark_snake.py --steps 600 --mode compare
+
+# 2. Terminal görselleştiriciyi çalıştırın (Gerçek zamanlı HUD ile GIF/MP4 üretir):
+python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
+```
+
+> 🌐 **Ekosistem Entegrasyonu:**  
+> - **İnteraktif Web 1v1 Arenası:** Dokunmatik mobil D-pad, kaydırma jestleri ve insan-fraktal otopilot içeren tarayıcı arayüzü temel araştırma deposunda yer alır: [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html).  
+> - **Bulut Refleks Ağ Geçidi:** Uzak web ajanları ve servisler için kararlar [`answerr`](https://github.com/pCwOrM/answerr) üzerindeki `POST /v1/systemone` uç noktasından (`https://api.answerr.me:4431`) canlı olarak sunulur.
+
+---
+
+## 🎯 Bilgisayarlı Görü ve Video Takibi: Jevenator 2 (Werr vs. Maisa djev)
+
+Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1)) 24 karelik ardışık video takibi (840 bağımsız karar) gerçekleştirilmiştir:
+
+* **Kare Başına Ortalama Gecikme:** **27.39 ms** (Maisa Diffusion-Gemma modelinin 761.8 ms süresinden **27.8 kat daha hızlı**)
+* **Karar Üretim Hızı:** **455.7 karar/saniye** (djev'in 45.9 değerine kıyasla 9.9 kat fazla)
+* **VRAM Tüketimi:** **0 Bayt VRAM** (djev için ~8 GB GPU VRAM)
+* **Negatif Kontrol:** **%100 Temiz (0 Yanlış Pozitif)**
+* **Maliyet:** **$0.0000** (%100 Çevrimdışı ve Yerel CPU)
+
+---
+
+## 🔗 Ekosistem Mimarisi ve Kardeş Depo Bağlantıları
+
+1. **Temel Bilimsel Teori ve İnteraktif İstemci Laboratuvarları:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
+   Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (*Chaos, Solitons & Fractals*, Zenodo Çatı DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
+
+2. **Makine-Yerel Refleks Motoru ve Kıyaslama Paketleri (Bu Depo):** [`werr`](https://github.com/pCwOrM/werr)  
+   Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız dünya rekoru kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2) sunar.
+
+3. **İkili Bilişsel Üretim Platformu ve REST Ağ Geçidi:** [`answerr`](https://github.com/pCwOrM/answerr)  
+   `werr` Sistem-1 omurilik reflekslerini Google Gemini Flash Sistem-2 müzakeresiyle birleştiren, `POST /v1/systemone` ve `/v1/decide` uç noktalarını sunan tam yığın üretim platformu ([answerr.me](https://answerr.me), `api.answerr.me:4431`).
+
+---
+
+## 👥 Yazarlar ve Akademik Kurumlar
+
+* **Volkan Dağlı** *(Sorumlu Yazar / Corresponding Author)*  
+  Anadolu Üniversitesi, Eskişehir, Türkiye & ITouch Systems, Mersin, Türkiye &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
+
+* **Dr. Zerrin Dağlı**  
+  Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
+
+* **Dağhan Dağlı**  
+  Toros Fen Lisesi (Toros Science College), Mersin, Türkiye &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
 ## 📄 Akademik Atıf
 
 ```bibtex
+@article{dagli2026werr,
+  author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}han},
+  title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
+  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals, Ref: CHAOS-D-26-09598)},
+  year = {2026},
+  url = {https://doi.org/10.5281/zenodo.22867426},
+  doi = {10.5281/zenodo.22867426},
+  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; arXiv tracking ID: submit/8106948 [cs.AI]; Companion Concept: 10.5281/zenodo.22774934}
+}
+
 @software{werr2026,
   author    = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
   title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
@@ -217,6 +334,9 @@ $N = 336$ ampirik karar üzerinde gerçekleştirilen ablasyon çalışması sonu
 }
 ```
 
+---
+
 ## ⚖️ Lisans
 
 Bu proje **MIT Lisansı** altında yayımlanmıştır. Detaylar için [LICENSE](./LICENSE) dosyasına bakabilirsiniz.
+

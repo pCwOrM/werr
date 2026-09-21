@@ -400,13 +400,22 @@ Werr was evaluated across two execution regimes:
 | **Portability / Network** | Cloud API required | Local (Mac MLX only) | **100% Offline & Cross-Platform** | **100% Offline & Cross-Platform** |
 
 ### 🔬 Open-Source Reproduction & Exact Boundary Seed
-The standalone harness and game loop are tracked directly in the repository:
+The standalone harness, terminal visualizer, and game loop are tracked directly in the repository:
 - **Repository Directory:** [`benchmarks/snake/`](benchmarks/snake/)
 - **Chaotic Boundary Seed:** `cx = -0.7445, cy = 0.1250, zoom = 65.0` (24 bytes)
+- **Visual Terminal Showcase:** [`assets/werr_snake_benchmark.gif`](assets/werr_snake_benchmark.gif) &bull; [High-Res MP4 Video (122 KB)](assets/werr_snake_benchmark.mp4)
 - **Single-Command Reproduction:**
 ```bash
+# 1. Run comparative headless benchmark (600 steps):
 python benchmarks/snake/benchmark_snake.py --steps 600 --mode compare
+
+# 2. Render terminal visualizer (exports GIF/MP4 with real-time HUD):
+python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
 ```
+
+> 🌐 **Cross-Repository Ecosystem Integration:**  
+> - **Interactive Browser 1v1 Arena:** Explore the web GUI with mobile touch D-pad, swipe gestures, and human-vs-fractal autopilot in [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html).  
+> - **Cloud Reflex Gateway:** Stream decisions to remote agents via [`answerr`](https://github.com/pCwOrM/answerr) over `POST /v1/systemone` at `https://api.answerr.me:4431`.
 
 ---
 
@@ -564,11 +573,14 @@ werr             # Interactive terminal simulator
 
 ## 🔗 Ecosystem Architecture & Connections
 
-1. **Foundational Scientific Theory:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
-   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (*Chaos, Solitons & Fractals*, Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)).
+1. **Foundational Scientific Theory & Interactive Client Labs:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
+   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (*Chaos, Solitons & Fractals*, Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
 
-2. **Dual-Cognition Production Workspace:** [`answerr`](https://github.com/pCwOrM/answerr)  
-   The fullstack conversational platform and high-throughput production API ([answerr.me](https://answerr.me)) that pairs `werr` System-1 spinal reflexes with Google Gemini Flash System-2 deliberation.
+2. **Machine-Native Reflex Engine & Benchmarks (This Repository):** [`werr`](https://github.com/pCwOrM/werr)  
+   The in-process System-1 reflex kernel running on standard CPU with 0 Bytes VRAM, providing terminal benchmark visualizers (`benchmarks/snake/visualize_snake.py`) and verified world-record benchmark suites (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2).
+
+3. **Dual-Cognition Production Workspace & REST Gateway:** [`answerr`](https://github.com/pCwOrM/answerr)  
+   The fullstack conversational platform and high-throughput production API ([answerr.me](https://answerr.me), `api.answerr.me:4431`) that pairs `werr` System-1 spinal reflexes with Google Gemini Flash System-2 deliberation, exposing the live `POST /v1/systemone` wire endpoint.
 
 ---
 
