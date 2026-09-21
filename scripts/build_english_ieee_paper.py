@@ -658,7 +658,7 @@ html_content = f"""<!DOCTYPE html>
     <strong>Open Science Repository & Preprint Verification:</strong><br>
     Source code & replication archive: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a><br>
     Interactive Laboratories & Project Portal: <a href="https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/" style="color: #004499; text-decoration: none;">https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/</a><br>
-    Deposit Package: Zenodo Concept DOI: 10.5281/zenodo.22774934 &bull; Release v3.0: 10.5281/zenodo.22867037 &bull; CC-BY-4.0 International License &bull; Anadolu University, ITouch Systems & Mersin University.
+    Deposit Package: Zenodo Concept DOI: <a href="https://doi.org/10.5281/zenodo.22774934" style="color: #004499; text-decoration: none;">10.5281/zenodo.22774934</a> &bull; CC-BY-4.0 International License &bull; Anadolu University, ITouch Systems & Mersin University.
   </div>
 
 </div>
@@ -711,7 +711,8 @@ shutil.copy2(pdf_docs_path, pdf_artifact_path)
 
 desktop_dirs = [
     r"C:\Users\maat\Desktop\ZENODO_V2_YUKLENECEKLER",
-    r"C:\Users\maat\Desktop\ZENODO_GUNCEL_DOSYALAR"
+    r"C:\Users\maat\Desktop\ZENODO_GUNCEL_DOSYALAR",
+    r"C:\Users\maat\Desktop\ZENODO_V3_YUKLEME_PAKETI"
 ]
 for d in desktop_dirs:
     if os.path.exists(d):
