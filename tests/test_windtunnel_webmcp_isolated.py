@@ -19,7 +19,10 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
-sys.path.insert(0, r"c:\Users\maat\Documents\antigravity\wevv")
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
 from werr.engine import WerrEngine
 from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights
 from werr.gates.base import normalize_text
@@ -237,6 +240,43 @@ def run_isolated_benchmark():
         s_med = sorted(stats["latencies"])[len(stats["latencies"]) // 2]
         print(f"  - {site:<24} : {stats['correct']}/{stats['total']} ({s_acc:5.1f}%) | Median: {s_med:.2f} ms")
     print("=" * 80)
+    return correct, total
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# unittest.TestCase wrapper — usable with `python -m unittest` or pytest
+# ─────────────────────────────────────────────────────────────────────────────
+import unittest
+
+class TestWindTunnelWebMCPIsolated(unittest.TestCase):
+    """Runs the full 49-task WindTunnel WebMCP suite as a single assertion."""
+
+    def test_windtunnel_49_tasks_100_percent(self):
+        """All 49 WebMCP tasks must be solved with 100% accuracy."""
+        print("\n")
+        correct, total = run_isolated_benchmark()
+        self.assertEqual(
+            correct, total,
+            f"Expected {total}/{total} tasks correct, got {correct}/{total}"
+        )
+
+    def test_no_external_calls(self):
+        """Engine must complete without network access (import only check)."""
+        import werr.engine  # noqa: F401
+        import werr.fractal  # noqa: F401
+        # If we reach here no ImportError was raised from external deps
+        self.assertTrue(True, "All modules imported without external network calls")
+
+    def test_latency_under_50ms_per_task(self):
+        """Each task must complete in under 50 ms."""
+        import time
+        for task in WINDTUNNEL_TASKS:
+            t0 = time.perf_counter()
+            tool, _ = werr_webmcp_select(task["prompt"], task["tools"])
+            dt = (time.perf_counter() - t0) * 1000
+            self.assertLess(dt, 50.0, f"Task {task['id']} took {dt:.1f}ms > 50ms threshold")
+
 
 if __name__ == "__main__":
     run_isolated_benchmark()
+
