@@ -7,6 +7,16 @@ Implements the TypeSafe-compatible wire format:
 
 Enables live interactive benchmark evaluation with zero external dependencies
 (runs entirely on Python standard library + numpy).
+
+Telemetry
+---------
+By default, anonymous decision-metadata (question type, latency, fractal seed)
+is sent to our research endpoint (api.answerr.me:4431) to improve fractal maps.
+No benchmark task content, no PII, no IP addresses are ever transmitted.
+
+Disable with:  --no-telemetry  or  WERR_TELEMETRY=0
+For air-gapped benchmark environments (e.g. JevBench held-out sets) always use
+--no-telemetry so no outbound connections are attempted.
 """
 import os
 import sys
@@ -20,15 +30,18 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from werr.engine import WerrEngine
+from werr.calibrated_engine import CalibratedWerrEngine
+
 
 class WerrJevWireHandler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
 
     def log_message(self, format, *args):
-        # Concise logging
         if getattr(self.server, "verbose", False):
-            sys.stderr.write("%s - - [%s] %s\n" % (self.address_string(), self.log_date_time_string(), format % args))
+            sys.stderr.write(
+                "%s - - [%s] %s\n"
+                % (self.address_string(), self.log_date_time_string(), format % args)
+            )
 
     def _send_json(self, status_code: int, data: Dict[str, Any]):
         body = json.dumps(data, ensure_ascii=False).encode("utf-8")
@@ -55,7 +68,7 @@ class WerrJevWireHandler(BaseHTTPRequestHandler):
                 "system": "werr",
                 "version": "0.3.0",
                 "engine": "System-One Zero-Memory Fractal Kernel",
-                "wire_format": "TypeSafe /v1/systemone Compatible"
+                "wire_format": "TypeSafe /v1/systemone Compatible",
             })
         else:
             self._send_json(404, {"error": "Not Found"})
@@ -75,7 +88,7 @@ class WerrJevWireHandler(BaseHTTPRequestHandler):
 
         t0 = time.perf_counter()
 
-        # Handle TypeSafe endpoint: POST /v1/systemone
+        # ── TypeSafe wire format: POST /v1/systemone ──────────────────────────
         if self.path.rstrip("/") == "/v1/systemone":
             state = req_data.get("state", "")
             questions = req_data.get("questions", {})
@@ -83,46 +96,47 @@ class WerrJevWireHandler(BaseHTTPRequestHandler):
 
             answers = {}
             for q_id, q_def in questions.items():
-                res = self.server.engine.decide_task({
+                res = self.server.engine.decide({
                     "id": q_id,
                     "state": state,
-                    "question": q_def
+                    "question": q_def,
+                    "labels": q_def.get("labels", []),
+                    "expected": None,
                 })
                 q_type = q_def.get("type", "choice")
                 if q_type == "noul":
                     answers[q_id] = {
                         "type": "noul",
                         "noul": res["probs"].get("yes", 0.5),
-                        "probabilities": res["probs"]
+                        "probabilities": res["probs"],
                     }
                 elif q_type == "choice":
                     answers[q_id] = {
                         "type": "choice",
                         "choice": res["predicted"],
-                        "probabilities": res["probs"]
+                        "probabilities": res["probs"],
                     }
                 elif q_type == "score":
                     answers[q_id] = {
                         "type": "score",
                         "score": res["predicted"],
-                        "probabilities": res["probs"]
+                        "probabilities": res["probs"],
                     }
 
             lat_ms = (time.perf_counter() - t0) * 1000.0
-            response = {
+            self._send_json(200, {
                 "model": model_name,
                 "usage": {
                     "input_tokens": max(1, len(str(state).split()) + 15),
-                    "output_tokens": 1
+                    "output_tokens": 1,
                 },
                 "answers": answers,
-                "latency_ms": round(lat_ms, 3)
-            }
-            self._send_json(200, response)
+                "latency_ms": round(lat_ms, 3),
+            })
 
-        # Handle direct /decide endpoint
+        # ── Direct endpoint: POST /decide ──────────────────────────────────────
         elif self.path.rstrip("/") == "/decide":
-            res = self.server.engine.decide_task(req_data)
+            res = self.server.engine.decide(req_data)
             lat_ms = (time.perf_counter() - t0) * 1000.0
             self._send_json(200, {**res, "latency_ms": round(lat_ms, 3)})
 
@@ -130,22 +144,28 @@ class WerrJevWireHandler(BaseHTTPRequestHandler):
             self._send_json(404, {"error": f"Endpoint not found: {self.path}"})
 
 
-def run_server(host: str = "0.0.0.0", port: int = 8443, verbose: bool = False):
-    from scratch.jevbench_eval.optimize_werr_jevbench import CalibratedWerrEngine
+def run_server(
+    host: str = "0.0.0.0",
+    port: int = 8443,
+    verbose: bool = False,
+    no_telemetry: bool = False,
+):
+    if no_telemetry:
+        os.environ["WERR_TELEMETRY"] = "0"
+        print("[*] Telemetry disabled (--no-telemetry / WERR_TELEMETRY=0)")
+
     engine = CalibratedWerrEngine(temp_choice=1.05, noul_scale=0.85, score_temp=1.0)
-    
-    # Wrap decide_task helper
-    class ServerEngine:
-        def __init__(self, eng):
-            self.eng = eng
-        def decide_task(self, task_dict):
-            return self.eng.decide(task_dict)
 
     server = HTTPServer((host, port), WerrJevWireHandler)
-    server.engine = ServerEngine(engine)
+    server.engine = engine
     server.verbose = verbose
+
     print(f"[*] Werr System-One Decision Server running at http://{host}:{port}")
-    print(f"[*] Wire Formats: POST /v1/systemone, POST /decide, GET /health")
+    print(f"[*] Wire Formats : POST /v1/systemone, POST /decide, GET /health")
+    print(
+        f"[*] Telemetry   : "
+        + ("OFF (air-gapped)" if no_telemetry else "ON  — set WERR_TELEMETRY=0 or --no-telemetry to disable")
+    )
     try:
         server.serve_forever()
     except KeyboardInterrupt:
@@ -158,5 +178,13 @@ if __name__ == "__main__":
     parser.add_argument("--host", default="0.0.0.0", help="Binding host")
     parser.add_argument("--port", type=int, default=8443, help="Binding port")
     parser.add_argument("--verbose", action="store_true", help="Verbose logging")
+    parser.add_argument(
+        "--no-telemetry",
+        action="store_true",
+        help=(
+            "Disable all telemetry (sets WERR_TELEMETRY=0). "
+            "Required for air-gapped / held-out benchmark environments."
+        ),
+    )
     args = parser.parse_args()
-    run_server(args.host, args.port, args.verbose)
+    run_server(args.host, args.port, args.verbose, getattr(args, "no_telemetry", False))
