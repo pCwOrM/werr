@@ -9,7 +9,7 @@
 [![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
 [![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
-[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/pCwOrM/werr/tree/main/benchmarks/jevenator2)
+[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -29,7 +29,7 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
-| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**WindTunnel: 100%**](https://github.com/nekuda-ai/WindTunnel/issues/25) &bull; [**Jevenator 2: 27.8×**](https://github.com/pCwOrM/werr/tree/main/benchmarks/jevenator2) |
+| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**WindTunnel: 100%**](https://github.com/nekuda-ai/WindTunnel/issues/25) &bull; [**Jevenator 2: 27.8×**](https://github.com/mmastrac/jevenator2/issues/1) |
 
 ---
 
