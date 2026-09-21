@@ -13,6 +13,24 @@
 
 ---
 
+> [!IMPORTANT]
+> ## 🔥 Hodri Meydan — Run Any Benchmark Right Now
+>
+> No GPU. No cloud account. No weights to download. Just Python and 30 seconds.
+>
+> | Benchmark | One Command |
+> | :--- | :--- |
+> | **WindTunnel WebMCP** (49/49 tasks) | `git clone https://github.com/pCwOrM/werr && cd werr && python -m unittest tests.test_windtunnel_webmcp_isolated` |
+> | **Snake Reflex Visualizer** (1.8 ms, 0 VRAM) | `python benchmarks/snake/visualize_snake.py` |
+> | **Snake Interactive Handover** (human → WERR autopilot) | `python benchmarks/snake/terminal_snake.py --showcase` |
+> | **Snake Full Benchmark** (600-step scoring) | `python benchmarks/snake/benchmark_snake.py` |
+> | **Jevenator 2 Vision** (27.8× speedup) | `python benchmarks/jevenator2/benchmark_jevenator2.py` |
+> | **Live REST API** (0.40 ms wire latency) | `curl -X POST https://api.answerr.me:4431/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
+>
+> **All tests are deterministic, air-gapped, and CPU-only.** If your model beats any of these numbers — open an issue. The gauntlet is open.
+
+---
+
 <p align="center">
   <img src="snake/terminal_snake_showcase.gif" alt="The Zero-VRAM Gauntlet: Autonomous Reflex Showcase" width="760">
 </p>

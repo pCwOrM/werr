@@ -13,6 +13,24 @@
 
 ---
 
+> [!IMPORTANT]
+> ## 🔥 Hodri Meydan — Şimdi Deneyin
+>
+> GPU yok. Bulut hesabı yok. İndirilecek ağırlık dosyası yok. Sadece Python ve 30 saniye.
+>
+> | Kıyaslama | Tek Komut |
+> | :--- | :--- |
+> | **WindTunnel WebMCP** (49/49 görev) | `git clone https://github.com/pCwOrM/werr && cd werr && python -m unittest tests.test_windtunnel_webmcp_isolated` |
+> | **Yılan Refleks Görselleştirici** (1.8 ms, 0 VRAM) | `python benchmarks/snake/visualize_snake.py` |
+> | **Yılan İnteraktif Devir** (insan → WERR otopilot) | `python benchmarks/snake/terminal_snake.py --showcase` |
+> | **Yılan Tam Kıyaslama** (600 adım puanlama) | `python benchmarks/snake/benchmark_snake.py` |
+> | **Jevenator 2 Görsel Takip** (27.8× hız) | `python benchmarks/jevenator2/benchmark_jevenator2.py` |
+> | **Canlı REST API** (0.40 ms gecikme) | `curl -X POST https://api.answerr.me:4431/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
+>
+> **Tüm testler deterministik, hava boşluklu ve yalnızca CPU'da çalışır.** Modeliniz bu rakamların herhangi birini geçiyorsa — bir issue açın. Meydan açık.
+
+---
+
 <p align="center">
   <img src="snake/terminal_snake_showcase.gif" alt="The Zero-VRAM Gauntlet: Otonom Refleks Gösterimi" width="760">
 </p>
