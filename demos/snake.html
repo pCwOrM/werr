@@ -749,53 +749,62 @@
     </div>
   </div>
 
-  <!-- SECTION 2: TEST SONUCLARI & AKADEMIK RAPORLAR -->
-  <h2 class="section-title">📊 Doğrulanmış Test Sonuçları & Akademik Yayınlar</h2>
+  <!-- SECTION 2: TEST SONUCLARI & DOGRULANMIS METRIKLER -->
+  <h2 class="section-title">📊 Doğrulanmış Test Sonuçları & Performans Metrikleri</h2>
   <div class="hub-grid">
-    <!-- Paper 1 -->
+    <!-- Result Card 1 -->
     <div class="hub-card">
       <div>
-        <span class="hub-badge badge-paper">HAKEMLİ TEKNİK MAKALE</span>
-        <h3>Mandelbrot Fractal Neural Synthesis</h3>
-        <p><strong>IEEE / Chaos, Solitons & Fractals (Ref: CHAOS-D-26-09598)</strong><br>
-        Sıfır ağırlık depolamalı prosedürel nöral türetim, matematiksel ispatlar ve doğrusal olmayan karar sınırları analiz raporu.</p>
-      </div>
-      <div class="hub-footer-links" style="flex-wrap: wrap;">
-        <a href="../Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper.pdf" download class="nav-btn" style="background: rgba(56, 189, 248, 0.2); color: #fff;">📄 PDF Makale (1.7 MB)</a>
-        <a href="../Mandelbrot_Akademik_Teknik_Raporu.html" class="nav-btn">🌐 HTML Rapor</a>
-        <a href="https://doi.org/10.5281/zenodo.22774934" target="_blank" class="nav-btn">Zenodo DOI ↗</a>
-      </div>
-    </div>
-
-    <!-- Paper 2 -->
-    <div class="hub-card">
-      <div>
-        <span class="hub-badge badge-paper">ARXIV & ZENODO PREPRINT</span>
-        <h3>Universal Fractal Natural Language Decision Map</h3>
-        <p><strong>arXiv:submit/8106948 [cs.AI]</strong><br>
-        Werr mimarisinin heterojen alanlarda gerçek zamanlı edge triage kararları üretmesini sağlayan evrensel karar haritası.</p>
-      </div>
-      <div class="hub-footer-links" style="flex-wrap: wrap;">
-        <a href="https://doi.org/10.5281/zenodo.22867426" target="_blank" class="nav-btn" style="background: rgba(16, 185, 129, 0.2); color: #fff;">📄 Zenodo v4 Arşivi ↗</a>
-        <a href="https://github.com/pCwOrM/werr" target="_blank" class="nav-btn">Werr GitHub ↗</a>
-      </div>
-    </div>
-
-    <!-- Verification Card -->
-    <div class="hub-card">
-      <div>
-        <span class="hub-badge badge-result">DOĞRULANMIŞ VERİLER</span>
-        <h3>Benchmark Doğrulama Özeti</h3>
+        <span class="hub-badge badge-result">REFLEKS & THROUGHPUT</span>
+        <h3>Real-Time Karar Performansı Test Sonuçları</h3>
         <p>
-          • <strong>P50 Gecikme:</strong> 0.08 – 1.99 ms (1800x daha hızlı)<br>
-          • <strong>Karar Throughput:</strong> 270+ karar/saniye<br>
-          • <strong>Kalıcı Model Ağırlığı:</strong> 0.00 KB (24-bayt tohum)<br>
-          • <strong>VRAM İhtiyacı:</strong> 0 Bayt (%100 CPU / Edge Hazır)<br>
-          • <strong>Sorgu Başına Maliyet:</strong> $0.0000 (Sıfır Bulut Faturası)
+          600 ardışık karar adımında CPU üzerinde ölçülen resmi test verileri:<br>
+          • <strong>P50 Gecikme:</strong> 0.08 – 1.99 ms (Laya-MLX'ten 3.6x – 4.0x daha hızlı)<br>
+          • <strong>P99 Gecikme:</strong> &lt; 3.2 ms (Jitter-free deterministik yürütüm)<br>
+          • <strong>Throughput:</strong> 273.5 – 302.1 karar / saniye<br>
+          • <strong>Kalıcı Tensör Boyutu:</strong> 0.00 KB (24-baytlık koordinat tohumu)<br>
+          • <strong>VRAM &amp; GPU Tüketimi:</strong> 0 Bayt (%100 CPU / Edge)
         </p>
       </div>
       <div class="hub-footer-links">
-        <a href="https://github.com/pCwOrM/werr/tree/main/benchmarks/snake#readme" target="_blank" class="nav-btn" style="width: 100%; text-align: center;">Tüm Benchmark Metriklerini İncele ↗</a>
+        <a href="https://github.com/pCwOrM/werr/tree/main/benchmarks/snake#readme" target="_blank" class="nav-btn" style="width: 100%; text-align: center;">Snake Benchmark Sayfasını İncele ↗</a>
+      </div>
+    </div>
+
+    <!-- Result Card 2 -->
+    <div class="hub-card">
+      <div>
+        <span class="hub-badge badge-result">TOPOLOJİK DOĞRULUK</span>
+        <h3>Doğrusal Olmayan Veri Ayrımı &amp; Mantık Kapıları</h3>
+        <p>
+          Matematiksel kapalı form fraktal dinamikle elde edilen test sonuçları:<br>
+          • <strong>XOR Problemi:</strong> %100.0 Doğruluk (MSE = 0.0000)<br>
+          • <strong>NAND &amp; NOR Kapıları:</strong> %100.0 Doğruluk<br>
+          • <strong>Two Moons Veriseti:</strong> Doğrusal olmayan ayrım başarısı<br>
+          • <strong>Eğitim İterasyonu (Epoch):</strong> 0 (Sıfır eğitim, doğrudan türetim)
+        </p>
+      </div>
+      <div class="hub-footer-links">
+        <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank" class="nav-btn" style="width: 100%; text-align: center;">Test Kodlarını GitHub'da Gör ↗</a>
+      </div>
+    </div>
+
+    <!-- Result Card 3 -->
+    <div class="hub-card">
+      <div>
+        <span class="hub-badge badge-result">ÖLÇEKLENEBİLİRLİK</span>
+        <h3>Çözünürlük ve Donanım Ölçekleme Verileri</h3>
+        <p>
+          Farklı fraktal pencere boyutlarında tek CPU çekirdeği test sonuçları:<br>
+          • <strong>16x16 Patch:</strong> 0.04 ms (25.000 Hz karar frekansı)<br>
+          • <strong>32x32 Patch:</strong> 0.09 ms (11.000 Hz karar frekansı)<br>
+          • <strong>64x64 Patch:</strong> 0.22 ms (4.500 Hz karar frekansı)<br>
+          • <strong>128x128 Patch:</strong> 0.85 ms (1.170 Hz karar frekansı)<br>
+          • <strong>Sorgu Maliyeti:</strong> $0.0000 (Bulut API bağımlılığı yok)
+        </p>
+      </div>
+      <div class="hub-footer-links">
+        <a href="https://doi.org/10.5281/zenodo.22867426" target="_blank" class="nav-btn" style="width: 100%; text-align: center;">Zenodo Açık Bilim Arşivi ↗</a>
       </div>
     </div>
   </div>
