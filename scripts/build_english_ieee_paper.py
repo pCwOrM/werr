@@ -302,7 +302,7 @@ html_content = f"""<!DOCTYPE html>
     <span class="author-affil"><sup>1</sup>Anadolu University, Eskişehir, Turkey &bull; <sup>2</sup>ITouch Systems, Mersin, Turkey &bull; ORCID: 0009-0000-1587-8703</span><br>
     <span class="author-affil"><sup>3</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6425</span> &nbsp;&bull;&nbsp;
     <span class="author-affil"><sup>4</sup>Toros Science College, Mersin, Turkey &bull; ORCID: 0009-0003-2492-8313 &bull; GitHub: <em>@Lexovian</em></span><br>
-    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Corresponding Author. Under review in <em>Chaos, Solitons &amp; Fractals</em> (Ref: CHAOS-D-26-09598). Correspondence: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
+    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Corresponding Author. Under review in <em>Chaos, Solitons &amp; Fractals</em> (Elsevier Q1). Correspondence: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; September 2026</span>
   </div>
 
   <div class="abstract-container">

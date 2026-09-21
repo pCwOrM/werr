@@ -93,7 +93,7 @@ Synaptic Weights (w1, w2, w3) + Bias (b)  ──► Non-Linear Decision Contours
 
 ## 🏛️ Advanced Research Extension (Target Journal)
 
-> **Status:** Submitted and under peer review in **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Impact Factor: 5.3, CiteScore: 9.8)** [Ref: CHAOS-D-26-09598].
+> **Status:** Submitted and under peer review in an international **Elsevier Q1 journal** (_Chaos, Solitons & Fractals_, Impact Factor: 5.3, CiteScore: 9.8).
 
 The journal manuscript expands the foundational paradigm to continuous topological manifolds and rigorous comparative baselines:
 
@@ -211,7 +211,7 @@ If you utilize this research, procedural weight generation methodology, or inter
 @article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={Under review in Chaos, Solitons \& Fractals (Ref: CHAOS-D-26-09598); arXiv:submit/8092292 [cs.NE]},
+  journal={Under review in Chaos, Solitons \& Fractals; arXiv:submit/8092292 [cs.NE]},
   year={2026},
   doi={10.5281/zenodo.22774934},
   url={https://doi.org/10.5281/zenodo.22774934},

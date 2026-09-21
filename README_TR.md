@@ -94,7 +94,7 @@ Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüze
 
 ## 🏛️ İleri Araştırma Ufku (Hedef Dergi)
 
-> **Yayın Durumu:** Saygın **_Chaos, Solitons & Fractals_ (Elsevier, Q1, Etki Faktörü: 5.3, CiteScore: 9.8)** dergisine resmi başvurusu yapılmış olup hakem ve editör değerlendirme sürecindedir [Takip Ref: CHAOS-D-26-09598].
+> **Yayın Durumu:** Uluslararası saygın bir **Elsevier Q1 dergisine** (_Chaos, Solitons & Fractals_, Etki Faktörü: 5.3, CiteScore: 9.8) resmi başvurusu yapılmış olup hakem değerlendirme sürecindedir.
 
 Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir ağlarıyla (MLP) kıyaslamaya genişletmektedir:
 
@@ -212,7 +212,7 @@ Bu araştırmayı, prosedürel ağırlık üretim yöntemini veya interaktif lab
 @article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal={Chaos, Solitons \& Fractals (Hakem Sürecinde - Ref: CHAOS-D-26-09598); arXiv:submit/8092292 [cs.NE]},
+  journal={Chaos, Solitons \& Fractals (Hakem Sürecinde); arXiv:submit/8092292 [cs.NE]},
   year={2026},
   doi={10.5281/zenodo.22774934},
   url={https://doi.org/10.5281/zenodo.22774934},
