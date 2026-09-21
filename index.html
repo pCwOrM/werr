@@ -1782,6 +1782,18 @@
         </div>
       </div>
 
+      <!-- Hodri Meydan — Local Replication Banner -->
+      <div style="background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.35); border-radius: 8px; padding: 0.9rem 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <div style="font-size: 0.72rem; color: var(--emerald); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem;" id="arena-hodri-label">⚔️ Hodri Meydan — Reproduce Locally</div>
+          <code style="font-size: 0.82rem; color: var(--text-main); background: transparent;">git clone https://github.com/pCwOrM/werr &amp;&amp; cd werr &amp;&amp; python -m unittest tests.test_windtunnel_webmcp_isolated</code>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/pCwOrM/werr/tree/main/benchmarks" target="_blank" class="btn btn-secondary" style="padding: 0.35rem 0.9rem; font-size: 0.8rem; border-color: rgba(16,185,129,0.5); color: var(--emerald); font-weight: 700; text-decoration: none; white-space: nowrap;" id="arena-github-btn">📋 All Benchmarks on GitHub ↗</a>
+          <a href="../benchmarks.html" target="_blank" class="btn btn-secondary" style="padding: 0.35rem 0.9rem; font-size: 0.8rem; border-color: rgba(56,189,248,0.4); color: var(--cyan); font-weight: 700; text-decoration: none; white-space: nowrap;" id="arena-web-btn">🌐 Interactive Web Gauntlet ↗</a>
+        </div>
+      </div>
+
       <!-- Benchmark Selection Tabs -->
       <div class="bench-tabs-container">
         <button class="lang-btn active" id="btn-bench-windtunnel" onclick="switchBenchTab('windtunnel')">
@@ -2427,6 +2439,10 @@ if __name__ == "__main__":
       navCode: "Quickstart",
       navGauntlet: "⚔️ The Gauntlet",
       btnArenaGauntlet: "The Gauntlet (Master Wall)",
+      arenaHodriLabel: "⚔️ Hodri Meydan — Reproduce Locally",
+      arenaGithubBtn: "📋 All Benchmarks on GitHub ↗",
+      arenaWebBtn: "🌐 Interactive Web Gauntlet ↗",
+
       heroBadge: "v0.3.0 • Open Source • Zero-Memory Decision Engine",
       heroMotto: 'When the Wave meets <span class="highlight">Error (err)</span>, we <span class="highlight">Recurse (werr)</span>.',
       heroSubtitle: 'Jev decisions come from 4B-parameter tensors; <strong>werr</strong> decisions come from infinite geometric waves, Euler thresholds, and recursive quadrant subdivision with <strong>0 Bytes memory</strong>.',
@@ -2610,6 +2626,10 @@ if __name__ == "__main__":
       navCode: "Hızlı Başlangıç",
       navGauntlet: "⚔️ Kıyaslama Duvarı",
       btnArenaGauntlet: "Kıyaslama Duvarı (The Gauntlet)",
+      arenaHodriLabel: "⚔️ Hodri Meydan — Yerel Olarak Deneyin",
+      arenaGithubBtn: "📋 Tüm Kıyaslamalar GitHub'da ↗",
+      arenaWebBtn: "🌐 İnteraktif Web Gauntlet ↗",
+
       heroBadge: "v0.3.0 • Açık Kaynak • Sıfır-Bellekli Karar Motoru",
       heroMotto: 'Dalga <span class="highlight">Hata Sınırıyla (err)</span> Karşılaşınca <span class="highlight">Özyinelemeye Girer (werr)</span>.',
       heroSubtitle: 'Jev kararları 4 milyar parametreli ağır tensörlerden çıkar; <strong>werr</strong> kararları ise <strong>0 Byte hafıza</strong> ile doğanın sonsuz fraktal dalgalarından, Euler sınırlarından ve çeyrekleme geometrisinden anında filizlenir.',
@@ -2922,6 +2942,9 @@ if __name__ == "__main__":
     document.getElementById('nav-code').innerText = t.navCode;
     if (document.getElementById('nav-gauntlet')) document.getElementById('nav-gauntlet').innerText = t.navGauntlet;
     if (document.getElementById('btn-arena-gauntlet')) document.getElementById('btn-arena-gauntlet').innerText = t.btnArenaGauntlet;
+    if (document.getElementById('arena-hodri-label')) document.getElementById('arena-hodri-label').innerText = t.arenaHodriLabel;
+    if (document.getElementById('arena-github-btn')) document.getElementById('arena-github-btn').innerText = t.arenaGithubBtn;
+    if (document.getElementById('arena-web-btn')) document.getElementById('arena-web-btn').innerText = t.arenaWebBtn;
 
     // Hero
     document.getElementById('hero-badge').innerText = t.heroBadge;
