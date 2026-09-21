@@ -19,11 +19,12 @@
 [![arXiv Companion](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-gray.svg)](https://arxiv.org/)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
+[![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
 [![JevBench World #1](https://img.shields.io/badge/JevBench%20Score-81.65%20(%231%20World)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
-[![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
-[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
+[![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](./benchmarks/snake/)
+[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](./benchmarks/jevenator2/)
 [![Base Research: DOI](https://img.shields.io/badge/Base%20Research-DOI%3A%2010.5281%2Fzenodo.22867037-green.svg)](https://doi.org/10.5281/zenodo.22867037)
 [![answerr Platform](https://img.shields.io/badge/answerr-Platform%20Repo-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -37,7 +38,8 @@
 **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
-⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*
+⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
+⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*
 
 `werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 

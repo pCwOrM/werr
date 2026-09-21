@@ -15,6 +15,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![Canlı Kıyaslama Arenası](https://img.shields.io/badge/Canlı%20Kıyaslama-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
+[![The Gauntlet Kıyaslama Duvarı](https://img.shields.io/badge/The%20Gauntlet-Resmi%20K%C4%B1yaslama%20Dizini-brightgreen.svg)](./benchmarks/)
 [![Tau-Bench Araç Çağrımı](https://img.shields.io/badge/Tau--Bench-%25100%20Ara%C3%A7%20Sadakati-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
@@ -25,7 +26,8 @@
 [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (README_TR.md)**
 
 🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
-⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*
+⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*  
+⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*
 
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
