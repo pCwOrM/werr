@@ -40,3 +40,5 @@ runner/
 
 # Scrap/temporary graphic generation slices
 assets/[0-9A-F][0-9A-F]*.png
+benchmarks/snake/*.gif
+
