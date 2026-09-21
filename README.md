@@ -10,6 +10,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
+[![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![arXiv Status](https://img.shields.io/badge/arXiv-submit%2F8092292%20(Moderation%20Review)-b31b1b.svg)](https://arxiv.org/)
@@ -468,14 +470,29 @@ werr             # Interactive terminal simulator
 
 ---
 
-## 📄 Academic Citation & Authors
+## 👥 Authors & Academic Affiliations
+
+* **Volkan Dağlı** *(Corresponding Author)*  
+  Anadolu University, Eskişehir, Turkey & ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
+
+* **Dr. Zerrin Dağlı**  
+  Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
+
+* **Dağhan Dağlı**  
+  Toros Science College, Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+
+---
+
+## 📄 Academic Citation
 
 ```bibtex
-@software{werr2026,
-  author = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
-  title = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
+@article{dagli2026werr,
+  author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
+  journal = {Preprint; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals, Ref: CHAOS-D-26-09598)},
   year = {2026},
   url = {https://github.com/pCwOrM/werr},
-  doi = {10.5281/zenodo.22802921}
+  doi = {10.5281/zenodo.22774934},
+  note = {Zenodo Concept: 10.5281/zenodo.22774934; Release v3.0: 10.5281/zenodo.22867037}
 }
 ```

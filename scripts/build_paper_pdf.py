@@ -276,16 +276,17 @@ window.MathJax = {
   <div class="paper-title">Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains</div>
   
   <div class="authors-block">
-    <span class="author-name">Volkan Dağlı</span><sup>1,*</sup> &nbsp;&bull;&nbsp; 
-    <span class="author-name">Zerrin Dağlı</span><sup>2</sup> &nbsp;&bull;&nbsp; 
-    <span class="author-name">Dağhan Dağlı</span><sup>3</sup><br>
+    <span class="author-name">Volkan Dağlı</span><sup>1,2,*</sup> &nbsp;&bull;&nbsp; 
+    <span class="author-name">Zerrin Dağlı</span><sup>3</sup> &nbsp;&bull;&nbsp; 
+    <span class="author-name">Dağhan Dağlı</span><sup>4</sup><br>
     <span class="author-affil">
-      <sup>1</sup>ITouch Systems, Mersin, Turkey &nbsp;&bull;&nbsp; 
-      <sup>2</sup>Mersin University, Mersin, Turkey &nbsp;&bull;&nbsp; 
-      <sup>3</sup>Toros Science College, Mersin, Turkey
+      <sup>1</sup>Anadolu University, Eskişehir, Turkey &nbsp;&bull;&nbsp; 
+      <sup>2</sup>ITouch Systems, Mersin, Turkey &nbsp;&bull;&nbsp; 
+      <sup>3</sup>Mersin University, Mersin, Turkey &nbsp;&bull;&nbsp; 
+      <sup>4</sup>Toros Science College, Mersin, Turkey
     </span><br>
     <span class="author-contact">
-      ORCID: 0009-0000-1587-8703 &bull; 0000-0001-9490-6465 &bull; *Correspondence: https://github.com/pCwOrM/werr
+      ORCID: 0009-0000-1587-8703 (VD) &bull; 0000-0001-9490-6425 (ZD) &bull; 0009-0003-2492-8313 (DD) &bull; *Correspondence: https://github.com/pCwOrM/werr
     </span>
   </div>
 </div>
@@ -834,7 +835,7 @@ window.MathJax = {
 
   <h2>References</h2>
   <ol class="ref-list">
-    <li>V. Dağlı, Z. Dağlı, and D. Dağlı, &ldquo;Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries,&rdquo; <em>arXiv:2609.XXXXX [cs.AI]</em>, 2026. Under Review in IEEE Transactions; DOI: 10.5281/zenodo.22802921.</li>
+    <li>V. Dağlı, Z. Dağlı, and D. Dağlı, &ldquo;Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries,&rdquo; Under review in <em>Chaos, Solitons &amp; Fractals</em> (Elsevier, Ref: CHAOS-D-26-09598); arXiv:submit/8092292 [cs.NE]; Zenodo Concept DOI: 10.5281/zenodo.22774934; Release v3.0: 10.5281/zenodo.22867037.</li>
     <li>A. Vaswani et al., &ldquo;Attention is All You Need,&rdquo; in <em>Proc. NeurIPS</em>, vol. 30, 2017.</li>
     <li>H. Touvron et al., &ldquo;Llama 2: Open Foundation and Fine-Tuned Chat Models,&rdquo; <em>arXiv:2307.09288</em>, 2023.</li>
     <li>D. Kahneman, <em>Thinking, Fast and Slow</em>, Farrar, Straus and Giroux, 2011.</li>
