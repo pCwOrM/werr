@@ -2,12 +2,12 @@
 
 [![Live Web Portal](https://img.shields.io/badge/Live%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 [![Interactive Labs](https://img.shields.io/badge/Interactive%20Labs-100%25%20Client--Side-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
-[![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Zenodo Concept DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
 [![arXiv Status](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
-[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -107,7 +107,7 @@ Building upon the foundational zero-storage fractal parameter synthesis introduc
 
 > **Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains**  
 > *Authors:* Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
-> *Zenodo Permanent Concept DOI:* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867425.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Submission:* `arXiv:submit/8106948`  
+> *Zenodo Permanent Concept DOI:* [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867425-024dad.svg)](https://doi.org/10.5281/zenodo.22867425) &bull; *arXiv Submission:* `arXiv:submit/8106948`  
 > *GitHub Repository:* [github.com/pCwOrM/werr](https://github.com/pCwOrM/werr) &bull; *Live Engine:* [answerr.me](https://answerr.me)
 
 ### Key Synergies & Cross-Domain Translation
