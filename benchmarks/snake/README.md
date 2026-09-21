@@ -39,18 +39,20 @@ Evaluated across 600 consecutive game steps on standard commodity CPU vs Apple S
 Instead of running a 421-million-parameter transformer with attention matrices and KV-caches:
 
 1. **State-to-Wave Projection:**
-   The game board state (head position, relative distance to food, wall hazards, and body tail segments) is mapped into continuous complex perturbations $(\Delta c_x, \Delta c_y)$.
+   The game board state (head position, relative distance to food, wall hazards, and body tail segments) is mapped into continuous complex perturbations `(Δcx, Δcy)`.
 2. **24-Byte Chaotic Boundary Seed:**
    Evaluated at the tactical gaming boundary coordinate:
-   $$\Theta_{\text{snake}} = (c_x = -0.7445, \; c_y = 0.1250, \; \text{zoom} = 65.0)$$
+   ```text
+   cx = -0.7445, cy = 0.1250, zoom = 65.0  (24 Bytes)
+   ```
 3. **4-Quadrant Directional Escape Mapping:**
    A micro-patch is sampled using quadratic escape recurrence $Z_{n+1} = Z_n^2 + C$. The escape dynamics of the four quadrants map directly to the four cardinal moves:
-   - **Q1 (Top-Left):** $\text{UP}$
-   - **Q2 (Top-Right):** $\text{RIGHT}$
-   - **Q3 (Bottom-Left):** $\text{LEFT}$
-   - **Q4 (Bottom-Right):** $\text{DOWN}$
+   - **Q1 (Top-Left):** `UP`
+   - **Q2 (Top-Right):** `RIGHT`
+   - **Q3 (Bottom-Left):** `LEFT`
+   - **Q4 (Bottom-Right):** `DOWN`
 4. **Zero-Memory Latency Advantage:**
-   Because no neural weights are transferred across PCIe/memory buses, inference completes in **$1.34\text{--}1.99\text{ ms}$** on basic CPU execution threads, delivering over **270+ decisions per second**.
+   Because no neural weights are transferred across PCIe/memory buses, inference completes in **1.34 – 1.99 ms** on basic CPU execution threads, delivering over **270+ decisions per second**.
 
 ---
 
