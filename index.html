@@ -1312,6 +1312,7 @@
       <a href="#halka-anlatim" id="nav-guide">Plain Guide</a>
       <a href="#demo" id="nav-demo">Simulator</a>
       <a href="#benchmark-arena" id="nav-arena" style="color: var(--cyan); font-weight: 700;">⚡ Live Benchmark</a>
+      <a href="../benchmarks.html" id="nav-gauntlet" style="color: var(--emerald); font-weight: 800;">⚔️ The Gauntlet</a>
       <a href="#karsilastirma" id="nav-comp">Comparison</a>
       <a href="#kod" id="nav-code">Quickstart</a>
       <a href="https://github.com/pCwOrM/werr" target="_blank">GitHub</a>
@@ -1770,7 +1771,11 @@
             Execute real benchmark suites on the live WERR kernel instantly — 100% in-process or via live REST endpoint with 0 byte tensor memory.
           </p>
         </div>
-        <div style="display: flex; gap: 0.6rem; align-items: center;">
+        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+          <a href="../benchmarks.html" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.8rem; border-color: rgba(16, 185, 129, 0.4); color: var(--emerald); font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <span>⚔️</span>
+            <span id="btn-arena-gauntlet">The Gauntlet (Master Wall)</span>
+          </a>
           <span class="badge-pill" id="bench-status-badge" style="color: var(--emerald); border-color: var(--emerald); padding: 0.3rem 0.75rem;">
             🟢 Engine Status: Ready
           </span>
@@ -2420,6 +2425,8 @@ if __name__ == "__main__":
       navDemo: "Simulator",
       navComp: "Comparison",
       navCode: "Quickstart",
+      navGauntlet: "⚔️ The Gauntlet",
+      btnArenaGauntlet: "The Gauntlet (Master Wall)",
       heroBadge: "v0.3.0 • Open Source • Zero-Memory Decision Engine",
       heroMotto: 'When the Wave meets <span class="highlight">Error (err)</span>, we <span class="highlight">Recurse (werr)</span>.',
       heroSubtitle: 'Jev decisions come from 4B-parameter tensors; <strong>werr</strong> decisions come from infinite geometric waves, Euler thresholds, and recursive quadrant subdivision with <strong>0 Bytes memory</strong>.',
@@ -2601,6 +2608,8 @@ if __name__ == "__main__":
       navDemo: "Simülatör",
       navComp: "Karşılaştırma",
       navCode: "Hızlı Başlangıç",
+      navGauntlet: "⚔️ Kıyaslama Duvarı",
+      btnArenaGauntlet: "Kıyaslama Duvarı (The Gauntlet)",
       heroBadge: "v0.3.0 • Açık Kaynak • Sıfır-Bellekli Karar Motoru",
       heroMotto: 'Dalga <span class="highlight">Hata Sınırıyla (err)</span> Karşılaşınca <span class="highlight">Özyinelemeye Girer (werr)</span>.',
       heroSubtitle: 'Jev kararları 4 milyar parametreli ağır tensörlerden çıkar; <strong>werr</strong> kararları ise <strong>0 Byte hafıza</strong> ile doğanın sonsuz fraktal dalgalarından, Euler sınırlarından ve çeyrekleme geometrisinden anında filizlenir.',
@@ -2911,6 +2920,8 @@ if __name__ == "__main__":
     document.getElementById('nav-demo').innerText = t.navDemo;
     document.getElementById('nav-comp').innerText = t.navComp;
     document.getElementById('nav-code').innerText = t.navCode;
+    if (document.getElementById('nav-gauntlet')) document.getElementById('nav-gauntlet').innerText = t.navGauntlet;
+    if (document.getElementById('btn-arena-gauntlet')) document.getElementById('btn-arena-gauntlet').innerText = t.btnArenaGauntlet;
 
     // Hero
     document.getElementById('hero-badge').innerText = t.heroBadge;
