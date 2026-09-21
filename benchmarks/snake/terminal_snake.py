@@ -464,7 +464,7 @@ class TerminalSnake:
             f"{BOLD}{C_CYAN}║{RESET}  SOL    (LEFT) : {pbar(self.last_probs.get('LEFT', 0))} {self.last_probs.get('LEFT', 0)*100:4.1f}% {'[TEHLİKE]' if self.last_hazards.get('LEFT') else '        '} {BOLD}{C_CYAN}║{RESET}",
             f"{BOLD}{C_CYAN}║{RESET}  SAĞ    (RIGHT): {pbar(self.last_probs.get('RIGHT', 0))} {self.last_probs.get('RIGHT', 0)*100:4.1f}% {'[TEHLİKE]' if self.last_hazards.get('RIGHT') else '        '} {BOLD}{C_CYAN}║{RESET}",
             f"{BOLD}{C_CYAN}╠─────────────────────────────────────────────────────────╣{RESET}",
-            f"{BOLD}{C_CYAN}║{RESET} {BOLD}{C_YELLOW}[W] / [M] : KONTROLÜ WERR'E VER / GERİ AL{RESET}              {BOLD}{C_CYAN}║{RESET}",
+            f"{BOLD}{C_CYAN}║{RESET} {BOLD}{C_YELLOW}[T] / [M] : KONTROLÜ WERR'E VER / GERİ AL{RESET}              {BOLD}{C_CYAN}║{RESET}",
             f"{BOLD}{C_CYAN}║{RESET} [YÖN/WASD]: Manuel Kontrol  │  [BOŞLUK]: Duraklat        {BOLD}{C_CYAN}║{RESET}",
             f"{BOLD}{C_CYAN}║{RESET} [+/-]     : Hız Ayarı       │  [R]: Sıfırla  │  [Q]: Çık {BOLD}{C_CYAN}║{RESET}",
             f"{BOLD}{C_CYAN}╚═════════════════════════════════════════════════════════╝{RESET}"
@@ -503,7 +503,7 @@ class TerminalSnake:
                         return False
                     elif char == ' ':
                         self.paused = not self.paused
-                    elif char in ('w', 'm'):
+                    elif char in ('t', 'm'):
                         # Toggle between Manual and WERR
                         if self.mode == "manual":
                             self.trigger_handover()
@@ -518,7 +518,7 @@ class TerminalSnake:
                         self.fps = max(4, self.fps - 2)
                         self.step_delay = 1.0 / self.fps
                     # WASD manual steering
-                    elif self.mode == "manual" and not self.game_over:
+                    elif self.mode == "manual" and not self.game_over and char in ('w', 'a', 's', 'd'):
                         if char == 'w' and self.direction != "DOWN":
                             self.direction = "UP"
                         elif char == 's' and self.direction != "UP":
