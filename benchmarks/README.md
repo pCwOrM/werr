@@ -145,7 +145,7 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 ### 6. 🌀 Continuous Manifolds: Two-Moons & Two-Spirals
 * **Scope:** Topological non-linear classification without backpropagation or gradient descent.
 * **Accuracy:** **Two-Moons: 99.30%** │ **Two-Spirals: 98.50%**.
-* **Documentation:** Detailed derivation published in the companion monograph [`Mandelbrot_Akademik_Teknik_Raporu.html`](../../docs/Mandelbrot_Akademik_Teknik_Raporu.html).
+* **Documentation:** Detailed derivation published in the companion monograph [Mandelbrot Academic Technical Monograph (HTML)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Source](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)).
 
 ---
 

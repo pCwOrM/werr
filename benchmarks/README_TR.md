@@ -133,7 +133,7 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 ### 6. 🌀 Sürekli Manifoldlar: Two-Moons & Two-Spirals
 * **Kapsam:** Geri-yayılım (backpropagation) veya gradyan inişi olmadan topolojik doğrusal olmayan sınıflandırma.
 * **Doğruluk:** **Two-Moons: %99.30** │ **Two-Spirals: %98.50**.
-* **Dokümantasyon:** Kapsamlı matematiksel çıkarımlar [`Mandelbrot_Akademik_Teknik_Raporu.html`](../../docs/Mandelbrot_Akademik_Teknik_Raporu.html) monografında yer almaktadır.
+* **Dokümantasyon:** Kapsamlı matematiksel çıkarımlar [Mandelbrot Akademik Teknik Raporu (HTML)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Kaynağı](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)) monografında yer almaktadır.
 
 ---
 
