@@ -29,6 +29,7 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 | 🌐 **Resmi Canlı Web Portalı** | Ana Vitrin | Genel / Akademik | [**Portalı Başlat (GitHub Pages)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🚀 **Halka Açık Senaryo Laboratuvarı** | Canlı Simülasyon | Toplum & Öğrenciler | [**Halk Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Araştırma Laboratuvarı** | Matematiksel Deney | Araştırmacılar & Mühendisler | [**Araştırma Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
+| 🐍 **İnteraktif Yılan Yapay Zekası & 1v1 Arena** | Gerçek Zamanlı Refleks & Otopilot | Oyuncular, Mühendisler & Mobil | [**Yılan Arenasını Başlat**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
 | 🏛️ **Resmi Yayın Arşivi (Zenodo v3.0)** | Kalıcı Arşiv | Açık Bilim | [**Zenodo Çatı DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Yayında**](https://zenodo.org/records/22867037) |
@@ -118,8 +119,14 @@ Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimaris
 ### Temel Sinerjiler ve Alanlar Arası Geçiş
 1. **Geometrik Sınırlardan Doğal Dil Refleks Triyajına:** Bu kuramsal çalışma $128 \times 128$ Mandelbrot kaçış yamalarından yapay zeka ağırlıkları türetirken; [werr](https://github.com/pCwOrM/werr) fraktal sınır dinamiklerini ultra-hızlı, tensörsüz semantik triyaja (Sistem-1 refleks arkı) dönüştürür.
 2. **İkili Bilişsel Çalışma Alanı Entegrasyonu:** [answerr](https://github.com/pCwOrM/answerr), mikrosaniyelik `werr` reflekslerini bulut LLM (Google Gemini) müzakeresiyle birleştirerek `api.answerr.me:4431` üzerinde üretim REST API'si ve cam efektli çalışma alanı sunar.
-3. **Deterministik Uç Yapay Zeka (Edge AI):** Her iki mimari de devasa gigabaytlık ağırlık matrislerini ortadan kaldırarak; bulut API'lerine veya GPU sunucularına muhtaç kalmaksızın mikrodenetleyiciler ve uç yönlendiriciler üzerinde milisaniye-altı sınıflandırma sağlar.
-4. **Tekrarlanabilirlik ve Açık Bilim:** Eksiksiz replikasyon paketleri, dinamik kalibrasyon filtreleri ve akustik sönümleme modelleri her iki Zenodo arşivi üzerinden dünya bilim camiasının erişimine açıktır.
+3. **Ampirik Dünya Rekorları ve Kıyaslama Başarıları:** Bu temel araştırmanın sıfır-depolamalı fraktal türetim teorisi, `werr`'in bağımsız uluslararası kıyaslama paketlerindeki dünya derecelerine güç verir:
+   * **WindTunnel WebMCP:** 8 gerçek dünya web uygulamasında 49 görevin tamamını (%100) 3.35 ms gecikme, 0 Bayt VRAM ve $0.0000 model maliyetiyle çözme başarısı ([nekuda-ai/WindTunnel#25](https://github.com/nekuda-ai/WindTunnel/issues/25)).
+   * **JevBench v1.2:** Dünya #1 Liderliği (81.65 genel skor, 100/100 hız, 100/100 maliyet, 2.76 ms gecikme) ([fstandhartinger/jevbench#10](https://github.com/fstandhartinger/jevbench/issues/10)).
+   * **Gerçek Zamanlı Refleks Döngüsü (Yılan Yapay Zekası):** Saniyede 273–302 hamlelik sürekli kapalı devre refleks (Apple M3 Max üzerindeki Laya-MLX'ten 3.7 kat hızlı) ve sıfır VRAM ([mizorewww/laya-mlx#3](https://github.com/mizorewww/laya-mlx/issues/3)).
+   * **Bilgisayarlı Görü ve Nesne Takibi (Jevenator 2):** Maisa djev modeline kıyasla 27.8 kat daha hızlı video kare takibi ve 0 yanlış pozitif ([mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1)).
+4. **Çift Uç Noktalı Üretim API'si:** [answerr](https://github.com/pCwOrM/answerr), `https://api.answerr.me:4431` üzerinden hem standart `/v1/decide` refleks geçidini hem de harici kıyaslama ajanları için JevBench TypeSafe tel formatını (`POST /v1/systemone`) canlı sunar.
+5. **Deterministik Uç Yapay Zeka (Edge AI):** Her iki mimari de devasa gigabaytlık ağırlık matrislerini ortadan kaldırarak; bulut API'lerine veya GPU sunucularına muhtaç kalmaksızın mikrodenetleyiciler ve uç yönlendiriciler üzerinde milisaniye-altı sınıflandırma sağlar.
+6. **Tekrarlanabilirlik ve Açık Bilim:** Eksiksiz replikasyon paketleri, dinamik kalibrasyon filtreleri ve açık telemetri kıyaslama verileri her iki Zenodo arşivi üzerinden dünya bilim camiasının erişimine açıktır.
 
 ---
 
@@ -145,7 +152,10 @@ mandelbrot-fractal-neural-synthesis/
 │
 ├── demos/                              # İnteraktif Web Laboratuvarları (%100 Tarayıcıda Çalışır)
 │   ├── interactive_lab.html            # Senaryo arayüzü (Akıllı Kapı, Kasa, Lamba, Alarm)
-│   └── quadrant_visualizer.html        # 128x128 4-çeyrek teknik matematiksel araştırma labı
+│   ├── quadrant_visualizer.html        # 128x128 4-çeyrek teknik matematiksel araştırma labı
+│   ├── snake.html                      # İnteraktif Yılan Labı, 1v1 AI Arena & Dokunmatik Mobil D-pad
+│   ├── terminal_snake.py               # Bağımsız Terminal Yılan refleks görselleştiricisi
+│   └── terminal_snake_arena.py         # Çift ajanlı rekabetçi arena simülatörü
 │
 ├── docs/                               # Halka Anlatım, Raporlar & Makale Kaynakları
 │   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html # Canlı Makale HTML'i

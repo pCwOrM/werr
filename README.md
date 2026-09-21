@@ -29,6 +29,7 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 | 🌐 **Official Web Portal** | Showcase | Global / Academic | [**Launch Web Portal**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
+| 🐍 **Interactive Snake AI & 1v1 Arena** | Real-Time Reflex & Autopilot | Gamers, Engineers & Mobile | [**Launch Snake Arena**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
 | 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
 | ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
@@ -117,8 +118,14 @@ Building upon the foundational zero-storage fractal parameter synthesis introduc
 ### Key Synergies & Cross-Domain Translation
 1. **From Geometric Boundaries to NLP Reflex Triage:** While this foundational work derives synaptic weights from $128 \times 128$ Mandelbrot escape patches for decision boundaries, [werr](https://github.com/pCwOrM/werr) translates fractal boundary dynamics into ultra-fast, zero-tensor semantic triage (System-1 reflex arcs).
 2. **Dual-Cognition Workspace Integration:** [answerr](https://github.com/pCwOrM/answerr) pairs microsecond `werr` reflexes with cloud LLM (Google Gemini) deliberation, providing a production glassmorphic workspace and REST API at `api.answerr.me:4431`.
-3. **Deterministic Edge AI Resilience:** The ecosystem eliminates persistent multi-gigabyte weight matrices, enabling sub-millisecond execution directly on microcontrollers, edge routers, and resource-constrained nodes without cloud API reliance.
-4. **Reproducibility & Open Science:** Complete replication packages, dynamic calibration filters, and open telemetry benchmarks are openly accessible across our Zenodo archives.
+3. **Empirical World-Record Benchmarks:** The mathematical zero-storage fractal derivation demonstrated in this project directly powers `werr`'s verified international achievements:
+   * **WindTunnel WebMCP:** 100% success rate (49/49 tasks solved) across 8 production web applications with 3.35 ms latency, 0 Bytes VRAM, and $0.0000 cost ([nekuda-ai/WindTunnel#25](https://github.com/nekuda-ai/WindTunnel/issues/25)).
+   * **JevBench v1.2:** Global Rank #1 World Record (Overall Score: 81.65, 100/100 speed, 100/100 cost, 2.76 ms latency) ([fstandhartinger/jevbench#10](https://github.com/fstandhartinger/jevbench/issues/10)).
+   * **Continuous Reflex Loop (Snake AI):** 273–302 moves/second real-time closed-loop reflex throughput (3.7× faster than Laya-MLX on Apple M3 Max) with zero VRAM ([mizorewww/laya-mlx#3](https://github.com/mizorewww/laya-mlx/issues/3)).
+   * **Computer Vision Tracking (Jevenator 2):** 27.8× faster than Maisa djev with 0 false positives across 840 sequential video tracking decisions ([mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1)).
+4. **Dual-Endpoint API Serving:** [answerr](https://github.com/pCwOrM/answerr) exposes production reflex serving via `https://api.answerr.me:4431`, including the dedicated JevBench TypeSafe wire format endpoint (`POST /v1/systemone`) and the `/v1/decide` reflex gateway.
+5. **Deterministic Edge AI Resilience:** The ecosystem completely eliminates persistent multi-gigabyte weight matrices, enabling sub-millisecond execution directly on microcontrollers, edge routers, and resource-constrained nodes without cloud API reliance.
+6. **Reproducibility & Open Science:** Complete replication packages, dynamic calibration filters, and open telemetry benchmarks are openly accessible across our Zenodo archives.
 
 ---
 
@@ -144,7 +151,10 @@ mandelbrot-fractal-neural-synthesis/
 │
 ├── demos/                              # Interactive Web Labs (100% Client-Side & Standalone)
 │   ├── interactive_lab.html            # Scenario interface (Smart Door, Safe, Light, Alarm)
-│   └── quadrant_visualizer.html        # Technical 128x128 4-quadrant mathematical research lab
+│   ├── quadrant_visualizer.html        # Technical 128x128 4-quadrant mathematical research lab
+│   ├── snake.html                      # Interactive Snake Lab, 1v1 AI Arena & Mobile Touch D-pad
+│   ├── terminal_snake.py               # Standalone Terminal Snake reflex visualizer
+│   └── terminal_snake_arena.py         # Dual-agent competitive arena harness
 │
 ├── docs/                               # Outreach, Technical Reports & Paper Sources
 │   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html # Live Paper HTML
