@@ -20,7 +20,7 @@
 [![JevBench World #1](https://img.shields.io/badge/JevBench%20Score-81.65%20(%231%20World)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
-[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](benchmarks/jevenator2)
+[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster%20vs%20djev-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 
@@ -404,6 +404,8 @@ python benchmarks/snake/benchmark_snake.py --steps 600 --mode compare
 ## 🎯 Computer Vision & Video Tracking Benchmark: Jevenator 2 (Werr vs. Maisa djev)
 
 Werr was evaluated on visual spatial object localization and temporal video tracking using the **Jevenator 2 (Judgment Day)** benchmark suite ([mmastrac/jevenator2](https://github.com/mmastrac/jevenator2) by Matt Mastracci). 
+
+Officially submitted to the Jevenator 2 repository in [mmastrac/jevenator2#1](https://github.com/mmastrac/jevenator2/issues/1).
 
 The benchmark evaluates a System-One model's ability to divide visual scenes into labeled spatial grids (3×3 or 7×5 = 35 cells) and answer boolean `noul` containment queries (`Does region {c} contain {target}?`) across static exemplar scenes and 24 sequential video tracking frames (840 discrete decisions):
 
