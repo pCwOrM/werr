@@ -1,0 +1,37 @@
+name: "💡 Feature Request / Proposal"
+description: "Suggest a new domain gate, hardware backend (C/Rust/EVM), or runtime enhancement."
+title: "[Feature]: "
+labels: ["enhancement", "proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome contributions and proposals to extend WERR's zero-memory System-One capabilities.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Motivation & Problem Statement
+      description: What operational problem or hardware deployment limitation does this address?
+      placeholder: "e.g., Deploying WERR onto STM32 microcontrollers, adding a specialized gate for robotics, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Architectural Concept
+      description: Describe the proposed API, gate coordinates, or algorithmic design.
+      placeholder: "Introduce a new pre-calibrated domain coordinate with quadrant partitioning..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Considered Alternatives
+      description: Any other approaches or existing baseline work considered.
+  - type: checkboxes
+    id: contribution_interest
+    attributes:
+      label: Contribution
+      options:
+        - label: "I am interested in submitting a PR implementing this feature."
+          required: false

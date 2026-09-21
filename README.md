@@ -9,6 +9,7 @@
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![arXiv Werr](https://img.shields.io/badge/arXiv-cs.AI%20[submit%2F8106948]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)

@@ -1,0 +1,42 @@
+name: "🔬 Benchmark Replication Report"
+description: "Share benchmark verification results across Snake, WindTunnel, Jevenator 2, JevBench, or custom hardware."
+title: "[Replication]: "
+labels: ["reproducibility", "benchmark-replication"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping verify open scientific reproducibility! Please submit your replication details below.
+  - type: input
+    id: benchmark_suite
+    attributes:
+      label: Benchmark Suite
+      description: Which public benchmark did you replicate?
+      placeholder: "e.g., WindTunnel WebMCP (49 tasks), Jevenator 2 (840 decisions), Snake AI Reflex (300/600 steps), JevBench #10"
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware & Environment
+      description: CPU, RAM, OS, Python version, and execution regime.
+      placeholder: "e.g., AMD Ryzen 7 7840HS / Intel Core i7-11800H / Apple M3 Max, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Observed Metrics
+      description: Latency (P50/mean), throughput (decisions/sec), accuracy, and memory allocated.
+      placeholder: |
+        - Accuracy / Success: 100% (49/49)
+        - P50 Latency: 2.3 ms
+        - Memory Allocated: 0 Bytes VRAM / GPU
+        - Air-gapped: Yes
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Deviations & Notes
+      description: Any unexpected observations or hardware-specific findings.

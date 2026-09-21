@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 General Discussions & Questions"
+    url: "https://github.com/pCwOrM/werr/discussions"
+    about: "Ask questions, share edge deployment ideas, or discuss System-One architectures."
+  - name: "🏛️ Permanent Zenodo Archive"
+    url: "https://doi.org/10.5281/zenodo.22867426"
+    about: "Access published WERR scientific paper, BibTeX citation, and DOI records."
+  - name: "🌐 Interactive Web Simulator"
+    url: "https://pcworm.github.io/werr/"
+    about: "Test real-time fractal decision synthesis directly in your browser."
+  - name: "🧠 answerr Cognitive Platform"
+    url: "https://answerr.me"
+    about: "Explore the live production portal and cloud reasoning ecosystem."

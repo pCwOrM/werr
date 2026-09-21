@@ -1,0 +1,55 @@
+name: "🐛 Bug Report"
+description: "Report an issue, calculation anomaly, or unexpected behavior in WERR engine, server, or gates."
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please fill in the details below so we can reproduce and patch it promptly.
+  - type: input
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which module or runtime component is affected?
+      placeholder: "e.g., werr.engine, werr.server, werr.calibrated_engine, benchmarks/snake, benchmarks/jevenator2"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of the observed issue.
+      placeholder: "Unexpected output, exception, or calibration drift when evaluating..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal snippet or command to reproduce the issue.
+      placeholder: |
+        ```python
+        from werr.engine import WerrEngine
+        engine = WerrEngine()
+        # ...
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment & Hardware
+      description: OS, Python version, NumPy version, hardware environment.
+      placeholder: "Ubuntu 22.04 / Windows 11 / macOS M3, Python 3.11, NumPy 1.26"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checks
+      options:
+        - label: "I have confirmed this is not already reported in open issues."
+          required: true
+        - label: "I have provided a minimal reproducible example."
+          required: true
