@@ -31,6 +31,13 @@
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+      --bench-term-bg: #070a12;
+      --bench-term-border: #1f2a44;
+      --bench-term-text: #94a3b8;
+      --bench-pill-bg: rgba(15, 23, 42, 0.6);
+      --bench-pill-border: rgba(255, 255, 255, 0.08);
+      --bench-pill-text: #cbd5e1;
+      --bench-progress-bg: #131b2e;
     }
 
     html.light {
@@ -51,6 +58,13 @@
       --amber: #d97706;
       --indigo: #6366f1;
       --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      --bench-term-bg: #f8fafc;
+      --bench-term-border: #cbd5e1;
+      --bench-term-text: #1e293b;
+      --bench-pill-bg: #f1f5f9;
+      --bench-pill-border: #e2e8f0;
+      --bench-pill-text: #0f172a;
+      --bench-progress-bg: #e2e8f0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1148,7 +1162,7 @@
       text-decoration: underline;
     }
 
-    /* Benchmark Arena & Mobile Responsiveness */
+    /* Benchmark Arena Theme & Component Classes */
     #benchmark-arena * {
       box-sizing: border-box;
     }
@@ -1175,6 +1189,75 @@
       max-width: 100% !important;
       box-sizing: border-box !important;
     }
+    .bench-terminal {
+      background: var(--bench-term-bg) !important;
+      border: 1px solid var(--bench-term-border) !important;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--bench-term-text) !important;
+      max-height: 280px;
+      overflow-y: auto;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .bench-terminal .bench-pre-wrap {
+      color: var(--bench-term-text) !important;
+    }
+    .bench-comparison-card {
+      background: var(--bench-pill-bg) !important;
+      border: 1px solid var(--bench-pill-border) !important;
+      border-radius: 6px;
+      padding: 0.6rem 0.8rem;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .bench-comparison-card .bench-card-title {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.2rem;
+    }
+    .bench-comparison-card .bench-card-val {
+      color: var(--bench-pill-text);
+      font-weight: 600;
+    }
+    .bench-panel-box {
+      background: var(--bench-term-bg) !important;
+      border: 1px solid var(--bench-term-border) !important;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .bench-progress-track {
+      background: var(--bench-progress-bg) !important;
+      border-radius: 999px;
+      height: 6px;
+      overflow: hidden;
+      border: 1px solid var(--bench-term-border) !important;
+      transition: background 0.25s ease;
+    }
+    .bench-tabs-container {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1.25rem 0 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .bench-hud-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .bench-grid-4col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.6rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+
     @media (max-width: 768px) {
       .bench-grid-2col {
         grid-template-columns: 1fr !important;
@@ -1188,7 +1271,30 @@
         padding: 0.6rem 0.8rem;
       }
       #benchmark-arena .hud-value {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+      }
+      .bench-tabs-container {
+        gap: 0.35rem;
+      }
+      .bench-tabs-container .lang-btn {
+        font-size: 0.78rem !important;
+        padding: 0.35rem 0.7rem !important;
+      }
+      .bench-hud-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .bench-hud-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .bench-grid-4col {
+        grid-template-columns: 1fr !important;
+      }
+      .bench-terminal {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.75rem;
       }
     }
   </style>
@@ -1654,41 +1760,41 @@
     <div class="card" style="border: 1px solid var(--cyan); box-shadow: 0 10px 40px -10px rgba(56, 189, 248, 0.3);">
       <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
         <div>
-          <div class="badge-pill" style="background: rgba(56,189,248,0.15); color: var(--cyan); border-color: rgba(56,189,248,0.4); margin-bottom: 0.4rem;">
+          <div class="badge-pill" id="bench-badge" style="background: rgba(56,189,248,0.15); color: var(--cyan); border-color: rgba(56,189,248,0.4); margin-bottom: 0.4rem;">
             ONLINE LIVE BENCHMARK ARENA
           </div>
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">
+          <h2 id="bench-title" style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">
             ⚡ Run Official Benchmarks Live in Your Browser
           </h2>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">
+          <p id="bench-desc" style="font-size: 0.88rem; color: var(--text-muted);">
             Execute real benchmark suites on the live WERR kernel instantly — 100% in-process or via live REST endpoint with 0 byte tensor memory.
           </p>
         </div>
         <div style="display: flex; gap: 0.6rem; align-items: center;">
-          <span class="badge-pill" style="color: var(--emerald); border-color: var(--emerald); padding: 0.3rem 0.75rem;">
+          <span class="badge-pill" id="bench-status-badge" style="color: var(--emerald); border-color: var(--emerald); padding: 0.3rem 0.75rem;">
             🟢 Engine Status: Ready
           </span>
         </div>
       </div>
 
       <!-- Benchmark Selection Tabs -->
-      <div style="display: flex; gap: 0.6rem; margin: 1.25rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; flex-wrap: wrap;">
-        <button class="lang-btn active" id="btn-bench-windtunnel" onclick="switchBenchTab('windtunnel')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+      <div class="bench-tabs-container">
+        <button class="lang-btn active" id="btn-bench-windtunnel" onclick="switchBenchTab('windtunnel')">
           🌐 WindTunnel WebMCP (49 Real Web Tasks)
         </button>
-        <button class="lang-btn" id="btn-bench-jevbench" onclick="switchBenchTab('jevbench')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+        <button class="lang-btn" id="btn-bench-jevbench" onclick="switchBenchTab('jevbench')">
           ⚖️ JevBench REST Runner (TypeSafe Wire Format)
         </button>
-        <button class="lang-btn" id="btn-bench-gym" onclick="switchBenchTab('gym')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+        <button class="lang-btn" id="btn-bench-gym" onclick="switchBenchTab('gym')">
           🐍 Gymnasium RL Reflex (Snake &amp; Step Throughput)
         </button>
-        <button class="lang-btn" id="btn-bench-lmsys" onclick="switchBenchTab('lmsys')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+        <button class="lang-btn" id="btn-bench-lmsys" onclick="switchBenchTab('lmsys')">
           ⚔️ Arena.ai / LMSYS (Side-by-Side Blind Test)
         </button>
-        <button class="lang-btn" id="btn-bench-taubench" onclick="switchBenchTab('taubench')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+        <button class="lang-btn" id="btn-bench-taubench" onclick="switchBenchTab('taubench')">
           🤖 Tau-Bench (Airline &amp; Retail Tool Calling)
         </button>
-        <button class="lang-btn" id="btn-bench-jevenator2" onclick="switchBenchTab('jevenator2')" style="font-size: 0.85rem; padding: 0.4rem 1rem;">
+        <button class="lang-btn" id="btn-bench-jevenator2" onclick="switchBenchTab('jevenator2')">
           🎯 Jevenator 2 (Visual Object &amp; Video Tracking)
         </button>
       </div>
@@ -1696,7 +1802,7 @@
       <!-- TAB 1: WindTunnel WebMCP Live In-Browser Runner -->
       <div id="tab-bench-windtunnel">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted);">
+          <div id="bench-wt-intro" style="font-size: 0.9rem; color: var(--text-muted);">
             Test discrete tool selection across <strong>8 web apps &amp; 49 tasks</strong> against baseline cloud agents:
           </div>
           <button class="btn btn-primary" id="btn-run-windtunnel-live" onclick="runLiveWindTunnelBenchmark()" style="padding: 0.5rem 1.2rem; font-weight: 700;">
@@ -1705,28 +1811,28 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="bench-hud-grid">
           <div class="hud-box">
-            <div class="hud-label">Accuracy Score</div>
+            <div class="hud-label" id="wt-lbl-acc">Accuracy Score</div>
             <div class="hud-value" id="wt-live-accuracy" style="color: var(--emerald);">49/49 (100.0%)</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Median Latency</div>
+            <div class="hud-label" id="wt-lbl-lat">Median Latency</div>
             <div class="hud-value" id="wt-live-latency" style="color: var(--cyan);">2.35 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model Memory</div>
+            <div class="hud-label" id="wt-lbl-mem">Model Memory</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes VRAM</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Query Cost</div>
+            <div class="hud-label" id="wt-lbl-cost">Query Cost</div>
             <div class="hud-value" style="color: var(--emerald);">$0.0000 (Free)</div>
           </div>
         </div>
 
         <!-- Live Task Execution Log Terminal -->
-        <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="wt-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
+        <div class="json-code-container bench-terminal">
+          <div id="wt-live-log-output" class="bench-pre-wrap">
             [READY] Click 'Run All 49 Tasks Live' to trigger real-time evaluation across medusa, hi-events, easyappointments, idurar, learnhouse, directory-9d8, nextjs-blog, and bulletproof-react.
           </div>
         </div>
@@ -1744,7 +1850,7 @@
       <!-- TAB 2: JevBench Live Remote REST Runner -->
       <div id="tab-bench-jevbench" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted);">
+          <div id="bench-jev-intro" style="font-size: 0.9rem; color: var(--text-muted);">
             Dispatch live TypeSafe wire-format (<code>POST /v1/systemone</code>) queries to test endpoint:
           </div>
           <button class="btn btn-primary" id="btn-run-jevbench-live" onclick="runLiveJevBenchSample()" style="padding: 0.5rem 1.2rem; font-weight: 700;">
@@ -1754,18 +1860,18 @@
 
         <div class="bench-grid-2col" style="margin-bottom: 1rem;">
           <div class="bench-card-col">
-            <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Endpoint URL:</div>
+            <div id="lbl-jev-endpoint" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Endpoint URL:</div>
             <input type="text" id="jev-endpoint-input" class="custom-text-input" value="https://api.answerr.me:4431/v1/systemone" style="font-family: var(--font-mono); font-size: 0.85rem; width: 100%;">
           </div>
           <div class="bench-card-col">
-            <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Wire Spec:</div>
-            <div style="font-size: 0.85rem; color: var(--text-main); font-weight: 700; padding: 0.5rem 0;">TypeSafe Decision JSON (Noul, Choice, Score)</div>
+            <div id="lbl-jev-wirespec" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Wire Spec:</div>
+            <div id="val-jev-wirespec" style="font-size: 0.85rem; color: var(--text-main); font-weight: 700; padding: 0.5rem 0;">TypeSafe Decision JSON (Noul, Choice, Score)</div>
           </div>
         </div>
 
         <!-- JevBench Live Response Inspector -->
-        <div class="json-code-container" style="max-height: 240px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem;">
-          <pre id="jev-live-output" class="bench-pre-wrap" style="color: #79c0ff; margin: 0;">// Click 'Send Test Wire Query' to test JevBench wire compatibility live</pre>
+        <div class="json-code-container bench-terminal" style="max-height: 240px;">
+          <pre id="jev-live-output" class="bench-pre-wrap" style="color: var(--cyan); margin: 0;">// Click 'Send Test Wire Query' to test JevBench wire compatibility live</pre>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
@@ -1781,68 +1887,68 @@
       <!-- TAB 3: Gymnasium & PettingZoo RL Reflex Arena (Snake, Step Throughput) -->
       <div id="tab-bench-gym" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted);">
+          <div id="bench-gym-intro" style="font-size: 0.9rem; color: var(--text-muted);">
             Evaluate continuous sub-2ms reflex decisions on <strong>Farama Gymnasium</strong> RL environments (Snake / GridWorld) against DQN, PPO, and MLX baselines:
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <button class="btn btn-primary" id="btn-run-gym-live" onclick="runLiveGymReflexBenchmark()" style="padding: 0.5rem 1.2rem; font-weight: 700;">
               🚀 Run Gymnasium Reflex (300 Steps Live)
             </button>
-            <a href="demos/snake.html" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <a href="demos/snake.html" target="_blank" class="btn btn-secondary" id="btn-play-snake" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
               🎮 Play Interactive Demo ↗
             </a>
           </div>
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="bench-hud-grid">
           <div class="hud-box">
-            <div class="hud-label">Reflex Throughput</div>
+            <div class="hud-label" id="gym-lbl-tput">Reflex Throughput</div>
             <div class="hud-value" id="gym-live-fps" style="color: var(--emerald);">287.4 moves/s</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">P50 Decision Latency</div>
+            <div class="hud-label" id="gym-lbl-lat">P50 Decision Latency</div>
             <div class="hud-value" id="gym-live-p50" style="color: var(--cyan);">1.42 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model Memory</div>
+            <div class="hud-label" id="gym-lbl-mem">Model Memory</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes VRAM</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">RL Policy Footprint</div>
+            <div class="hud-label" id="gym-lbl-policy">RL Policy Footprint</div>
             <div class="hud-value" style="color: var(--cyan);">24 Bytes (Seed)</div>
           </div>
         </div>
 
         <!-- Live Progress Bar -->
-        <div id="gym-progress-container" style="display: none; margin-bottom: 0.75rem; background: #131b2e; border-radius: 999px; height: 6px; overflow: hidden; border: 1px solid #1f2a44;">
+        <div id="gym-progress-container" class="bench-progress-track" style="display: none; margin-bottom: 0.75rem;">
           <div id="gym-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--emerald)); transition: width 0.05s ease;"></div>
         </div>
 
         <!-- Live Task Execution Log Terminal -->
-        <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="gym-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
+        <div class="json-code-container bench-terminal">
+          <div id="gym-live-log-output" class="bench-pre-wrap">
             [READY] Click 'Run Gymnasium Reflex (300 Steps Live)' to execute in-browser real-time step-by-step game state evaluations. Measures throughput (moves/sec), sub-2ms P50 latency, and collision-avoidance reflex gates.
           </div>
         </div>
 
         <!-- Head-to-Head Comparison Summary Pill Table -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 1rem; font-size: 0.8rem;">
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Deep Q-Network (DQN)</div>
-            <div style="color: #cbd5e1; font-weight: 600;">~150 MB VRAM &bull; ~45 moves/s (GPU)</div>
+        <div class="bench-grid-4col">
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Deep Q-Network (DQN)</div>
+            <div class="bench-card-val">~150 MB VRAM &bull; ~45 moves/s (GPU)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Laya-MLX (Apple M3 Max)</div>
-            <div style="color: #cbd5e1; font-weight: 600;">~2 GB VRAM &bull; ~78 moves/s ($3,500)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Laya-MLX (Apple M3 Max)</div>
+            <div class="bench-card-val">~2 GB VRAM &bull; ~78 moves/s ($3,500)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">WERR Procedural Reflex</div>
-            <div style="color: var(--emerald); font-weight: 700;">0 Bytes VRAM &bull; 273–302 moves/s (3.7×)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">WERR Procedural Reflex</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">0 Bytes VRAM &bull; 273–302 moves/s (3.7×)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Leaderboard Category</div>
-            <div style="color: var(--cyan); font-weight: 700;">0-Memory Procedural Policy</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Leaderboard Category</div>
+            <div class="bench-card-val" style="color: var(--cyan); font-weight: 700;">0-Memory Procedural Policy</div>
           </div>
         </div>
 
@@ -1859,7 +1965,7 @@
       <!-- TAB 4: Arena.ai & LMSYS Agent Arena (Side-by-Side Blind Match) -->
       <div id="tab-bench-lmsys" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted);">
+          <div id="bench-lmsys-intro" style="font-size: 0.9rem; color: var(--text-muted);">
             Benchmark blind side-by-side agent decisions on <strong>Arena.ai &amp; LMSYS</strong> OpenAI-compatible harness:
           </div>
           <button class="btn btn-primary" id="btn-run-lmsys-live" onclick="runLiveLmsysMatch()" style="padding: 0.5rem 1.2rem; font-weight: 700;">
@@ -1868,28 +1974,28 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="bench-hud-grid">
           <div class="hud-box">
-            <div class="hud-label">Reflex Speedup Ratio</div>
+            <div class="hud-label" id="lmsys-lbl-ratio">Reflex Speedup Ratio</div>
             <div class="hud-value" id="lmsys-live-ratio" style="color: var(--emerald);">189.3× Faster</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model A Latency (WERR)</div>
+            <div class="hud-label" id="lmsys-lbl-lata">Model A Latency (WERR)</div>
             <div class="hud-value" id="lmsys-live-lat-a" style="color: var(--cyan);">7.5 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model B Latency (Cloud LLM)</div>
-            <div class="hud-value" id="lmsys-live-lat-b" style="color: #cbd5e1;">1,420 ms</div>
+            <div class="hud-label" id="lmsys-lbl-latb">Model B Latency (Cloud LLM)</div>
+            <div class="hud-value" id="lmsys-live-lat-b" style="color: var(--text-muted);">1,420 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Memory Footprint Delta</div>
+            <div class="hud-label" id="lmsys-lbl-mem">Memory Footprint Delta</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes vs 16 GB</div>
           </div>
         </div>
 
         <!-- Scenario Selector & Custom Prompt -->
         <div style="margin-bottom: 1rem;">
-          <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Select Agent Triage Scenario:</div>
+          <div id="lbl-lmsys-scenario" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Select Agent Triage Scenario:</div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
             <button class="lang-btn active" id="lmsys-scen-1" onclick="setLmsysScenario(1)" style="font-size: 0.8rem; padding: 0.3rem 0.8rem;">
               🛡️ API Security Gate
@@ -1910,13 +2016,13 @@
         <!-- Side-by-Side A/B Panels (Arena.ai Blind Style) -->
         <div class="bench-grid-2col" style="margin-bottom: 1rem;">
           <!-- Model A Panel -->
-          <div class="bench-card-col" style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2a44; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
-              <span style="font-weight: 700; color: var(--cyan); font-size: 0.88rem;">🤖 Model A (Anonymous Blind)</span>
+          <div class="bench-card-col bench-panel-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
+              <span id="lmsys-model-a-title" style="font-weight: 700; color: var(--cyan); font-size: 0.88rem;">🤖 Model A (Anonymous Blind)</span>
               <span id="lmsys-tag-a" class="badge-pill" style="color: var(--emerald); border-color: var(--emerald); font-size: 0.75rem;">Waiting for dispatch</span>
             </div>
-            <pre id="lmsys-output-a" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: #79c0ff; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
-            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
+            <pre id="lmsys-output-a" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: var(--cyan); font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
+            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
               <span>VRAM: <strong id="lmsys-vram-a" style="color: var(--emerald);">0 Bytes</strong></span>
               <span>Cost: <strong style="color: var(--emerald);">$0.0000</strong></span>
               <span>Latency: <strong id="lmsys-lat-label-a" style="color: var(--cyan);">-</strong></span>
@@ -1924,29 +2030,29 @@
           </div>
 
           <!-- Model B Panel -->
-          <div class="bench-card-col" style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2a44; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
-              <span style="font-weight: 700; color: #a78bfa; font-size: 0.88rem;">🧠 Model B (Anonymous Blind)</span>
-              <span id="lmsys-tag-b" class="badge-pill" style="color: #cbd5e1; border-color: #475569; font-size: 0.75rem;">Waiting for dispatch</span>
+          <div class="bench-card-col bench-panel-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
+              <span id="lmsys-model-b-title" style="font-weight: 700; color: var(--indigo); font-size: 0.88rem;">🧠 Model B (Anonymous Blind)</span>
+              <span id="lmsys-tag-b" class="badge-pill" style="color: var(--text-muted); border-color: var(--border); font-size: 0.75rem;">Waiting for dispatch</span>
             </div>
-            <pre id="lmsys-output-b" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: #e2e8f0; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
-            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
-              <span>VRAM: <strong id="lmsys-vram-b" style="color: #f43f5e;">16 GB GPU</strong></span>
-              <span>Cost: <strong style="color: #f43f5e;">~$0.0240</strong></span>
-              <span>Latency: <strong id="lmsys-lat-label-b" style="color: #f59e0b;">-</strong></span>
+            <pre id="lmsys-output-b" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: var(--text-main); font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
+            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
+              <span>VRAM: <strong id="lmsys-vram-b" style="color: var(--rose);">16 GB GPU</strong></span>
+              <span>Cost: <strong style="color: var(--rose);">~$0.0240</strong></span>
+              <span>Latency: <strong id="lmsys-lat-label-b" style="color: var(--amber);">-</strong></span>
             </div>
           </div>
         </div>
 
         <!-- Blind Vote Actions -->
         <div id="lmsys-vote-actions" style="display: none; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;">
-          <button class="btn btn-secondary btn-sm" onclick="voteLmsys('A')" style="border-color: var(--cyan); color: #fff;">
+          <button class="btn btn-secondary btn-sm" id="lmsys-vote-btn-a" onclick="voteLmsys('A')" style="border-color: var(--cyan);">
             👈 Model A is Better / Faster
           </button>
-          <button class="btn btn-secondary btn-sm" onclick="voteLmsys('TIE')">
+          <button class="btn btn-secondary btn-sm" id="lmsys-vote-btn-tie" onclick="voteLmsys('TIE')">
             🤝 Tie / Both Valid
           </button>
-          <button class="btn btn-secondary btn-sm" onclick="voteLmsys('B')" style="border-color: #a78bfa; color: #fff;">
+          <button class="btn btn-secondary btn-sm" id="lmsys-vote-btn-b" onclick="voteLmsys('B')" style="border-color: var(--indigo);">
             👉 Model B is Better
           </button>
         </div>
@@ -1955,7 +2061,7 @@
         <div id="lmsys-reveal-card" style="display: none; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
           <div style="font-weight: 700; color: var(--cyan); margin-bottom: 0.3rem;">🎉 Blind Match Identity Revealed:</div>
           <div>• <strong>Model A:</strong> <span style="color: var(--emerald);">WERR 0-Byte VRAM Fractal Reflex</span> (<a href="https://answerr.me/docs.html#endpoint-chat" target="_blank" style="color: var(--cyan);">POST /v1/chat/completions</a>) &bull; <strong>189.3× faster</strong>, 100% deterministic, zero hallucination.</div>
-          <div>• <strong>Model B:</strong> <span style="color: #cbd5e1;">Baseline 70B Cloud LLM via OpenAI API</span> &bull; Required 1,420 ms, 32 tokens, and ~16 GB server GPU cluster.</div>
+          <div>• <strong>Model B:</strong> <span style="color: var(--text-muted);">Baseline 70B Cloud LLM via OpenAI API</span> &bull; Required 1,420 ms, 32 tokens, and ~16 GB server GPU cluster.</div>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
@@ -1971,7 +2077,7 @@
       <!-- TAB 5: Tau-Bench (Airline & Retail Agentic Tool Calling) Live Runner -->
       <div id="tab-bench-taubench" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted); max-width: 780px;">
+          <div id="bench-tau-intro" style="font-size: 0.9rem; color: var(--text-muted); max-width: 780px;">
             Evaluate complex multi-turn agentic tool calling and policy constraints across <strong>Airline</strong> (DOT 24h cancellations, flight rebooking, seat upgrades) and <strong>Retail</strong> (RMA returns, price matching, coupon stacking) domains from <strong>UC Berkeley AI Research &amp; Sierra</strong>:
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -1995,50 +2101,50 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="bench-hud-grid">
           <div class="hud-box">
-            <div class="hud-label">Schema Integrity</div>
+            <div class="hud-label" id="tau-lbl-schema">Schema Integrity</div>
             <div class="hud-value" id="tau-live-schema" style="color: var(--emerald);">100.0% (0 Err)</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Policy Constraint Pass</div>
+            <div class="hud-label" id="tau-lbl-pass">Policy Constraint Pass</div>
             <div class="hud-value" id="tau-live-pass" style="color: var(--emerald);">10/10 (100%)</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">P50 Tool Latency</div>
+            <div class="hud-label" id="tau-lbl-lat">P50 Tool Latency</div>
             <div class="hud-value" id="tau-live-latency" style="color: var(--cyan);">0.38 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model Memory</div>
+            <div class="hud-label" id="tau-lbl-mem">Model Memory</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes VRAM</div>
           </div>
         </div>
 
         <!-- Live Progress Bar -->
-        <div id="tau-progress-container" style="display: none; margin-bottom: 0.75rem; background: #131b2e; border-radius: 999px; height: 6px; overflow: hidden; border: 1px solid #1f2a44;">
+        <div id="tau-progress-container" class="bench-progress-track" style="display: none; margin-bottom: 0.75rem;">
           <div id="tau-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--emerald)); transition: width 0.08s ease;"></div>
         </div>
 
         <!-- Live Task Execution Log Terminal -->
-        <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="tau-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
+        <div class="json-code-container bench-terminal">
+          <div id="tau-live-log-output" class="bench-pre-wrap">
             [READY] Click 'Run Tau-Bench Suite (10 Tasks Live)' to dispatch real multi-turn policy tools across Airline (cancellations, rebooking, seat upgrades) and Retail (RMA returns, price match, promo verification) benchmark environments.
           </div>
         </div>
 
         <!-- Head-to-Head Comparison Summary Pill Table -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 1rem; font-size: 0.8rem;">
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">JSON Schema Failure Rate</div>
-            <div style="color: var(--emerald); font-weight: 700;">WERR: 0.0% vs LLMs: 16.4%</div>
+        <div class="bench-grid-4col">
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">JSON Schema Failure Rate</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">WERR: 0.0% vs LLMs: 16.4%</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Policy Compliance Verification</div>
-            <div style="color: var(--emerald); font-weight: 700;">WERR: 100% Deterministic Guard</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Policy Compliance Verification</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">WERR: 100% Deterministic Guard</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Action Latency Advantage</div>
-            <div style="color: var(--cyan); font-weight: 700;">4,800× Faster (0.38 ms vs 1,850 ms)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Action Latency Advantage</div>
+            <div class="bench-card-val" style="color: var(--cyan); font-weight: 700;">4,800× Faster (0.38 ms vs 1,850 ms)</div>
           </div>
         </div>
 
@@ -2055,7 +2161,7 @@
       <!-- TAB 6: Jevenator 2 (Visual Localisation & Video Tracking) Live Runner -->
       <div id="tab-bench-jevenator2" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-muted);">
+          <div id="bench-jev2-intro" style="font-size: 0.9rem; color: var(--text-muted);">
             Benchmark spatial region-scan localisation &amp; 24-frame video tracking against <strong>Maisa djev (Diffusion-Gemma 8GB VRAM)</strong>:
           </div>
           <button class="btn btn-primary" id="btn-run-jevenator2-live" onclick="runLiveJevenator2Benchmark()" style="padding: 0.5rem 1.2rem; font-weight: 700;">
@@ -2064,54 +2170,54 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div class="bench-hud-grid">
           <div class="hud-box">
-            <div class="hud-label">Relative Speedup</div>
+            <div class="hud-label" id="jev2-lbl-speedup">Relative Speedup</div>
             <div class="hud-value" id="jev2-live-speedup" style="color: var(--emerald);">27.8× Faster</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Mean Frame Latency</div>
+            <div class="hud-label" id="jev2-lbl-lat">Mean Frame Latency</div>
             <div class="hud-value" id="jev2-live-latency" style="color: var(--cyan);">27.39 ms</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Decisions Evaluated</div>
+            <div class="hud-label" id="jev2-lbl-decisions">Decisions Evaluated</div>
             <div class="hud-value" id="jev2-live-decisions" style="color: var(--emerald);">840 noul</div>
           </div>
           <div class="hud-box">
-            <div class="hud-label">Model Memory</div>
+            <div class="hud-label" id="jev2-lbl-mem">Model Memory</div>
             <div class="hud-value" style="color: var(--emerald);">0 Bytes VRAM</div>
           </div>
         </div>
 
         <!-- Live Progress Bar -->
-        <div id="jev2-progress-container" style="display: none; margin-bottom: 0.75rem; background: #131b2e; border-radius: 999px; height: 6px; overflow: hidden; border: 1px solid #1f2a44;">
+        <div id="jev2-progress-container" class="bench-progress-track" style="display: none; margin-bottom: 0.75rem;">
           <div id="jev2-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--emerald)); transition: width 0.08s ease;"></div>
         </div>
 
         <!-- Live Task Execution Log Terminal -->
-        <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="jev2-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
+        <div class="json-code-container bench-terminal">
+          <div id="jev2-live-log-output" class="bench-pre-wrap">
             [READY] Click 'Run Jevenator 2 Suite Live' to evaluate geometric shape localisation (3×3), actor negative control (0 false positives), and 24-frame temporal video tracking (7×5 grid = 840 discrete noul decisions).
           </div>
         </div>
 
         <!-- Head-to-Head Comparison Summary Pill Table -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 1rem; font-size: 0.8rem;">
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Geometric Shapes (3×3)</div>
-            <div style="color: var(--emerald); font-weight: 700;">100% Match (Triangle=B, Circle=F)</div>
+        <div class="bench-grid-4col">
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Geometric Shapes (3×3)</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">100% Match (Triangle=B, Circle=F)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Negative Control (Dyson)</div>
-            <div style="color: var(--emerald); font-weight: 700;">100% Clean (0 False Positives)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Negative Control (Dyson)</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">100% Clean (0 False Positives)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">Throughput Advantage</div>
-            <div style="color: var(--cyan); font-weight: 700;">455.7 vs 45.9 decisions/s (9.9×)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">Throughput Advantage</div>
+            <div class="bench-card-val" style="color: var(--cyan); font-weight: 700;">455.7 vs 45.9 decisions/s (9.9×)</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 0.6rem 0.8rem;">
-            <div style="color: var(--text-muted); font-size: 0.75rem;">VRAM Footprint</div>
-            <div style="color: var(--emerald); font-weight: 700;">0 Bytes (vs 8 GB GPU VRAM)</div>
+          <div class="bench-comparison-card">
+            <div class="bench-card-title">VRAM Footprint</div>
+            <div class="bench-card-val" style="color: var(--emerald); font-weight: 700;">0 Bytes (vs 8 GB GPU VRAM)</div>
           </div>
         </div>
 
@@ -2415,7 +2521,80 @@ if __name__ == "__main__":
       btnDownloadSeedText: "Download 24B Seed (.TXT)",
       btnDownloadSeedTitle: "Download 24-Byte Coordinate Seed & Decision State (.TXT)",
       cliRunHint: "<strong>Run in terminal:</strong> <code>python sor.py</code> (interactive menu) or <code>python sor.py member</code> (direct role)",
-      footerText: '<strong>werr</strong> is part of the <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> research initiative. MIT License.'
+      footerText: '<strong>werr</strong> is part of the <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> research initiative. MIT License.',
+      // Benchmark Arena Translations (EN)
+      benchNav: "⚡ Live Benchmark",
+      benchBadge: "ONLINE LIVE BENCHMARK ARENA",
+      benchTitle: "⚡ Run Official Benchmarks Live in Your Browser",
+      benchDesc: "Execute real benchmark suites on the live WERR kernel instantly — 100% in-process or via live REST endpoint with 0 byte tensor memory.",
+      benchStatusReady: "🟢 Engine Status: Ready",
+      benchTabWindtunnel: "🌐 WindTunnel WebMCP (49 Real Web Tasks)",
+      benchTabJevbench: "⚖️ JevBench REST Runner (TypeSafe Wire Format)",
+      benchTabGym: "🐍 Gymnasium RL Reflex (Snake & Step Throughput)",
+      benchTabLmsys: "⚔️ Arena.ai / LMSYS (Side-by-Side Blind Test)",
+      benchTabTaubench: "🤖 Tau-Bench (Airline & Retail Tool Calling)",
+      benchTabJevenator2: "🎯 Jevenator 2 (Visual Object & Video Tracking)",
+      // Tab 1: WindTunnel
+      benchWtIntro: "Test discrete tool selection across <strong>8 web apps &amp; 49 tasks</strong> against baseline cloud agents:",
+      btnRunWindtunnel: "🚀 Run All 49 Tasks Live",
+      hudAccScore: "Accuracy Score",
+      hudMedLat: "Median Latency",
+      hudModMem: "Model Memory",
+      hudQCost: "Query Cost",
+      wtReadyLog: "[READY] Click 'Run All 49 Tasks Live' to trigger real-time evaluation across medusa, hi-events, easyappointments, idurar, learnhouse, directory-9d8, nextjs-blog, and bulletproof-react.",
+      benchSource: "Benchmark Source:",
+      // Tab 2: JevBench
+      benchJevIntro: "Dispatch live TypeSafe wire-format (<code>POST /v1/systemone</code>) queries to test endpoint:",
+      btnRunJevbench: "⚡ Send Test Wire Query",
+      lblJevEndpoint: "Endpoint URL:",
+      lblJevWireSpec: "Wire Spec:",
+      valJevWireSpec: "TypeSafe Decision JSON (Noul, Choice, Score)",
+      jevReadyLog: "// Click 'Send Test Wire Query' to test JevBench wire compatibility live",
+      // Tab 3: Gymnasium
+      benchGymIntro: "Evaluate continuous sub-2ms reflex decisions on <strong>Farama Gymnasium</strong> RL environments (Snake / GridWorld) against DQN, PPO, and MLX baselines:",
+      btnRunGym: "🚀 Run Gymnasium Reflex (300 Steps Live)",
+      btnPlaySnake: "🎮 Play Interactive Demo ↗",
+      hudReflexTput: "Reflex Throughput",
+      hudP50Lat: "P50 Decision Latency",
+      hudPolicySeed: "RL Policy Footprint",
+      gymReadyLog: "[READY] Click 'Run Gymnasium Reflex (300 Steps Live)' to execute in-browser real-time step-by-step game state evaluations. Measures throughput (moves/sec), sub-2ms P50 latency, and collision-avoidance reflex gates.",
+      // Tab 4: LMSYS
+      benchLmsysIntro: "Benchmark blind side-by-side agent decisions on <strong>Arena.ai &amp; LMSYS</strong> OpenAI-compatible harness:",
+      btnRunLmsys: "⚔️ Run Blind A/B Match Live",
+      hudSpeedupRatio: "Reflex Speedup Ratio",
+      hudLatModelA: "Model A Latency (WERR)",
+      hudLatModelB: "Model B Latency (Cloud LLM)",
+      hudMemDelta: "Memory Footprint Delta",
+      lblLmsysSelectScenario: "Select Agent Triage Scenario:",
+      lmsysScen1: "🛡️ API Security Gate",
+      lmsysScen2: "💳 Checkout Fraud Guard",
+      lmsysScen3: "🤖 Industrial Robotics Safety",
+      lmsysScen4: "🌐 DDoS Rate Limiting",
+      lmsysModelA: "🤖 Model A (Anonymous Blind)",
+      lmsysModelB: "🧠 Model B (Anonymous Blind)",
+      lmsysWaitingDispatch: "Waiting for dispatch",
+      lmsysReadyA: "// Click 'Run Blind A/B Match Live' to dispatch query",
+      lmsysReadyB: "// Click 'Run Blind A/B Match Live' to dispatch query",
+      lmsysVoteA: "👈 Model A is Better / Faster",
+      lmsysVoteTie: "🤝 Tie / Both Valid",
+      lmsysVoteB: "👉 Model B is Better",
+      // Tab 5: Tau-Bench
+      benchTauIntro: "Evaluate complex multi-turn agentic tool calling and policy constraints across <strong>Airline</strong> (DOT 24h cancellations, flight rebooking, seat upgrades) and <strong>Retail</strong> (RMA returns, price matching, coupon stacking) domains from <strong>UC Berkeley AI Research &amp; Sierra</strong>:",
+      btnRunTaubench: "🚀 Run Tau-Bench Suite (10 Tasks Live)",
+      tauFilterAll: "🌐 All Tasks (10)",
+      tauFilterAirline: "✈️ Airline Domain (5)",
+      tauFilterRetail: "🛒 Retail Domain (5)",
+      hudSchemaIntegrity: "Schema Integrity",
+      hudPolicyPass: "Policy Constraint Pass",
+      hudP50ToolLat: "P50 Tool Latency",
+      tauReadyLog: "[READY] Click 'Run Tau-Bench Suite (10 Tasks Live)' to dispatch real multi-turn policy tools across Airline (cancellations, rebooking, seat upgrades) and Retail (RMA returns, price match, promo verification) benchmark environments.",
+      // Tab 6: Jevenator 2
+      benchJev2Intro: "Benchmark spatial region-scan localisation &amp; 24-frame video tracking against <strong>Maisa djev (Diffusion-Gemma 8GB VRAM)</strong>:",
+      btnRunJevenator2: "🚀 Run Jevenator 2 Suite Live",
+      hudRelSpeedup: "Relative Speedup",
+      hudMeanFrameLat: "Mean Frame Latency",
+      hudDecisionsEval: "Decisions Evaluated",
+      jev2ReadyLog: "[READY] Click 'Run Jevenator 2 Suite Live' to evaluate geometric shape localisation (3×3), actor negative control (0 false positives), and 24-frame temporal video tracking (7×5 grid = 840 discrete noul decisions)."
     },
     tr: {
       navGuide: "Halk Rehberi",
@@ -2505,7 +2684,80 @@ if __name__ == "__main__":
       btnDownloadSeedText: "24B Tohum İndir (.TXT)",
       btnDownloadSeedTitle: "24 Baytlık Koordinat Tohumu ve Karar Dökümünü İndir (.TXT)",
       cliRunHint: "<strong>Terminalde çalıştırma:</strong> <code>python sor.py</code> (seçim menüsü) veya <code>python sor.py member</code> (doğrudan rol)",
-      footerText: '<strong>werr</strong>, <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> araştırma girişiminin bir parçasıdır. MIT Lisansı.'
+      footerText: '<strong>werr</strong>, <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank">Mandelbrot Fractal Neural Synthesis</a> araştırma girişiminin bir parçasıdır. MIT Lisansı.',
+      // Benchmark Arena Çevirileri (TR)
+      benchNav: "⚡ Canlı Benchmark",
+      benchBadge: "CANLI ÇEVRİMİÇİ BENCHMARK ARENASI",
+      benchTitle: "⚡ Resmi Testleri Tarayıcınızda Canlı Çalıştırın",
+      benchDesc: "Resmi benchmark paketlerini canlı WERR çekirdeğinde hemen çalıştırın — 0 bayt tensör belleğiyle %100 süreç-içi veya canlı REST uç noktası üzerinden.",
+      benchStatusReady: "🟢 Motor Durumu: Hazır",
+      benchTabWindtunnel: "🌐 WindTunnel WebMCP (49 Gerçek Web Görevi)",
+      benchTabJevbench: "⚖️ JevBench REST İstemcisi (Tip-Güvenli Tel Formatı)",
+      benchTabGym: "🐍 Gymnasium RL Refleksi (Yılan & Adım Çıktısı)",
+      benchTabLmsys: "⚔️ Arena.ai / LMSYS (Kör Yan Yana Test)",
+      benchTabTaubench: "🤖 Tau-Bench (Havacılık & Perakende Araç Çağrısı)",
+      benchTabJevenator2: "🎯 Jevenator 2 (Görsel Nesne & Video Takibi)",
+      // Tab 1: WindTunnel
+      benchWtIntro: "Bulut tabanlı standart ajanlara karşı <strong>8 web uygulaması ve 49 görev</strong> üzerinde ayrık araç seçimini test edin:",
+      btnRunWindtunnel: "🚀 49 Görevin Tamamını Canlı Çalıştır",
+      hudAccScore: "Doğruluk Skoru",
+      hudMedLat: "Medyan Gecikme",
+      hudModMem: "Model Belleği",
+      hudQCost: "Sorgu Maliyeti",
+      wtReadyLog: "[HAZIR] Medusa, hi-events, easyappointments, idurar, learnhouse, directory-9d8, nextjs-blog ve bulletproof-react üzerinde canlı değerlendirmeyi başlatmak için '49 Görevin Tamamını Canlı Çalıştır'a tıklayın.",
+      benchSource: "Benchmark Kaynağı:",
+      // Tab 2: JevBench
+      benchJevIntro: "Test uç noktasına canlı Tip-Güvenli tel formatında (<code>POST /v1/systemone</code>) sorgu gönderin:",
+      btnRunJevbench: "⚡ Test Tel Sorgusu Gönder",
+      lblJevEndpoint: "Uç Nokta URL:",
+      lblJevWireSpec: "Tel Protokolü Şartnamesi:",
+      valJevWireSpec: "Tip-Güvenli Karar JSON (Noul, Choice, Score)",
+      jevReadyLog: "// JevBench tel protokolü uyumluluğunu canlı test etmek için 'Test Tel Sorgusu Gönder'e tıklayın",
+      // Tab 3: Gymnasium
+      benchGymIntro: "DQN, PPO ve MLX taban çizgilerine karşı <strong>Farama Gymnasium</strong> RL ortamlarında (Snake / GridWorld) kesintisiz 2ms altı refleks kararlarını değerlendirin:",
+      btnRunGym: "🚀 Gymnasium Refleksini Çalıştır (300 Canlı Adım)",
+      btnPlaySnake: "🎮 İnteraktif Demoyu Oyna ↗",
+      hudReflexTput: "Refleks Çıktısı",
+      hudP50Lat: "P50 Karar Gecikmesi",
+      hudPolicySeed: "RL Politika Boyutu",
+      gymReadyLog: "[HAZIR] Tarayıcı içi gerçek zamanlı adım adım oyun durumu değerlendirmelerini başlatmak için 'Gymnasium Refleksini Çalıştır'a tıklayın. Çıktıyı (adım/sn), 2ms altı P50 gecikmesini ve engellerden kaçma refleks kapılarını ölçer.",
+      // Tab 4: LMSYS
+      benchLmsysIntro: "<strong>Arena.ai &amp; LMSYS</strong> OpenAI uyumlu test çatısında kör yan yana ajan kararlarını kıyaslayın:",
+      btnRunLmsys: "⚔️ Kör A/B Karşılaşmasını Canlı Başlat",
+      hudSpeedupRatio: "Refleks Hızlanma Oranı",
+      hudLatModelA: "Model A Gecikmesi (WERR)",
+      hudLatModelB: "Model B Gecikmesi (Bulut LLM)",
+      hudMemDelta: "Bellek Tüketim Farkı",
+      lblLmsysSelectScenario: "Ajan Triyaj Senaryosunu Seçin:",
+      lmsysScen1: "🛡️ API Güvenlik Kapısı",
+      lmsysScen2: "💳 Ödeme Sahtekarlık Koruması",
+      lmsysScen3: "🤖 Endüstriyel Robot Güvenliği",
+      lmsysScen4: "🌐 DDoS Hız Sınırlaması",
+      lmsysModelA: "🤖 Model A (Anonim Kör Test)",
+      lmsysModelB: "🧠 Model B (Anonim Kör Test)",
+      lmsysWaitingDispatch: "Sorgu bekleniyor",
+      lmsysReadyA: "// Sorgu göndermek için 'Kör A/B Karşılaşmasını Canlı Başlat'a tıklayın",
+      lmsysReadyB: "// Sorgu göndermek için 'Kör A/B Karşılaşmasını Canlı Başlat'a tıklayın",
+      lmsysVoteA: "👈 Model A Daha İyi / Daha Hızlı",
+      lmsysVoteTie: "🤝 Berabere / İkisi de Geçerli",
+      lmsysVoteB: "👉 Model B Daha İyi",
+      // Tab 5: Tau-Bench
+      benchTauIntro: "<strong>UC Berkeley Yapay Zeka Araştırma &amp; Sierra</strong> tarafından geliştirilen <strong>Havacılık</strong> (DOT 24 saat iptali, yeniden uçuş planlama, koltuk yükseltme) ve <strong>Perakende</strong> (RMA iadeleri, fiyat eşitleme, kupon birleştirme) alanlarında karmaşık çok adımlı araç çağrılarını ve kural kısıtlamalarını değerlendirin:",
+      btnRunTaubench: "🚀 Tau-Bench Paketini Çalıştır (10 Canlı Görev)",
+      tauFilterAll: "🌐 Tüm Görevler (10)",
+      tauFilterAirline: "✈️ Havacılık Alanı (5)",
+      tauFilterRetail: "🛒 Perakende Alanı (5)",
+      hudSchemaIntegrity: "Şema Bütünlüğü",
+      hudPolicyPass: "Politika Kural Başarımı",
+      hudP50ToolLat: "P50 Araç Gecikmesi",
+      tauReadyLog: "[HAZIR] Havacılık (iptaller, yeniden biletleme, koltuk yükseltme) ve Perakende (iade, fiyat eşleştirme, promosyon doğrulama) ortamlarında gerçek çok turlu politika araçlarını çalıştırmak için 'Tau-Bench Paketini Çalıştır'a tıklayın.",
+      // Tab 6: Jevenator 2
+      benchJev2Intro: "<strong>Maisa djev (Diffusion-Gemma 8GB VRAM)</strong> modeline karşı uzamsal bölge tarama konumlandırması ve 24 karelik video takibini kıyaslayın:",
+      btnRunJevenator2: "🚀 Jevenator 2 Paketini Canlı Çalıştır",
+      hudRelSpeedup: "Göreceli Hızlanma",
+      hudMeanFrameLat: "Ortalama Kare Gecikmesi",
+      hudDecisionsEval: "Değerlendirilen Karar",
+      jev2ReadyLog: "[HAZIR] Geometrik şekil konumlandırmasını (3×3), negatif kontrolü (0 hatalı pozitif) ve 24 karelik zamansal video takibini (7×5 ızgara = 840 ayrık noul kararı) değerlendirmek için 'Jevenator 2 Paketini Canlı Çalıştır'a tıklayın."
     }
   };
 
@@ -2750,6 +3002,170 @@ if __name__ == "__main__":
     document.getElementById('code-install-lbl').innerText = t.codeInstallLbl;
     document.getElementById('code-usage-lbl').innerText = t.codeUsageLbl;
     document.getElementById('footer-text').innerHTML = t.footerText;
+
+    // Benchmark Arena i18n DOM Updates
+    const navArena = document.getElementById('nav-arena');
+    if (navArena) navArena.innerText = t.benchNav;
+    const bBadge = document.getElementById('bench-badge');
+    if (bBadge) bBadge.innerText = t.benchBadge;
+    const bTitle = document.getElementById('bench-title');
+    if (bTitle) bTitle.innerText = t.benchTitle;
+    const bDesc = document.getElementById('bench-desc');
+    if (bDesc) bDesc.innerText = t.benchDesc;
+    const bStatus = document.getElementById('bench-status-badge');
+    if (bStatus) bStatus.innerText = t.benchStatusReady;
+
+    // Benchmark Tabs
+    const tabWt = document.getElementById('btn-bench-windtunnel');
+    if (tabWt) tabWt.innerText = t.benchTabWindtunnel;
+    const tabJev = document.getElementById('btn-bench-jevbench');
+    if (tabJev) tabJev.innerText = t.benchTabJevbench;
+    const tabGym = document.getElementById('btn-bench-gym');
+    if (tabGym) tabGym.innerText = t.benchTabGym;
+    const tabLmsys = document.getElementById('btn-bench-lmsys');
+    if (tabLmsys) tabLmsys.innerText = t.benchTabLmsys;
+    const tabTau = document.getElementById('btn-bench-taubench');
+    if (tabTau) tabTau.innerText = t.benchTabTaubench;
+    const tabJev2 = document.getElementById('btn-bench-jevenator2');
+    if (tabJev2) tabJev2.innerText = t.benchTabJevenator2;
+
+    // Tab 1: WindTunnel
+    const wtIntro = document.getElementById('bench-wt-intro');
+    if (wtIntro) wtIntro.innerHTML = t.benchWtIntro;
+    const btnRunWt = document.getElementById('btn-run-windtunnel-live');
+    if (btnRunWt) btnRunWt.innerText = t.btnRunWindtunnel;
+    const wtLblAcc = document.getElementById('wt-lbl-acc');
+    if (wtLblAcc) wtLblAcc.innerText = t.hudAccScore;
+    const wtLblLat = document.getElementById('wt-lbl-lat');
+    if (wtLblLat) wtLblLat.innerText = t.hudMedLat;
+    const wtLblMem = document.getElementById('wt-lbl-mem');
+    if (wtLblMem) wtLblMem.innerText = t.hudModMem;
+    const wtLblCost = document.getElementById('wt-lbl-cost');
+    if (wtLblCost) wtLblCost.innerText = t.hudQCost;
+    const wtLog = document.getElementById('wt-live-log-output');
+    if (wtLog && wtLog.innerText.startsWith('[') && (wtLog.innerText.includes('READY') || wtLog.innerText.includes('HAZIR'))) {
+      wtLog.innerText = t.wtReadyLog;
+    }
+
+    // Tab 2: JevBench
+    const jevIntro = document.getElementById('bench-jev-intro');
+    if (jevIntro) jevIntro.innerHTML = t.benchJevIntro;
+    const btnRunJev = document.getElementById('btn-run-jevbench-live');
+    if (btnRunJev) btnRunJev.innerText = t.btnRunJevbench;
+    const lblJevEndpoint = document.getElementById('lbl-jev-endpoint');
+    if (lblJevEndpoint) lblJevEndpoint.innerText = t.lblJevEndpoint;
+    const lblJevWireSpec = document.getElementById('lbl-jev-wirespec');
+    if (lblJevWireSpec) lblJevWireSpec.innerText = t.lblJevWireSpec;
+    const valJevWireSpec = document.getElementById('val-jev-wirespec');
+    if (valJevWireSpec) valJevWireSpec.innerText = t.valJevWireSpec;
+    const jevLog = document.getElementById('jev-live-output');
+    if (jevLog && jevLog.innerText.startsWith('//') && (jevLog.innerText.includes('Click') || jevLog.innerText.includes('tıklayın'))) {
+      jevLog.innerText = t.jevReadyLog;
+    }
+
+    // Tab 3: Gymnasium
+    const gymIntro = document.getElementById('bench-gym-intro');
+    if (gymIntro) gymIntro.innerHTML = t.benchGymIntro;
+    const btnRunGym = document.getElementById('btn-run-gym-live');
+    if (btnRunGym) btnRunGym.innerText = t.btnRunGym;
+    const btnPlaySnake = document.getElementById('btn-play-snake');
+    if (btnPlaySnake) btnPlaySnake.innerText = t.btnPlaySnake;
+    const gymLblTput = document.getElementById('gym-lbl-tput');
+    if (gymLblTput) gymLblTput.innerText = t.hudReflexTput;
+    const gymLblLat = document.getElementById('gym-lbl-lat');
+    if (gymLblLat) gymLblLat.innerText = t.hudP50Lat;
+    const gymLblMem = document.getElementById('gym-lbl-mem');
+    if (gymLblMem) gymLblMem.innerText = t.hudModMem;
+    const gymLblPolicy = document.getElementById('gym-lbl-policy');
+    if (gymLblPolicy) gymLblPolicy.innerText = t.hudPolicySeed;
+    const gymLog = document.getElementById('gym-live-log-output');
+    if (gymLog && gymLog.innerText.startsWith('[') && (gymLog.innerText.includes('READY') || gymLog.innerText.includes('HAZIR'))) {
+      gymLog.innerText = t.gymReadyLog;
+    }
+
+    // Tab 4: LMSYS
+    const lmsysIntro = document.getElementById('bench-lmsys-intro');
+    if (lmsysIntro) lmsysIntro.innerHTML = t.benchLmsysIntro;
+    const btnRunLmsys = document.getElementById('btn-run-lmsys-live');
+    if (btnRunLmsys) btnRunLmsys.innerText = t.btnRunLmsys;
+    const lmsysLblRatio = document.getElementById('lmsys-lbl-ratio');
+    if (lmsysLblRatio) lmsysLblRatio.innerText = t.hudSpeedupRatio;
+    const lmsysLblLatA = document.getElementById('lmsys-lbl-lata');
+    if (lmsysLblLatA) lmsysLblLatA.innerText = t.hudLatModelA;
+    const lmsysLblLatB = document.getElementById('lmsys-lbl-latb');
+    if (lmsysLblLatB) lmsysLblLatB.innerText = t.hudLatModelB;
+    const lmsysLblMem = document.getElementById('lmsys-lbl-mem');
+    if (lmsysLblMem) lmsysLblMem.innerText = t.hudMemDelta;
+    const lblLmsysScen = document.getElementById('lbl-lmsys-scenario');
+    if (lblLmsysScen) lblLmsysScen.innerText = t.lblLmsysSelectScenario;
+    const s1 = document.getElementById('lmsys-scen-1');
+    if (s1) s1.innerText = t.lmsysScen1;
+    const s2 = document.getElementById('lmsys-scen-2');
+    if (s2) s2.innerText = t.lmsysScen2;
+    const s3 = document.getElementById('lmsys-scen-3');
+    if (s3) s3.innerText = t.lmsysScen3;
+    const s4 = document.getElementById('lmsys-scen-4');
+    if (s4) s4.innerText = t.lmsysScen4;
+    const modATitle = document.getElementById('lmsys-model-a-title');
+    if (modATitle) modATitle.innerText = t.lmsysModelA;
+    const modBTitle = document.getElementById('lmsys-model-b-title');
+    if (modBTitle) modBTitle.innerText = t.lmsysModelB;
+    const tagA = document.getElementById('lmsys-tag-a');
+    if (tagA && (tagA.innerText.includes('Waiting') || tagA.innerText.includes('bekleniyor'))) tagA.innerText = t.lmsysWaitingDispatch;
+    const tagB = document.getElementById('lmsys-tag-b');
+    if (tagB && (tagB.innerText.includes('Waiting') || tagB.innerText.includes('bekleniyor'))) tagB.innerText = t.lmsysWaitingDispatch;
+    const outA = document.getElementById('lmsys-output-a');
+    if (outA && outA.innerText.startsWith('//') && (outA.innerText.includes('Click') || outA.innerText.includes('tıklayın'))) outA.innerText = t.lmsysReadyA;
+    const outB = document.getElementById('lmsys-output-b');
+    if (outB && outB.innerText.startsWith('//') && (outB.innerText.includes('Click') || outB.innerText.includes('tıklayın'))) outB.innerText = t.lmsysReadyB;
+    const voteA = document.getElementById('lmsys-vote-btn-a');
+    if (voteA) voteA.innerText = t.lmsysVoteA;
+    const voteTie = document.getElementById('lmsys-vote-btn-tie');
+    if (voteTie) voteTie.innerText = t.lmsysVoteTie;
+    const voteB = document.getElementById('lmsys-vote-btn-b');
+    if (voteB) voteB.innerText = t.lmsysVoteB;
+
+    // Tab 5: Tau-Bench
+    const tauIntro = document.getElementById('bench-tau-intro');
+    if (tauIntro) tauIntro.innerHTML = t.benchTauIntro;
+    const btnRunTau = document.getElementById('btn-run-taubench-live');
+    if (btnRunTau) btnRunTau.innerText = t.btnRunTaubench;
+    const fAll = document.getElementById('btn-tau-filter-all');
+    if (fAll) fAll.innerText = t.tauFilterAll;
+    const fAir = document.getElementById('btn-tau-filter-airline');
+    if (fAir) fAir.innerText = t.tauFilterAirline;
+    const fRet = document.getElementById('btn-tau-filter-retail');
+    if (fRet) fRet.innerText = t.tauFilterRetail;
+    const tauLblSchema = document.getElementById('tau-lbl-schema');
+    if (tauLblSchema) tauLblSchema.innerText = t.hudSchemaIntegrity;
+    const tauLblPass = document.getElementById('tau-lbl-pass');
+    if (tauLblPass) tauLblPass.innerText = t.hudPolicyPass;
+    const tauLblLat = document.getElementById('tau-lbl-lat');
+    if (tauLblLat) tauLblLat.innerText = t.hudP50ToolLat;
+    const tauLblMem = document.getElementById('tau-lbl-mem');
+    if (tauLblMem) tauLblMem.innerText = t.hudModMem;
+    const tauLog = document.getElementById('tau-live-log-output');
+    if (tauLog && tauLog.innerText.startsWith('[') && (tauLog.innerText.includes('READY') || tauLog.innerText.includes('HAZIR'))) {
+      tauLog.innerText = t.tauReadyLog;
+    }
+
+    // Tab 6: Jevenator 2
+    const jev2Intro = document.getElementById('bench-jev2-intro');
+    if (jev2Intro) jev2Intro.innerHTML = t.benchJev2Intro;
+    const btnRunJev2 = document.getElementById('btn-run-jevenator2-live');
+    if (btnRunJev2) btnRunJev2.innerText = t.btnRunJevenator2;
+    const jev2LblSpeedup = document.getElementById('jev2-lbl-speedup');
+    if (jev2LblSpeedup) jev2LblSpeedup.innerText = t.hudRelSpeedup;
+    const jev2LblLat = document.getElementById('jev2-lbl-lat');
+    if (jev2LblLat) jev2LblLat.innerText = t.hudMeanFrameLat;
+    const jev2LblDec = document.getElementById('jev2-lbl-decisions');
+    if (jev2LblDec) jev2LblDec.innerText = t.hudDecisionsEval;
+    const jev2LblMem = document.getElementById('jev2-lbl-mem');
+    if (jev2LblMem) jev2LblMem.innerText = t.hudModMem;
+    const jev2Log = document.getElementById('jev2-live-log-output');
+    if (jev2Log && jev2Log.innerText.startsWith('[') && (jev2Log.innerText.includes('READY') || jev2Log.innerText.includes('HAZIR'))) {
+      jev2Log.innerText = t.jev2ReadyLog;
+    }
 
     // Update active preset content to match language
     loadUnifiedPreset(activeUnifiedPreset);
