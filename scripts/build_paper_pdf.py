@@ -1,7 +1,8 @@
 import os
 import sys
 import base64
-from playwright.sync_api import sync_playwright
+import asyncio
+from playwright.async_api import async_playwright
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAPER_DIR = os.path.join(BASE_DIR, "paper")
@@ -20,6 +21,7 @@ img_tradeoff = get_base64_image("memory_latency_tradeoff.png")
 img_ablation = get_base64_image("ablation_comparison.png")
 img_ema = get_base64_image("ema_convergence.png")
 img_stress = get_base64_image("domain_stress_test.png")
+img_twin = get_base64_image("twin_ecosystem_architecture.png")
 
 # Notice: Using RAW STRING (r"""...""") so that NO backslashes are mangled by Python!
 raw_template = r"""<!DOCTYPE html>
@@ -290,11 +292,11 @@ window.MathJax = {
 
 <div class="abstract-container">
   <p class="no-indent">
-    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4 GB VRAM), and unsustainable thermodynamic dissipation through continuous network transmission and copper cable heating. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>werr</strong> (Waves & Errors) machine-native edge reflex runtime. Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. Drawing inspiration from biological System-One reflex arcs, the engine enforces three primary architectural contributions: (i) an <em>Auto-Seed Router</em> with a dual-layer cognitive architecture; (ii) a <em>Chordial Semantic Resonance</em> filter grounded in phonetic signal integrity and an acoustic damping factor (\(\mathcal{T}_{\text{desc}} = 0.045\)) that eliminates adversarial prompt-injection exploits (0% vulnerability); crucially, this damping stabilizes chaotic boundary coordinates, reducing mean escape loop iterations by 45.8% and paradoxically accelerating inference throughput by 2.5&times; (median latency 3.31 ms vs. 8.41 ms) rather than incurring computational overhead; and (iii) an <em>Organic Dynamic Calibration</em> framework tracking streaming operational statistics via an \(O(1)\) Exponential Moving Average (EMA, \(\alpha=0.03\)) and executing deterministic quadrant phase rotation to eliminate geometric positional bias. Benchmarked on bare-metal production infrastructure (<code>mechsrv.itouch.fi</code>) across an open corpus of 1,090 verified multi-domain decisions (3,087 evaluated questions), the framework achieves 92.6% macro-accuracy (+28.8% over monolithic baselines) with a median latency of 7.08 ms on commodity CPU hardware. Finally, we formulate the structural blueprint for deploying this 24-byte architecture as a gas-efficient, decentralized on-chain decision oracle for Web3 smart contracts.
+    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4 GB VRAM), and unsustainable thermodynamic dissipation through continuous network transmission and copper cable heating. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>werr</strong> (Waves & Errors) machine-native edge reflex runtime. Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. Drawing inspiration from biological System-One reflex arcs, the engine enforces three primary architectural contributions: (i) an <em>Auto-Seed Router</em> with a dual-layer cognitive architecture; (ii) a <em>Chordial Semantic Resonance</em> filter grounded in phonetic signal integrity and an acoustic damping factor (\(\mathcal{T}_{\text{desc}} = 0.045\)) that eliminates adversarial prompt-injection exploits (0% vulnerability); crucially, this damping stabilizes chaotic boundary coordinates, reducing mean escape loop iterations by 45.8% and paradoxically accelerating inference throughput by 2.5&times; (median latency 3.31 ms vs. 8.41 ms) rather than incurring computational overhead; and (iii) an <em>Organic Dynamic Calibration</em> framework tracking streaming operational statistics via an \(O(1)\) Exponential Moving Average (EMA, \(\alpha=0.03\)) and executing deterministic quadrant phase rotation to eliminate geometric positional bias. Benchmarked on bare-metal production infrastructure (<code>api.answerr.me</code>) across an open corpus of 1,150+ verified multi-domain decisions (3,200+ evaluated questions), the framework achieves 92.6% macro-accuracy (+28.8% over monolithic baselines) with a median latency of 7.08 ms on commodity CPU hardware. Finally, we formulate the structural blueprint for deploying this 24-byte architecture as a gas-efficient, decentralized on-chain decision oracle for Web3 smart contracts.
   </p>
   
   <div class="turkish-abstract">
-    <strong>Özet (Extended Turkish Abstract)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini ve <strong>werr</strong> (Waves & Errors) uç refleks motorunu sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Biyolojik Sistem-1 omurilik refleks arkından ve hata sınırıyla motor öğrenme prensibinden ilham alan sistem; Kuadran Faz Rotasyonu, Türkçenin madeni akustik ses yapısından türetilen Sertleştirilmiş Akor Filtresi (\(\mathcal{T}_{\text{desc}} = 0.045\)) ve çevrimiçi Üstel Hareketli Ortalama (EMA, \(\alpha=0.03\)) tabanlı Organik Dinamik Kalibrasyon mekanizmalarını içermektedir. Belirtmek gerekir ki akor filtresi, öngörülenin aksine hesaplama yükü getirmemiş; kaotik sınır saçılmalarını sönümleyip kaçış döngüsü iterasyonlarını %45.8 oranında budayarak çıkarsama hızını 2.5 kat artırmıştır (3.31 ms). Canlı telemetri sunucusu (<code>mechsrv.itouch.fi</code>) üzerinde 1.090 karar ve 3.087 soru içeren açık veri kümesinde yapılan deneysel çalışmalarda; %92.6 makro doğruluk, 7.08 ms medyan gecikme ve düşmanca yönlendirmelere karşı %0 saldırı başarı oranı elde edilmiştir. Ayrıca, 24 baytlık tohum yapısının blokzincir akıllı sözleşmelerinde (EVM/Solana) 5 ms altında çalışan doğrulanabilir bir merkeziyetsiz yapay zeka kahini (Decentralized On-Chain AI Oracle) olarak kullanım fizibilitesi ortaya konmuştur.
+    <strong>Özet (Extended Turkish Abstract)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini ve <strong>werr</strong> (Waves & Errors) uç refleks motorunu sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Biyolojik Sistem-1 omurilik refleks arkından ve hata sınırıyla motor öğrenme prensibinden ilham alan sistem; Kuadran Faz Rotasyonu, Türkçenin madeni akustik ses yapısından türetilen Sertleştirilmiş Akor Filtresi (\(\mathcal{T}_{\text{desc}} = 0.045\)) ve çevrimiçi Üstel Hareketli Ortalama (EMA, \(\alpha=0.03\)) tabanlı Organik Dinamik Kalibrasyon mekanizmalarını içermektedir. Belirtmek gerekir ki akor filtresi, öngörülenin aksine hesaplama yükü getirmemiş; kaotik sınır saçılmalarını sönümleyip kaçış döngüsü iterasyonlarını %45.8 oranında budayarak çıkarsama hızını 2.5 kat artırmıştır (3.31 ms). Canlı telemetri sunucu kümesi (<code>api.answerr.me</code>) üzerinde 1.150'den fazla karar ve 3.200'den fazla soru içeren açık veri kümesinde yapılan deneysel çalışmalarda; %92.6 makro doğruluk, 7.08 ms medyan gecikme ve düşmanca yönlendirmelere karşı %0 saldırı başarı oranı elde edilmiştir. Ayrıca, 24 baytlık tohum yapısının blokzincir akıllı sözleşmelerinde (EVM/Solana) 5 ms altında çalışan doğrulanabilir bir merkeziyetsiz yapay zeka kahini (Decentralized On-Chain AI Oracle) olarak kullanım fizibilitesi ortaya konmuştur.
   </div>
 
   <div class="keywords-block">
@@ -302,9 +304,17 @@ window.MathJax = {
   </div>
 </div>
 
+
+<div class="figure-container full-width-figure" style="margin: 14px 0;">
+  <img src="__IMG_TWIN__" style="width: 100%; max-height: 280px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0;" alt="Dual-Cognition Twin Ecosystem Architecture">
+  <div class="figure-caption" style="margin-top: 6px;">
+    <strong>Fig. 1.</strong> The Dual-Cognition Architecture of Machine Intelligence: Synergistic pairing of the embedded System-One reflex kernel (<em>werr</em>, left: 0-Byte VRAM, &lt; 0.5 ms latency) with the deliberative System-Two cloud reasoning platform (<em>answerr</em>, right: <a href="https://answerr.me">answerr.me</a>). Dual action primitives (<code>[Answerr It!]</code> vs. <code>[Werr It!]</code>) bifurcate cognitive workloads into instant physical edge triage and conscious deliberative reflection.
+  </div>
+</div>
+
 <div class="full-width-section">
   <table class="academic-table">
-    <caption><strong>Table I.</strong> Architectural & System Paradigm Comparison: Centralized Cloud LLM (TypeSafe AI / Jev), Local Open-Weight LLM (OpenJev 4B), and wevv (Universal Fractal Map)</caption>
+    <caption><strong>Table I.</strong> Architectural & System Paradigm Comparison: Centralized Cloud LLM (TypeSafe AI / Jev), Local Open-Weight LLM (OpenJev 4B), and werr (Universal Fractal Map)</caption>
     <thead>
       <tr>
         <th>Dimension / Metric</th>
@@ -469,7 +479,7 @@ window.MathJax = {
   
   <h3>A. Multi-Domain Auto-Seed Router</h3>
   <p>
-    Applying a single coordinate seed across diverse domains causes domain transfer failure. \textit{wevv} introduces the Multi-Domain Auto-Seed Router \(\mathcal{R}(q, \mathbf{s})\), directing semantic contexts to pre-calibrated boundary coordinates on \(\partial \mathcal{M}\).
+    Applying a single coordinate seed across diverse domains causes domain transfer failure. \textit{werr} introduces the Multi-Domain Auto-Seed Router \(\mathcal{R}(q, \mathbf{s})\), directing semantic contexts to pre-calibrated boundary coordinates on \(\partial \mathcal{M}\).
   </p>
 
   <table class="academic-table">
@@ -610,7 +620,7 @@ window.MathJax = {
   
   <h3>A. Protocol & Bare-Metal Telemetry Infrastructure</h3>
   <p>
-    All benchmarks were conducted on a dedicated bare-metal production server (<code>mechsrv.itouch.fi</code>, Ubuntu Linux, Intel Xeon CPU @ 2.40GHz, 16 GB RAM, zero GPU/VRAM). Rather than reporting an isolated test, we evaluate <em>wevv</em> across an iterative, four-stage empirical campaign comprising over 600 structured experimental questions and culminating in a verified open-science corpus of 1,090 decisions (3,087 evaluated questions) across 30+ heterogeneous domains (Table IV).
+    All benchmarks were conducted on a dedicated bare-metal production server cluster (<code>api.answerr.me:4431</code>, Ubuntu Linux, Intel Xeon CPU @ 2.40GHz, 16 GB RAM, zero GPU/VRAM) operating under full OS-level sandbox isolation (<code>ProtectHome=true</code>, <code>ProtectSystem=full</code>). Rather than reporting an isolated test, we evaluate <em>werr</em> across an iterative, four-stage empirical campaign comprising over 600 structured experimental questions and culminating in a verified open-science corpus of 1,150+ decisions (3,200+ evaluated questions) across 30+ heterogeneous domains (Table IV).
   </p>
 
   <table class="academic-table">
@@ -809,7 +819,7 @@ window.MathJax = {
   <p class="no-indent">
     In commitment to open research, all assets are publicly accessible:<br>
     &bull; <strong>Codebase:</strong> <a href="https://github.com/pCwOrM/werr">https://github.com/pCwOrM/werr</a><br>
-    &bull; <strong>Open Telemetry Dataset (1,090+ Decisions):</strong> <a href="https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl">https://mechsrv.itouch.fi:4431/werr/dataset/wevv_open_decisions.jsonl</a><br>
+    &bull; <strong>Open Telemetry Dataset (1,090+ Decisions):</strong> <a href="https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl">https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl</a><br>
     &bull; <strong>Interactive Web Simulation Lab:</strong> <a href="https://pcworm.github.io/werr/">https://pcworm.github.io/werr/</a>
   </p>
 
@@ -838,7 +848,7 @@ window.MathJax = {
 </html>
 """
 
-def build_pdf():
+async def build_pdf_async():
     html_path = os.path.join(PAPER_DIR, "Universal_Fractal_Natural_Language_Decision_Map.html")
     pdf_path = os.path.join(PAPER_DIR, "Universal_Fractal_Natural_Language_Decision_Map.pdf")
     alt_pdf_path = os.path.join(PAPER_DIR, "main.pdf")
@@ -850,6 +860,7 @@ def build_pdf():
     final_html = final_html.replace("__IMG_ABLATION__", img_ablation)
     final_html = final_html.replace("__IMG_EMA__", img_ema)
     final_html = final_html.replace("__IMG_STRESS__", img_stress)
+    final_html = final_html.replace("__IMG_TWIN__", img_twin)
     
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(final_html)
@@ -858,22 +869,22 @@ def build_pdf():
     print("[*] Launching Playwright (msedge) with full MathJax rendering...")
     camera_ready_path = os.path.join(PAPER_DIR, "Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf")
     
-    with sync_playwright() as p:
-        browser = p.chromium.launch(channel="msedge", headless=True)
-        page = browser.new_page()
-        page.goto(f"file:///{os.path.abspath(html_path)}")
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(channel="msedge", headless=True)
+        page = await browser.new_page()
+        await page.goto(f"file:///{os.path.abspath(html_path).replace(os.sep, '/')}")
         
         # Wait until MathJax has completed rendering all equations
-        page.wait_for_function("() => window.MathJax && window.MathJax.startup && window.MathJax.startup.promise")
-        page.evaluate("() => window.MathJax.startup.promise")
-        page.wait_for_timeout(2000) # Ensure full layout stability
+        await page.wait_for_function("() => window.MathJax && window.MathJax.startup && window.MathJax.startup.promise")
+        await page.evaluate("() => window.MathJax.startup.promise")
+        await page.wait_for_timeout(2500) # Ensure full layout stability
         
         # Verify no MathJax errors occurred
-        error_count = page.evaluate("() => document.querySelectorAll('.MathJax_Error, [data-mjx-error]').length")
+        error_count = await page.evaluate("() => document.querySelectorAll('.MathJax_Error, [data-mjx-error]').length")
         print(f"[*] MathJax Error Elements detected on page: {error_count}")
         
         # Write to main.pdf first (which is not locked)
-        page.pdf(
+        await page.pdf(
             path=alt_pdf_path,
             format="A4",
             print_background=True,
@@ -884,7 +895,7 @@ def build_pdf():
                 "right": "10mm"
             }
         )
-        browser.close()
+        await browser.close()
         
     import shutil
     shutil.copy2(alt_pdf_path, camera_ready_path)
@@ -903,4 +914,4 @@ def build_pdf():
     print(f"    - File Size      : {os.path.getsize(alt_pdf_path)} bytes")
 
 if __name__ == "__main__":
-    build_pdf()
+    asyncio.run(build_pdf_async())

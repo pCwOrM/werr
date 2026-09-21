@@ -1,0 +1,162 @@
+"""
+werr.server: Production-Grade Zero-Dependency HTTP Decision Server.
+Implements the TypeSafe-compatible wire format:
+  POST /v1/systemone
+  POST /decide
+  GET /health
+
+Enables live interactive benchmark evaluation with zero external dependencies
+(runs entirely on Python standard library + numpy).
+"""
+import os
+import sys
+import json
+import time
+import argparse
+from http.server import HTTPServer, BaseHTTPRequestHandler
+from typing import Dict, Any
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
+from werr.engine import WerrEngine
+
+class WerrJevWireHandler(BaseHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"
+
+    def log_message(self, format, *args):
+        # Concise logging
+        if getattr(self.server, "verbose", False):
+            sys.stderr.write("%s - - [%s] %s\n" % (self.address_string(), self.log_date_time_string(), format % args))
+
+    def _send_json(self, status_code: int, data: Dict[str, Any]):
+        body = json.dumps(data, ensure_ascii=False).encode("utf-8")
+        self.send_response(status_code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        self.send_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        self.send_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+        self.end_headers()
+
+    def do_GET(self):
+        if self.path in ["/health", "/"]:
+            self._send_json(200, {
+                "status": "healthy",
+                "system": "werr",
+                "version": "0.3.0",
+                "engine": "System-One Zero-Memory Fractal Kernel",
+                "wire_format": "TypeSafe /v1/systemone Compatible"
+            })
+        else:
+            self._send_json(404, {"error": "Not Found"})
+
+    def do_POST(self):
+        content_len = int(self.headers.get("Content-Length", 0))
+        if content_len == 0:
+            self._send_json(400, {"error": "Empty request body"})
+            return
+
+        raw_body = self.rfile.read(content_len)
+        try:
+            req_data = json.loads(raw_body.decode("utf-8"))
+        except Exception as e:
+            self._send_json(400, {"error": f"Invalid JSON body: {str(e)}"})
+            return
+
+        t0 = time.perf_counter()
+
+        # Handle TypeSafe endpoint: POST /v1/systemone
+        if self.path.rstrip("/") == "/v1/systemone":
+            state = req_data.get("state", "")
+            questions = req_data.get("questions", {})
+            model_name = req_data.get("model", "werr-system-one")
+
+            answers = {}
+            for q_id, q_def in questions.items():
+                res = self.server.engine.decide_task({
+                    "id": q_id,
+                    "state": state,
+                    "question": q_def
+                })
+                q_type = q_def.get("type", "choice")
+                if q_type == "noul":
+                    answers[q_id] = {
+                        "type": "noul",
+                        "noul": res["probs"].get("yes", 0.5),
+                        "probabilities": res["probs"]
+                    }
+                elif q_type == "choice":
+                    answers[q_id] = {
+                        "type": "choice",
+                        "choice": res["predicted"],
+                        "probabilities": res["probs"]
+                    }
+                elif q_type == "score":
+                    answers[q_id] = {
+                        "type": "score",
+                        "score": res["predicted"],
+                        "probabilities": res["probs"]
+                    }
+
+            lat_ms = (time.perf_counter() - t0) * 1000.0
+            response = {
+                "model": model_name,
+                "usage": {
+                    "input_tokens": max(1, len(str(state).split()) + 15),
+                    "output_tokens": 1
+                },
+                "answers": answers,
+                "latency_ms": round(lat_ms, 3)
+            }
+            self._send_json(200, response)
+
+        # Handle direct /decide endpoint
+        elif self.path.rstrip("/") == "/decide":
+            res = self.server.engine.decide_task(req_data)
+            lat_ms = (time.perf_counter() - t0) * 1000.0
+            self._send_json(200, {**res, "latency_ms": round(lat_ms, 3)})
+
+        else:
+            self._send_json(404, {"error": f"Endpoint not found: {self.path}"})
+
+
+def run_server(host: str = "0.0.0.0", port: int = 8443, verbose: bool = False):
+    from scratch.jevbench_eval.optimize_werr_jevbench import CalibratedWerrEngine
+    engine = CalibratedWerrEngine(temp_choice=1.05, noul_scale=0.85, score_temp=1.0)
+    
+    # Wrap decide_task helper
+    class ServerEngine:
+        def __init__(self, eng):
+            self.eng = eng
+        def decide_task(self, task_dict):
+            return self.eng.decide(task_dict)
+
+    server = HTTPServer((host, port), WerrJevWireHandler)
+    server.engine = ServerEngine(engine)
+    server.verbose = verbose
+    print(f"[*] Werr System-One Decision Server running at http://{host}:{port}")
+    print(f"[*] Wire Formats: POST /v1/systemone, POST /decide, GET /health")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\n[*] Shutting down Werr server...")
+        server.server_close()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Werr Decision HTTP Server")
+    parser.add_argument("--host", default="0.0.0.0", help="Binding host")
+    parser.add_argument("--port", type=int, default=8443, help="Binding port")
+    parser.add_argument("--verbose", action="store_true", help="Verbose logging")
+    args = parser.parse_args()
+    run_server(args.host, args.port, args.verbose)
