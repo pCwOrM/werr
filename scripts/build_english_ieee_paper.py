@@ -302,7 +302,7 @@ html_content = f"""<!DOCTYPE html>
     <span class="author-affil"><sup>1</sup>Anadolu University, Eskişehir, Turkey &bull; <sup>2</sup>ITouch Systems, Mersin, Turkey &bull; ORCID: 0009-0000-1587-8703</span><br>
     <span class="author-affil"><sup>3</sup>Mersin University, Mersin, Turkey &bull; ORCID: 0000-0001-9490-6425</span> &nbsp;&bull;&nbsp;
     <span class="author-affil"><sup>4</sup>Toros Science College, Mersin, Turkey &bull; ORCID: 0009-0003-2492-8313 &bull; GitHub: <em>@Lexovian</em></span><br>
-    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Corresponding Author. Open Science Preprint &bull; Replication Archive. Correspondence: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> &bull; Concept DOI: <a href="https://doi.org/10.5281/zenodo.22774934" style="color: #004499; text-decoration: none;">10.5281/zenodo.22774934</a></span>
+    <span style="font-size: 8pt; color: #555;"><sup>*</sup>Corresponding Author. Email: <em>pcworm@hotmail.com</em> &bull; Correspondence & Code: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a></span>
   </div>
 
   <div class="abstract-container">
@@ -654,11 +654,8 @@ html_content = f"""<!DOCTYPE html>
     <li>K. J. Lang and M. J. Witbrock, "Learning to tell two spirals apart," in <em>Proc. 1988 Connectionist Models Summer School</em>, 1988, pp. 52–59.</li>
   </ol>
 
-  <div class="badge-footnote">
-    <strong>Open Science Repository & Preprint Verification:</strong><br>
-    Source code & replication archive: <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a><br>
-    Interactive Laboratories & Project Portal: <a href="https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/" style="color: #004499; text-decoration: none;">https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/</a><br>
-    Deposit Package: Zenodo Concept DOI: <a href="https://doi.org/10.5281/zenodo.22774934" style="color: #004499; text-decoration: none;">10.5281/zenodo.22774934</a> &bull; CC-BY-4.0 International License &bull; Anadolu University, ITouch Systems & Mersin University.
+  <div class="badge-footnote" style="margin-top: 14px; padding-top: 8px; border-top: 0.5px solid #ccc; font-size: 8pt; color: #555;">
+    <strong>Data and Code Availability:</strong> Complete source code, empirical replication benchmarks, and interactive visualizers are publicly available at <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" style="color: #004499; text-decoration: none;">https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis</a> under MIT License.
   </div>
 
 </div>
@@ -712,12 +709,13 @@ shutil.copy2(pdf_docs_path, pdf_artifact_path)
 desktop_dirs = [
     r"C:\Users\maat\Desktop\ZENODO_V2_YUKLENECEKLER",
     r"C:\Users\maat\Desktop\ZENODO_GUNCEL_DOSYALAR",
-    r"C:\Users\maat\Desktop\ZENODO_V3_YUKLEME_PAKETI"
+    r"C:\Users\maat\Desktop\ZENODO_V3_YUKLEME_PAKETI",
+    r"C:\Users\maat\Desktop\ZENODO_V3_SIFIR_TEMIZ_PAKET"
 ]
 for d in desktop_dirs:
-    if os.path.exists(d):
-        shutil.copy2(pdf_docs_path, os.path.join(d, "Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf"))
-        print(f"    - Mirrored to Desktop: {d}")
+    os.makedirs(d, exist_ok=True)
+    shutil.copy2(pdf_docs_path, os.path.join(d, "Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf"))
+    print(f"    - Mirrored to Desktop: {d}")
 
 print(f"[+] SUCCESS! English Academic IEEE Paper PDF compiled:")
 print(f"    - Docs location  : {pdf_docs_path}")
