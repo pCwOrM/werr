@@ -116,6 +116,11 @@ def render_frame_to_image(lines: List[str]) -> Image.Image:
     max_len = max(len(l) for l in lines)
     img_w = max_len * char_w + pad_x * 2
     img_h = len(lines) * char_h + pad_y + 24
+    # Ensure even dimensions for H.264 / MP4 compatibility
+    if img_w % 2 != 0:
+        img_w += 1
+    if img_h % 2 != 0:
+        img_h += 1
 
     # Background
     bg_color = (20, 22, 34)  # Dark navy/slate
@@ -169,13 +174,13 @@ def render_frame_to_image(lines: List[str]) -> Image.Image:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="WERR Snake Live Visualizer & Automatic GIF Recorder")
+    parser = argparse.ArgumentParser(description="WERR Snake Live Visualizer & Automatic GIF/MP4 Recorder")
     parser.add_argument("--steps", type=int, default=80, help="Number of game steps to run (default: 80)")
     parser.add_argument("--width", type=int, default=18, help="Board width (default: 18)")
     parser.add_argument("--height", type=int, default=12, help="Board height (default: 12)")
     parser.add_argument("--seed", type=int, default=42, help="Random seed (default: 42)")
-    parser.add_argument("--fps", type=int, default=8, help="Playback & GIF FPS (default: 8)")
-    parser.add_argument("--record", type=str, default=None, help="Output GIF filename (e.g., snake_demo.gif)")
+    parser.add_argument("--fps", type=int, default=10, help="Playback & Video FPS (default: 10)")
+    parser.add_argument("--record", type=str, default=None, help="Output media filename (.gif or .mp4)")
     parser.add_argument("--tape", type=str, default=None, help="Export Charmbracelet VHS .tape script")
     args = parser.parse_args()
 
@@ -207,17 +212,31 @@ def main():
         time.sleep(delay)
 
     if args.record and frames:
-        print(f"\n[INFO] Saving animated GIF with {len(frames)} frames to {args.record}...")
-        duration_ms = int(1000 / args.fps)
-        frames[0].save(
-            args.record,
-            save_all=True,
-            append_images=frames[1:],
-            duration=duration_ms,
-            loop=0,
-            optimize=True
-        )
-        print(f"[SUCCESS] GIF generated successfully: {args.record} ({os.path.getsize(args.record) // 1024} KB)")
+        out_path = Path(args.record)
+        is_mp4 = out_path.suffix.lower() == ".mp4"
+        
+        if is_mp4:
+            print(f"\n[INFO] Encoding MP4 video (H.264) with {len(frames)} frames to {args.record}...")
+            try:
+                import numpy as np
+                import imageio.v3 as iio
+                np_frames = np.array([np.array(f) for f in frames])
+                iio.imwrite(str(out_path), np_frames, fps=args.fps, codec="libx264")
+                print(f"[SUCCESS] MP4 video generated: {args.record} ({os.path.getsize(args.record) // 1024} KB)")
+            except Exception as e:
+                print(f"[ERROR] Failed to write MP4 with imageio: {e}")
+        else:
+            print(f"\n[INFO] Saving animated GIF with {len(frames)} frames to {args.record}...")
+            duration_ms = int(1000 / args.fps)
+            frames[0].save(
+                args.record,
+                save_all=True,
+                append_images=frames[1:],
+                duration=duration_ms,
+                loop=0,
+                optimize=True
+            )
+            print(f"[SUCCESS] GIF generated successfully: {args.record} ({os.path.getsize(args.record) // 1024} KB)")
 
     if args.tape:
         tape_content = f"""# VHS tape for Werr Snake Benchmark

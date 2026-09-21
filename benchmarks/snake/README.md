@@ -20,8 +20,9 @@ pip install numpy
 # Run full comparative benchmark (600 steps):
 python benchmarks/snake/benchmark_snake.py --steps 600 --mode compare
 
-# Optional: Watch live with retro terminal HUD & record GIF:
+# Optional: Watch live with retro terminal HUD & record animated GIF or MP4 video:
 python benchmarks/snake/visualize_snake.py --steps 90 --fps 10 --record snake.gif
+python benchmarks/snake/visualize_snake.py --steps 200 --fps 12 --record snake.mp4
 ```
 
 ---
