@@ -18,6 +18,7 @@
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![arXiv Companion](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-gray.svg)](https://arxiv.org/)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
+[![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%26%20JevBench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![JevBench World #1](https://img.shields.io/badge/JevBench%20Score-81.65%20(%231%20World)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
@@ -34,7 +35,8 @@
 🌐 **Language Switcher / Dil Seçici:**  
 **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
-🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*
+🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
+⚡ **Online Live Benchmark Arena:** [Run All 49 WebMCP Tasks & JevBench Wire Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*
 
 `werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 
