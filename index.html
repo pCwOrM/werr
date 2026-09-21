@@ -3384,11 +3384,15 @@ GitHub Repository       : https://github.com/pCwOrM/werr
       }
     };
 
+    const token = await getRecaptchaToken("werr_bench");
     const t0 = performance.now();
     try {
       const resp = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          ...(token ? { "X-Recaptcha-Token": token } : {})
+        },
         body: JSON.stringify(payload)
       });
       const data = await resp.json();
