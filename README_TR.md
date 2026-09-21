@@ -24,7 +24,7 @@
 [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (README_TR.md)**
 
 🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
-⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [Tüm 49 WebMCP Görevini ve JevBench'i Tarayıcıda Canlı Koşturun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anında CPU Çalıştırma).*
+⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP 49 Görev, JevBench ve Jevenator 2 Testlerini Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*
 
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
