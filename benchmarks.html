@@ -910,7 +910,7 @@
       <div class="bench-card">
         <div>
           <div class="bench-card-head">
-            <div class="bench-card-title">🐍 Farama Gymnasium RL (Snake)</div>
+            <div class="bench-card-title">🐍 Farama Gymnasium RL (<a href="https://github.com/mizorewww/laya-mlx/issues/3" target="_blank" style="color: var(--cyan); text-decoration: underline;">Issue #3</a>)</div>
             <div class="bench-metric-badge">0-VRAM Reflex</div>
           </div>
           <p class="bench-card-body" id="gymCardBody">
@@ -935,17 +935,23 @@
             </div>
           </div>
         </div>
-        <a href="demos/snake.html" class="btn-bench-action">
-          <span>🎮</span>
-          <span id="btnSnakeArena">Open 1v1 Snake Arena</span>
-        </a>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/mizorewww/laya-mlx/issues/3" target="_blank" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🔗</span>
+            <span id="btnSnakeIssue">View laya-mlx Issue #3</span>
+          </a>
+          <a href="demos/snake.html" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🎮</span>
+            <span id="btnSnakeArena">Open 1v1 Snake Arena</span>
+          </a>
+        </div>
       </div>
 
       <!-- 4. Tau-Bench Multi-Turn Agentic -->
       <div class="bench-card">
         <div>
           <div class="bench-card-head">
-            <div class="bench-card-title">🤖 Tau-Bench (UC Berkeley)</div>
+            <div class="bench-card-title">🤖 Tau-Bench (<a href="https://github.com/sierra-research/tau-bench/issues/95" target="_blank" style="color: var(--cyan); text-decoration: underline;">Issue #95</a>)</div>
             <div class="bench-metric-badge">10/10 Passed</div>
           </div>
           <p class="bench-card-body" id="tauCardBody">
@@ -970,10 +976,16 @@
             </div>
           </div>
         </div>
-        <a href="werr/index.html#benchmarks" class="btn-bench-action">
-          <span>🚀</span>
-          <span id="btnTauTest">Test Tau-Bench Fast Path</span>
-        </a>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/sierra-research/tau-bench/issues/95" target="_blank" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🔗</span>
+            <span id="btnTauIssue">View Tau-Bench Issue #95</span>
+          </a>
+          <a href="werr/index.html#benchmark-arena" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🚀</span>
+            <span id="btnTauTest">Test Tau-Bench Fast Path</span>
+          </a>
+        </div>
       </div>
 
       <!-- 5. Two-Moons & Two-Spirals -->
@@ -1015,7 +1027,7 @@
       <div class="bench-card">
         <div>
           <div class="bench-card-head">
-            <div class="bench-card-title">🎯 Jevenator 2 Stress</div>
+            <div class="bench-card-title">🎯 Jevenator 2 Stress (<a href="https://github.com/mmastrac/jevenator2/issues/1" target="_blank" style="color: var(--cyan); text-decoration: underline;">Issue #1</a>)</div>
             <div class="bench-metric-badge">Zero Forgetting</div>
           </div>
           <p class="bench-card-body" id="jev2CardBody">
@@ -1040,10 +1052,16 @@
             </div>
           </div>
         </div>
-        <a href="werr/index.html#benchmarks" class="btn-bench-action">
-          <span>🎯</span>
-          <span id="btnJev2Test">View Jevenator 2 Telemetry</span>
-        </a>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://github.com/mmastrac/jevenator2/issues/1" target="_blank" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🔗</span>
+            <span id="btnJev2Issue">View Jevenator 2 Issue #1</span>
+          </a>
+          <a href="werr/index.html#benchmark-arena" class="btn-bench-action" style="flex: 1; min-width: 140px;">
+            <span>🎯</span>
+            <span id="btnJev2Test">View Jevenator 2 Telemetry</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1263,12 +1281,15 @@
       btnJevIssue: "View JevBench Issue #10",
       btnJevLive: "Run JevBench Live in Browser",
       gymCardBody: "Standard reinforcement learning benchmark without training loops, replay buffers, or weights. Coordinates (cx=-0.7445, cy=0.1250, zoom=65x) guide the snake autonomously with 1.8ms latency and zero wall collisions.",
+      btnSnakeIssue: "View laya-mlx Issue #3",
       btnSnakeArena: "Open 1v1 Snake Arena",
       tauCardBody: "Evaluating multi-turn agentic tool calling, DOT 24h cancellations, flight rebooking, and retail return policy constraints from UC Berkeley AI Research & Sierra. Fast-path triage solved deterministic constraints instantly.",
+      btnTauIssue: "View Tau-Bench Issue #95",
       btnTauTest: "Test Tau-Bench Fast Path",
       maniCardBody: "Complex topological non-linear classification benchmarks. Pure Mandelbrot boundary extraction solves Two-Moons (99.3%) and Two-Spirals (98.5%) without backpropagation, loss functions, or SGD.",
       btnManiReport: "Read Technical Monograph",
       jev2CardBody: "Benchmarking spatial region-scan localization and Gaussian noise perturbation against Diffusion-Gemma (Maisa djev 8GB). Mandelbrot boundaries maintain absolute mathematical stability where neural nets collapse.",
+      btnJev2Issue: "View Jevenator 2 Issue #1",
       btnJev2Test: "View Jevenator 2 Telemetry",
       sec3Title: "Visual Telemetry: Zero-Weight Autonomous Reflex",
       sec3Desc: "Raw visual capture of the WERR fractal decision kernel guiding continuous gameplay without a neural network or GPU.",
@@ -1314,12 +1335,15 @@
       btnJevIssue: "JevBench Issue #10 İncele",
       btnJevLive: "JevBench'i Tarayıcıda Canlı Koş",
       gymCardBody: "Eğitim döngüsü, hafıza tamponu veya yapay sinir ağı ağırlığı olmadan çalışan standart RL kıyaslaması. Fraktal koordinatlar (cx=-0.7445, cy=0.1250, zoom=65x) yılanı 1.8ms tepkiyle duvara çarpmadan yönetir.",
+      btnSnakeIssue: "laya-mlx Issue #3 İncele",
       btnSnakeArena: "1v1 Yılan Arenasını Aç",
       tauCardBody: "UC Berkeley ve Sierra tarafından geliştirilen çok turlu araç çağırma, uçuş rezervasyon değişimi ve perakende iade kısıtları testi. Deterministik kurallar hızlı omurilik yolu ile anında çözüldü.",
+      btnTauIssue: "Tau-Bench Issue #95 İncele",
       btnTauTest: "Tau-Bench Hızlı Yolunu Dene",
       maniCardBody: "Karmaşık topolojik doğrusal olmayan sınıflandırma testleri. Mandelbrot sınır dinamiği, geri-yayılım (backpropagation) veya SGD olmadan Two-Moons (%99.3) ve Two-Spirals (%98.5) problemlerini çözer.",
       btnManiReport: "Teknik Monografı Oku",
       jev2CardBody: "Uzamsal bölge taraması ve Gauss gürültüsü pertürbasyonunun Diffusion-Gemma (Maisa djev 8GB) modeline karşı testi. Fraktal sınırlar sinir ağlarının çöktüğü yerde matematiksel kararlılığını korur.",
+      btnJev2Issue: "Jevenator 2 Issue #1 İncele",
       btnJev2Test: "Jevenator 2 Telemetrisini Gör",
       sec3Title: "Görsel Telemetri: Ağırlıksız Otonom Omurilik Refleksi",
       sec3Desc: "WERR fraktal karar motorunun sinir ağı veya GPU olmadan canlı oyunu yönlendirişinin ham görsel kaydı.",
@@ -1371,12 +1395,15 @@
     if (document.getElementById('btnJevIssue')) document.getElementById('btnJevIssue').innerText = t.btnJevIssue;
     document.getElementById('btnJevLive').innerText = t.btnJevLive;
     document.getElementById('gymCardBody').innerHTML = t.gymCardBody;
+    if (document.getElementById('btnSnakeIssue')) document.getElementById('btnSnakeIssue').innerText = t.btnSnakeIssue;
     document.getElementById('btnSnakeArena').innerText = t.btnSnakeArena;
     document.getElementById('tauCardBody').innerHTML = t.tauCardBody;
+    if (document.getElementById('btnTauIssue')) document.getElementById('btnTauIssue').innerText = t.btnTauIssue;
     document.getElementById('btnTauTest').innerText = t.btnTauTest;
     document.getElementById('maniCardBody').innerHTML = t.maniCardBody;
     document.getElementById('btnManiReport').innerText = t.btnManiReport;
     document.getElementById('jev2CardBody').innerHTML = t.jev2CardBody;
+    if (document.getElementById('btnJev2Issue')) document.getElementById('btnJev2Issue').innerText = t.btnJev2Issue;
     document.getElementById('btnJev2Test').innerText = t.btnJev2Test;
     document.getElementById('sec3Title').innerText = t.sec3Title;
     document.getElementById('sec3Desc').innerText = t.sec3Desc;
