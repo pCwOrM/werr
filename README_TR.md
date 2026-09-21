@@ -4,8 +4,10 @@
 [![İnteraktif Laboratuvarlar](https://img.shields.io/badge/İnteraktif%20Laboratuvarlar-%25100%20Tarayıcıda%20Çalışır-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![Zenodo Çatı DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
-[![arXiv](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-b31b1b.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![arXiv Durumu](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Hakem%20Sürecinde)-b31b1b.svg)](https://arxiv.org/)
 [![Dergi Başvurusu](https://img.shields.io/badge/Dergi%20Başvurusu-Chaos%2C%20Solitons%20%26%20Fractals%20(Hakem%20Sürecinde)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
+[![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
+[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 

@@ -4,8 +4,10 @@
 [![Interactive Labs](https://img.shields.io/badge/Interactive%20Labs-100%25%20Client--Side-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
-[![arXiv](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-b31b1b.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+[![arXiv Status](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
+[![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR%20[arXiv%3Asubmit/8106948]-8b5cf6.svg)](https://github.com/pCwOrM/werr)
+[![WERR Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
