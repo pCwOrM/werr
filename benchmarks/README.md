@@ -31,7 +31,7 @@ The Mandelbrot Fractal Neural Synthesis repository remains the **theoretical fou
 | 🌐 Interactive Web Gauntlet | [benchmarks.html (GitHub Pages)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
 | 📜 Research Portal | [Mandelbrot Fractal Neural Synthesis](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🧠 Live API | [answerr.me](https://answerr.me) |
-| 🏛️ Zenodo Archive | [DOI: 10.5281/zenodo.15783307](https://doi.org/10.5281/zenodo.15783307) |
+| 🏛️ Zenodo Archive | [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426) |
 
 ---
 
