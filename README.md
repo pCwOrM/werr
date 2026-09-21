@@ -9,6 +9,7 @@
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![arXiv Status](https://img.shields.io/badge/arXiv-submit%2F8092292%20(Moderation%20Review)-b31b1b.svg)](https://arxiv.org/)
@@ -353,7 +354,7 @@ This research has been submitted to peer-reviewed international scientific venue
   * **Journal:** *Chaos, Solitons & Fractals: the interdisciplinary journal of Nonlinear Science, and Nonequilibrium and Complex Phenomena* (Elsevier, Q1)  
   * **Manuscript Ref. No.:** `CHAOS-D-26-09598`  
   * **Title:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Author:** Volkan Dağlı (`vdagli@aof.anadolu.edu.tr`)  
+  * **Lead Author:** Volkan Dağlı ([ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
   * **Editor Handling:** Active Editorial Review  
 
 * **Preprint Status (arXiv):**  
