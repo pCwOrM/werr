@@ -11,6 +11,7 @@
 [![Kardeş Platform: answerr](https://img.shields.io/badge/Kardeş%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-27.8x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
+[![The Gauntlet Benchmarks](https://img.shields.io/badge/The%20Gauntlet-S%C4%B1f%C4%B1r--VRAM%20Meydan%20Okumas%C4%B1-brightgreen.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![CI Süreci](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -26,6 +27,7 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 
 | Platform / Belge | Tür | Hedef Kitle | Doğrudan Canlı Bağlantı |
 | :--- | :--- | :--- | :--- |
+| ⚔️ **The Zero-VRAM Gauntlet** | Kıyaslama Duvarı & Meydan Okuma | Araştırmacılar, Mühendisler & Meydan Okuyanlar | [**Kıyaslama Duvarını Aç (The Gauntlet)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
 | 🌐 **Resmi Canlı Web Portalı** | Ana Vitrin | Genel / Akademik | [**Portalı Başlat (GitHub Pages)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🚀 **Halka Açık Senaryo Laboratuvarı** | Canlı Simülasyon | Toplum & Öğrenciler | [**Halk Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Araştırma Laboratuvarı** | Matematiksel Deney | Araştırmacılar & Mühendisler | [**Araştırma Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |

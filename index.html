@@ -517,6 +517,12 @@
         <span id="themeLabel">Light</span>
       </button>
 
+      <!-- The Gauntlet Benchmarks Link -->
+      <a href="benchmarks.html" class="btn-nav" style="border-color: rgba(16, 185, 129, 0.4); color: var(--emerald); font-weight: 800;">
+        <span>⚔️</span>
+        <span id="navGauntlet">The Gauntlet</span>
+      </a>
+
       <!-- GitHub Stars / Link -->
       <a href="https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis" target="_blank" class="btn-nav">
         <span>⭐</span>
@@ -560,7 +566,11 @@
 
     <!-- Quick Action Links -->
     <div class="hero-links">
-      <a href="docs/Halka_Sunum_ve_Teorik_Rehber.html" class="btn-hero btn-primary" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+      <a href="benchmarks.html" class="btn-hero btn-primary" style="background: linear-gradient(135deg, #059669 0%, #0284c7 100%);">
+        <span>⚔️</span>
+        <span id="btnHeroGauntlet">The Gauntlet (Benchmarks)</span>
+      </a>
+      <a href="docs/Halka_Sunum_ve_Teorik_Rehber.html" class="btn-hero btn-secondary">
         <span>🗣️</span>
         <span id="btnSunumRehberi">Halka Sunum &amp; Teorik Rehber</span>
       </a>
@@ -703,6 +713,30 @@
           <span>Teknik Raporu Aç (HTML)</span>
         </a>
       </div>
+
+      <!-- Doc Card 3: The Zero-VRAM Gauntlet (Meydan Okuma) -->
+      <div class="demo-card" style="border: 1px solid rgba(16, 185, 129, 0.4); background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08) 0%, var(--bg-inner) 70%);">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">⚔️</span>
+            <span class="demo-badge" style="background: rgba(16, 185, 129, 0.2); color: var(--emerald); border: 1px solid var(--border-accent);">Hodri Meydan &bull; Rekor</span>
+          </div>
+          <h3 class="demo-title" id="gauntletCardTitle">The Zero-VRAM Gauntlet</h3>
+          <p class="demo-text" id="gauntletCardDesc">
+            Tüm resmi benchmark sonuçlarının (WindTunnel WebMCP 49/49, JevBench #1, Gymnasium RL, Tau-Bench, Jevenator 2) tek sayfada toplandığı açık meydan okuma duvarı.
+          </p>
+          <ul class="demo-features">
+            <li>WindTunnel WebMCP: 49/49 (%100 Başarı, 0 VRAM)</li>
+            <li>JevBench: 0.40 ms karar ile #1 Dünya Rekoru</li>
+            <li>Gymnasium RL Snake: 24-byte tohum, 0 VRAM, 1.8 ms</li>
+            <li>30 saniyede tekrarlanabilir açık komut süiti</li>
+          </ul>
+        </div>
+        <a href="benchmarks.html" class="btn-launch" style="background: linear-gradient(135deg, #059669 0%, #0284c7 100%); color: #000; font-weight: 800;">
+          <span>⚔️</span>
+          <span id="btnGauntletLaunch">Meydan Okumayı Gör (The Gauntlet)</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -834,6 +868,11 @@
       werrTitle: "Companion Applied Research: Universal Fractal Natural Language Decision Map (WERR)",
       werrDesc: "Translating the zero-storage fractal parameter synthesis paradigm into high-throughput natural language edge triage. WERR eliminates multi-gigabyte transformer weights to deliver sub-millisecond System-1 reflex triage across heterogeneous domains.",
       btnWerrLive: "Launch Live Engine (answerr.me)",
+      navGauntlet: "The Gauntlet",
+      btnHeroGauntlet: "The Gauntlet (Benchmarks)",
+      gauntletCardTitle: "The Zero-VRAM Gauntlet",
+      gauntletCardDesc: "Independent benchmark suite consolidating WindTunnel WebMCP 49/49, JevBench #1, Gymnasium RL, Tau-Bench, and Jevenator 2 in a unified showdown.",
+      btnGauntletLaunch: "View The Gauntlet (Benchmarks)",
       citeTitle: "Citation (BibTeX)",
       citeDesc: "If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprint:"
     },
@@ -877,6 +916,11 @@
       werrTitle: "Kardeş Uygulamalı Araştırma: Evrensel Fraktal Doğal Dil Karar Haritası (WERR)",
       werrDesc: "Sıfır-bellekli fraktal parametre sentezi paradigmasını yüksek hızlı doğal dil uç birim triyajına dönüştürüyoruz. WERR, çok gigabaytlık dönüştürücü (transformer) ağırlıklarını ortadan kaldırarak heterojen alanlarda milisaniye-altı Sistem-1 refleks triyajı sunar.",
       btnWerrLive: "Canlı Motoru Başlat (answerr.me)",
+      navGauntlet: "Kıyaslama Duvarı",
+      btnHeroGauntlet: "Kıyaslama Duvarı (The Gauntlet)",
+      gauntletCardTitle: "The Zero-VRAM Gauntlet",
+      gauntletCardDesc: "Tüm resmi benchmark sonuçlarının (WindTunnel WebMCP 49/49, JevBench #1, Gymnasium RL, Tau-Bench, Jevenator 2) tek sayfada toplandığı açık meydan okuma duvarı.",
+      btnGauntletLaunch: "Meydan Okumayı Gör (The Gauntlet)",
       citeTitle: "Akademik Atıf (BibTeX)",
       citeDesc: "Bu çalışmayı, fraktal sentez yöntemini veya interaktif laboratuvarları çalışmalarınızda kullanırsanız lütfen resmi preprint kaydımıza atıfta bulununuz:"
     }
@@ -894,6 +938,13 @@
     document.getElementById('badgeText').innerText = d.badgeText;
     document.getElementById('heroTitle').innerText = d.heroTitle;
     document.getElementById('btnReadPdf').innerText = d.btnReadPdf;
+    document.getElementById('btnZip').innerText = d.btnZip;
+    document.getElementById('btnCode').innerText = d.btnCode;
+    if (document.getElementById('navGauntlet')) document.getElementById('navGauntlet').innerText = d.navGauntlet;
+    if (document.getElementById('btnHeroGauntlet')) document.getElementById('btnHeroGauntlet').innerText = d.btnHeroGauntlet;
+    if (document.getElementById('gauntletCardTitle')) document.getElementById('gauntletCardTitle').innerText = d.gauntletCardTitle;
+    if (document.getElementById('gauntletCardDesc')) document.getElementById('gauntletCardDesc').innerText = d.gauntletCardDesc;
+    if (document.getElementById('btnGauntletLaunch')) document.getElementById('btnGauntletLaunch').innerText = d.btnGauntletLaunch;
     document.getElementById('btnZip').innerText = d.btnZip;
     document.getElementById('btnCode').innerText = d.btnCode;
 

@@ -11,6 +11,7 @@
 [![Companion Platform: answerr](https://img.shields.io/badge/Companion%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
+[![The Gauntlet Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Zero--VRAM%20Supremacy-brightgreen.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![CI Workflow](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -26,6 +27,7 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 
 | Platform / Document | Type | Target Audience | Direct Live Link |
 | :--- | :--- | :--- | :--- |
+| ⚔️ **The Zero-VRAM Gauntlet** | Master Benchmark Wall | Researchers, Engineers & Challengers | [**Launch The Gauntlet (Benchmarks)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
 | 🌐 **Official Web Portal** | Showcase | Global / Academic | [**Launch Web Portal**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
