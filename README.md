@@ -15,7 +15,6 @@
 [![arXiv Werr](https://img.shields.io/badge/arXiv-cs.AI%20[submit%2F8106948]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
 [![Zenodo Concept DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
-[![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![arXiv Companion](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-gray.svg)](https://arxiv.org/)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
@@ -459,17 +458,13 @@ python tests/test_jevenator2_isolated.py
 
 ## 📄 Academic Publication & Preprint Status
 
-This research has been submitted to peer-reviewed international scientific venues:
+This research builds upon and extends peer-reviewed open science preprints:
 
-* **Journal Submission (Under Peer Review):**  
-  * **Journal:** *Chaos, Solitons & Fractals: the interdisciplinary journal of Nonlinear Science, and Nonequilibrium and Complex Phenomena* (Elsevier, Q1)  
-  * **Status:** Under formal peer review  
+* **Foundational Companion Research:**  
   * **Title:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Preprint / Archive:** arXiv (`submit/8092292` [cs.NE]) &bull; Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) (Release v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037))
   * **Lead Author:** Volkan Dağlı ([ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
-
-* **Preprint Status (arXiv):**  
-  * **Identifier:** `submit/8092292`  
-  * **Status:** Under moderation review  
 
 ---
 
@@ -575,7 +570,7 @@ werr             # Interactive terminal simulator
 ## 🔗 Ecosystem Architecture & Connections
 
 1. **Foundational Scientific Theory & Interactive Client Labs:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
-   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (*Chaos, Solitons & Fractals*, Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
+   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (Zenodo Concept DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
 
 2. **Machine-Native Reflex Engine & Benchmarks (This Repository):** [`werr`](https://github.com/pCwOrM/werr)  
    The in-process System-1 reflex kernel running on standard CPU with 0 Bytes VRAM, providing terminal benchmark visualizers (`benchmarks/snake/visualize_snake.py`) and verified world-record benchmark suites (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2).
@@ -604,7 +599,7 @@ werr             # Interactive terminal simulator
 @article{dagli2026werr,
   author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals)},
+  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Zenodo DOI: 10.5281/zenodo.22774934)},
   year = {2026},
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426},

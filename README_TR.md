@@ -292,7 +292,7 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 ## 🔗 Ekosistem Mimarisi ve Kardeş Depo Bağlantıları
 
 1. **Temel Bilimsel Teori ve İnteraktif İstemci Laboratuvarları:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)  
-   Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (*Chaos, Solitons & Fractals*, Zenodo Çatı DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
+   Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (Zenodo Çatı DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934), v3.0: [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
 
 2. **Makine-Yerel Refleks Motoru ve Kıyaslama Paketleri (Bu Depo):** [`werr`](https://github.com/pCwOrM/werr)  
    Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız dünya rekoru kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2) sunar.
@@ -321,7 +321,7 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 @article{dagli2026werr,
   author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals)},
+  journal = {arXiv preprint arXiv:submit/8106948 [cs.AI]; Companion to Mandelbrot Fractal Neural Synthesis (Zenodo DOI: 10.5281/zenodo.22774934)},
   year = {2026},
   url = {https://doi.org/10.5281/zenodo.22867426},
   doi = {10.5281/zenodo.22867426},
