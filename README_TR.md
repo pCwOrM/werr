@@ -14,6 +14,7 @@
 [![Kardeş Platform: answerr](https://img.shields.io/badge/answerr-Canl%C4%B1%20Platform-38bdf8.svg)](https://answerr.me)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
+[![Canlı Kıyaslama Arenası](https://img.shields.io/badge/Canlı%20Kıyaslama-WebMCP%20%26%20JevBench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
 > *"Refleks nerede? Karar Werr!"*  
@@ -22,7 +23,8 @@
 🌐 **Dil Seçici / Language Switcher:**  
 [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (README_TR.md)**
 
-🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*
+🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
+⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [Tüm 49 WebMCP Görevini ve JevBench'i Tarayıcıda Canlı Koşturun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anında CPU Çalıştırma).*
 
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
