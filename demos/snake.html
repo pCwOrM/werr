@@ -467,7 +467,7 @@
       <!-- Dynamic Banner -->
       <div id="handover-banner" class="handover-banner banner-manual">
         <span id="banner-text">🎮 [AŞAMA 1: MANUEL KONTROL] Yılanı ok tuşları veya WASD ile siz yönlendirin.</span>
-        <button id="btn-toggle-mode" class="btn-action btn-takeover" style="max-width: 220px; padding: 6px 12px; font-size: 12px;">⚡ WERR OTOPİLOTUNA VER</button>
+        <button id="btn-toggle-mode" class="btn-action btn-takeover" style="max-width: 260px; padding: 6px 12px; font-size: 12px;">⚡ WERR OTOPİLOTUNA VER [Boşluk / T]</button>
       </div>
 
       <!-- Game & HUD Grid -->
@@ -547,7 +547,7 @@
 
           <div class="divider"></div>
           <div style="color: #6e7681; font-size: 11px;">
-            Klavye Kısayolları: [W] / [M] Otopilota Devret │ [WASD/Oklar] Manuel Sürüş │ [Boşluk] Duraklat
+            Klavye Kısayolları: [WASD / Ok Tuşları] Yön Ver │ [Boşluk / T / M] Otopilota Devret │ [P] Duraklat │ [R] Sıfırla
           </div>
         </div>
       </div>
@@ -861,12 +861,12 @@
     if (isWerr) {
       banner.className = 'handover-banner banner-werr';
       text.innerHTML = '⚡ <strong>[AŞAMA 2: WERR OTOPİLOT AKTİF]</strong> 0.00 KB Ağırlık │ 0.08 ms Anlık Refleks │ %100 Çevrimdışı';
-      btn.innerText = '🎮 MANUELE GERİ AL';
+      btn.innerText = '🎮 MANUELE GERİ AL [Boşluk / T]';
       btn.style.background = '#21262d';
     } else {
       banner.className = 'handover-banner banner-manual';
       text.innerHTML = '🎮 <strong>[AŞAMA 1: MANUEL KONTROL]</strong> Yılanı ok tuşları veya WASD ile siz yönlendirin.';
-      btn.innerText = '⚡ WERR OTOPİLOTUNA VER';
+      btn.innerText = '⚡ WERR OTOPİLOTUNA VER [Boşluk / T]';
       btn.style.background = 'linear-gradient(135deg, #0284c7, #10b981)';
     }
   }
@@ -882,27 +882,33 @@
   }
 
   function sendDir(newDir) {
-    if (isWerr || gameOver) return;
+    if (gameOver) return;
     const opposites = {'UP':'DOWN', 'DOWN':'UP', 'LEFT':'RIGHT', 'RIGHT':'LEFT'};
     if (newDir !== opposites[dir]) {
       dir = newDir;
     }
   }
 
-  // Keyboard events
+  // Keyboard events (WASD and Arrow keys exclusively steer, Space / T / M toggle WERR)
   window.addEventListener('keydown', (e) => {
     const k = e.key.toLowerCase();
-    if (k === 'w' || k === 'm') {
+
+    // Prevent page scroll on game control keys
+    if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' ', 'w', 'a', 's', 'd'].includes(k)) {
+      e.preventDefault();
+    }
+
+    if (k === 't' || k === 'm' || k === ' ' || e.code === 'Space') {
       toggleWerr();
-    } else if (k === ' ' || k === 'space') {
+    } else if (k === 'p') {
       isPaused = !isPaused;
     } else if (k === 'r') {
       resetGame();
     } else if (!isWerr) {
       if (e.key === 'ArrowUp' || k === 'w') sendDir('UP');
-      if (e.key === 'ArrowDown' || k === 's') sendDir('DOWN');
-      if (e.key === 'ArrowLeft' || k === 'a') sendDir('LEFT');
-      if (e.key === 'ArrowRight' || k === 'd') sendDir('RIGHT');
+      else if (e.key === 'ArrowDown' || k === 's') sendDir('DOWN');
+      else if (e.key === 'ArrowLeft' || k === 'a') sendDir('LEFT');
+      else if (e.key === 'ArrowRight' || k === 'd') sendDir('RIGHT');
     }
   });
 
