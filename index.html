@@ -1147,6 +1147,50 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Benchmark Arena & Mobile Responsiveness */
+    #benchmark-arena * {
+      box-sizing: border-box;
+    }
+    .bench-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      width: 100%;
+      min-width: 0;
+    }
+    .bench-card-col {
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .bench-pre-wrap {
+      white-space: pre-wrap !important;
+      word-break: break-word !important;
+      overflow-wrap: anywhere !important;
+      word-wrap: break-word !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 768px) {
+      .bench-grid-2col {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+      }
+      #benchmark-arena .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      #benchmark-arena .hud-box {
+        padding: 0.6rem 0.8rem;
+      }
+      #benchmark-arena .hud-value {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1658,7 +1702,7 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
           <div class="hud-box">
             <div class="hud-label">Accuracy Score</div>
             <div class="hud-value" id="wt-live-accuracy" style="color: var(--emerald);">49/49 (100.0%)</div>
@@ -1679,7 +1723,7 @@
 
         <!-- Live Task Execution Log Terminal -->
         <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="wt-live-log-output" style="color: #94a3b8;">
+          <div id="wt-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
             [READY] Click 'Run All 49 Tasks Live' to trigger real-time evaluation across medusa, hi-events, easyappointments, idurar, learnhouse, directory-9d8, nextjs-blog, and bulletproof-react.
           </div>
         </div>
@@ -1705,12 +1749,12 @@
           </button>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <div>
+        <div class="bench-grid-2col" style="margin-bottom: 1rem;">
+          <div class="bench-card-col">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Endpoint URL:</div>
             <input type="text" id="jev-endpoint-input" class="custom-text-input" value="https://api.answerr.me:4431/v1/systemone" style="font-family: var(--font-mono); font-size: 0.85rem; width: 100%;">
           </div>
-          <div>
+          <div class="bench-card-col">
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Wire Spec:</div>
             <div style="font-size: 0.85rem; color: var(--text-main); font-weight: 700; padding: 0.5rem 0;">TypeSafe Decision JSON (Noul, Choice, Score)</div>
           </div>
@@ -1718,7 +1762,7 @@
 
         <!-- JevBench Live Response Inspector -->
         <div class="json-code-container" style="max-height: 240px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem;">
-          <pre id="jev-live-output" style="color: #79c0ff; margin: 0;">// Click 'Send Test Wire Query' to test JevBench wire compatibility live</pre>
+          <pre id="jev-live-output" class="bench-pre-wrap" style="color: #79c0ff; margin: 0;">// Click 'Send Test Wire Query' to test JevBench wire compatibility live</pre>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
@@ -1748,7 +1792,7 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
           <div class="hud-box">
             <div class="hud-label">Reflex Throughput</div>
             <div class="hud-value" id="gym-live-fps" style="color: var(--emerald);">287.4 moves/s</div>
@@ -1774,7 +1818,7 @@
 
         <!-- Live Task Execution Log Terminal -->
         <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="gym-live-log-output" style="color: #94a3b8;">
+          <div id="gym-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
             [READY] Click 'Run Gymnasium Reflex (300 Steps Live)' to execute in-browser real-time step-by-step game state evaluations. Measures throughput (moves/sec), sub-2ms P50 latency, and collision-avoidance reflex gates.
           </div>
         </div>
@@ -1821,7 +1865,7 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
           <div class="hud-box">
             <div class="hud-label">Reflex Speedup Ratio</div>
             <div class="hud-value" id="lmsys-live-ratio" style="color: var(--emerald);">189.3× Faster</div>
@@ -1861,15 +1905,15 @@
         </div>
 
         <!-- Side-by-Side A/B Panels (Arena.ai Blind Style) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+        <div class="bench-grid-2col" style="margin-bottom: 1rem;">
           <!-- Model A Panel -->
-          <div style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem; display: flex; flex-direction: column;">
+          <div class="bench-card-col" style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2a44; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
               <span style="font-weight: 700; color: var(--cyan); font-size: 0.88rem;">🤖 Model A (Anonymous Blind)</span>
               <span id="lmsys-tag-a" class="badge-pill" style="color: var(--emerald); border-color: var(--emerald); font-size: 0.75rem;">Waiting for dispatch</span>
             </div>
-            <pre id="lmsys-output-a" style="flex: 1; min-height: 140px; max-height: 220px; overflow-y: auto; color: #79c0ff; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
-            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem;">
+            <pre id="lmsys-output-a" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: #79c0ff; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
+            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
               <span>VRAM: <strong id="lmsys-vram-a" style="color: var(--emerald);">0 Bytes</strong></span>
               <span>Cost: <strong style="color: var(--emerald);">$0.0000</strong></span>
               <span>Latency: <strong id="lmsys-lat-label-a" style="color: var(--cyan);">-</strong></span>
@@ -1877,13 +1921,13 @@
           </div>
 
           <!-- Model B Panel -->
-          <div style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem; display: flex; flex-direction: column;">
+          <div class="bench-card-col" style="background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.85rem 1rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2a44; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
               <span style="font-weight: 700; color: #a78bfa; font-size: 0.88rem;">🧠 Model B (Anonymous Blind)</span>
               <span id="lmsys-tag-b" class="badge-pill" style="color: #cbd5e1; border-color: #475569; font-size: 0.75rem;">Waiting for dispatch</span>
             </div>
-            <pre id="lmsys-output-b" style="flex: 1; min-height: 140px; max-height: 220px; overflow-y: auto; color: #e2e8f0; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
-            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem;">
+            <pre id="lmsys-output-b" class="bench-pre-wrap" style="flex: 1; min-height: 140px; max-height: 240px; overflow-y: auto; color: #e2e8f0; font-family: var(--font-mono); font-size: 0.8rem; margin: 0; line-height: 1.5;">// Click 'Run Blind A/B Match Live' to dispatch query</pre>
+            <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid #1f2a44; padding-top: 0.4rem; flex-wrap: wrap; gap: 0.3rem;">
               <span>VRAM: <strong id="lmsys-vram-b" style="color: #f43f5e;">16 GB GPU</strong></span>
               <span>Cost: <strong style="color: #f43f5e;">~$0.0240</strong></span>
               <span>Latency: <strong id="lmsys-lat-label-b" style="color: #f59e0b;">-</strong></span>
@@ -1933,7 +1977,7 @@
         </div>
 
         <!-- Telemetry Summary Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
           <div class="hud-box">
             <div class="hud-label">Relative Speedup</div>
             <div class="hud-value" id="jev2-live-speedup" style="color: var(--emerald);">27.8× Faster</div>
@@ -1959,7 +2003,7 @@
 
         <!-- Live Task Execution Log Terminal -->
         <div class="json-code-container" style="max-height: 280px; overflow-y: auto; background: #070a12; border: 1px solid #1f2a44; border-radius: 8px; padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6;">
-          <div id="jev2-live-log-output" style="color: #94a3b8;">
+          <div id="jev2-live-log-output" class="bench-pre-wrap" style="color: #94a3b8;">
             [READY] Click 'Run Jevenator 2 Suite Live' to evaluate geometric shape localisation (3×3), actor negative control (0 false positives), and 24-frame temporal video tracking (7×5 grid = 840 discrete noul decisions).
           </div>
         </div>
