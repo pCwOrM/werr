@@ -190,5 +190,5 @@ benchmarks/
 * 📜 **Temel Bilim Makalesi ve Laboratuvarlar:** [Mandelbrot Fractal Neural Synthesis Portalı](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 * ⚡ **WERR Ana Deposu:** [werr GitHub Repository](https://github.com/pCwOrM/werr)
 * 🧠 **Canlı İkili Bilişsel API:** [answerr Platformu (answerr.me)](https://answerr.me)
-* 🏛️ **Kalıcı Zenodo Arşivi:** [DOI: 10.5281/zenodo.15783307](https://doi.org/10.5281/zenodo.15783307)
+* 🏛️ **Kalıcı Zenodo Arşivi:** [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426)
 * 📑 **Akademik Değerlendirme:** *Submitted to Chaos, Solitons & Fractals (Elsevier) — Under Peer Review*
