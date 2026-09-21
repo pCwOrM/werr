@@ -173,9 +173,9 @@ Zenodo'dan kalıcı DOI'nizi aldıktan sonra, bu paketi kullanarak makaleyi arXi
    - **Authors:** `Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı`
    - **Abstract:** Makaledeki İngilizce Abstract metnini yapıştırın.
    - **Comments:** `10 pages, 5 figures, 3 tables. Companion to Mandelbrot Fractal Neural Synthesis. Live portal: https://answerr.me; Source code: https://github.com/pCwOrM/werr`
-   - **Report Number:** *(Boş bırakabilirsiniz)*
    - **Related DOI / External Identifier (KRİTİK ADIM):**
-     - Zenodo'dan aldığınız DOI numarasını (Örn: `10.5281/zenodo.XXXXXXX`) buraya girin. Bu adım, arXiv moderatörlerine makalenin CERN altyapısında tescilli olduğunu göstererek [on hold] bekleme süresini minimuma indirir.
+     - Alınan resmi CERN Zenodo DOI numarasını girin: `10.5281/zenodo.22867426`
+     - Bu adım, arXiv moderatörlerine ve otomatik tarayıcılara makalenin CERN altyapısında tescilli bir açık bilim yayını olduğunu kanıtlayarak moderasyon kuyruğundaki bekleme süresini minimuma indirir.
 
 5. **Onay ve Gönderim (Submit):**
    - Önizleme PDF'ini kontrol edin ve gönderimi onaylayın.

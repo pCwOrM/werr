@@ -703,6 +703,7 @@ window.MathJax = {
   <h2>VII. Reproducibility & Open Science</h2>
   <p class="no-indent">
     In commitment to open science, all assets are publicly accessible:<br>
+    &bull; <strong>Permanent Research Archive (Zenodo):</strong> <a href="https://doi.org/10.5281/zenodo.22867426">https://doi.org/10.5281/zenodo.22867426</a><br>
     &bull; <strong>Source Code Repository:</strong> <a href="https://github.com/pCwOrM/werr">https://github.com/pCwOrM/werr</a><br>
     &bull; <strong>Live Platform & Documentation:</strong> <a href="https://answerr.me">https://answerr.me</a><br>
     &bull; <strong>Production Telemetry API:</strong> <a href="https://api.answerr.me:4431/v1/health">https://api.answerr.me:4431/v1/health</a><br>

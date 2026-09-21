@@ -10,6 +10,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
+[![Zenodo Werr DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
@@ -491,8 +492,8 @@ werr             # Interactive terminal simulator
   title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
   journal = {Preprint; Companion to Mandelbrot Fractal Neural Synthesis (Chaos, Solitons \& Fractals, Ref: CHAOS-D-26-09598)},
   year = {2026},
-  url = {https://github.com/pCwOrM/werr},
-  doi = {10.5281/zenodo.22774934},
-  note = {Zenodo Concept: 10.5281/zenodo.22774934; Release v3.0: 10.5281/zenodo.22867037}
+  url = {https://doi.org/10.5281/zenodo.22867426},
+  doi = {10.5281/zenodo.22867426},
+  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
 }
 ```
