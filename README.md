@@ -10,9 +10,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
-[![Zenodo Werr DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22867426.svg)](https://doi.org/10.5281/zenodo.22867426)
-[![arXiv Werr](https://img.shields.io/badge/arXiv-cs.AI%20[submit/8106948]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
-[![Zenodo Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22774934.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![arXiv Werr](https://img.shields.io/badge/arXiv-cs.AI%20[submit%2F8106948]-(Under%20Review)-b31b1b.svg)](https://arxiv.org/)
+[![Zenodo Concept DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Zenodo v3.0](https://img.shields.io/badge/Zenodo-v3.0%20(22867037)-024dad.svg)](https://zenodo.org/records/22867037)
 [![Journal Submission](https://img.shields.io/badge/Journal-Chaos%2C%20Solitons%20%26%20Fractals%20(Under%20Review)-blue.svg)](https://www.sciencedirect.com/journal/chaos-solitons-and-fractals)
 [![arXiv Companion](https://img.shields.io/badge/arXiv-cs.NE%20[submit/8092292]-(Under%20Review)-gray.svg)](https://arxiv.org/)
