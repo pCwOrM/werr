@@ -288,6 +288,7 @@ class WerrJevBenchEngine:
             list(criteria.keys()) if isinstance(criteria, dict) else []
         )
         scores = []
+        st_no_punct = re.sub(r"[,.\$€£]", "", st_lower)
         for i, opt in enumerate(cand_labels):
             opt_norm = normalize_text(opt)
             opt_tokens = set(tokenize(opt_norm))
@@ -304,6 +305,15 @@ class WerrJevBenchEngine:
                 4.0 for nm in re.findall(r"\b\d+(?:[\.,]\d+)?\b", crit_desc)
                 if nm in st_lower
             )
+
+            # Safe numeric matching from candidate label itself
+            opt_nums = re.findall(r"\d+", opt_norm)
+            for nm in opt_nums:
+                if len(nm) >= 2:
+                    if re.search(r"\b" + re.escape(nm) + r"\b", st_lower) or re.search(
+                        r"\b" + re.escape(nm) + r"\b", st_no_punct
+                    ):
+                        num_bonus += 4.0
 
             # --- Disambiguation rules ---
             instr_lower = instructions.lower()
@@ -519,7 +529,7 @@ class CalibratedWerrEngine(WerrJevBenchEngine):
         super().__init__()
         self._temp_choice = temp_choice
         self._noul_scale_val = noul_scale
-        self._score_temp = score_temp
+        self._score_temp_val = score_temp
 
     def _choice_temp(self) -> float:
         return self._temp_choice
@@ -531,7 +541,7 @@ class CalibratedWerrEngine(WerrJevBenchEngine):
         return 0.3
 
     def _score_temp(self) -> float:  # type: ignore[override]
-        return self._score_temp  # type: ignore[return-value]
+        return self._score_temp_val
 
     # Expose a decide_task alias for backward-compat with server.py
     def decide_task(self, task: dict) -> dict:  # noqa: D102
