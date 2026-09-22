@@ -26,6 +26,7 @@
 [![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-38.0x%20Faster%20vs%20djev-brightgreen.svg)](./benchmarks/jevenator2/)
 [![Cryptographic Audit](https://img.shields.io/badge/Audit-SHA--256%20Sealed-blueviolet.svg)](benchmarks/sealed/SEAL_MANIFEST.json)
 [![answerr Platform](https://img.shields.io/badge/answerr-Platform%20Repo-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
+[![werracle Web3 Oracle](https://img.shields.io/badge/werracle-On--Chain%20Oracle-f59e0b.svg?logo=ethereum&logoColor=white)](https://github.com/pCwOrM/werracle)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 

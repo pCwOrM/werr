@@ -25,6 +25,8 @@
 [![Yılan AI Refleksi](https://img.shields.io/badge/Yılan%20AI%20Refleksi-411.9%20hamle%2Fsn-brightgreen.svg)](./benchmarks/snake/)
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-38.0x%20Hızlı-brightgreen.svg)](./benchmarks/jevenator2/)
 [![Kriptografik Denetim](https://img.shields.io/badge/Denetim-SHA--256%20Mühürlü-blueviolet.svg)](benchmarks/sealed/SEAL_MANIFEST.json)
+[![answerr Platformu](https://img.shields.io/badge/answerr-Platform-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
+[![werracle Web3 Oracle](https://img.shields.io/badge/werracle-On--Chain%20Oracle-f59e0b.svg?logo=ethereum&logoColor=white)](https://github.com/pCwOrM/werracle)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
 > *"Refleks nerede? Karar Werr!"*  
