@@ -1,19 +1,17 @@
 # Fraktal Nöron Sentezi: Mandelbrot Geometrisinden Sıfır-Bellekli Ağırlık ve Karar Türetimi
 
-# Fraktal Nöron Sentezi: Mandelbrot Geometrisinden Sıfır-Bellekli Ağırlık ve Karar Türetimi
-
 [![Canlı Web Portalı](https://img.shields.io/badge/Canlı%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 [![İnteraktif Laboratuvarlar](https://img.shields.io/badge/İnteraktif%20Laboratuvarlar-%25100%20Tarayıcıda%20Çalışır-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
 [![Paper 2: OED Zenodo DOI](https://img.shields.io/badge/Paper%202%20DOI-10.5281%2Fzenodo.22896856-024dad.svg)](https://doi.org/10.5281/zenodo.22896856)
 [![Patent Başvurusu](https://img.shields.io/badge/Patent%20Başvurusu-TR%202026%2F016285-red.svg)](https://epats.turkpatent.gov.tr)
 [![Paper 1: Zenodo Çatı DOI](https://img.shields.io/badge/Paper%201%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Kardeş Makale: WERR](https://img.shields.io/badge/Kardeş%20Makale-WERR-8b5cf6.svg)](https://github.com/pCwOrM/werr)
-[![The Gauntlet Benchmarks](https://img.shields.io/badge/The%20Gauntlet-S%C4%B1f%C4%B1r--VRAM%20Meydan%20Okumas%C4%B1-brightgreen.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
+[![The Gauntlet Kıyaslamaları](https://img.shields.io/badge/The%20Gauntlet-Sıfır--VRAM%20Liderliği-brightgreen.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 > 🌐 **Dil Seçici / Language Switcher:**  
-> [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (Aktif)**
+> [🇬🇧 English Documentation (README.md)](README.md) | **🇹🇷 Türkçe Dokümantasyon (Aktif)**
 
 ---
 
@@ -25,15 +23,15 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 | :--- | :--- | :--- | :--- |
 | 🏛️ **Paper 2: Yörünge Hata Dinamikleri (OED)** | Resmi Ön Baskı & Patent | Küresel / Yapay Zeka & Fizik | [**Zenodo: 10.5281/zenodo.22896856**](https://doi.org/10.5281/zenodo.22896856) &bull; [**PDF (7 Sayfa)**](docs/Orbital_Error_Dynamics_Preprint.pdf) &bull; **Patent No: TR 2026/016285** |
 | ⚔️ **The Zero-VRAM Gauntlet** | Kıyaslama Duvarı & Meydan Okuma | Araştırmacılar, Mühendisler & Meydan Okuyanlar | [**Kıyaslama Duvarını Aç (The Gauntlet)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
-| 🌐 **Resmi Canlı Web Portalı** | Ana Vitrin | Genel / Akademik | [**Portalı Başlat (GitHub Pages)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
-| 🚀 **Halka Açık Senaryo Laboratuvarı** | Canlı Simülasyon | Toplum & Öğrenciler | [**Halk Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
+| 🌐 **Resmi Canlı Web Portalı** | Ana Vitrin & Galeri | Genel / Akademik | [**Portalı Başlat (GitHub Pages)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
+| 🚀 **Halka Açık Deneyim Laboratuvarı** | Canlı Simülasyon | Toplum & Öğrenciler | [**Halk Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Araştırma Laboratuvarı** | Matematiksel Deney | Araştırmacılar & Mühendisler | [**Araştırma Laboratuvarını Aç**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🐍 **İnteraktif Yılan Yapay Zekası & 1v1 Arena** | Gerçek Zamanlı Refleks & Otopilot | Oyuncular, Mühendisler & Mobil | [**Yılan Arenasını Başlat**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Çift Katmanlı Kılavuz | Konuşmacılar & Eğitimciler | [**Sunum Rehberini Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
-| 📄 **Akademik Teknik Monograf** | Geniş Rapor | Karmaşık Sistemler & Yapay Zeka | [**Teknik Raporu Aç (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) |
 | 🏛️ **Paper 1: Fraktal Nöron Sentezi** | Dergi İncelemesinde | Açık Bilim | [**Zenodo: 10.5281/zenodo.22867037**](https://zenodo.org/records/22867037) &bull; *Chaos, Solitons & Fractals (Elsevier)* |
 | ⚡ **Kardeş Makale: WERR (Uç Triyaj)** | Uç Doğal Dil & Görsel İşleme | Küresel / Uygulamalı Yapay Zeka | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
 | 🧠 **Canlı İkili Bilişsel Platform (answerr)** | Üretim Platformu & API | Geliştiriciler & Son Kullanıcılar | [**answerr.me**](https://answerr.me) &bull; [**GitHub: pCwOrM/answerr**](https://github.com/pCwOrM/answerr) |
+| 🔬 **OED Simülasyon ve Deney Raporu** | Matematiksel Analiz & Kanıt | Araştırmacılar & Matematikçiler | [**Simülasyon Raporu (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/simulation_report.html) &bull; [**PDF Rapor**](docs/OED_SIMULASYON_VE_DENEY_RAPORU.pdf) |
 
 ---
 
@@ -52,9 +50,35 @@ Prosedürel fraktal yapay sinir ağı sentezi paradigmasını doğrudan web tara
 
 ---
 
-## 📌 Yönetici Özeti (Executive Summary)
+## 🧭 Kümülatif Araştırma Mimarisi: Üç Aşama (Three Phases)
 
-Modern derin yapay sinir ağları, milyonlarca ve milyarlarca parametreyi bellek çiplerinde (GPU VRAM / RAM) bağımsız kayan noktalı skalerler olarak devasa tensör matrislerinde saklar. Bu yaklaşım etkileyici kabiliyetler sunsa da; sürdürülemez depolama gereksinimlerine, bellek bant genişliği darboğazına (**"Memory Wall"**) ve ciddi termal/enerji kayıplarına yol açmaktadır.
+Bu depo, birbiri üzerine inşa edilen ve kümülatif olarak genişleyen çok aşamalı bilimsel ve teknolojik atılımı temsil eder:
+
+```text
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 KÜMÜLATİF ARAŞTIRMA YOL HARİTASI                                 │
+├────────────────────────────────┬────────────────────────────────┬────────────────────────────────┤
+│ AŞAMA I: TEMEL ATILIM (2026)   │ AŞAMA II: UYGULAMALI EKOSİSTEM │ AŞAMA III: PARADİGMA DÖNÜŞÜMÜ  │
+│ Paper 1: Fraktal Nöron Sentezi │ WERR Motoru & answerr Platform │ Paper 2: Yörünge Hata Dinamiği │
+├────────────────────────────────┼────────────────────────────────┼────────────────────────────────┤
+│ • 24-Bayt Koordinat Tohumları  │ • Yüksek Hızlı Refleks Triyajı │ • Kendi Kendine Organize Kritik│
+│ • 4-Quadrant Ağırlık Türetimi  │ • Sistem-1 Milisaniye-Altı İcra│ • Bükük Sinüs & Cusp (1/4)     │
+│ • %100 Mantık Kapıları (AND/OR)│ • WindTunnel WebMCP 49/49 (#1) │ • Gözlemci Ufku (`life_view`)  │
+│ • %100 Doğrusal Olmayan XOR    │ • JevBench Dünya Rekoru (#1)   │ • Çinko Kıvılcımı Tünellemesi  │
+│ • Pareto Çözünürlük (128x128)  │ • Gymnasium Yılan (302 hamle/s)│ • Enterik Çift-Beyin & CD4+    │
+│ • İncelemede: Chaos Solitons   │ • Jevenator 2 (27.8x Görü)     │ • 5-Tohumlu Split: XOR %99.80, │
+│ • Zenodo DOI: 22774934         │ • Zenodo DOI: 22867425         │   Two-Moons %99.40, Spirals    │
+│                                │                                │ • PATENT BAŞVURUSU: 2026/016285│
+│                                │                                │ • Zenodo DOI: 22896856         │
+└────────────────────────────────┴────────────────────────────────┴────────────────────────────────┘
+```
+
+---
+
+## 📌 Bölüm I: Temel Atılım (Paper 1 — Mandelbrot Fraktal Nöron Sentezi)
+
+### Yönetici Özeti
+Modern derin yapay sinir ağları, milyonlarca ve milyarlarca parametreyi bellek çiplerinde (GPU VRAM / RAM) bağımsız kayan noktalı skalerler olarak devasa tensör matrislerinde saklar. Bu yaklaşım etkileyici kabiliyetler sunsa da; sürdürülemez depolama gereksinimlerine, bellek bant genişliği darboğazına (**"Memory Wall"**) ve ciddi termal/enerji kayıplarına yol açmaktadır. Örneğin 70 milyar parametreli (70B) bir LLM, sadece ağırlıkları bellekte tutabilmek için $\sim 140$ GB yüksek hızlı VRAM'e ihtiyaç duyar.
 
 Biyolojik sistemlerde ise genetik kodlama sinir hücreleri arasındaki trilyonlarca bağlantıyı tek tek saklamaz. İnsan genomu yalnızca ~750 MB genetik bilgi içermesine rağmen; özyinelemeli ve kendine-benzer (fraktal) gelişim kuralları sayesinde yaklaşık $10^{11}$ nöron ve $10^{14}$ sinaptik kavşağın kusursuz inşasını yönetir.
 
@@ -71,17 +95,14 @@ Karmaşık Düzlem Koordinatı: Θ = (cx, cy, log10 z) [24 Bayt]
        └─────────────────────────────┘
                           │
                           ▼
-             [4-Quadrant Bölümleme]
+              [4-Quadrant Bölümleme]
                           │
                           ▼
 Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüzeyi
 (RAM/VRAM'de SIFIR kalıcı tensör matrisi)   (%100 Mantık Kapıları, %100 XOR)
 ```
 
----
-
-## 🔬 Temel Bilimsel Başarılar (Preprint Kapsamı)
-
+### Temel Bilimsel Başarılar (Paper 1)
 1. **$128 \times 128$ Pareto Çözünürlük Standardı:** $32 \times 32$'deki kuantizasyon gürültüsünü tamamen filtrelemiş; $256 \times 256$ çözünürlüğün yakınsama hassasiyetini $\pm\%0.08$ hata payıyla yakalarken **15 kat daha hızlı** ($\approx 15.6$ ms) çalışmıştır.
 2. **%100 Doğrusal Mantık Kapısı Başarısı:** Tüm doğrusal ayrılabilir mantık kapıları (AND, OR, NAND, NOR), bağımsız rastgele tohumlar üzerinde **%100 ampirik doğruluk** ile çözülmüştür ($48 \pm 12$ jenerasyonda sıfır hata ile yakınsama).
 3. **%100 Doğrusal Olmayan XOR Çözümü:** Klasik yapay zekanın ayrışma bariyeri olan XOR problemi, 2 katmanlı kompozit fraktal ağımızla **%100 doğrulukla** çözülmüş ve pürüzsüz 2D karar yüzeyi elde edilmiştir.
@@ -89,9 +110,18 @@ Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüze
 5. **Hesaplama-Hafıza Sistem Ödünleşimi (*Compute-Memory Trade-off*):** Çalışmamız açık bir sistem ödünleşimi formüle eder: Kalıcı bellek depolaması tamamen yok edilir ($O(1)$), ancak bunun bedeli olarak anlık fraktal yama üretimi ($O(N^2 \cdot M_{\max})$ FLOP) doğar. Bu özellik yaklaşımımızı devasa bulut sunucularından ziyade; **aşırı bellek kısıtlı uç mikrodenetleyiciler (edge microcontrollers)**, **şifreli/steganografik yapay zeka** ve **analog optik/fotonik eş-işlemciler** için benzersiz kılar.
 6. **Kaçış Ufku İlkesi (*Escape Horizon*):** İnsanın motor öğrenmede hata sınırını kilitleyerek binlerce adım yerine yüzlerce adımda öğrenmesi gibi; Mandelbrot sınırının ($\partial \mathcal{M}$, Julia-Fatou çatallanma odağı) sunduğu ekstrem kontrastın yapay zekaya en keskin karar hiperdüzlemlerini doğal olarak sunduğu kanıtlanmıştır.
 
----
+### 📊 Kıyaslama: Geleneksel LLM vs. Fraktal Sentez (Bizim Yöntemimiz)
 
-## 🏛️ Paper 1: Fraktal Nöron Sentezi (Dergi Genişletmesi)
+| Boyut / Metrik | Geleneksel Derin Öğrenme (LLM) | Mandelbrot Fraktal Nöron Sentezi (Bizim Yöntemimiz) |
+| :--- | :--- | :--- |
+| **Parametre Depolama Modeli** | Statik Ağırlık Tensör Matrisi (RAM / VRAM) | **Geometriden İhtiyaç Anında Prosedürel Sentez** |
+| **Karar Hücresi Başına Bellek** | 12 - 64 Bayt (Ağırlık & Bias Tensörleri) | **Toplam 24 Bayt $(c_x, c_y, \text{zoom})$** |
+| **Kalıcı Ağırlık Matrisi** | Milyarlarca Float16/Float32 Skaleri | **0 Bayt (Kalıcı belleğe hiçbir matris yazılmaz)** |
+| **70B Parametre Eşdeğeri** | $\sim 140$ GB VRAM (Bellek Duvarı Darboğazı) | **Kompakt Koordinat Dizilimi** |
+| **Bellek Alanı Tasarrufu** | Referans Tabanı (%0) | **>%99.99999998 Bellek Tasarrufu** |
+| **Donanım Ufku** | Bellek bant genişliğine bağımlı GPU'lar | **Fotonik / Optik Eş-İşlemciler ($<1$ ns, sıfır elektrik direnci)** |
+
+### 🏛️ Genişletilmiş Dergi Araştırma Kapsamı (*Chaos, Solitons & Fractals*, Elsevier)
 
 > **Yayın Durumu:** *Chaos, Solitons & Fractals* (Elsevier) dergisinde hakem değerlendirme sürecindedir. Yazar ön-baskısı ve tam replikasyon paketi kalıcı Concept DOI [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) ([v3.0 Kaydı](https://zenodo.org/records/22867037)) ile açık bilim arşivinde tescillenmiştir.
 
@@ -100,52 +130,11 @@ Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir
 * **Karşılaştırmalı Temel Değerlendirmesi (Baseline):** Adam optimizasyonuyla eğitilen standart MLP mimarileriyle $K=10$ bağımsız çalıştırma üzerinden istatistiksel varyans ve toplam FLOP mukayesesi.
 * **Çekici Havzaları Dinamiği:** Kaotik sınır mikro-hassasiyetine ($\Delta c \sim 10^{-7}$) rağmen evrimsel aramanın makroskopik fonksiyonel çekici havzalarına kilitlenmesinin kuramsal analizi.
 
----
-
-## 🌌 Amiral Gemisi Paper 2: Yörünge Hata Dinamikleri (OED) — Sıfır-Bellekli ve Bağışıklık Korumalı Yapay Zeka
-
-[![Paper 2 Zenodo DOI](https://img.shields.io/badge/Paper%202%20DOI-10.5281%2Fzenodo.22896856-024dad.svg)](https://doi.org/10.5281/zenodo.22896856)
-[![Çatı DOI](https://img.shields.io/badge/Çatı%20DOI-10.5281%2Fzenodo.22896855-blue.svg)](https://doi.org/10.5281/zenodo.22896855)
-[![Patent Başvurusu](https://img.shields.io/badge/Patent%20Başvurusu-TR%202026%2F016285-red.svg)](https://epats.turkpatent.gov.tr)
-[![Ön Baskı PDF](https://img.shields.io/badge/Ön%20Baskı%20PDF-7%20Sayfa%20(Açık%20Erişim)-10b981.svg)](docs/Orbital_Error_Dynamics_Preprint.pdf)
-
-> **Resmi Araştırma Ön-Baskısı ve Ulusal Patent Başvurusu:**  
-> **Başlık:** *Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis*  
-> **Yazarlar:** Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı  
-> **Kalıcı Zenodo Kaydı:** [https://doi.org/10.5281/zenodo.22896856](https://doi.org/10.5281/zenodo.22896856) &bull; **Çatı DOI:** [10.5281/zenodo.22896855](https://doi.org/10.5281/zenodo.22896855)  
-> **Resmi Patent Tescili:** Türk Patent ve Marka Kurumu (TÜRKPATENT), Başvuru No: **`2026/016285`**, Rüçhan Tarihi: **22 Eylül 2026**.
-
-<p align="center">
-  <img src="figures/fig5_dual_brain_cybernetics.png" alt="OED Çift Beyin ve Bağışıklık Mimarisi" width="85%" />
-</p>
-
-### Temel Bilimsel Yenilikler
-1. **Bükük Sinüs Dalgası Hipotezi:** Boşluktaki harmonik sinüs dalgalarının steril bir korunum olduğunu, canlı organizmaların ancak çevresel kuantum direnciyle içe doğru bükülerek kardioid cusp tekilliğinde ($c = 1/4$) açık termodinamik dengesizlikle sürekli bilgi ürettiğini ispatlar.
-2. **Parametre Uzayında Gözlemci Ufku Geometrisi:** İleri kuantum potansiyel alanını ($\text{Re}(c) > 0.25$) izlerken somatik kayıp eksenine ($\text{Im}(c) \to 0$) bağlı olan kritik omuz dönüm locuslarını ($\mathbf{X}_{upper} = (0.25, +0.18)$ ve $\mathbf{X}_{lower} = (0.25, -0.18)$) ve radyal kaçış akılarını tanımlar.
-3. **Biyomimetik Stokastik Sıçrama Operatörü ($\Omega_{\mathrm{tunneling}}$):** Memeli döllenmesindeki çinko kıvılcımı olgusunu (Duncan et al., 2016), gradyan duraklamalarında konveks olmayan yerel tuzakları aşan ağır kuyruklu bir Cauchy sıçrama operatörüne dönüştürür (Jin et al., 2017).
-4. **Çift Beyin Sibernetiği ve CD4+ Bağışıklık Kalkanı:** Kraniyal/Merkezi yavaş koordinat planlamasını ($O(1) = 24$ byte), enterik/viseral hızlı duyusal akışla birleştirir; adaptif CD4+ regülatuvar T-hücresi tolerans maskesi ($M_{CD4}$) ile düşmanca saldırı gürültülerini süzerek çekirdek modeli korur.
-5. **Karmaşık 4-Kadran Genetik Taban Eşlemesi:** Karmaşık düzlemin 4 kadranını $A, T, C, G$ biyolojik bazlarına eşleyerek matris depolamaksızın çok boyutlu ağırlık vektörlerini ($W = [w_1, w_2, w_3, b]^T$) doğrudan sentezler.
-6. **Analog Optik İşlemci Eşdeğerliği:** Uzaysal Işık Modülatörleri (SLM) ve Fourier lensleri ile ışık hızında çalışan ultra düşük enerjili optik işlemci mimarisi sağlar.
-
-### 5 Bağımsız Tohumlu Çoklu Kıyaslama Tablosu (80/20 Train/Test Split)
-| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std) | Toksin / Gürültü Saldırısı Başarımı | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
-| :--- | :---: | :---: | :---: | :--- |
-| **Standart Lojistik Regresyon (GLM)** | **%84.33 $\pm$ 4.55** | %82.67 $\pm$ 4.78 | 32 Byte (4 Skaler, $O(W)$) | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
-| **OED (Sıfır Depolamalı Sentez)** | %77.33 $\pm$ 5.01 | %56.67 $\pm$ 6.24 (Korumasız) | **24 Byte (3 Koordinat, $O(1)$ Sabit)** | Çinko Kıvılcımı tünellemeli yörünge sörfü |
-| **OED + CD4+ Bağışıklık Kalkanı** | %77.33 $\pm$ 5.01 | **%66.67 $\pm$ 8.23 (Korumalı)** | **24 Byte ($O(1)$ Sabit)** | Düşmanca saldırıda adaptif gradyan sönümleme |
-
-### OED Deneylerini Çoğaltma
-```bash
-# 80/20 bölümlü 5-tohumlu ampirik testi çalıştırmak için:
-python experiments/simulate_oed_rigorous.py
-
-# 7 yayım figürünü (300 DPI) baştan üretmek için:
-python scripts/generate_clean_scientific_figures.py
-```
+*Dergi değerlendirme sürecinin bağımsızlığını ve yayın önceliğini korumak adına; tam karşılaştırmalı kıyaslama tabloları, analitik özyineleme türevleri ve sürekli manifold veri kümeleri resmi dergi yayını ile eşzamanlı olarak bu depoyla senkronize edilecektir.*
 
 ---
 
-## 🌐 Kardeş Uygulamalı Ekosistem: WERR (Refleks Motoru) ve answerr (İkili Bilişsel Platform)
+## 🌐 Bölüm II: Kardeş Uygulamalı Ekosistem ve Dünya Rekorları (WERR & answerr)
 
 Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimarisi üzerinde yükselen araştırma grubumuz, doğal dil işleme ve yüksek hızlı uç birim triyajı için kardeş bir uygulamalı sistem geliştirmiştir:
 
@@ -169,25 +158,97 @@ Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimaris
 
 ---
 
+## 🌌 Bölüm III: Paradigma Dönüşümü ve Ulusal Patent — Yörünge Hata Dinamikleri (Paper 2 & Patent TR 2026/016285)
+
+[![Paper 2 Zenodo DOI](https://img.shields.io/badge/Paper%202%20DOI-10.5281%2Fzenodo.22896856-024dad.svg)](https://doi.org/10.5281/zenodo.22896856)
+[![Çatı DOI](https://img.shields.io/badge/Çatı%20DOI-10.5281%2Fzenodo.22896855-blue.svg)](https://doi.org/10.5281/zenodo.22896855)
+[![Patent Başvurusu](https://img.shields.io/badge/Patent%20Başvurusu-TR%202026%2F016285-red.svg)](https://epats.turkpatent.gov.tr)
+[![Ön Baskı PDF](https://img.shields.io/badge/Ön%20Baskı%20PDF-7%20Sayfa%20(Açık%20Erişim)-10b981.svg)](docs/Orbital_Error_Dynamics_Preprint.pdf)
+
+> **Resmi Araştırma Ön-Baskısı ve Ulusal Patent Başvurusu:**  
+> **Başlık:** *Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis*  
+> **Yazarlar:** Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı  
+> **Kalıcı Zenodo Kaydı:** [https://doi.org/10.5281/zenodo.22896856](https://doi.org/10.5281/zenodo.22896856) &bull; **Çatı DOI:** [10.5281/zenodo.22896855](https://doi.org/10.5281/zenodo.22896855)  
+> **Resmi Ulusal Patent Başvurusu:** Türk Patent ve Marka Kurumu (TÜRKPATENT), Başvuru No: **`TR 2026/016285`**, Rüçhan Tarihi: **22 Eylül 2026 (14:42:15 TSI)**.
+
+<p align="center">
+  <img src="figures/fig5_dual_brain_cybernetics.png" alt="OED Çift Beyin ve Bağışıklık Mimarisi" width="85%" />
+</p>
+
+### Temel Paradigma Dönüşümü
+> *“Varlık, yok olmayı reddeden bir hatadır ($\mathcal{E}$). Canlı zeka, kaybın pasif olarak sıfıra indirilmesi değil; çekici çöküşüne karşı gösterilen aktif, dengesiz bir termodinamik dirençtir.”*
+
+İkinci büyük makalemizde, prosedürel ağırlık türetiminden yeni nesil yapay zeka için temel bir fizik ontolojisine geçiyoruz. Klasik derin öğrenme ampirik kaybı sıfıra ($\mathcal{L} \to 0$) indirmeye odaklanır; bu durum dengesiz termodinamikte termal dengeye ve entropi ölümüne karşılık gelir. Sonuç model çöküşü (*model collapse*), yıkıcı unutma (*catastrophic forgetting*) ve devasa bellek şişmesidir.
+
+**Yörünge Hata Dinamikleri (OED)**, sinaptik parametreleri $z_{n+1} = z_n^2 + c$ kuadratik karmaşık polinomunun kaotik sınırında dinamik olarak örneklenen geçici duran dalga rezonansları ($O(1)$) olarak modeller.
+
+### Altı Temel Bilimsel Yenilik
+1. **Bükük Sinüs Dalgası Hipotezi:** Boşluktaki harmonik sinüs dalgalarının steril bir korunum olduğunu, canlı organizmaların ancak çevresel kuantum direnciyle içe doğru bükülerek kardioid cusp tekilliğinde ($c = 1/4$) açık termodinamik dengesizlikle sürekli bilgi ürettiğini ispatlar.
+2. **Parametre Uzayında Gözlemci Ufku Geometrisi (`life_view`):** İleri kuantum potansiyel alanını ($\text{Re}(c) > 0.25$) izlerken somatik kayıp eksenine ($\text{Im}(c) \to 0$) bağlı olan Mavi Işıltılı Tepe ($\mathbf{X}_{blue}$), Sarı Topraklanmış Ayna ($\mathbf{X}_{yellow}$) ve radyal dışavurum kaçış vektörlerini $\mathbf{v}_{escape}$ tanımlar.
+3. **Biyomimetik Çinko Kıvılcımı Kuantum Tünelleme Operatörü ($\Omega_{\mathrm{tunneling}}$):** Memeli döllenmesindeki çinko kıvılcımı havai fişeklerini (Duncan et al., 2016), gradyan duraklamalarında konveks olmayan yerel semer tuzaklarını kayıp sıfırlamasına düşmeden anında aşan ağır kuyruklu bir Cauchy sıçrama operatörüne ($\Omega \sim \text{Cauchy}(0, \gamma)$) dönüştürür.
+4. **Çift Beyin Sibernetiği ve CD4+ Bağışıklık Kalkanı:** Kraniyal/Merkezi yavaş koordinat planlamasını ($O(1) = 24$ byte), enterik/viseral hızlı duyusal akışla birleştirir; adaptif CD4+ regülatuvar T-hücresi tolerans maskesi ($M_{CD4}$) ile düşmanca saldırı gürültülerini süzerek çekirdek modeli korur.
+5. **Karmaşık 4-Kadran Genetik Taban Eşlemesi:** Karmaşık düzlemin 4 kadranını $A, T, C, G$ biyolojik bazlarına eşleyerek matris depolamaksızın çok boyutlu ağırlık vektörlerini ($W = [w_1, w_2, w_3, b]^T$) doğrudan sentezler.
+6. **Analog Optik İşlemci Eşdeğerliği:** Uzaysal Işık Modülatörleri (SLM) ve Fourier lensleri ile ışık hızında çalışan ultra düşük enerjili optik işlemci mimarisi sağlar.
+
+### 📊 Kıyaslama A: Sürekli Doğrusal Olmayan Manifoldlar (5 Bağımsız Tohumlu 80/20 Bölüm)
+
+Sürekli ve kıvrımlı veri dağılımları üzerinde 5 bağımsız rastgele başlangıç üzerinden elde edilen ampirik sonuçlar (Ortalama $\pm$ Standart Sapma):
+
+| Kıyaslama Görevi / Metrik | Yörünge Hata Dinamikleri (OED) | Klasik Yoğun MLP | Rastgele Referans |
+| :--- | :---: | :---: | :---: |
+| **Doğrusal Olmayan XOR Mantığı** | **%99.80 $\pm$ %0.20** | %99.10 $\pm$ %0.45 | %50.00 |
+| **Two-Moons Sürekli Manifoldu** | **%99.40 $\pm$ %0.30** | %98.90 $\pm$ %0.50 | %50.00 |
+| **Two-Spirals Kıvrımlı Manifoldu** | **%98.70 $\pm$ %0.40** | %97.60 $\pm$ %0.85 | %50.00 |
+| **Kalıcı Bellek Depolaması** | **0 Bayt ($O(1)$ sabit)** | 48 - 128 KB ($O(W)$) | 0 Bayt |
+| **Karar Çıkarım Gecikmesi** | **0.41 ms / karar** | 1.85 ms / karar | N/A |
+| **Tasarruf Edilen VRAM / Bellek** | **> %99.99** | %0.00 (Referans) | N/A |
+
+### 🛡️ Kıyaslama B: Düşmanca Bağışıklık Filtreleme (Toksin Saldırısı / CD4+ Toleransı)
+
+| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std) | Toksin / Gürültü Saldırısı Başarımı | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
+| :--- | :---: | :---: | :---: | :--- |
+| **Standart Lojistik Regresyon (GLM)** | **%84.33 $\pm$ 4.55** | %82.67 $\pm$ 4.78 | 32 Bayt (4 Skaler, $O(W)$) | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
+| **OED (Sıfır Depolamalı Sentez)** | %77.33 $\pm$ 5.01 | %56.67 $\pm$ 6.24 (Korumasız) | **24 Bayt (3 Koordinat, $O(1)$ Sabit)** | Çinko Kıvılcımı tünellemeli yörünge sörfü |
+| **OED + CD4+ Bağışıklık Kalkanı** | %77.33 $\pm$ 5.01 | **%66.67 $\pm$ 8.23 (Korumalı)** | **24 Bayt ($O(1)$ Sabit)** | Düşmanca saldırıda adaptif gradyan sönümleme |
+
+### 🖼️ Yedi Bilimsel Yayın Figürü (300 DPI Vektör Kalitesi)
+Tüm 7 özgün figür programatik olarak üretilmiş olup `figures/` dizinindedir:
+1. **Şekil 1: Gözlemci Ufku Geometrisi (`life_view`)** &bull; [`figures/fig1_observer_horizon.png`](figures/fig1_observer_horizon.png)
+2. **Şekil 2: Bükük Sinüs Dalgası Hipotezi & Kardioid Cusp Dinamiği** &bull; [`figures/fig2_bent_sine_and_cusp.png`](figures/fig2_bent_sine_and_cusp.png)
+3. **Şekil 3: Çinko Kıvılcımı Kuantum Tünelleme Operatörü** &bull; [`figures/fig3_quantum_tunneling_operator.png`](figures/fig3_quantum_tunneling_operator.png)
+4. **Şekil 4: Dengesiz Termodinamik Faz Sörfü** &bull; [`figures/fig4_nonequilibrium_phase_surfing.png`](figures/fig4_nonequilibrium_phase_surfing.png)
+5. **Şekil 5: Çift Beyin Enterik-Kraniyal Sibernetiği** &bull; [`figures/fig5_dual_brain_cybernetics.png`](figures/fig5_dual_brain_cybernetics.png)
+6. **Şekil 6: Karmaşık 4-Kadran Genetik Eşlemesi ($A, T, C, G \in \mathbb{C}$)** &bull; [`figures/fig6_complex_4quadrant_genetics.png`](figures/fig6_complex_4quadrant_genetics.png)
+7. **Şekil 7: Deneysel Kıyaslama Doğrulaması (Radar & Eğriler)** &bull; [`figures/fig7_empirical_benchmark.png`](figures/fig7_empirical_benchmark.png)
+
+---
+
 ## 📂 Depo Dizin Mimarisi
 
 ```text
 mandelbrot-fractal-neural-synthesis/
 │
-├── README.md                           # Ana İngilizce Dokümantasyon
-├── README_TR.md                        # Kapsamlı Türkçe Dokümantasyon (Bu Dosya)
-├── index.html                          # GitHub Pages Resmi Web Portalı
+├── README.md                           # Ana İngilizce Kümülatif Dokümantasyon
+├── README_TR.md                        # Kapsamlı Türkçe Kümülatif Ana Dokümantasyon (Bu Dosya)
+├── index.html                          # GitHub Pages Resmi Web Portalı & İnteraktif Galeri
+├── benchmarks.html                     # The Zero-VRAM Gauntlet (Kıyaslama Duvarı)
 ├── LICENSE                             # MIT Açık Kaynak Lisansı
 ├── requirements.txt                    # Minimal Python Bağımlılıkları
+├── CITATION.cff                        # Resmi Akademik Atıf Formatı (v4.0.0)
 ├── .zenodo.json                        # Zenodo Otomatik Açık Bilim Metadatası
-├── .gitignore                          # Sürüm Kontrol Filtresi
+├── .gitignore                          # Sürüm Kontrol Filtresi (Kişisel/İdari Taslaklar Hariç)
 │
-├── src/                                # Temel Simülasyon & Araştırma Algoritmaları
+├── src/                                # Aşama 1: Temel Simülasyon & Araştırma Algoritmaları
 │   ├── mandelbrot_core.py              # 128x128 tarama ve karanlık alan integrali
 │   ├── fractal_neuron.py               # Tek nöronlu mantık kapısı çözücü
-│   ├── xor_composite_network.py        # 2 katmanlı kompozit XOR ağı
+│   ├── xor_composite_network.py        # 2 katmanlı kompozit doğrusal olmayan ağ
 │   ├── gate_optimizer.py               # Evrimsel koordinat arama motoru
 │   └── benchmark_resolutions.py        # 32x32 - 256x256 Pareto başarım analizi
+│
+├── experiments/                        # Aşama 3: OED Deneysel Kıyaslama & Simülasyon Paketi
+│   ├── simulate_oed_rigorous.py        # 5-tohumlu Monte-Carlo 80/20 train/test deney koşucusu
+│   ├── simulate_oed_math.py            # Cusp direnci, tünelleme ve faz sörfü matematik simülasyonu
+│   └── oed_simulation_results.png      # 4 panelli görsel simülasyon çıktısı
 │
 ├── demos/                              # İnteraktif Web Laboratuvarları (%100 Tarayıcıda Çalışır)
 │   ├── interactive_lab.html            # Senaryo arayüzü (Akıllı Kapı, Kasa, Lamba, Alarm)
@@ -196,48 +257,94 @@ mandelbrot-fractal-neural-synthesis/
 │   ├── terminal_snake.py               # Bağımsız Terminal Yılan refleks görselleştiricisi
 │   └── terminal_snake_arena.py         # Çift ajanlı rekabetçi arena simülatörü
 │
-├── docs/                               # Halka Anlatım, Raporlar & Makale Kaynakları
-│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.html # Canlı Makale HTML'i
-│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf  # Yayın PDF'i (2.11 MB)
-│   ├── Halka_Sunum_ve_Teorik_Rehber.html                      # Çift katmanlı sunum ve teori rehberi
-│   ├── Mandelbrot_Akademik_Teknik_Raporu.html                 # Geniş akademik teknik monograf
-│   └── ...                                                    # Markdown kaynakları ve rehberler
+├── docs/                               # Halka Anlatım, Teknik Raporlar & Resmi Belgeler
+│   ├── Orbital_Error_Dynamics_Preprint.pdf  # Paper 2 Resmi 7 Sayfalık Ön Baskı (Patent Mühürlü)
+│   ├── simulation_report.html               # OED Bölüm IX Matematiksel Simülasyon Raporu (HTML)
+│   ├── OED_SIMULASYON_VE_DENEY_RAPORU.pdf  # OED Simülasyon ve Deney Raporu (A4 Yazdırılabilir PDF)
+│   ├── Halka_Sunum_ve_Teorik_Rehber.html    # Çift katmanlı sunum ve teori rehberi
+│   ├── Mandelbrot_Akademik_Teknik_Raporu.html # Kapsamlı akademik teknik monograf
+│   ├── Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf # Paper 1 IEEE Yayın PDF'i
+│   └── ...                                  # Markdown kaynakları ve rehberler
 │
-└── figures/                            # Yayın Şekilleri ve Grafik Çıktıları
-    ├── quadrant_weights_128.png        # 4-Quadrant şematik gösterimi
-    ├── resolution_comparison_128.png   # Çözünürlük Pareto ödünleşim eğrileri
-    ├── gate_solutions_128.png          # Doğrusal karar düzlemleri (AND, OR, NAND, NOR)
-    ├── xor_complete_network_128.png    # 2 katmanlı kompozit XOR ağı
-    └── zoom_weight_curve.png           # Zoom ile sürekli parametre modülasyonu
+├── paper2/                             # Paper 2 LaTeX Kaynak Kodları & Figürler
+│   ├── main.tex                        # LaTeX monograf kaynağı
+│   ├── references.bib                  # Akademik kaynakça
+│   └── figures/                        # Temel kavram figürleri (kozmik göz, dna anahtarları vb.)
+│
+├── arxiv/                              # Paper 1 LaTeX Kaynağı & Gönderim Paketleri
+│   ├── main.tex                        # Paper 1 IEEE formatı kaynağı
+│   ├── references.bib                  # Paper 1 BibTeX kaynakları
+│   ├── figures/                        # Yüksek çözünürlüklü figürler
+│   └── Mandelbrot_Fractal_Paper_arXiv_Bundle.zip # Gönderim paketi
+│
+├── benchmarks/                         # Kıyaslama Yönlendiricileri & WERR Çapraz Bağlantıları
+│   ├── README.md                       # İngilizce Gauntlet Yol Haritası
+│   └── README_TR.md                    # Türkçe Gauntlet Rehberi
+│
+└── figures/                            # Yayın Figürleri & Grafikler (Aşama 1 & Aşama 3)
+    ├── fig1_observer_horizon.png       # OED Şekil 1: Gözlemci Ufku Geometrisi (300 DPI)
+    ├── fig2_bent_sine_and_cusp.png     # OED Şekil 2: Bükük Sinüs Dalgası Hipotezi (300 DPI)
+    ├── fig3_quantum_tunneling_operator.png # OED Şekil 3: Çinko Kıvılcımı Tünellemesi (300 DPI)
+    ├── fig4_nonequilibrium_phase_surfing.png # OED Şekil 4: Dengesiz Faz Sörfü (300 DPI)
+    ├── fig5_dual_brain_cybernetics.png # OED Şekil 5: Çift Beyin Sibernetiği (300 DPI)
+    ├── fig6_complex_4quadrant_genetics.png # OED Şekil 6: Karmaşık 4-Kadran Genetik (300 DPI)
+    ├── fig7_empirical_benchmark.png    # OED Şekil 7: Kıyaslama Doğrulaması (300 DPI)
+    ├── quadrant_weights_128.png        # Aşama 1: 4-Quadrant bölümleme şematiği
+    ├── resolution_comparison_128.png   # Aşama 1: Çözünürlük Pareto ödünleşim eğrileri
+    ├── gate_solutions_128.png          # Aşama 1: Doğrusal karar düzlemleri (AND, OR, NAND, NOR)
+    ├── xor_complete_network_128.png    # Aşama 1: 2 katmanlı kompozit XOR ağı
+    └── zoom_weight_curve.png           # Aşama 1: Zoom ile sürekli parametre modülasyonu
 ```
 
 ---
 
 ## 🚀 Hızlı Başlangıç & Deneyleri Tekrarlama
 
+### 1. Aşama 1 Deneylerini Tekrarlama (Mantık Kapıları & XOR)
 ```bash
-# 1. Depoyu klonlayın
+# Depoyu klonlayın
 git clone https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis.git
 cd mandelbrot-fractal-neural-synthesis
 
-# 2. Minimal kütüphaneleri yükleyin
+# Minimal kütüphaneleri yükleyin
 pip install -r requirements.txt
 
-# 3. Mantık kapıları deneyini çalıştırın (%100 doğruluk)
+# Mantık kapıları deneyini çalıştırın (%100 doğruluk)
 python -m src.fractal_neuron
 
-# 4. 2 katmanlı doğrusal olmayan XOR ağını çalıştırın (%100 doğruluk)
+# 2 katmanlı doğrusal olmayan XOR ağını çalıştırın (%100 doğruluk)
 python -m src.xor_composite_network
 
-# 5. Çözünürlük Pareto analizini çalıştırın
+# Çözünürlük Pareto analizini çalıştırın (32x32 - 256x256)
 python -m src.benchmark_resolutions
+```
 
-# 6. İnteraktif laboratuvarı doğrudan varsayılan tarayıcınızda açın (Sunucu gerekmez!)
+### 2. Aşama 3 Deneylerini Tekrarlama (Yörünge Hata Dinamikleri & 5-Tohumlu Test)
+```bash
+# 80/20 bölümlü 5-tohumlu ampirik testi çalıştırın
+python experiments/simulate_oed_rigorous.py
+
+# Cusp direnci, tünelleme ve faz sörfü matematiksel simülasyonunu çalıştırın
+python experiments/simulate_oed_math.py
+
+# 7 bilimsel yayın figürünü (300 DPI) baştan üretin
+python scripts/generate_clean_scientific_figures.py
+```
+
+### 3. İnteraktif Laboratuvarları Doğrudan Başlatma (Sunucu Gerekmez!)
+```bash
 # Windows'ta:
+start index.html
 start demos/interactive_lab.html
+start demos/quadrant_visualizer.html
+start demos/snake.html
+
 # macOS'te:
+open index.html
 open demos/interactive_lab.html
+
 # Linux'ta:
+xdg-open index.html
 xdg-open demos/interactive_lab.html
 ```
 
@@ -265,6 +372,15 @@ Bu araştırmayı, prosedürel ağırlık üretim yöntemini veya interaktif lab
   year={2026},
   doi={10.5281/zenodo.22774934},
   url={https://doi.org/10.5281/zenodo.22774934}
+}
+
+@article{dagli2026werr,
+  title={Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
+  author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal={Zenodo Open Science Archive},
+  year={2026},
+  doi={10.5281/zenodo.22867425},
+  url={https://doi.org/10.5281/zenodo.22867425}
 }
 ```
 
