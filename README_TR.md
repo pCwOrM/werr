@@ -13,6 +13,7 @@
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-De%C4%9Ferlendirme%20A%C5%9Famas%C4%B1nda-blue.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Canlı Demo: GitHub Pages](https://img.shields.io/badge/Canl%C4%B1%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
+[![GitHub Education: Community Exchange](https://img.shields.io/badge/GitHub%20Education-Community%20Exchange-2ea44f?logo=github&logoColor=white)](https://education.github.com/globalcampus/exchange)
 [![Kardeş Platform: answerr](https://img.shields.io/badge/answerr-Canl%C4%B1%20Platform-38bdf8.svg)](https://answerr.me)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
