@@ -18,7 +18,7 @@
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![Canlı Kıyaslama Arenası](https://img.shields.io/badge/Canlı%20Kıyaslama-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Kıyaslama Duvarı](https://img.shields.io/badge/The%20Gauntlet-Resmi%20K%C4%B1yaslama%20Dizini-brightgreen.svg)](./benchmarks/)
-[![JevBench Dünya #1](https://img.shields.io/badge/JevBench%20Skoru-81.65%20(%231%20D%C3%BCnya)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
+[![JevBench Açık Set](https://img.shields.io/badge/JevBench%20(A%C3%A7%C4%B1k%20Set)-81.65%20(Kendi%20Ko%C5%9Fumuz)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![Tau-Bench Araç Çağrımı](https://img.shields.io/badge/Tau--Bench-%25100%20Ara%C3%A7%20Sadakati-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
@@ -203,17 +203,17 @@ $N = 336$ ampirik karar üzerinde gerçekleştirilen ablasyon çalışması sonu
 
 ---
 
-## 🏆 Resmî JevBench v1.2 Küresel Kıyaslaması & Dünya #1 Rekoru
+## 🏆 JevBench Kıyaslama Değerlendirmesi (Açık Test Setinde Kendi Koşumuz)
 
-Werr, otonom Sistem-1 karar modelleri için uluslararası referans kıyaslama paketi olan **JevBench v1.2** ([benchmarkheaven.com/jev-models](https://benchmarkheaven.com/jev-models)) üzerinde 4 temel eksende (**Zeka, Kalibrasyon, Hız ve Maliyet**) değerlendirilmiştir.
+Werr, otonom Sistem-1 karar modelleri için kıyaslama paketi olan **JevBench**'in ([benchmarkheaven.com/jev-models](https://benchmarkheaven.com/jev-models)) açık test veri seti (231 madde) üzerinde 4 temel eksende (**Zeka, Kalibrasyon, Hız ve Maliyet**) değerlendirilmiştir.
 
-Resmî olarak JevBench deposuna [Issue #10](https://github.com/fstandhartinger/jevbench/issues/10) altında sunulmuştur.
+*Not: Bu skor açık test maddeleri üzerinde kendi koşumuzdur (self-run on public split) ve resmî liderlik tablosu incelemesi için [Issue #10](https://github.com/fstandhartinger/jevbench/issues/10) altında değerlendirilmektedir.*
 
-### 🌍 Küresel Liderlik Tablosu
+### 🌍 Açık Test Seti Karşılaştırması (Kendi Koşumuz - Referans)
 
-| Sıra | Model / Sistem | JevBench Skoru | Zeka | Kalibrasyon | Hız | Maliyet | P50 Gecikme | Maliyet / 1k | Donanım |
+| Durum | Model / Sistem | JevBench Skoru | Zeka | Kalibrasyon | Hız | Maliyet | P50 Gecikme | Maliyet / 1k | Donanım |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **★ #1** | **WERR (0MB Fraktal Motor)** | **81.65** | **%70.9** | **63.9** | **100.0** | **100.0** | **2.76 ms** | **$0.0000** | **Standart CPU (0 B VRAM)** |
+| **Kendi Koşumuz (Açık Set)** | **WERR (0MB Fraktal Motor)** | **81.65** | **%70.9** | **63.9** | **100.0** | **100.0** | **2.76 ms** | **$0.0000** | **Standart CPU (0 B VRAM)** |
 | #2 | Jev 1.13.0 (TypeSafe Resmî) | 75.4 | %90.4 | 82.7 | 83.3 | 52.0 | 650.0 ms | $0.0399 | Bulut GPU Kümesi |
 | #3 | SemIf (RunPod'da Qwen3.5-4B) | 74.7 | %85.9 | 72.6 | 83.7 | 59.5 | 550.0 ms | $0.0224 | Bulut GPU (RTX 4090) |
 | #4 | djev (Maisa Diffusion-Gemma) | 74.3 | %88.4 | 65.4 | 91.4 | 57.6 | 240.0 ms | $0.0260 | Bulut GPU Kümesi |

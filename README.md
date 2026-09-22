@@ -18,7 +18,7 @@
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
-[![JevBench World #1](https://img.shields.io/badge/JevBench%20Score-81.65%20(%231%20World)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
+[![JevBench Public Split](https://img.shields.io/badge/JevBench%20(Public%20Split)-81.65%20(Self--Run)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Snake AI Reflex](https://img.shields.io/badge/Snake%20AI%20Reflex-273--302%20moves%2Fs-brightgreen.svg)](./benchmarks/snake/)
@@ -294,18 +294,18 @@ Evaluated across $N = 336$ empirical telemetry decisions from production traffic
 
 ---
 
-## 🏆 Official JevBench v1.2 Global Benchmark & World Record #1
+## 🏆 JevBench Benchmark Evaluation (Self-Run on Public Split)
 
-Werr was evaluated against **JevBench v1.2** ([benchmarkheaven.com/jev-models](https://benchmarkheaven.com/jev-models)), the rigorous international benchmark for autonomous System-One decision models across 4 axes: **Intelligence, Calibration, Speed, and Cost** (geometric mean).
+Werr was evaluated on the public test split (231 items) of **JevBench** ([benchmarkheaven.com/jev-models](https://benchmarkheaven.com/jev-models)), measuring autonomous System-One decision models across 4 axes: **Intelligence, Calibration, Speed, and Cost**.
 
-Officially submitted to JevBench in [Issue #10](https://github.com/fstandhartinger/jevbench/issues/10).
+*Note: This is a self-run evaluation on the public items and is currently under review for official leaderboard inclusion in [Issue #10](https://github.com/fstandhartinger/jevbench/issues/10).*
 
-### 🌍 Global Leaderboard Comparison
+### 🌍 Comparison on Public Split (Self-Run Reference)
 
-| Rank | Model / System | JevBench Score | Intelligence | Calibration | Speed | Cost | P50 Latency | Cost / 1k | Hardware |
+| Status | Model / System | JevBench Score | Intelligence | Calibration | Speed | Cost | P50 Latency | Cost / 1k | Hardware |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **★ #1** | **WERR (0MB Fractal Engine)** | **81.65** | **70.9%** | **63.9** | **100.0** | **100.0** | **2.76 ms** | **$0.0000** | **Commodity CPU (0 B VRAM)** |
-| #2 | Jev 1.13.0 (TypeSafe Official) | 75.4 | 90.4% | 82.7 | 83.3 | 52.0 | 650.0 ms | $0.0399 | Cloud GPU Cluster |
+| **Self-Run (Public)** | **WERR (0MB Fractal Engine)** | **81.65** | **70.9%** | **63.9** | **100.0** | **100.0** | **2.76 ms** | **$0.0000** | **Commodity CPU (0 B VRAM)** |
+| Official Board | Jev 1.13.0 (TypeSafe Official) | 75.4 | 90.4% | 82.7 | 83.3 | 52.0 | 650.0 ms | $0.0399 | Cloud GPU Cluster |
 | #3 | SemIf (Qwen3.5-4B on RunPod) | 74.7 | 85.9% | 72.6 | 83.7 | 59.5 | 550.0 ms | $0.0224 | Cloud GPU (RTX 4090) |
 | #4 | djev (Maisa Diffusion-Gemma) | 74.3 | 88.4% | 65.4 | 91.4 | 57.6 | 240.0 ms | $0.0260 | Cloud GPU Cluster |
 | #5 | openJev Verdict 1.4 | 72.5 | 58.1% | 74.1 | 78.1 | 82.4 | 780.0 ms | $0.0039 | Dedicated CPU Server |
