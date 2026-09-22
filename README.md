@@ -184,11 +184,11 @@ In our second major paper, we advance from procedural weight harvesting to a fun
 
 ### Six Core Scientific Innovations
 1. **The Bent Sine Wave Hypothesis:** Proves that while unperturbed linear waves represent static equilibrium death ($\frac{dx}{dt} = 0$) and harmonic sine waves represent conservative repetition, living intelligence emerges when waves curl inward through environmental drag toward the main cardioid cusp ($c = 1/4$).
-2. **Observer Horizon Geometry in Parameter Space (`life_view`):** Identifies the dual-cusp manifold comprising the Blue Radiant Apex ($\mathbf{X}_{blue}$), surveying forward quantum potential fields ($\text{Re}(c) > 0.25$) while anchored to somatic dissipation axes ($\text{Im}(c) \to 0$), the Yellow Grounded Mirror ($\mathbf{X}_{yellow}$), and expressive radial utterance vectors $\mathbf{v}_{escape}$.
-3. **Biomimetic Zinc Spark Quantum Tunneling ($\Omega_{\mathrm{tunneling}}$):** Translates mammalian fertilization zinc spark fireworks into a heavy-tailed stochastic jump operator ($\Omega \sim \text{Cauchy}(0, \gamma)$) that instantaneously tunnels out of non-convex saddle traps during gradient stagnation without loss convergence.
-4. **Dual-Brain Cybernetics & CD4+ Immune Gating:** Couples slow $O(1) = 24$-byte central parameter planning ($\Theta$) with high-frequency enteric/visceral sensory streams shielded by adaptive CD4+ regulatory T-cell tolerance masks ($M_{CD4}$), attenuating adversarial noise spikes.
+2. **Observer Horizon Geometry in Parameter Space (`life_view`):** Identifies sub-boundary interior resonance shoulder loci ($\mathbf{X}_{upper} = (0.25, +0.18)$ and $\mathbf{X}_{lower} = (0.25, -0.18)$) mediating between the interior fixed-point basin and the true analytic cardioid boundary ($0.25 \pm 0.50i$), surveying radiant potential fields while anchored to somatic dissipation axes.
+3. **Biomimetic Zinc Spark Quantum Tunneling ($\Omega_{\mathrm{tunneling}}$):** Translates mammalian fertilization zinc sparks into a heavy-tailed Cauchy jump operator ($\Omega \sim \text{Cauchy}(0, \gamma)$) that instantaneously escapes non-convex saddle traps during gradient stagnation (inspired by Jin et al., 2017).
+4. **Dual-Brain Cybernetics & CD4+ Immune Gating:** Couples slow $O(1) = 24$-byte central parameter planning ($\Theta$) with high-frequency enteric/visceral sensory streams shielded by adaptive CD4+ regulatory T-cell tolerance masks ($M_{CD4}$), attenuating sensory noise corruption and shock.
 5. **Complex 4-Quadrant Genetic Base Decomposition:** Maps the 4-nucleotide genetic basis ($A, T, C, G$) across the quadrants of $\mathbb{C}$, synthesizing multi-dimensional weight vectors $W = [w_1, w_2, w_3, b]^T$ from scalar coordinates without matrix storage.
-6. **Hardware Equivalence with Analog Optical Co-Processors:** Formulates sub-nanosecond optical forward propagation using Spatial Light Modulators (SLM), 4f Fourier lens systems, and dark-basin CMOS photodetectors at the speed of light.
+6. **Hardware Equivalence with Analog Optical Co-Processors:** Formulates conceptual sub-nanosecond optical forward propagation using Spatial Light Modulators (SLM), 4f Fourier lens systems, and dark-basin CMOS photodetectors at the speed of light.
 
 ### 📊 Benchmark A: Continuous Non-Linear Manifolds (5-Seed Rigorous Split: 80% Train / 20% Test)
 
@@ -203,13 +203,15 @@ Empirical evaluation conducted across 5 randomized initializations on continuous
 | **Decision Inference Latency** | **0.41 ms / decision** | 1.85 ms / decision | N/A |
 | **VRAM / Parameter Footprint Saved** | **> 99.99%** | 0.00% (Baseline) | N/A |
 
-### 🛡️ Benchmark B: Adversarial Immune Gating (Toxin Attack / CD4+ Tolerance)
+### 🛡️ Benchmark B: Noise Corruption & Immune Gating (Two-Moons, Distribution Shift $\mathcal{N}(1.5, 0.5)$)
 
-| Architecture / Model | Clean Test Accuracy (Mean $\pm$ Std) | Adversarial / Toxin Attack | Persistent Memory Footprint | Optimization Scheme |
+| Architecture / Model | Clean Test Accuracy (Mean $\pm$ Std [95% CI]) | Noise Corruption / Distribution Shift | Persistent Memory Footprint | Optimization Scheme |
 | :--- | :---: | :---: | :---: | :--- |
-| **Standard Logistic Regression (GLM)** | **84.33% $\pm$ 4.55%** | 82.67% $\pm$ 4.78% | 32 Bytes (4 Floats, $O(W)$) | Direct gradient descent on $W$ |
-| **OED (Zero-Storage Synthesis)** | 77.33% $\pm$ 5.01% | 56.67% $\pm$ 6.24% (Unshielded) | **24 Bytes ($O(1)$ constant)** | Boundary parameter surfing + Zinc Spark |
-| **OED + CD4+ Immune Gating Shield** | 77.33% $\pm$ 5.01% | **66.67% $\pm$ 8.23% (Protected)** | **24 Bytes ($O(1)$ constant)** | Adaptive threshold attenuation |
+| **Standard Logistic Regression (GLM)** | **84.33% $\pm$ 4.55%** [80.34%, 88.32%] | **82.67% $\pm$ 4.78%** [78.48%, 86.86%] | 16 Bytes (Float32) / 32 Bytes (Float64) [$O(W)$] | Direct unconstrained gradient descent on $W$ |
+| **OED (Zero-Storage Synthesis)** | 77.33% $\pm$ 5.01% [72.94%, 81.72%] | 56.67% $\pm$ 6.24% (Unshielded) [51.20%, 62.14%] | **24 Bytes (3 Float64 coords) [$O(1)$]** | Coordinate surfing + Zinc Spark |
+| **OED + CD4+ Immune Gating Shield** | 77.33% $\pm$ 5.01% [72.94%, 81.72%] | **66.67% $\pm$ 8.23% (Protected)** [59.45%, 73.89%] | **24 Bytes (3 Float64 coords) [$O(1)$]** | Adaptive threshold attenuation (+10.00% gain) |
+
+*Storage scaling note: For an elementary 4-weight single cell, Float32 requires 16 bytes while OED uses 24 bytes (3 double-precision coordinates). The decisive zero-storage scaling advantage ($O(1)$ constant vs. $O(W)$ linear) manifests when scaling to multi-layer or multi-neuron architectures (extrapolated in Fig. 7c).*
 
 ### 🖼️ The Seven Publication Figures (300 DPI Vector)
 All 7 original figures are generated programmatically and stored at `figures/`:

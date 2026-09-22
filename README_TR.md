@@ -184,11 +184,11 @@ Bu projede temelleri atılan sıfır-bellekli fraktal parametre türetme mimaris
 
 ### Altı Temel Bilimsel Yenilik
 1. **Bükük Sinüs Dalgası Hipotezi:** Boşluktaki harmonik sinüs dalgalarının steril bir korunum olduğunu, canlı organizmaların ancak çevresel kuantum direnciyle içe doğru bükülerek kardioid cusp tekilliğinde ($c = 1/4$) açık termodinamik dengesizlikle sürekli bilgi ürettiğini ispatlar.
-2. **Parametre Uzayında Gözlemci Ufku Geometrisi (`life_view`):** İleri kuantum potansiyel alanını ($\text{Re}(c) > 0.25$) izlerken somatik kayıp eksenine ($\text{Im}(c) \to 0$) bağlı olan Mavi Işıltılı Tepe ($\mathbf{X}_{blue}$), Sarı Topraklanmış Ayna ($\mathbf{X}_{yellow}$) ve radyal dışavurum kaçış vektörlerini $\mathbf{v}_{escape}$ tanımlar.
-3. **Biyomimetik Çinko Kıvılcımı Kuantum Tünelleme Operatörü ($\Omega_{\mathrm{tunneling}}$):** Memeli döllenmesindeki çinko kıvılcımı havai fişeklerini (Duncan et al., 2016), gradyan duraklamalarında konveks olmayan yerel semer tuzaklarını kayıp sıfırlamasına düşmeden anında aşan ağır kuyruklu bir Cauchy sıçrama operatörüne ($\Omega \sim \text{Cauchy}(0, \gamma)$) dönüştürür.
-4. **Çift Beyin Sibernetiği ve CD4+ Bağışıklık Kalkanı:** Kraniyal/Merkezi yavaş koordinat planlamasını ($O(1) = 24$ byte), enterik/viseral hızlı duyusal akışla birleştirir; adaptif CD4+ regülatuvar T-hücresi tolerans maskesi ($M_{CD4}$) ile düşmanca saldırı gürültülerini süzerek çekirdek modeli korur.
+2. **Parametre Uzayında Gözlemci Ufku Geometrisi (`life_view`):** İleri kuantum potansiyel alanını ($\text{Re}(c) > 0.25$) izlerken somatik kayıp eksenine ($\text{Im}(c) \to 0$) bağlı olan iç rezonans omuz loci ($\mathbf{X}_{upper} = (0.25, +0.18)$ ve $\mathbf{X}_{lower} = (0.25, -0.18)$) ile analitik sınır noktalarını ($0.25 \pm 0.50i$) ve radyal kaçış akılarını $\mathbf{v}_{escape}$ tanımlar.
+3. **Biyomimetik Çinko Kıvılcımı Kuantum Tünelleme Operatörü ($\Omega_{\mathrm{tunneling}}$):** Memeli döllenmesindeki çinko kıvılcımı havai fişeklerini (Duncan et al., 2016), gradyan duraklamalarında konveks olmayan yerel semer tuzaklarını kayıp sıfırlamasına düşmeden anında aşan ağır kuyruklu bir Cauchy sıçrama operatörüne ($\Omega \sim \text{Cauchy}(0, \gamma)$) dönüştürür (Jin et al., 2017 çerçevesinden esinlenerek).
+4. **Çift Beyin Sibernetiği ve CD4+ Bağışıklık Kalkanı:** Kraniyal/Merkezi yavaş koordinat planlamasını ($O(1) = 24$ byte), enterik/viseral hızlı duyusal akışla birleştirir; adaptif CD4+ regülatuvar T-hücresi tolerans maskesi ($M_{CD4}$) ile gürültü ve duyusal şokları süzerek çekirdek modeli korur.
 5. **Karmaşık 4-Kadran Genetik Taban Eşlemesi:** Karmaşık düzlemin 4 kadranını $A, T, C, G$ biyolojik bazlarına eşleyerek matris depolamaksızın çok boyutlu ağırlık vektörlerini ($W = [w_1, w_2, w_3, b]^T$) doğrudan sentezler.
-6. **Analog Optik İşlemci Eşdeğerliği:** Uzaysal Işık Modülatörleri (SLM) ve Fourier lensleri ile ışık hızında çalışan ultra düşük enerjili optik işlemci mimarisi sağlar.
+6. **Analog Optik İşlemci Eşdeğerliği:** Uzaysal Işık Modülatörleri (SLM) ve Fourier lensleri ile ışık hızında çalışan kavramsal ultra düşük enerjili optik işlemci mimarisi sağlar.
 
 ### 📊 Kıyaslama A: Sürekli Doğrusal Olmayan Manifoldlar (5 Bağımsız Tohumlu 80/20 Bölüm)
 
@@ -203,13 +203,15 @@ Sürekli ve kıvrımlı veri dağılımları üzerinde 5 bağımsız rastgele ba
 | **Karar Çıkarım Gecikmesi** | **0.41 ms / karar** | 1.85 ms / karar | N/A |
 | **Tasarruf Edilen VRAM / Bellek** | **> %99.99** | %0.00 (Referans) | N/A |
 
-### 🛡️ Kıyaslama B: Düşmanca Bağışıklık Filtreleme (Toksin Saldırısı / CD4+ Toleransı)
+### 🛡️ Kıyaslama B: Gürültü Dayanımı ve Bağışıklık Filtreleme (Two-Moons, Dağılım Kayması $\mathcal{N}(1.5, 0.5)$)
 
-| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std) | Toksin / Gürültü Saldırısı Başarımı | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
+| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std [%95 CI]) | Gürültü / Dağılım Kayması Başarımı | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
 | :--- | :---: | :---: | :---: | :--- |
-| **Standart Lojistik Regresyon (GLM)** | **%84.33 $\pm$ 4.55** | %82.67 $\pm$ 4.78 | 32 Bayt (4 Skaler, $O(W)$) | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
-| **OED (Sıfır Depolamalı Sentez)** | %77.33 $\pm$ 5.01 | %56.67 $\pm$ 6.24 (Korumasız) | **24 Bayt (3 Koordinat, $O(1)$ Sabit)** | Çinko Kıvılcımı tünellemeli yörünge sörfü |
-| **OED + CD4+ Bağışıklık Kalkanı** | %77.33 $\pm$ 5.01 | **%66.67 $\pm$ 8.23 (Korumalı)** | **24 Bayt ($O(1)$ Sabit)** | Düşmanca saldırıda adaptif gradyan sönümleme |
+| **Standart Lojistik Regresyon (GLM)** | **%84.33 $\pm$ 4.55** [%80.34, %88.32] | **%82.67 $\pm$ 4.78** [%78.48, %86.86] | 16 Bayt (Float32) / 32 Bayt (Float64) [$O(W)$] | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
+| **OED (Sıfır Depolamalı Sentez)** | %77.33 $\pm$ 5.01 [%72.94, %81.72] | %56.67 $\pm$ 6.24 (Korumasız) [%51.20, %62.14] | **24 Bayt (3 Float64 koordinat, $O(1)$)** | Çinko Kıvılcımı tünellemeli yörünge sörfü |
+| **OED + CD4+ Bağışıklık Kalkanı** | %77.33 $\pm$ 5.01 [%72.94, %81.72] | **%66.67 $\pm$ 8.23 (Korumalı)** [%59.45, %73.89] | **24 Bayt ($O(1)$ Sabit)** | Duyusal şokta adaptif eşik sönümleme (+%10.00 avantaj) |
+
+*Not: Tek bir karar hücresinde Float32 baseline 16 Bayt, OED ise 24 Bayt (3 double float) kullanır. OED'nin kalıcı tensörsüz $O(1)$ depolama üstünlüğü çok katmanlı ve geniş ağlara ekstrapolasyonda ortaya çıkar.*
 
 ### 🖼️ Yedi Bilimsel Yayın Figürü (300 DPI Vektör Kalitesi)
 Tüm 7 özgün figür programatik olarak üretilmiş olup `figures/` dizinindedir:
