@@ -2,15 +2,11 @@
 
 [![Live Web Portal](https://img.shields.io/badge/Live%20Portal-GitHub%20Pages-10b981.svg?logo=github)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
 [![Interactive Labs](https://img.shields.io/badge/Interactive%20Labs-100%25%20Client--Side-818cf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/#labsTitle)
-[![Zenodo Concept DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![Preprint Status](https://img.shields.io/badge/Preprint-Open%20Science%20Archive-blue.svg)](https://doi.org/10.5281/zenodo.22774934)
+[![Paper 2: OED Zenodo DOI](https://img.shields.io/badge/Paper%202%20DOI-10.5281%2Fzenodo.22896856-024dad.svg)](https://doi.org/10.5281/zenodo.22896856)
+[![Patent Pending](https://img.shields.io/badge/Patent%20Pending-TR%202026%2F016285-red.svg)](https://epats.turkpatent.gov.tr)
+[![Paper 1: Zenodo Concept DOI](https://img.shields.io/badge/Paper%201%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Companion Paper: WERR](https://img.shields.io/badge/Companion%20Paper-WERR-8b5cf6.svg)](https://github.com/pCwOrM/werr)
-[![WERR Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
-[![Companion Platform: answerr](https://img.shields.io/badge/Companion%20Platform-answerr-38bdf8.svg)](https://github.com/pCwOrM/answerr)
-[![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
-[![Jevenator 2 Visual](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![The Gauntlet Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Zero--VRAM%20Supremacy-brightgreen.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
-[![CI Workflow](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
@@ -25,15 +21,16 @@ Explore the procedural fractal neural synthesis paradigm directly inside your we
 
 | Platform / Document | Type | Target Audience | Direct Live Link |
 | :--- | :--- | :--- | :--- |
+| 🏛️ **Paper 2: Orbital Error Dynamics (Preprint)** | Academic Paper & Patent | Global / AI & Physics | [**Zenodo: 10.5281/zenodo.22896856**](https://doi.org/10.5281/zenodo.22896856) &bull; [**PDF (7 Pages)**](docs/Orbital_Error_Dynamics_Preprint.pdf) &bull; **Patent Pending: TR 2026/016285** |
 | ⚔️ **The Zero-VRAM Gauntlet** | Master Benchmark Wall | Researchers, Engineers & Challengers | [**Launch The Gauntlet (Benchmarks)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html) |
 | 🌐 **Official Web Portal** | Showcase | Global / Academic | [**Launch Web Portal**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/) |
 | 🚀 **Citizen & Public Experience Lab** | Live Simulation | General Public & Students | [**Launch Public Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/interactive_lab.html) |
 | 🔬 **128×128 4-Quadrant Research Lab** | Mathematical | Researchers & Engineers | [**Launch Research Lab**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/quadrant_visualizer.html) |
 | 🐍 **Interactive Snake AI & 1v1 Arena** | Real-Time Reflex & Autopilot | Gamers, Engineers & Mobile | [**Launch Snake Arena**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/demos/snake.html) |
 | 🗣️ **Halka Sunum ve Teorik Rehber** | Dual-Layer Guide | Presenters & Educators | [**Open Presentation Guide (HTML)**](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Halka_Sunum_ve_Teorik_Rehber.html) |
-| 🏛️ **Official Preprint (Zenodo v3.0)** | Permanent Archive | Open Science | [**Zenodo Concept DOI: 10.5281/zenodo.22774934**](https://doi.org/10.5281/zenodo.22774934) &bull; [**v3.0 Live**](https://zenodo.org/records/22867037) |
-| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**arXiv: submit/8106948**](https://arxiv.org/) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
-| 🧠 **Live Dual-Cognition AI (answerr)** | Production Platform & API | Developers & End Users | [**answerr.me**](https://answerr.me) &bull; [**GitHub: pCwOrM/answerr**](https://github.com/pCwOrM/answerr) &bull; [**Live Production REST API**](https://api.answerr.me:4431/v1/health) |
+| 🏛️ **Paper 1: Fractal Neural Synthesis** | Journal Under Review | Open Science | [**Zenodo: 10.5281/zenodo.22867037**](https://zenodo.org/records/22867037) &bull; *Chaos, Solitons & Fractals (Elsevier)* |
+| ⚡ **Companion Paper: WERR (Edge Triage)** | Applied Edge NLP & Vision | Global / Applied AI | [**Zenodo: 10.5281/zenodo.22867426**](https://doi.org/10.5281/zenodo.22867426) &bull; [**GitHub: pCwOrM/werr**](https://github.com/pCwOrM/werr) |
+| 🧠 **Live Dual-Cognition AI (answerr)** | Production Platform & API | Developers & End Users | [**answerr.me**](https://answerr.me) &bull; [**GitHub: pCwOrM/answerr**](https://github.com/pCwOrM/answerr) |
 
 ---
 
@@ -91,17 +88,57 @@ Synaptic Weights (w1, w2, w3) + Bias (b)  ──► Non-Linear Decision Contours
 
 ---
 
-## 🏛️ Advanced Research Extension
+## 🏛️ Paper 1: Fractal Neural Synthesis (Journal Extension)
 
-> **Publication Status:** Under peer review in *Chaos, Solitons & Fractals* (Elsevier). Author preprint and reproducible replication package permanently archived at Zenodo ([10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)).
+> **Publication Status:** Under peer review in *Chaos, Solitons & Fractals* (Elsevier). Author preprint and reproducible replication package permanently archived at Zenodo ([10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) &bull; [v3.0 Record](https://zenodo.org/records/22867037)).
 
 The journal manuscript expands the foundational paradigm to continuous topological manifolds and rigorous comparative baselines:
-
-* **Continuous Topological Manifolds:** Generalization to non-convex, continuous distributions (including **Two-Moons** and **Two-Spirals**) using Quadtree decomposition and analytical recurrence offsets.
-* **Comparative Baseline Evaluation:** Comprehensive benchmarking against standard Multi-Layer Perceptrons (MLPs) trained via Adam/Backpropagation, evaluated across $K=10$ repeated trials with statistical variance, search iteration budgets, and total FLOP analyses.
+* **Continuous Topological Manifolds:** Generalization to non-convex distributions (Two-Moons and Two-Spirals) using Quadtree decomposition and analytical recurrence offsets.
+* **Comparative Baseline Evaluation:** Comprehensive benchmarking against standard MLPs trained via Adam/Backpropagation across $K=10$ repeated trials.
 * **Attractor Basin Dynamics:** Detailed mathematical analysis of macroscopic functional attractor basins overcoming local Lyapunov micro-sensitivity ($\Delta c \sim 10^{-7}$).
 
-*To preserve journal review integrity and exclusive publication novelty, the complete comparative benchmark tables, analytical recurrence derivations, and continuous manifold callsets will be synchronized with this repository upon formal journal appearance.*
+---
+
+## 🌌 Flagship Paper 2: Orbital Error Dynamics (OED) — Zero-Storage AI with Adaptive Immune Gating
+
+[![Paper 2 Zenodo DOI](https://img.shields.io/badge/Paper%202%20DOI-10.5281%2Fzenodo.22896856-024dad.svg)](https://doi.org/10.5281/zenodo.22896856)
+[![Çatı DOI](https://img.shields.io/badge/Concept%20DOI-10.5281%2Fzenodo.22896855-blue.svg)](https://doi.org/10.5281/zenodo.22896855)
+[![Patent Pending](https://img.shields.io/badge/Patent%20Pending-TR%202026%2F016285-red.svg)](https://epats.turkpatent.gov.tr)
+[![Preprint PDF](https://img.shields.io/badge/Preprint%20PDF-7%20Pages%20(Open%20Access)-10b981.svg)](docs/Orbital_Error_Dynamics_Preprint.pdf)
+
+> **Official Research Preprint & National Patent Application:**  
+> **Title:** *Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis*  
+> **Authors:** Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı  
+> **Permanent Zenodo Record:** [https://doi.org/10.5281/zenodo.22896856](https://doi.org/10.5281/zenodo.22896856) &bull; **Çatı DOI:** [10.5281/zenodo.22896855](https://doi.org/10.5281/zenodo.22896855)  
+> **Official Patent Pending:** Turkish Patent and Trademark Office (TÜRKPATENT), Application No: **`2026/016285`**, Priority Date: **September 22, 2026**.
+
+<p align="center">
+  <img src="figures/fig5_dual_brain_cybernetics.png" alt="OED Dual-Brain Cybernetics" width="85%" />
+</p>
+
+### Core Scientific Innovations
+1. **The Bent Sine Wave Hypothesis:** Proves that while unperturbed linear waves represent static equilibrium death ($\frac{dx}{dt} = 0$) and harmonic waves represent conservative repetition, living intelligence emerges when waves curl inward through environmental drag toward the main cardioid cusp ($c = 1/4$).
+2. **Observer Horizon Geometry in Parameter Space:** Identifies the critical boundary shoulder loci $\mathbf{X}_{upper} = (0.25, +0.18)$ and $\mathbf{X}_{lower} = (0.25, -0.18)$ surveying forward quantum potential fields ($\text{Re}(c) > 0.25$) while anchored to somatic dissipation axes ($\text{Im}(c) \to 0$), with radial escape fluxes $\mathbf{v}_{escape}$ acting as expressive boundary signals.
+3. **Biomimetic Perturbed Jump Operator ($\Omega_{\mathrm{tunneling}}$):** Translates mammalian fertilization zinc sparks (Duncan et al., 2016) into an empirical heavy-tailed Cauchy jump operator ($\Omega \sim \text{Cauchy}(0, \gamma)$) escaping non-convex saddle traps during gradient stagnation (Jin et al., 2017).
+4. **Dual-Brain Cybernetics & CD4+ Immune Gating:** Couples slow $O(1) = 24$-byte central parameter planning ($\Theta$) with high-frequency enteric/visceral sensory streams shielded by adaptive CD4+ regulatory T-cell tolerance masks ($M_{CD4}$), attenuating adversarial noise spikes.
+5. **Complex 4-Quadrant Genetic Base Decomposition:** Maps the 4-nucleotide genetic basis ($A, T, C, G$) across the quadrants of $\mathbb{C}$, synthesizing multi-dimensional weight vectors $W = [w_1, w_2, w_3, b]^T$ from scalar coordinates without matrix storage.
+6. **Hardware Equivalence with Analog Optical Co-Processors:** Formulates sub-nanosecond optical forward propagation using Spatial Light Modulators (SLM), 4f Fourier lens systems, and dark-basin CMOS photodetectors at the speed of light.
+
+### Rigorous Empirical Multi-Seed Benchmark (80/20 Train/Test Split)
+| Architecture / Model | Clean Test Accuracy (Mean $\pm$ Std) | Adversarial / Toxin Attack | Persistent Memory Footprint | Optimization Scheme |
+| :--- | :---: | :---: | :---: | :--- |
+| **Standard Logistic Regression (GLM)** | **84.33% $\pm$ 4.55%** | 82.67% $\pm$ 4.78% | 32 Bytes (4 Floats, $O(W)$) | Direct gradient descent on $W$ |
+| **OED (Zero-Storage Synthesis)** | 77.33% $\pm$ 5.01% | 56.67% $\pm$ 6.24% (Unshielded) | **24 Bytes ($O(1)$ constant)** | Boundary parameter surfing + Zinc Spark |
+| **OED + CD4+ Immune Gating Shield** | 77.33% $\pm$ 5.01% | **66.67% $\pm$ 8.23% (Protected)** | **24 Bytes ($O(1)$ constant)** | Adaptive threshold attenuation |
+
+### Reproduce OED Experiments
+```bash
+# Run the 5-seed empirical benchmark with 80/20 train/test split
+python experiments/simulate_oed_rigorous.py
+
+# Regenerate all 7 publication figures (300 DPI)
+python scripts/generate_clean_scientific_figures.py
+```
 
 ---
 
@@ -203,11 +240,21 @@ xdg-open demos/interactive_lab.html
 
 ---
 
-## 📖 Citation
+## 📖 Citations
 
-If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite:
+If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprints:
 
 ```bibtex
+@article{dagli2026orbital,
+  title={Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis},
+  author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal={Zenodo Open Science Archive},
+  year={2026},
+  doi={10.5281/zenodo.22896856},
+  url={https://doi.org/10.5281/zenodo.22896856},
+  note={Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
+}
+
 @article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},

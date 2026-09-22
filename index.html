@@ -454,6 +454,365 @@
       text-decoration: underline;
     }
 
+    /* Announcement Banner */
+    .announcement-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.18) 0%, rgba(6, 182, 212, 0.18) 100%);
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      padding: 12px 18px;
+      border-radius: 14px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+    }
+    .announcement-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .announcement-text {
+      flex: 1;
+      font-size: 13px;
+      color: var(--text-main);
+      min-width: 260px;
+    }
+    .announcement-text a {
+      color: #38bdf8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .announcement-text a:hover {
+      text-decoration: underline;
+    }
+    .btn-banner-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-banner-action:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+    }
+
+    /* Paper 2 Flagship Card & Styling */
+    .paper2-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(139, 92, 246, 0.45);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.25), var(--shadow);
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .paper2-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981, #f59e0b);
+    }
+    .badge-patent {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+    .badge-zenodo2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+    .paper2-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .paper2-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .paper2-quote {
+      font-size: 14.5px;
+      font-style: italic;
+      color: #cbd5e1;
+      padding: 12px 18px;
+      background: var(--bg-inner);
+      border-left: 4px solid #8b5cf6;
+      border-radius: 0 10px 10px 0;
+      margin: 12px 0 20px;
+    }
+    html.light .paper2-quote {
+      color: #334155;
+    }
+
+    /* 4 Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    @media (min-width: 640px) {
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .pillar-item {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      transition: all 0.2s;
+    }
+    .pillar-item:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      transform: translateY(-2px);
+    }
+    .pillar-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+    }
+    .pillar-icon {
+      font-size: 20px;
+    }
+    .pillar-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Benchmark Table */
+    .benchmark-table-wrapper {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    .benchmark-table th {
+      background: var(--bg-inner);
+      padding: 12px 16px;
+      font-weight: 800;
+      color: var(--text-heading);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .benchmark-table tr:last-child td {
+      border-bottom: none;
+    }
+    .benchmark-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .benchmark-table .col-highlight {
+      color: var(--emerald);
+      font-weight: 800;
+      font-family: var(--font-mono);
+      background: rgba(16, 185, 129, 0.06);
+    }
+    .benchmark-table .col-mono {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    /* Interactive Figures Gallery */
+    .gallery-container {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 28px 0;
+    }
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .gallery-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-gallery {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-gallery:hover {
+      border-color: #8b5cf6;
+      color: #8b5cf6;
+    }
+    .gallery-counter {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 4px;
+    }
+    .gallery-main-view {
+      position: relative;
+      background: #000000;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      text-align: center;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-main-img {
+      max-width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-main-img:hover {
+      transform: scale(1.01);
+    }
+    .gallery-caption {
+      padding: 14px 6px 8px;
+    }
+    .gallery-caption-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .gallery-caption-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .gallery-thumb {
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.2s;
+    }
+    .gallery-thumb.active {
+      border-color: #8b5cf6;
+      opacity: 1;
+      transform: scale(1.04);
+    }
+    .gallery-thumb:hover {
+      opacity: 0.9;
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Bibtex Tabs */
+    .bibtex-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .bibtex-tab {
+      background: var(--bg-inner);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .bibtex-tab.active {
+      background: var(--bg-card);
+      border-color: var(--emerald);
+      color: var(--emerald);
+    }
+
+
     @media (max-width: 640px) {
       .container {
         padding: 20px 12px 60px !important;
@@ -531,6 +890,20 @@
     </div>
   </nav>
 
+  <!-- Announcement Banner for Paper 2 & Patent -->
+  <div class="announcement-banner">
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <span class="announcement-badge" id="annBadge">BREAKING &bull; PAPER 2 &bull; PATENT PENDING</span>
+      <span class="announcement-text" id="annText">
+        <strong>Orbital Error Dynamics (OED)</strong> published on Zenodo (DOI: <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank">10.5281/zenodo.22896856</a>) with Turkish Patent Application filed (<span style="color: #f59e0b; font-weight: 700;">TR 2026/016285</span>)!
+      </span>
+    </div>
+    <a href="#paper2-oed" class="btn-banner-action" id="btnExplorePaper2">
+      <span>🚀</span>
+      <span id="btnBannerExploreText">Explore Paper 2 &darr;</span>
+    </a>
+  </div>
+
   <!-- Hero Section -->
   <header class="hero">
     <div class="badge-pill">
@@ -566,6 +939,18 @@
 
     <!-- Quick Action Links -->
     <div class="hero-links">
+      <a href="#paper2-oed" class="btn-hero" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); color: #fff; box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);">
+        <span>🧬</span>
+        <span id="btnHeroPaper2">Paper 2: Orbital Error Dynamics</span>
+      </a>
+      <a href="docs/Orbital_Error_Dynamics_Preprint.pdf" target="_blank" class="btn-hero btn-secondary" style="border-color: rgba(139, 92, 246, 0.4);">
+        <span>📄</span>
+        <span id="btnPaper2Pdf">Paper 2 Preprint (PDF)</span>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank" class="btn-hero btn-secondary" style="border-color: rgba(56, 189, 248, 0.4);">
+        <span>🏛️</span>
+        <span>Zenodo: 10.5281/zenodo.22896856</span>
+      </a>
       <a href="benchmarks.html" class="btn-hero btn-primary" style="background: linear-gradient(135deg, #059669 0%, #0284c7 100%);">
         <span>⚔️</span>
         <span id="btnHeroGauntlet">The Gauntlet (Benchmarks)</span>
@@ -576,11 +961,11 @@
       </a>
       <a href="docs/Mandelbrot_Fractal_Neural_Synthesis_IEEE_Paper_EN.pdf" target="_blank" class="btn-hero btn-secondary">
         <span>📄</span>
-        <span id="btnReadPdf">Read IEEE Paper (PDF)</span>
+        <span id="btnReadPdf">Paper 1 (IEEE PDF)</span>
       </a>
       <a href="https://doi.org/10.5281/zenodo.22774934" target="_blank" class="btn-hero btn-secondary">
         <span>🏛️</span>
-        <span>Zenodo DOI: 10.5281/zenodo.22774934 (v3.0)</span>
+        <span>Zenodo: 10.5281/zenodo.22774934</span>
       </a>
       <a href="arxiv/Mandelbrot_Fractal_Paper_arXiv_Bundle.zip" class="btn-hero btn-secondary">
         <span>📦</span>
@@ -592,6 +977,183 @@
       </a>
     </div>
   </header>
+
+  <!-- Section: Paper 2: Orbital Error Dynamics (OED) Flagship Showcase -->
+  <section id="paper2-oed" class="paper2-card">
+    <div class="paper2-header">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <span class="badge-patent" id="p2PatentBadge">⚖️ Patent Pending: TR 2026/016285 (TÜRKPATENT)</span>
+        <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank" class="badge-zenodo2">🏛️ Zenodo DOI: 10.5281/zenodo.22896856</a>
+        <span class="demo-badge badge-research" id="p2WeightBadge">Zero Persistent Weights &bull; O(1) Ephemeral Resonance</span>
+        <span class="demo-badge badge-citizen" id="p2SpeedBadge">0.41 ms / Decision &bull; Zero-VRAM</span>
+      </div>
+
+      <h2 class="paper2-title" id="p2MainTitle">
+        Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis
+      </h2>
+
+      <div class="paper2-quote" id="p2Quote">
+        &ldquo;Existence is an error (&Epsilon;) that refuses to vanish. Organic intelligence is an active, non-equilibrium resistance against attractor collapse rather than a passive convergence to zero loss.&rdquo;
+      </div>
+    </div>
+
+    <p id="p2Desc" style="font-size: 13.5px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+      In this groundbreaking second paper, we advance far beyond procedural weight harvesting into a fundamental ontology for next-generation intelligence. Rather than forcing network errors to zero (which leads to thermodynamic entropy death and model collapse), Orbital Error Dynamics (OED) models synaptic parameters as ephemeral standing wave resonances ($O(1)$) sampled dynamically along the boundary of deterministic chaos ($\partial \mathcal{M}$).
+    </p>
+
+    <!-- 4 Theoretical Pillars -->
+    <div class="pillars-grid">
+      <div class="pillar-item">
+        <div class="pillar-head">
+          <span class="pillar-icon">🌊</span>
+          <span id="p2Pillar1Title">Bent Sine Wave &amp; Cusp Dynamics</span>
+        </div>
+        <div class="pillar-desc" id="p2Pillar1Desc">
+          Straight waves are static; harmonic sine waves are repetitively sterile. Living intelligence emerges when waves are bent inward by quantum and environmental drag toward the main cardioid cusp ($c = 1/4$).
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-head">
+          <span class="pillar-icon">🔭</span>
+          <span id="p2Pillar2Title">Observer Horizon Geometry (life_view)</span>
+        </div>
+        <div class="pillar-desc" id="p2Pillar2Desc">
+          Dual-cusp coordinate manifold: Blue Radiant Apex ($\mathbf{X}_{blue}$) observing future quantum potential while grounded to terrestrial escape loss, Yellow Grounded Mirror ($\mathbf{X}_{yellow}$), and expressive radial utterance vector.
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-head">
+          <span class="pillar-icon">⚡</span>
+          <span id="p2Pillar3Title">Zinc Spark Quantum Tunneling (&Omega;<sub>tunneling</sub>)</span>
+        </div>
+        <div class="pillar-desc" id="p2Pillar3Desc">
+          Modeled after mammalian fertilization sparks: a heavy-tailed stochastic operator that instantaneously tunnels out of non-convex saddle traps without slow, fragile gradient loss descent.
+        </div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-head">
+          <span class="pillar-icon">🧠</span>
+          <span id="p2Pillar4Title">Dual-Brain Enteric-Cranial Cybernetics</span>
+        </div>
+        <div class="pillar-desc" id="p2Pillar4Desc">
+          Bi-directional feedback loop: cranial cerebral cortex exploring speculative manifolds while subcortical/enteric limbic gatekeepers enforce homeostatic safety and CD4+ immunological tolerance.
+        </div>
+      </div>
+    </div>
+
+    <!-- Benchmark Verification Table -->
+    <h3 style="font-size: 16px; font-weight: 800; color: var(--text-heading); margin-top: 28px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+      <span>📊</span>
+      <span id="p2BenchmarkTitle">Empirical Benchmark Verification (5-Seed Rigorous Split: 80% Train / 20% Test)</span>
+    </h3>
+    <p id="p2BenchmarkSubtitle" style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px;">
+      Empirical verification conducted over 5 randomized initializations across continuous non-linear manifolds. Mean &plusmn; standard deviation:
+    </p>
+
+    <div class="benchmark-table-wrapper">
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th id="thTask">Benchmark Task / Metric</th>
+            <th class="col-highlight" id="thOed">Orbital Error Dynamics (OED)</th>
+            <th id="thMlp">Classical Dense MLP</th>
+            <th id="thBaseline">Random Baseline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong id="tdTaskXor">Non-Linear XOR Logic</strong></td>
+            <td class="col-highlight">99.80% &plusmn; 0.20%</td>
+            <td class="col-mono">99.10% &plusmn; 0.45%</td>
+            <td class="col-mono">50.00%</td>
+          </tr>
+          <tr>
+            <td><strong id="tdTaskMoons">Two-Moons Continuous Manifold</strong></td>
+            <td class="col-highlight">99.40% &plusmn; 0.30%</td>
+            <td class="col-mono">98.90% &plusmn; 0.50%</td>
+            <td class="col-mono">50.00%</td>
+          </tr>
+          <tr>
+            <td><strong id="tdTaskSpirals">Two-Spirals Non-Convex Manifold</strong></td>
+            <td class="col-highlight">98.70% &plusmn; 0.40%</td>
+            <td class="col-mono">97.60% &plusmn; 0.85%</td>
+            <td class="col-mono">50.00%</td>
+          </tr>
+          <tr>
+            <td><strong id="tdTaskStorage">Persistent Weight Storage</strong></td>
+            <td class="col-highlight">0 Bytes (O(1) Seeds)</td>
+            <td class="col-mono">48 - 128 KB (O(W))</td>
+            <td class="col-mono">0 Bytes</td>
+          </tr>
+          <tr>
+            <td><strong id="tdTaskLatency">Decision Inference Latency</strong></td>
+            <td class="col-highlight">0.41 ms / decision</td>
+            <td class="col-mono">1.85 ms / decision</td>
+            <td class="col-mono">N/A</td>
+          </tr>
+          <tr>
+            <td><strong id="tdTaskSaved">VRAM / Parameter Footprint Saved</strong></td>
+            <td class="col-highlight">&gt; 99.99%</td>
+            <td class="col-mono">0.00% (Baseline)</td>
+            <td class="col-mono">N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Interactive 7-Figure Scientific Gallery -->
+    <div class="gallery-container">
+      <div class="gallery-header">
+        <div class="gallery-title">
+          <span>🖼️</span>
+          <span id="galleryTitleHeading">Paper 2 Scientific Vector Figures (300 DPI)</span>
+        </div>
+        <div class="gallery-controls">
+          <button id="btnGalleryPrev" class="btn-gallery">&larr; Prev</button>
+          <span id="galleryCounter" class="gallery-counter">1 / 7</span>
+          <button id="btnGalleryNext" class="btn-gallery">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="gallery-main-view">
+        <img id="galleryMainImg" src="figures/fig1_observer_horizon.png" alt="OED Scientific Figure" class="gallery-main-img" />
+      </div>
+
+      <div class="gallery-caption">
+        <div id="galleryCaptionTitle" class="gallery-caption-title">Fig 1: Observer Horizon Geometry (life_view)</div>
+        <div id="galleryCaptionDesc" class="gallery-caption-desc">
+          Dual-cusp coordinate manifold: Blue Radiant Apex (X_blue) observing future quantum potential while grounded to terrestrial escape loss, Yellow Grounded Mirror (X_yellow), and expressive radial utterance vector.
+        </div>
+      </div>
+
+      <div class="gallery-thumbs" id="galleryThumbs">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+
+    <!-- Action Buttons for Paper 2 -->
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">
+      <a href="docs/Orbital_Error_Dynamics_Preprint.pdf" target="_blank" class="btn-hero btn-primary" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
+        <span>📄</span>
+        <span id="btnP2DownloadPdf">Download 7-Page Preprint (PDF)</span>
+      </a>
+      <a href="docs/simulation_report.html" target="_blank" class="btn-hero btn-secondary">
+        <span>🔬</span>
+        <span id="btnP2SimReport">Simulation &amp; Experiment Report (HTML)</span>
+      </a>
+      <a href="docs/OED_SIMULASYON_VE_DENEY_RAPORU.pdf" target="_blank" class="btn-hero btn-secondary">
+        <span>📊</span>
+        <span id="btnP2SimPdf">Simulation Report (PDF)</span>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank" class="btn-hero btn-secondary">
+        <span>🏛️</span>
+        <span>Zenodo Record: 10.5281/zenodo.22896856</span>
+      </a>
+    </div>
+  </section>
 
   <!-- Section: Interactive Live Laboratories -->
   <section>
@@ -737,6 +1299,36 @@
           <span id="btnGauntletLaunch">Meydan Okumayı Gör (The Gauntlet)</span>
         </a>
       </div>
+
+      <!-- Doc Card 4: OED Matematiksel Simülasyon Raporu -->
+      <div class="demo-card" style="border: 1px solid rgba(139, 92, 246, 0.4); background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08) 0%, var(--bg-card) 70%);">
+        <div>
+          <div class="demo-card-header">
+            <span class="demo-icon">🔬</span>
+            <span class="demo-badge" id="badgeCardSim" style="background: rgba(124, 58, 237, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4);">Paper 2 Doğrulaması</span>
+          </div>
+          <h3 class="demo-title" id="cardSimTitle">OED Matematiksel Simülasyon ve Deney Raporu</h3>
+          <p class="demo-text" id="cardSimDesc">
+            Yörünge Hata Dinamikleri'nin (OED) 5-tohumlu matematiksel simülasyonu, kardioid kusp çekimi, çinko tünelleme ve faz modülasyonunun Bölüm IX deneysel raporu.
+          </p>
+          <ul class="demo-features" id="cardSimFeat">
+            <li>5 Tohumlu Monte-Carlo istatistiksel doğrulama</li>
+            <li>XOR (%99.80), Two Moons (%99.40), Two Spirals (%98.70)</li>
+            <li>0 Bayt kalıcı tensör depolaması, 0.41 ms gecikme</li>
+            <li>Baskıya hazır A4 formatında PDF ve interaktif HTML</li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 8px; flex-direction: column;">
+          <a href="docs/simulation_report.html" class="btn-launch" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); color: #fff; font-weight: 700;">
+            <span>🔬</span>
+            <span id="btnCardSimHtml">Simülasyon Raporunu Aç (HTML)</span>
+          </a>
+          <a href="docs/OED_SIMULASYON_VE_DENEY_RAPORU.pdf" target="_blank" class="btn-launch btn-secondary" style="font-size: 11.5px; padding: 8px; justify-content: center;">
+            <span>📥</span>
+            <span id="btnCardSimPdf">Rapor PDF İndir</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -800,9 +1392,32 @@
 
   <!-- Section: BibTeX Citation -->
   <section class="content-card">
-    <h2 id="citeTitle">Citation (BibTeX)</h2>
-    <p id="citeDesc">If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprint:</p>
-    <div class="bibtex-box" id="bibtexContent">@article{dagli2026mandelbrot,
+    <h2 id="citeTitle">Citations (BibTeX)</h2>
+    <p id="citeDesc">If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprints:</p>
+    
+    <div class="bibtex-tabs">
+      <button class="bibtex-tab active" id="tabBibPaper2">Paper 2: Orbital Error Dynamics (Patent Pending)</button>
+      <button class="bibtex-tab" id="tabBibPaper1">Paper 1: Fractal Neural Synthesis</button>
+    </div>
+
+    <!-- Bibtex Box Paper 2 -->
+    <div class="bibtex-box" id="boxBibPaper2">
+      <button class="btn-copy" id="btnCopyBib2" onclick="copyBibtex('bibtexCode2', this)">Copy</button>
+      <div id="bibtexCode2">@article{dagli2026orbital,
+  title={Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis},
+  author={Da{\u{g}}l{\u{i}}, Volkan and Da{\u{g}}l{\u{i}}, Zerrin and Da{\u{g}}l{\u{i}}, Da{\u{g}}han},
+  journal={Zenodo Open Science Archive},
+  year={2026},
+  doi={10.5281/zenodo.22896856},
+  url={https://doi.org/10.5281/zenodo.22896856},
+  note={Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
+}</div>
+    </div>
+
+    <!-- Bibtex Box Paper 1 -->
+    <div class="bibtex-box" id="boxBibPaper1" style="display: none;">
+      <button class="btn-copy" id="btnCopyBib1" onclick="copyBibtex('bibtexCode1', this)">Copy</button>
+      <div id="bibtexCode1">@article{dagli2026mandelbrot,
   title={Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author={Da{\u{g}}l{\u{i}}, Volkan and Da{\u{g}}l{\u{i}}, Zerrin and Da{\u{g}}l{\u{i}}, Da{\u{g}}han},
   journal={Zenodo Open Science Archive},
@@ -810,6 +1425,7 @@
   doi={10.5281/zenodo.22774934},
   url={https://doi.org/10.5281/zenodo.22774934}
 }</div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -825,17 +1441,114 @@
 </div>
 
 <script>
+  // Figures Data Model
+  const FIGURES = [
+    {
+      id: 1,
+      src: "figures/fig1_observer_horizon.png",
+      title_en: "Fig 1: Observer Horizon Geometry (life_view)",
+      desc_en: "Dual-cusp coordinate manifold: Blue Radiant Apex (X_blue) observing future quantum potential while grounded to terrestrial escape loss, Yellow Grounded Mirror (X_yellow), and expressive radial utterance vector.",
+      title_tr: "Şekil 1: Gözlemci Ufku Geometrisi (life_view)",
+      desc_tr: "Çift uçlu koordinat manifoldu: Gelecekteki kuantum havuzunu gözlemleyen Mavi Zirve (X_blue), karasal kaçış kaybına bağlı Sarı Ayna (X_yellow) ve ifadecil radyal saçılma vektörü."
+    },
+    {
+      id: 2,
+      src: "figures/fig2_bent_sine_and_cusp.png",
+      title_en: "Fig 2: Bent Sine Wave Hypothesis & Cardioid Cusp Dynamics",
+      desc_en: "Mathematical proof of non-equilibrium intelligence: straight waves are static; harmonic sine waves are repetitively sterile. Living systems emerge when waves bend inward toward the cardioid cusp (c = 1/4) under quantum drag.",
+      title_tr: "Şekil 2: Bükülmüş Sinüs Dalgası Hipotezi & Kardioid Kusp Dinamikleri",
+      desc_tr: "Denge-dışı zekanın matematiksel ispatı: Düz dalgalar hareketsiz, periyodik sinüsler kısırdır. Canlı sistemler, kuantum ve çevre sürtünmesiyle ana kardioid ucuna (c = 1/4) içe doğru büküldüğünde doğar."
+    },
+    {
+      id: 3,
+      src: "figures/fig3_quantum_tunneling_operator.png",
+      title_en: "Fig 3: Zinc Spark Quantum Tunneling Operator",
+      desc_en: "Biological fertilization fireworks modeled as a heavy-tailed stochastic operator (Ω_tunneling) that instantaneously tunnels out of non-convex saddle traps without gradient loss convergence.",
+      title_tr: "Şekil 3: Çinko Kıvılcımı Kuantum Tünelleme Operatörü",
+      desc_tr: "Döllenme anındaki çinko patlamalarından esinlenen ağır-kuyruklu stokastik operatör (Ω_tunneling); gradyan inişine hapsolmadan konveks olmayan yerel tuzaklardan anında tüneller."
+    },
+    {
+      id: 4,
+      src: "figures/fig4_nonequilibrium_phase_surfing.png",
+      title_en: "Fig 4: Non-Equilibrium Phase Surfing",
+      desc_en: "Zero-friction phase modulation (Δφ) surfing along the Lyapunov boundary (λ = 0) of the Mandelbrot set, actively resisting gravitational collapse into dark attractor basins.",
+      title_tr: "Şekil 4: Denge-Dışı Faz Sörfü",
+      desc_tr: "Mandelbrot kümesinin Lyapunov sınırında (λ = 0) sıfır sürtünmeli faz modülasyonu (Δφ); siyah delik çekim havuzlarına çökmeye karşı aktif direnç gösterir."
+    },
+    {
+      id: 5,
+      src: "figures/fig5_dual_brain_cybernetics.png",
+      title_en: "Fig 5: Dual-Brain Enteric-Cranial Cybernetics",
+      desc_en: "Bi-directional feedback architecture: cranial cerebral cortex exploring speculative manifolds while subcortical/enteric limbic gatekeepers enforce homeostatic safety and immunological tolerance.",
+      title_tr: "Şekil 5: Çift Beyin Enterik-Kraniyal Sibernetik",
+      desc_tr: "İki yönlü geri-beslemeli mimari: Serebral korteks spekülatif manifoldları keşfederken, subkortikal/enterik limbik bekçi homeostatik denge ve immünolojik toleransı denetler."
+    },
+    {
+      id: 6,
+      src: "figures/fig6_complex_4quadrant_genetics.png",
+      title_en: "Fig 6: Complex 4-Quadrant Genetics (A, T, C, G)",
+      desc_en: "Mapping the 4-nucleotide genetic basis onto the complex plane quadrants (Q1..Q4) for procedural parameter synthesis, mirroring biological morphogenetic compression.",
+      title_tr: "Şekil 6: Karmaşık 4-Bölge Genetik Haritalama (A, T, C, G)",
+      desc_tr: "4 nükleotitli genetik kodun karmaşık düzlemin 4 bölgesine (Q1..Q4) izdüşürülerek prosedürel parametre üretimi; biyolojik morfogenetik sıkıştırmanın tam karşılığı."
+    },
+    {
+      id: 7,
+      src: "figures/fig7_empirical_benchmark.png",
+      title_en: "Fig 7: Empirical Benchmark Verification",
+      desc_en: "5-seed rigorous radar benchmark (80/20 train/test) across XOR (99.80%), Two Moons (99.40%), and Two Spirals (98.70%) with 0 persistent weights and 0.41 ms latency.",
+      title_tr: "Şekil 7: Deneysel Benchmark Doğrulaması",
+      desc_tr: "5 farklı tohumla (80/20 eğitim/test) XOR (%99.80), Two Moons (%99.40) ve Two Spirals (%98.70) radar kıyaslaması; 0 kalıcı ağırlık ve 0.41 ms gecikme."
+    }
+  ];
+
+  let currentFigureIndex = 0;
+
   // Multilingual Engine (EN / TR)
   const I18N = {
     en: {
       langLabel: "Türkçe",
       themeLight: "Light",
       themeDark: "Dark",
+      annBadge: "BREAKING • PAPER 2 • PATENT PENDING",
+      annText: '<strong>Orbital Error Dynamics (OED)</strong> published on Zenodo (DOI: <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank">10.5281/zenodo.22896856</a>) with Turkish Patent Application filed (<span style="color: #f59e0b; font-weight: 700;">TR 2026/016285</span>)!',
+      btnBannerExploreText: "Explore Paper 2 ↓",
       badgeText: "Academic Preprint & Open Research • Under Review in Chaos, Solitons & Fractals",
       heroTitle: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries",
-      btnReadPdf: "Read IEEE Paper (PDF)",
+      btnHeroPaper2: "Paper 2: Orbital Error Dynamics",
+      btnPaper2Pdf: "Paper 2 Preprint (PDF)",
+      btnReadPdf: "Paper 1 (IEEE PDF)",
       btnZip: "LaTeX Bundle (.ZIP)",
       btnCode: "Source Code",
+      p2PatentBadge: "⚖️ Patent Pending: TR 2026/016285 (TÜRKPATENT)",
+      p2WeightBadge: "Zero Persistent Weights • O(1) Ephemeral Resonance",
+      p2SpeedBadge: "0.41 ms / Decision • Zero-VRAM",
+      p2MainTitle: "Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis",
+      p2Quote: "“Existence is an error (Ε) that refuses to vanish. Organic intelligence is an active, non-equilibrium resistance against attractor collapse rather than a passive convergence to zero loss.”",
+      p2Desc: "In this groundbreaking second paper, we advance far beyond procedural weight harvesting into a fundamental ontology for next-generation intelligence. Rather than forcing network errors to zero (which leads to thermodynamic entropy death and model collapse), Orbital Error Dynamics (OED) models synaptic parameters as ephemeral standing wave resonances (O(1)) sampled dynamically along the boundary of deterministic chaos (∂M).",
+      p2Pillar1Title: "Bent Sine Wave & Cusp Dynamics",
+      p2Pillar1Desc: "Straight waves are static; harmonic sine waves are repetitively sterile. Living intelligence emerges when waves are bent inward by quantum and environmental drag toward the main cardioid cusp (c = 1/4).",
+      p2Pillar2Title: "Observer Horizon Geometry (life_view)",
+      p2Pillar2Desc: "Dual-cusp coordinate manifold: Blue Radiant Apex (X_blue) observing future quantum potential while grounded to terrestrial escape loss, Yellow Grounded Mirror (X_yellow), and expressive radial utterance vector.",
+      p2Pillar3Title: "Zinc Spark Quantum Tunneling (Ω_tunneling)",
+      p2Pillar3Desc: "Modeled after mammalian fertilization sparks: a heavy-tailed stochastic operator that instantaneously tunnels out of non-convex saddle traps without slow, fragile gradient loss descent.",
+      p2Pillar4Title: "Dual-Brain Enteric-Cranial Cybernetics",
+      p2Pillar4Desc: "Bi-directional feedback loop: cranial cerebral cortex exploring speculative manifolds while subcortical/enteric limbic gatekeepers enforce homeostatic safety and CD4+ immunological tolerance.",
+      p2BenchmarkTitle: "Empirical Benchmark Verification (5-Seed Rigorous Split: 80% Train / 20% Test)",
+      p2BenchmarkSubtitle: "Empirical verification conducted over 5 randomized initializations across continuous non-linear manifolds. Mean ± standard deviation:",
+      thTask: "Benchmark Task / Metric",
+      thOed: "Orbital Error Dynamics (OED)",
+      thMlp: "Classical Dense MLP",
+      thBaseline: "Random Baseline",
+      tdTaskXor: "Non-Linear XOR Logic",
+      tdTaskMoons: "Two-Moons Continuous Manifold",
+      tdTaskSpirals: "Two-Spirals Non-Convex Manifold",
+      tdTaskStorage: "Persistent Weight Storage",
+      tdTaskLatency: "Decision Inference Latency",
+      tdTaskSaved: "VRAM / Parameter Footprint Saved",
+      galleryTitleHeading: "Paper 2 Scientific Vector Figures (300 DPI)",
+      btnP2DownloadPdf: "Download 7-Page Preprint (PDF)",
+      btnP2SimReport: "Simulation & Experiment Report (HTML)",
+      btnP2SimPdf: "Simulation Report (PDF)",
       labsTitle: "Interactive Live Laboratories",
       labsSubtitle: "Explore the procedural fractal synthesis paradigm directly inside your browser. Both labs are 100% client-side, zero-dependency, and fully offline-capable.",
       badgeLab1: "Public Experience",
@@ -858,6 +1571,19 @@
         "One-click 24-byte memory dump download (.TXT)"
       ],
       btnLaunch2: "Launch Research Lab (Full Screen)",
+      docsSectionTitle: "Reports, Guides & Benchmarks",
+      docsSectionSubtitle: "Comprehensive technical monographs, citizen presentation frameworks, and continuous manifold benchmarks.",
+      badgeCardSim: "Paper 2 Verification",
+      cardSimTitle: "OED Mathematical Simulation & Experiment Report",
+      cardSimDesc: "5-seed Monte-Carlo statistical simulation of Orbital Error Dynamics (OED), cardioid cusp drag, zinc tunneling, and phase modulation from Section IX of Paper 2.",
+      cardSimFeat: [
+        "5-Seed Monte-Carlo statistical verification",
+        "XOR (99.80%), Two Moons (99.40%), Two Spirals (98.70%)",
+        "0 Bytes persistent tensor storage, 0.41 ms latency",
+        "Print-ready A4 PDF and interactive HTML report"
+      ],
+      btnCardSimHtml: "Open Simulation Report (HTML)",
+      btnCardSimPdf: "Download Report PDF",
       metricsTitle: "Key Scientific Contributions & Metrics",
       metricsDesc: "Modern neural networks incur unsustainable memory bandwidth overhead ('the memory wall') by persisting billions of static parameters. Our methodology eliminates persistent tensor storage by harvesting weights dynamically from the boundary morphology of deterministic chaos.",
       hl1: "Seed Metadata Storage",
@@ -872,18 +1598,55 @@
       gauntletCardTitle: "The Zero-VRAM Gauntlet",
       gauntletCardDesc: "Independent benchmark suite consolidating WindTunnel WebMCP 49/49, JevBench #1, Gymnasium RL, Tau-Bench, and Jevenator 2 in a unified showdown.",
       btnGauntletLaunch: "View The Gauntlet (Benchmarks)",
-      citeTitle: "Citation (BibTeX)",
-      citeDesc: "If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprint:"
+      citeTitle: "Citations (BibTeX)",
+      citeDesc: "If you utilize this research, procedural weight generation methodology, or interactive visualizers, please cite our official preprints:",
+      tabBibPaper2: "Paper 2: Orbital Error Dynamics (Patent Pending)",
+      tabBibPaper1: "Paper 1: Fractal Neural Synthesis"
     },
     tr: {
       langLabel: "English",
       themeLight: "Açık",
       themeDark: "Koyu",
+      annBadge: "YENİ YAYIN • PAPER 2 • PATENT BAŞVURUSU YAPILDI",
+      annText: '<strong>Yörünge Hata Dinamikleri (OED)</strong> Zenodo\'da yayımlandı (DOI: <a href="https://doi.org/10.5281/zenodo.22896856" target="_blank">10.5281/zenodo.22896856</a>) ve Resmi Türk Patent Başvurusu yapıldı (<span style="color: #f59e0b; font-weight: 700;">TR 2026/016285</span>)!',
+      btnBannerExploreText: "Paper 2'yi İncele ↓",
       badgeText: "Akademik Ön Baskı & Açık Bilim • Chaos, Solitons & Fractals (Hakem Sürecinde)",
       heroTitle: "Mandelbrot Fraktal Nöral Sentezi: Sıfır-Bellek Prosedürel Ağırlık Türetimi ve Doğrusal Olmayan Karar Sınırları",
-      btnReadPdf: "IEEE Makalesini Oku (PDF)",
+      btnHeroPaper2: "Paper 2: Yörünge Hata Dinamikleri",
+      btnPaper2Pdf: "Paper 2 Ön Baskı (PDF)",
+      btnReadPdf: "Paper 1 (IEEE PDF)",
       btnZip: "LaTeX Paketi (.ZIP)",
       btnCode: "Kaynak Kodlar",
+      p2PatentBadge: "⚖️ Patent Başvurusu: TR 2026/016285 (TÜRKPATENT)",
+      p2WeightBadge: "Sıfır Kalıcı Ağırlık • O(1) Geçici Rezonans",
+      p2SpeedBadge: "0.41 ms / Karar • Sıfır-VRAM",
+      p2MainTitle: "Yörünge Hata Dinamikleri: Sıfır-Depolamalı Nöral Sentezde Kendiliğinden Organize Olan Kritiklik, Geçici Parametre Rezonansı ve Doğrusal Olmayan Biyolojik Ontolojiler",
+      p2Quote: "“Varoluş, yok olmayı reddeden bir hatadır (Ε). Organik zeka, pasif bir sıfır kayıp yakınsaması değil; çekici havuzların çöküşüne karşı gösterilen aktif, denge-dışı bir dirençtir.”",
+      p2Desc: "Bu çığır açıcı ikinci çalışmamızda, prosedürel ağırlık türetiminin ötesine geçerek yeni nesil yapay zeka için temel bir ontoloji inşa ediyoruz. Ağ hatalarını sıfıra zorlamak yerine (ki bu termodinamik entropi ölümüne ve model çöküşüne yol açar), Yörünge Hata Dinamikleri (OED), sinaptik parametreleri deterministik kaosun sınırından (∂M) anlık olarak örneklenen geçici duran dalga rezonansları (O(1)) olarak modeller.",
+      p2Pillar1Title: "Bükülmüş Sinüs Dalgası & Kusp Dinamikleri",
+      p2Pillar1Desc: "Düz dalgalar hareketsiz, harmonik sinüsler kısırdır. Canlı zeka, dalgalar kuantum ve çevresel sürtünmeyle ana kardioid ucuna (c = 1/4) doğru içe büküldüğünde ortaya çıkar.",
+      p2Pillar2Title: "Gözlemci Ufku Geometrisi (life_view)",
+      p2Pillar2Desc: "Çift uçlu koordinat manifoldu: Geleceğin kuantum potansiyelini gözlemleyen Mavi Zirve (X_blue), karasal kaçış kaybına bağlı Sarı Ayna (X_yellow) ve ifadecil radyal saçılma vektörü.",
+      p2Pillar3Title: "Çinko Kıvılcımı Kuantum Tünelleme (Ω_tunneling)",
+      p2Pillar3Desc: "Memeli döllenme kıvılcımlarından esinlenen ağır-kuyruklu stokastik operatör; yavaş ve kırılgan gradyan inişine takılmadan konveks olmayan tuzaklardan anında tüneller.",
+      p2Pillar4Title: "Çift Beyin Enterik-Kraniyal Sibernetik",
+      p2Pillar4Desc: "İki yönlü geri-besleme döngüsü: Kraniyal serebral korteks spekülatif manifoldları keşfederken, subkortikal/enterik limbik bekçi homeostatik denge ve CD4+ immünolojik toleransı denetler.",
+      p2BenchmarkTitle: "Deneysel Benchmark Doğrulaması (5 Tohumlu Katı Ayrım: %80 Eğitim / %20 Test)",
+      p2BenchmarkSubtitle: "Doğrusal olmayan sürekli manifoldlarda 5 rastgele başlangıç tohumuyla yürütülen deneyler. Ortalama ± standart sapma:",
+      thTask: "Kıyaslama Görevi / Metrik",
+      thOed: "Yörünge Hata Dinamikleri (OED)",
+      thMlp: "Klasik Yoğun MLP",
+      thBaseline: "Rastgele Temel Çizgi",
+      tdTaskXor: "Doğrusal Olmayan XOR Mantığı",
+      tdTaskMoons: "Two-Moons Sürekli Manifoldu",
+      tdTaskSpirals: "Two-Spirals Konveks Olmayan Manifold",
+      tdTaskStorage: "Kalıcı Ağırlık Depolaması",
+      tdTaskLatency: "Karar Çıkarım Gecikmesi",
+      tdTaskSaved: "VRAM / Parametre Tasarruf Oranı",
+      galleryTitleHeading: "Paper 2 Bilimsel Vektör Çizimleri (300 DPI)",
+      btnP2DownloadPdf: "7-Sayfalık Ön Baskıyı İndir (PDF)",
+      btnP2SimReport: "Simülasyon & Deney Raporu (HTML)",
+      btnP2SimPdf: "Simülasyon Raporu (PDF)",
       labsTitle: "İnteraktif Canlı Laboratuvarlar",
       labsSubtitle: "Fraktal nöral sentez paradigmasını doğrudan tarayıcınızda deneyimleyin. Her iki laboratuvar da %100 istemci taraflı, sıfır bağımlılıklı ve internetsiz çalışır.",
       badgeLab1: "Halk Deneyimi",
@@ -906,6 +1669,19 @@
         "Tek tıkla 24 baytlık sistem bellek kütüğü indirme (.TXT)"
       ],
       btnLaunch2: "Araştırma Laboratuvarını Aç (Tam Ekran)",
+      docsSectionTitle: "Raporlar, Rehberler & Kıyaslamalar",
+      docsSectionSubtitle: "Kapsamlı teknik monograflar, halka sunum çerçeveleri ve sürekli manifold kıyaslamaları.",
+      badgeCardSim: "Paper 2 Doğrulaması",
+      cardSimTitle: "OED Matematiksel Simülasyon ve Deney Raporu",
+      cardSimDesc: "Yörünge Hata Dinamikleri'nin (OED) 5-tohumlu matematiksel simülasyonu, kardioid kusp çekimi, çinko tünelleme ve faz modülasyonunun Bölüm IX deneysel raporu.",
+      cardSimFeat: [
+        "5 Tohumlu Monte-Carlo istatistiksel doğrulama",
+        "XOR (%99.80), Two Moons (%99.40), Two Spirals (%98.70)",
+        "0 Bayt kalıcı tensör depolaması, 0.41 ms gecikme",
+        "Baskıya hazır A4 formatında PDF ve interaktif HTML"
+      ],
+      btnCardSimHtml: "Simülasyon Raporunu Aç (HTML)",
+      btnCardSimPdf: "Rapor PDF İndir",
       metricsTitle: "Temel Bilimsel Katkılar ve Metrikler",
       metricsDesc: "Mevcut derin öğrenme modelleri milyarlarca parametreyi RAM'de statik tutarak aşırı bellek ve enerji darboğazına yol açar. Geliştirdiğimiz yöntem, deterministik kaosun geometrisinden anlık ağırlık türeterek kalıcı tensör depolamasını ortadan kaldırır.",
       hl1: "Kalıcı Koordinat Tohumu",
@@ -920,12 +1696,121 @@
       gauntletCardTitle: "The Zero-VRAM Gauntlet",
       gauntletCardDesc: "Tüm resmi benchmark sonuçlarının (WindTunnel WebMCP 49/49, JevBench #1, Gymnasium RL, Tau-Bench, Jevenator 2) tek sayfada toplandığı açık meydan okuma duvarı.",
       btnGauntletLaunch: "Meydan Okumayı Gör (The Gauntlet)",
-      citeTitle: "Akademik Atıf (BibTeX)",
-      citeDesc: "Bu çalışmayı, fraktal sentez yöntemini veya interaktif laboratuvarları çalışmalarınızda kullanırsanız lütfen resmi preprint kaydımıza atıfta bulununuz:"
+      citeTitle: "Akademik Atıflar (BibTeX)",
+      citeDesc: "Bu çalışmayı, fraktal sentez yöntemini veya interaktif laboratuvarları çalışmalarınızda kullanırsanız lütfen resmi preprint kayıtlarımıza atıfta bulununuz:",
+      tabBibPaper2: "Paper 2: Yörünge Hata Dinamikleri (Patent Başvurusu Yapıldı)",
+      tabBibPaper1: "Paper 1: Fraktal Nöral Sentezi"
     }
   };
 
   let currentLang = localStorage.getItem('widget_lang') || 'en';
+
+  // Function to render gallery thumbnails
+  function initGallery() {
+    const thumbsContainer = document.getElementById('galleryThumbs');
+    if (!thumbsContainer) return;
+    thumbsContainer.innerHTML = '';
+    FIGURES.forEach((fig, index) => {
+      const thumb = document.createElement('div');
+      thumb.className = `gallery-thumb ${index === currentFigureIndex ? 'active' : ''}`;
+      thumb.title = currentLang === 'tr' ? fig.title_tr : fig.title_en;
+      thumb.onclick = () => selectFigure(index);
+      thumb.innerHTML = `<img src="${fig.src}" alt="Thumbnail ${fig.id}" loading="lazy" />`;
+      thumbsContainer.appendChild(thumb);
+    });
+    updateFigureView();
+  }
+
+  function selectFigure(index) {
+    currentFigureIndex = index;
+    updateFigureView();
+  }
+
+  function updateFigureView() {
+    const fig = FIGURES[currentFigureIndex];
+    if (!fig) return;
+
+    const mainImg = document.getElementById('galleryMainImg');
+    const titleEl = document.getElementById('galleryCaptionTitle');
+    const descEl = document.getElementById('galleryCaptionDesc');
+    const counterEl = document.getElementById('galleryCounter');
+
+    if (mainImg) {
+      mainImg.src = fig.src;
+      mainImg.alt = currentLang === 'tr' ? fig.title_tr : fig.title_en;
+    }
+    if (titleEl) {
+      titleEl.innerText = currentLang === 'tr' ? fig.title_tr : fig.title_en;
+    }
+    if (descEl) {
+      descEl.innerText = currentLang === 'tr' ? fig.desc_tr : fig.desc_en;
+    }
+    if (counterEl) {
+      counterEl.innerText = `${currentFigureIndex + 1} / ${FIGURES.length}`;
+    }
+
+    // Update active thumb
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    thumbs.forEach((t, i) => {
+      if (i === currentFigureIndex) {
+        t.classList.add('active');
+        t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      } else {
+        t.classList.remove('active');
+      }
+    });
+  }
+
+  const btnGalleryPrev = document.getElementById('btnGalleryPrev');
+  const btnGalleryNext = document.getElementById('btnGalleryNext');
+  if (btnGalleryPrev) {
+    btnGalleryPrev.onclick = () => {
+      currentFigureIndex = (currentFigureIndex - 1 + FIGURES.length) % FIGURES.length;
+      updateFigureView();
+    };
+  }
+  if (btnGalleryNext) {
+    btnGalleryNext.onclick = () => {
+      currentFigureIndex = (currentFigureIndex + 1) % FIGURES.length;
+      updateFigureView();
+    };
+  }
+
+  // Bibtex Tab Switcher
+  window.switchBibtex = function(tabKey) {
+    const tab1 = document.getElementById('tabBibPaper1');
+    const tab2 = document.getElementById('tabBibPaper2');
+    const box1 = document.getElementById('boxBibPaper1');
+    const box2 = document.getElementById('boxBibPaper2');
+
+    if (tabKey === 'paper1') {
+      tab1.classList.add('active');
+      tab2.classList.remove('active');
+      box1.style.display = 'block';
+      box2.style.display = 'none';
+    } else {
+      tab2.classList.add('active');
+      tab1.classList.remove('active');
+      box2.style.display = 'block';
+      box1.style.display = 'none';
+    }
+  };
+
+  // Copy Bibtex
+  window.copyBibtex = function(elementId, btn) {
+    const code = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      const origText = btn.innerText;
+      btn.innerText = currentLang === 'tr' ? 'Kopyalandı! ✓' : 'Copied! ✓';
+      btn.style.borderColor = 'var(--emerald)';
+      btn.style.color = 'var(--emerald)';
+      setTimeout(() => {
+        btn.innerText = origText;
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }, 2000);
+    });
+  };
 
   function applyLanguage(lang) {
     currentLang = lang;
@@ -933,51 +1818,112 @@
     document.documentElement.lang = lang;
     const d = I18N[lang];
 
+    // Navbar & Banners
     document.getElementById('langLabel').innerText = d.langLabel;
-    document.getElementById('badgeText').innerText = d.badgeText;
-    document.getElementById('heroTitle').innerText = d.heroTitle;
-    document.getElementById('btnReadPdf').innerText = d.btnReadPdf;
-    document.getElementById('btnZip').innerText = d.btnZip;
-    document.getElementById('btnCode').innerText = d.btnCode;
+    if (document.getElementById('annBadge')) document.getElementById('annBadge').innerText = d.annBadge;
+    if (document.getElementById('annText')) document.getElementById('annText').innerHTML = d.annText;
+    if (document.getElementById('btnBannerExploreText')) document.getElementById('btnBannerExploreText').innerText = d.btnBannerExploreText;
+    if (document.getElementById('badgeText')) document.getElementById('badgeText').innerText = d.badgeText;
+    if (document.getElementById('heroTitle')) document.getElementById('heroTitle').innerText = d.heroTitle;
+
+    // Hero buttons
+    if (document.getElementById('btnHeroPaper2')) document.getElementById('btnHeroPaper2').innerText = d.btnHeroPaper2;
+    if (document.getElementById('btnPaper2Pdf')) document.getElementById('btnPaper2Pdf').innerText = d.btnPaper2Pdf;
+    if (document.getElementById('btnReadPdf')) document.getElementById('btnReadPdf').innerText = d.btnReadPdf;
+    if (document.getElementById('btnZip')) document.getElementById('btnZip').innerText = d.btnZip;
+    if (document.getElementById('btnCode')) document.getElementById('btnCode').innerText = d.btnCode;
     if (document.getElementById('navGauntlet')) document.getElementById('navGauntlet').innerText = d.navGauntlet;
     if (document.getElementById('btnHeroGauntlet')) document.getElementById('btnHeroGauntlet').innerText = d.btnHeroGauntlet;
+
+    // Paper 2 Section
+    if (document.getElementById('p2PatentBadge')) document.getElementById('p2PatentBadge').innerText = d.p2PatentBadge;
+    if (document.getElementById('p2WeightBadge')) document.getElementById('p2WeightBadge').innerText = d.p2WeightBadge;
+    if (document.getElementById('p2SpeedBadge')) document.getElementById('p2SpeedBadge').innerText = d.p2SpeedBadge;
+    if (document.getElementById('p2MainTitle')) document.getElementById('p2MainTitle').innerText = d.p2MainTitle;
+    if (document.getElementById('p2Quote')) document.getElementById('p2Quote').innerText = d.p2Quote;
+    if (document.getElementById('p2Desc')) document.getElementById('p2Desc').innerText = d.p2Desc;
+
+    if (document.getElementById('p2Pillar1Title')) document.getElementById('p2Pillar1Title').innerText = d.p2Pillar1Title;
+    if (document.getElementById('p2Pillar1Desc')) document.getElementById('p2Pillar1Desc').innerText = d.p2Pillar1Desc;
+    if (document.getElementById('p2Pillar2Title')) document.getElementById('p2Pillar2Title').innerText = d.p2Pillar2Title;
+    if (document.getElementById('p2Pillar2Desc')) document.getElementById('p2Pillar2Desc').innerText = d.p2Pillar2Desc;
+    if (document.getElementById('p2Pillar3Title')) document.getElementById('p2Pillar3Title').innerText = d.p2Pillar3Title;
+    if (document.getElementById('p2Pillar3Desc')) document.getElementById('p2Pillar3Desc').innerText = d.p2Pillar3Desc;
+    if (document.getElementById('p2Pillar4Title')) document.getElementById('p2Pillar4Title').innerText = d.p2Pillar4Title;
+    if (document.getElementById('p2Pillar4Desc')) document.getElementById('p2Pillar4Desc').innerText = d.p2Pillar4Desc;
+
+    // Benchmark Table
+    if (document.getElementById('p2BenchmarkTitle')) document.getElementById('p2BenchmarkTitle').innerText = d.p2BenchmarkTitle;
+    if (document.getElementById('p2BenchmarkSubtitle')) document.getElementById('p2BenchmarkSubtitle').innerText = d.p2BenchmarkSubtitle;
+    if (document.getElementById('thTask')) document.getElementById('thTask').innerText = d.thTask;
+    if (document.getElementById('thOed')) document.getElementById('thOed').innerText = d.thOed;
+    if (document.getElementById('thMlp')) document.getElementById('thMlp').innerText = d.thMlp;
+    if (document.getElementById('thBaseline')) document.getElementById('thBaseline').innerText = d.thBaseline;
+    if (document.getElementById('tdTaskXor')) document.getElementById('tdTaskXor').innerText = d.tdTaskXor;
+    if (document.getElementById('tdTaskMoons')) document.getElementById('tdTaskMoons').innerText = d.tdTaskMoons;
+    if (document.getElementById('tdTaskSpirals')) document.getElementById('tdTaskSpirals').innerText = d.tdTaskSpirals;
+    if (document.getElementById('tdTaskStorage')) document.getElementById('tdTaskStorage').innerText = d.tdTaskStorage;
+    if (document.getElementById('tdTaskLatency')) document.getElementById('tdTaskLatency').innerText = d.tdTaskLatency;
+    if (document.getElementById('tdTaskSaved')) document.getElementById('tdTaskSaved').innerText = d.tdTaskSaved;
+
+    // Gallery
+    if (document.getElementById('galleryTitleHeading')) document.getElementById('galleryTitleHeading').innerText = d.galleryTitleHeading;
+    if (document.getElementById('btnP2DownloadPdf')) document.getElementById('btnP2DownloadPdf').innerText = d.btnP2DownloadPdf;
+    if (document.getElementById('btnP2SimReport')) document.getElementById('btnP2SimReport').innerText = d.btnP2SimReport;
+    if (document.getElementById('btnP2SimPdf')) document.getElementById('btnP2SimPdf').innerText = d.btnP2SimPdf;
+    updateFigureView();
+
+    // Live Labs
+    if (document.getElementById('labsTitle')) document.getElementById('labsTitle').innerText = d.labsTitle;
+    if (document.getElementById('labsSubtitle')) document.getElementById('labsSubtitle').innerText = d.labsSubtitle;
+    if (document.getElementById('badgeLab1')) document.getElementById('badgeLab1').innerText = d.badgeLab1;
+    if (document.getElementById('lab1Title')) document.getElementById('lab1Title').innerText = d.lab1Title;
+    if (document.getElementById('lab1Desc')) document.getElementById('lab1Desc').innerText = d.lab1Desc;
+    if (document.getElementById('btnLaunch1')) document.getElementById('btnLaunch1').innerText = d.btnLaunch1;
+
+    if (document.getElementById('badgeLab2')) document.getElementById('badgeLab2').innerText = d.badgeLab2;
+    if (document.getElementById('lab2Title')) document.getElementById('lab2Title').innerText = d.lab2Title;
+    if (document.getElementById('lab2Desc')) document.getElementById('lab2Desc').innerText = d.lab2Desc;
+    if (document.getElementById('btnLaunch2')) document.getElementById('btnLaunch2').innerText = d.btnLaunch2;
+
+    const f1 = document.getElementById('lab1Feat');
+    if (f1) f1.innerHTML = d.lab1Feat.map(item => `<li>${item}</li>`).join('');
+
+    const f2 = document.getElementById('lab2Feat');
+    if (f2) f2.innerHTML = d.lab2Feat.map(item => `<li>${item}</li>`).join('');
+
+    // Guides & Benchmarks
+    if (document.getElementById('docsSectionTitle')) document.getElementById('docsSectionTitle').innerText = d.docsSectionTitle;
+    if (document.getElementById('docsSectionSubtitle')) document.getElementById('docsSectionSubtitle').innerText = d.docsSectionSubtitle;
     if (document.getElementById('gauntletCardTitle')) document.getElementById('gauntletCardTitle').innerText = d.gauntletCardTitle;
     if (document.getElementById('gauntletCardDesc')) document.getElementById('gauntletCardDesc').innerText = d.gauntletCardDesc;
     if (document.getElementById('btnGauntletLaunch')) document.getElementById('btnGauntletLaunch').innerText = d.btnGauntletLaunch;
-    document.getElementById('btnZip').innerText = d.btnZip;
-    document.getElementById('btnCode').innerText = d.btnCode;
 
-    document.getElementById('labsTitle').innerText = d.labsTitle;
-    document.getElementById('labsSubtitle').innerText = d.labsSubtitle;
-    document.getElementById('badgeLab1').innerText = d.badgeLab1;
-    document.getElementById('lab1Title').innerText = d.lab1Title;
-    document.getElementById('lab1Desc').innerText = d.lab1Desc;
-    document.getElementById('btnLaunch1').innerText = d.btnLaunch1;
+    if (document.getElementById('badgeCardSim')) document.getElementById('badgeCardSim').innerText = d.badgeCardSim;
+    if (document.getElementById('cardSimTitle')) document.getElementById('cardSimTitle').innerText = d.cardSimTitle;
+    if (document.getElementById('cardSimDesc')) document.getElementById('cardSimDesc').innerText = d.cardSimDesc;
+    if (document.getElementById('cardSimFeat')) document.getElementById('cardSimFeat').innerHTML = d.cardSimFeat.map(item => `<li>${item}</li>`).join('');
+    if (document.getElementById('btnCardSimHtml')) document.getElementById('btnCardSimHtml').innerText = d.btnCardSimHtml;
+    if (document.getElementById('btnCardSimPdf')) document.getElementById('btnCardSimPdf').innerText = d.btnCardSimPdf;
 
-    document.getElementById('badgeLab2').innerText = d.badgeLab2;
-    document.getElementById('lab2Title').innerText = d.lab2Title;
-    document.getElementById('lab2Desc').innerText = d.lab2Desc;
-    document.getElementById('btnLaunch2').innerText = d.btnLaunch2;
+    // Highlights & Metrics
+    if (document.getElementById('metricsTitle')) document.getElementById('metricsTitle').innerText = d.metricsTitle;
+    if (document.getElementById('metricsDesc')) document.getElementById('metricsDesc').innerText = d.metricsDesc;
+    if (document.getElementById('hl1')) document.getElementById('hl1').innerText = d.hl1;
+    if (document.getElementById('hl2')) document.getElementById('hl2').innerText = d.hl2;
+    if (document.getElementById('hl3')) document.getElementById('hl3').innerText = d.hl3;
+    if (document.getElementById('hl4')) document.getElementById('hl4').innerText = d.hl4;
 
-    const f1 = document.getElementById('lab1Feat');
-    f1.innerHTML = d.lab1Feat.map(item => `<li>${item}</li>`).join('');
-
-    const f2 = document.getElementById('lab2Feat');
-    f2.innerHTML = d.lab2Feat.map(item => `<li>${item}</li>`).join('');
-
-    document.getElementById('metricsTitle').innerText = d.metricsTitle;
-    document.getElementById('metricsDesc').innerText = d.metricsDesc;
-    document.getElementById('hl1').innerText = d.hl1;
-    document.getElementById('hl2').innerText = d.hl2;
-    document.getElementById('hl3').innerText = d.hl3;
-    document.getElementById('hl4').innerText = d.hl4;
-
+    // WERR
     if (document.getElementById('werrTitle')) document.getElementById('werrTitle').innerHTML = `<span>⚡</span><span>${d.werrTitle}</span>`;
     if (document.getElementById('werrDesc')) document.getElementById('werrDesc').innerText = d.werrDesc;
     if (document.getElementById('btnWerrLive')) document.getElementById('btnWerrLive').innerText = d.btnWerrLive;
 
-    document.getElementById('citeTitle').innerText = d.citeTitle;
-    document.getElementById('citeDesc').innerText = d.citeDesc;
+    // Bibtex
+    if (document.getElementById('citeTitle')) document.getElementById('citeTitle').innerText = d.citeTitle;
+    if (document.getElementById('citeDesc')) document.getElementById('citeDesc').innerText = d.citeDesc;
+    if (document.getElementById('tabBibPaper1')) document.getElementById('tabBibPaper1').innerText = d.tabBibPaper1;
+    if (document.getElementById('tabBibPaper2')) document.getElementById('tabBibPaper2').innerText = d.tabBibPaper2;
 
     // Theme label sync
     const isDark = document.documentElement.classList.contains('dark');
@@ -1016,9 +1962,11 @@
   });
 
   // Initialize
+  initGallery();
   applyLanguage(currentLang);
   const savedTheme = localStorage.getItem('widget_theme');
   applyTheme(savedTheme !== 'light');
 </script>
 </body>
 </html>
+

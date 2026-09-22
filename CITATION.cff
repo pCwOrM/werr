@@ -14,9 +14,9 @@ authors:
     orcid: "https://orcid.org/0009-0003-2492-8313"
     affiliation: "Toros Science College, Mersin, Turkey"
 title: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"
-version: "3.0.0"
+version: "4.0.0"
 doi: "10.5281/zenodo.22867037"
-date-released: 2026-09-15
+date-released: 2026-09-22
 url: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
 repository-code: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
 keywords:
@@ -24,6 +24,31 @@ keywords:
   - "mandelbrot set"
   - "procedural weight generation"
   - "zero storage ai"
-  - "non-linear decision boundaries"
-  - "neuromorphic computing"
+  - "orbital error dynamics"
+  - "self-organized criticality"
+  - "patent pending TR 2026/016285"
 license: "MIT"
+references:
+  - type: article
+    authors:
+      - family-names: "Dağlı"
+        given-names: "Volkan"
+      - family-names: "Dağlı"
+        given-names: "Zerrin"
+      - family-names: "Dağlı"
+        given-names: "Dağhan"
+    title: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"
+    doi: "10.5281/zenodo.22774934"
+    year: 2026
+  - type: article
+    authors:
+      - family-names: "Dağlı"
+        given-names: "Volkan"
+      - family-names: "Dağlı"
+        given-names: "Zerrin"
+      - family-names: "Dağlı"
+        given-names: "Dağhan"
+    title: "Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis"
+    doi: "10.5281/zenodo.22896856"
+    year: 2026
+    notes: "Patent Pending: TR 2026/016285 (Turkish Patent and Trademark Office)"

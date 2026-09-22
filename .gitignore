@@ -35,3 +35,15 @@ tests/*
 *.pem
 *.key
 *.env
+
+private_archive_paper2/
+
+# TÜRKPATENT Local Administrative Submissions & Applicant Receipts
+turkpatent_hazirlik/
+*.tahakkuk
+*dekont*
+*makbuz*
+
+# Zenodo local packaging bundle build files
+zenodo_preprint_package/
+zenodo_bundle_orbital_error_dynamics.zip
