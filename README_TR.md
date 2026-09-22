@@ -92,9 +92,9 @@ Sinaptik Ağırlıklar (w1, w2, w3, b)   ──► Doğrusal Olmayan Karar Yüze
 
 ---
 
-## 🏛️ İleri Araştırma Ufku (Hedef Dergi)
+## 🏛️ İleri Araştırma Ufku
 
-> **Yayın Durumu:** Hakem değerlendirme sürecinde olup yazar ön-baskısı ve tam replikasyon paketi [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) kalıcı Concept DOI ile açık bilim arşivinde tescillenmiştir.
+> **Yayın Durumu:** *Chaos, Solitons & Fractals* (Elsevier) dergisinde hakem değerlendirme sürecindedir. Yazar ön-baskısı ve tam replikasyon paketi kalıcı Concept DOI [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934) ile açık bilim arşivinde tescillenmiştir.
 
 Dergi makalesi, temel paradigmayı sürekli manifoldlara ve standart yapay sinir ağlarıyla (MLP) kıyaslamaya genişletmektedir:
 

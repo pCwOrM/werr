@@ -91,9 +91,9 @@ Synaptic Weights (w1, w2, w3) + Bias (b)  ──► Non-Linear Decision Contours
 
 ---
 
-## 🏛️ Advanced Research Extension (Target Journal)
+## 🏛️ Advanced Research Extension
 
-> **Status:** Author preprint and full replication package archived with permanent Concept DOI [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934). Currently under peer review.
+> **Publication Status:** Under peer review in *Chaos, Solitons & Fractals* (Elsevier). Author preprint and reproducible replication package permanently archived at Zenodo ([10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)).
 
 The journal manuscript expands the foundational paradigm to continuous topological manifolds and rigorous comparative baselines:
 
