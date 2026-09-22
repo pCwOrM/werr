@@ -371,7 +371,7 @@ window.MathJax = {
         <td><strong>Economic & Licensing Model</strong></td>
         <td>Proprietary SaaS (Pay-per-token Rent)</td>
         <td>Open Weights (Heavy Compute Cost)</td>
-        <td><strong>100% Free & Open Source (MIT License)</strong></td>
+        <td><strong>Free for Research & Edu (BSL 1.1)</strong></td>
       </tr>
     </tbody>
   </table>

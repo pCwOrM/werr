@@ -7,7 +7,7 @@
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-38.0x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Kriptografik Denetim](https://img.shields.io/badge/Denetim-SHA--256%20M%C3%BCh%C3%BCrl%C3%BC-blueviolet.svg)](sealed/SEAL_MANIFEST.json)
 [![Canlı Web Arenası](https://img.shields.io/badge/Canl%C4%B1%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
-[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](../LICENSE)
+[![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-red.svg)](../LICENSE)
 
 <p align="center">
   <a href="https://pcworm.github.io/werr/#benchmark-arena">

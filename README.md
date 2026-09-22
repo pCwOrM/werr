@@ -92,7 +92,7 @@
 | **Seed Footprint** | Cloud API Endpoint | Local Model Checkpoint | **24 Bytes $(c_x, c_y, \text{zoom})$** |
 | **Typical Latency** | ~100 ms (Network HTTP) | ~15–30 ms (GPU) | **< 1.0 ms (Pure Local CPU)** |
 | **Hardware Requirement** | Internet Connection | CUDA-capable GPU | **Any standard CPU / Microcontroller** |
-| **License & Autonomy** | Proprietary API ($/token) | Open Weights | **100% Free & Open Source (MIT)** |
+| **License & Autonomy** | Proprietary API ($/token) | Open Weights | **Free for Research & Edu (BSL 1.1)** |
 
 ---
 

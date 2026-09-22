@@ -62,7 +62,7 @@
 | **Tohum Ayak İzi** | Bulut Uç Noktası | Gigabaytlarca Checkpoint | **24 Bayt $(c_x, c_y, \text{zoom})$** |
 | **Tipik Gecikme** | ~100 ms (Ağ Gecikmesi) | ~15–30 ms (GPU) | **< 1.0 ms (Saf Yerel CPU)** |
 | **Donanım Gereksinimi** | Kesintisiz İnternet | CUDA Destekli Güçlü GPU | **Herhangi bir standart CPU / Mikrokontrolcü** |
-| **Lisans & Otonomi** | Ücretli API ($/token) | Açık Ağırlıklar | **%100 Özgür & Açık Kaynak (MIT)** |
+| **Lisans & Otonomi** | Ücretli API ($/token) | Açık Ağırlıklar | **Araştırma ve Eğitim İçin Ücretsiz (BSL 1.1)** |
 
 ---
 

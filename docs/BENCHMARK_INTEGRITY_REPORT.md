@@ -110,4 +110,4 @@ For full details on tokenization boundary calibration, phrase bonuses, and ablat
 
 Benchmarks exist to uncover truth, not to preserve artificial moats. Moving evaluation goalposts while an unorthodox architecture is queued does not weaken open source; it merely highlights the disruptive necessity of lightweight, zero-memory mathematical decision engines.
 
-Werr stands fully verified, mathematically documented, and open under the MIT License. We welcome independent replication by the global machine learning community.
+Werr stands fully verified, mathematically documented, and open for academic research under the Business Source License 1.1 (BSL 1.1). We welcome independent replication by the global machine learning community.
