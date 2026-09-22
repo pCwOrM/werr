@@ -158,6 +158,7 @@ All four primary benchmark suites have been executed under zero-contamination ai
 * 📄 **Official PDF Audit Report:** [`docs/werr_official_benchmarks_report.pdf`](../docs/werr_official_benchmarks_report.pdf)
 * 🌐 **Official HTML Audit Report:** [`docs/werr_official_benchmarks_report.html`](../docs/werr_official_benchmarks_report.html)
 * 🔐 **Cryptographic Manifest:** [`benchmarks/sealed/SEAL_MANIFEST.json`](./sealed/SEAL_MANIFEST.json)
+* ⚙️ **Kernel Optimization Report:** [`docs/OPTIMIZATION_REPORT.md`](../docs/OPTIMIZATION_REPORT.md)
 
 | Benchmark Axis | Dataset / Suite | WERR Score / Speed | Baseline Reference | Cryptographic SHA-256 Hash |
 | :--- | :--- | :--- | :--- | :--- |

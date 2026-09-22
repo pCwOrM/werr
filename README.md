@@ -40,6 +40,7 @@
 ⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
+⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).
 
 `werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.

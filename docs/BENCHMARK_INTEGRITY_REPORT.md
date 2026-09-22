@@ -102,6 +102,8 @@ Alternatively, run the air-gapped TypeSafe server:
 python -m werr.server --port 8443 --no-telemetry
 ```
 
+For full details on tokenization boundary calibration, phrase bonuses, and ablation studies, consult the companion [WERR Engine Optimization Report](OPTIMIZATION_REPORT.md) ([Türkçe](OPTIMIZATION_REPORT_TR.md)).
+
 ---
 
 ### 5. Conclusion & The Path Forward for Open Science

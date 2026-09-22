@@ -146,6 +146,7 @@ Tüm dört temel benchmark ekseni sıfır-kontaminasyon ve hava-boşluklu (air-g
 * 📄 **Resmi PDF Denetim Raporu:** [`docs/werr_official_benchmarks_report.pdf`](../docs/werr_official_benchmarks_report.pdf)
 * 🌐 **Resmi HTML Denetim Raporu:** [`docs/werr_official_benchmarks_report.html`](../docs/werr_official_benchmarks_report.html)
 * 🔐 **Kriptografik Mühür Manifestosu:** [`benchmarks/sealed/SEAL_MANIFEST.json`](./sealed/SEAL_MANIFEST.json)
+* ⚙️ **Motor Optimizasyon Raporu:** [`docs/OPTIMIZATION_REPORT_TR.md`](../docs/OPTIMIZATION_REPORT_TR.md)
 
 | Kıyaslama Ekseni | Veri Seti / Süit | WERR Skor / Hız | Referans Temel Model | Kriptografik SHA-256 Özeti |
 | :--- | :--- | :--- | :--- | :--- |

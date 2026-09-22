@@ -37,6 +37,7 @@
 ⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*  
 ⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*  
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
+⚙️ **Motor Optimizasyon Raporu:** [Etiket tokenizasyonu, kelime sınırları ve kalibrasyon ilkeleri teknik raporu](docs/OPTIMIZATION_REPORT_TR.md).  
 🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).
 
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
