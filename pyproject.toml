@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "werr"
 version = "0.3.0"
 authors = [
-  { name="Volkan Dagli", email="info@itouch.com.tr" },
-  { name="pcworm" }
+  { name="ITouch Systems", email="info@itouch.com.tr" },
+  { name="Volkan Dagli", email="ask@answerr.me" }
 ]
 description = "WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)"
 readme = "README.md"
