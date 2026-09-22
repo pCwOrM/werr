@@ -43,3 +43,10 @@ assets/[0-9A-F][0-9A-F]*.png
 benchmarks/snake/*.gif
 benchmarks/snake/*.mp4
 
+# Private research, roadmap, and RSA working archives (STRICTLY EXCLUDED)
+private_archive*/
+*roadmap*
+*open_problem*
+*rsa*
+
+
