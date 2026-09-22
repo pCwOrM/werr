@@ -12,9 +12,10 @@ authors = [
 description = "WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "Business Source License 1.1" }
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: Other/Proprietary License",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]

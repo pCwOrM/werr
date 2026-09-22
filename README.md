@@ -8,7 +8,7 @@
 
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-red.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
@@ -621,3 +621,12 @@ werr             # Interactive terminal simulator
   doi       = {10.5281/zenodo.22867426}
 }
 ```
+
+---
+
+## 📜 License & Intellectual Property
+This software and its reflex decision algorithms are licensed under the **[Business Source License 1.1 (BSL 1.1)](LICENSE)**.  
+- **Academic, Educational & Non-Commercial Use:** Free and permissive for non-commercial research, university education, student contributions, and academic benchmarking.
+- **Commercial & Enterprise Use:** Any commercial deployment, hosted SaaS, or paid cloud service requires an express commercial enterprise license from **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** & Volkan Dağlı.
+- **Change Date:** On **2030-01-01**, this work automatically converts to the **Apache License, Version 2.0**.
+- **Commercial Inquiries:** Contact via official corporate channels or [answerr.me](https://answerr.me).

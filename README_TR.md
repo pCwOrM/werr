@@ -8,7 +8,7 @@
 
 # ⚡ WERR: Sıfır-Bellekli Fraktal Sistem-1 Karar Motoru (Dalgalar ve Hatalar)
 
-[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](./LICENSE)
+[![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-red.svg)](./LICENSE)
 [![Makale DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Makale%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-De%C4%9Ferlendirme%20A%C5%9Famas%C4%B1nda-blue.svg)](https://doi.org/10.5281/zenodo.22867426)
@@ -349,7 +349,11 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 
 ---
 
-## ⚖️ Lisans
+## ⚖️ Lisans ve Fikri Mülkiyet Hakları
 
-Bu proje **MIT Lisansı** altında yayımlanmıştır. Detaylar için [LICENSE](./LICENSE) dosyasına bakabilirsiniz.
+Bu yazılım ve refleks karar algoritmaları **[Business Source License 1.1 (BSL 1.1)](LICENSE)** altında lisanslanmıştır.  
+- **Akademik, Eğitim ve Bilimsel Araştırma:** Kâr amacı gütmeyen araştırmalar, üniversite eğitimi, açık kaynak öğrenci katkıları ve akademik kıyaslamalar için tamamen ücretsiz ve açıktır.
+- **Ticari ve Kurumsal Kullanım:** Kodların ticari bir ürün, SaaS platformu veya ücretli bulut API servisi olarak sunulması; **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** & Volkan Dağlı'dan resmi Ticari Lisans (Enterprise License) alınmasını gerektirir.
+- **Dönüşüm Tarihi:** **01.01.2030** tarihinde bu yazılım otomatik olarak **Apache License, Version 2.0** açık kaynak lisansına dönüşecektir.
+- **Ticari İletişim:** Resmi kurumsal kanallar veya [answerr.me](https://answerr.me) üzerinden iletişime geçebilirsiniz.
 

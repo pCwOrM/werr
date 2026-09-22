@@ -1,21 +1,52 @@
-MIT License
+Business Source License 1.1
 
-Copyright (c) 2026 Volkan Dağlı, Zerrin Dağlı, Dağhan Dağlı
+Parameters:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Licensor:
+  ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi
+  and Volkan Dağlı (along with co-authors Zerrin Dağlı and Dağhan Dağlı)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Licensed Work:
+  WERR (Waves & Errors): Zero-Memory Fractal System-One Decision Engine, 
+  including all decision gates, mathematical runtime algorithms, coordinate seed routines, 
+  and benchmarking suites contained in this repository.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Additional Use Grant:
+  1. Non-Commercial, Educational, and Academic Research Use:
+     You may run, compile, inspect, benchmark, test, study, fork, and reproduce the Licensed Work 
+     free of charge for non-commercial research, academic, educational, and personal evaluations. 
+     Academic citation and scientific replication of results are explicitly permitted and encouraged.
+  2. Commercial Restriction:
+     Any production use, deployment, or provision of the Licensed Work (or substantial parts thereof) 
+     as a commercial product, hosted software-as-a-service (SaaS), paid API, or cloud-based decision 
+     service—or in direct commercial competition with services offered by ITouch Bilişim Sistemleri Ltd. Şti. 
+     or answerr.me—requires an express written Commercial Enterprise License from the Licensor.
+  3. Commercial Licensing Inquiries:
+     For commercial and enterprise licensing agreements, please contact:
+     ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi
+     Email / Web: contact via https://answerr.me or contact@itouchsystems.com
+
+Change Date:
+  2030-01-01
+
+Change License:
+  Apache License, Version 2.0
+
+Patent Notice:
+  Certain procedural algorithms and neural synthesis formulations embodied in this work are subject 
+  to pending patent application TÜRKPATENT TR 2026/016285. No commercial patent license or implied patent 
+  rights are granted herein without an express written agreement from the patent applicant.
+
+================================================================================
+
+Terms
+
+The Licensor hereby grants you the right to copy, modify, create derivative works, redistribute, and make non-production, non-commercial use of the Licensed Work. The Licensor may have trademarks, service marks, or trade names associated with the Licensed Work, and this license does not grant you rights to use them, other than as necessary to display the notice below and to identify the Licensed Work.
+
+You may make non-production use of the Licensed Work only in accordance with the Additional Use Grant above, which may specify terms under which the Licensed Work may be used without obtaining a separate commercial license from Licensor.
+
+The Licensor may not decrease the Additional Use Grant while this license is in effect. You must reproduce this license, including all parameters, and any copyright notices in any copy of the Licensed Work that you make or distribute.
+
+Effective on the Change Date, or the fourth anniversary of the first publicly available distribution of a specific version of the Licensed Work under this License, whichever comes first, the Licensor hereby grants you rights under the terms of the Change License, and the terms of this License will not apply. The Licensor agrees that the Change License must be an open source or source available license that complies with the Open Source Definition as published by the Open Source Initiative.
+
+THE LICENSED WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, LICENSOR, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE LICENSED WORK OR THE USE OR OTHER DEALINGS IN THE LICENSED WORK.
