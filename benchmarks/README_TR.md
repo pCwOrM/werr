@@ -1,7 +1,7 @@
 # ⚔️ The Zero-VRAM Gauntlet: Resmi Kıyaslama Duvarı ve Büyük Meydan Okuma
 
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
-[![JevBench Dünya Rekoru](https://img.shields.io/badge/JevBench%20Rekoru-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
+[![JevBench Açık Set](https://img.shields.io/badge/JevBench%20(A%C3%A7%C4%B1k%20Set)-81.65%20(Kendi%20Ko%C5%9Fumuz)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
 [![Tau-Bench](https://img.shields.io/badge/Tau--Bench-10%2F10%20Ge%C3%A7ti-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-27.8x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
@@ -99,9 +99,9 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 
 ---
 
-### 2. ⚖️ JevBench Dünya Rekoru ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
+### 2. ⚖️ JevBench Değerlendirmesi (Açık Test Setinde Kendi Koşumuz) ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
 * **Kapsam:** Tip-güvenli şema sözleşmelerini (`noul`, `choice`, `score`) denetleyen RFC uyumlu REST tel formatı protokolü (`POST /v1/systemone`).
-* **Hız:** **0.40 ms karar icrası** (#1 Dünya Rekoru).
+* **Hız:** **0.40 ms karar icrası** (Açık test seti kendi koşumuz; resmî değerlendirme sürecindedir).
 * **Bellek:** Belleğe yüklenen ağırlık kütüğü: **0 MB**.
 * **Canlı Ağ:** [`answerr`](https://github.com/pCwOrM/answerr) ikili bilişsel REST API'si (`api.answerr.me:4431`) üzerinden test edilmiştir.
 

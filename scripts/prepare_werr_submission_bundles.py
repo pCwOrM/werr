@@ -52,7 +52,7 @@ This open-science research package presents the complete theoretical framework, 
   <li><strong>Formal Domain Projector (&Phi;<sub>D</sub>) &amp; Non-Linear Boundary Necessity:</strong> Maps operational state dictionaries to complex coordinate perturbations. Ablation benchmarks demonstrate that passing state projections through &part;M lifts macro-accuracy from 63.8% (linear baseline) to 92.6% (+28.8% absolute gain; 95% Wilson CI: [90.8%, 94.1%]).</li>
   <li><strong>Information-Theoretic Acoustic Damping Filter (T<sub>desc</sub> = 0.045):</strong> Grounds decision robustness in token entropy and phonetic spectral density. High-entropy decoy filler is attenuated by 95.5%, yielding a 0.0% exploit bypass rate against targeted prompt-injection attacks (95% Wilson CI: [0.0%, 30.8%]).</li>
   <li><strong>Dynamical Trajectory Pruning (2.5&times; Speedup):</strong> Basin stabilization reduces mean escape loop iterations by 45.8% (K: 42.6 &rarr; 23.1), accelerating inference throughput from 8.41 ms to 3.31 ms median latency on commodity CPU hardware.</li>
-  <li><strong>JevBench World #1 Verification:</strong> Validated on the independent JevBench benchmark suite (Issue #10) with an 81.65% score, outperforming dense 4B models while requiring 0 Bytes VRAM.</li>
+  <li><strong>JevBench Benchmark Evaluation:</strong> Evaluated on the independent JevBench public test split (Issue #10) with an 81.65% self-run score, outperforming dense 4B models while requiring 0 Bytes VRAM.</li>
   <li><strong>Open Telemetry &amp; Production API:</strong> Backed by an open-science corpus of 1,150+ verified decisions (3,200+ evaluated questions) across 30+ domains and a drop-in OpenAI-compatible API endpoint (<code>/v1/chat/completions</code>) at <code>api.answerr.me:4431</code>.</li>
 </ol>
 
@@ -69,7 +69,7 @@ This open-science research package presents the complete theoretical framework, 
   <li><strong>Source Code Repository:</strong> <a href="https://github.com/pCwOrM/werr" target="_blank" rel="noopener">https://github.com/pCwOrM/werr</a></li>
   <li><strong>Cognitive Web Platform:</strong> <a href="https://answerr.me" target="_blank" rel="noopener">https://answerr.me</a></li>
   <li><strong>Production Telemetry API:</strong> <a href="https://api.answerr.me:4431/v1/health" target="_blank" rel="noopener">https://api.answerr.me:4431/v1/health</a></li>
-  <li><strong>JevBench World #1 Verification:</strong> <a href="https://github.com/fstandhartinger/jevbench/issues/10" target="_blank" rel="noopener">Issue #10</a></li>
+  <li><strong>JevBench Benchmark Evaluation:</strong> <a href="https://github.com/fstandhartinger/jevbench/issues/10" target="_blank" rel="noopener">Issue #10</a></li>
 </ul>
 
 <p><strong>License:</strong> Creative Commons Attribution 4.0 International (CC-BY-4.0)</p>

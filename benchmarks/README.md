@@ -1,7 +1,7 @@
 # ⚔️ The Zero-VRAM Gauntlet: Official Benchmark Suite & Showdown
 
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
-[![JevBench World Record](https://img.shields.io/badge/JevBench%20Record-%231%20(0.40%20ms)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
+[![JevBench Public Split](https://img.shields.io/badge/JevBench%20(Public%20Split)-81.65%20(Self--Run)-brightgreen.svg)](https://github.com/fstandhartinger/jevbench/issues/10)
 [![Farama Gymnasium RL](https://img.shields.io/badge/Gymnasium%20Snake-0%20VRAM%20%7C%201.8%20ms-brightgreen.svg)](https://github.com/mizorewww/laya-mlx/issues/3)
 [![Tau-Bench Pass](https://img.shields.io/badge/Tau--Bench-10%2F10%20Passed-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Jevenator 2 Vision](https://img.shields.io/badge/Jevenator%202-27.8x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
@@ -111,9 +111,9 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 
 ---
 
-### 2. ⚖️ JevBench World Record ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
+### 2. ⚖️ JevBench Evaluation (Self-Run on Public Split) ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
 * **Scope:** RFC-compliant REST wire protocol (`POST /v1/systemone`) validating structured type contracts (`noul`, `choice`, `score`).
-* **Velocity:** **0.40 ms execution latency** (#1 World Record).
+* **Velocity:** **0.40 ms execution latency** (Public Split self-run; pending official evaluation).
 * **Memory:** **0 MB weight files** loaded into memory.
 * **Live Gateway:** Evaluated via [`answerr`](https://github.com/pCwOrM/answerr) dual-cognition REST API (`api.answerr.me:4431`).
 

@@ -297,7 +297,7 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
    Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
 
 2. **Makine-Yerel Refleks Motoru ve Kıyaslama Paketleri (Bu Depo):** [`werr`](https://github.com/pCwOrM/werr)  
-   Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız dünya rekoru kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2) sunar.
+   Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench, Jevenator 2) sunar.
 
 3. **İkili Bilişsel Üretim Platformu ve REST Ağ Geçidi:** [`answerr`](https://github.com/pCwOrM/answerr)  
    `werr` Sistem-1 omurilik reflekslerini Google Gemini Flash Sistem-2 müzakeresiyle birleştiren, `POST /v1/systemone` ve `/v1/decide` uç noktalarını sunan tam yığın üretim platformu ([answerr.me](https://answerr.me), `api.answerr.me:4431`).
