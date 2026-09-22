@@ -354,6 +354,7 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 Bu yazılım ve refleks karar algoritmaları **[Business Source License 1.1 (BSL 1.1)](LICENSE)** altında lisanslanmıştır.  
 - **Akademik, Eğitim ve Bilimsel Araştırma:** Kâr amacı gütmeyen araştırmalar, üniversite eğitimi, açık kaynak öğrenci katkıları ve akademik kıyaslamalar için tamamen ücretsiz ve açıktır.
 - **Ticari ve Kurumsal Kullanım:** Kodların ticari bir ürün, SaaS platformu veya ücretli bulut API servisi olarak sunulması; **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** & Volkan Dağlı'dan resmi Ticari Lisans (Enterprise License) alınmasını gerektirir.
+- **Patent Koruması:** Prosedürel karar algoritmaları **TÜRKPATENT TR 2026/016285** patent başvurusu ile korunmaktadır.
 - **Dönüşüm Tarihi:** **01.01.2030** tarihinde bu yazılım otomatik olarak **Apache License, Version 2.0** açık kaynak lisansına dönüşecektir.
-- **Ticari İletişim:** Resmi kurumsal kanallar veya [answerr.me](https://answerr.me) üzerinden iletişime geçebilirsiniz.
+- **Kurumsal İletişim & Lisanslama:** **ITouch Bilişim Sistemleri Ltd. Şti.** (MERSİS: `0469094455800001`, VKN: `4690944558`, Sanayi Sicil: `827254`) &bull; E-Posta: [info@itouch.com.tr](mailto:info@itouch.com.tr) &bull; KEP: `itouchbilisim@hs01.kep.tr` &bull; [answerr.me](https://answerr.me).
 
