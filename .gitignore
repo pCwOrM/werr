@@ -37,6 +37,9 @@ tests/*
 *.env
 
 private_archive_paper2/
+private_archive_rsa/
+*rsa*
+
 
 # TÜRKPATENT Local Administrative Submissions & Applicant Receipts
 turkpatent_hazirlik/
@@ -47,3 +50,4 @@ turkpatent_hazirlik/
 # Zenodo local packaging bundle build files
 zenodo_preprint_package/
 zenodo_bundle_orbital_error_dynamics.zip
+scratch/

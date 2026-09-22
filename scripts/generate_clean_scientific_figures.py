@@ -435,29 +435,29 @@ def generate_fig7():
     # Run a quick 5-seed benchmark extraction for authentic plotting
     sys.path.append(os.path.abspath('experiments'))
     from simulate_oed_rigorous import run_multi_seed_evaluation
-    bench = run_multi_seed_evaluation(n_seeds=5, epochs=40)
+    bench = run_multi_seed_evaluation(n_seeds=5, epochs=50)
     
     # 1. Panel A: Training Loss Convergence Curve (Mean +/- Std)
-    epochs = np.arange(1, 41)
-    base_mean = np.mean(bench['base_hist'][:, :40], axis=0)
-    base_std = np.std(bench['base_hist'][:, :40], axis=0)
-    oed_mean = np.mean(bench['oed_hist'][:, :40], axis=0)
-    oed_std = np.std(bench['oed_hist'][:, :40], axis=0)
+    epochs = np.arange(1, 51)
+    base_mean = np.mean(bench['base_hist'][:, :50], axis=0)
+    base_std = np.std(bench['base_hist'][:, :50], axis=0)
+    oed_mean = np.mean(bench['oed_hist'][:, :50], axis=0)
+    oed_std = np.std(bench['oed_hist'][:, :50], axis=0)
     
-    ax1.plot(epochs, base_mean, color='#2980b9', lw=2.2, label='Standard Logistic Reg.')
+    ax1.plot(epochs, base_mean, color='#2980b9', lw=2.2, label='Standard GLM Baseline')
     ax1.fill_between(epochs, base_mean - base_std, base_mean + base_std, color='#2980b9', alpha=0.18)
     
     ax1.plot(epochs, oed_mean, color='#27ae60', lw=2.2, label='OED (Zero-Storage)')
     ax1.fill_between(epochs, oed_mean - oed_std, oed_mean + oed_std, color='#27ae60', alpha=0.18)
     
-    ax1.set_title("(a) Training Loss Convergence\n(5-Seed Mean $\\pm$ 1 Std Dev)", fontsize=11, fontweight='bold', color='#1a252f')
+    ax1.set_title("(a) Training Loss Convergence\n(5-Seed Mean $\\pm$ 1 Std Dev, T=50)", fontsize=11, fontweight='bold', color='#1a252f')
     ax1.set_xlabel("Optimization Epoch", fontsize=10)
     ax1.set_ylabel("Binary Cross-Entropy Loss", fontsize=10)
     ax1.legend(loc='upper right', fontsize=9)
     ax1.grid(True, linestyle=':', alpha=0.4)
     
-    # 2. Panel B: Clean vs Adversarial/Noisy Test Accuracy
-    labels = ['Clean Test', 'Toxin / Noise Attack']
+    # 2. Panel B: Clean vs Distribution Shift (Noise) Test Accuracy
+    labels = ['Clean Test', 'Distribution Shift\n(Noise Perturbation)']
     base_scores = [bench['baseline_test'][0], bench['baseline_noisy'][0]]
     base_errs = [bench['baseline_test'][1], bench['baseline_noisy'][1]]
     oed_scores = [bench['oed_test'][0], bench['oed_noisy'][0]]
@@ -467,12 +467,12 @@ def generate_fig7():
     width = 0.32
     
     rects1 = ax2.bar(x - width/2, base_scores, width, yerr=base_errs, capsize=4, 
-                     label='Standard Baseline', color='#3498db', edgecolor='#2471a3', lw=1.2)
+                     label='Standard GLM Baseline', color='#3498db', edgecolor='#2471a3', lw=1.2)
     rects2 = ax2.bar(x + width/2, oed_scores, width, yerr=oed_errs, capsize=4, 
-                     label='OED + CD4+ Shield', color='#2ecc71', edgecolor='#1e8449', lw=1.2)
+                     label='OED (Zero-Storage)', color='#2ecc71', edgecolor='#1e8449', lw=1.2)
                      
     ax2.set_ylabel("Generalization Accuracy (%)", fontsize=10)
-    ax2.set_title("(b) Generalization & Adversarial Robustness\n(80/20 Train/Test Split)", fontsize=11, fontweight='bold', color='#1a252f')
+    ax2.set_title("(b) Clean vs Distribution Shift Generalization\n(80/20 Train/Test Split, Zero Leakage)", fontsize=11, fontweight='bold', color='#1a252f')
     ax2.set_xticks(x)
     ax2.set_xticklabels(labels, fontsize=10, fontweight='bold')
     ax2.set_ylim(0, 105)

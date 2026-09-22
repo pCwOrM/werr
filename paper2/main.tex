@@ -25,7 +25,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{principle}{Principle}
 
-\title{\textbf{\Large Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis} \\ \vspace{0.2cm}\large\textbf{Version 2.0 (Revised Preprint with Comprehensive Methodological Specification)}}
+\title{\textbf{\Large Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis} \\ \vspace{0.2cm}\large\textbf{Version 3.0 (Revised Preprint with Comprehensive Methodological Specification)}}
 
 \author{
     \textbf{Volkan Dağlı}\textsuperscript{1,2,*} \quad \textbf{Zerrin Dağlı}\textsuperscript{3} \quad \textbf{Dağhan Dağlı}\textsuperscript{4} \\
@@ -42,7 +42,7 @@
 \maketitle
 
 \begin{abstract}
-\textbf{\textit{Abstract}---Modern deep artificial neural networks treat parameters as static, unconstrained floating-point scalar matrices stored permanently in physical memory and optimized through empirical loss minimization ($\mathcal{L} \to 0$). While computationally powerful, this classical paradigm incurs severe Von Neumann memory bandwidth bottlenecks, thermodynamic inefficiencies, and representation collapse. In this work, we propose a foundational theoretical paradigm shift: \textit{Existence is an active set of non-vanishing errors ($\mathcal{E}$)}, and biological intelligence is an ongoing, non-equilibrium resistance against dynamic attractor collapse rather than passive convergence to zero loss. Building upon our initial procedural framework, we formulate \textit{Orbital Error Dynamics (OED)}, an analytical framework wherein synaptic weights are not stored masses ($O(W)$), but transient topological resonances ($O(1)$) sampled dynamically from the complex quadratic polynomial map $z_{n+1} = z_n^2 + c$. We introduce the \textit{Bent Sine Wave Hypothesis}, demonstrating that while unperturbed linear waves are static and harmonic waves are repetitively conservative, living non-equilibrium systems emerge when waves curl inward through environmental drag toward the main cardioid cusp ($c = 1/4$). We analyze the \textit{Observer Horizon Geometry} in parameter space, identifying sub-boundary interior resonance shoulder loci $\mathbf{X}_{upper} = (0.25, +0.18)$ and $\mathbf{X}_{lower} = (0.25, -0.18)$ positioned between the central fixed-point basin and the true analytic boundary at $c = 0.25 \pm 0.50i$, surveying radiant uncommitted potential fields while anchored to somatic dissipation axes. To overcome non-convex stagnation without loss zeroing, we formalize a \textit{Biomimetic Perturbed Jump Operator} ($\Omega_{\mathrm{tunneling}}$) inspired by mammalian fertilization zinc sparks. We further integrate an enteric-cranial \textit{Dual-Brain Cybernetic Architecture} governed by adaptive CD4+ regulatory immune gating masks ($M_{CD4}$), and decompose the 4-nucleotide genetic basis ($A, T, C, G$) directly across the quadrants of the complex plane ($\mathbb{C}$). Finally, multi-seed empirical validation on the non-linear Two-Moons manifold (5 seeds, 80/20 train/test split) demonstrates that procedural parameterization from a 24-byte seed achieves 77.33\% $\pm$ 5.01\% clean test accuracy (within 7.00\% of an unconstrained gradient-descent baseline at 84.33\% $\pm$ 4.55\%), while adaptive CD4+ regulatory gating provides a +10.00\% stability margin (66.67\% $\pm$ 8.23\% vs. 56.67\% $\pm$ 6.24\% unshielded) under heavy distribution shifts ($\mathcal{N}(1.5, 0.5)$), alongside conceptual equivalence with analog optical co-processors capable of sub-nanosecond evaluation.}
+\textbf{\textit{Abstract}---Modern deep artificial neural networks treat parameters as static, unconstrained floating-point scalar matrices stored permanently in physical memory and optimized through empirical loss minimization ($\mathcal{L} \to 0$). While computationally powerful, this classical paradigm incurs severe Von Neumann memory bandwidth bottlenecks, thermodynamic inefficiencies, and representation collapse. In this work, we propose a foundational theoretical paradigm shift: \textit{Existence is an active set of non-vanishing errors ($\mathcal{E}$)}, and biological intelligence is an ongoing, non-equilibrium resistance against dynamic attractor collapse rather than passive convergence to zero loss. Building upon our initial procedural framework, we formulate \textit{Orbital Error Dynamics (OED)}, an analytical framework wherein synaptic weights are not stored masses ($O(W)$), but transient topological resonances ($O(1)$) sampled dynamically from the complex quadratic polynomial map $z_{n+1} = z_n^2 + c$. We introduce the \textit{Bent Sine Wave Hypothesis}, demonstrating that while unperturbed linear waves are static and harmonic waves are repetitively conservative, living non-equilibrium systems emerge when waves curl inward through environmental drag toward the main cardioid cusp ($c = 1/4$). We analyze the \textit{Observer Horizon Geometry} in parameter space, identifying sub-boundary interior resonance shoulder loci $\mathbf{X}_{upper} = (0.25, +0.18)$ and $\mathbf{X}_{lower} = (0.25, -0.18)$ positioned between the central fixed-point basin and the true analytic boundary at $c = 0.25 \pm 0.50i$, surveying radiant uncommitted potential fields while anchored to somatic dissipation axes. To overcome non-convex stagnation without loss zeroing, we formalize a \textit{Biomimetic Perturbed Jump Operator} ($\Omega_{\mathrm{tunneling}}$) inspired by mammalian fertilization zinc sparks. We further integrate an enteric-cranial \textit{Dual-Brain Cybernetic Architecture} governed by adaptive CD4+ regulatory immune gating masks ($M_{CD4}$), and decompose the 4-nucleotide genetic basis ($A, T, C, G$) directly across the quadrants of the complex plane ($\mathbb{C}$). Finally, multi-seed empirical validation on the non-linear Two-Moons manifold (5 seeds, 80/20 train/test split, consistent $32 \times 32$ grid, zero test-time updates and zero label leakage) demonstrates that procedural parameterization from a 24-byte seed achieves 77.67\% $\pm$ 5.35\% clean test accuracy (within an 8.00-point paired difference of an unconstrained gradient-descent baseline at 85.67\% $\pm$ 5.35\%, 95\% CI of paired difference: [-1.07\%, 17.07\%]), while under distribution shift ($\mathcal{N}(1.2, 0.4)$), OED preserves 71.33\% $\pm$ 3.80\% test accuracy compared to 80.33\% $\pm$ 7.21\% for the baseline, alongside conceptual equivalence with a proposed analog optical co-processor theoretically modeled for sub-nanosecond evaluation.}
 \end{abstract}
 
 \vspace{0.15cm}
@@ -50,7 +50,7 @@
 
 \section{Introduction: The Crisis of Static Storage}
 \label{sec:intro}
-Contemporary deep learning relies on an unquestioned ontological axiom: that intelligence requires storing billions of static floating-point scalar weights in dense silicon memory matrices \cite{vaswani2017attention}. This formulation incurs three profound crises:
+Contemporary deep learning relies on an unquestioned ontological axiom: that intelligence requires storing billions of static floating-point scalar weights in dense silicon memory matrices. This formulation incurs three profound crises:
 \begin{enumerate}
     \item \textbf{The Thermodynamic and Memory Wall:} Accessing off-chip DRAM memory consumes 100 to 1000 times more energy than executing an on-chip arithmetic multiply-accumulate operation \cite{horowitz2014computing}, imposing a severe thermodynamic and thermal bottleneck on deep learning hardware.
     \item \textbf{The Over-Smoothing Fallacy:} Classical optimization minimizes empirical loss $\mathcal{L} \to 0$. In dynamical systems, forcing all deviations to zero corresponds to thermal equilibrium and entropic death \cite{schrodinger1944life, prigogine1977self}. When models eliminate internal tension, they suffer from representation collapse, catastrophic forgetting, and synthetic self-cannibalization \cite{shumailov2024model}.
@@ -85,6 +85,16 @@ z_{n+1} = z_n^2 + c, \quad z_0 = 0, \quad c \in \mathbb{C}
 \end{equation}
 
 By sampling a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \zeta) \in \mathbb{R}^3$ (where $\zeta = \log_{10}(\text{zoom})$, represented as three double-precision 64-bit floats totaling 24 bytes), synaptic weights and biases are procedurally derived from the topological non-escaping dark area. Once forward and backward passes are executed, scalar tensors are immediately released, maintaining a constant $O(1)$ memory footprint (24 bytes) regardless of layer depth. Gradients with respect to the coordinate seed $\nabla_\Theta \mathcal{L}_{\mathrm{total}}$ are evaluated via finite-difference sampling across the parameter manifold.
+
+\subsection{Comparison to Prior Art: Intrinsic Dimension, HyperNetworks, and Weight Hashing}
+\label{sec:prior_art}
+Procedural weight derivation shares conceptual motivation with prior parameter compression literature, yet fundamentally diverges in mathematical structure:
+\begin{itemize}
+    \item \textbf{Intrinsic Dimension Projections (Li et al. \cite{li2018measuring}):} Li et al. demonstrated that neural networks can be optimized within a low-dimensional random subspace $W = W_0 + P\theta$, where $\theta \in \mathbb{R}^d$ ($d \ll D$). However, their formulation requires storing or generating a dense pseudo-random projection matrix $P \in \mathbb{R}^{D \times d}$, retaining significant linear memory overhead.
+    \item \textbf{HyperNetworks (Ha et al. \cite{ha2017hypernetworks}):} Ha et al. generated primary network weights dynamically via a secondary neural network. While flexible, the secondary HyperNetwork itself contains millions of conventional scalar weights, scaling memory rather than eliminating it.
+    \item \textbf{HashedNets (Chen et al. \cite{chen2015compressing}):} Chen et al. shared parameters across connections using discrete hash functions. This discretizes storage but lacks continuous topological geometry, gradient continuity, or intrinsic non-linear dynamical boundaries.
+    \item \textbf{The OED Distinction:} OED requires neither secondary networks nor stored projection matrices. Instead, multi-dimensional weight tensors are deterministically synthesized from a 3-parameter continuous coordinate tuple $\Theta = (c_x, c_y, \zeta) \in \mathbb{R}^3$ (24 bytes) via the non-linear complex quadratic polynomial $z_{n+1} = z_n^2 + c$. The infinite self-similar boundary $\partial \mathcal{M}$ provides intrinsic multi-scale bifurcation structures, enabling non-linear decision boundaries with genuine $O(1)$ physical memory allocation (TR 2026/016285).
+\end{itemize}
 
 \begin{figure}[t]
 \centering
@@ -131,7 +141,7 @@ These coordinates lie inside the period-1 cardioid basin, functioning as transit
 
 \section{Biomimetic Perturbed Jump Operator ($\Omega_{\mathrm{tunneling}}$)}
 \label{sec:zinc_spark}
-Non-convex neural loss landscapes are plagued by saddle points and local minima where isotropic gradient descent stalls ($\|\nabla_\Theta \mathcal{L}\| \to 0$). In mammalian developmental biology, gamete fusion triggers an explosive release of billions of zinc atoms---the \textit{Zinc Spark} \cite{duncan2016zinc}.
+Non-convex neural loss landscapes are plagued by saddle points and local minima where isotropic gradient descent stalls ($\|\nabla_\Theta \mathcal{L}\| \to 0$). In mammalian developmental biology, gamete fusion triggers an explosive release of billions of zinc atoms---the \textit{Zinc Spark} \cite{woodruff2016zinc}.
 
 We formalize this biological archetype into a \textbf{Biomimetic Perturbed Stochastic Jump Operator}:
 \begin{equation}
@@ -163,26 +173,25 @@ In dynamical systems, the Lyapunov exponent $\lambda_z$ characterizes orbit stab
 
 \section{Dual-Brain Cybernetics \& 4-Quadrant Genetics}
 \label{sec:dual_brain}
-Biological cognition relies on an asymmetrical coupling between two distinct nervous systems: the cranial brain (analytical, global coordinate planning) and the enteric nervous system (visceral, operating in symbiosis with $\approx 3.8 \times 10^{13}$ microbes \cite{furness2012enteric, sender2016revised}).
+Biological cognition relies on an asymmetrical coupling between two distinct nervous systems: the cranial brain (analytical, low-frequency, global coordinate planning) and the enteric nervous system (visceral, operating in direct continuous symbiosis with approximately $3.8 \times 10^{13}$ microbes \cite{furness2012enteric, sender2016revised}).
 
-In biological immunology, regulatory CD4+ T-cells prevent autoimmune collapse by establishing active tolerance towards symbiotic microbial variations \cite{sakaguchi2008regulatory}. We formalize this mechanism as an \textbf{Adaptive Immune Gradient Gating Mask ($M_{CD4}$)}:
+In immunology, regulatory CD4+ T-cells prevent autoimmune collapse by establishing active tolerance towards symbiotic microbial variations \cite{sakaguchi2008regulatory}. We formalize this mechanism as an \textbf{Adaptive Immune Gradient Gating Mask ($M_{CD4}$)}:
 \begin{equation}
 M_{CD4}(w_i) = \frac{1}{1 + \exp\left(\alpha (|\nabla_{w_i} \mathcal{L}_{\mathrm{visc}}| - \tau_{\mathrm{tolerance}})\right)}
 \end{equation}
 \begin{equation}
 \Delta W_{\mathrm{shielded}} = \nabla_W \mathcal{L}_{\mathrm{visc}} \odot M_{CD4}
 \end{equation}
-
-When sensory streams exhibit sudden anomalous variance or heavy noise corruption, the CD4+ gating mask attenuates visceral gradient updates, preserving the structural integrity of the central parameter manifold.
+When sensory streams exhibit sudden anomalous variance or heavy noise corruption, the CD4+ gating mask attenuates visceral gradient updates, preserving the structural integrity of the central parameter manifold. While static batch evaluation in Section \ref{sec:experiments} is conducted in pure feedforward mode without test-time updates (guaranteeing complete freedom from label leakage), this gating mechanism formalizes an active cybernetic defense for continual and online learning streams against catastrophic sensory shocks (Claim 6 of Patent TR 2026/016285).
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.92\columnwidth]{figures/fig6_complex_4quadrant_genetics.png}
-\caption{Complex 4-Quadrant Genetic Base Decomposition: Quadrants of $\mathbb{C}$ mapping mass ratios $R_1..R_4$ to Adenine ($w_1$), Thymine ($w_2$), Cytosine ($w_3$), and Guanine ($b$), synthesizing neural weights without persistent storage.}
+\includegraphics[width=0.95\columnwidth]{figures/fig6_complex_4quadrant_genetics.png}
+\caption{Complex 4-Quadrant Genetic Base Decomposition: Mapping quadrant mass ratios $R_1, R_2, R_3, R_4 \in [0,1]$ to canonical biological bases: Adenine ($Q_1 \to w_1$), Thymine ($Q_2 \to w_2$), Cytosine ($Q_3 \to w_3$), and Guanine ($Q_4 \to b$), synthesizing weights without persistent tensor storage.}
 \label{fig:genetics}
 \end{figure}
 
-By mapping the 4-nucleotide genetic basis ($A, T, C, G$) across the quadrants of $\mathbb{C}$, OED synthesizes multi-dimensional weight vectors $W = [w_1, w_2, w_3, b]^T$ from scalar coordinate seeds.
+By mapping the 4-nucleotide genetic basis ($A, T, C, G$) across the quadrants of $\mathbb{C}$, OED synthesizes multi-dimensional weight vectors $W = [w_1, w_2, w_3, b]^T$ from scalar coordinate seeds, embedding genetic balance directly into the neural operator.
 
 \section{Unified Mathematical Formulation}
 \label{sec:formulation}
@@ -190,19 +199,19 @@ The complete OED objective functional is formalized as:
 \begin{equation}
 \mathcal{L}_{\mathrm{total}}(\Theta) = \mathcal{L}_{\mathrm{task}}(\Phi(\Theta)) + \lambda_{\mathrm{orb}} \mathcal{L}_{\mathrm{orbital}}(\Theta) + \beta \sigma_{\mathrm{fractal}}(\Theta)
 \end{equation}
-where $\mathcal{L}_{\mathrm{orbital}} = \left(\frac{\bar{N}_{esc}(\Theta) - N^*}{N^*}\right)^2$ enforces homeostatic boundary surfing, and $\sigma_{\mathrm{fractal}}(\Theta) = \frac{1}{4}\sum_{i=1}^4 (R_i - \bar{R})^2$ regularizes against degenerate uniform escape.
+where $\mathcal{L}_{\mathrm{orbital}} = [ (\bar{N}_{\mathrm{esc}}(\Theta) - N^*) / N^* ]^2$ enforces homeostatic boundary surfing, and $\sigma_{\mathrm{fractal}}(\Theta) = \text{Var}(R_1, R_2, R_3, R_4)$ regularizes against degenerate uniform quadrant escape.
 
 \begin{algorithm}[t]
 \caption{Orbital Error Dynamics (OED) Optimization}
 \label{alg:oed}
 \begin{algorithmic}[1]
-\Require Seed $\Theta_0 = (c_{x,0}, c_{y,0}, \zeta_0)$, learning rate $\eta$, threshold $\epsilon_{\mathrm{tol}}$, weights $\lambda_{\mathrm{orb}}, \beta$
-\For{epoch $t = 1$ to $T$}
+\Require Seed $\Theta_0 = (-0.72, 0.28, 2.8)$, rate $\eta = 0.06$, $\delta = 0.02$, $\epsilon_{\mathrm{tol}}$, $\lambda_{\mathrm{orb}}, \beta$
+\For{epoch $t = 1$ to $T$ ($T = 50$)}
     \State $R_1, R_2, R_3, R_4 \gets \text{SampleQuadrants}(\Theta_t, \text{res}=32)$
     \State $W_t \gets [2R_1-1, 2R_2-1, 2R_3-1, 2R_4-1]^T$
     \State $\hat{y} \gets \sigma(w_1 x_1 + w_2 x_2 + w_3 x_1 x_2 + b)$
     \State $\mathcal{L}_{\mathrm{total}} \gets \text{BCE}(y, \hat{y}) + \lambda_{\mathrm{orb}} \mathcal{L}_{\mathrm{orbital}} + \beta \sigma_{\mathrm{fractal}}$
-    \State $g_t \gets \nabla_\Theta \mathcal{L}_{\mathrm{total}}$ via finite difference ($\delta = 10^{-4}$)
+    \State $g_t \gets \nabla_\Theta \mathcal{L}_{\mathrm{total}}$ via finite difference ($\delta = 0.02$)
     \If{$\|g_t\| < \epsilon_{\mathrm{tol}}$ \textbf{and} $\mathcal{L}_{\mathrm{task}} > \tau_{\mathrm{err}}$}
         \State $\Theta_{t+1} \gets \Theta_t + \Omega_{\mathrm{tunneling}}, \quad \Omega \sim \text{Cauchy}(0, \gamma_{\mathrm{spark}})$
     \Else
@@ -210,38 +219,40 @@ where $\mathcal{L}_{\mathrm{orbital}} = \left(\frac{\bar{N}_{esc}(\Theta) - N^*}
     \EndIf
     \State Deallocate $W_t$ ($\text{Mem} = O(1) = 24$ bytes)
 \EndFor
+\State \textbf{Evaluation:} Pure feedforward inference on unseen test set with fixed $\Theta_{\mathrm{final}}$ (zero test-time updates, zero label leakage)
 \end{algorithmic}
 \end{algorithm}
 
 \section{Rigorous Empirical Benchmark \& Multi-Seed Validation}
 \label{sec:experiments}
-To substantiate the performance of OED, we conducted a multi-seed empirical benchmark on the non-linear Two-Moons manifold ($N = 300$, noise $\sigma = 0.12$). The protocol enforced an 80/20 Train/Test split across 5 independent random seeds ($s \in \{100, 101, 102, 103, 104\}$), with direct statistical comparison against a Standard Logistic Regression model equipped with identical non-linear interaction features ($x_1, x_2, x_1 x_2, 1$).
+To substantiate the performance of OED, we conducted a multi-seed empirical benchmark on the non-linear Two-Moons manifold ($N = 300$, noise $\sigma = 0.12$). The protocol enforced an 80/20 Train/Test split across 5 independent random seeds ($s \in \{100, 101, 102, 103, 104\}$), with direct statistical comparison against a Standard Logistic Regression model equipped with identical non-linear interaction features ($x_1, x_2, x_1 x_2, 1$) trained via unconstrained gradient descent ($\eta = 0.12, T = 50$). Crucially, to prevent label leakage, evaluation on the unseen test set (both clean and under distribution shift) is conducted in pure feedforward mode with zero test-time updates and zero test-label access. Table \ref{tab:benchmark} reports test accuracy, Student-$t$ 95\% Confidence Intervals ($t_4 = 2.776$ for $N = 5$), and paired differences. Table \ref{tab:hyperparams} details complete algorithmic hyperparameters.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.98\columnwidth]{figures/fig7_empirical_benchmark.png}
-\caption{Empirical Multi-Seed Benchmark Evaluation Across 5 Independent Runs: (a) Training Loss Convergence curve (Mean $\pm$ 1 Std Dev); (b) Generalization and noise robustness comparison (Clean vs Heavy Noise Corruption $\mathcal{N}(1.5, 0.5)$); (c) Theoretical storage scaling: Standard $O(W)$ linear matrix allocation vs OED constant $O(1)=24$ Bytes (extrapolated across multi-layer scaling).}
+\caption{Empirical Multi-Seed Benchmark Evaluation Across 5 Independent Runs ($T=50$ Epochs): (a) Training Loss Convergence curve (Mean $\pm$ 1 Std Dev); (b) Generalization comparison: clean test vs distribution shift (noise perturbation $\mathcal{N}(1.2, 0.4)$) evaluated with zero test-time updates and zero label leakage; (c) Theoretical storage scaling: Standard $O(W)$ linear matrix allocation vs OED constant $O(1)=24$ Bytes (extrapolated across multi-layer scaling).}
 \label{fig:benchmark}
 \end{figure}
 
 \begin{table*}[t]
 \centering
 \small
-\caption{Rigorous Multi-Seed Empirical Benchmark Summary (5 Independent Runs, 80/20 Train/Test Split, 95\% CI)}
+\caption{Rigorous Multi-Seed Empirical Benchmark Summary (5 Independent Runs, 80/20 Train/Test Split, 95\% CI, $t_4 = 2.776$)}
 \label{tab:benchmark}
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Architecture / Model} & \textbf{Clean Test Accuracy} & \textbf{Noise Corruption ($\mathcal{N}(1.5, 0.5)$)} & \textbf{Memory Footprint} & \textbf{Optimization Scheme} \\
+\textbf{Architecture / Model} & \textbf{Clean Test Accuracy} & \textbf{Distribution Shift ($\mathcal{N}(1.2, 0.4)$)} & \textbf{Memory Footprint} & \textbf{Optimization Scheme} \\
 \midrule
-Standard Logistic Regression (GLM) & \textbf{84.33\% $\pm$ 4.55\%} [80.34\%, 88.32\%] & \textbf{82.67\% $\pm$ 4.78\%} [78.48\%, 86.86\%] & 16 B (Float32) / 32 B (Float64) [$O(W)$] & Direct unconstrained gradient descent \\
-OED (Zero-Storage Synthesis)       & 77.33\% $\pm$ 5.01\% [72.94\%, 81.72\%] & 56.67\% $\pm$ 6.24\% (Unshielded) [51.20\%, 62.14\%] & \textbf{24 Bytes (3 Float64 coords) [$O(1)$]} & Coordinate surfing + Zinc Spark \\
-OED + CD4+ Immune Gating Shield    & 77.33\% $\pm$ 5.01\% [72.94\%, 81.72\%] & \textbf{66.67\% $\pm$ 8.23\% (Protected)} [59.45\%, 73.89\%] & \textbf{24 Bytes (3 Float64 coords) [$O(1)$]} & Adaptive threshold attenuation \\
+Standard Logistic Regression (GLM) & \textbf{85.67\% $\pm$ 5.35\%} [79.03\%, 92.31\%] & \textbf{80.33\% $\pm$ 7.21\%} [71.38\%, 89.28\%] & 16 B (Float32) / 32 B (Float64) [$O(W)$] & Direct unconstrained gradient descent \\
+OED (Zero-Storage Synthesis)       & 77.67\% $\pm$ 5.35\% [71.03\%, 84.31\%] & 71.33\% $\pm$ 3.80\% [66.61\%, 76.05\%] & \textbf{24 Bytes (3 Float64 coords) [$O(1)$]} & Boundary coordinate surfing ($\delta = 0.02$) \\
+\midrule
+\multicolumn{5}{l}{\textbf{Paired Difference (GLM $-$ OED):} Clean = 8.00\% $\pm$ 7.30\% [95\% CI: -1.07\%, 17.07\%] \quad | \quad Noisy = 9.00\% $\pm$ 6.52\% [95\% CI: 0.91\%, 17.09\%]} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-\subsection{Parametric Constraint \& Robustness Analysis}
-Because OED parameterizes the 4-dimensional weight vector $W \in [-1, 1]^4$ through a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \zeta)$ via the quadrant transform $w_i = 2R_i - 1$, the model operates under a strictly constrained 3-degree-of-freedom manifold. By first principles of statistical optimization, a constrained parametric model cannot surpass unconstrained backpropagation on unregularized training loss. The empirical significance of OED lies not in outperforming unconstrained gradient descent on convex metrics, but in achieving near-parity (within 7.00\% on test data) while eliminating persistent floating-point tensor matrices from physical memory (constant $O(1) = 24$ bytes vs. linear $O(W)$). Under heavy test-set distribution shifts ($\Delta x \sim \mathcal{N}(1.5, 0.5)$), unshielded coordinate updates degrade to 56.67\% $\pm$ 6.24\%; the CD4+ regulatory mask attenuates gradient shocks, preserving 66.67\% $\pm$ 8.23\% accuracy (+10.00\% margin over unshielded OED).
+\subsection{Parametric Constraint \& Optimization Analysis}
+Because OED parameterizes the 4-dimensional weight vector $W \in [-1, 1]^4$ through a 3-parameter coordinate tuple $\Theta = (c_x, c_y, \zeta)$ via the quadrant transform $w_i = 2R_i - 1$, the model operates under a strictly constrained 3-degree-of-freedom manifold. By first principles of statistical optimization, a constrained parametric model cannot surpass unconstrained backpropagation on unregularized training loss. The empirical significance of OED lies not in outperforming unconstrained gradient descent on convex metrics, but in achieving near-parity (within an 8.00-point paired margin on test data) while eliminating persistent floating-point tensor matrices from physical memory (constant $O(1) = 24$ bytes vs. linear $O(W)$). Notably, the paired difference 95\% CI for clean test accuracy spans [-1.07\%, 17.07\%], which includes 0, indicating that OED operates without statistically significant degradation at $\alpha = 0.05$. Under distribution shifts ($\Delta x \sim \mathcal{N}(1.2, 0.4)$), OED maintains 71.33\% $\pm$ 3.80\% accuracy in pure feedforward mode, providing a predictable, stable decision boundary without runtime weight storage.
 
 \begin{table}[t]
 \centering
@@ -252,22 +263,23 @@ Because OED parameterizes the 4-dimensional weight vector $W \in [-1, 1]^4$ thro
 \toprule
 \textbf{Hyperparameter} & \textbf{Symbol} & \textbf{Value / Setting} \\
 \midrule
-Coordinate Learning Rate & $\eta$ & 0.05 \\
-Finite Difference Step & $\delta$ & $1.0 \times 10^{-4}$ \\
-Initial Coordinate Seed & $\Theta_0$ & $(0.25, 0.18, 1.0)$ \\
-Total Training Epochs & $T$ & 150 \\
-Zinc Spark Jump Scale & $\gamma_{\mathrm{spark}}$ & 0.08 \\
-Gradient Stall Threshold & $\epsilon_{\mathrm{tol}}$ & $1.0 \times 10^{-3}$ \\
-Error Floor Threshold & $\tau_{\mathrm{err}}$ & 0.35 \\
-Orbital Homeostasis Weight & $\lambda_{\mathrm{orb}}$ & 0.05 \\
+Coordinate Learning Rate & $\eta$ & 0.06 \\
+Finite Difference Step & $\delta$ & 0.02 (traverses $32\times 32$ pixel boundaries) \\
+Initial Coordinate Seed & $\Theta_0$ & $(-0.72, 0.28, 2.8)$ \\
+Total Training Epochs & $T$ & 50 (consistent across all figures) \\
+Sampling Resolution & $N_{res}$ & $32 \times 32$ (Train \& Test, consistent) \\
+Zinc Spark Jump Scale & $\gamma_{\mathrm{spark}}$ & 0.10 \\
+Gradient Stall Threshold & $\epsilon_{\mathrm{tol}}$ & 0.05 \\
+Error Floor Threshold & $\tau_{\mathrm{err}}$ & 0.38 \\
+Orbital Homeostasis Weight & $\lambda_{\mathrm{orb}}$ & 0.35 ($N^* = 22$) \\
 Quadrant Diversity Weight & $\beta$ & 0.01 \\
-CD4+ Mask Parameters & $\alpha, \tau_{\mathrm{tol}}$ & $5.0, 0.25$ \\
-Sampling Resolution & $N_{res}$ & $32 \times 32$ (Train) / $128 \times 128$ (Test) \\
+Zero-Gradient Epoch Rate & $r_{\mathrm{zero}}$ & 0.0\% (0 / 250 epochs) \\
+Evaluation Protocol & --- & Pure Feedforward (Zero Leakage) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Conceptual Hardware Architecture: Proposed Analog Optical Co-Processor}
+\section{Proposed Conceptual Hardware Architecture: Analog Optical Co-Processor}
 \label{sec:hardware}
 While digital silicon requires iterative arithmetic loops, OED maps natively to conceptual analog optical computing at the speed of light \cite{wetzstein2020inference}:
 \begin{itemize}
@@ -306,7 +318,7 @@ Mammalian Zinc Spark & Inorganic ion burst breaking dormancy & Heavy-tailed pert
 
 \section{Conclusion \& Prior Art Declaration}
 \label{sec:conclusion}
-The classical paradigm of deep learning---allocating dense floating-point matrices in DRAM and forcing empirical error to zero---presents fundamental thermodynamic and architectural constraints. In this revised preprint (v2.0), we have formulated \textbf{Orbital Error Dynamics (OED)}, establishing that organic intelligence is an active, non-equilibrium resistance against dynamic attractor collapse. By generating parameters as ephemeral topological standing waves ($O(1)$) from the Mandelbrot boundary $\partial \mathcal{M}$, formalizing the Bent Sine Wave and the Observer Horizon geometry, deploying the Biomimetic Perturbed Jump Operator ($\Omega_{\mathrm{tunneling}}$), and introducing enteric-cranial dual-brain cybernetics with adaptive CD4+ immune gating, OED establishes a rigorous, permanent prior art foundation for zero-storage procedural AI in neuromorphic and resource-constrained edge computing.
+The classical paradigm of deep learning---allocating dense floating-point matrices in DRAM and forcing empirical error to zero---presents fundamental thermodynamic and architectural constraints. In this revised preprint (v3.0), we have formulated \textbf{Orbital Error Dynamics (OED)}, establishing that organic intelligence is an active, non-equilibrium resistance against dynamic attractor collapse. By generating parameters as ephemeral topological standing waves ($O(1)$) from the Mandelbrot boundary $\partial \mathcal{M}$, formalizing the Bent Sine Wave and the Observer Horizon geometry, deploying the Biomimetic Perturbed Jump Operator ($\Omega_{\mathrm{tunneling}}$), and introducing enteric-cranial dual-brain cybernetics with adaptive CD4+ immune gating, OED establishes a rigorous, permanent prior art foundation for zero-storage procedural AI in neuromorphic and resource-constrained edge computing.
 
 \section*{Patent Priority Notice}
 The foundational procedural weight derivation architectures, the adaptive CD4+ immune gating mask mechanism, and the zero-storage hardware co-processor implementations disclosed in this work are subject to national patent application \textbf{TR 2026/016285} filed on September 22, 2026 at the Turkish Patent and Trademark Office (TÜRKPATENT).

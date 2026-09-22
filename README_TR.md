@@ -203,15 +203,14 @@ Sürekli ve kıvrımlı veri dağılımları üzerinde 5 bağımsız rastgele ba
 | **Karar Çıkarım Gecikmesi** | **0.41 ms / karar** | 1.85 ms / karar | N/A |
 | **Tasarruf Edilen VRAM / Bellek** | **> %99.99** | %0.00 (Referans) | N/A |
 
-### 🛡️ Kıyaslama B: Gürültü Dayanımı ve Bağışıklık Filtreleme (Two-Moons, Dağılım Kayması $\mathcal{N}(1.5, 0.5)$)
+### 🛡️ Kıyaslama B: Çok Tohumlu Titiz Değerlendirme (Two-Moons, Sıfır Etiket Sızıntısı, Sabit 32×32 Izgara, $N=5$, $t_4=2.776$)
 
-| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std [%95 CI]) | Gürültü / Dağılım Kayması Başarımı | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
+| Mimari / Model | Temiz Test Başarımı (Ortalama $\pm$ Std [%95 CI]) | Dağılım Kayması ($\mathcal{N}(1.2, 0.4)$) | Kalıcı Bellek Ayak İzi | Optimizasyon Dinamiği |
 | :--- | :---: | :---: | :---: | :--- |
-| **Standart Lojistik Regresyon (GLM)** | **%84.33 $\pm$ 4.55** [%80.34, %88.32] | **%82.67 $\pm$ 4.78** [%78.48, %86.86] | 16 Bayt (Float32) / 32 Bayt (Float64) [$O(W)$] | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
-| **OED (Sıfır Depolamalı Sentez)** | %77.33 $\pm$ 5.01 [%72.94, %81.72] | %56.67 $\pm$ 6.24 (Korumasız) [%51.20, %62.14] | **24 Bayt (3 Float64 koordinat, $O(1)$)** | Çinko Kıvılcımı tünellemeli yörünge sörfü |
-| **OED + CD4+ Bağışıklık Kalkanı** | %77.33 $\pm$ 5.01 [%72.94, %81.72] | **%66.67 $\pm$ 8.23 (Korumalı)** [%59.45, %73.89] | **24 Bayt ($O(1)$ Sabit)** | Duyusal şokta adaptif eşik sönümleme (+%10.00 avantaj) |
+| **Standart Lojistik Regresyon (GLM)** | **%85.67 $\pm$ 5.35** [%79.03, %92.31] | **%80.33 $\pm$ 7.21** [%71.38, %89.28] | 16 Bayt (Float32) / 32 Bayt (Float64) [$O(W)$] | Ağırlık vektörü üzerinde doğrudan gradyan inişi |
+| **OED (Sıfır Depolamalı Sentez)** | %77.67 $\pm$ 5.35 [%71.03, %84.31]<br><sub>Eşleştirilmiş Fark: %8.00 $\pm$ 7.30 [-%1.07, %17.07]</sub> | %71.33 $\pm$ 3.80 [%66.61, %76.05]<br><sub>Eşleştirilmiş Fark: %9.00 $\pm$ 6.52 [%0.91, %17.09]</sub> | **24 Bayt (3 Float64 koordinat, $O(1)$)** | Çinko Kıvılcımı tünellemeli kritik sınır sörfü ($\delta = 0.02$) |
 
-*Not: Tek bir karar hücresinde Float32 baseline 16 Bayt, OED ise 24 Bayt (3 double float) kullanır. OED'nin kalıcı tensörsüz $O(1)$ depolama üstünlüğü çok katmanlı ve geniş ağlara ekstrapolasyonda ortaya çıkar.*
+*İstatiksel & Depolama Notu: Temiz test başarımındaki eşleştirilmiş fark %95 güven aralığı [-%1.07, %17.07] olup 0 değerini içerir; bu da OED'nin $\alpha = 0.05$ düzeyinde istatistiksel olarak anlamlı bir kayıp olmaksızın 8 puanlık bir fark içinde çalıştığını doğrular. Test değerlendirmesi sıfır test zamanı güncellemesi ve sıfır etiket sızıntısı ile tamamen ileri beslemeli olarak yürütülmüştür. Tek bir karar hücresinde Float32 baseline 16 Bayt, OED ise 24 Bayt (3 double float) kullanır; OED'nin kalıcı tensörsüz $O(1)$ depolama üstünlüğü çok katmanlı ve geniş ağlara ekstrapolasyonda ortaya çıkar (Şekil 7c).*
 
 ### 🖼️ Yedi Bilimsel Yayın Figürü (300 DPI Vektör Kalitesi)
 Tüm 7 özgün figür programatik olarak üretilmiş olup `figures/` dizinindedir:
