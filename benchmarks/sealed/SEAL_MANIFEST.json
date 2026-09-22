@@ -1,0 +1,38 @@
+{
+  "organization": "Werr Research & Neural Synthesis Lab",
+  "project": "Werr System-One Zero-Memory Fractal Decision Engine",
+  "seal_timestamp_utc": "2026-09-22T19:39:19Z",
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 78 Stepping 3, GenuineIntel",
+    "python": "3.11.9",
+    "memory_weights": "0 Bytes VRAM / 0 MB GPU RAM",
+    "boundary_coordinate_footprint": "24 Bytes (cx, cy, zoom)"
+  },
+  "cryptographic_seals": {
+    "benchmark_1_snake": {
+      "file": "benchmark_1_snake_results.json",
+      "sha256": "333814952ad1f8f1b2c25c7749b658dd729503e48dfbea2e9142c9a4f6af5963",
+      "bytes": 1377,
+      "status": "SEALED_AND_VERIFIED"
+    },
+    "benchmark_2_jevbench_final_optimized": {
+      "file": "benchmark_2_jevbench_final_optimized.json",
+      "sha256": "81a33e723dea04ddd40d38b056ff376cd54d2206c0920bb064af03de0bae7c5f",
+      "bytes": 987,
+      "status": "SEALED_AND_VERIFIED"
+    },
+    "benchmark_3_windtunnel_webmcp": {
+      "file": "benchmark_3_windtunnel_webmcp_results.json",
+      "sha256": "06b134dea501216c8888aa5a3cd13e1b68b15beb31987e2c8df6872c4caeffc4",
+      "bytes": 343,
+      "status": "SEALED_AND_VERIFIED"
+    },
+    "benchmark_4_jevenator2": {
+      "file": "benchmark_4_jevenator2_results.json",
+      "sha256": "30111404aac815366afc93b1091f8f07c318f78ded7e56dd61fa18482f02986b",
+      "bytes": 487,
+      "status": "SEALED_AND_VERIFIED"
+    }
+  }
+}

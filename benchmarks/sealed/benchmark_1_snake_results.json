@@ -1,0 +1,50 @@
+{
+  "benchmark": "Snake AI Real-Time Decision Benchmark",
+  "timestamp_utc": "2026-09-22T19:39:16Z",
+  "hardware": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 78 Stepping 3, GenuineIntel",
+    "python_version": "3.11.9",
+    "architecture": "0-Byte Mandelbrot Chaotic Boundary Seed"
+  },
+  "metrics": {
+    "total_steps": 600,
+    "score_food_eaten": 12,
+    "total_elapsed_sec": 1.4565,
+    "throughput_moves_per_sec": 411.94,
+    "safety_interventions": 425,
+    "vram_bytes": 0,
+    "model_parameter_bytes": 24,
+    "latency_percentiles_ms": {
+      "p50_median": 1.319,
+      "p95": 3.314,
+      "mean": 1.6
+    }
+  },
+  "comparisons": {
+    "werr": {
+      "model": "Werr System-One (Fractal Kernel)",
+      "hardware": "Commodity CPU",
+      "vram_mb": 0.0,
+      "latency_p50_ms": 1.319,
+      "moves_per_sec": 411.94,
+      "cost_per_1k": 0.0
+    },
+    "laya_mlx": {
+      "model": "Laya (ModernBERT 421M)",
+      "hardware": "Apple M3 Max",
+      "vram_mb": 943.6,
+      "latency_p50_ms": 13.42,
+      "moves_per_sec": 74.5,
+      "cost_per_1k": 0.0029
+    },
+    "typesafe_jev": {
+      "model": "Jev 1.13.0 API",
+      "hardware": "Cloud LLM Cluster",
+      "vram_mb": 0.0,
+      "latency_p50_ms": 650.0,
+      "moves_per_sec": 3.5,
+      "cost_per_1k": 0.0399
+    }
+  }
+}

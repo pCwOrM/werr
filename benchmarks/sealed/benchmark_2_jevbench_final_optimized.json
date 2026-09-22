@@ -1,0 +1,42 @@
+{
+  "benchmark": "JevBench Dual-Standard Verification (Production Optimized)",
+  "timestamp_utc": "2026-09-22T19:39:17Z",
+  "composite": {
+    "intelligence": 71.24,
+    "calibration": 61.5,
+    "weighted_ece": 0.1925,
+    "speed": 100.0,
+    "cost": 100.0,
+    "jev_score_v12": 81.36,
+    "jev_score_v13": 76.9
+  },
+  "tiers": {
+    "easy": {
+      "total": 48,
+      "correct": 41,
+      "accuracy": 85.42,
+      "ece": 0.1511,
+      "latency_p50_ms": 2.579,
+      "latency_p95_ms": 6.085,
+      "decisions_per_sec": 299.3
+    },
+    "original": {
+      "total": 72,
+      "correct": 65,
+      "accuracy": 90.28,
+      "ece": 0.0824,
+      "latency_p50_ms": 2.441,
+      "latency_p95_ms": 4.388,
+      "decisions_per_sec": 354.3
+    },
+    "hard": {
+      "total": 111,
+      "correct": 52,
+      "accuracy": 46.85,
+      "ece": 0.3146,
+      "latency_p50_ms": 4.516,
+      "latency_p95_ms": 10.734,
+      "decisions_per_sec": 177.5
+    }
+  }
+}

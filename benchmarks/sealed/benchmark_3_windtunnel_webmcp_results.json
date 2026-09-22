@@ -1,0 +1,14 @@
+{
+  "benchmark": "WindTunnel WebMCP Tool Selection Benchmark",
+  "timestamp_utc": "2026-09-22T19:39:17Z",
+  "summary": {
+    "tasks_total": 49,
+    "tasks_solved": 49,
+    "accuracy_pct": 100.0,
+    "latency_p50_ms": 1.808,
+    "latency_mean_ms": 2.146,
+    "vram_bytes": 0,
+    "network_calls": 0,
+    "status": "100% Pass"
+  }
+}

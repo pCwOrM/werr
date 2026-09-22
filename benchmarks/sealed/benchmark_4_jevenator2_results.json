@@ -1,0 +1,15 @@
+{
+  "benchmark": "Jevenator 2 Visual Region-Scan & 24-Frame Temporal Tracking",
+  "timestamp_utc": "2026-09-22T19:39:19Z",
+  "summary": {
+    "frames_evaluated": 24,
+    "decisions_total": 840,
+    "mean_frame_ms": 20.04,
+    "djev_baseline_frame_ms": 761.8,
+    "relative_speedup_vs_djev": "38.0x Faster",
+    "shapes_accuracy": "100% (Triangle=B, Circle=F)",
+    "negative_control_dyson": "100% (0 False Positives)",
+    "vram_bytes": 0,
+    "cost_total": "$0.0000"
+  }
+}
