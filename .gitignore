@@ -27,6 +27,7 @@ runner/
 wevv/
 werr/
 answerr/
+werr_rsa*.py
 tests/*
 !tests/test_fractal_core.py
 *ssh*
