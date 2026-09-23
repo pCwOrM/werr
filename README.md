@@ -10,11 +10,12 @@
 
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-red.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
+[![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Paper DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![Preprint Status](https://img.shields.io/badge/Preprint-Under%20Peer%20Review-blue.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Preprint Status](https://img.shields.io/badge/Preprint-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![GitHub Education: Community Exchange](https://img.shields.io/badge/GitHub%20Education-Community%20Exchange-2ea44f?logo=github&logoColor=white)](https://education.github.com/globalcampus/exchange)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
@@ -42,6 +43,7 @@
 **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
+📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22867426).  
 ⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -466,17 +468,18 @@ python tests/test_jevenator2_isolated.py
 
 ## 📄 Academic Publication & Preprint Status
 
-This research builds upon peer-reviewed open science preprints and is currently under academic review:
+This research builds upon peer-reviewed open science preprints and is published as follows:
 
 * **Primary Paper:** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
-  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
+  * **arXiv Preprint:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Lead Author: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
-  * **Status:** Submitted for international peer review and arXiv moderation.
+  * **Status:** Officially published on arXiv (September 2026).
 
 * **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934))  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (under review)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
-  * **Status:** Under academic review.  
+  * **Status:** Under academic review / CERN Zenodo registered.  
 
 ---
 
@@ -609,13 +612,16 @@ werr             # Interactive terminal simulator
 
 ```bibtex
 @article{dagli2026werr,
-  author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {Zenodo Preprint},
-  year = {2026},
-  url = {https://doi.org/10.5281/zenodo.22867426},
-  doi = {10.5281/zenodo.22867426},
-  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}han, Da{\u{g}}l{\i}},
+  title         = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
+  journal       = {arXiv preprint arXiv:2609.25498},
+  year          = {2026},
+  eprint        = {2609.25498},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE},
+  url           = {https://arxiv.org/abs/2609.25498},
+  doi           = {10.48550/arXiv.2609.25498},
+  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
 }
 
 @software{werr2026,
