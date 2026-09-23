@@ -20,7 +20,14 @@
       "file": "benchmark_2_jevbench_final_optimized.json",
       "sha256": "81a33e723dea04ddd40d38b056ff376cd54d2206c0920bb064af03de0bae7c5f",
       "bytes": 987,
-      "status": "SEALED_AND_VERIFIED"
+      "status": "SEALED_AND_VERIFIED",
+      "edition": "historical_calibrated"
+    },
+    "benchmark_2_jevbench_clean_v14": {
+      "file": "benchmark_2_jevbench_clean_v14_results.json",
+      "sha256": "3e75b2e23e832bbabdafc3d97bd0fb29208b0a6c34d7918f05b712638825658a",
+      "status": "SEALED_AND_VERIFIED",
+      "edition": "clean_zero_task_rules"
     },
     "benchmark_3_windtunnel_webmcp": {
       "file": "benchmark_3_windtunnel_webmcp_results.json",
