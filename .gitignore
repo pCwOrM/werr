@@ -32,6 +32,7 @@ scratch/
 
 # Sensitive runner scripts and cluster endpoints (STRICTLY EXCLUDED FROM GIT)
 runner/
+private_archive_rsa/
 *ssh*
 *password*
 *.pem
