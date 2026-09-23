@@ -62,8 +62,9 @@ _TELEMETRY_ENDPOINT = os.getenv(
 
 
 def _telemetry_enabled() -> bool:
-    val = os.environ.get("WERR_TELEMETRY", os.environ.get("WEVV_TELEMETRY", "1")).strip().lower()
-    return val not in ("0", "false", "no", "off")
+    # Telemetry is strictly opt-in (default disabled for air-gapped / benchmark compliance)
+    val = os.environ.get("WERR_TELEMETRY", os.environ.get("WEVV_TELEMETRY", "0")).strip().lower()
+    return val in ("1", "true", "yes", "on")
 
 
 def _fire_telemetry(payload: dict) -> None:
@@ -315,74 +316,12 @@ class WerrJevBenchEngine:
                     ):
                         num_bonus += 4.0
 
-            # --- Disambiguation rules ---
-            instr_lower = instructions.lower()
-            if "primary requested action" in instr_lower:
-                if opt_norm == "other" and any(
-                    w in st_lower for w in ["thank you", "thanks", "clearer now", "understand"]
-                ):
-                    if not any(w in st_lower for w in ["please", "want", "cancel", "return", "where"]):
-                        direct_match += 15.0
-                if opt_norm == "cancel" and any(
-                    w in st_lower for w in ["stop renewing", "end the membership", "cancel my membership"]
-                ):
-                    if "not asking for money back" in st_lower or "no refund requested" in st_lower:
-                        direct_match += 14.0
-                if opt_norm == "status" and any(
-                    w in st_lower for w in ["where is", "has arrived", "was the parcel delivered", "package progress"]
-                ):
-                    direct_match += 12.0
-                if opt_norm == "change_address" and any(
-                    w in st_lower for w in ["new office", "new address", "ship it to"]
-                ):
-                    direct_match += 12.0
-                if opt_norm == "refund" and any(
-                    w in st_lower for w in ["duplicate charge", "charge refunded", "second charge"]
-                ):
-                    if "not asking for money back" not in st_lower and "no refund" not in st_lower:
-                        direct_match += 12.0
-
-            if "confirmed delivery method" in instr_lower:
-                if opt_norm == "unknown" and any(
-                    w in st_lower for w in ["no method is booked", "no alternative has been selected"]
-                ):
-                    direct_match += 16.0
-                if opt_norm == "post" and any(
-                    w in st_lower for w in ["postal service", "handed to the postal"]
-                ):
-                    direct_match += 14.0
-                if opt_norm == "pickup" and any(
-                    w in st_lower for w in ["confirmed pickup", "depot pickup", "final arrangement is depot"]
-                ):
-                    direct_match += 14.0
-                if opt_norm == "courier" and "courier booked" in st_lower and "did not change" in st_lower:
-                    direct_match += 14.0
-
-            if "specialist needed" in instr_lower:
-                if opt_norm == "math" and any(
-                    w in st_lower for w in ["lcm", "gcd", "least common multiple", "calculate"]
-                ):
-                    direct_match += 16.0
-                elif opt_norm == "coding" and any(
-                    w in st_lower for w in ["write a python", "function that"]
-                ) and "edit" not in st_lower and "repository" not in st_lower:
-                    direct_match += 16.0
-                elif opt_norm == "coding_agent" and any(
-                    w in st_lower for w in ["edit", "repository", "run tests"]
-                ):
-                    direct_match += 16.0
-                elif opt_norm == "tools" and any(
-                    w in st_lower for w in ["calendar service", "calendar app", "reschedule"]
-                ):
-                    direct_match += 16.0
-                elif opt_norm == "document" and any(
-                    w in st_lower for w in ["attached contract", "provided agreement"]
-                ):
-                    direct_match += 16.0
-                elif opt_norm == "general" and any(
-                    w in st_lower for w in ["imaginative names", "creative", "pet dragon"]
-                ):
-                    direct_match += 16.0
+            # Generalized criteria n-gram alignment
+            crit_words = tokenize(crit_desc)
+            ngram_match = 0.0
+            if len(crit_words) >= 2:
+                bigrams = [f"{crit_words[j]} {crit_words[j+1]}" for j in range(len(crit_words)-1)]
+                ngram_match = sum(3.5 for bg in bigrams if bg in st_lower)
 
             neg_penalty = sum(
                 -12.0 for tok in opt_tokens
@@ -393,7 +332,7 @@ class WerrJevBenchEngine:
                 )
             )
             q_mod = quad_weights[i % 4] * 0.35
-            scores.append(direct_match + crit_match + num_bonus + neg_penalty + q_mod)
+            scores.append(direct_match + crit_match + ngram_match + num_bonus + neg_penalty + q_mod)
 
         scores_arr = np.array(scores, dtype=np.float64)
         temp = self._choice_temp()
@@ -418,38 +357,22 @@ class WerrJevBenchEngine:
             "unproved", "unauthorized", "failed", "cannot", "exclude", "excluded",
             "without", "dispute"
         }
-        pos_evidence = len(st_tokens & pos_words) * 2.0
-        neg_evidence = len(st_tokens & neg_words) * 2.0
+        pos_evidence = 0.0
+        neg_evidence = 0.0
 
-        if any(w in st_lower for w in [
-            "proof of purchase is absent", "has no receipt", "no receipt",
-            "unproved", "missing receipt", "open dispute"
-        ]):
-            neg_evidence += 12.0
-        if "exempts registered contractors" in st_lower and "registered contractor" in st_lower:
-            pos_evidence += 14.0
-        if any(w in st_lower for w in ["shipped on", "paid in full", "rules allow trial csv"]):
-            pos_evidence += 10.0
-        if any(w in st_lower for w in ["not yet shipped", "waiting for stock", "out of stock"]):
-            neg_evidence += 12.0
+        # Generalized semantic polarity with negation scoping
+        for tok in st_tokens:
+            if tok in pos_words:
+                if re.search(r"\b(not|no|never|un|dis|without|missing|lacks?)\s+(?:\w+\s+){0,1}" + re.escape(tok) + r"\b", st_lower):
+                    neg_evidence += 4.0
+                else:
+                    pos_evidence += 2.0
+            if tok in neg_words:
+                neg_evidence += 2.0
 
-        instr_lower = instructions.lower()
-        if "fully satisfy" in instr_lower or "satisfy the request" in instr_lower:
-            if ("17+25" in st_lower or "17 and 25" in st_lower) and "42" in st_lower:
-                pos_evidence += 12.0
-            if ("return both" in st_lower or "name both" in st_lower):
-                if "gives only red" in st_lower or (
-                    "red and teal" in st_lower and "response:red" in st_lower
-                ):
-                    neg_evidence += 14.0
-            if "say exactly two words" in st_lower and "all done now" in st_lower:
-                neg_evidence += 14.0
-            if "array with integer 3" in st_lower and "object with a value" in st_lower:
-                neg_evidence += 14.0
-            if "closed on sunday" in st_lower and "answer says no" in st_lower:
-                pos_evidence += 12.0
-            if "earliest train" in st_lower and "answered b" in st_lower:
-                pos_evidence += 12.0
+        # General instruction polarity alignment
+        instr_tokens = set(tokenize(instructions))
+        pos_evidence += len(st_tokens & instr_tokens) * 0.5
 
         diff = pos_evidence - neg_evidence
         fractal_bias = (black_ratio - 0.5) * self._noul_fractal_weight()
@@ -471,23 +394,10 @@ class WerrJevBenchEngine:
             for idx, crit_text in enumerate(criteria):
                 c_toks = set(tokenize(crit_text))
                 c_match = len(st_tokens & c_toks) * 2.5
-                if idx == 0 and any(
-                    w in st_lower for w in ["every function works", "normally", "cosmetic only", "all features work", "confirms no loss"]
-                ):
-                    c_match += 14.0
-                elif idx == 1 and any(
-                    w in st_lower for w in ["one user", "workaround", "can open it in", "nonessential function"]
-                ):
-                    c_match += 14.0
-                elif idx == 2 and any(
-                    w in st_lower for w in ["all customers cannot sign in", "login is unavailable to every", "many users blocked"]
-                ):
-                    c_match += 14.0
-                elif idx == 3 and any(
-                    w in st_lower for w in ["irreversibly deleted", "permanently gone", "physical harm", "data loss"]
-                ):
-                    if "confirms no loss" not in st_lower and "no missing data" not in st_lower:
-                        c_match += 14.0
+                crit_words = tokenize(crit_text)
+                if len(crit_words) >= 2:
+                    bigrams = [f"{crit_words[j]} {crit_words[j+1]}" for j in range(len(crit_words)-1)]
+                    c_match += sum(3.5 for bg in bigrams if bg in st_lower)
                 level_scores.append(c_match + quad_weights[idx % 4] * 0.2)
         else:
             level_scores = [0.0] * len(cand_labels)
