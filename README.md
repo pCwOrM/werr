@@ -31,6 +31,8 @@
 [![Support on USDT TRC20](https://img.shields.io/badge/Support-USDT%20TRC20-009393?logo=tether&logoColor=white)](#-sponsor--grant-funding)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
+[![Featured in Awesome Edge AI](https://img.shields.io/badge/Awesome-Edge%20AI%20Agents-blue.svg)](https://github.com/yh-yao/awesome-edge-ai-agents)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
 > *"Werr is the reflex? Ver! (werr)."*  

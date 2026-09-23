@@ -1,5 +1,7 @@
 ---
-license: bsl-1.1
+license: other
+license_name: bsl-1.1
+license_link: https://github.com/pCwOrM/werr/blob/main/LICENSE
 task_categories:
 - text-classification
 - zero-shot-classification
