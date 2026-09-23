@@ -9,9 +9,10 @@
 # ⚡ WERR: Sıfır-Bellekli Fraktal Sistem-1 Karar Motoru (Dalgalar ve Hatalar)
 
 [![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-red.svg)](./LICENSE)
+[![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![Makale DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Makale%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-De%C4%9Ferlendirme%20A%C5%9Famas%C4%B1nda-blue.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
 [![Canlı Demo: GitHub Pages](https://img.shields.io/badge/Canl%C4%B1%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
 [![GitHub Education: Community Exchange](https://img.shields.io/badge/GitHub%20Education-Community%20Exchange-2ea44f?logo=github&logoColor=white)](https://education.github.com/globalcampus/exchange)
 [![Kardeş Platform: answerr](https://img.shields.io/badge/answerr-Canl%C4%B1%20Platform-38bdf8.svg)](https://answerr.me)
@@ -40,6 +41,7 @@
 [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (README_TR.md)**
 
 🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
+📄 **Resmi arXiv Makalesi:** [arXiv:2609.25498 [cs.NE] Makalesini Oku](https://arxiv.org/abs/2609.25498) │ [Doğrudan PDF İndir](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Arşivi](https://doi.org/10.5281/zenodo.22867426).  
 ⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*  
 ⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*  
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -318,6 +320,23 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 
 ---
 
+## 📄 Akademik Yayın ve Ön Baskı Durumu
+
+Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde yayınlanmıştır:
+
+* **Birincil Makale:** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
+  * **arXiv Yayını:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
+  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
+  * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Sorumlu Yazar: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
+  * **Durum:** arXiv üzerinde resmi olarak yayınlandı (Eylül 2026).
+
+* **Kuramsal Temel Araştırması:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
+  * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (inceleme aşamasında)  
+  * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Durum:** Akademik incelemede / CERN Zenodo tescilli.
+
+---
+
 ## 👥 Yazarlar ve Akademik Kurumlar
 
 * **Volkan Dağlı** *(Sorumlu Yazar / Corresponding Author)*  
@@ -335,13 +354,16 @@ Matt Mastracci'nin **Jevenator 2 (Judgment Day)** kıyaslama paketinde ([mmastra
 
 ```bibtex
 @article{dagli2026werr,
-  author = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  title = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
-  journal = {Zenodo Preprint},
-  year = {2026},
-  url = {https://doi.org/10.5281/zenodo.22867426},
-  doi = {10.5281/zenodo.22867426},
-  note = {Permanent Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}han, Da{\u{g}}l{\i}},
+  title         = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
+  journal       = {arXiv preprint arXiv:2609.25498},
+  year          = {2026},
+  eprint        = {2609.25498},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE},
+  url           = {https://arxiv.org/abs/2609.25498},
+  doi           = {10.48550/arXiv.2609.25498},
+  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
 }
 
 @software{werr2026,
