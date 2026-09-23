@@ -210,8 +210,22 @@ class WerrEngine:
                 elif is_deny_q:
                     prob = 1.0 / (1.0 + math.exp((-net_risk - 0.2) * 2.0))
                 else:
+                    st_values = [str(v) for v in state.values()] if isinstance(state, dict) else [str(state)]
+                    st_text = " ".join(st_values).lower()
+                    st_tokens = set(re.findall(r'\b\w+\b', _normalize_text(st_text)))
+
+                    pos_polarity = bool(st_tokens & {'yes', 'true', 'allowed', 'permit', 'permitted', 'valid', 'approved', 'success', 'paid', 'confirmed', 'clear', 'eligible', 'dogru', 'gecerli'})
+                    neg_polarity = bool(st_tokens & {'no', 'false', 'denied', 'prohibited', 'absent', 'missing', 'unproved', 'unauthorized', 'failed', 'cannot', 'dispute', 'cancel', 'reject', 'yanlis', 'gecersiz'})
+                    has_negation = bool(re.search(r'\b(not|no|never|without|un|dis|lacks?|yok|degil)\b', st_text))
+
+                    polarity_bias = 0.0
+                    if pos_polarity and not has_negation:
+                        polarity_bias += 1.2
+                    elif neg_polarity or has_negation:
+                        polarity_bias -= 1.2
+
                     n_dim = min(len(vec), len(tile_weights))
-                    dot_product = float(np.dot(vec[:n_dim], tile_weights[:n_dim])) + q_obj.weight_bias
+                    dot_product = float(np.dot(vec[:n_dim], tile_weights[:n_dim])) + q_obj.weight_bias + polarity_bias
                     prob = float(sigmoid(dot_product))
 
                 prob = max(0.0001, min(0.9999, prob))
@@ -246,6 +260,11 @@ class WerrEngine:
                 instr_hash = int(hashlib.md5(str(q_obj.instructions).encode('utf-8')).hexdigest()[:6], 16)
                 phase_offset = instr_hash % 4
 
+                # Flatten state for semantic criteria matching
+                st_values = [str(v) for v in state.values()] if isinstance(state, dict) else [str(state)]
+                st_text = " ".join(st_values).lower()
+                st_tokens = set(re.findall(r'\b\w+\b', _normalize_text(st_text)))
+
                 scores = []
                 for i, opt in enumerate(options):
                     opt_norm = _normalize_text(opt)
@@ -255,6 +274,23 @@ class WerrEngine:
                     st_res = float(vec[feat_idx]) * (q_res - 0.5) * 4.0
                     score_i = q_res * 2.5 + st_res + (1.0 - avg_escape) * 0.5
 
+                    # 1. Criteria description alignment (generalized N-gram matching)
+                    crit_desc = q_obj.criteria.get(opt, "")
+                    if isinstance(crit_desc, str) and crit_desc.strip():
+                        crit_norm = _normalize_text(crit_desc)
+                        crit_words = re.findall(r'\b\w+\b', crit_norm)
+                        crit_tokens = set(crit_words)
+                        overlap = len(st_tokens & crit_tokens)
+                        score_i += overlap * 2.2
+                        if len(crit_words) >= 2:
+                            bigrams = [f"{crit_words[j]} {crit_words[j+1]}" for j in range(len(crit_words) - 1)]
+                            score_i += sum(3.5 for bg in bigrams if bg in st_text)
+
+                    # 2. Option name direct match in state
+                    opt_tokens = set(re.findall(r'\b\w+\b', opt_norm))
+                    score_i += sum(3.0 for tok in opt_tokens if len(tok) >= 3 and tok in st_tokens)
+
+                    # 3. Gateway semantic role priors
                     if any(w in opt_norm for w in ['direct', 'prod', 'fast', 'primary', 'main', 'dogrudan', 'hizli', 'ana', 'normal', 'oncelikli', 'direkt']):
                         score_i += 3.0 if (net_risk < 0.2 and not is_guest) else -2.5
                     elif any(w in opt_norm for w in ['rate', 'limiter', 'slow', 'queue', 'delay', 'kuyruk', 'yavaslat', 'sinirla', 'beklet', 'frenle']):

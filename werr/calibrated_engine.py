@@ -51,6 +51,7 @@ if _PKG_ROOT not in sys.path:
     sys.path.insert(0, _PKG_ROOT)
 
 from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights, sigmoid
+from werr.adapters.wire_adapter import JevWireAdapter
 
 
 # ---------------------------------------------------------------------------
