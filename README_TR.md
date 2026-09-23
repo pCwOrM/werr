@@ -337,9 +337,9 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
 
 ---
 
-## 🤝 Bilimsel Denetim ve Açık Kaynak Topluluğuna Teşekkür
+## 🤝 Karşılıklı Bilimsel Evrim: JevBench Topluluğuna Teşekkür
 
-**Florian Standhartinger**'e ve JevBench araştırma topluluğuna (`@airesearch12`, [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)) en içten teşekkürlerimizi ve yüksek mesleki saygılarımızı sunuyoruz. Yaptıkları titiz dış denetim ve göreve özel sezgisel kuralların tamamen elenmesi yönündeki kararlı duruşları, Werr mimarisinde büyük bir sıçramaya ilham kaynağı oldu: Alana özgü kelime eşleştirmeleri Werr'den tamamen kazındı ve yerine genelleştirilmiş çoklu belirteç $N$-gram kriter rezonansı, çift yönlü olumsuzluk kapsamı ve saf kaotik sınır dinamiği yerleştirildi. Bu yapıcı akran denetimi sayesinde Werr, görevden tamamen bağımsız, çok daha keskin ve saf bir Sıfır-VRAM Sistem-1 refleks çalışma zamanına dönüştü. Bağımsız araştırmacıları daha yükseğe inovasyon yapmaya iten açık bilim kültürü tam olarak böyle gelişir.
+Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**'e ve JevBench araştırma topluluğuna (`@airesearch12`, [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)) en içten teşekkürlerimizi ve yüksek mesleki saygılarımızı sunuyoruz. Yaptıkları titiz dış denetim, Werr'deki kalıntı alan sezgisellerini tamamen kazıyıp bizi çoklu belirteç $N$-gram kriter rezonansı ve saf kaotik sınır dinamiğine yükseltirken; Werr'in arenadaki ilk 0-VRAM fraktal yarışmacı olarak yarattığı paradigma sarsıntısı da JevBench'in mimari olgunlaşmasını hızlandırdı (kapalı set testleri, şanstan arındırılmış zeka baseline'ı ve karesel harmonik ceza kapıları v1.3 ile v1.4'te hızla hayata geçirildi). Arenada yerleşik ezberleri bozan gerçek bir rakibin bulunması her iki tarafı da daha hızlı gelişmeye zorladı. Açık bilimde demir demiri biler.
 
 ---
 
