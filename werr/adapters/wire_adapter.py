@@ -41,12 +41,17 @@ def extract_state_text(state: Any) -> str:
 
 class JevWireAdapter:
     """
-    Transparent wire-adapter for Jev-compatible evaluation harnesses.
+    Transparent wire-adapter for external benchmark harnesses and HTTP endpoints.
     Translates raw JSON tasks to typed Werr questions and delegates
-    inference to WerrEngine.
+    inference directly to WerrEngine.
     """
-    def __init__(self, engine: Optional[WerrEngine] = None):
-        self.engine = engine or WerrEngine(mode="pure_fractal")
+    def __init__(
+        self,
+        engine: Optional[WerrEngine] = None,
+        domain_mode: str = "none",
+        mode: str = "pure_fractal"
+    ):
+        self.engine = engine or WerrEngine(mode=mode, domain_mode=domain_mode)
 
     def decide(self, task: Dict[str, Any]) -> Dict[str, Any]:
         """

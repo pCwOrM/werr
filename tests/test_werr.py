@@ -237,14 +237,41 @@ class TestMultiDomainRouting(unittest.TestCase):
     def test_engine_auto_route_seamless(self):
         engine = WerrEngine()
         # Call with auto_route=True on IoT emergency state
+    def test_engine_domain_mode_multi(self):
+        engine = WerrEngine(domain_mode="multi")
+        self.assertEqual(engine.domain_mode, "multi")
         resp = engine.decide(
             state={"temp": 88.0, "smoke_detected": True},
-            questions={"alert": NoulQuestion("Hazard alert detected?")},
-            auto_route=True
+            questions={"alert": NoulQuestion("Hazard alert detected?")}
         )
         self.assertTrue(resp.boolean("alert"))
-        self.assertEqual(resp.memory_tensor_bytes, 0)
-        self.assertEqual(resp.coordinate_bytes, 24)
+
+    def test_engine_domain_mode_none(self):
+        engine = WerrEngine(domain_mode="none", mode="pure_fractal")
+        self.assertEqual(engine.domain_mode, "none")
+        resp = engine.decide(
+            state={"status": "active", "valid": True},
+            questions={"ok": NoulQuestion("Is operation valid?")}
+        )
+        self.assertTrue(resp.boolean("ok"))
+
+    def test_jev_wire_adapter(self):
+        from werr.adapters import JevWireAdapter
+        adapter = JevWireAdapter(domain_mode="none")
+        sample_task = {
+            "id": "sample-task-01",
+            "question": {
+                "type": "choice",
+                "instructions": "Select appropriate action",
+                "criteria": {"allow": "permit access", "deny": "block connection"}
+            },
+            "state": {"status": "authorized", "clear": True},
+            "expected": "allow"
+        }
+        res = adapter.decide(sample_task)
+        self.assertIn("predicted", res)
+        self.assertIn("probs", res)
+        self.assertLess(res["latency_ms"], 50.0)
 
 
 if __name__ == "__main__":

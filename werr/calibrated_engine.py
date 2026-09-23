@@ -1,7 +1,11 @@
 """
 werr.calibrated_engine
 ======================
-Zero-Memory JevBench-compatible Decision Engine — Calibrated Edition.
+.. deprecated:: 0.4.1
+   Legacy prototype module retained strictly for backward compatibility.
+   For all new development, benchmarks, and wire-format evaluations, use
+   `werr.adapters.wire_adapter.JevWireAdapter` with `werr.engine.WerrEngine`
+   directly.
 
 Implements:
   - WerrJevBenchEngine  : Base engine (direct fractal escape + lexical matching)

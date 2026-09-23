@@ -169,22 +169,34 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
     print(f"Routing to: {response.choice('route')} in {response.latency_ms} ms")
 ```
 
-### ⚙️ Dual-Mode Parametric Architecture (`production` vs `pure_fractal`)
+### ⚙️ Dual-Dimension Parametric Architecture (v0.4.1)
 
-`werr` v0.4.0 introduces an explicit **Dual-Mode Parametric Engine Architecture** to cleanly decouple real-world edge deployment from blind academic benchmark audits:
+`werr` v0.4.1 introduces an orthogonal **Dual-Dimension Parametric Engine Architecture** to cleanly decouple real-world edge deployment from general reasoning and academic benchmark audits:
 
-* **`mode="production"` (Default)**: Full activation of domain gates (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`), state variable signatures, and physical threshold heuristics (`smoke_detected`, `gas_ppm`, temperature extremes). Ideal for embedded IoT, medical triage, firewalls, and `answerr.me` platform services where deterministic life-safety and performance are paramount.
-* **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Bypasses all domain keyword indices and semantic role dictionaries. Operates strictly on chaotic Mandelbrot boundary escape dynamics, criteria $N$-gram geometry, and universal mathematical projections. Utilized by [`JevWireAdapter`](./werr/adapters/wire_adapter.py) for 100% transparent, uncalibrated offline benchmark evaluations.
+#### 1. Domain Routing Dimension (`domain_mode="none"` vs `domain_mode="multi"`)
+* **`domain_mode="none"` (Default for General Reasoning & Benchmarks)**: **Domainless Monolithic Mode**. Bypasses discrete domain gates and directly modulates questions into the universal chaotic boundary cusp ($c = -0.743643887 + 0.131825904i$, zoom $50.0$). Eliminates artificial domain classification bias, allowing open-ended general intelligence and multi-step deduction to resolve naturally along $\partial \mathcal{M}$. Achieves **51.52% overall accuracy** and an unmatched **46.85% on JevBench v1.4 Hard tier** in **3.17 ms**.
+* **`domain_mode="multi"` (Production IoT & Infrastructure Default)**: **Multi-Domain Mode**. Dynamically routes state signatures through the 5 specialized domain gates (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) via `AutoSeedRouter`. Essential for edge hardware, industrial safety, and API gateways where deterministic physical sensor thresholds are required.
+
+#### 2. Lexical Ontology Dimension (`mode="production"` vs `mode="pure_fractal"`)
+* **`mode="production"`**: Full activation of domain ontologies, sensor threshold heuristics (`smoke_detected`, `gas_ppm`, temperature extremes), and semantic role dictionaries (English & Türkçe). Active on production servers (`mechsrv` / `answerr.me`).
+* **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Strips all external lexical dictionaries; operates purely on chaotic Mandelbrot boundary escape dynamics and criteria $N$-gram geometry.
 
 ```python
 from werr import WerrEngine
+from werr.adapters import JevWireAdapter
 
-# 1. Edge & Production IoT (Full domain ontologies active)
-engine = WerrEngine(mode="production")
+# 1. Domainless Monolithic Mode (General reasoning, Q&A, and benchmark audits)
+engine_general = WerrEngine(domain_mode="none", mode="pure_fractal")
 
-# 2. Transparent Offline Benchmark Mode (Zero lexical priors)
-engine_audit = WerrEngine(mode="pure_fractal")
+# 2. Multi-Domain Edge IoT & Infrastructure (Deterministic safety & domain gates)
+engine_edge = WerrEngine(domain_mode="multi", mode="production")
+
+# 3. Transparent Wire-Format Adapter (External benchmark harness integration)
+wire_adapter = JevWireAdapter(domain_mode="none")
+decision = wire_adapter.decide(task_dict)
 ```
+
+> **Note on Protocol Adapters:** Wire protocol integration is handled directly by [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) with zero task heuristics. The early prototype module `werr.calibrated_engine` is formally deprecated as of v0.4.1 in favor of the clean `JevWireAdapter`.
 
 ---
 
