@@ -51,7 +51,8 @@ class WerrEngine:
         resolution: int = 64,
         max_iter: int = 50,
         mode: str = "production",
-        enable_ontologies: Optional[bool] = None
+        enable_ontologies: Optional[bool] = None,
+        domain_mode: Optional[str] = None
     ):
         """
         Initialize the Werr Engine with a resonant chaotic boundary seed.
@@ -60,6 +61,13 @@ class WerrEngine:
             and semantic gate mappings active (ideal for IoT, life-safety, answerr.me).
           - 'pure_fractal': Strips external lexical dictionaries; operates purely on
             chaotic Mandelbrot boundary dynamics and criteria N-gram geometry.
+        Supports domain routing architectures:
+          - 'multi': Routes dynamically through domain gates (AutoSeedRouter) with specialized
+            topologies (api_security, financial_risk, iot_safety, ecommerce_fraud, game_combat).
+            Default in 'production' mode.
+          - 'none': Domainless monolithic mode. Directly projects into the universal
+            chaotic boundary cusp (c = -0.743643887 + 0.131825904i) with zero domain bias.
+            Default in 'pure_fractal' mode (ideal for general benchmark reasoning).
         """
         self.cx = base_cx
         self.cy = base_cy
@@ -70,6 +78,12 @@ class WerrEngine:
             self.mode = "production" if enable_ontologies else "pure_fractal"
         else:
             self.mode = str(mode).lower()
+
+        if domain_mode is not None:
+            self.domain_mode = str(domain_mode).lower()
+        else:
+            self.domain_mode = "none"
+
         self.calibration = DynamicCalibration()
 
     def _state_to_vector(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
@@ -147,15 +161,17 @@ class WerrEngine:
         self,
         state: Dict[str, Any],
         questions: Dict[str, Union[NoulQuestion, ChoiceQuestion, ScoreQuestion]],
-        auto_route: bool = False,
+        auto_route: Optional[bool] = None,
         preferred_domain: Optional[str] = None
     ) -> WerrResponse:
         """
         Evaluates a bundle of typed questions against a single program state.
         All questions are answered in a single parallel pass.
-        If auto_route=True, delegates to the optimal domain gate coordinate via AutoSeedRouter.
+        If auto_route is True (or domain_mode == 'multi' and auto_route is not False),
+        delegates to the optimal domain gate coordinate via AutoSeedRouter.
         """
-        if auto_route:
+        should_route = auto_route if auto_route is not None else (self.domain_mode == "multi")
+        if should_route:
             from werr.router import AutoSeedRouter
             router = AutoSeedRouter(calibration=self.calibration, mode=self.mode)
             resp, domain, _ = router.route_and_evaluate(state=state, questions=questions, preferred_domain=preferred_domain)
@@ -390,7 +406,7 @@ class WerrEngine:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
         response = WerrResponse(
-            model="werr-0.4.0-fractal",
+            model=f"werr-0.4.1-{self.domain_mode}",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),
             memory_tensor_bytes=0,

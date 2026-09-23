@@ -31,10 +31,13 @@ from werr.gates import (
     GameCombatGate,
 )
 
-__version__ = "0.4.0"
+from werr.adapters import JevWireAdapter
+
+__version__ = "0.4.1"
 __all__ = [
     "WerrEngine",
     "WevvEngine",
+    "JevWireAdapter",
     "DynamicCalibration",
     "AutoSeedRouter",
     "DomainGate",

@@ -27,10 +27,8 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from typing import Dict, Any
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
-
-from werr.calibrated_engine import CalibratedWerrEngine
+from werr.engine import WerrEngine
+from werr.adapters.wire_adapter import JevWireAdapter
 
 
 class WerrJevWireHandler(BaseHTTPRequestHandler):
@@ -149,18 +147,22 @@ def run_server(
     port: int = 8443,
     verbose: bool = False,
     no_telemetry: bool = False,
+    domain_mode: str = "none",
+    mode: str = "production",
 ):
     if no_telemetry:
         os.environ["WERR_TELEMETRY"] = "0"
         print("[*] Telemetry disabled (--no-telemetry / WERR_TELEMETRY=0)")
 
-    engine = CalibratedWerrEngine(temp_choice=1.05, noul_scale=0.85, score_temp=1.0)
+    engine = WerrEngine(mode=mode, domain_mode=domain_mode)
+    adapter = JevWireAdapter(engine=engine)
 
     server = HTTPServer((host, port), WerrJevWireHandler)
-    server.engine = engine
+    server.engine = adapter
     server.verbose = verbose
 
     print(f"[*] Werr System-One Decision Server running at http://{host}:{port}")
+    print(f"[*] Architecture : domain_mode='{domain_mode}', mode='{mode}'")
     print(f"[*] Wire Formats : POST /v1/systemone, POST /decide, GET /health")
     print(
         f"[*] Telemetry   : "
@@ -177,6 +179,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Werr Decision HTTP Server")
     parser.add_argument("--host", default="0.0.0.0", help="Binding host")
     parser.add_argument("--port", type=int, default=8443, help="Binding port")
+    parser.add_argument("--domain-mode", default="none", choices=["none", "multi"], help="Domain routing: 'none' (domainless monolithic default) or 'multi' (domain gates)")
+    parser.add_argument("--mode", default="production", choices=["production", "pure_fractal"], help="Engine mode: 'production' or 'pure_fractal'")
     parser.add_argument("--verbose", action="store_true", help="Verbose logging")
     parser.add_argument(
         "--no-telemetry",
@@ -187,4 +191,4 @@ if __name__ == "__main__":
         ),
     )
     args = parser.parse_args()
-    run_server(args.host, args.port, args.verbose, getattr(args, "no_telemetry", False))
+    run_server(args.host, args.port, args.verbose, getattr(args, "no_telemetry", False), args.domain_mode, args.mode)

@@ -142,20 +142,34 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 
 ### ⚙️ Parametrik Çift Mod Mimarisi (`production` vs `pure_fractal`)
 
-`werr` v0.4.0, sahadaki gerçek uç birim (Edge/IoT) ihtiyaçları ile harici akademik kıyaslamaları (benchmark) birbirinden temiz bir şekilde ayıran **Parametrik Çift Mod Mimarisi** sunar:
+### ⚙️ İki Boyutlu Parametrik Mimari (v0.4.1)
 
-* **`mode="production"` (Varsayılan):** Tüm operasyonel alan geçitleri (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`), durum imzaları ve fiziksel tehlike kuralları (`smoke_detected`, `gas_ppm`, kritik sıcaklıklar) eksiksiz devrededir. Gömülü IoT, akıllı ev, tıbbi triyaj, güvenlik duvarları ve `answerr.me` platform servislerinde deterministik can güvenliği ve yüksek hız için varsayılan moddur.
-* **`mode="pure_fractal"` (veya `enable_ontologies=False`):** Alan sözlüklerini ve rol eşlemelerini tamamen devre dışı bırakır. Yalnızca saf Mandelbrot kaçış dinamikleri, kriter $N$-gram örtüşmesi ve evrensel matematiksel izdüşümlerle çalışır. [`JevWireAdapter`](./werr/adapters/wire_adapter.py) tarafından dışarıdan bağımsız, şeffaf ve önyargısız akademik denetimler için kullanılır.
+`werr` v0.4.1, sahadaki gerçek uç birim (Edge/IoT) ihtiyaçları ile genel akıl yürütme ve akademik kıyaslamaları birbirinden temiz bir şekilde ayıran **İki Boyutlu Parametrik Motor Mimarisi** sunar:
+
+#### 1. Alan Yönlendirme Boyutu (`domain_mode="none"` vs `domain_mode="multi"`)
+* **`domain_mode="none"` (Genel Akıl Yürütme & Benchmark Varsayılanı):** **Domainsiz Monolitik Mod (Domainless Monolithic)**. Ayrık alan kapılarını atlayarak soruları doğrudan evrensel kaotik sınır cusp koordinatına ($c = -0.743643887 + 0.131825904i$, zoom $50.0$) modüle eder. Yapay domain sınıflandırma önyargısını ortadan kaldırarak genel akıl yürütme ve çok adımlı çıkarımların doğal $\partial \mathcal{M}$ kaosu üzerinde çözülmesini sağlar. JevBench v1.4 üzerinde **%51.52 toplam doğruluk** ve Hard seviyesinde rekor **%46.85 (52/111)** başarıya **3.17 ms** sürede ulaşır.
+* **`domain_mode="multi"` (Üretim IoT & Altyapı Varsayılanı):** **Çoklu Alan Modu (Multi-Domain)**. Durum imzalarını `AutoSeedRouter` aracılığıyla 5 uzmanlaşmış alan kapısına (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) dinamik olarak yönlendirir. Deterministik fiziksel sensör eşiklerinin (`smoke_detected`, `gas_ppm`) zorunlu olduğu gömülü donanımlar için tasarlanmıştır.
+
+#### 2. Leksikal Ontoloji Boyutu (`mode="production"` vs `mode="pure_fractal"`)
+* **`mode="production"`:** Alan ontolojileri, fiziksel tehlike kuralları ve iki dilli (Türkçe/İngilizce) rol sözlükleri eksiksiz devrededir. Üretim sunucularında (`mechsrv` / `answerr.me`) varsayılan olarak bu mod koşar.
+* **`mode="pure_fractal"` (veya `enable_ontologies=False`):** Dış sözlükleri ve leksikal kuralları tamamen devre dışı bırakır; yalnızca kaotik Mandelbrot sınır kaçış dinamikleri ve kriter $N$-gram geometrisiyle çalışır.
 
 ```python
 from werr import WerrEngine
+from werr.adapters import JevWireAdapter
 
-# 1. Saha ve Gerçek Dünya IoT (Tüm alan ontolojileri ve güvenlik kuralları devrede)
-engine = WerrEngine(mode="production")
+# 1. Domainsiz Monolitik Mod (Genel akıl yürütme, Soru-Cevap ve şeffaf benchmark)
+engine_genel = WerrEngine(domain_mode="none", mode="pure_fractal")
 
-# 2. Şeffaf Harici Benchmark / Denetim Modu (Sıfır leksikal kural, saf fraktal)
-engine_audit = WerrEngine(mode="pure_fractal")
+# 2. Çoklu Alan Uç Birim IoT (Deterministik güvenlik ve alan kapıları devrede)
+engine_iot = WerrEngine(domain_mode="multi", mode="production")
+
+# 3. Şeffaf Tel Protokolü Adaptörü (Harici JSON benchmark testleri)
+wire_adapter = JevWireAdapter(domain_mode="none")
+karar = wire_adapter.decide(gorev_sozlugu)
 ```
+
+> **Protokol Adaptörleri Hakkında:** JSON tel protokolü entegrasyonu doğrudan [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) ile sıfır görev kuralı prensibiyle sağlanır. İlk geliştirme döneminde kullanılan prototip `werr.calibrated_engine` modülü, v0.4.1 itibarıyla yerini temiz ve standart `JevWireAdapter`'a bırakarak kullanımdan kaldırılmıştır (deprecated).
 
 ---
 
