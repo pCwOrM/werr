@@ -22,14 +22,16 @@ def create_security_guard(resolution: int = 64) -> WerrEngine:
 def create_smart_router(resolution: int = 64) -> WerrEngine:
     """
     Creates an engine calibrated with balanced 4-Quadrant entropy
-    for multi-way routing and dispatching decisions.
+    and multi-domain semantic intent routing for production dispatch.
     """
     return WerrEngine(
         base_cx=-0.10109636384562,
         base_cy=0.95628651080914,
         base_zoom=45.0,
         resolution=resolution,
-        max_iter=50
+        max_iter=50,
+        mode="production",
+        domain_mode="multi"
     )
 
 
