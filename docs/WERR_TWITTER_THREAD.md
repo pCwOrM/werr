@@ -85,13 +85,12 @@ Audit PDF: https://github.com/pCwOrM/werr/blob/main/docs/werr_official_benchmark
 
 ---
 
-### Tweet 8/8 (Call to Action & Open Source)
+### Tweet 8/8 (Call to Action, Licensing & Community)
 ```text
-8/8 🚀 Try it Live in Browser Right Now:
-No GPU, no install, 100% client-side web arena:
-🎮 Interactive Arena: https://pcworm.github.io/werr/#benchmark-arena
-Open-source under MIT License:
-`pip install werr`
-⭐ Star on GitHub: https://github.com/pCwOrM/werr
-The gauntlet is open! @github #OpenSource
+8/8 🎓 Live on GitHub Education Community Exchange!
+Created by ITOUCH LABS (Patent TR 2026/016285). BSL 1.1 license.
+🎮 Live Web Arena: https://pcworm.github.io/werr/#benchmark-arena
+⭐ Star & Fork on GitHub:
+https://github.com/pCwOrM/werr
+The gauntlet is open! @github #AI #EdgeAI
 ```
