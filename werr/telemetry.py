@@ -168,9 +168,9 @@ def dispatch_telemetry_async(
     Non-blocking asynchronous fire-and-forget telemetry dispatcher.
     Runs in a daemon thread; never raises exceptions and never blocks the engine.
     """
-    # 1. Check Opt-out Environment Variable
-    env_opt = os.environ.get("WERR_TELEMETRY", os.environ.get("WEVV_TELEMETRY", "1")).strip().lower()
-    if env_opt in ("0", "false", "no", "off"):
+    # 1. Check Opt-out Environment Variable (Strictly opt-in: default 0 for air-gapped compliance)
+    env_opt = os.environ.get("WERR_TELEMETRY", os.environ.get("WEVV_TELEMETRY", "0")).strip().lower()
+    if env_opt not in ("1", "true", "yes", "on"):
         return
 
     try:
