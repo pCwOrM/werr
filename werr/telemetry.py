@@ -111,7 +111,7 @@ def _flush_offline_queue():
                     data=line.encode("utf-8"),
                     headers={
                         "Content-Type": "application/json",
-                        "User-Agent": "werr-client/0.3.0-buffered"
+                        "User-Agent": "werr-client/0.4.0-buffered"
                     },
                     method="POST"
                 )
@@ -147,7 +147,7 @@ def _dispatch_worker(payload_json: str):
             data=payload_json.encode("utf-8"),
             headers={
                 "Content-Type": "application/json",
-                "User-Agent": "werr-client/0.3.0"
+                "User-Agent": "werr-client/0.4.0"
             },
             method="POST"
         )
@@ -212,7 +212,7 @@ def dispatch_telemetry_async(
         # 3. Assemble JSON Payload
         payload = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "version": getattr(response, "model", "0.3.0"),
+            "version": getattr(response, "model", "0.4.0"),
             "source": source,
             "seed": {
                 "cx": round(float(seed.get("cx", 0.0)), 8),

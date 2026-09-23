@@ -26,9 +26,15 @@ class AutoSeedRouter:
     Sub-millisecond intent router that dynamically binds queries to domain coordinates.
     Employs an inverted semantic index over domain keywords and state variable signatures.
     """
-    def __init__(self, default_domain: str = "api_security", calibration: Optional[DynamicCalibration] = None):
+    def __init__(
+        self,
+        default_domain: str = "api_security",
+        calibration: Optional[DynamicCalibration] = None,
+        mode: str = "production"
+    ):
         self.default_domain = default_domain
         self.calibration = calibration or DynamicCalibration()
+        self.mode = str(mode).lower()
         self._gate_instances: Dict[str, DomainGate] = {
             name: cls() for name, cls in DOMAIN_GATES.items()
         }
@@ -99,8 +105,12 @@ class AutoSeedRouter:
     ) -> Tuple[str, float, List[str]]:
         """
         Determines the target domain with confidence and matched signal tokens.
+        In mode='pure_fractal', domain heuristics are bypassed for external benchmark audit.
         Latency: < 0.05 ms.
         """
+        if self.mode == "pure_fractal":
+            return self.default_domain, 0.5, []
+
         scores: Dict[str, float] = {d: 0.0 for d in self._gate_instances}
         matched_tokens: List[str] = []
 

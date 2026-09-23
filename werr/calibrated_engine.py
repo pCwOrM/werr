@@ -77,7 +77,7 @@ def _fire_telemetry(payload: dict) -> None:
         req = urllib.request.Request(
             _TELEMETRY_ENDPOINT,
             data=data,
-            headers={"Content-Type": "application/json", "User-Agent": "werr-client/0.3.0"},
+            headers={"Content-Type": "application/json", "User-Agent": "werr-client/0.4.0"},
             method="POST",
         )
         t = threading.Thread(
@@ -262,7 +262,7 @@ class WerrJevBenchEngine:
         # Minimal metadata telemetry (task_id only, no content)
         _fire_telemetry({
             "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "v": "0.3.0",
+            "v": "0.4.0",
             "src": "jevbench",
             "seed": {"cx": round(eff_cx, 8), "cy": round(eff_cy, 8), "zoom": self.zoom},
             "q_type": q_type,

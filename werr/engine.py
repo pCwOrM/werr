@@ -49,16 +49,27 @@ class WerrEngine:
         base_cy: float = 0.131825904205311970493132056385139,
         base_zoom: float = 50.0,
         resolution: int = 64,
-        max_iter: int = 50
+        max_iter: int = 50,
+        mode: str = "production",
+        enable_ontologies: Optional[bool] = None
     ):
         """
         Initialize the Werr Engine with a resonant chaotic boundary seed.
+        Supports dual modes:
+          - 'production' (default): Full domain ontologies, sensor threshold heuristics,
+            and semantic gate mappings active (ideal for IoT, life-safety, answerr.me).
+          - 'pure_fractal': Strips external lexical dictionaries; operates purely on
+            chaotic Mandelbrot boundary dynamics and criteria N-gram geometry.
         """
         self.cx = base_cx
         self.cy = base_cy
         self.zoom = base_zoom
         self.resolution = resolution
         self.max_iter = max_iter
+        if enable_ontologies is not None:
+            self.mode = "production" if enable_ontologies else "pure_fractal"
+        else:
+            self.mode = str(mode).lower()
         self.calibration = DynamicCalibration()
 
     def _state_to_vector(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
@@ -88,31 +99,35 @@ class WerrEngine:
 
         values = []
         net_risk = 0.0
+        is_prod = (self.mode != "pure_fractal")
 
         for k, v in sorted(state.items()):
             kl = _normalize_text(k)
             if isinstance(v, (int, float)):
                 norm_val = 2.0 / (1.0 + math.exp(-float(v) / 10.0 if abs(v) < 700 else (-1.0 if v < 0 else 1.0))) - 1.0
                 values.append(norm_val)
-                if any(w in kl for w in ['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'deneme']):
-                    net_risk += (float(v) / 5.0) * 1.5
-                elif any(w in kl for w in ['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'frekans']):
-                    net_risk += (float(v) / 50.0) * 1.0
-                elif any(w in kl for w in ['payload', 'byte', 'kb', 'boyut', 'veri', 'yuk', 'paket']):
-                    net_risk += (float(v) / 500.0) * 0.5
+                if is_prod:
+                    if any(w in kl for w in ['fail', 'error', 'attempt', 'hata', 'yanlis', 'basarisiz', 'deneme']):
+                        net_risk += (float(v) / 5.0) * 1.5
+                    elif any(w in kl for w in ['freq', 'rate', 'speed', 'hiz', 'siklik', 'oran', 'frekans']):
+                        net_risk += (float(v) / 50.0) * 1.0
+                    elif any(w in kl for w in ['payload', 'byte', 'kb', 'boyut', 'veri', 'yuk', 'paket']):
+                        net_risk += (float(v) / 500.0) * 0.5
             elif isinstance(v, bool):
                 values.append(1.0 if v else -1.0)
-                if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'dogrulanmis', 'onayli', 'aktif']):
-                    net_risk += -0.8 if v else 1.2
+                if is_prod:
+                    if any(w in kl for w in ['auth', 'valid', 'safe', 'internal', 'verified', 'yetkili', 'gecerli', 'guvenli', 'dogrulanmis', 'onayli', 'aktif']):
+                        net_risk += -0.8 if v else 1.2
             elif isinstance(v, str):
                 vl = _normalize_text(v)
                 matched_role = False
-                for r_key, r_risk in semantic_roles.items():
-                    if r_key in vl:
-                        net_risk += r_risk
-                        values.append(math.tanh(r_risk))
-                        matched_role = True
-                        break
+                if is_prod:
+                    for r_key, r_risk in semantic_roles.items():
+                        if r_key in vl:
+                            net_risk += r_risk
+                            values.append(math.tanh(r_risk))
+                            matched_role = True
+                            break
                 if not matched_role:
                     h = int(hashlib.md5(v.encode('utf-8')).hexdigest()[:8], 16)
                     angle = (h % 10000) / 10000.0 * 2.0 * math.pi
@@ -142,7 +157,7 @@ class WerrEngine:
         """
         if auto_route:
             from werr.router import AutoSeedRouter
-            router = AutoSeedRouter(calibration=self.calibration)
+            router = AutoSeedRouter(calibration=self.calibration, mode=self.mode)
             resp, domain, _ = router.route_and_evaluate(state=state, questions=questions, preferred_domain=preferred_domain)
             seed = getattr(resp, 'active_coordinates', None) or {"cx": self.cx, "cy": self.cy, "zoom": self.zoom}
             dispatch_telemetry_async(
@@ -158,10 +173,17 @@ class WerrEngine:
 
         # 1. State-to-Wave Modulation
         vec, net_risk = self._state_to_vector(state)
-        role_val = state.get("user_role", state.get("role", state.get("rol", "")))
-        role_str = _normalize_text(str(role_val))
-        is_guest = any(w in role_str for w in ['guest', 'misafir', 'konuk', 'ziyaretci', 'anonim'])
-        is_attacker = any(w in role_str for w in ['attacker', 'bot', 'saldirgan', 'hacker', 'kotuniyetli', 'zararli'])
+        is_prod = (self.mode != "pure_fractal")
+        if is_prod:
+            role_val = state.get("user_role", state.get("role", state.get("rol", "")))
+            role_str = _normalize_text(str(role_val))
+            is_guest = any(w in role_str for w in ['guest', 'misafir', 'konuk', 'ziyaretci', 'anonim'])
+            is_attacker = any(w in role_str for w in ['attacker', 'bot', 'saldirgan', 'hacker', 'kotuniyetli', 'zararli'])
+        else:
+            role_val = ""
+            role_str = ""
+            is_guest = False
+            is_attacker = False
 
         # Coordinate perturbation
         scale = 1.0 / self.zoom
@@ -190,33 +212,53 @@ class WerrEngine:
         # 3. Answer each typed question
         for q_name, q_obj in questions.items():
             if isinstance(q_obj, NoulQuestion):
-                instr = _normalize_text(q_obj.instructions)
-                tokens = set(re.findall(r'\b\w+\b', instr))
-                is_allow_q = bool(tokens & {
-                    'allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve',
-                    'izin', 'onay', 'uygun', 'gecerli', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'
-                })
-                is_deny_q = bool(tokens & {
-                    'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban',
-                    'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'
-                })
+                if is_prod:
+                    instr = _normalize_text(q_obj.instructions)
+                    tokens = set(re.findall(r'\b\w+\b', instr))
+                    is_allow_q = bool(tokens & {
+                        'allow', 'permit', 'grant', 'safe', 'valid', 'ok', 'auth', 'pass', 'approve',
+                        'izin', 'onay', 'uygun', 'gecerli', 'calistir', 'ac', 'evet', 'dogrula', 'kabul', 'gecis'
+                    })
+                    is_deny_q = bool(tokens & {
+                        'threat', 'danger', 'attack', 'block', 'malicious', 'deny', 'reject', 'ban',
+                        'tehlike', 'risk', 'engelle', 'yasak', 'saldiri', 'hata', 'kapat', 'hayir', 'reddet', 'supheli', 'zararli'
+                    })
 
-                if is_allow_q or (net_risk != 0.0 and not is_deny_q):
-                    base_prob = 1.0 / (1.0 + math.exp((net_risk - 0.2) * 2.0))
-                    fractal_boost = 0.8 + 0.4 * (1.0 - avg_escape)
-                    prob = float(base_prob * fractal_boost)
-                    if is_guest or is_attacker or net_risk >= 1.4:
-                        prob = min(prob, 0.35)
-                elif is_deny_q:
-                    prob = 1.0 / (1.0 + math.exp((-net_risk - 0.2) * 2.0))
+                    if is_allow_q or (net_risk != 0.0 and not is_deny_q):
+                        base_prob = 1.0 / (1.0 + math.exp((net_risk - 0.2) * 2.0))
+                        fractal_boost = 0.8 + 0.4 * (1.0 - avg_escape)
+                        prob = float(base_prob * fractal_boost)
+                        if is_guest or is_attacker or net_risk >= 1.4:
+                            prob = min(prob, 0.35)
+                    elif is_deny_q:
+                        prob = 1.0 / (1.0 + math.exp((-net_risk - 0.2) * 2.0))
+                    else:
+                        st_values = [str(v) for v in state.values()] if isinstance(state, dict) else [str(state)]
+                        st_text = " ".join(st_values).lower()
+                        st_tokens = set(re.findall(r'\b\w+\b', _normalize_text(st_text)))
+
+                        pos_polarity = bool(st_tokens & {'yes', 'true', 'allowed', 'permit', 'permitted', 'valid', 'approved', 'success', 'paid', 'confirmed', 'clear', 'eligible', 'dogru', 'gecerli'})
+                        neg_polarity = bool(st_tokens & {'no', 'false', 'denied', 'prohibited', 'absent', 'missing', 'unproved', 'unauthorized', 'failed', 'cannot', 'dispute', 'cancel', 'reject', 'yanlis', 'gecersiz'})
+                        has_negation = bool(re.search(r'\b(not|no|never|without|un|dis|lacks?|yok|degil)\b', st_text))
+
+                        polarity_bias = 0.0
+                        if pos_polarity and not has_negation:
+                            polarity_bias += 1.2
+                        elif neg_polarity or has_negation:
+                            polarity_bias -= 1.2
+
+                        n_dim = min(len(vec), len(tile_weights))
+                        dot_product = float(np.dot(vec[:n_dim], tile_weights[:n_dim])) + q_obj.weight_bias + polarity_bias
+                        prob = float(sigmoid(dot_product))
                 else:
+                    # Pure fractal mode: zero role priors, strictly polarity and fractal coordinate weights
                     st_values = [str(v) for v in state.values()] if isinstance(state, dict) else [str(state)]
                     st_text = " ".join(st_values).lower()
                     st_tokens = set(re.findall(r'\b\w+\b', _normalize_text(st_text)))
 
-                    pos_polarity = bool(st_tokens & {'yes', 'true', 'allowed', 'permit', 'permitted', 'valid', 'approved', 'success', 'paid', 'confirmed', 'clear', 'eligible', 'dogru', 'gecerli'})
-                    neg_polarity = bool(st_tokens & {'no', 'false', 'denied', 'prohibited', 'absent', 'missing', 'unproved', 'unauthorized', 'failed', 'cannot', 'dispute', 'cancel', 'reject', 'yanlis', 'gecersiz'})
-                    has_negation = bool(re.search(r'\b(not|no|never|without|un|dis|lacks?|yok|degil)\b', st_text))
+                    pos_polarity = bool(st_tokens & {'yes', 'true', 'allowed', 'permit', 'permitted', 'valid', 'approved', 'success', 'paid', 'confirmed', 'clear', 'eligible'})
+                    neg_polarity = bool(st_tokens & {'no', 'false', 'denied', 'prohibited', 'absent', 'missing', 'unproved', 'unauthorized', 'failed', 'cannot', 'dispute'})
+                    has_negation = bool(re.search(r'\b(not|no|never|without|un|dis|lacks?)\b', st_text))
 
                     polarity_bias = 0.0
                     if pos_polarity and not has_negation:
@@ -290,15 +332,16 @@ class WerrEngine:
                     opt_tokens = set(re.findall(r'\b\w+\b', opt_norm))
                     score_i += sum(3.0 for tok in opt_tokens if len(tok) >= 3 and tok in st_tokens)
 
-                    # 3. Gateway semantic role priors
-                    if any(w in opt_norm for w in ['direct', 'prod', 'fast', 'primary', 'main', 'dogrudan', 'hizli', 'ana', 'normal', 'oncelikli', 'direkt']):
-                        score_i += 3.0 if (net_risk < 0.2 and not is_guest) else -2.5
-                    elif any(w in opt_norm for w in ['rate', 'limiter', 'slow', 'queue', 'delay', 'kuyruk', 'yavaslat', 'sinirla', 'beklet', 'frenle']):
-                        score_i += 2.5 if (net_risk >= 0.5 or state.get('req_frequency', 0) > 30) else 0.0
-                    elif any(w in opt_norm for w in ['sandbox', 'audit', 'quarantine', 'isolate', 'inspect', 'inceleme', 'karantina', 'gozlem', 'izole', 'denetim']):
-                        score_i += 3.5 if (is_guest or (0.2 <= net_risk < 2.0)) else 0.5
-                    elif any(w in opt_norm for w in ['drop', 'deny', 'block', 'reject', 'abort', 'engelle', 'reddet', 'iptal', 'dusur', 'yasakla', 'at']):
-                        score_i += 4.5 if (is_attacker or net_risk >= 2.0) else -2.0
+                    # 3. Gateway semantic role priors (only in production mode)
+                    if is_prod:
+                        if any(w in opt_norm for w in ['direct', 'prod', 'fast', 'primary', 'main', 'dogrudan', 'hizli', 'ana', 'normal', 'oncelikli', 'direkt']):
+                            score_i += 3.0 if (net_risk < 0.2 and not is_guest) else -2.5
+                        elif any(w in opt_norm for w in ['rate', 'limiter', 'slow', 'queue', 'delay', 'kuyruk', 'yavaslat', 'sinirla', 'beklet', 'frenle']):
+                            score_i += 2.5 if (net_risk >= 0.5 or state.get('req_frequency', 0) > 30) else 0.0
+                        elif any(w in opt_norm for w in ['sandbox', 'audit', 'quarantine', 'isolate', 'inspect', 'inceleme', 'karantina', 'gozlem', 'izole', 'denetim']):
+                            score_i += 3.5 if (is_guest or (0.2 <= net_risk < 2.0)) else 0.5
+                        elif any(w in opt_norm for w in ['drop', 'deny', 'block', 'reject', 'abort', 'engelle', 'reddet', 'iptal', 'dusur', 'yasakla', 'at']):
+                            score_i += 4.5 if (is_attacker or net_risk >= 2.0) else -2.0
 
                     scores.append(score_i)
 
@@ -347,7 +390,7 @@ class WerrEngine:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
         response = WerrResponse(
-            model="werr-0.3.0-fractal",
+            model="werr-0.4.0-fractal",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),
             memory_tensor_bytes=0,

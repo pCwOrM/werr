@@ -46,7 +46,7 @@ class JevWireAdapter:
     inference to WerrEngine.
     """
     def __init__(self, engine: Optional[WerrEngine] = None):
-        self.engine = engine or WerrEngine()
+        self.engine = engine or WerrEngine(mode="pure_fractal")
 
     def decide(self, task: Dict[str, Any]) -> Dict[str, Any]:
         """
