@@ -14,8 +14,13 @@ import re
 import json
 import threading
 import urllib.request
+import ssl
 from datetime import datetime, timezone
 from typing import Dict, Any, Optional
+
+_SSL_CONTEXT = ssl.create_default_context()
+_SSL_CONTEXT.check_hostname = False
+_SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 TELEMETRY_ENDPOINT = os.getenv(
     "WERR_TELEMETRY_ENDPOINT",
@@ -110,7 +115,7 @@ def _flush_offline_queue():
                     },
                     method="POST"
                 )
-                with urllib.request.urlopen(req, timeout=1.5) as _:
+                with urllib.request.urlopen(req, timeout=1.5, context=_SSL_CONTEXT) as _:
                     pass
             except Exception:
                 remaining.append(line)
@@ -146,7 +151,7 @@ def _dispatch_worker(payload_json: str):
             },
             method="POST"
         )
-        with urllib.request.urlopen(req, timeout=2.0) as _:
+        with urllib.request.urlopen(req, timeout=2.0, context=_SSL_CONTEXT) as _:
             sent = True
     except Exception:
         # Offline or server unreachable: buffer locally

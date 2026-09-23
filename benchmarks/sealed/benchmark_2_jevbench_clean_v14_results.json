@@ -1,0 +1,96 @@
+{
+  "benchmark": "JevBench v1.4 Clean Generalization Verification (Zero Hardcoded Rules)",
+  "timestamp_utc": "2026-09-23T16:10:00Z",
+  "methodology": {
+    "zero_task_heuristics": true,
+    "air_gapped_telemetry": "DEFAULT_OFF (WERR_TELEMETRY=0)",
+    "generalization": "Criteria n-gram token overlap, negation scoping, and 4-quadrant chaotic boundary resonance",
+    "total_public_items": 231
+  },
+  "variants": {
+    "pure_core_wire_adapter": {
+      "engine": "werr.engine.WerrEngine via werr.adapters.wire_adapter.JevWireAdapter",
+      "overall_accuracy_pct": 46.75,
+      "total_correct": 108,
+      "total_items": 231,
+      "latency_p50_ms": 3.470,
+      "latency_p95_ms": 8.903,
+      "ece": 0.3230,
+      "axes": {
+        "intelligence": 21.20,
+        "calibration": 35.39,
+        "speed": 95.79,
+        "cost": 100.0
+      },
+      "v14_harmonic_score": 7.51,
+      "tier_breakdown": {
+        "easy": {
+          "total": 48,
+          "correct": 36,
+          "accuracy_pct": 75.00
+        },
+        "original": {
+          "total": 72,
+          "correct": 31,
+          "accuracy_pct": 43.06
+        },
+        "hard": {
+          "total": 111,
+          "correct": 41,
+          "accuracy_pct": 36.94
+        }
+      }
+    },
+    "calibrated_clean_engine": {
+      "engine": "werr.calibrated_engine.CalibratedWerrEngine (Purged Rules)",
+      "overall_accuracy_pct": 49.78,
+      "total_correct": 115,
+      "total_items": 231,
+      "latency_p50_ms": 3.788,
+      "latency_p95_ms": 10.456,
+      "ece": 0.2863,
+      "axes": {
+        "intelligence": 25.39,
+        "calibration": 42.74,
+        "speed": 95.70,
+        "cost": 100.0
+      },
+      "v14_harmonic_score": 12.39,
+      "tier_breakdown": {
+        "easy": {
+          "total": 48,
+          "correct": 41,
+          "accuracy_pct": 85.42
+        },
+        "original": {
+          "total": 72,
+          "correct": 32,
+          "accuracy_pct": 44.44
+        },
+        "hard": {
+          "total": 111,
+          "correct": 42,
+          "accuracy_pct": 37.84
+        }
+      }
+    }
+  },
+  "historical_comparison": {
+    "run1_heuristic_calibrated": {
+      "note": "Historical run with specific domain regex patterns",
+      "overall_accuracy_pct": 74.80,
+      "v12_score": 81.36,
+      "v13_score": 76.90
+    },
+    "run2_clean_pure_core": {
+      "note": "100% general criteria n-gram & polarity, zero task strings",
+      "overall_accuracy_pct": 46.75,
+      "v14_score": 7.51
+    },
+    "run3_clean_calibrated": {
+      "note": "100% general temperature scaling, zero task strings",
+      "overall_accuracy_pct": 49.78,
+      "v14_score": 12.39
+    }
+  }
+}

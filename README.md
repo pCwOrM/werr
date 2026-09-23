@@ -595,6 +595,12 @@ werr             # Interactive terminal simulator
 
 ---
 
+## 🤝 Scientific Peer Acknowledgment & Community Vigilance
+
+We extend our sincere gratitude and highest professional respect to **Florian Standhartinger** and the JevBench research community (`@airesearch12`, [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)). Their rigorous external audit and insistence on zero task-specific heuristics inspired our architectural leap: completely purging domain wording overrides from Werr and replacing them with generalized multi-token $N$-gram criteria resonance, bidirectional negation scoping, and pure chaotic boundary dynamics. This peer critique sharpened Werr into a genuinely task-agnostic zero-VRAM System-1 reflex runtime. Open science thrives when rigorous critique drives independent builders to innovate higher.
+
+---
+
 ## 👥 Authors & Academic Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  

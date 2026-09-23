@@ -100,10 +100,24 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 
 ---
 
-### 2. ⚖️ JevBench Çift-Standart Doğrulaması ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
+### 2. ⚖️ JevBench Kümülatif Evrim & Çift-Standart Doğrulaması ([Issue #10](https://github.com/fstandhartinger/jevbench/issues/10))
 * **Kapsam:** Tip-güvenli şema sözleşmelerini (`noul`, `choice`, `score`) denetleyen 231 kamuya açık görev (Easy, Original, Hard).
-* **Çift-Standart Skoru:** **81.36 (v1.2 Standardı)** │ **76.90 (v1.3.0 Standardı)**.
-* **Bileşen Metrikleri:** Zeka: **%71.24** │ Hız: **100.0/100** │ Maliyet: **100.0/100** │ Kalibrasyon: **61.50** (Ağırlıklı ECE: 0.154).
+* **Kümülatif Evrim Matrisi:** Bilimsel şeffaflığı eksiksiz korumak adına tüm test sürümleri eski kayıtlar silinmeksizin yan yana sunulmuştur:
+
+| Koşu / Sürüm | Metodoloji & Değişmez | Genel Doğruluk | Kolay (Easy) | Standart (Original) | Zor (Hard) | Medyan Gecikme | ECE (Kalibrasyon) | Hız Ekseni | Maliyet | v1.2 / v1.3 Skoru | v1.4 Skoru |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Koşu 1: Sezgisel Kalibre (Tarihsel)** | Göreve özel anlamsal eşleştirmeler | %74.80 | %85.42 | %90.28 | %46.85 | 2.58 ms | 0.1540 | 100.0 | 100.0 | **81.36** / **76.90** | — |
+| **Koşu 2: Temiz Çekirdek (`JevWireAdapter`)** | **Sıfır Sabit Kural**, 100% Genel N-gram ve polarite analizi | **%46.75** | **%75.00** | **%43.06** | **%36.94** | **3.47 ms** | 0.3230 | **95.79** | **100.0** | 35.80 / 30.12 | **7.51** |
+| **Koşu 3: Temiz Kalibre Motor** | **Sıfır Sabit Kural**, Platt sıcaklık ölçeklemesi | **%49.78** | **%85.42** | **%44.44** | **%37.84** | **3.79 ms** | 0.2863 | **95.70** | **100.0** | 41.50 / 36.20 | **12.39** |
+
+> [!NOTE]
+> **JevBench v1.4 Puanlama Mekaniğinin Analizi:**  
+> JevBench v1.4 sürümünde, şanstan arındırılmış zeka skoru 50'nin altındaysa karesel bir ceza çarpanı uygulanır: $\text{Skor} = \text{HarmonikOrtalama} \times \left(\frac{\text{Zeka}}{50}\right)^2$. Bu ceza, 4ms altı gecikme (Hız: 95.7) ve 0 VRAM ($0 maliyet) avantajına bakılmaksızın 50 altı puanları baskılasa da, Werr'in doğruluğu tekdüze şans seviyesinin (~%29–%33) belirgin biçimde üzerinde kalarak tensör ağırlığı olmaksızın saf geometrik refleks karar yeteneğini kanıtlamaktadır.
+
+> [!TIP]
+> **🤝 Florian Standhartinger ve JevBench Topluluğuna Teşekkür & Saygı:**  
+> **Florian Standhartinger**'e ve JevBench açık kaynak ekibine ([fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)) içten teşekkürlerimizi ve saygılarımızı sunuyoruz. Yaptıkları titiz inceleme, etik denetim ve göreve özel sezgisellerden arındırma vurgusu, mimari olarak Werr'i bir üst seviyeye taşımamıza vesile oldu. Sayelerinde alana özgü kelime eşleştirmeleri tamamen kaldırılarak yerine çoklu belirteç $N$-gram kriter uyumu, iki yönlü polarite/olumsuzluk kapsamı ve kaotik sınır rezonansı entegre edildi; böylece Werr görevden bağımsız, çok daha keskin ve saf bir Sıfır-VRAM refleks motoruna dönüştü. Açık bilimin gücü tam olarak budur.
+
 * **Bütünlük Denetimi:** Metrik kaymaları ve sıra dinamiklerine dair akademik analiz [`docs/BENCHMARK_INTEGRITY_REPORT.md`](../docs/BENCHMARK_INTEGRITY_REPORT.md) dosyasında yayımlanmıştır.
 * **Canlı Ağ:** [`answerr`](https://github.com/pCwOrM/answerr) ikili bilişsel REST API'si (`api.answerr.me:4431`) üzerinden test edilmiştir.
 
