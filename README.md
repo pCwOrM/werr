@@ -595,9 +595,9 @@ werr             # Interactive terminal simulator
 
 ---
 
-## 🤝 Scientific Peer Acknowledgment & Community Vigilance
+## 🤝 Scientific Peer Acknowledgment & Mutual Evolution
 
-We extend our sincere gratitude and highest professional respect to **Florian Standhartinger** and the JevBench research community (`@airesearch12`, [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)). Their rigorous external audit and insistence on zero task-specific heuristics inspired our architectural leap: completely purging domain wording overrides from Werr and replacing them with generalized multi-token $N$-gram criteria resonance, bidirectional negation scoping, and pure chaotic boundary dynamics. This peer critique sharpened Werr into a genuinely task-agnostic zero-VRAM System-1 reflex runtime. Open science thrives when rigorous critique drives independent builders to innovate higher.
+Scientific progress is inherently bidirectional. We extend our sincere gratitude and highest professional respect to **Florian Standhartinger** and the JevBench research community (`@airesearch12`, [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)). Just as their rigorous external audit inspired our architectural leap—completely purging domain wording overrides in favor of generalized multi-token $N$-gram criteria resonance, bidirectional negation scoping, and chaotic boundary dynamics—Werr’s arrival as the first 0-VRAM fractal contender disrupted the benchmark landscape, catalyzing JevBench's rapid evolution toward sealed testing, chance baselines, and harmonic penalty gates across v1.3 and v1.4. Having a real, non-conformist challenger in the ring forced both sides to innovate faster. In open science, iron sharpens iron.
 
 ---
 
