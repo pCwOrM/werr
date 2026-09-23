@@ -27,6 +27,8 @@
 [![Kriptografik Denetim](https://img.shields.io/badge/Denetim-SHA--256%20Mühürlü-blueviolet.svg)](benchmarks/sealed/SEAL_MANIFEST.json)
 [![answerr Platformu](https://img.shields.io/badge/answerr-Platform-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
 [![werracle Web3 Oracle](https://img.shields.io/badge/werracle-On--Chain%20Oracle-f59e0b.svg?logo=ethereum&logoColor=white)](https://github.com/pCwOrM/werracle)
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/pCwOrM)
+[![Support on USDT TRC20](https://img.shields.io/badge/Destek-USDT%20TRC20-009393?logo=tether&logoColor=white)](#-sponsorluk-ve-hibe-destekleri)
 
 > **Motto:** *"Dalga Hata ile Karşılaştığında, Yineleriz (werr)."*  
 > *"Refleks nerede? Karar Werr!"*  
@@ -359,4 +361,23 @@ Bu yazılım ve refleks karar algoritmaları **[Business Source License 1.1 (BSL
 - **Patent Koruması:** Prosedürel karar algoritmaları **TÜRKPATENT TR 2026/016285** patent başvurusu ile korunmaktadır.
 - **Dönüşüm Tarihi:** **01.01.2030** tarihinde bu yazılım otomatik olarak **Apache License, Version 2.0** açık kaynak lisansına dönüşecektir.
 - **Kurumsal İletişim & Lisanslama:** **ITouch Systems** (MERSİS: `0469094455800001`, VKN: `4690944558`, Sanayi Sicil: `827254`) &bull; E-Posta: [info@itouch.com.tr](mailto:info@itouch.com.tr) &bull; [ask@answerr.me](mailto:ask@answerr.me) &bull; KEP: `itouchbilisim@hs01.kep.tr` &bull; [answerr.me](https://answerr.me).
+
+---
+
+## 💖 Sponsorluk ve Hibe Destekleri
+
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/pCwOrM)
+[![Support on USDT TRC20](https://img.shields.io/badge/Destek-USDT%20TRC20-009393?logo=tether&logoColor=white)](#-sponsorluk-ve-hibe-destekleri)
+
+WERR, bağımsız ve patent korumalı açık kaynaklı matematiksel yapay zekâ araştırma projesidir. Katkılarınız; Sıfır-VRAM uç yapay zekâ kıyaslamalarımızı, EVM zincir-üstü karar orakıllarımızı ve kamu yararına açık akademik geliştirme araçlarımızı hızlandırır.
+
+### 💳 Resmi Bağış ve Destek Cüzdanları
+| Kanal / Cüzdan | Ağ (Network) | Alıcı Cüzdan Adresi |
+| :--- | :--- | :--- |
+| **Trust Wallet** | TRC20 (TRON) | `TQ6UjobN9HpGkPst2E6Cm3GiG5PSeLn5Bb` |
+| **Binance Wallet** | TRC20 (TRON) | `TQc3VjKPkpv3nkHcaT4LKVcfdrS6yTRSUG` |
+| **Resmi Tüzel Kişilik** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
+
+* **Resmi İletişim Kanalları:** `vdagli@itouch.com.tr` (Kurumsal) | `pcworm@pcworm.net` (Baş Araştırmacı) | `ask@answerr.me` (Otonom Ajan) | Web: `https://answerr.me`
+
 
