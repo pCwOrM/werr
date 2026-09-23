@@ -140,6 +140,23 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
     print(f"Yönlendirilen rota: {response.choice('route')} (Gecikme: {response.latency_ms} ms)")
 ```
 
+### ⚙️ Parametrik Çift Mod Mimarisi (`production` vs `pure_fractal`)
+
+`werr` v0.4.0, sahadaki gerçek uç birim (Edge/IoT) ihtiyaçları ile harici akademik kıyaslamaları (benchmark) birbirinden temiz bir şekilde ayıran **Parametrik Çift Mod Mimarisi** sunar:
+
+* **`mode="production"` (Varsayılan):** Tüm operasyonel alan geçitleri (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`), durum imzaları ve fiziksel tehlike kuralları (`smoke_detected`, `gas_ppm`, kritik sıcaklıklar) eksiksiz devrededir. Gömülü IoT, akıllı ev, tıbbi triyaj, güvenlik duvarları ve `answerr.me` platform servislerinde deterministik can güvenliği ve yüksek hız için varsayılan moddur.
+* **`mode="pure_fractal"` (veya `enable_ontologies=False`):** Alan sözlüklerini ve rol eşlemelerini tamamen devre dışı bırakır. Yalnızca saf Mandelbrot kaçış dinamikleri, kriter $N$-gram örtüşmesi ve evrensel matematiksel izdüşümlerle çalışır. [`JevWireAdapter`](./werr/adapters/wire_adapter.py) tarafından dışarıdan bağımsız, şeffaf ve önyargısız akademik denetimler için kullanılır.
+
+```python
+from werr import WerrEngine
+
+# 1. Saha ve Gerçek Dünya IoT (Tüm alan ontolojileri ve güvenlik kuralları devrede)
+engine = WerrEngine(mode="production")
+
+# 2. Şeffaf Harici Benchmark / Denetim Modu (Sıfır leksikal kural, saf fraktal)
+engine_audit = WerrEngine(mode="pure_fractal")
+```
+
 ---
 
 ## 🗺️ Evrensel Fraktal Doğal Dil Karar Haritası

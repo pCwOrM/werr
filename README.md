@@ -169,6 +169,23 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
     print(f"Routing to: {response.choice('route')} in {response.latency_ms} ms")
 ```
 
+### ⚙️ Dual-Mode Parametric Architecture (`production` vs `pure_fractal`)
+
+`werr` v0.4.0 introduces an explicit **Dual-Mode Parametric Engine Architecture** to cleanly decouple real-world edge deployment from blind academic benchmark audits:
+
+* **`mode="production"` (Default)**: Full activation of domain gates (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`), state variable signatures, and physical threshold heuristics (`smoke_detected`, `gas_ppm`, temperature extremes). Ideal for embedded IoT, medical triage, firewalls, and `answerr.me` platform services where deterministic life-safety and performance are paramount.
+* **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Bypasses all domain keyword indices and semantic role dictionaries. Operates strictly on chaotic Mandelbrot boundary escape dynamics, criteria $N$-gram geometry, and universal mathematical projections. Utilized by [`JevWireAdapter`](./werr/adapters/wire_adapter.py) for 100% transparent, uncalibrated offline benchmark evaluations.
+
+```python
+from werr import WerrEngine
+
+# 1. Edge & Production IoT (Full domain ontologies active)
+engine = WerrEngine(mode="production")
+
+# 2. Transparent Offline Benchmark Mode (Zero lexical priors)
+engine_audit = WerrEngine(mode="pure_fractal")
+```
+
 ---
 
 ## 🗺️ The Universal Fractal Natural Language Decision Map
