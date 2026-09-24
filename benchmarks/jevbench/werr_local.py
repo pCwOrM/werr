@@ -197,8 +197,8 @@ class WerrLocalAdapter:
         self.model = model or "werr-v0.5.0-tripod-tesla369"
         self.threads = threads
         self.revision = revision
-        self.price_input_per_m = price_input_per_m or 0.0
-        self.price_output_per_m = price_output_per_m or 0.0
+        self.price_input_per_m = price_input_per_m
+        self.price_output_per_m = price_output_per_m
 
         # Universal neutral boundary cusp coordinate
         self.cx = -0.7436438870371587
