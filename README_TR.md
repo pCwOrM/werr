@@ -8,9 +8,9 @@
 
 # ⚡ WERR: Sıfır-Bellekli Fraktal Sistem-1 Karar Motoru (Dalgalar ve Hatalar)
 
-[![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-red.svg)](./LICENSE)
+[![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
-[![Makale DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Makale%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
 [![Canlı Demo: GitHub Pages](https://img.shields.io/badge/Canl%C4%B1%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
@@ -149,15 +149,15 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 #### 🌟 Üç Temel Algoritmik Sütun (v0.5.0)
 1. **Tripod Çok Ölçekli Harmonik Çekirdek (`tripod=True`, Varsayılan Açık)**: Kaotik sınır dinamiklerini tek bir odak ölçeğinde değerlendirmek yerine WERR, kaçış sınırını üç harmonik odak ölçeğinde eşzamanlı değerlendirir: $0.6\times$ (makro topolojik havza), $1.0\times$ (nominal sınır cusp'ı) ve $1.6\times$ (ince çok-fraktallı iplikçikler). Ağırlıklı geometrik ensemble ($w = [0.25, 0.50, 0.25]$) ile sınır tuzaklanmasını önler ve JevBench doğruluğunu tüm katmanlarda **%54.55'e** (Easy %85.42, Hard %44.14) yükseltir.
 2. **Sınırlı Yoğunluk Normalizasyonu (Bounded Density, arXiv:1810.11107)**: $L_\infty / L_1$ sınırlı kadran yoğunluk kestirimini (`extract_bounded_quadrant_weights`) devreye alarak kaçış hızı dağılımlarının uç noktalarda doymasını engeller.
-3. **Cadence Süperkritik Çatallanma (Supercritical Pitchfork Bifurcation)**: Sürekli dinamik sistem çatallanmasını ($\dot{x} = r x - x^3$, `apply_cadence_bifurcation`) kullanarak yapay basamak fonksiyonlarına gerek kalmaksızın yüksek riskli/düşük riskli karar kollarını dinamik olarak netleştirir.
+3. **Çatallanma Kenar Genişletme Operatörü (Pitchfork Bifurcation Offset)**: Sürekli dinamik sistem çatallanmasını ($F_i = \sum_{j \neq i} [\text{sgn}(S_i - S_j) \cdot |S_i - S_j|^\alpha + \beta (H_i - H_j)]$, `apply_cadence_bifurcation`) kullanarak yapay basamak fonksiyonlarına gerek kalmaksızın kilitlenen karar durumlarını deterministik olarak çözer ve sınırları netleştirir.
 
 #### 1. Alan Yönlendirme Boyutu (`domain_mode="none"` vs `domain_mode="multi"`)
-* **`domain_mode="none"` (Genel Akıl Yürütme & Akademik Benchmark Varsayılanı):** **Domainsiz Monolitik Mod (Domainless Monolithic)**. Ayrık alan kapılarını atlayarak soruları doğrudan evrensel kaotik sınır cusp koordinatına ($c = -0.743643887 + 0.131825904i$, zoom $50.0$) modüle eder. Yapay alan sınıflandırma önyargısını ortadan kaldırarak genel akıl yürütme ve çok adımlı çıkarımların doğal $\partial \mathcal{M}$ kaosu üzerinde çözülmesini sağlar. JevBench v1.4.1 üzerinde **%54.55 toplam doğruluk** ve Tesla 3-6-9 Harmonik Izgarası ile **7.32 ms gecikmeyle resmî 23.74 skoru** elde ederek Raw Qwen3 8B (23.68), LitJev 27B ve GPT-5.6 Luna'yı geride bırakır.
+* **`domain_mode="none"` (Genel Akıl Yürütme & Akademik Benchmark Varsayılanı):** **Domainsiz Monolitik Mod (Domainless Monolithic)**. Ayrık alan kapılarını atlayarak soruları doğrudan evrensel kaotik sınır cusp koordinatına ($c = -0.743643887 + 0.131825904i$, zoom $50.0$) modüle eder. Yapay alan sınıflandırma önyargısını ortadan kaldırarak genel akıl yürütme ve çok adımlı çıkarımların doğal $\partial \mathcal{M}$ kaosu üzerinde çözülmesini sağlar. JevBench v1.4.1 üzerinde **%54.55 toplam doğruluk** ve $\mathbb{Z}/9\mathbb{Z}$ Rezonans Izgarası ile **7.32 ms gecikmeyle resmî 23.74 skoru** elde ederek Raw Qwen3 8B (23.68), LitJev 27B ve GPT-5.6 Luna'yı geride bırakır.
 * **`domain_mode="multi"` (Üretim IoT & Altyapı Varsayılanı):** **Çoklu Alan Modu (Multi-Domain)**. Durum imzalarını `AutoSeedRouter` aracılığıyla 5 uzmanlaşmış alan kapısına (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) dinamik olarak yönlendirir. Deterministik fiziksel sensör eşiklerinin (`smoke_detected`, `gas_ppm`) zorunlu olduğu gömülü donanımlar için tasarlanmıştır.
 
 #### 2. Leksikal ve Rezonans Ontoloji Boyutu (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
 * **`mode="production"` (Üretimde Varsayılan)**: İki dilli (Türkçe/İngilizce) sözcük sözlükleri, fiziksel tehlike kuralları ve sensör eşikleri eksiksiz devrededir. Üretim sunucularında (`mechsrv` / `answerr.me`) varsayılan olarak bu mod koşar.
-* **`mode="resonance"`**: Saf matematiksel Tesla 3-6-9 frekans rezonans sözlüğü. Çoklu alan modunda ultra-düşük gecikme (**13.8 ms**) sunarken JevBench üzerinde **%52.81** doğruluk sağlar.
+* **`mode="resonance"`**: Matematiksel $\mathbb{Z}/9\mathbb{Z}$ devirli bölüm halkası modüler rezonans topolojisi (Lean 4 Mathlib `ZMod 9` kapalı alt-ideali $\mathcal{I}_3 = \{0, 3, 6\} \cong 3\mathbb{Z}/9\mathbb{Z}$ / mühendislik kısaltması: Tesla 3-6-9 frekans sözlüğü). Çoklu alan modunda ultra-düşük gecikme (**13.8 ms**) sunarken JevBench üzerinde **%52.81** doğruluk sağlar.
 * **`mode="pure_fractal"` (veya `enable_ontologies=False`)**: Dış sözlükleri ve leksikal kuralları tamamen devre dışı bırakır; yalnızca kaotik Mandelbrot sınır kaçış dinamikleri ve kriter $N$-gram geometrisiyle çalışır.
 
 ```python
@@ -243,16 +243,17 @@ Milyarlarca parametre gerektiren ağır modeller eğitmek yerine, program duruml
 
 ## 🧭 Çok Alanlı Otomatik Tohum Yönlendiricisi ve Ampirik Ablasyon (v0.2.0+)
 
-$N = 336$ ampirik karar üzerinde gerçekleştirilen ablasyon çalışması sonuçları:
+$N = 326$ ampirik karar üzerinde gerçekleştirilen ablasyon çalışması sonuçları:
 
 | Operasyonel Alan | Örneklem ($N$) | Monolitik Tohum | **AutoSeedRouter Başarısı** | Net Kazanç ($\Delta$) | Ort. Güven | Çıkarım Gecikmesi |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **API Gateway & Güvenlik** | 85 | %83.5 | **%87.1** | +%3.5 | %93.9 | 3.42 ms |
-| **Akıllı Ev & IoT Güvenliği** | 61 | %85.2 | **%98.4** | +%13.1 | %100.0 | 3.31 ms |
+| **API Gateway & Güvenlik** | 85 | %83.5 | **%87.1** | +%3.6 | %93.9 | 3.42 ms |
+| **Akıllı Ev & IoT Güvenliği** | 61 | %85.2 | **%98.4** | +%13.2 | %100.0 | 3.31 ms |
 | **E-Ticaret Sahtecilik** | 60 | %56.7 | **%85.0** | +%28.3 | %100.0 | 3.29 ms |
 | **Oyun Yapay Zekası (NPC)** | 60 | %50.0 | **%95.0** | +%45.0 | %100.0 | 3.17 ms |
 | **Finansal Risk & Kredi** | 60 | %35.0 | **%100.0** | +%65.0 | %100.0 | 3.33 ms |
-| **GENEL MAKRO DOĞRULUK** | **326** | **%63.8** | **%92.6** | **+%28.8** | **%98.0** | **3.31 ms** |
+| **Ağırlıksız Makro Ortalama** | **5 alan** | **%62.1** | **%93.1** | $\mathbf{+\%31.0}$ | **%98.0** | **3.31 ms** |
+| **Örneklem Ağırlıklı Mikro Ortalama** | **N = 326** | **%63.8** | **%92.6** | $\mathbf{+\%28.8}$ | **%98.0** | **3.31 ms** |
 
 ---
 
@@ -429,11 +430,11 @@ werr attacker    # Engellendi (Anlık omurilik refleksi)
 
 Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde yayınlanmıştır:
 
-* **Birincil Makale:** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
+* **Birincil Makale (Versiyon 2.0 Camera-Ready):** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
   * **arXiv Yayını:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
   * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
   * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Sorumlu Yazar: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
-  * **Durum:** arXiv üzerinde resmi olarak yayınlandı (Eylül 2026).
+  * **Durum:** Versiyon 2.0 Camera-Ready / Hakem Değerlendirme Revizyonu (Eylül 2026). Makale LaTeX ve Camera-Ready PDF senkronize edildi.
 
 * **Kuramsal Temel Araştırması:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
   * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (inceleme aşamasında)  
