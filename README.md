@@ -8,12 +8,12 @@
 
 # ⚡ WERR: Zero-Memory Fractal System-One Decision Engine (Waves & Errors)
 
-[![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-red.svg)](./LICENSE)
+[![License: Dual BSL 1.1 / MIT](https://img.shields.io/badge/License-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
-[![Paper DOI: 10.5281/zenodo.22867426](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.22867426-38bdf8.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Preprint Status](https://img.shields.io/badge/Preprint-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
 [![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
@@ -178,15 +178,15 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 #### 🌟 The Three Algorithmic Pillars (v0.5.0)
 1. **Tripod Multi-Scale Harmonic Kernel (`tripod=True`, Default Enabled)**: Rather than evaluating boundary dynamics at a single focal scale, WERR evaluates the escape boundary at three harmonic focal scales: $0.6\times$ (macro topological basin), $1.0\times$ (nominal boundary cusp), and $1.6\times$ (fine multi-fractal filaments) with weighted geometric ensemble ($w = [0.25, 0.50, 0.25]$). This prevents boundary trapping and lifts JevBench accuracy across all tiers to **54.55%** (85.42% Easy, 44.14% Hard).
 2. **Bounded Density Normalization (arXiv:1810.11107)**: Incorporates $L_\infty / L_1$ bounded quadrant density estimation (`extract_bounded_quadrant_weights`), stabilizing escape velocity distributions against edge saturation.
-3. **Cadence Supercritical Pitchfork Bifurcation**: Employs continuous dynamical system bifurcation ($\dot{x} = r x - x^3$, `apply_cadence_bifurcation`) to dynamically sharpen binary and categorical boundaries under high-risk conditions without artificial step functions.
+3. **Coupled Cadence Margin Expansion Operator (Pitchfork Bifurcation Offset)**: Employs continuous dynamical system bifurcation dynamics ($F_i = \sum_{j \neq i} [\text{sgn}(S_i - S_j) \cdot |S_i - S_j|^\alpha + \beta (H_i - H_j)]$, `apply_cadence_bifurcation`) to dynamically resolve nodal deadlocks and sharpen binary/categorical boundaries under high-risk conditions without artificial step functions.
 
 #### 1. Domain Routing Dimension (`domain_mode="none"` vs `domain_mode="multi"`)
-* **`domain_mode="none"` (Default for General Reasoning & Academic Benchmarks)**: **Domainless Monolithic Mode**. Bypasses discrete domain gates and directly modulates questions into the universal chaotic boundary cusp ($c = -0.743643887 + 0.131825904i$, zoom $50.0$). Eliminates domain classification bias, allowing open-ended general intelligence and multi-step deduction to resolve naturally along $\partial \mathcal{M}$. Achieves **54.55% overall accuracy** and an official JevBench v1.4.1 score of **23.74** at **7.32 ms latency** via Tesla 3-6-9 Harmonic Grid (tying/beating Raw Qwen3 8B at 23.68, LitJev 27B at 19.51, and GPT-5.6 Luna at 18.51).
+* **`domain_mode="none"` (Default for General Reasoning & Academic Benchmarks)**: **Domainless Monolithic Mode**. Bypasses discrete domain gates and directly modulates questions into the universal chaotic boundary cusp ($c = -0.743643887 + 0.131825904i$, zoom $50.0$). Eliminates domain classification bias, allowing open-ended general intelligence and multi-step deduction to resolve naturally along $\partial \mathcal{M}$. Achieves **54.55% overall accuracy** and an official JevBench v1.4.1 score of **23.74** at **7.32 ms latency** via $\mathbb{Z}/9\mathbb{Z}$ Resonant Grid (tying/beating Raw Qwen3 8B at 23.68, LitJev 27B at 19.51, and GPT-5.6 Luna at 18.51).
 * **`domain_mode="multi"` (Production IoT & Infrastructure Default)**: **Multi-Domain Mode**. Dynamically routes state signatures through the 5 specialized domain gates (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) via `AutoSeedRouter`. Essential for edge hardware, industrial safety, and API gateways where deterministic physical sensor thresholds are required.
 
 #### 2. Lexical & Resonance Ontology Dimension (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
 * **`mode="production"` (Default in Production)**: Full activation of bilingual lexical dictionaries (English & Türkçe) and physical sensor threshold heuristics (`smoke_detected`, `gas_ppm`, temperature extremes). Active on production servers (`mechsrv` / `answerr.me`).
-* **`mode="resonance"`**: Pure mathematical Tesla 3-6-9 frequency resonance dictionary. Delivers ultra-low latency (**13.8 ms** in multi-domain mode) while achieving **52.81%** accuracy on JevBench.
+* **`mode="resonance"`**: Mathematical $\mathbb{Z}/9\mathbb{Z}$ cyclic quotient ring modular resonance topology (Lean 4 Mathlib `ZMod 9` closed sub-ideal $\mathcal{I}_3 = \{0, 3, 6\} \cong 3\mathbb{Z}/9\mathbb{Z}$ / shorthand: Tesla 3-6-9 frequency dictionary). Delivers ultra-low latency (**13.8 ms** in multi-domain mode) while achieving **52.81%** accuracy on JevBench.
 * **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Strips all external lexical dictionaries; operates purely on chaotic Mandelbrot boundary escape dynamics and criteria $N$-gram geometry.
 
 ```python
@@ -328,16 +328,17 @@ To prevent incidental words (such as `"Direct butane..."` or `"...proceed on esc
 In version 0.2.0, `werr` introduces the **Multi-Domain Auto-Seed Router** (`AutoSeedRouter`). While earlier iterations used a monolithic boundary seed ($c_x \approx -0.747, c_y \approx 0.131$), evaluating distinct domains requires dynamically hopping into the topological coordinates where each domain's feature derivatives resonate with maximum sensitivity.
 
 ### 🔬 Empirical Ablation Study (Monolithic Seed vs. Auto-Seed Router)
-Evaluated across $N = 336$ empirical telemetry decisions from production traffic and multi-batch validation sets:
+Evaluated across $N = 326$ empirical telemetry decisions from production traffic and multi-batch validation sets:
 
 | Operational Domain | Sample Size ($N$) | Monolithic Seed Acc | **Auto-Seed Router Acc** | Net Gain ($\Delta$) | Avg Confidence | Inference Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **API Gateway & Security** | 85 | 83.5% | **87.1%** | $+3.5\%$ | 93.9% | 3.42 ms |
-| **Smart Home & IoT Safety** | 61 | 85.2% | **98.4%** | $+13.1\%$ | 100.0% | 3.31 ms |
+| **API Gateway & Security** | 85 | 83.5% | **87.1%** | $+3.6\%$ | 93.9% | 3.42 ms |
+| **Smart Home & IoT Safety** | 61 | 85.2% | **98.4%** | $+13.2\%$ | 100.0% | 3.31 ms |
 | **E-Commerce Fraud** | 60 | 56.7% | **85.0%** | $+28.3\%$ | 100.0% | 3.29 ms |
 | **Game AI & NPC Combat** | 60 | 50.0% | **95.0%** | $+45.0\%$ | 100.0% | 3.17 ms |
 | **Financial Risk & Credit** | 60 | 35.0% | **100.0%** | $+65.0\%$ | 100.0% | 3.33 ms |
-| **OVERALL MACRO ACCURACY** | **326** | **63.8%** | **92.6%** | **+28.8%** | **98.0%** | **3.31 ms** |
+| **Unweighted Macro Average** | **5 domains** | **62.1%** | **93.1%** | $\mathbf{+31.0\%}$ | **98.0%** | **3.31 ms** |
+| **Sample-Weighted Micro Average** | **N = 326** | **63.8%** | **92.6%** | $\mathbf{+28.8\%}$ | **98.0%** | **3.31 ms** |
 
 *All inferences executed with **0 Bytes of neural tensor memory** (VRAM/RAM) and strict determinism.*
 
@@ -529,11 +530,11 @@ python tests/test_jevenator2_isolated.py
 
 This research builds upon peer-reviewed open science preprints and is published as follows:
 
-* **Primary Paper:** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
+* **Primary Paper (Version 2.0 Camera-Ready):** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
   * **arXiv Preprint:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
   * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Lead Author: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
-  * **Status:** Officially published on arXiv (September 2026).
+  * **Status:** Version 2.0 Camera-Ready / Peer Review Revision (September 2026). Paper LaTeX source and camera-ready PDF synchronized.
 
 * **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
   * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (under review)  
