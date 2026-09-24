@@ -89,3 +89,32 @@ class DynamicCalibration:
                         self.sample_count = int(data.get("sample_count", 0))
         except Exception:
             pass
+
+
+def compute_calibration_ece(results: List[dict], num_bins: int = 10) -> float:
+    """
+    Computes Expected Calibration Error (ECE) across probability bins.
+    Used for measuring calibration fidelity in benchmark evaluations.
+    """
+    confidences, accuracies = [], []
+    for r in results:
+        probs = r.get("probs", {})
+        pred = r.get("predicted", "")
+        conf = probs.get(pred, 0.5) if isinstance(probs, dict) else 0.5
+        confidences.append(conf)
+        accuracies.append(1.0 if r.get("correct") else 0.0)
+
+    bins = np.linspace(0.0, 1.0, num_bins + 1)
+    ece = 0.0
+    n = max(1, len(results))
+    for b_idx in range(num_bins):
+        low, high = bins[b_idx], bins[b_idx + 1]
+        in_bin = [
+            i for i, c in enumerate(confidences)
+            if (low <= c < high) or (b_idx == num_bins - 1 and low <= c <= high)
+        ]
+        if in_bin:
+            bin_acc = float(np.mean([accuracies[i] for i in in_bin]))
+            bin_conf = float(np.mean([confidences[i] for i in in_bin]))
+            ece += (len(in_bin) / n) * abs(bin_acc - bin_conf)
+    return float(ece)
