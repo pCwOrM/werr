@@ -63,8 +63,8 @@ class DomainGate(ABC):
     cx: float = -0.7436438870371587
     cy: float = 0.1318259042053119
     zoom: float = 50.0
-    resolution: int = 64
-    max_iter: int = 50
+    resolution: int = 36
+    max_iter: int = 36
     default_threshold: float = 0.5
     keywords: List[str] = []
 
@@ -73,8 +73,8 @@ class DomainGate(ABC):
         cx: Optional[float] = None,
         cy: Optional[float] = None,
         zoom: Optional[float] = None,
-        resolution: int = 64,
-        max_iter: int = 50,
+        resolution: int = 36,
+        max_iter: int = 36,
         threshold: Optional[float] = None,
         tripod: bool = True,
         cadence_lambda: float = 0.10,
