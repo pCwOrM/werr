@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.join(REPO_DIR, "scratch", "jevbench_repo"))
 
 from jevbench.adapters.werr_local import WerrLocalAdapter
 from scratch.lab.test_domainless_vs_multidomain import load_tasks
-from werr.calibrated_engine import compute_calibration_ece
+from werr.calibration import compute_calibration_ece
 from jevbench import composite_v13 as v13
 from jevbench import composite_v14 as v14
 

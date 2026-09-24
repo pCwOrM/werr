@@ -204,7 +204,7 @@ wire_adapter = JevWireAdapter(domain_mode="none", tripod=True)
 decision = wire_adapter.decide(task_dict)
 ```
 
-> **Note on Protocol Adapters:** Wire protocol integration is handled directly by [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) with zero task heuristics. The early prototype module `werr.calibrated_engine` is formally deprecated as of v0.4.1 in favor of the clean `JevWireAdapter`.
+> **Note on Protocol Adapters:** Wire protocol integration is handled directly by [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) with zero task heuristics and 100% air-gapped deterministic evaluation. The early prototype module `werr.calibrated_engine` has been completely purged from the repository in favor of the clean, modular `JevWireAdapter` and `WerrEngine`.
 
 ---
 

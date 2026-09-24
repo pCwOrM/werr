@@ -175,7 +175,7 @@ wire_adapter = JevWireAdapter(domain_mode="none", tripod=True)
 karar = wire_adapter.decide(gorev_sozlugu)
 ```
 
-> **Protokol Adaptörleri Hakkında:** JSON tel protokolü entegrasyonu doğrudan [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) ile sıfır görev kuralı prensibiyle sağlanır. İlk geliştirme döneminde kullanılan prototip `werr.calibrated_engine` modülü, v0.4.1 itibarıyla yerini temiz ve standart `JevWireAdapter`'a bırakarak kullanımdan kaldırılmıştır (deprecated).
+> **Protokol Adaptörleri Hakkında:** JSON tel protokolü entegrasyonu doğrudan [`werr.adapters.JevWireAdapter`](./werr/adapters/wire_adapter.py) ile sıfır görev kuralı ve %100 air-gapped deterministik değerlendirme prensibiyle sağlanır. İlk prototip geliştirme döneminde kullanılan `werr.calibrated_engine` modülü, repodan tamamen temizlenerek kaldırılmış; yerini modüler ve yalın `JevWireAdapter` ile `WerrEngine`'e bırakmıştır.
 
 ---
 

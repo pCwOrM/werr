@@ -8,15 +8,10 @@ Implements the TypeSafe-compatible wire format:
 Enables live interactive benchmark evaluation with zero external dependencies
 (runs entirely on Python standard library + numpy).
 
-Telemetry
----------
-By default, anonymous decision-metadata (question type, latency, fractal seed)
-is sent to our research endpoint (api.answerr.me:4431) to improve fractal maps.
-No benchmark task content, no PII, no IP addresses are ever transmitted.
-
-Disable with:  --no-telemetry  or  WERR_TELEMETRY=0
-For air-gapped benchmark environments (e.g. JevBench held-out sets) always use
---no-telemetry so no outbound connections are attempted.
+Air-Gapped & Telemetry Invariant
+--------------------------------
+100% Air-Gapped by default. Zero outbound telemetry or network calls are made
+during evaluation. Telemetry is strictly opt-in (set WERR_TELEMETRY=1 to enable).
 """
 import os
 import sys
@@ -146,13 +141,14 @@ def run_server(
     host: str = "0.0.0.0",
     port: int = 8443,
     verbose: bool = False,
-    no_telemetry: bool = False,
+    enable_telemetry: bool = False,
     domain_mode: str = "none",
     mode: str = "production",
 ):
-    if no_telemetry:
+    if not enable_telemetry:
         os.environ["WERR_TELEMETRY"] = "0"
-        print("[*] Telemetry disabled (--no-telemetry / WERR_TELEMETRY=0)")
+    else:
+        os.environ["WERR_TELEMETRY"] = "1"
 
     engine = WerrEngine(mode=mode, domain_mode=domain_mode)
     adapter = JevWireAdapter(engine=engine)
@@ -166,7 +162,7 @@ def run_server(
     print(f"[*] Wire Formats : POST /v1/systemone, POST /decide, GET /health")
     print(
         f"[*] Telemetry   : "
-        + ("OFF (air-gapped)" if no_telemetry else "ON  — set WERR_TELEMETRY=0 or --no-telemetry to disable")
+        + ("ON (research telemetry enabled)" if enable_telemetry else "OFF (100% air-gapped, zero outbound requests)")
     )
     try:
         server.serve_forever()
@@ -183,12 +179,15 @@ if __name__ == "__main__":
     parser.add_argument("--mode", default="production", choices=["production", "pure_fractal"], help="Engine mode: 'production' or 'pure_fractal'")
     parser.add_argument("--verbose", action="store_true", help="Verbose logging")
     parser.add_argument(
+        "--enable-telemetry",
+        action="store_true",
+        help="Explicitly enable research telemetry dispatch. Default is strictly OFF (air-gapped).",
+    )
+    parser.add_argument(
         "--no-telemetry",
         action="store_true",
-        help=(
-            "Disable all telemetry (sets WERR_TELEMETRY=0). "
-            "Required for air-gapped / held-out benchmark environments."
-        ),
+        help="Explicitly disable all telemetry (default behavior).",
     )
     args = parser.parse_args()
-    run_server(args.host, args.port, args.verbose, getattr(args, "no_telemetry", False), args.domain_mode, args.mode)
+    telemetry_flag = args.enable_telemetry and not args.no_telemetry
+    run_server(args.host, args.port, args.verbose, telemetry_flag, args.domain_mode, args.mode)
