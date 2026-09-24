@@ -6,7 +6,7 @@ import math
 import numpy as np
 
 
-def compute_mandelbrot_patch(cx: float, cy: float, zoom: float, res: int = 64, max_iter: int = 50):
+def compute_mandelbrot_patch(cx: float, cy: float, zoom: float, res: int = 36, max_iter: int = 36):
     """
     Vectorized Mandelbrot patch generator.
     Returns:
@@ -35,7 +35,7 @@ def compute_mandelbrot_patch(cx: float, cy: float, zoom: float, res: int = 64, m
     return black_ratio, avg_escape, escape_iters
 
 
-def extract_quadrant_weights(escape_iters: np.ndarray, max_iter: int = 50):
+def extract_quadrant_weights(escape_iters: np.ndarray, max_iter: int = 36):
     """
     Partitions patch into 4 quadrants (VV subdivision):
       - Q1 (Top-Left)     -> w1
@@ -64,7 +64,7 @@ def extract_quadrant_weights(escape_iters: np.ndarray, max_iter: int = 50):
     return weights[0], weights[1], weights[2], weights[3], ratios
 
 
-def extract_quadtree_features(escape_iters: np.ndarray, grid_size: int = 4, max_iter: int = 50):
+def extract_quadtree_features(escape_iters: np.ndarray, grid_size: int = 4, max_iter: int = 36):
     """
     Hierarchical 2^p x 2^p Quadtree Partitioning.
     Subdivides a patch into grid_size x grid_size sub-tiles.
@@ -135,7 +135,7 @@ def compute_boundary_correction_weights(u: np.ndarray, bandwidth: float = 0.12) 
 
 def extract_bounded_quadrant_weights(
     escape_iters: np.ndarray,
-    max_iter: int = 50,
+    max_iter: int = 36,
     bandwidth: float = 0.12
 ):
     """
