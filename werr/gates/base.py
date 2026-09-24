@@ -9,7 +9,14 @@ import hashlib
 from typing import Dict, List, Any, Tuple, Optional, Union
 import numpy as np
 
-from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights, extract_quadtree_features, sigmoid
+from werr.fractal import (
+    compute_mandelbrot_patch,
+    extract_quadrant_weights,
+    extract_bounded_quadrant_weights,
+    extract_quadtree_features,
+    apply_cadence_bifurcation,
+    sigmoid
+)
 from werr.datatypes import (
     NoulQuestion, ChoiceQuestion, ScoreQuestion,
     NoulAnswer, ChoiceAnswer, ScoreAnswer, WerrResponse, WevvResponse
@@ -68,7 +75,12 @@ class DomainGate(ABC):
         zoom: Optional[float] = None,
         resolution: int = 64,
         max_iter: int = 50,
-        threshold: Optional[float] = None
+        threshold: Optional[float] = None,
+        tripod: bool = True,
+        cadence_lambda: float = 0.10,
+        cadence_beta: float = 0.15,
+        cadence_alpha: float = 0.50,
+        temp_choice: float = 1.25
     ):
         if cx is not None:
             self.cx = cx
@@ -80,6 +92,11 @@ class DomainGate(ABC):
         self.max_iter = max_iter
         if threshold is not None:
             self.default_threshold = threshold
+        self.tripod = tripod
+        self.cadence_lambda = cadence_lambda
+        self.cadence_beta = cadence_beta
+        self.cadence_alpha = cadence_alpha
+        self.temp_choice = temp_choice
         self.calibration = DynamicCalibration()
 
     @abstractmethod
@@ -115,18 +132,55 @@ class DomainGate(ABC):
         eff_cy = self.cy + delta_y
         eff_zoom = self.zoom * (1.0 + 0.1 * float(np.sin(np.sum(vec))))
 
-        # 3. Escape-Time Boundary Dynamics
-        black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
-            cx=eff_cx,
-            cy=eff_cy,
-            zoom=eff_zoom,
-            res=self.resolution,
-            max_iter=self.max_iter
-        )
+        # 3. Escape-Time Boundary Dynamics (Tripod 3-Scale or Single Cusp)
+        if getattr(self, "tripod", True):
+            tripod_configs = [
+                (eff_zoom * 0.60, 0.25),
+                (eff_zoom * 1.00, 0.50),
+                (eff_zoom * 1.60, 0.25)
+            ]
+            fused_quad_ratios = np.zeros(4, dtype=np.float64)
+            fused_tile_ratios = np.zeros(16, dtype=np.float64)
+            fused_black_ratio = 0.0
 
-        w1, w2, w3, bias, quad_ratios = extract_quadrant_weights(escape_iters, self.max_iter)
-        tile_ratios, _ = extract_quadtree_features(escape_iters, grid_size=4, max_iter=self.max_iter)
-        tile_weights = (tile_ratios - 0.5) * 4.0
+            escape_iters = None
+            for z_val, w_z in tripod_configs:
+                b_r, a_e, esc = compute_mandelbrot_patch(
+                    cx=eff_cx, cy=eff_cy, zoom=z_val, res=self.resolution, max_iter=self.max_iter
+                )
+                if escape_iters is None or w_z == 0.50:
+                    escape_iters = esc
+                _, _, _, _, q_r = extract_bounded_quadrant_weights(
+                    esc, max_iter=self.max_iter, bandwidth=0.12
+                )
+                t_r, _ = extract_quadtree_features(esc, grid_size=4, max_iter=self.max_iter)
+
+                fused_quad_ratios += w_z * np.array(q_r, dtype=np.float64)
+                fused_tile_ratios += w_z * t_r
+                fused_black_ratio += w_z * b_r
+
+            tile_ratios = fused_tile_ratios
+            quad_ratios = list(fused_quad_ratios)
+            w1 = float(quad_ratios[0] - 0.5) * 6.0
+            w2 = float(quad_ratios[1] - 0.5) * 6.0
+            w3 = float(quad_ratios[2] - 0.5) * 6.0
+            bias = float(quad_ratios[3] - 0.5) * 6.0
+            tile_weights = (fused_tile_ratios - 0.5) * 4.0
+            black_ratio = fused_black_ratio
+            avg_escape = 0.5
+        else:
+            black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
+                cx=eff_cx,
+                cy=eff_cy,
+                zoom=eff_zoom,
+                res=self.resolution,
+                max_iter=self.max_iter
+            )
+            w1, w2, w3, bias, quad_ratios = extract_bounded_quadrant_weights(
+                escape_iters, max_iter=self.max_iter, bandwidth=0.12
+            )
+            tile_ratios, _ = extract_quadtree_features(escape_iters, grid_size=4, max_iter=self.max_iter)
+            tile_weights = (tile_ratios - 0.5) * 4.0
 
         answers = {}
 
@@ -346,10 +400,22 @@ class DomainGate(ABC):
 
             scores.append(score_i)
 
-        # Softmax
-        exp_scores = [math.exp(max(-50.0, min(50.0, s))) for s in scores]
+        # Coupled Cadence Pitchfork Bifurcation
+        if len(options) >= 2:
+            scores = list(apply_cadence_bifurcation(
+                scores,
+                lambda_param=getattr(self, 'cadence_lambda', 0.10),
+                alpha=getattr(self, 'cadence_alpha', 0.50),
+                beta=getattr(self, 'cadence_beta', 0.15),
+                deadlock_threshold=0.85
+            ))
+
+        # Softmax with calibrated temperature
+        temp = getattr(self, 'temp_choice', 1.25)
+        max_s = max(scores) if scores else 0.0
+        exp_scores = [math.exp(max(-50.0, min(50.0, (s - max_s) / temp))) for s in scores]
         sum_exp = sum(exp_scores)
-        probs = [s / sum_exp for s in exp_scores]
+        probs = [s / (sum_exp + 1e-12) for s in exp_scores]
         best_idx = int(np.argmax(probs))
 
         prob_dict = {opt: round(probs[i], 4) for i, opt in enumerate(options)}

@@ -83,6 +83,7 @@ class AutoSeedRouter:
             # API Security
             "client_ip": "api_security", "req_frequency": "api_security", "istek_sikligi": "api_security",
             "failed_attempts": "api_security", "hatali_giris_sayisi": "api_security", "hatali_istek": "api_security",
+            "hata_sayisi": "api_security", "hata": "api_security",
             "ddos_flag": "api_security", "ddos_suphesi": "api_security", "ip_reputation_score": "api_security", "ip_itibar_skoru": "api_security",
             "auth_token": "api_security", "endpoint": "api_security", "token_gecerli": "api_security", "payload_kb": "api_security",
             # Industrial & Heavy Physical Safety (bound to physical safety manifold: iot_safety)
@@ -138,8 +139,9 @@ class AutoSeedRouter:
 
         # 2. State variable signature inspection (weight: 2.5 per match)
         if state and isinstance(state, dict):
-            for k in state.keys():
+            for k, v in state.items():
                 kl = normalize_text(k)
+                vl = normalize_text(str(v))
                 if kl in self._state_signatures:
                     target = self._state_signatures[kl]
                     scores[target] += 2.5

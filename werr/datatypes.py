@@ -73,7 +73,7 @@ class WerrResponse:
     """
     Standardized response returned by WerrEngine.
     """
-    model: str = "werr-0.4.0-fractal"
+    model: str = "werr-0.5.0-fractal"
     domain: str = "api_security"
     answers: Dict[str, Union[NoulAnswer, ChoiceAnswer, ScoreAnswer]] = field(default_factory=dict)
     latency_ms: float = 0.0
