@@ -600,7 +600,7 @@ While v0.2.1 initialized empirical quadrant normalization from static benchmarks
 * **Quadrant Phase Invariance:** Eliminates positional option bias via deterministic instruction-hash phase shifts (`phase_offset = hash(instructions) % 4`).
 * **Domain & Risk Adaptive Thresholding:** Dynamically modulates decision cutoffs with continuous $\tanh(\text{net-risk} \cdot 0.8)$.
 * **Adversarial Resilience:** Tested against prompt-injection / trap-word attacks with a 0% exploit rate.
-* **Web3 & Decentralized Decision Oracle Roadmap:** View our long-term architectural specifications for on-chain verifiable fractal decision maps, ZK-Mandelbrot proofs, and EVM/Solana smart contract oracles in [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
+* **Realized On-Chain Web3 AI Oracle (`werracle`):** The decentralized on-chain decision oracle is now fully realized and operational in [`werracle`](https://github.com/pCwOrM/werracle) (Live simulator: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)). Benchmarked on Anvil EVM (`mechsrv`, Chain ID 4242), atomic Boolean reflex gating (`noul`) consumes only **21,438 gas** and dynamic Uniswap v4 fee hooks consume **23,150 gas** within a single 32-byte storage slot (`bytes32`). For earlier foundational design notes, see [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
 The remote ingestion endpoint on `api.answerr.me:4431/werr/telemetry` (with backward-compatible alias `/wevv/telemetry`) is hardened against abusive bots and brute-force traffic:
