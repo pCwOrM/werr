@@ -169,7 +169,7 @@ class DomainGate(ABC):
             bias = float(quad_ratios[3] - 0.5) * 6.0
             tile_weights = (fused_tile_ratios - 0.5) * 4.0
             black_ratio = fused_black_ratio
-            avg_escape = fused_avg_escape
+            avg_escape = 0.5
         else:
             black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
                 cx=eff_cx,
