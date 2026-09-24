@@ -235,6 +235,7 @@ class WerrEngine:
             fused_quad_ratios = np.zeros(4, dtype=np.float64)
             fused_tile_ratios = np.zeros(16, dtype=np.float64)
             fused_black_ratio = 0.0
+            fused_avg_escape = 0.0
             escape_iters = None
 
             for z_val, w_z in tripod_configs:
@@ -251,6 +252,7 @@ class WerrEngine:
                 fused_quad_ratios += w_z * np.array(q_r, dtype=np.float64)
                 fused_tile_ratios += w_z * t_r
                 fused_black_ratio += w_z * b_r
+                fused_avg_escape += w_z * a_e
 
             tile_ratios = fused_tile_ratios
             quad_ratios = list(fused_quad_ratios)
@@ -260,7 +262,7 @@ class WerrEngine:
             bias = float(quad_ratios[3] - 0.5) * 6.0
             tile_weights = (fused_tile_ratios - 0.5) * 4.0
             black_ratio = fused_black_ratio
-            avg_escape = 0.5
+            avg_escape = fused_avg_escape
         else:
             black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
                 cx=eff_cx,
