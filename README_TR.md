@@ -427,6 +427,9 @@ werr attacker    # Engellendi (Anlık omurilik refleksi)
 3. **İkili Bilişsel Üretim Platformu ve REST Ağ Geçidi:** [`answerr`](https://github.com/pCwOrM/answerr)  
    `werr` Sistem-1 omurilik reflekslerini Google Gemini Flash Sistem-2 müzakeresiyle birleştiren, `POST /v1/systemone` ve `/v1/decide` uç noktalarını sunan tam yığın üretim platformu ([answerr.me](https://answerr.me), `api.answerr.me:4431`).
 
+4. **Sıfır-Depolamalı Zincir-Üstü Yapay Zekâ Kahini (EVM & Web3):** [`werracle`](https://github.com/pCwOrM/werracle)  
+   EVM akıllı sözleşmeleri içinde tek bir 32 baytlık depolama yuvasında (`bytes32`) çalışan ve 21.438 gas (`noul`) ile blok-içi (intra-block) atomik flaş kredi ve MEV savunması sağlayan on-chain karar kahini. Anvil testnet üzerinde (`mechsrv`, Chain ID 4242) ve Uniswap v4 dinamik likidite kancası (`WerracleFeeHook.sol`, 23.150 gas) ile doğrulanmıştır (Canlı Simülatör: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)).
+
 ---
 
 ## 📄 Akademik Yayın ve Ön Baskı Durumu
