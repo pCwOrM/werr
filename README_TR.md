@@ -43,7 +43,7 @@
 [🇬🇧 English Documentation (README.md)](README.md) | **Türkçe (README_TR.md)**
 
 🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
-📄 **Resmi arXiv Makalesi:** [arXiv:2609.25498 [cs.NE] Makalesini Oku](https://arxiv.org/abs/2609.25498) │ [Doğrudan PDF İndir](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Arşivi](https://doi.org/10.5281/zenodo.22867426).  
+📄 **Resmi arXiv Makalesi:** [arXiv:2609.25498 [cs.NE] Makalesini Oku](https://arxiv.org/abs/2609.25498) │ [Doğrudan PDF İndir](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Arşivi](https://doi.org/10.5281/zenodo.22939253).  
 ⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*  
 ⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*  
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -435,7 +435,7 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
 
 * **Birincil Makale (Versiyon 2.0 Camera-Ready):** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
   * **arXiv Yayını:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
-  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
+  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22939253](https://doi.org/10.5281/zenodo.22939253))  
   * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Sorumlu Yazar: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
   * **Durum:** Versiyon 2.0 Camera-Ready / Hakem Değerlendirme Revizyonu (Eylül 2026). Makale LaTeX ve Camera-Ready PDF senkronize edildi.
 
@@ -478,7 +478,7 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   primaryClass  = {cs.NE},
   url           = {https://arxiv.org/abs/2609.25498},
   doi           = {10.48550/arXiv.2609.25498},
-  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
+  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22939253; Companion Concept: 10.5281/zenodo.22774934}
 }
 
 @software{werr2026,
@@ -486,7 +486,7 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
   year      = {2026},
   url       = {https://github.com/pCwOrM/werr},
-  doi       = {10.5281/zenodo.22867426}
+  doi       = {10.5281/zenodo.22939253}
 }
 ```
 
