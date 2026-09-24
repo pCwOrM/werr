@@ -30,8 +30,9 @@ def create_smart_router(resolution: int = 64) -> WerrEngine:
         base_zoom=45.0,
         resolution=resolution,
         max_iter=50,
-        mode="production",
-        domain_mode="multi"
+        mode="lexical",
+        domain_mode="multi",
+        tripod=True
     )
 
 

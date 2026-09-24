@@ -12,7 +12,14 @@ import hashlib
 from typing import Dict, List, Any, Optional, Union, Tuple
 import numpy as np
 
-from werr.fractal import compute_mandelbrot_patch, extract_quadrant_weights, extract_quadtree_features, sigmoid
+from werr.fractal import (
+    compute_mandelbrot_patch,
+    extract_quadrant_weights,
+    extract_quadtree_features,
+    sigmoid,
+    extract_bounded_quadrant_weights,
+    apply_cadence_bifurcation
+)
 from werr.datatypes import (
     NoulQuestion, ChoiceQuestion, ScoreQuestion,
     NoulAnswer, ChoiceAnswer, ScoreAnswer,
@@ -50,24 +57,27 @@ class WerrEngine:
         base_zoom: float = 50.0,
         resolution: int = 64,
         max_iter: int = 50,
-        mode: str = "production",
+        mode: str = "lexical",
         enable_ontologies: Optional[bool] = None,
-        domain_mode: Optional[str] = None
+        domain_mode: Optional[str] = None,
+        tripod: bool = True,
+        cadence_lambda: float = 0.10,
+        cadence_beta: float = 0.15,
+        cadence_alpha: float = 0.50,
+        temp_choice: float = 1.25
     ):
         """
         Initialize the Werr Engine with a resonant chaotic boundary seed.
-        Supports dual modes:
-          - 'production' (default): Full domain ontologies, sensor threshold heuristics,
+        Supports operational modes:
+          - 'lexical' / 'production' (default): Full domain ontologies, sensor threshold heuristics,
             and semantic gate mappings active (ideal for IoT, life-safety, answerr.me).
-          - 'pure_fractal': Strips external lexical dictionaries; operates purely on
-            chaotic Mandelbrot boundary dynamics and criteria N-gram geometry.
+          - 'pure_fractal' / 'domainless': Strips external lexical dictionaries; operates purely on
+            chaotic Mandelbrot boundary dynamics and criteria N-gram geometry (ideal for general benchmark reasoning).
         Supports domain routing architectures:
           - 'multi': Routes dynamically through domain gates (AutoSeedRouter) with specialized
             topologies (api_security, financial_risk, iot_safety, ecommerce_fraud, game_combat).
-            Default in 'production' mode.
-          - 'none': Domainless monolithic mode. Directly projects into the universal
+          - 'none' (default): Domainless monolithic mode. Directly projects into the universal
             chaotic boundary cusp (c = -0.743643887 + 0.131825904i) with zero domain bias.
-            Default in 'pure_fractal' mode (ideal for general benchmark reasoning).
         """
         self.cx = base_cx
         self.cy = base_cy
@@ -75,7 +85,7 @@ class WerrEngine:
         self.resolution = resolution
         self.max_iter = max_iter
         if enable_ontologies is not None:
-            self.mode = "production" if enable_ontologies else "pure_fractal"
+            self.mode = "lexical" if enable_ontologies else "pure_fractal"
         else:
             self.mode = str(mode).lower()
 
@@ -84,6 +94,11 @@ class WerrEngine:
         else:
             self.domain_mode = "none"
 
+        self.tripod = tripod
+        self.cadence_lambda = cadence_lambda
+        self.cadence_beta = cadence_beta
+        self.cadence_alpha = cadence_alpha
+        self.temp_choice = temp_choice
         self.calibration = DynamicCalibration()
 
     def _state_to_vector(self, state: Dict[str, Any]) -> Tuple[np.ndarray, float]:
@@ -113,7 +128,7 @@ class WerrEngine:
 
         values = []
         net_risk = 0.0
-        is_prod = (self.mode != "pure_fractal")
+        is_prod = (self.mode not in ["pure_fractal", "domainless"])
 
         for k, v in sorted(state.items()):
             kl = _normalize_text(k)
@@ -189,7 +204,7 @@ class WerrEngine:
 
         # 1. State-to-Wave Modulation
         vec, net_risk = self._state_to_vector(state)
-        is_prod = (self.mode != "pure_fractal")
+        is_prod = (self.mode not in ["pure_fractal", "domainless"])
         if is_prod:
             role_val = state.get("user_role", state.get("role", state.get("rol", "")))
             role_str = _normalize_text(str(role_val))
@@ -210,18 +225,55 @@ class WerrEngine:
         eff_cy = self.cy + delta_y
         eff_zoom = self.zoom * (1.0 + 0.1 * float(np.sin(np.sum(vec))))
 
-        # 2. Fractal Geometry Evaluation (Single Forward Pass)
-        black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
-            cx=eff_cx,
-            cy=eff_cy,
-            zoom=eff_zoom,
-            res=self.resolution,
-            max_iter=self.max_iter
-        )
+        # 2. Fractal Geometry Evaluation (Tripod Multi-Scale or Single Cusp)
+        if getattr(self, "tripod", True):
+            tripod_configs = [
+                (eff_zoom * 0.60, 0.25),
+                (eff_zoom * 1.00, 0.50),
+                (eff_zoom * 1.60, 0.25)
+            ]
+            fused_quad_ratios = np.zeros(4, dtype=np.float64)
+            fused_tile_ratios = np.zeros(16, dtype=np.float64)
+            fused_black_ratio = 0.0
+            escape_iters = None
 
-        w1, w2, w3, bias, quad_ratios = extract_quadrant_weights(escape_iters, self.max_iter)
-        tile_ratios, _ = extract_quadtree_features(escape_iters, grid_size=4, max_iter=self.max_iter)
-        tile_weights = (tile_ratios - 0.5) * 4.0
+            for z_val, w_z in tripod_configs:
+                b_r, a_e, esc = compute_mandelbrot_patch(
+                    cx=eff_cx, cy=eff_cy, zoom=z_val, res=self.resolution, max_iter=self.max_iter
+                )
+                if escape_iters is None or w_z == 0.50:
+                    escape_iters = esc
+                _, _, _, _, q_r = extract_bounded_quadrant_weights(
+                    esc, max_iter=self.max_iter, bandwidth=0.12
+                )
+                t_r, _ = extract_quadtree_features(esc, grid_size=4, max_iter=self.max_iter)
+
+                fused_quad_ratios += w_z * np.array(q_r, dtype=np.float64)
+                fused_tile_ratios += w_z * t_r
+                fused_black_ratio += w_z * b_r
+
+            tile_ratios = fused_tile_ratios
+            quad_ratios = list(fused_quad_ratios)
+            w1 = float(quad_ratios[0] - 0.5) * 6.0
+            w2 = float(quad_ratios[1] - 0.5) * 6.0
+            w3 = float(quad_ratios[2] - 0.5) * 6.0
+            bias = float(quad_ratios[3] - 0.5) * 6.0
+            tile_weights = (fused_tile_ratios - 0.5) * 4.0
+            black_ratio = fused_black_ratio
+            avg_escape = 0.5
+        else:
+            black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
+                cx=eff_cx,
+                cy=eff_cy,
+                zoom=eff_zoom,
+                res=self.resolution,
+                max_iter=self.max_iter
+            )
+            w1, w2, w3, bias, quad_ratios = extract_bounded_quadrant_weights(
+                escape_iters, max_iter=self.max_iter, bandwidth=0.12
+            )
+            tile_ratios, _ = extract_quadtree_features(escape_iters, grid_size=4, max_iter=self.max_iter)
+            tile_weights = (tile_ratios - 0.5) * 4.0
 
         answers: Dict[str, Union[NoulAnswer, ChoiceAnswer, ScoreAnswer]] = {}
 
@@ -361,13 +413,27 @@ class WerrEngine:
 
                     scores.append(score_i)
 
-                exp_scores = np.exp(np.array(scores) - np.max(scores))
-                probs = exp_scores / np.sum(exp_scores)
+                # Coupled Cadence Pitchfork Bifurcation
+                if len(options) >= 2:
+                    scores = list(apply_cadence_bifurcation(
+                        scores,
+                        lambda_param=getattr(self, 'cadence_lambda', 0.10),
+                        alpha=getattr(self, 'cadence_alpha', 0.50),
+                        beta=getattr(self, 'cadence_beta', 0.15),
+                        deadlock_threshold=0.85
+                    ))
 
-                prob_dict = {opt: round(float(p), 4) for opt, p in zip(options, probs)}
-                best_opt = max(prob_dict.items(), key=lambda x: x[1])[0]
-                conf = round(float(max(probs) - (np.sum(probs) - max(probs)) / max(1, num_opts - 1)), 4)
-                conf = max(0.0, min(1.0, conf))
+                temp = getattr(self, 'temp_choice', 1.25)
+                max_s = max(scores) if scores else 0.0
+                exp_scores = [math.exp(max(-50.0, min(50.0, (s - max_s) / temp))) for s in scores]
+                sum_exp = sum(exp_scores)
+                probs = [s / (sum_exp + 1e-12) for s in exp_scores]
+                best_idx = int(np.argmax(probs))
+
+                prob_dict = {opt: round(float(probs[i]), 4) for i, opt in enumerate(options)}
+                best_opt = options[best_idx]
+                conf = float(probs[best_idx] - (sorted(probs)[-2] if num_opts > 1 else 0.0))
+                conf = round(max(0.0, min(1.0, conf)), 4)
 
                 answers[q_name] = ChoiceAnswer(
                     type="choice",
@@ -406,11 +472,14 @@ class WerrEngine:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
         response = WerrResponse(
-            model=f"werr-0.4.1-{self.domain_mode}",
+            model=f"werr-0.5.0-{self.domain_mode}",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),
             memory_tensor_bytes=0,
-            coordinate_bytes=24
+            coordinate_bytes=24,
+            escape_entropy=round(float(np.std(escape_iters)), 4) if escape_iters is not None else 0.0,
+            quadrant_entropy=round(float(np.std(quad_ratios)), 4) if quad_ratios is not None else 0.0,
+            active_coordinates={"cx": eff_cx, "cy": eff_cy, "zoom": eff_zoom}
         )
 
         dispatch_telemetry_async(
