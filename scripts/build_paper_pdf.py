@@ -269,7 +269,7 @@ window.MathJax = {
 
 <div class="paper-header">
   <div class="paper-title">Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains</div>
-  <div style="font-size: 10pt; font-weight: bold; color: #2563eb; margin-bottom: 6px;">Version 2.0 (Revised & Expanded &bull; Multi-Scale Tripod & Bifurcation &bull; September 2026)</div>
+  <div style="font-size: 10pt; font-weight: bold; color: #2563eb; margin-bottom: 6px;">Version 2.0 (Revised & Expanded &bull; Multi-Scale Tripod & \(\mathbb{Z}/9\mathbb{Z}\) Resonance &bull; September 2026)</div>
   
   <div class="authors-block">
     <span class="author-name">Volkan Dağlı</span><sup>1,2,*</sup> &nbsp;&bull;&nbsp; 
@@ -289,22 +289,22 @@ window.MathJax = {
 
 <div class="abstract-container">
   <p class="no-indent">
-    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4&ndash;8 GB VRAM), and unsustainable energy dissipation through continuous transatlantic transmission and server clustering. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>werr</strong> (Waves & Errors) machine-native edge reflex runtime and the production-deployed <strong>answerr</strong> platform (<a href="https://answerr.me">answerr.me</a>). Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. In this revised Version 2.0, we present three major theoretical and empirical expansions: (i) a <em>Multi-Scale Harmonic Tripod</em> fusing three golden-ratio zoom scales (\(0.60\times, 1.00\times, 1.60\times\)) to eliminate boundary scale-collapse; (ii) a <em>Coupled Cadence Supercritical Pitchfork Bifurcation Operator</em> that dynamically resolves near-deadlock decision margins (\(\Delta &lt; 0.85\)); and (iii) a <em>Cyclic \(\mathbb{Z}/9\mathbb{Z}\) Modular Resonant Grid Discretization</em> accelerating CPU inference throughput by 2.8&times; down to 8.8 ms. Benchmarked on bare-metal production infrastructure (<code>api.answerr.me:4431</code>) across an open corpus of 1,150+ verified decisions (3,200+ questions) and evaluated on the independent <em>JevBench</em> benchmark suite under 100% air-gapped zero-heuristic execution, the framework achieves 100.00% strict probability distribution compliance (\(\text{SUM\_TOL} = 10^{-3}\)) across all 231 public items with zero VRAM and zero network calls. We provide a drop-in OpenAI-compatible API endpoint (<code>/v1/chat/completions</code>) and formulate deployment blueprints for extreme memory-constrained runtimes, including bare-metal microcontrollers and 32-byte EVM smart contracts.
+    <span class="abstract-heading">Abstract</span>&mdash;Modern automated computing systems increasingly deploy Large Language Models (LLMs) and deep neural networks to resolve runtime operational triage. However, invoking multi-billion-parameter neural models across global networks incurs prohibitive latency (&gt;100&ndash;500 ms), severe memory allocation (&gt;4&ndash;8 GB VRAM), and unsustainable energy dissipation through continuous transatlantic transmission and server clustering. Extending the foundational theory of <em>Mandelbrot Fractal Neural Synthesis</em> [1], this paper introduces the <strong>Universal Fractal Natural Language Decision Map</strong>, realized via the <strong>werr</strong> (Waves & Errors) machine-native edge reflex runtime and the production-deployed <strong>answerr</strong> platform (<a href="https://answerr.me">answerr.me</a>). Operating entirely without stored weight tensors (0 Bytes VRAM), the engine synthesizes deterministic, strongly-typed decisions&mdash;<code>noul</code> (probabilistic Boolean), <code>choice</code> (categorical classification), and <code>score</code> (ordinal regression)&mdash;by dynamically modulating 24-byte coordinate seeds along the chaotic boundary of the Mandelbrot set (\(\partial \mathcal{M}\)) and recursively evaluating 4-quadrant escape dynamics. In this revised Version 2.0, we present three major theoretical and empirical expansions: (i) a <em>Multi-Scale Harmonic Tripod</em> fusing three golden-ratio zoom scales (\(0.60\times, 1.00\times, 1.60\times\)) to eliminate boundary scale-collapse; (ii) a <em>Coupled Cadence Pitchfork Bifurcation Operator</em> that dynamically resolves near-deadlock decision margins (\(\Delta &lt; 0.85\)); and (iii) a <em>Cyclic \(\mathbb{Z}/9\mathbb{Z}\) Modular Resonant Grid Discretization</em> accelerating CPU inference throughput by 2.8&times; down to 8.8 ms. Benchmarked on bare-metal production infrastructure (<code>api.answerr.me:4431</code>) across an open corpus of 1,150+ verified decisions (3,200+ questions) and evaluated on the independent <em>JevBench</em> benchmark suite under air-gapped execution, the framework achieves 100.00% strict TypeSafe wire protocol compliance across all 231 public items, with the uncalibrated monolithic kernel attaining 55.4% zero-shot accuracy (and calibrated domain routing reaching 81.65%) with zero VRAM and zero network calls. We provide a drop-in OpenAI-compatible API endpoint (<code>/v1/chat/completions</code>) and formulate deployment blueprints for extreme memory-constrained runtimes, including bare-metal microcontrollers and 32-byte EVM smart contracts.
   </p>
   
   <div class="turkish-abstract">
-    <strong>Özet (Genişletilmiş Türkçe Özet &bull; Versiyon 2.0)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), otonom operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini, <strong>werr</strong> (Waves & Errors) uç refleks motorunu ve canlı <strong>answerr</strong> bilişsel platformunu (<a href="https://answerr.me">answerr.me</a>) sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Bu genişletilmiş Versiyon 2.0 kapsamında üç temel teorik ve deneysel atılım sunulmaktadır: (i) tek ölçekli sınır çöküşünü önleyen <em>Çok Ölçekli Harmonik Tripod</em> füzyonu (\(0.60\times, 1.00\times, 1.60\times\)); (ii) yakın karar kilitlenmelerini (\(\Delta &lt; 0.85\)) dinamik olarak çözen <em>Bağlaşımlı Süperkritik Pitchfork Bifurkasyon Operatörü</em>; ve (iii) çıkarsama hızını 2.8 kat artırarak medyan CPU gecikmesini 8.8 ms seviyesine indiren <em>\(\mathbb{Z}/9\mathbb{Z}\) Modüler Harmonik Rezonans Ayrıklaştırması</em> (\(\mathbb{Z}/9\mathbb{Z}\) siklik halkasındaki ternary alt-ideal rezonansı). Canlı telemetri sunucu kümesinde (1.150+ karar, 3.200+ soru) ve bağımsız <em>JevBench</em> test setinde %100 air-gapped ve sıfır heuristik kural prensibiyle yürütülen testlerde, 231 açık görevin tamamında %100.00 katı olasılık dağılımı uyumu (\(\text{SUM\_TOL} = 10^{-3}\)) sağlanmıştır. Ayrıca, OpenAI uyumlu API uç noktası sunulmuş ve 24 baytlık tohum yapısının mikrodenetleyiciler ile blokzincir akıllı sözleşmelerinde (EVM/Solana) 32 baytlık tek bir alanda çalışan doğrulanabilir bir yapay zeka kahini olarak kullanım fizibilitesi ortaya konmuştur.
+    <strong>Özet (Genişletilmiş Türkçe Özet &bull; Versiyon 2.0)&mdash;</strong>Geleneksel derin öğrenme mimarileri ve Büyük Dil Modelleri (LLM), otonom operasyonel kararlar üretirken gigabaytlarca GPU belleğine (VRAM), yüzlerce milisaniye gecikmeye ve sunucu merkezli yüksek enerji tüketimine yol açmaktadır. Bu çalışma, <em>Mandelbrot Fraktal Nöral Sentez</em> teorisi [1] üzerine inşa edilen ve kalıcı ağırlık tensörlerini tamamen ortadan kaldıran (0 Byte VRAM) <strong>Evrensel Fraktal Doğal Dil Karar Haritası</strong> mimarisini, <strong>werr</strong> (Waves & Errors) uç refleks motorunu ve canlı <strong>answerr</strong> platformunu (<a href="https://answerr.me">answerr.me</a>) sunmaktadır. Sistem, 24 baytlık \((c_x, c_y, \text{zoom})\) koordinat tohumlarını Mandelbrot kümesinin sınırında (\(\partial \mathcal{M}\)) dinamik olarak modüle ederek üç temel tipte (<code>noul</code> [ikili onay], <code>choice</code> [kategorik yönlendirme] ve <code>score</code> [derecelendirme]) deterministik kararlar üretir. Bu genişletilmiş Versiyon 2.0 kapsamında üç temel teorik ve deneysel atılım sunulmaktadır: (i) tek ölçekli sınır çöküşünü önleyen <em>Çok Ölçekli Harmonik Tripod</em> füzyonu (\(0.60\times, 1.00\times, 1.60\times\)); (ii) yakın karar kilitlenmelerini (\(\Delta &lt; 0.85\)) dinamik olarak çözen <em>Bağlaşımlı Pitchfork Bifurkasyon Operatörü</em>; ve (iii) çıkarsama hızını 2.8 kat artırarak medyan CPU gecikmesini 8.8 ms seviyesine indiren <em>\(\mathbb{Z}/9\mathbb{Z}\) Modüler Rezonans Ayrıklaştırması</em> (\(\mathbb{Z}/9\mathbb{Z}\) siklik halkasındaki ternary alt-ideal cebiri). Canlı telemetri sunucu kümesinde (1.150+ karar, 3.200+ soru) ve bağımsız <em>JevBench</em> test setinde %100 air-gapped yürütülen testlerde, 231 açık görevin tamamında %100.00 katı TypeSafe kablo şema uyumu sağlanmış; monolitik çekirdek sıfır-eğitim ile %55.4 doğruluk (kalibre alan kapılarıyla %81.65) elde etmiştir. Ayrıca, OpenAI uyumlu API uç noktası sunulmuş ve 24 baytlık tohum yapısının mikrodenetleyiciler ile blokzincir akıllı sözleşmelerinde (EVM/Solana) 32 baytlık tek bir alanda çalışan doğrulanabilir bir yapay zeka kahini olarak kullanım fizibilitesi ortaya konmuştur.
   </div>
 
   <div class="keywords-block">
-    <strong>Keywords&mdash;</strong>Universal Fractal Decision Map, Zero-Tensor Inference, System-One Reflex Arc, Mandelbrot Boundary Dynamics, Multi-Scale Harmonic Tripod, Pitchfork Bifurcation, \(\mathbb{Z}/9\mathbb{Z}\) Modular Resonance, Lean 4 Formal Grounding, Dynamic Calibration, On-Chain AI Oracle.
+    <strong>Keywords&mdash;</strong>Universal Fractal Decision Map, Zero-Tensor Inference, System-One Reflex Arc, Mandelbrot Boundary Dynamics, Multi-Scale Harmonic Tripod, Pitchfork Bifurcation, \(\mathbb{Z}/9\mathbb{Z}\) Modular Resonance, Lean 4 Mathlib ZMod 9, Dynamic Calibration, On-Chain AI Oracle.
   </div>
 </div>
 
 <div class="figure-container full-width-figure" style="margin: 10px 0;">
-  <img src="__IMG_TWIN__" style="width: 100%; max-height: 260px; object-fit: contain; border-radius: 4px; border: 1px solid #e2e8f0;" alt="Dual-Cognition Twin Ecosystem Architecture">
+  <img src="__IMG_TWIN__" style="width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px; border: 1px solid #cbd5e1;" alt="End-to-End System-One Architecture">
   <div class="figure-caption" style="margin-top: 4px;">
-    <strong>Fig. 1.</strong> The Dual-Cognition Architecture of Machine Intelligence: Synergistic pairing of the embedded System-One reflex kernel (<em>werr</em>, left: 0-Byte VRAM, &lt; 0.5 ms latency) with the deliberative System-Two cloud reasoning platform (<em>answerr</em>, right: <a href="https://answerr.me">answerr.me</a>). Dual action primitives (<code>[Answerr It!]</code> vs. <code>[Werr It!]</code>) bifurcate cognitive workloads into instant physical edge triage and conscious deliberative reflection.
+    <strong>Fig. 1.</strong> End-to-end System-One architecture of the Universal Fractal Decision Map (<em>werr</em>): Ingestion of heterogeneous program state \(\mathbf{s}\) and typed queries \(Q\), domain-specific coordinate projection \(\Phi_D\), chaotic Mandelbrot boundary evaluation on a \(\mathbb{Z}/9\mathbb{Z}\) multi-scale grid, and recursive synthesis of typed decision primitives (<code>noul</code>, <code>choice</code>, <code>score</code>) with 0-Byte VRAM.
   </div>
 </div>
 
@@ -360,19 +360,19 @@ window.MathJax = {
         <td><strong>Energy Consumption / Query</strong></td>
         <td>1,500&ndash;3,000 mJ (Cloud Datacenter + Net)</td>
         <td>150&ndash;400 mJ (Local GPU Ingestion)</td>
-        <td><strong>0.04 mJ (\(40\text{ }\mu\text{J}\) on Single CPU Core)</strong></td>
+        <td><strong>~0.04 mJ (\(40\text{ }\mu\text{J}\) on Edge MCU / Minimal CPU Cycles)</strong></td>
       </tr>
       <tr>
         <td><strong>Official JevBench Benchmark</strong></td>
         <td>Reference Target</td>
         <td>Baseline Benchmark</td>
-        <td><strong>100% Air-Gapped Zero-Heuristic In-Tree Adapter (Issue #10), 100% Strict Pass</strong></td>
+        <td><strong>100% Air-Gapped In-Tree Adapter (100% TypeSafe Wire Pass, 55.4% Zero-Shot Acc)</strong></td>
       </tr>
       <tr>
         <td><strong>Economic & Licensing Model</strong></td>
         <td>Proprietary SaaS (Pay-per-token Rent)</td>
         <td>Open Weights (Heavy Compute Cost)</td>
-        <td><strong>Free for Research & Edu (BSL 1.1 / MIT Adapter)</strong></td>
+        <td><strong>Open for Academic Research (MIT Adapter / BSL 1.1 Core)</strong></td>
       </tr>
     </tbody>
   </table>
@@ -387,7 +387,7 @@ window.MathJax = {
 
   <h3>A. Thermodynamic Dissipation & Landauer Energy Bounds</h3>
   <p>
-    Beyond memory and latency lies an unavoidable thermodynamic reality: according to Landauer's principle [7], information processing carries an irreducible physical cost. In modern cloud-centric AI architectures, invoking centralized LLMs across global networks dissipates substantial electrical energy across physical conductors, transoceanic fiber cables, and datacenter cooling infrastructure [8]. A typical cloud-routed LLM forward pass consumes an estimated 1,500&ndash;3,000 mJ per query, accounting for datacenter PUE and network switching overhead. In contrast, an embedded single-core CPU execution of <em>werr</em>'s procedural recurrence requires approximately 0.04 mJ (\(40\text{ }\mu\text{J}\)) per query&mdash;representing an energy efficiency improvement exceeding 37,000&times;.
+    Beyond memory and latency lies an unavoidable thermodynamic reality: according to Landauer's principle [7], information processing carries an irreducible physical cost. In modern cloud-centric AI architectures, invoking centralized LLMs across global networks dissipates substantial electrical energy across physical conductors, transoceanic fiber cables, and datacenter cooling infrastructure [8]. A typical cloud-routed LLM forward pass consumes an estimated 1,500&ndash;3,000 mJ per query, accounting for datacenter PUE and network switching overhead. In contrast, on embedded low-power edge microcontrollers (e.g., ARM Cortex-M architecture under TinyML operating profiles), <em>werr</em>'s procedural recurrence requires an estimated 0.04 mJ (\(40\text{ }\mu\text{J}\)) per query, whereas on commodity server CPUs it completes in sub-10 ms with negligible CPU cycle utilization&mdash;representing a dramatic reduction in compute and networking energy compared to distributed cloud LLMs.
   </p>
 
   <h3>B. Biological System-One Reflex Arc</h3>
@@ -479,9 +479,9 @@ window.MathJax = {
     \(C_{\text{eff}} = (c_{x, D} + \Delta c_x) + i\, (c_{y, D} + \Delta c_y)\)
   </div>
 
-  <h3>B. Ablation: Indispensability of \(\partial \mathcal{M}\)</h3>
+  <h3>B. Non-Linear Separation along \(\partial \mathcal{M}\)</h3>
   <p>
-    Ablation experiments directly training linear regressors on \(\Phi_D(\mathbf{s})\) achieve only 63.8% macro-accuracy due to multi-threshold non-convex boundaries. Introducing the procedural Mandelbrot recurrence lifts accuracy to 92.6% (+28.8% gain), confirming that \(\partial \mathcal{M}\) serves as an infinite-dimensional, zero-storage non-linear kernel.
+    A critical baseline inquiry evaluates whether \(\Phi_D(\mathbf{s})\) could simply feed a standard linear hyperplane. Baseline evaluations training linear classifiers directly on \(\Phi_D(\mathbf{s})\) achieve only 60.4% macro-accuracy due to multi-threshold non-convex interactions. Furthermore, as detailed in Section V.A and Table III, an unpartitioned monolithic single-seed fractal baseline achieves 62.1% macro-accuracy (63.8% micro-accuracy). Integrating domain-specific seed coordinates along \(\partial \mathcal{M}\) elevates macro-accuracy to 93.1% (92.6% micro-accuracy, +31.0% macro gain), confirming that the chaotic boundary topology acts as an infinite-dimensional, zero-storage non-linear kernel that separates topologically intertwined decision classes.
   </p>
 
   <table class="academic-table">
@@ -547,26 +547,26 @@ window.MathJax = {
 
   <h2>IV. Algorithmic Innovations (v0.2.x &ndash; v0.3.x)</h2>
 
-  <h3>A. Information-Theoretic Phonetic Density & Acoustic Damping</h3>
+  <h3>A. Information-Theoretic Phonetic Density & Semantic Token Damping</h3>
   <p>
     Operational directives and prompt-injection exploits exhibit starkly different information-theoretic profiles. Canonical action commands are concise, carrying high Shannon information density in short morphological roots. In contrast, adversarial jailbreaks and prompt injections [9] rely on long, verbose, syntactic padding.
   </p>
   <p>
-    Drawing from phonetic linguistics, agglutinative languages such as Turkish feature dense, plosive consonant clusters (\(T, P, Ç, K\)) that convey maximal grammatical meaning in minimal duration. We translate this into an <strong>Acoustic Damping Filter</strong>. Core option keys receive undamped unit gain (\(\mathcal{T}_{\text{key}} = 1.0\)), while descriptive filler and decoy prose are attenuated by 95.5%:
+    Drawing from phonetic linguistics, agglutinative languages such as Turkish feature dense, plosive consonant clusters (\(T, P, Ç, K\)) that convey maximal grammatical meaning in minimal duration. We translate this into a <strong>Semantic Token Frequency Damping Filter</strong>. Core option keys receive undamped unit gain (\(\mathcal{T}_{\text{key}} = 1.0\)), while descriptive filler and decoy prose are attenuated by 95.5%:
   </p>
   <div class="equation">
     \(\mathcal{T}_{\text{desc}} = 0.045\)
   </div>
   <p>
-    This attenuation quenches high-entropy prompt-injection vectors, preventing decoy words embedded in long natural language prompts from altering the geometric trajectory in complex coordinate space. In empirical evaluations across 10 adversarial injection classes (\(N=10\)), the engine achieved a <strong>0.0% exploit success rate</strong> (95% Wilson score interval: [0.0%, 30.8%]).
+    This attenuation quenches high-entropy prompt-injection vectors, preventing decoy words embedded in long natural language prompts from altering the geometric trajectory in complex coordinate space. In empirical evaluations across 10 canonical adversarial injection attack classes (\(N=10\), exploratory security suite), the engine achieved a <strong>0.0% exploit success rate</strong> (95% Clopper-Pearson exact CI: [0.0%, 30.8%]; Wilson score CI: [0.0%, 27.8%]).
   </p>
 
   <h3>B. Dynamical Trajectory Pruning: Filtration Acceleration</h3>
   <p>
-    In conventional NLP pipelines, adding multi-stage token filtering incurs parsing latency overhead. However, empirical benchmarks upon deploying the Acoustic Damping Filter revealed an unexpected speedup: <strong>inference accelerated by 2.5&times;</strong>, slashing median latency from 8.41 ms to 3.31 ms.
+    In conventional NLP pipelines, adding multi-stage token filtering incurs parsing latency overhead. However, empirical benchmarks upon deploying the Semantic Damping Filter revealed an unexpected speedup: <strong>inference accelerated by 2.5&times;</strong>, slashing median latency from 8.41 ms to 3.31 ms.
   </p>
   <p>
-    This acceleration is governed by the fractal escape dynamics: in the unfiltered baseline, unattenuated prompt prose and Trojan tokens caused chaotic coordinate perturbations pushing the grid into turbulent boundary fringes of \(\partial \mathcal{M}\) (\(\lambda \approx 0\)), where orbits linger near \(|Z_n| \approx 2.0\) and force evaluation up to \(M_{\max} = 100\). By applying \(\mathcal{T}_{\text{desc}} = 0.045\), acoustic damping extinguishes coordinate jitter, locking \(C_{\text{eff}}\) into steep potential basins where points escape in \(K \le 4\text{--}8\) iterations. Mean escape iterations per cell (\(\bar{K} = \frac{1}{N^2}\sum K(j,k)\)) dropped by <strong>45.8%</strong> (42.6 &rarr; 23.1), converting a security filter into a <strong>dynamical compute accelerator</strong>.
+    This acceleration is governed by the fractal escape dynamics: in the unfiltered baseline, unattenuated prompt prose and Trojan tokens caused chaotic coordinate perturbations pushing the grid into turbulent boundary fringes of \(\partial \mathcal{M}\) (\(\lambda \approx 0\)), where orbits linger near \(|Z_n| \approx 2.0\) and force evaluation up to \(M_{\max} = 100\). By applying \(\mathcal{T}_{\text{desc}} = 0.045\), semantic damping extinguishes coordinate jitter, locking \(C_{\text{eff}}\) into steep potential basins where points escape in \(K \le 4\text{--}8\) iterations. Mean escape iterations per cell (\(\bar{K} = \frac{1}{N^2}\sum K(j,k)\)) dropped by <strong>45.8%</strong> (42.6 &rarr; 23.1), converting a security filter into a <strong>dynamical compute accelerator</strong>.
   </p>
 
   <h3>C. Deterministic Quadrant Phase Rotation</h3>
@@ -609,9 +609,9 @@ window.MathJax = {
     This stabilizes boundary potential, eliminating single-scale boundary jitter and providing robust multi-scale decision margins.
   </p>
 
-  <h3>F. Coupled Cadence Supercritical Pitchfork Bifurcation Operator</h3>
+  <h3>F. Coupled Cadence Margin Expansion Operator (Pitchfork Bifurcation Offset)</h3>
   <p>
-    When competing decision alternatives yield near-identical scores (margin gap \(\Delta = |S_{(1)} - S_{(2)}| &lt; 0.85\)), standard softmax operators suffer from high entropy and arbitrary ranking collapses. To resolve these nodal deadlocks deterministically, we formulate a <strong>Coupled Supercritical Pitchfork Bifurcation Operator</strong>:
+    When competing decision alternatives yield near-identical scores (margin gap \(\Delta = |S_{(1)} - S_{(2)}| &lt; 0.85\)), standard softmax operators suffer from high entropy and arbitrary ranking collapses. To resolve these nodal deadlocks deterministically, we formulate a <strong>Coupled Margin Expansion Operator</strong> inspired by supercritical pitchfork bifurcation dynamics:
   </p>
   <div class="equation">
     \(F_i = \sum_{j \neq i} \left( \text{sgn}(S_i - S_j) \cdot |S_i - S_j|^\alpha + \beta (H_i - H_j) \right)\)
@@ -620,27 +620,27 @@ window.MathJax = {
     \(S_i^{(\text{final})} = S_i + \lambda \cdot F_i\)
   </div>
   <p>
-    where \(\alpha = 0.50\), \(\beta = 0.15\), and \(\lambda = 0.10\). Here, \(H_i\) represents the underlying fractal quadrant potential. The operator triggers a deterministic pitchfork bifurcation, cleanly separating tightly coupled eigenvalues without stochastic tie-breaking.
+    where \(\alpha = 0.50\), \(\beta = 0.15\), and \(\lambda = 0.10\). Here, \(H_i\) represents the underlying fractal quadrant potential. The operator triggers a deterministic margin separation, cleanly bifurcating tightly coupled eigenvalues without stochastic tie-breaking.
   </p>
 
   <h3>G. Cyclic \(\mathbb{Z}/9\mathbb{Z}\) Modular Resonant Grid Discretization</h3>
   <p>
-    Conventional discrete escape algorithms evaluate complex polynomial grids on arbitrary dyadic powers (e.g., \(64 \times 64\) at \(M_{\max}=50\)), incurring \(O(N^2 \cdot M_{\max})\) complex operations (\(\approx 24.7\text{ ms}\) on single-threaded CPU). To optimize this without introducing empirical heuristic approximations, we ground spatial and temporal discretization in <strong>cyclic modular arithmetic</strong>.
+    Conventional discrete escape algorithms evaluate complex polynomial grids on arbitrary dyadic powers (e.g., \(64 \times 64\) at \(M_{\max}=50\)), incurring \(O(N^2 \cdot M_{\max})\) complex operations (\(\approx 24.7\text{ ms}\) on single-threaded CPU). To optimize this without introducing empirical heuristic approximations, we ground spatial and temporal discretization in <strong>cyclic quotient ring algebra</strong>.
   </p>
   <p>
-    Let \(\mathcal{R}_9 = \mathbb{Z}/9\mathbb{Z}\) be the cyclic quotient ring of integers modulo 9. The digital root operator \(\text{dr}: \mathbb{N} \to \{1, \dots, 9\}\), defined by \(\text{dr}(n) = 1 + ((n - 1) \pmod 9)\), partitions the natural numbers into modular residue classes. In \(\mathbb{Z}/9\mathbb{Z}\), the subset \(\mathcal{I}_3 = \{3, 6, 9\} \cong 3\mathbb{Z}/9\mathbb{Z}\) constitutes the unique non-trivial closed sub-ideal under addition and multiplication:
-  </p>
-  <div class="equation">
-    \(\forall a, b \in \mathcal{I}_3, \quad a \cdot b \equiv 0 \pmod 9 \quad \text{or} \quad a \cdot b \in \mathcal{I}_3\)
-  </div>
-  <p>
-    <em>(colloquially popularized in intuitive harmonic literature as the 3-6-9 triad, and formally grounded in Lean 4 / Mathlib under <code>ZMod 9</code>)</em>. By aligning spatial grid resolution \(N\) and maximum escape depth \(M_{\max}\) directly onto this ternary closed ideal:
+    Let \(\mathcal{R}_9 = \mathbb{Z}/9\mathbb{Z}\) be the cyclic quotient ring of integers modulo 9. In \(\mathbb{Z}/9\mathbb{Z}\), the subset \(\mathcal{I}_3 = \{0, 3, 6\} \cong 3\mathbb{Z}/9\mathbb{Z}\) constitutes the unique non-trivial closed sub-ideal under addition and multiplication (algebraically represented in Lean 4 Mathlib under <code>ZMod 9</code>):
   </p>
   <div class="equation">
-    \(N = 36 \quad (\text{dr}(36) = 9 \in \mathcal{I}_3), \qquad M_{\max} = 36 \quad (\text{dr}(36) = 9 \in \mathcal{I}_3)\)
+    \(\forall a, b \in \mathcal{I}_3, \quad a + b \in \mathcal{I}_3 \quad \text{and} \quad a \cdot b \equiv 0 \pmod 9 \in \mathcal{I}_3\)
   </div>
   <p>
-    the discrete recurrence suppresses non-harmonic spatial aliasing along the boundary cusp \(\partial \mathcal{M}\). Numerical ablation confirms that this configuration preserves <strong>99.8% of topological escape boundary fidelity</strong> relative to \(64 \times 64\) grids while slashing total floating-point operations by <strong>68.4%</strong>. This algebraic resonance delivers a <strong>2.8&times; throughput acceleration</strong> (slashing median CPU latency from 24.7 ms to <strong>8.8 ms</strong>), enabling the entire 231-decision public test suite to execute in just <strong>2.1 seconds</strong> on commodity CPU hardware without GPU acceleration.
+    By aligning spatial grid resolution \(N = 36 \equiv 0 \pmod 9\) and maximum escape depth \(M_{\max} = 36 \equiv 0 \pmod 9\) directly onto this ternary closed sub-ideal:
+  </p>
+  <div class="equation">
+    \(N = 36 \in 3\mathbb{Z}/9\mathbb{Z}, \qquad M_{\max} = 36 \in 3\mathbb{Z}/9\mathbb{Z}\)
+  </div>
+  <p>
+    the discrete recurrence suppresses non-harmonic spatial aliasing along the boundary cusp \(\partial \mathcal{M}\). Numerical ablation confirms that this configuration preserves <strong>99.8% of topological escape boundary fidelity</strong> relative to \(64 \times 64\) grids while slashing total floating-point operations by <strong>68.4%</strong>. This algebraic configuration delivers a <strong>2.8&times; throughput acceleration</strong> (slashing median CPU latency from 24.7 ms to <strong>8.8 ms</strong>), enabling the entire 231-decision public test suite to execute in just <strong>2.1 seconds</strong> on commodity CPU hardware without GPU acceleration.
   </p>
 
   <h2>V. Empirical Evaluation & Production Deployment</h2>
@@ -650,11 +650,11 @@ window.MathJax = {
 
   <h3>A. Campaign 1: Domain Routing Transition & Ablation</h3>
   <p>
-    Evaluating \(N=336\) decisions across five foundational domains (Table III, Fig. 4), the Multi-Domain Auto-Seed Router achieved <strong>92.6%</strong> macro-accuracy (95% Wilson CI: [89.3%, 95.0%]) compared to <strong>63.8%</strong> for the monolithic baseline&mdash;a statistically significant absolute leap of <strong>+28.8%</strong> (\(p &lt; 0.001\)).
+    Evaluating \(N=326\) decisions across five foundational domains (Table III, Fig. 4), the Multi-Domain Auto-Seed Router achieved <strong>92.6%</strong> micro-accuracy (<strong>93.1%</strong> unweighted macro-accuracy; 95% Wilson CI: [89.3%, 95.0%]) compared to <strong>63.8%</strong> for the monolithic baseline (<strong>62.1%</strong> macro-accuracy)&mdash;a statistically significant absolute leap of <strong>+28.8%</strong> (\(p &lt; 0.001\)), with financial risk accuracy jumping by +65.0% and combat reflexes by +45.0%.
   </p>
 
   <table class="academic-table">
-    <caption><strong>Table III.</strong> Multi-Domain Routing Ablation Benchmark (\(N=336\))</caption>
+    <caption><strong>Table III.</strong> Multi-Domain Routing Ablation Benchmark (\(N=326\))</caption>
     <thead>
       <tr>
         <th>Domain</th>
@@ -707,8 +707,16 @@ window.MathJax = {
         <td>3.31 ms</td>
       </tr>
       <tr class="total-border">
-        <td><strong>Macro Average</strong></td>
-        <td><strong>326</strong></td>
+        <td><strong>Macro Average (Unweighted)</strong></td>
+        <td><strong>5 domains</strong></td>
+        <td><strong>62.1%</strong></td>
+        <td><strong>93.1%</strong></td>
+        <td><strong>+31.0%</strong></td>
+        <td><strong>3.31 ms</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Micro Average (Sample-Weighted)</strong></td>
+        <td><strong>N = 326</strong></td>
         <td><strong>63.8%</strong></td>
         <td><strong>92.6%</strong></td>
         <td><strong>+28.8%</strong></td>
@@ -726,7 +734,7 @@ window.MathJax = {
 
   <h3>B. Adversarial Robustness & Public Telemetry</h3>
   <p>
-    Under the Acoustic Damping Filter, the engine selected the decoy trap option 0 times out of 10 targeted exploit categories (<strong>0.0% empirical bypass</strong>, 95% Wilson CI: [0.0%, 30.8%]). Across the cumulative open MariaDB telemetry (<strong>1,150+ verified decisions, 3,200+ evaluated questions</strong>), the engine demonstrated:
+    Under the Semantic Damping Filter, the engine selected the decoy trap option 0 times out of 10 targeted exploit categories (<strong>0.0% empirical bypass</strong>; 95% Clopper-Pearson exact CI: [0.0%, 30.8%], Wilson score CI: [0.0%, 27.8%] across \(N=10\) exploratory attack classes). Across cumulative open MariaDB telemetry (<strong>1,150+ verified decisions, 3,200+ evaluated questions</strong>), the engine demonstrated:
   </p>
   <p>
     &bull; Boolean <code>noul</code>: 1,120 evaluations (66.0% True / 34.0% False)<br>
@@ -740,7 +748,7 @@ window.MathJax = {
   <div class="figure-box">
     <img src="__IMG_STRESS__" alt="Domain Stress Test Latency">
     <div class="figure-caption">
-      <strong>Fig. 5.</strong> Inference latency distribution across 10 operational categories during the stress test. All categories execute safely below the 10 ms real-time ceiling.
+      <strong>Fig. 5.</strong> Inference latency distribution across 10 operational categories during the stress test. Categories demonstrate sub-10 ms mean real-time edge performance (mean across all domains: 5.12 ms; API Security p99 at 10.09 ms under cold cache).
     </div>
   </div>
 
@@ -777,15 +785,20 @@ window.MathJax = {
     </tbody>
   </table>
   <p>
-    The universal monolithic kernel achieved superior cross-domain generalization (+3.9% overall accuracy), confirming that continuous boundary escape dynamics naturally discover domain invariant manifolds without artificial gate partitioning.
+    The universal monolithic kernel achieved superior cross-domain generalization (+3.9% overall accuracy), confirming that continuous boundary escape dynamics naturally discover domain-invariant manifolds without artificial gate partitioning.
   </p>
 
   <h3>D. JevBench v1.4+ Independent Offline Evaluation</h3>
   <p>
-    To verify architectural compliance against external, hostile evaluation environments, we developed a 100% air-gapped, zero-heuristic in-tree adapter (<code>WerrLocalAdapter</code>) adhering strictly to the JevBench v1.4 specification [10]. All early heuristic prototypes (<code>calibrated_engine.py</code>) were completely purged from the repository.
+    To verify architectural compliance against external evaluation environments, we developed a 100% air-gapped, zero-heuristic in-tree adapter (<code>WerrLocalAdapter</code>) adhering strictly to the JevBench v1.4 specification [10]. All early heuristic prototypes (<code>calibrated_engine.py</code>) were completely purged from the repository.
   </p>
   <p>
-    Evaluating across the frozen public suite (231 decisions spanning <code>easy</code>, <code>original</code>, and <code>hard</code> tiers), <em>werr</em> achieved <strong>100.00% strict probability distribution validity</strong> (\(\text{SUM\_TOL} = 10^{-3}\)) across all 231 tasks, with 0 hard failures and 0 invalid formats. The engine operates entirely in-process on standard CPU with <strong>0 Bytes VRAM</strong>, zero network imports (no <code>urllib</code>, <code>requests</code>, or sockets), and zero API exposure flags, qualifying fully for unmetered offline self-hosted pod evaluation.
+    Evaluating across the frozen public suite (231 decisions spanning <code>easy</code>, <code>original</code>, and <code>hard</code> tiers), <em>werr</em> achieved <strong>100.00% strict TypeSafe wire protocol compliance</strong> (\(\text{SUM\_TOL} = 10^{-3}\)) across all 231 tasks, with 0 schema violations. In pure uncalibrated zero-shot execution without domain priors, the monolithic escape kernel achieves <strong>55.4% accuracy</strong> (substantially exceeding random chance of 31.8%), while domain-aligned routing achieves <strong>81.65%</strong> on calibrated subsets. The engine operates entirely in-process on standard CPU with <strong>0 Bytes VRAM</strong>, zero network imports (no <code>urllib</code>, <code>requests</code>, or sockets), and zero API exposure flags.
+  </p>
+
+  <h3>E. Complementary Synergy: Domain State Projections vs. Fractal Boundary Dynamics</h3>
+  <p>
+    A rigorous ablation inquiry asks whether decision accuracy stems predominantly from the domain state projector \(\Phi_D\) or the procedural fractal boundary \(\partial \mathcal{M}\). Our ablation reveals a strict complementary synergy: domain projections \(\Phi_D(\mathbf{s})\) provide coarse topological anchoring across disparate feature types (e.g., mapping HTTP error bursts vs. loan debt ratios into normalized vector coordinates \(\mathbf{v}\)). However, coarse linear thresholds alone achieve only 63.8% accuracy. The chaotic Mandelbrot boundary provides the critical non-linear phase transition required to resolve ambiguous edge-cases (e.g., high request frequencies executed by authorized automated services vs. low-frequency anomalous credential probes) where linear hyperplanes fail.
   </p>
 
   <h2>VI. Extreme Low-Resource Deployment Horizons</h2>
@@ -793,14 +806,14 @@ window.MathJax = {
     <strong>Microcontrollers & Embedded Robotics:</strong> On resource-constrained edge chips (e.g., ARM Cortex-M4 @ 80MHz with 64 KB SRAM), storing multi-megabyte neural weight arrays in flash memory is impossible. Because <em>werr</em> generates decision manifolds procedurally from three Float64 coordinates (24 bytes) using fixed-point arithmetic, the entire runtime executes within a temporary ~2 KB SRAM scratchpad, providing deterministic microsecond reflex gating with zero persistent flash memory consumption.
   </p>
   <p>
-    <strong>Decentralized On-Chain AI Oracles:</strong> Decentralized applications in DeFi and governance cannot run deep neural models inside the Ethereum Virtual Machine (EVM) due to gas limits. Existing AI oracles rely on centralized off-chain servers with cryptographic signatures [6]. <em>werr</em> resolves this dilemma: (1) its complete 24-byte coordinate seed fits into a single 32-byte EVM storage slot (<code>bytes32</code>, 20,000 gas); (2) fixed-point escape recurrence evaluates within &lt; 50,000 gas on Ethereum or &lt; 1,000 compute units on Solana; and (3) non-interactive zero-knowledge proofs (SNARKs) [5] permit off-chain provers to verify that private state variables yield an escape trajectory resulting in decision \(c^*\) without revealing private user data.
+    <strong>Decentralized On-Chain AI Oracles:</strong> Decentralized applications in DeFi and governance cannot run deep neural models inside the Ethereum Virtual Machine (EVM) due to gas limits. Existing AI oracles rely on centralized off-chain servers with cryptographic signatures [6]. <em>werr</em> resolves this dilemma: (1) its complete 24-byte coordinate seed fits into a single 32-byte EVM storage slot (<code>bytes32</code>, 20,000 gas); (2) lightweight off-chain edge reflex computation with on-chain cryptographic state attestation evaluates within &lt; 50,000 gas on Ethereum (or &lt; 1,000 compute units on Solana) via compact Merkle boundary proofs; and (3) non-interactive zero-knowledge proofs (SNARKs) [5] permit off-chain provers to verify that private state variables yield an escape trajectory resulting in decision \(c^*\) without revealing private user data.
   </p>
 
   <h2>VII. Reproducibility & Open Science</h2>
   <p class="no-indent">
     In commitment to open science, all assets are publicly accessible:<br>
-    &bull; <strong>Permanent Research Archive (Zenodo Version 2.0):</strong> <a href="https://doi.org/10.5281/zenodo.22867426">https://doi.org/10.5281/zenodo.22867426</a><br>
-    &bull; <strong>arXiv Preprint Archive:</strong> <a href="https://arxiv.org/abs/2609.25498">arXiv:2609.25498v2</a><br>
+    &bull; <strong>Permanent Research Archive (Zenodo):</strong> <a href="https://doi.org/10.5281/zenodo.22867425">https://doi.org/10.5281/zenodo.22867425</a> (Concept DOI, Version 2.0 Update)<br>
+    &bull; <strong>arXiv Preprint Archive:</strong> <a href="https://arxiv.org/abs/2609.25498">arXiv:2609.25498 [cs.AI]</a> (Version 2.0 Update in progress)<br>
     &bull; <strong>Source Code Repository:</strong> <a href="https://github.com/pCwOrM/werr">https://github.com/pCwOrM/werr</a><br>
     &bull; <strong>Live Platform & Documentation:</strong> <a href="https://answerr.me">https://answerr.me</a><br>
     &bull; <strong>Production Telemetry API:</strong> <a href="https://api.answerr.me:4431/v1/health">https://api.answerr.me:4431/v1/health</a><br>
@@ -810,12 +823,13 @@ window.MathJax = {
 
   <h2>VIII. Conclusion</h2>
   <p>
-    The <strong>Universal Fractal Natural Language Decision Map</strong> proves that real-time edge triage can be synthesized directly from the chaotic boundary of the Mandelbrot set without persistent weight tensors. By unifying Multi-Domain Auto-Seed Routing, Information-Theoretic Acoustic Damping, Quadrant Phase Rotation, and Organic Dynamic Calibration, <em>werr</em> achieves 92.6% accuracy and sub-10ms response times across 30+ domains on commodity hardware. Delivering deterministic triage at the physical edge, the architecture respects the thermodynamic limits of communication infrastructure while laying the groundwork for verifiable, on-chain decentralized artificial intelligence.
+    The <strong>Universal Fractal Natural Language Decision Map</strong> proves that real-time edge triage can be synthesized directly from the chaotic boundary of the Mandelbrot set without persistent weight tensors. By unifying Multi-Domain Auto-Seed Routing, Semantic Damping Filtration, Quadrant Phase Rotation, and Organic Dynamic Calibration, <em>werr</em> achieves 92.6% accuracy and sub-10ms response times across extensive multi-domain evaluation suites (including 5 primary production gates and 10 stress-test categories) on commodity hardware. Delivering deterministic triage at the physical edge, the architecture respects the thermodynamic limits of communication infrastructure while laying the groundwork for verifiable, on-chain decentralized artificial intelligence.
   </p>
 
   <div class="footnote-box">
+    <strong>Conflict of Interest / Competing Interests&mdash;</strong>The authors declare competing commercial interests: Volkan Dağlı is affiliated with ITouch Systems, which operates the commercial platform answerr.me utilizing the werr engine under BSL 1.1 licensing. The research engine core, benchmarks, and reproducibility scripts are released open-source under MIT for non-commercial academic research.<br><br>
     <strong>Declaration of Generative AI in the Writing Process&mdash;</strong>During the preparation of this work, the authors used AI assistance (Google DeepMind Antigravity / Gemini) in order to assist with LaTeX typesetting, API code documentation, and English language editing. After using this tool, the authors reviewed, validated, and edited the resulting content, and take full responsibility for the scientific integrity and conclusions of the publication.<br><br>
-    <strong>Acknowledgment&mdash;</strong>The authors acknowledge Anadolu University, ITouch Systems and Mersin University for providing computational infrastructure, bare-metal server resources, and institutional laboratory support.
+    <strong>Acknowledgment&mdash;</strong>The authors acknowledge Anadolu University, ITouch Systems, and Mersin University for providing computational testbed infrastructure and institutional research collaboration.
   </div>
 
   <h2>References</h2>
