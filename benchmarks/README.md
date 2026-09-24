@@ -121,6 +121,26 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 | **Run 1: Heuristic Calibrated (Historical)** | Task-specific semantic mappings | 74.80% | 85.42% | 90.28% | 46.85% | 2.58 ms | 0.1540 | 100.0 | 100.0 | **81.36** / **76.90** | — |
 | **Run 2: Clean Core (`JevWireAdapter`)** | **Zero Hardcoded Rules**, 100% General criteria n-gram & polarity | **46.75%** | **75.00%** | **43.06%** | **36.94%** | **3.47 ms** | 0.3230 | **95.79** | **100.0** | 35.80 / 30.12 | **7.51** |
 | **Run 3: Clean Calibrated Engine** | **Zero Hardcoded Rules**, Platt temperature scaling | **49.78%** | **85.42%** | **44.44%** | **37.84%** | **3.79 ms** | 0.2863 | **95.70** | **100.0** | 41.50 / 36.20 | **12.39** |
+| **Run 4: WERR v0.5.0 (Tripod + Cadence Bifurcation)** | **Multi-Scale Harmonic Tripod (0.6x/1.0x/1.6x), Bounded Density (arXiv:1810.11107), Cadence Pitchfork Bifurcation** | **54.55%** (126/231) | **85.42%** (41/48) | **50.00%** (36/72) | **44.14%** (49/111) | **19.9 ms** | **0.2520** | **92.50** | **100.0** | **51.80** / **46.70** | **23.66** |
+
+#### 🌍 JevBench v1.4.1 Official Comparative Context
+
+| Rank / System | Architecture | Hardware / VRAM | Intelligence | Speed | Cost | v1.4.1 Score |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **Raw Qwen3 8B** | Dense Transformer (8 Billion Params) | GPU Cluster (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
+| **WERR v0.5.0 (Tripod Domainless)** | **Pure Fractal Boundary Cusp ($\partial \mathcal{M}$)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **LitJev 27B** | Open Weights MoE / Dense | Dual GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
+| **GPT-5.6 Luna** | Frontier Closed LLM (OpenAI API) | Multi-Cluster Cloud Supercomputer | 96.8 | 77.5 | 28.5 | **18.51** |
+| **SmallJev (Local Checkpoint)** | Distilled SLM Checkpoint | Local GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
+
+#### 📊 Grand Matrix: Multi-Domain vs. Domainless across 3 Comprehensive Benchmark Suites
+
+| Operational Mode | Suite 1: Edge Domains (50 Tasks) | Suite 2: 100 TR Production | JevBench v1.4.1 Accuracy | JevBench v1.4.1 Score | Inference Latency (CPU) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Domainless (Universal Cusp)** | 18 / 50 (36.0%) | 35 / 100 (35.0%) | **126 / 231 (54.55%)** | **23.66** | 19.9 ms |
+| **2. Multi-Domain + Sözcük Sözlüğü** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 119 / 231 (51.52%) | 16.14 | 24.1 ms |
+| **3. Multi-Domain + Rezonans Sözlüğü (Tesla 3-6-9)** | 20 / 50 (40.0%) | 31 / 100 (31.0%) | 122 / 231 (52.81%) | 18.83 | **13.8 ms** |
+| **4. Multi-Domain + Hibrit (Sözcük + Rezonans)** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 120 / 231 (51.95%) | 17.09 | 15.5 ms |
 
 > [!NOTE]
 > **Understanding JevBench v1.4 Scoring Mechanics:**  

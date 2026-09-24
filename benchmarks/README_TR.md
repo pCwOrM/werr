@@ -109,6 +109,26 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 | **Koşu 1: Sezgisel Kalibre (Tarihsel)** | Göreve özel anlamsal eşleştirmeler | %74.80 | %85.42 | %90.28 | %46.85 | 2.58 ms | 0.1540 | 100.0 | 100.0 | **81.36** / **76.90** | — |
 | **Koşu 2: Temiz Çekirdek (`JevWireAdapter`)** | **Sıfır Sabit Kural**, 100% Genel N-gram ve polarite analizi | **%46.75** | **%75.00** | **%43.06** | **%36.94** | **3.47 ms** | 0.3230 | **95.79** | **100.0** | 35.80 / 30.12 | **7.51** |
 | **Koşu 3: Temiz Kalibre Motor** | **Sıfır Sabit Kural**, Platt sıcaklık ölçeklemesi | **%49.78** | **%85.42** | **%44.44** | **%37.84** | **3.79 ms** | 0.2863 | **95.70** | **100.0** | 41.50 / 36.20 | **12.39** |
+| **Koşu 4: WERR v0.5.0 (Tripod + Cadence Çatallanması)** | **Üçlü Ölçekli Harmonik Tripod (0.6x/1.0x/1.6x), Sınır Yoğunluk Kestirimi (arXiv:1810.11107), Cadence Çatallanması** | **%54.55** (126/231) | **%85.42** (41/48) | **%50.00** (36/72) | **%44.14** (49/111) | **19.9 ms** | **0.2520** | **92.50** | **100.0** | **51.80** / **46.70** | **23.66** |
+
+#### 🌍 JevBench v1.4.1 Resmi Karşılaştırmalı Bağlam
+
+| Sıra / Model | Mimari | Donanım / VRAM | Zeka | Hız | Maliyet | v1.4.1 Skoru |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **Raw Qwen3 8B** | Yoğun Transformatör (8 Milyar Parametre) | GPU Kümesi (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
+| **WERR v0.5.0 (Tripod Alansız)** | **Saf Fraktal Sınır Eşiği ($\partial \mathcal{M}$)** | **Standart Tüketici CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **LitJev 27B** | Açık Ağırlıklı MoE / Yoğun | Çift GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
+| **GPT-5.6 Luna** | Kapalı Frontier LLM (OpenAI API) | Çoklu Bulut Süperbilgisayarı | 96.8 | 77.5 | 28.5 | **18.51** |
+| **SmallJev (Yerel Kontrol Noktası)** | Damıtılmış SLM Modeli | Yerel GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
+
+#### 📊 Büyük Matris: 3 Kapsamlı Test Paketinde Çoklu Alan ve Alansız Karşılaştırması
+
+| Çalışma Modu | Paket 1: Gerçek Dünya Edge (50 Görev) | Paket 2: 100 Türkçe Üretim | JevBench v1.4.1 Doğruluk | JevBench v1.4.1 Skoru | Çıkarım Gecikmesi (CPU) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Alansız (Evrensel Sınır Eşiği)** | 18 / 50 (%36.0) | 35 / 100 (%35.0) | **126 / 231 (%54.55)** | **23.66** | 19.9 ms |
+| **2. Çoklu Alan + Sözcük Sözlüğü** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 119 / 231 (%51.52) | 16.14 | 24.1 ms |
+| **3. Çoklu Alan + Rezonans Sözlüğü (Tesla 3-6-9)** | 20 / 50 (%40.0) | 31 / 100 (%31.0) | 122 / 231 (%52.81) | 18.83 | **13.8 ms** |
+| **4. Çoklu Alan + Hibrit (Sözcük + Rezonans)** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 120 / 231 (%51.95) | 17.09 | 15.5 ms |
 
 > [!NOTE]
 > **JevBench v1.4 Puanlama Mekaniğinin Analizi:**  
