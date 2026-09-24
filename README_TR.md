@@ -59,7 +59,10 @@
 * **1. Dinamik Sentez (`W`aves & `Err`ors):** Sürekli karmaşık polinom yörüngelerinin Euler diverjans eşiğiyle ($|Z_n| > 2$) çarpışması. Dalga hatayla buluştuğunda, yineleriz (**WERR**).
 * **2. Mekânsal Sorgulama (*"Werr is the point?"*):** İngilizce *"Where"* (Nerede) kelimesiyle eşsesli olarak, operasyonel durum triage'ı Mandelbrot kümesinin sonsuz dalları üzerindeki rezonant 24-baytlık koordinat tohumunu bulmak olarak modellenir.
 * **3. Eylemsel Emir (Türkçe *"Ver!"*):** Biyolojik omurilik refleksleri tereddüt etmeden eyleme geçer. Türkçedeki emir kipiyle: *"Karar werr!"*, *"Yanıt werr!"*, *"İzin werr!"*, *"Tepki werr!"*. Beyinsel müzakereye girmeden $< 1$~ms içinde karar üretir.
-* **4. İkili Bilişsel Ekosistem Sinerjisi:** `werr`, canlı olarak [answerr.me](https://answerr.me) üzerinde çalışan **A.N.S.W.E.R.R.** (*Adaptive Non-tensor Signal Wave & Error Reflex Resonator*) platformunun sıfır-tensör matematiksel omurgasını oluşturur.
+* **4. Üçlü Ekosistem Sinerjisi (`answerr` $\leftrightarrow$ `werr` $\leftrightarrow$ `werracle`):**
+  * **`answerr`** ([answerr.me](https://answerr.me)): Sistem-2 derin akıl yürütme, kod sentezi ve bulut yapay zeka portalı.
+  * **`werr`** (`pip install werr`): Makine-yerel Sistem-1 uç refleks çekirdeği ($< 0.5$ ms gecikme, 0 Bayt VRAM).
+  * **`werracle`** ([github.com/pCwOrM/werracle](https://github.com/pCwOrM/werracle)): EVM akıllı sözleşmeleri için sıfır-depolamalı yapay zeka kahini (~21k gas, tek bir `bytes32` depolama yuvası, blok-içi flaş kredi savunması; canlı simülatör: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)).
 
 ---
 
