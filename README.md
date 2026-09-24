@@ -12,7 +12,7 @@
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
-[![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22867426-024dad.svg)](https://doi.org/10.5281/zenodo.22867426)
+[![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Preprint Status](https://img.shields.io/badge/Preprint-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
@@ -45,7 +45,7 @@
 **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
-📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22867426).  
+📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22939253).  
 ⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -533,7 +533,7 @@ This research builds upon peer-reviewed open science preprints and is published 
 
 * **Primary Paper (Version 2.0 Camera-Ready):** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
   * **arXiv Preprint:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426))  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22939253](https://doi.org/10.5281/zenodo.22939253))  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı &bull; Lead Author: [ORCID: 0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703)  
   * **Status:** Version 2.0 Camera-Ready / Peer Review Revision (September 2026). Paper LaTeX source and camera-ready PDF synchronized.
 
@@ -689,7 +689,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   primaryClass  = {cs.NE},
   url           = {https://arxiv.org/abs/2609.25498},
   doi           = {10.48550/arXiv.2609.25498},
-  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22867426; Companion Concept: 10.5281/zenodo.22774934}
+  note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22939253; Companion Concept: 10.5281/zenodo.22774934}
 }
 
 @software{werr2026,
@@ -697,7 +697,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
   year      = {2026},
   url       = {https://github.com/pCwOrM/werr},
-  doi       = {10.5281/zenodo.22867426}
+  doi       = {10.5281/zenodo.22939253}
 }
 ```
 
