@@ -64,7 +64,10 @@ class WerrEngine:
         cadence_lambda: float = 0.10,
         cadence_beta: float = 0.15,
         cadence_alpha: float = 0.50,
-        temp_choice: float = 1.25
+        temp_choice: float = 1.25,
+        cx: Optional[float] = None,
+        cy: Optional[float] = None,
+        zoom: Optional[float] = None
     ):
         """
         Initialize the Werr Engine with a resonant chaotic boundary seed.
@@ -79,9 +82,9 @@ class WerrEngine:
           - 'none' (default): Domainless monolithic mode. Directly projects into the universal
             chaotic boundary cusp (c = -0.743643887 + 0.131825904i) with zero domain bias.
         """
-        self.cx = base_cx
-        self.cy = base_cy
-        self.zoom = base_zoom
+        self.cx = cx if cx is not None else base_cx
+        self.cy = cy if cy is not None else base_cy
+        self.zoom = zoom if zoom is not None else base_zoom
         self.resolution = resolution
         self.max_iter = max_iter
         if enable_ontologies is not None:
