@@ -21,7 +21,7 @@
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![Canlı Kıyaslama Arenası](https://img.shields.io/badge/Canlı%20Kıyaslama-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Kıyaslama Duvarı](https://img.shields.io/badge/The%20Gauntlet-Resmi%20K%C4%B1yaslama%20Dizini-brightgreen.svg)](./benchmarks/)
-[![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-23.66%20(8B%20Qwen3%20E%C5%9Fit)-brightgreen.svg)](./benchmarks/)
+[![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-20.63%20%2F%2023.74%20(Tesla%203--6--9)-brightgreen.svg)](./benchmarks/)
 [![JevBench Çift Standart](https://img.shields.io/badge/JevBench%20v1.2%20%2F%20v1.3-81.36%20%7C%2076.90-brightgreen.svg)](docs/BENCHMARK_INTEGRITY_REPORT.md)
 [![WindTunnel WebMCP](https://img.shields.io/badge/WindTunnel%20WebMCP-%25100%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Tau-Bench Araç Çağrımı](https://img.shields.io/badge/Tau--Bench-%25100%20Ara%C3%A7%20Sadakati-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
@@ -152,7 +152,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 3. **Cadence Süperkritik Çatallanma (Supercritical Pitchfork Bifurcation)**: Sürekli dinamik sistem çatallanmasını ($\dot{x} = r x - x^3$, `apply_cadence_bifurcation`) kullanarak yapay basamak fonksiyonlarına gerek kalmaksızın yüksek riskli/düşük riskli karar kollarını dinamik olarak netleştirir.
 
 #### 1. Alan Yönlendirme Boyutu (`domain_mode="none"` vs `domain_mode="multi"`)
-* **`domain_mode="none"` (Genel Akıl Yürütme & Akademik Benchmark Varsayılanı):** **Domainsiz Monolitik Mod (Domainless Monolithic)**. Ayrık alan kapılarını atlayarak soruları doğrudan evrensel kaotik sınır cusp koordinatına ($c = -0.743643887 + 0.131825904i$, zoom $50.0$) modüle eder. Yapay alan sınıflandırma önyargısını ortadan kaldırarak genel akıl yürütme ve çok adımlı çıkarımların doğal $\partial \mathcal{M}$ kaosu üzerinde çözülmesini sağlar. JevBench v1.4.1 üzerinde **%54.55 toplam doğruluk** ve resmî **23.66 skoru** ile Raw Qwen3 8B (23.68) modeline denk gelir, LitJev 27B ve GPT-5.6 Luna'yı geride bırakır.
+* **`domain_mode="none"` (Genel Akıl Yürütme & Akademik Benchmark Varsayılanı):** **Domainsiz Monolitik Mod (Domainless Monolithic)**. Ayrık alan kapılarını atlayarak soruları doğrudan evrensel kaotik sınır cusp koordinatına ($c = -0.743643887 + 0.131825904i$, zoom $50.0$) modüle eder. Yapay alan sınıflandırma önyargısını ortadan kaldırarak genel akıl yürütme ve çok adımlı çıkarımların doğal $\partial \mathcal{M}$ kaosu üzerinde çözülmesini sağlar. JevBench v1.4.1 üzerinde **%54.55 toplam doğruluk** ve Tesla 3-6-9 Harmonik Izgarası ile **7.32 ms gecikmeyle resmî 23.74 skoru** elde ederek Raw Qwen3 8B (23.68), LitJev 27B ve GPT-5.6 Luna'yı geride bırakır.
 * **`domain_mode="multi"` (Üretim IoT & Altyapı Varsayılanı):** **Çoklu Alan Modu (Multi-Domain)**. Durum imzalarını `AutoSeedRouter` aracılığıyla 5 uzmanlaşmış alan kapısına (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) dinamik olarak yönlendirir. Deterministik fiziksel sensör eşiklerinin (`smoke_detected`, `gas_ppm`) zorunlu olduğu gömülü donanımlar için tasarlanmıştır.
 
 #### 2. Leksikal ve Rezonans Ontoloji Boyutu (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
@@ -262,26 +262,27 @@ Werr, otonom Sistem-1 karar modelleri için kıyaslama paketi olan **JevBench**'
 
 ### 🌍 JevBench v1.4.1 Resmi Karşılaştırma Tablosu
 
-JevBench v1.4.1'in şanstan arındırılmış karesel harmonik skorlama mekanizması ($\text{Skor} = \text{HarmonikOrtalama} \times (\text{Zeka}/50)^2$, $\text{Zeka} < 50$ için) altında WERR v0.5.0, **23.66 skoru** ile doğrudan 8 Milyar parametreli yoğun transformatör modeline (Qwen3 8B) denk gelmekte ve çok daha büyük modelleri geride bırakmaktadır:
+JevBench v1.4.1'in şanstan arındırılmış karesel harmonik skorlama mekanizması ($\text{Skor} = \text{HarmonikOrtalama} \times (\text{Zeka}/50)^2$, $\text{Zeka} < 50$ için) altında WERR v0.5.0, saf cusp üzerinde **7.32 ms gecikmeyle 23.74 skoru**, `WerrLocalAdapter` ile ise **20.63 skoru** elde ederek doğrudan 8 Milyar parametreli yoğun transformatör modeline (Qwen3 8B) denk gelmekte ve çok daha büyük modelleri geride bırakmaktadır:
 
 | Model / Sistem | Mimari | Donanım / VRAM | Zeka | Hız | Maliyet | v1.4.1 Skoru |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **⚡ WERR v0.5.0 (Tesla 3-6-9 Cusp)** | **Saf Fraktal Sınır Cusp ($\partial \mathcal{M}$)** | **Standart CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **33.4** | **95.4** | **100.0** | **23.74** 🏆 |
 | **Raw Qwen3 8B** | Yoğun Transformatör (8 Milyar Parametre) | GPU Kümesi (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
-| **⚡ WERR v0.5.0 (Tripod Domainsiz)** | **Saf Fraktal Sınır Cusp ($\partial \mathcal{M}$)** | **Standart CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **⚡ WERR v0.5.0 (`WerrLocalAdapter`)** | **Doğrudan Çekirdek Standart Adaptör (`res=36, max_iter=36`)** | **Standart CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **30.6** | **95.3** | **100.0** | **20.63** |
 | **LitJev 27B** | Açık Ağırlıklı MoE / Yoğun | Çift GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
 | **GPT-5.6 Luna** | Kapalı Öncü LLM (OpenAI API) | Çok Kümeli Bulut Süperbilgisayar | 96.8 | 77.5 | 28.5 | **18.51** |
 | **SmallJev (Yerel Checkpoint)** | Damıtılmış SLM Checkpoint'i | Yerel GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
 
-### 📊 Büyük Matris (Grand Matrix): 3 Bağımsız Test Paketi × 4 Operasyonel Mod
+### 📊 Büyük Matris (Grand Matrix): 3 Bağımsız Test Paketi × 4 Operasyonel Mod (Tesla 3-6-9 Hızlandırılmış)
 
 WERR v0.5.0'ın farklı saha koşullarındaki dayanıklılığını doğrulamak için 3 bağımsız test paketinde 4 farklı mod koşturulmuştur:
 
 | Operasyonel Mod | Paket 1: Uç Alanlar (50 Görev) | Paket 2: 100 TR Üretim | JevBench v1.4.1 Doğruluk | JevBench v1.4.1 Skoru | İşlemci Gecikmesi |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Domainsiz (Evrensel Cusp)** | 18 / 50 (%36.0) | 35 / 100 (%35.0) | **126 / 231 (%54.55)** | **23.66** | 19.9 ms |
-| **2. Çoklu Alan + Sözcük Sözlüğü** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 119 / 231 (%51.52) | 16.14 | 24.1 ms |
-| **3. Çoklu Alan + Rezonans (Tesla 3-6-9)** | 20 / 50 (%40.0) | 31 / 100 (%31.0) | 122 / 231 (%52.81) | 18.83 | **13.8 ms** |
-| **4. Çoklu Alan + Hibrit (Sözcük + Rezonans)** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 120 / 231 (%51.95) | 17.09 | 15.5 ms |
+| **1. Domainsiz (Evrensel Cusp + Tesla 36)** | 18 / 50 (%36.0) | **35 / 100 (%35.0)** | **126 / 231 (%54.55)** | **23.74** | **7.32 ms** 🏆 |
+| **2. Çoklu Alan + Sözcük Sözlüğü** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 119 / 231 (%51.52) | 16.20 | **8.51 ms** |
+| **3. Çoklu Alan + Rezonans (Tesla 3-6-9)** | 20 / 50 (%40.0) | 31 / 100 (%31.0) | 122 / 231 (%52.81) | 18.82 | **7.80 ms** |
+| **4. Çoklu Alan + Hibrit (Sözcük + Rezonans)** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 120 / 231 (%51.95) | 17.08 | **8.12 ms** |
 
 ### 📈 JevBench Sürümleri Boyunca Kümülatif Evrim Matrisi
 
@@ -290,7 +291,8 @@ WERR v0.5.0'ın farklı saha koşullarındaki dayanıklılığını doğrulamak 
 | **Koşu 1: Sezgisel Kalibre** | Göreve özgü semantik eşlemeler (Tarihsel) | %74.80 | %85.42 | %90.28 | %46.85 | 2.58 ms | **81.36** / **76.90** | — |
 | **Koşu 2: Temiz Çekirdek (`JevWireAdapter`)** | Sıfır Sabit Kural, saf genel kriter $N$-gram | %46.75 | %75.00 | %43.06 | %36.94 | 3.47 ms | 35.80 / 30.12 | 7.51 |
 | **Koşu 3: Temiz Kalibre Motor** | Sıfır Sabit Kural, Platt sıcaklık ölçeklemesi | %49.78 | %85.42 | %44.44 | %37.84 | 3.79 ms | 41.50 / 36.20 | 12.39 |
-| **Koşu 4: WERR v0.5.0 (Tripod Çatallanma)** | **Çok Ölçekli Tripod (0.6x/1.0x/1.6x), Sınırlı Yoğunluk, Cadence Çatallanma** | **%54.55** (126/231) | **%85.42** (41/48) | **%50.00** (36/72) | **%44.14** (49/111) | **19.9 ms** | **51.80** / **46.70** | **23.66** |
+| **Koşu 4: WERR v0.5.0 (Tripod Taban Çizgisi)** | Çok Ölçekli Tripod (64x64 @ 50 iter, 0.6x/1.0x/1.6x), Sınırlı Yoğunluk, Cadence | %54.55 (126/231) | %85.42 (41/48) | %50.00 (36/72) | %44.14 (49/111) | 19.9 ms | 51.80 / 46.70 | 23.66 |
+| **Koşu 5: WERR v0.5.0 (Tesla 3-6-9 Harmonik Izgara)** | **Tesla Vorteks Izgarası (36x36 @ 36 iter, 81 px/fayans), Çok Ölçekli Tripod, Bounded Yoğunluk, Cadence** | **%53.25** (123/231) *(Adaptör)*<br>**%54.55** (126/231) *(Cusp)* | **%83.33** (40/48)<br>**%85.42** (41/48) | **%48.61** (35/72)<br>**%50.00** (36/72) | **%43.24** (48/111)<br>**%44.14** (49/111) | **7.58 ms** *(Adaptör)*<br>**7.32 ms** *(Cusp)* 🏆 | **53.20** / **48.50** | **20.63** *(Adaptör)*<br>**23.74** *(Cusp)* 🏆 |
 
 > 📘 **Ayrıntılı Kıyaslama Dosyası:** Eksiksiz monografi için [`benchmarks/README_TR.md`](./benchmarks/README_TR.md) ve denetim raporu için [`docs/BENCHMARK_INTEGRITY_REPORT.md`](docs/BENCHMARK_INTEGRITY_REPORT.md) belgelerini inceleyebilirsiniz.
 

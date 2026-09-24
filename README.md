@@ -21,7 +21,7 @@
 [![GitHub Education: Community Exchange](https://img.shields.io/badge/GitHub%20Education-Community%20Exchange-2ea44f?logo=github&logoColor=white)](https://education.github.com/globalcampus/exchange)
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
-[![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-23.66%20(Ties%208B%20Qwen3)-brightgreen.svg)](./benchmarks/)
+[![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-20.63%20%2F%2023.74%20(Tesla%203--6--9)-brightgreen.svg)](./benchmarks/)
 [![JevBench Dual-Standard](https://img.shields.io/badge/JevBench%20v1.2%20%2F%20v1.3-81.36%20%7C%2076.90-brightgreen.svg)](docs/BENCHMARK_INTEGRITY_REPORT.md)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
@@ -181,7 +181,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 3. **Cadence Supercritical Pitchfork Bifurcation**: Employs continuous dynamical system bifurcation ($\dot{x} = r x - x^3$, `apply_cadence_bifurcation`) to dynamically sharpen binary and categorical boundaries under high-risk conditions without artificial step functions.
 
 #### 1. Domain Routing Dimension (`domain_mode="none"` vs `domain_mode="multi"`)
-* **`domain_mode="none"` (Default for General Reasoning & Academic Benchmarks)**: **Domainless Monolithic Mode**. Bypasses discrete domain gates and directly modulates questions into the universal chaotic boundary cusp ($c = -0.743643887 + 0.131825904i$, zoom $50.0$). Eliminates domain classification bias, allowing open-ended general intelligence and multi-step deduction to resolve naturally along $\partial \mathcal{M}$. Achieves **54.55% overall accuracy** and an official JevBench v1.4.1 score of **23.66** (tying Raw Qwen3 8B at 23.68 and beating LitJev 27B and GPT-5.6 Luna).
+* **`domain_mode="none"` (Default for General Reasoning & Academic Benchmarks)**: **Domainless Monolithic Mode**. Bypasses discrete domain gates and directly modulates questions into the universal chaotic boundary cusp ($c = -0.743643887 + 0.131825904i$, zoom $50.0$). Eliminates domain classification bias, allowing open-ended general intelligence and multi-step deduction to resolve naturally along $\partial \mathcal{M}$. Achieves **54.55% overall accuracy** and an official JevBench v1.4.1 score of **23.74** at **7.32 ms latency** via Tesla 3-6-9 Harmonic Grid (tying/beating Raw Qwen3 8B at 23.68, LitJev 27B at 19.51, and GPT-5.6 Luna at 18.51).
 * **`domain_mode="multi"` (Production IoT & Infrastructure Default)**: **Multi-Domain Mode**. Dynamically routes state signatures through the 5 specialized domain gates (`IoTSafetyGate`, `FinancialRiskGate`, `APISecurityGate`, `EcommerceFraudGate`, `GameCombatGate`) via `AutoSeedRouter`. Essential for edge hardware, industrial safety, and API gateways where deterministic physical sensor thresholds are required.
 
 #### 2. Lexical & Resonance Ontology Dimension (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
@@ -349,26 +349,27 @@ Werr was evaluated on the public test split (231 items) of **JevBench** ([benchm
 
 ### 🌍 JevBench v1.4.1 Official Comparative Context
 
-Under JevBench v1.4.1's strict chance-corrected quadratic harmonic scoring ($\text{Score} = \text{HarmonicMean} \times (\text{Intelligence}/50)^2$ for $\text{Int} < 50$), WERR v0.5.0 achieves **23.66**, directly rivaling an 8-Billion parameter transformer and surpassing larger models:
+Under JevBench v1.4.1's strict chance-corrected quadratic harmonic scoring ($\text{Score} = \text{HarmonicMean} \times (\text{Intelligence}/50)^2$ for $\text{Int} < 50$), WERR v0.5.0 achieves **23.74 / 100** at **7.32 ms latency** on pure cusp, and **20.63 / 100** via `WerrLocalAdapter`, directly rivaling an 8-Billion parameter transformer and surpassing larger models:
 
 | Model / System | Architecture | Hardware / VRAM | Intelligence | Speed | Cost | v1.4.1 Score |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **⚡ WERR v0.5.0 (Tesla 3-6-9 Cusp)** | **Pure Fractal Boundary Cusp ($\partial \mathcal{M}$)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **33.4** | **95.4** | **100.0** | **23.74** 🏆 |
 | **Raw Qwen3 8B** | Dense Transformer (8 Billion Params) | GPU Cluster (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
-| **⚡ WERR v0.5.0 (Tripod Domainless)** | **Pure Fractal Boundary Cusp ($\partial \mathcal{M}$)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **⚡ WERR v0.5.0 (`WerrLocalAdapter`)** | **In-Tree Standard Adapter (`res=36, max_iter=36`)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **30.6** | **95.3** | **100.0** | **20.63** |
 | **LitJev 27B** | Open Weights MoE / Dense | Dual GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
 | **GPT-5.6 Luna** | Frontier Closed LLM (OpenAI API) | Multi-Cluster Cloud Supercomputer | 96.8 | 77.5 | 28.5 | **18.51** |
 | **SmallJev (Local Checkpoint)** | Distilled SLM Checkpoint | Local GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
 
-### 📊 Grand Matrix: Multi-Domain vs. Domainless across 3 Comprehensive Benchmark Suites
+### 📊 Grand Matrix: Multi-Domain vs. Domainless across 3 Comprehensive Benchmark Suites (Tesla 3-6-9 Accelerated)
 
 To verify robustness across diverse operational conditions, WERR v0.5.0 was benchmarked across 3 independent suites in all 4 operational modes:
 
 | Operational Mode | Suite 1: Edge Domains (50 Tasks) | Suite 2: 100 TR Production | JevBench v1.4.1 Accuracy | JevBench v1.4.1 Score | Latency (CPU) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Domainless (Universal Cusp)** | 18 / 50 (36.0%) | 35 / 100 (35.0%) | **126 / 231 (54.55%)** | **23.66** | 19.9 ms |
-| **2. Multi-Domain + Lexical Dictionary** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 119 / 231 (51.52%) | 16.14 | 24.1 ms |
-| **3. Multi-Domain + Resonance (Tesla 3-6-9)** | 20 / 50 (40.0%) | 31 / 100 (31.0%) | 122 / 231 (52.81%) | 18.83 | **13.8 ms** |
-| **4. Multi-Domain + Hybrid (Lexical + Resonance)** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 120 / 231 (51.95%) | 17.09 | 15.5 ms |
+| **1. Domainless (Universal Cusp + Tesla 36)** | 18 / 50 (36.0%) | **35 / 100 (35.0%)** | **126 / 231 (54.55%)** | **23.74** | **7.32 ms** 🏆 |
+| **2. Multi-Domain + Lexical Dictionary** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 119 / 231 (51.52%) | 16.20 | **8.51 ms** |
+| **3. Multi-Domain + Resonance (Tesla 3-6-9)** | 20 / 50 (40.0%) | 31 / 100 (31.0%) | 122 / 231 (52.81%) | 18.82 | **7.80 ms** |
+| **4. Multi-Domain + Hybrid (Lexical + Resonance)** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 120 / 231 (51.95%) | 17.08 | **8.12 ms** |
 
 ### 📈 Cumulative Evolution Matrix across JevBench Versions
 
@@ -377,7 +378,8 @@ To verify robustness across diverse operational conditions, WERR v0.5.0 was benc
 | **Run 1: Heuristic Calibrated** | Task-specific semantic mappings (Historical) | 74.80% | 85.42% | 90.28% | 46.85% | 2.58 ms | **81.36** / **76.90** | — |
 | **Run 2: Clean Core (`JevWireAdapter`)** | Zero Hardcoded Rules, pure general criteria $N$-gram | 46.75% | 75.00% | 43.06% | 36.94% | 3.47 ms | 35.80 / 30.12 | 7.51 |
 | **Run 3: Clean Calibrated Engine** | Zero Hardcoded Rules, Platt temperature scaling | 49.78% | 85.42% | 44.44% | 37.84% | 3.79 ms | 41.50 / 36.20 | 12.39 |
-| **Run 4: WERR v0.5.0 (Tripod Bifurcation)** | **Multi-Scale Tripod (0.6x/1.0x/1.6x), Bounded Density, Cadence Bifurcation** | **54.55%** (126/231) | **85.42%** (41/48) | **50.00%** (36/72) | **44.14%** (49/111) | **19.9 ms** | **51.80** / **46.70** | **23.66** |
+| **Run 4: WERR v0.5.0 (Tripod Baseline)** | Multi-Scale Tripod (64x64 @ 50 iters, 0.6x/1.0x/1.6x), Bounded Density, Cadence | **54.55%** (126/231) | **85.42%** (41/48) | **50.00%** (36/72) | **44.14%** (49/111) | 19.9 ms | 51.80 / 46.70 | 23.66 |
+| **Run 5: WERR v0.5.0 (Tesla 3-6-9 Harmonic Grid)** | **Tesla Vortex Grid (36x36 @ 36 iters, 81 px/tile), Multi-Scale Tripod, Bounded Density, Cadence** | **53.25%** (123/231) *(Adapter)*<br>**54.55%** (126/231) *(Cusp)* | **83.33%** (40/48)<br>**85.42%** (41/48) | **48.61%** (35/72)<br>**50.00%** (36/72) | **43.24%** (48/111)<br>**44.14%** (49/111) | **7.58 ms** *(Adapter)*<br>**7.32 ms** *(Cusp)* 🏆 | **53.20** / **48.50** | **20.63** *(Adapter)*<br>**23.74** *(Cusp)* 🏆 |
 
 > 📘 **Detailed Benchmark Dossier:** See the dedicated monograph in [`benchmarks/README.md`](./benchmarks/) and the integrity audit in [`docs/BENCHMARK_INTEGRITY_REPORT.md`](docs/BENCHMARK_INTEGRITY_REPORT.md).
 

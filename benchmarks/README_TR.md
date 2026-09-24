@@ -109,26 +109,28 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 | **Koşu 1: Sezgisel Kalibre (Tarihsel)** | Göreve özel anlamsal eşleştirmeler | %74.80 | %85.42 | %90.28 | %46.85 | 2.58 ms | 0.1540 | 100.0 | 100.0 | **81.36** / **76.90** | — |
 | **Koşu 2: Temiz Çekirdek (`JevWireAdapter`)** | **Sıfır Sabit Kural**, 100% Genel N-gram ve polarite analizi | **%46.75** | **%75.00** | **%43.06** | **%36.94** | **3.47 ms** | 0.3230 | **95.79** | **100.0** | 35.80 / 30.12 | **7.51** |
 | **Koşu 3: Temiz Kalibre Motor** | **Sıfır Sabit Kural**, Platt sıcaklık ölçeklemesi | **%49.78** | **%85.42** | **%44.44** | **%37.84** | **3.79 ms** | 0.2863 | **95.70** | **100.0** | 41.50 / 36.20 | **12.39** |
-| **Koşu 4: WERR v0.5.0 (Tripod + Cadence Çatallanması)** | **Üçlü Ölçekli Harmonik Tripod (0.6x/1.0x/1.6x), Sınır Yoğunluk Kestirimi (arXiv:1810.11107), Cadence Çatallanması** | **%54.55** (126/231) | **%85.42** (41/48) | **%50.00** (36/72) | **%44.14** (49/111) | **19.9 ms** | **0.2520** | **92.50** | **100.0** | **51.80** / **46.70** | **23.66** |
+| **Koşu 4: WERR v0.5.0 (Tripod Taban Çizgisi)** | Üçlü Ölçekli Harmonik Tripod (64x64 @ 50 iter, 0.6x/1.0x/1.6x), Sınır Yoğunluk Kestirimi, Cadence Çatallanması | **%54.55** (126/231) | **%85.42** (41/48) | **%50.00** (36/72) | **%44.14** (49/111) | 19.9 ms | 0.2520 | 92.50 | 100.0 | 51.80 / 46.70 | 23.66 |
+| **Koşu 5: WERR v0.5.0 (Tesla 3-6-9 Harmonik Izgara)** | **Tesla Vorteks Izgarası (36x36 @ 36 iter, 81 px/fayans), Çok Ölçekli Tripod, Bounded Yoğunluk, Cadence** | **%53.25** (123/231) *(Adaptör)*<br>**%54.55** (126/231) *(Cusp)* | **%83.33** (40/48)<br>**%85.42** (41/48) | **%48.61** (35/72)<br>**%50.00** (36/72) | **%43.24** (48/111)<br>**%44.14** (49/111) | **7.58 ms** *(Adaptör)*<br>**7.32 ms** *(Cusp)* 🏆 | **0.2422** *(Adaptör)*<br>**0.2514** *(Cusp)* | **95.32** | **100.0** | **53.20** / **48.50** | **20.63** *(Adaptör)*<br>**23.74** *(Cusp)* 🏆 |
 
 #### 🌍 JevBench v1.4.1 Resmi Karşılaştırmalı Bağlam
 
 | Sıra / Model | Mimari | Donanım / VRAM | Zeka | Hız | Maliyet | v1.4.1 Skoru |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **WERR v0.5.0 (Tesla 3-6-9 Cusp)** | **Saf Fraktal Sınır Eşiği ($\partial \mathcal{M}$)** | **Standart Tüketici CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **33.4** | **95.4** | **100.0** | **23.74** 🏆 |
 | **Raw Qwen3 8B** | Yoğun Transformatör (8 Milyar Parametre) | GPU Kümesi (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
-| **WERR v0.5.0 (Tripod Alansız)** | **Saf Fraktal Sınır Eşiği ($\partial \mathcal{M}$)** | **Standart Tüketici CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **WERR v0.5.0 (`WerrLocalAdapter`)** | **Doğrudan Çekirdek Standart Adaptör (`res=36, max_iter=36`)** | **Standart Tüketici CPU (0 Bayt VRAM / 24 Bayt Tohum)** | **30.6** | **95.3** | **100.0** | **20.63** |
 | **LitJev 27B** | Açık Ağırlıklı MoE / Yoğun | Çift GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
 | **GPT-5.6 Luna** | Kapalı Frontier LLM (OpenAI API) | Çoklu Bulut Süperbilgisayarı | 96.8 | 77.5 | 28.5 | **18.51** |
 | **SmallJev (Yerel Kontrol Noktası)** | Damıtılmış SLM Modeli | Yerel GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
 
-#### 📊 Büyük Matris: 3 Kapsamlı Test Paketinde Çoklu Alan ve Alansız Karşılaştırması
+#### 📊 Büyük Matris: 3 Kapsamlı Test Paketinde Çoklu Alan ve Alansız Karşılaştırması (Tesla 3-6-9 Hızlandırılmış)
 
 | Çalışma Modu | Paket 1: Gerçek Dünya Edge (50 Görev) | Paket 2: 100 Türkçe Üretim | JevBench v1.4.1 Doğruluk | JevBench v1.4.1 Skoru | Çıkarım Gecikmesi (CPU) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Alansız (Evrensel Sınır Eşiği)** | 18 / 50 (%36.0) | 35 / 100 (%35.0) | **126 / 231 (%54.55)** | **23.66** | 19.9 ms |
-| **2. Çoklu Alan + Sözcük Sözlüğü** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 119 / 231 (%51.52) | 16.14 | 24.1 ms |
-| **3. Çoklu Alan + Rezonans Sözlüğü (Tesla 3-6-9)** | 20 / 50 (%40.0) | 31 / 100 (%31.0) | 122 / 231 (%52.81) | 18.83 | **13.8 ms** |
-| **4. Çoklu Alan + Hibrit (Sözcük + Rezonans)** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 120 / 231 (%51.95) | 17.09 | 15.5 ms |
+| **1. Alansız (Evrensel Cusp + Tesla 36)** | 18 / 50 (%36.0) | **35 / 100 (%35.0)** | **126 / 231 (%54.55)** | **23.74** | **7.32 ms** 🏆 |
+| **2. Çoklu Alan + Sözcük Sözlüğü** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 119 / 231 (%51.52) | 16.20 | **8.51 ms** |
+| **3. Çoklu Alan + Rezonans Sözlüğü (Tesla 3-6-9)** | 20 / 50 (%40.0) | 31 / 100 (%31.0) | 122 / 231 (%52.81) | 18.82 | **7.80 ms** |
+| **4. Çoklu Alan + Hibrit (Sözcük + Rezonans)** | **21 / 50 (%42.0)** | 31 / 100 (%31.0) | 120 / 231 (%51.95) | 17.08 | **8.12 ms** |
 
 > [!NOTE]
 > **JevBench v1.4 Puanlama Mekaniğinin Analizi:**  
@@ -186,6 +188,7 @@ Tüm dört temel benchmark ekseni sıfır-kontaminasyon ve hava-boşluklu (air-g
 | :--- | :--- | :--- | :--- | :--- |
 | **Benchmark 1: Yılan AI** | 600 Kesintisiz Adım | **411.9 hamle/sn** (P50: 1.32 ms) | Laya-MLX 421M (74.5 hamle/sn) | `333814952ad1f8f1b2c25c7749b658dd729503e48dfbea2e9142c9a4f6af5963` |
 | **Benchmark 2: JevBench Çift-Standart** | 231 Kamuya Açık Görev | **81.36 (v1.2)** / **76.90 (v1.3.0)** | Şans tabanı: 25.0 / Şans-altı cezası | `81a33e723dea04ddd40d38b056ff376cd54d2206c0920bb064af03de0bae7c5f` |
+| **Benchmark 2: JevBench v1.4.1 (Tesla 3-6-9)** | 231 Kamuya Açık Görev | **20.63 (Adaptör) / 23.74 (Cusp)** | Şans tabanı: 25.0 / 8ms altı gecikme | `950d26a427e2d82ffd4b85620a1cb9eb0bdf6105e186d42ece75641f14ee5518` |
 | **Benchmark 3: WindTunnel WebMCP** | 49 Görev (8 Web Uygulaması) | **49 / 49 (%100.00)** (P50: 1.81 ms) | Üretim Web Ajanları | `06b134dea501216c8888aa5a3cd13e1b68b15beb31987e2c8df6872c4caeffc4` |
 | **Benchmark 4: Jevenator 2 Görsel** | 24 Kare (840 Karar) | **20.04 ms/kare (38.0x hızlanma)** | Maisa djev Gemma (761.8 ms/kare) | `30111404aac815366afc93b1091f8f07c318f78ded7e56dd61fa18482f02986b` |
 

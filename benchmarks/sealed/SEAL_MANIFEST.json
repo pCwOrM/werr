@@ -40,6 +40,13 @@
       "sha256": "30111404aac815366afc93b1091f8f07c318f78ded7e56dd61fa18482f02986b",
       "bytes": 487,
       "status": "SEALED_AND_VERIFIED"
+    },
+    "benchmark_2_jevbench_v141_tesla369": {
+      "file": "benchmark_2_jevbench_v141_tesla369_results.json",
+      "sha256": "950d26a427e2d82ffd4b85620a1cb9eb0bdf6105e186d42ece75641f14ee5518",
+      "bytes": 2354,
+      "status": "SEALED_AND_VERIFIED",
+      "edition": "v1.4.1_tesla_369_harmonic_tripod"
     }
   }
 }
