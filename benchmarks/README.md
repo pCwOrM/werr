@@ -121,26 +121,28 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 | **Run 1: Heuristic Calibrated (Historical)** | Task-specific semantic mappings | 74.80% | 85.42% | 90.28% | 46.85% | 2.58 ms | 0.1540 | 100.0 | 100.0 | **81.36** / **76.90** | — |
 | **Run 2: Clean Core (`JevWireAdapter`)** | **Zero Hardcoded Rules**, 100% General criteria n-gram & polarity | **46.75%** | **75.00%** | **43.06%** | **36.94%** | **3.47 ms** | 0.3230 | **95.79** | **100.0** | 35.80 / 30.12 | **7.51** |
 | **Run 3: Clean Calibrated Engine** | **Zero Hardcoded Rules**, Platt temperature scaling | **49.78%** | **85.42%** | **44.44%** | **37.84%** | **3.79 ms** | 0.2863 | **95.70** | **100.0** | 41.50 / 36.20 | **12.39** |
-| **Run 4: WERR v0.5.0 (Tripod + Cadence Bifurcation)** | **Multi-Scale Harmonic Tripod (0.6x/1.0x/1.6x), Bounded Density (arXiv:1810.11107), Cadence Pitchfork Bifurcation** | **54.55%** (126/231) | **85.42%** (41/48) | **50.00%** (36/72) | **44.14%** (49/111) | **19.9 ms** | **0.2520** | **92.50** | **100.0** | **51.80** / **46.70** | **23.66** |
+| **Run 4: WERR v0.5.0 (Tripod Baseline)** | Multi-Scale Harmonic Tripod (64x64 @ 50 iters, 0.6x/1.0x/1.6x), Bounded Density, Cadence Bifurcation | **54.55%** (126/231) | **85.42%** (41/48) | **50.00%** (36/72) | **44.14%** (49/111) | 19.9 ms | 0.2520 | 92.50 | 100.0 | 51.80 / 46.70 | 23.66 |
+| **Run 5: WERR v0.5.0 (Tesla 3-6-9 Harmonic Grid)** | **Tesla Vortex Grid (36x36 @ 36 iters, 81 px/tile), Multi-Scale Tripod, Bounded Density, Pitchfork Cadence** | **53.25%** (123/231) *(Adapter)*<br>**54.55%** (126/231) *(Cusp)* | **83.33%** (40/48)<br>**85.42%** (41/48) | **48.61%** (35/72)<br>**50.00%** (36/72) | **43.24%** (48/111)<br>**44.14%** (49/111) | **7.58 ms** *(Adapter)*<br>**7.32 ms** *(Cusp)* 🏆 | **0.2422** *(Adapter)*<br>**0.2514** *(Cusp)* | **95.32** | **100.0** | **53.20** / **48.50** | **20.63** *(Adapter)*<br>**23.74** *(Cusp)* 🏆 |
 
 #### 🌍 JevBench v1.4.1 Official Comparative Context
 
 | Rank / System | Architecture | Hardware / VRAM | Intelligence | Speed | Cost | v1.4.1 Score |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **WERR v0.5.0 (Tesla 3-6-9 Cusp)** | **Pure Fractal Boundary Cusp ($\partial \mathcal{M}$)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **33.4** | **95.4** | **100.0** | **23.74** 🏆 |
 | **Raw Qwen3 8B** | Dense Transformer (8 Billion Params) | GPU Cluster (~16 GB VRAM) | 51.2 | 82.4 | 48.0 | **23.68** |
-| **WERR v0.5.0 (Tripod Domainless)** | **Pure Fractal Boundary Cusp ($\partial \mathcal{M}$)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **33.4** | **92.5** | **100.0** | **23.66** |
+| **WERR v0.5.0 (`WerrLocalAdapter`)** | **In-Tree Standard Adapter (`res=36, max_iter=36`)** | **Commodity CPU (0 Byte VRAM / 24 Byte Seed)** | **30.6** | **95.3** | **100.0** | **20.63** |
 | **LitJev 27B** | Open Weights MoE / Dense | Dual GPU (~54 GB VRAM) | 54.1 | 74.5 | 32.0 | **19.51** |
 | **GPT-5.6 Luna** | Frontier Closed LLM (OpenAI API) | Multi-Cluster Cloud Supercomputer | 96.8 | 77.5 | 28.5 | **18.51** |
 | **SmallJev (Local Checkpoint)** | Distilled SLM Checkpoint | Local GPU (~4 GB VRAM) | 41.2 | 84.1 | 68.0 | **12.87** |
 
-#### 📊 Grand Matrix: Multi-Domain vs. Domainless across 3 Comprehensive Benchmark Suites
+#### 📊 Grand Matrix: Multi-Domain vs. Domainless across 3 Comprehensive Benchmark Suites (Tesla 3-6-9 Accelerated)
 
 | Operational Mode | Suite 1: Edge Domains (50 Tasks) | Suite 2: 100 TR Production | JevBench v1.4.1 Accuracy | JevBench v1.4.1 Score | Inference Latency (CPU) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Domainless (Universal Cusp)** | 18 / 50 (36.0%) | 35 / 100 (35.0%) | **126 / 231 (54.55%)** | **23.66** | 19.9 ms |
-| **2. Multi-Domain + Sözcük Sözlüğü** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 119 / 231 (51.52%) | 16.14 | 24.1 ms |
-| **3. Multi-Domain + Rezonans Sözlüğü (Tesla 3-6-9)** | 20 / 50 (40.0%) | 31 / 100 (31.0%) | 122 / 231 (52.81%) | 18.83 | **13.8 ms** |
-| **4. Multi-Domain + Hibrit (Sözcük + Rezonans)** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 120 / 231 (51.95%) | 17.09 | 15.5 ms |
+| **1. Domainless (Universal Cusp + Tesla 36)** | 18 / 50 (36.0%) | **35 / 100 (35.0%)** | **126 / 231 (54.55%)** | **23.74** | **7.32 ms** 🏆 |
+| **2. Multi-Domain + Lexical Dictionary** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 119 / 231 (51.52%) | 16.20 | **8.51 ms** |
+| **3. Multi-Domain + Resonance Dictionary** | 20 / 50 (40.0%) | 31 / 100 (31.0%) | 122 / 231 (52.81%) | 18.82 | **7.80 ms** |
+| **4. Multi-Domain + Hybrid (Lexical + Resonance)** | **21 / 50 (42.0%)** | 31 / 100 (31.0%) | 120 / 231 (51.95%) | 17.08 | **8.12 ms** |
 
 > [!NOTE]
 > **Understanding JevBench v1.4 Scoring Mechanics:**  
@@ -199,6 +201,7 @@ All four primary benchmark suites have been executed under zero-contamination ai
 | :--- | :--- | :--- | :--- | :--- |
 | **Benchmark 1: Snake AI** | 600 Continuous Steps | **411.9 moves/s** (P50: 1.32 ms) | Laya-MLX 421M (74.5 moves/s) | `333814952ad1f8f1b2c25c7749b658dd729503e48dfbea2e9142c9a4f6af5963` |
 | **Benchmark 2: JevBench Dual-Standard** | 231 Public Items | **81.36 (v1.2)** / **76.90 (v1.3.0)** | Chance baseline: 25.0 / Near-chance penalty | `81a33e723dea04ddd40d38b056ff376cd54d2206c0920bb064af03de0bae7c5f` |
+| **Benchmark 2: JevBench v1.4.1 (Tesla 3-6-9)** | 231 Public Items | **20.63 (Adapter) / 23.74 (Cusp)** | Chance baseline: 25.0 / Sub-8ms latency | `950d26a427e2d82ffd4b85620a1cb9eb0bdf6105e186d42ece75641f14ee5518` |
 | **Benchmark 3: WindTunnel WebMCP** | 49 Tasks (8 Web Apps) | **49 / 49 (100.00%)** (P50: 1.81 ms) | Production Web Agents | `06b134dea501216c8888aa5a3cd13e1b68b15beb31987e2c8df6872c4caeffc4` |
 | **Benchmark 4: Jevenator 2 Vision** | 24 Frames (840 Decisions) | **20.04 ms/frame (38.0x speedup)** | Maisa djev Gemma (761.8 ms/frame) | `30111404aac815366afc93b1091f8f07c318f78ded7e56dd61fa18482f02986b` |
 

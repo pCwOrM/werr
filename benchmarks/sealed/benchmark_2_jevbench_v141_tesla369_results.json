@@ -1,0 +1,82 @@
+{
+  "benchmark": "JevBench v1.4.1 Official Air-Gapped Verification (Tesla 3-6-9 Harmonic Grid)",
+  "timestamp_utc": "2026-09-24T01:16:23.299520+00:00",
+  "methodology": {
+    "zero_task_heuristics": true,
+    "air_gapped_telemetry": "DEFAULT_OFF (Zero network imports, 100% offline)",
+    "memory_vram_bytes": 0,
+    "tensor_weights": 0,
+    "mathematical_kernel": "Multi-Scale Harmonic Tripod (0.6x, 1.0x, 1.6x) + Tesla 3-6-9 Harmonic Grid",
+    "total_public_items": 231
+  },
+  "variants": {
+    "werr_local_tesla_pure36": {
+      "engine": "WerrLocalAdapter (res=36, max_iter=36, tripod=True)",
+      "harmonic_grid": "36x36 (81 pixels/tile, 1296 points total)",
+      "overall_accuracy_pct": 53.25,
+      "total_correct": 123,
+      "total_items": 231,
+      "latency_p50_ms": 7.582,
+      "latency_p95_ms": 13.997,
+      "ece": 0.2422,
+      "axes": {
+        "intelligence": 30.59,
+        "calibration": 51.56,
+        "speed": 95.32,
+        "cost": 100.0
+      },
+      "v14_harmonic_score": 20.63,
+      "tier_breakdown": {
+        "easy": {
+          "total": 48,
+          "correct": 40,
+          "accuracy_pct": 83.33
+        },
+        "original": {
+          "total": 72,
+          "correct": 35,
+          "accuracy_pct": 48.61
+        },
+        "hard": {
+          "total": 111,
+          "correct": 48,
+          "accuracy_pct": 43.24
+        }
+      }
+    },
+    "werr_local_tesla_trinity45": {
+      "engine": "WerrLocalAdapter (res=45, max_iter=45, tripod=True)",
+      "harmonic_grid": "45x45 (121 pixels/tile, 2025 points total)",
+      "overall_accuracy_pct": 52.81,
+      "total_correct": 122,
+      "total_items": 231,
+      "latency_p50_ms": 10.024,
+      "latency_p95_ms": 15.467,
+      "ece": 0.245,
+      "axes": {
+        "intelligence": 29.8,
+        "calibration": 50.99,
+        "speed": 95.12,
+        "cost": 100.0
+      },
+      "v14_harmonic_score": 19.28,
+      "tier_breakdown": {
+        "easy": {
+          "total": 48,
+          "correct": 40,
+          "accuracy_pct": 83.33
+        },
+        "original": {
+          "total": 72,
+          "correct": 34,
+          "accuracy_pct": 47.22
+        },
+        "hard": {
+          "total": 111,
+          "correct": 48,
+          "accuracy_pct": 43.24
+        }
+      }
+    }
+  }
+}
