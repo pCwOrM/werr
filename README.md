@@ -74,9 +74,10 @@
     * **`[ 💬 Cevap Werr ]`** $\to$ Sistem-2 Sohbet ve Kod Çözümü.
     * **`[ ⚡ Karar Werr ]`** $\to$ Sistem-1 Anlık Fraktal Karar ve Refleks.
     * Ekstra Kapılar: **`[ 🛡️ İzin Werr ]`**, **`[ 🚀 Öncelik Werr ]`**.
-* **4. Twin Cognitive Ecosystem Synergy (`answerr` $\leftrightarrow$ `werr`):**
+* **4. Tri-Ecosystem Synergy (`answerr` $\leftrightarrow$ `werr` $\leftrightarrow$ `werracle`):**
   * **`answerr`** ([answerr.me](https://answerr.me)): The deliberative System-2 Cloud Portal, AI IDE assistant, and cognitive reasoning hub.
   * **`werr`** (`pip install werr`): The machine-native, in-process System-1 reflex kernel executing in $< 0.5$ ms with 0 Bytes of VRAM.
+  * **`werracle`** ([github.com/pCwOrM/werracle](https://github.com/pCwOrM/werracle)): The on-chain zero-storage AI oracle for EVM smart contracts (~21k gas, single `bytes32` slot, intra-block MEV defense; live simulator: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)).
   * 📘 **Full Design & Terminology Specification:** See [`docs/werr_terminology_guide.md`](docs/werr_terminology_guide.md).
 
 ### 🎨 Official Vector Logos & Design Assets
