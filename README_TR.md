@@ -10,6 +10,7 @@
 
 [![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Ön Baskı Durumu](https://img.shields.io/badge/%C3%96n%20Bask%C4%B1-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
@@ -48,7 +49,8 @@
 ⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*  
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Motor Optimizasyon Raporu:** [Etiket tokenizasyonu, kelime sınırları ve kalibrasyon ilkeleri teknik raporu](docs/OPTIMIZATION_REPORT_TR.md).  
-🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).
+🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).  
+🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22962000) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
@@ -490,6 +492,17 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   year      = {2026},
   url       = {https://github.com/pCwOrM/werr},
   doi       = {10.5281/zenodo.22939253}
+}
+
+@article{dagli2026wormhole,
+  title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
+  author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22962000},
+  url          = {https://doi.org/10.5281/zenodo.22962000},
+  note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
 

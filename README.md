@@ -13,6 +13,7 @@
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
+[![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Preprint Status](https://img.shields.io/badge/Preprint-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
@@ -50,7 +51,8 @@
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
-🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).
+🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
+🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22962000) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
 `werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 
@@ -542,6 +544,12 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Status:** Under academic review / CERN Zenodo registered.  
 
+* **Quantum Gravity & Black Hole Thermodynamics Research:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22962000](https://zenodo.org/records/22962000)  
+  * **Documentation Monograph:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md)  
+  * **Authors:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
+
 ---
 
 ## 🇹🇷 First-Class Dual-Language Support (Türkçe & English)
@@ -698,6 +706,17 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   year      = {2026},
   url       = {https://github.com/pCwOrM/werr},
   doi       = {10.5281/zenodo.22939253}
+}
+
+@article{dagli2026wormhole,
+  title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
+  author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22962000},
+  url          = {https://doi.org/10.5281/zenodo.22962000},
+  note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
 
