@@ -57,6 +57,10 @@
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22962000) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
+<p align="center">
+  <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
+</p>
+
 `werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
 
 ---

@@ -55,6 +55,10 @@
 🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22962000) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
+<p align="center">
+  <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
+</p>
+
 `werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
 ---
