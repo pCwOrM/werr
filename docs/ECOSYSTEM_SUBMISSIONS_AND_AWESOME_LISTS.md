@@ -196,11 +196,11 @@ ask@answerr.me / pcworm@pcworm.net
 * **Target Repositories:**
   - [`brandonhimpfen/awesome-physics`](https://github.com/brandonhimpfen/awesome-physics)
   - [`wbierbower/awesome-physics`](https://github.com/wbierbower/awesome-physics)
-* **PR / Issue Title:** `Add Wormhole Error-Kernel: 40-Core Black Hole Page Curve Toy Simulation`
+* **PR / Issue Title:** `Add Wormhole Error-Kernel: 40-Core Black Hole Page Curve Bare-Metal Telemetry & Lean 4 Verification`
 * **Category:** *Astrophysics / Computational Physics / Quantum Gravity Simulations*
 * **Snippet to Add into `README.md`:**
 ```markdown
-- [Black Hole Page Curve Wormhole Simulation](https://zenodo.org/records/22962000) - Open-source, reproducible 40-core numerical simulation of black hole evaporation and the Don Page curve based on a non-dissipative modular error-kernel invariant ($\mathcal{K}_{\text{error}} \subset \mathbb{Z}/9\mathbb{Z}$) and TAMAMe horizon dynamics ($S_{\text{final}} = 0.0000\text{ nats}$, $R^2 = 0.9822$, SHA-256 sealed).
+- [Black Hole Page Curve Wormhole Simulation](https://zenodo.org/records/22978460) - Open-source, reproducible 40-core numerical simulation of black hole evaporation and the Don Page curve based on a non-dissipative modular error-kernel invariant ($\mathcal{K}_{\text{error}} \subset \mathbb{Z}/9\mathbb{Z}$) and TAMAMe horizon dynamics ($S_{\text{final}} = 0.0000\text{ nats}$, $R^2 = 0.9822$, SHA-256 sealed).
 ```
 
 ---
@@ -213,7 +213,7 @@ ask@answerr.me / pcworm@pcworm.net
 * **Category:** *Quantum Information & Entanglement Entropy Simulations*
 * **Snippet to Add into `README.md`:**
 ```markdown
-- [WERR Black Hole Page Curve](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) - Open-science toy simulation exploring unitary entanglement entropy recovery during black hole evaporation via discrete residue grids and micro-wormhole ER=EPR phase resonance (Zenodo: [10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999)).
+- [WERR Black Hole Page Curve](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) - Open-science 40-core high-performance simulation exploring unitary entanglement entropy recovery during black hole evaporation via discrete residue grids and micro-wormhole ER=EPR phase resonance (Zenodo: [10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999)).
 ```
 
 ---

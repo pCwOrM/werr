@@ -1,9 +1,9 @@
 # 🌌 Solucan Deliği Hata Çekirdeği (Wormhole Error-Kernel) ve Don Page Eğrisi Simülasyonu
 ## Gerilim (Tension), Kör Nokta (Blind-Spot) ve Arama (Seek) Dinamikleri ile Kara Delik Bilgi Paradoksu Çözüm Önerisi
 
-[![Zenodo Kaydı](https://img.shields.io/badge/Zenodo-Kayıt%2022962000-024dad.svg)](https://zenodo.org/records/22962000)
+[![Zenodo Kaydı](https://img.shields.io/badge/Zenodo-Kayıt%2022962000-024dad.svg)](https://zenodo.org/records/22978460)
 [![Concept DOI](https://img.shields.io/badge/Konsept%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
-[![Sürüm 1 DOI](https://img.shields.io/badge/Sürüm%201%20DOI-10.5281%2Fzenodo.22962000-024dad.svg)](https://doi.org/10.5281/zenodo.22962000)
+[![Sürüm 1 DOI](https://img.shields.io/badge/Sürüm%202%20DOI-10.5281%2Fzenodo.22978460-024dad.svg)](https://doi.org/10.5281/zenodo.22962000)
 [![Lisans: CC-BY 4.0](https://img.shields.io/badge/Lisans-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![SHA-256 Mühürlü](https://img.shields.io/badge/Denetim-SHA--256%20Mühürlü-blueviolet.svg)](#-kriptografik-mühür-ve-veri-bütünlüğü)
 
@@ -13,9 +13,9 @@
 > ¹ *Anadolu Üniversitesi, Eskişehir & ITouch Bilişim Sistemleri Araştırma Grubu, Mersin* (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
 > ² *Mersin Üniversitesi, Mersin* (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
 > ³ *Toros Fen Lisesi, Mersin* (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
-> **Kalıcı DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Ana Konsept) │ [https://doi.org/10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000) (v1)  
-> **Zenodo Kaydı:** [https://zenodo.org/records/22962000](https://zenodo.org/records/22962000)  
-> **Preprint Makale (PDF):** [`Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v1.pdf`](https://zenodo.org/records/22962000/files/Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v1.pdf/content)
+> **Kalıcı DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Ana Konsept) │ [https://doi.org/10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460) (v2) │ [v1 Archived: 22962000](https://zenodo.org/records/22978460)  
+> **Zenodo Kaydı:** [https://zenodo.org/records/22978460](https://zenodo.org/records/22978460)  
+> **Preprint Makale (PDF):** [`Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf`](https://zenodo.org/records/22978460/files/Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf/content)
 
 ---
 
@@ -98,7 +98,7 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
 
 ## 🔒 5. Kriptografik Mühür ve Veri Bütünlüğü
 
-* **Zenodo Kayıt No:** `22962000`
+* **Zenodo Kayıt No:** `22978460` (v2) [v1: `22962000`]
 * **Ham Çıktı Dosyası:** `BLACKHOLE_PAGE_CURVE_SIMULATION_REPORT.json`
 * **Kriptografik SHA-256 Özeti:**
   ```text
@@ -117,8 +117,8 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22962000},
-  url          = {https://doi.org/10.5281/zenodo.22962000},
+  doi          = {10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22978460},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
