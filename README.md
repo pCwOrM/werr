@@ -553,6 +553,12 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
 
+  <p align="center">
+    <a href="docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md">
+      <img src="docs/blackhole_page_curve_simulation_chart.png" alt="Black Hole Page Curve & Unitary Information Recovery Simulation" width="100%"/>
+    </a>
+  </p>
+
 ---
 
 ## 🇹🇷 First-Class Dual-Language Support (Türkçe & English)
