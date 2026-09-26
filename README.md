@@ -55,7 +55,7 @@
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
-🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22962000) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
+🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
@@ -552,7 +552,7 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Status:** Under academic review / CERN Zenodo registered.  
 
 * **Quantum Gravity & Black Hole Thermodynamics Research:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22962000](https://zenodo.org/records/22962000)  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22978460 (v2)](https://zenodo.org/records/22978460)  
   * **Documentation Monograph:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md)  
   * **Authors:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
@@ -727,8 +727,8 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22962000},
-  url          = {https://doi.org/10.5281/zenodo.22962000},
+  doi          = {10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22978460},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 

@@ -1,8 +1,8 @@
 # 🌌 A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: Conceptual Proposal & 40-Core Page Curve Simulation
 
-[![Zenodo Record](https://img.shields.io/badge/Zenodo-Record%2022962000-024dad.svg)](https://zenodo.org/records/22962000)
+[![Zenodo Record](https://img.shields.io/badge/Zenodo-Record%2022978460-024dad.svg)](https://zenodo.org/records/22978460)
 [![Concept DOI](https://img.shields.io/badge/Concept%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
-[![Version 1 DOI](https://img.shields.io/badge/Version%201%20DOI-10.5281%2Fzenodo.22962000-024dad.svg)](https://doi.org/10.5281/zenodo.22962000)
+[![Version 1 DOI](https://img.shields.io/badge/Version%202%20DOI-10.5281%2Fzenodo.22978460-024dad.svg)](https://doi.org/10.5281/zenodo.22962000)
 [![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![SHA-256 Verified](https://img.shields.io/badge/Audit-SHA--256%20Sealed-blueviolet.svg)](#-cryptographic-seal--data-integrity)
 
@@ -12,9 +12,9 @@
 > ¹ *Anadolu University, Eskişehir, Turkey & ITouch Systems Research Group, Mersin, Turkey* (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
 > ² *Mersin University, Mersin, Turkey* (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
 > ³ *Toros Science College, Mersin, Turkey* (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
-> **Permanent DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Concept) │ [https://doi.org/10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000) (v1)  
-> **Direct Zenodo Record:** [https://zenodo.org/records/22962000](https://zenodo.org/records/22962000)  
-> **Preprint PDF:** [`Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v1.pdf`](https://zenodo.org/records/22962000/files/Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v1.pdf/content)
+> **Permanent DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Concept) │ [https://doi.org/10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460) (v2) │ [v1 Archived: 22962000](https://zenodo.org/records/22978460)  
+> **Direct Zenodo Record:** [https://zenodo.org/records/22978460](https://zenodo.org/records/22978460)  
+> **Preprint PDF:** [`Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf`](https://zenodo.org/records/22978460/files/Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf/content)
 
 ---
 
@@ -119,7 +119,7 @@ xychart-beta
 
 To maintain unimpeachable academic integrity, all simulation artifacts, logs, and raw metrics are cryptographically sealed and publicly hosted on Zenodo:
 
-* **Zenodo Record ID:** `22962000`
+* **Zenodo Record ID:** `22978460` (v2) [v1: `22962000`]
 * **Raw Output JSON:** `BLACKHOLE_PAGE_CURVE_SIMULATION_REPORT.json`
 * **Cryptographic Integrity Digest (SHA-256):**
   ```text
@@ -143,8 +143,8 @@ To maintain unimpeachable academic integrity, all simulation artifacts, logs, an
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22962000},
-  url          = {https://doi.org/10.5281/zenodo.22962000},
+  doi          = {10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22978460},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```

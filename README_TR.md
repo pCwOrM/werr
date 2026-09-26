@@ -53,7 +53,7 @@
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Motor Optimizasyon Raporu:** [Etiket tokenizasyonu, kelime sınırları ve kalibrasyon ilkeleri teknik raporu](docs/OPTIMIZATION_REPORT_TR.md).  
 🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).  
-🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22962000) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
+🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22978460) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
@@ -457,7 +457,7 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
   * **Durum:** Akademik incelemede / CERN Zenodo tescilli.
 
 * **Kuantum Kütleçekimi & Termodinamik Araştırması:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
-  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Kaydı: 22962000](https://zenodo.org/records/22962000)  
+  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Kaydı: 22978460 (v2)](https://zenodo.org/records/22978460)  
   * **Araştırma Raporu:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md)  
   * **Yazarlar:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Kuramsal ve Sayısal Katkı:** WERR motorunun temel ilkelerini (hatanın aktif enformasyon taşıyıcısı olması, eşleşmesiz $\mathbb{Z}/9\mathbb{Z}$ kalıntı uzayı ve sınır diverjansı) 50 yıllık Kara Delik Bilgi Paradoksu'na uygulamaktadır. 40 çekirdekli Dual Intel Xeon sunucusu üzerinde yürütülen sayısal simülasyon; üniter bilginin %100 korunduğunu ($S_{\text{son}} = 0.0000\text{ nats}$), Don Page eğrisinin %98.22 korelasyonla ($R^2 = 0.9822$) üretildiğini ve AMPS ateş duvarının $573\times$ oranında bastırıldığını kanıtlar.
@@ -519,8 +519,8 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22962000},
-  url          = {https://doi.org/10.5281/zenodo.22962000},
+  doi          = {10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22978460},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 
