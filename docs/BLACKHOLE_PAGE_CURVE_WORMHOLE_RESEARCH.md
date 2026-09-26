@@ -100,6 +100,8 @@ The simulation sampled **40,000 evaporation time slices** comparing the semi-cla
 
 ## 📈 4. Entropy Evolution Comparison Chart
 
+![Black Hole Page Curve & Unitary Information Recovery Simulation](blackhole_page_curve_simulation_chart.png)
+
 ```mermaid
 xychart-beta
     title "Black Hole Entanglement Entropy: Hawking vs Don Page vs WERR Simulation"

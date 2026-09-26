@@ -90,7 +90,13 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
 
 ---
 
-## 🔒 4. Kriptografik Mühür ve Veri Bütünlüğü
+## 📈 4. Entropi Evrimi ve Page Eğrisi Karşılaştırma Grafiği
+
+![Kara Delik Page Eğrisi ve Üniter Bilgi Geri Kazanımı Simülasyonu](blackhole_page_curve_simulation_chart.png)
+
+---
+
+## 🔒 5. Kriptografik Mühür ve Veri Bütünlüğü
 
 * **Zenodo Kayıt No:** `22962000`
 * **Ham Çıktı Dosyası:** `BLACKHOLE_PAGE_CURVE_SIMULATION_REPORT.json`
