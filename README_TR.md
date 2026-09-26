@@ -10,6 +10,8 @@
 
 [![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
+[![Formel Doğrulama: Lean 4](https://img.shields.io/badge/Formel%20Doğrulama-Lean%204%20(0%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Temel Teori DOI](https://img.shields.io/badge/Temel%20Teori%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
@@ -45,6 +47,7 @@
 
 🌐 **Etkileşimli Web Laboratuvarı:** [GitHub Pages Üzerindeki Canlı Simülatörü Deneyin](https://pcworm.github.io/werr/) *(Türkçe & İngilizce, Açık & Koyu Tema).*  
 📄 **Resmi arXiv Makalesi:** [arXiv:2609.25498 [cs.NE] Makalesini Oku](https://arxiv.org/abs/2609.25498) │ [Doğrudan PDF İndir](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Arşivi](https://doi.org/10.5281/zenodo.22939253).  
+📜 **Lean 4 Formel Doğrulama & 40-Çekirdek Gauntlet:** [Sıfır-Bellekli Nöral Sentez Monografı](https://doi.org/10.5281/zenodo.22974544) │ [Zenodo Kayıt 22974544](https://zenodo.org/records/22974544) │ [Preprint PDF](https://zenodo.org/records/22974544/files/Zero_Storage_Neural_Synthesis_Lean4_OED.pdf) │ [Replikasyon Paketi](https://zenodo.org/records/22974544/files/zenodo_bundle_lean4_oed_verification.zip).  
 ⚡ **Çevrimiçi Canlı Kıyaslama Arenası:** [WebMCP, JevBench, Gymnasium, Arena.ai Körleme Testi ve Tau-Bench'i Tarayıcıda Canlı Koşun](https://pcworm.github.io/werr/#benchmark-arena) *(%100 İstemci Taraflı, 0 VRAM, Anlık CPU İcrası).*  
 ⚔️ **The Zero-VRAM Gauntlet (Merkezi Kıyaslama Dizini):** [Eksiksiz Kıyaslama Dizinini ve Meydan Okumayı Keşfedin](benchmarks/) *(Yılan, Jevenator 2, WindTunnel & JevBench Markdown Monografları).*  
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -503,6 +506,17 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   doi          = {10.5281/zenodo.22962000},
   url          = {https://doi.org/10.5281/zenodo.22962000},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+}
+
+@article{dagli2026lean4_oed,
+  title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22974544},
+  url          = {https://doi.org/10.5281/zenodo.22974544},
+  note         = {Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
 }
 ```
 

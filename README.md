@@ -13,6 +13,8 @@
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
+[![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
+[![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
@@ -47,6 +49,7 @@
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
 📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22939253).  
+📜 **Lean 4 Formal Verification & 40-Core Gauntlet:** [Zero-Storage Neural Synthesis Monograph](https://doi.org/10.5281/zenodo.22974544) │ [Zenodo Record 22974544](https://zenodo.org/records/22974544) │ [Preprint PDF](https://zenodo.org/records/22974544/files/Zero_Storage_Neural_Synthesis_Lean4_OED.pdf) │ [Replication Bundle](https://zenodo.org/records/22974544/files/zenodo_bundle_lean4_oed_verification.zip).  
 ⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
@@ -717,6 +720,17 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   doi          = {10.5281/zenodo.22962000},
   url          = {https://doi.org/10.5281/zenodo.22962000},
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+}
+
+@article{dagli2026lean4_oed,
+  title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22974544},
+  url          = {https://doi.org/10.5281/zenodo.22974544},
+  note         = {Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
 }
 ```
 
