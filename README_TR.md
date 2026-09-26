@@ -452,6 +452,18 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
   * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Durum:** Akademik incelemede / CERN Zenodo tescilli.
 
+* **Kuantum Kütleçekimi & Termodinamik Araştırması:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
+  * **Kalıcı Arşiv:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Kaydı: 22962000](https://zenodo.org/records/22962000)  
+  * **Araştırma Raporu:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md)  
+  * **Yazarlar:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Kuramsal ve Sayısal Katkı:** WERR motorunun temel ilkelerini (hatanın aktif enformasyon taşıyıcısı olması, eşleşmesiz $\mathbb{Z}/9\mathbb{Z}$ kalıntı uzayı ve sınır diverjansı) 50 yıllık Kara Delik Bilgi Paradoksu'na uygulamaktadır. 40 çekirdekli Dual Intel Xeon sunucusu üzerinde yürütülen sayısal simülasyon; üniter bilginin %100 korunduğunu ($S_{\text{son}} = 0.0000\text{ nats}$), Don Page eğrisinin %98.22 korelasyonla ($R^2 = 0.9822$) üretildiğini ve AMPS ateş duvarının $573\times$ oranında bastırıldığını kanıtlar.
+
+  <p align="center">
+    <a href="docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md">
+      <img src="docs/blackhole_page_curve_simulation_chart.png" alt="Kara Delik Page Eğrisi ve Üniter Bilgi Geri Kazanımı Simülasyonu" width="100%"/>
+    </a>
+  </p>
+
 ---
 
 ## 🤝 Karşılıklı Bilimsel Evrim: JevBench Topluluğuna Teşekkür
