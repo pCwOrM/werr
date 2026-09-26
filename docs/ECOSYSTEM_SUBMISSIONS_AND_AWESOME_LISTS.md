@@ -187,3 +187,43 @@ Best regards,
 ITouch Systems Research Team
 ask@answerr.me / pcworm@pcworm.net
 ```
+
+---
+
+## 🌌 4. Quantum Gravity & Black Hole Simulation GitHub Repositories
+
+### A. `awesome-physics` (Theory & Simulation Tools)
+* **Target Repositories:**
+  - [`brandonhimpfen/awesome-physics`](https://github.com/brandonhimpfen/awesome-physics)
+  - [`wbierbower/awesome-physics`](https://github.com/wbierbower/awesome-physics)
+* **PR / Issue Title:** `Add Wormhole Error-Kernel: 40-Core Black Hole Page Curve Toy Simulation`
+* **Category:** *Astrophysics / Computational Physics / Quantum Gravity Simulations*
+* **Snippet to Add into `README.md`:**
+```markdown
+- [Black Hole Page Curve Wormhole Simulation](https://zenodo.org/records/22962000) - Open-source, reproducible 40-core numerical simulation of black hole evaporation and the Don Page curve based on a non-dissipative modular error-kernel invariant ($\mathcal{K}_{\text{error}} \subset \mathbb{Z}/9\mathbb{Z}$) and TAMAMe horizon dynamics ($S_{\text{final}} = 0.0000\text{ nats}$, $R^2 = 0.9822$, SHA-256 sealed).
+```
+
+---
+
+### B. `awesome-quantum-software` (Quantum Open Source Foundation)
+* **Target Repositories:**
+  - [`qosf/awesome-quantum-software`](https://github.com/qosf/awesome-quantum-software)
+  - [`junhuan-h/awesome-quantum-machine-learning`](https://github.com/junhuan-h/awesome-quantum-machine-learning)
+* **PR / Issue Title:** `Add WERR Quantum Page Curve Simulation: Open-Source Entanglement Recovery`
+* **Category:** *Quantum Information & Entanglement Entropy Simulations*
+* **Snippet to Add into `README.md`:**
+```markdown
+- [WERR Black Hole Page Curve](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) - Open-science toy simulation exploring unitary entanglement entropy recovery during black hole evaporation via discrete residue grids and micro-wormhole ER=EPR phase resonance (Zenodo: [10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999)).
+```
+
+---
+
+## 📬 5. Dispatched Physics & Complex Systems Outreach Log (ask@answerr.me)
+
+| Channel / Recipient | Target Entity | Status | Topic |
+| :--- | :--- | :---: | :--- |
+| `pwld@ioppublishing.org` | Physics World (Institute of Physics, UK) | **DELIVERED** | Preprint Notification: Black Hole Page Curve & Wormhole Error-Kernel |
+| `info@qosf.org` | Quantum Open Source Foundation (QOSF) | **DELIVERED** | Open Science Simulation: Unitary State Recovery on 40-Core Platform |
+| `news@santafe.edu` | Santa Fe Institute (Complex Systems Outreach) | **DELIVERED** | Non-Linear Dynamics, Error-Kernels & Black Hole Entropy |
+| `pcworm@pcworm.net` | Internal Diagnostic & Archival Copy | **DELIVERED** | Full Integrity Verification & Archival Trail |
+

@@ -36,3 +36,27 @@ preferred-citation:
   primaryClass: "cs.NE"
   doi: "10.48550/arXiv.2609.25498"
   url: "https://arxiv.org/abs/2609.25498"
+references:
+  - type: article
+    authors:
+      - family-names: "Dağlı"
+        given-names: "Mert"
+      - family-names: "Dağlı"
+        given-names: "Zerrin"
+      - family-names: "Dağlı"
+        given-names: "Dağhan"
+    title: "A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve"
+    doi: "10.5281/zenodo.22962000"
+    year: 2026
+    notes: "Concept DOI: 10.5281/zenodo.22961999"
+  - type: article
+    authors:
+      - family-names: "Dağlı"
+        given-names: "Volkan"
+      - family-names: "Dağlı"
+        given-names: "Zerrin"
+      - family-names: "Dağlı"
+        given-names: "Dağhan"
+    title: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"
+    doi: "10.5281/zenodo.22774934"
+    year: 2026
