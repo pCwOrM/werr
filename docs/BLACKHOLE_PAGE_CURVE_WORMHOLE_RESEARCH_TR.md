@@ -1,19 +1,19 @@
-# 🌌 Solucan Deliği Hata Çekirdeği (Wormhole Error-Kernel) ve Don Page Eğrisi Simülasyonu
-## Gerilim (Tension), Kör Nokta (Blind-Spot) ve Arama (Seek) Dinamikleri ile Kara Delik Bilgi Paradoksu Çözüm Önerisi
+# 🌌 Solucan Deliği Hata Çekirdeği İnvaryantları ile Üniter Kara Delik Page Eğrisi Rekonstrüksiyonu
+## Yayınımsız Durum Korunumu, 40-Çekirdek Yalın-Donanım Telemetrisi ve Formal Doğrulama
 
-[![Zenodo Kaydı](https://img.shields.io/badge/Zenodo-Kayıt%2022962000-024dad.svg)](https://zenodo.org/records/22978460)
+[![Zenodo Kaydı](https://img.shields.io/badge/Zenodo-Kayıt%2022978460%20(v2)-024dad.svg)](https://zenodo.org/records/22978460)
 [![Concept DOI](https://img.shields.io/badge/Konsept%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
-[![Sürüm 1 DOI](https://img.shields.io/badge/Sürüm%202%20DOI-10.5281%2Fzenodo.22978460-024dad.svg)](https://doi.org/10.5281/zenodo.22962000)
+[![Sürüm 2 DOI](https://img.shields.io/badge/Sürüm%202%20DOI-10.5281%2Fzenodo.22978460-024dad.svg)](https://doi.org/10.5281/zenodo.22978460)
 [![Lisans: CC-BY 4.0](https://img.shields.io/badge/Lisans-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![SHA-256 Mühürlü](https://img.shields.io/badge/Denetim-SHA--256%20Mühürlü-blueviolet.svg)](#-kriptografik-mühür-ve-veri-bütünlüğü)
 
 > **Resmi Zenodo Yayını:**  
-> **Başlık:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
-> **Yazarlar:** Mert Dağlı (Volkan Dağlı / `@pCwOrM`)¹, Dr. Zerrin Dağlı², Dağhan Dağlı³  
+> **Başlık:** *Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification*  
+> **Yazarlar:** Volkan Dağlı¹ (Sorumlu Yazar), Dr. Zerrin Dağlı², Dağhan Dağlı³  
 > ¹ *Anadolu Üniversitesi, Eskişehir & ITouch Bilişim Sistemleri Araştırma Grubu, Mersin* (ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703))  
-> ² *Mersin Üniversitesi, Mersin* (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
+> ² *Mersin Üniversitesi & Yusuf Kalkavan Anadolu Lisesi, Mersin* (ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425))  
 > ³ *Toros Fen Lisesi, Mersin* (ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313))  
-> **Kalıcı DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Ana Konsept) │ [https://doi.org/10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460) (v2) │ [v1 Archived: 22962000](https://zenodo.org/records/22978460)  
+> **Kalıcı DOI:** [https://doi.org/10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) (Ana Konsept) │ [https://doi.org/10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460) (v2) │ [v1 Arşiv: 22962000](https://zenodo.org/records/22962000)  
 > **Zenodo Kaydı:** [https://zenodo.org/records/22978460](https://zenodo.org/records/22978460)  
 > **Preprint Makale (PDF):** [`Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf`](https://zenodo.org/records/22978460/files/Dagli_2026_Wormhole_Error-Kernel_Page_Curve_preprint_v2.pdf/content)
 
@@ -112,13 +112,13 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
 
 ```bibtex
 @article{dagli2026wormhole,
-  title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
-  author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
   doi          = {10.5281/zenodo.22978460},
   url          = {https://doi.org/10.5281/zenodo.22978460},
-  note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
