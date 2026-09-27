@@ -584,6 +584,22 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Volkan Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
 
+* **Phase III Paradigm Shift (Orbital Error Dynamics - OED):** *Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis*  
+  * **arXiv Preprint:** [arXiv:2609.30115](https://arxiv.org/abs/2609.30115) `[cs.NE]` &bull; DOI: [10.48550/arXiv.2609.30115](https://doi.org/10.48550/arXiv.2609.30115)  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22900465](https://doi.org/10.5281/zenodo.22900465))  
+  * **Patent Protection:** Turkish Patent and Trademark Office **TR 2026/016285** (Priority: September 22, 2026)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+
+* **Web3 & On-Chain AI Circuit Breaker (Werracle):** *Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts*  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942599](https://doi.org/10.5281/zenodo.22942599)) &bull; arXiv: `submit/8126137`  
+  * **Live Sandbox & Repo:** [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) &bull; [Interactive Simulator](https://pcworm.github.io/werracle/)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+
+* **Formal Verification & 40-Core Gauntlet (Lean 4):** *Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation*  
+  * **Permanent Archive:** CERN Zenodo ([Version 2 DOI: 10.5281/zenodo.22983889](https://doi.org/10.5281/zenodo.22983889)) &bull; arXiv: `submit/8136026`  
+  * **Lean 4 Proofs:** `WerracleProof.lean` (10 machine-verified theorems, 0 sorry, Lean v4.34.1 + Mathlib4)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+
   <p align="center">
     <a href="docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md">
       <img src="docs/blackhole_page_curve_simulation_chart.png" alt="Black Hole Page Curve & Unitary Information Recovery Simulation" width="100%"/>
@@ -728,7 +744,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 
 ```bibtex
 @article{dagli2026werr,
-  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}han, Da{\u{g}}l{\i}},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title         = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
   journal       = {arXiv preprint arXiv:2609.25498},
   year          = {2026},
@@ -738,6 +754,39 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   url           = {https://arxiv.org/abs/2609.25498},
   doi           = {10.48550/arXiv.2609.25498},
   note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22939253; Companion Concept: 10.5281/zenodo.22774934}
+}
+
+@article{dagli2026orbital,
+  title         = {Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {arXiv preprint arXiv:2609.30115},
+  year          = {2026},
+  eprint        = {2609.30115},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE},
+  doi           = {10.5281/zenodo.22900465},
+  url           = {https://arxiv.org/abs/2609.30115},
+  note          = {Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
+}
+
+@article{dagli2026mandelbrot,
+  title         = {Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {Zenodo Open Science Archive},
+  year          = {2026},
+  doi           = {10.5281/zenodo.22867037},
+  url           = {https://doi.org/10.5281/zenodo.22867037},
+  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: submit/8092292}
+}
+
+@article{dagli2026werracle,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {Zenodo Open Science Archive},
+  year          = {2026},
+  doi           = {10.5281/zenodo.22942599},
+  url           = {https://doi.org/10.5281/zenodo.22942599},
+  note          = {arXiv: submit/8126137}
 }
 
 @software{werr2026,
