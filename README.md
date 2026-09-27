@@ -578,10 +578,10 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Status:** Under academic review / CERN Zenodo registered.  
 
-* **Quantum Gravity & Black Hole Thermodynamics Research:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22978460 (v2)](https://zenodo.org/records/22978460)  
+* **Quantum Gravity & Black Hole Thermodynamics Research:** *Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification*  
+  * **Permanent Archive:** CERN Zenodo ([Version 2 DOI: 10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22978460 (v2)](https://zenodo.org/records/22978460)  
   * **Documentation Monograph:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md)  
-  * **Authors:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Authors:** Volkan Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
 
   <p align="center">
@@ -749,14 +749,14 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 }
 
 @article{dagli2026wormhole,
-  title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
-  author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
   doi          = {10.5281/zenodo.22978460},
   url          = {https://doi.org/10.5281/zenodo.22978460},
-  note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 
 @article{dagli2026lean4_oed,
