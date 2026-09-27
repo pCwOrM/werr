@@ -13,6 +13,9 @@
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
+[![WerrSoma Whole-Brain Connectome](https://img.shields.io/badge/WerrSoma%20Connectome-158K%20Neurons%20%7C%203.99M%20Synapses-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
+[![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
+[![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-lexovian.pcworm.net-00f0ff.svg)](https://lexovian.pcworm.net/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22983889%20(v2)-024dad.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
@@ -55,7 +58,8 @@
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
-🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
+🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
+🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses In Silico Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: lexovian.pcworm.net](https://lexovian.pcworm.net/) │ [Permanent DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
@@ -817,6 +821,17 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   doi          = {10.5281/zenodo.22983889},
   url          = {https://doi.org/10.5281/zenodo.22983889},
   note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22974543; Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+}
+
+@article{dagli2026werrsoma,
+  title        = {Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of the Princeton FlyWire Drosophila Whole-Brain Connectome (158K Neurons) with a Zero-Memory Fractal System-One Decision Engine (WERR)},
+  author       = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22996626},
+  url          = {https://doi.org/10.5281/zenodo.22996626},
+  note         = {158,169 neurons, 3.99M synapses. Sub-4ms latency, zero VRAM. TÜRKPATENT Priority: TR 2026/016633. Live 3D Portal: https://lexovian.pcworm.net/}
 }
 ```
 

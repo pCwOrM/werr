@@ -10,6 +10,9 @@
 
 [![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![WerrSoma Tüm Beyin Konnektom](https://img.shields.io/badge/WerrSoma%20Konnektom-158K%20N%C3%B6ron%20%7C%203.99M%20Sinaps-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
+[![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
+[![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-lexovian.pcworm.net-00f0ff.svg)](https://lexovian.pcworm.net/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Formel Doğrulama: Lean 4](https://img.shields.io/badge/Formel%20Doğrulama-Lean%204%20(0%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
@@ -53,7 +56,8 @@
 📜 **Açık Kaynak Benchmark Bütünlüğü Raporu:** [JevBench v1.2 / v1.3 metrik değişimleri ve çift-standart doğrulaması (81.36 / 76.90) teknik denetim raporu](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Motor Optimizasyon Raporu:** [Etiket tokenizasyonu, kelime sınırları ve kalibrasyon ilkeleri teknik raporu](docs/OPTIMIZATION_REPORT_TR.md).  
 🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).  
-🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22978460) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
+🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22978460) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
+🧬 **Biyo-Sentetik Tüm Beyin Drosophila Konnektomu (WerrSoma):** [158 Bin Biyolojik Nöron & 3.99 Milyon Sinaps In Silico Entegrasyonu](https://github.com/Lexovian/WerrSoma) │ [Canlı 3D Web Portalı: lexovian.pcworm.net](https://lexovian.pcworm.net/) │ [Kalıcı DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Patent Başvurusu: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
@@ -560,6 +564,17 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   doi          = {10.5281/zenodo.22974544},
   url          = {https://doi.org/10.5281/zenodo.22974544},
   note         = {Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+}
+
+@article{dagli2026werrsoma,
+  title        = {Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of the Princeton FlyWire Drosophila Whole-Brain Connectome (158K Neurons) with a Zero-Memory Fractal System-One Decision Engine (WERR)},
+  author       = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {September},
+  doi          = {10.5281/zenodo.22996626},
+  url          = {https://doi.org/10.5281/zenodo.22996626},
+  note         = {158,169 nöron, 3.99M sinaps. Sub-4ms refleks gecikmesi, 0 VRAM. TÜRKPATENT Başvuru: TR 2026/016633. Canlı 3D Portal: https://lexovian.pcworm.net/}
 }
 ```
 
