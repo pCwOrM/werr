@@ -73,6 +73,17 @@ Ufuk stres pik seviyesi Planck ölçeğinde $\|T_{\mu\nu}\| \approx 1.35$ seviye
 ### C. Öküzün Boynuzundaki Küre (Horn-Sphere Geometrisi)
 İki kara delik ufkunu birbirine bağlayan boğaz etrafında elipsoidal kabuğun sürekli rotasyonu, sınırlı ve periyodik olmayan bir akış oluşturur ("Sonsuzluk Havuzu").
 
+### D. Sürüm 3 (v3) Teorik İlerlemeleri: GKP İzometrisi, Kerr Kutup Jetleri ve 10 Lean 4 Teoremi
+Sürüm 3, kuantum kütleçekimi temellerine doğrudan yanıt veren kritik atılımları içerir:
+1. **GKP-Tipi İzometrik Modüler Gömme ($\Phi$):** Sürekli Hilbert uzayı $\mathcal{H}_{\text{cont}} = L^2(\mathbb{R})$ üzerindeki dalga fonksiyonları, Gottesman--Kitaev--Preskill (GKP) kafes durumları aracılığıyla ayrık kod uzayına izometrik olarak aktarılır:
+   $$\Phi = \sum_{k=0}^8 |k\rangle_{\mathbb{Z}/9\mathbb{Z}} \langle k_L|, \quad \Phi^\dagger \Phi = \mathbb{I}_{\mathcal{C}}$$
+   Bu harita tam bir **izometridir**; dolayısıyla restorasyon operatörü $\mathcal{R}_{\text{return}} = \Phi^\dagger$ tam tersinirdir ve üniterlik %100 korunur.
+2. **Kerr Ufku Anizotropisi ve Kutupsal Jet Odaklaması:** Dönen Kerr kara deliklerinde ergopoz-ufuk aralığı $\Delta r(\theta) = r_{\text{ergo}}(\theta) - r_+$ güçlü bir uzaysal anizotropi yaratır:
+   - **Ekvatoral Doygunluk ($\theta = \pi/2$):** Maksimum dönme makaslaması ve ilişkisel doygunluk (relational saturation) radyal çöküşü durdurur.
+   - **Kutupsal Boğazlar ($\theta \to 0, \pi$):** Ergopoz olay ufkuna değer ($\Delta r \to 0$), merkezkaç potansiyel bariyeri sıfırlanır ve Horn-Sphere modelindeki $B_1, B_2$ solucan deliği boğazlarına doğrudan açılan düşük dirençli kanallar oluşur.
+   - **Evrensel Jet Düzenlemesi:** Torus dolaşım frekans oranının ($\omega_r / \omega_c$) rasyonel/irrasyonel faz geçişleri, mikrokuasar jetlerini, süper kütleli kara delik (M87*, Sgr A*) rölativistik jetlerini ve yarı-periyodik salınımları (QPO) tek bir modüler saat altında düzenler.
+3. **10 Makine Onaylı Lean 4 Teoremi:** Mathlib4 çekirdeğinde sıfır `sorry` aksiyomu ile doğrulanmış 10 teorem (Zenodo: `10.5281/zenodo.22983889`) entegre edilmiştir. Sabit noktalı tamsayı aritmetiğinde 64-bit taşmasızlık (`q16_16_square_no_int64_overflow`) ve çekirdek yansıtması (`escape_zmod9_non_constant_spectrum`) ispatlanmıştır.
+
 ---
 
 ## ⚡ 3. 40 Çekirdekli Xeon Gauntlet Simülasyon Sonuçları
