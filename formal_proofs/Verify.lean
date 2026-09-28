@@ -1,0 +1,12 @@
+import WerracleProof
+
+#print axioms WerracleProof.zmod9_resonant_additive_closure
+#print axioms WerracleProof.zmod9_resonant_ideal_absorption
+#print axioms WerracleProof.zmod9_triadic_projection
+#print axioms WerracleProof.zmod9_partition_cardinality
+#print axioms WerracleProof.escape_zmod9_bounded
+#print axioms WerracleProof.escape_werracle_bounded
+#print axioms WerracleProof.q16_16_square_no_int64_overflow
+#print axioms WerracleProof.escape_zmod9_non_constant_spectrum
+#print axioms WerracleProof.observer_horizon_quadrant_sensitivity
+#print axioms WerracleProof.evm_gas_parametric_bound
