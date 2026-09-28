@@ -595,7 +595,8 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 
 * **Web3 & On-Chain AI Circuit Breaker (Werracle):** *Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts*  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942599](https://doi.org/10.5281/zenodo.22942599)) &bull; arXiv: `submit/8126137`  
+  * **arXiv Publication:** [arXiv:2609.30719](https://arxiv.org/abs/2609.30719) `[cs.CR, cs.AI, cs.DC]` &bull; DOI: [10.48550/arXiv.2609.30719](https://doi.org/10.48550/arXiv.2609.30719)  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942598](https://doi.org/10.5281/zenodo.22942598))  
   * **Live Sandbox & Repo:** [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) &bull; [Interactive Simulator](https://pcworm.github.io/werracle/)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 
@@ -771,6 +772,20 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   doi           = {10.5281/zenodo.22900465},
   url           = {https://arxiv.org/abs/2609.30115},
   note          = {Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
+}
+
+@article{dagli2026werracle_arxiv,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
+  year          = {2026},
+  month         = {September},
+  eprint        = {2609.30719},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  doi           = {10.48550/arXiv.2609.30719},
+  url           = {https://arxiv.org/abs/2609.30719},
+  note          = {CERN Zenodo: 10.5281/zenodo.22942598. TÜRKPATENT Priority: TR 2026/016285.}
 }
 
 @article{dagli2026mandelbrot,
