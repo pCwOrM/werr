@@ -477,8 +477,9 @@ class WerrEngine:
                 )
 
             elif isinstance(q_obj, ChoiceQuestion):
-                options = list(q_obj.criteria.keys())
+                options = list(q_obj.criteria.keys()) if isinstance(q_obj.criteria, dict) else list(q_obj.criteria)
                 num_opts = len(options)
+
                 instr_hash = int(hashlib.md5(instructions.encode('utf-8')).hexdigest()[:6], 16)
                 phase_offset = instr_hash % 4
 
