@@ -58,6 +58,34 @@ theorem zmod9_error_kernel_iff_coprime_unit :
     forall x : ZMod 9, (IsErrorKernel x <-> Nat.Coprime x.val 9) := by
   decide
 
+/-- THEOREM 1F (GAP-0331 Unit Group Multiplicative Closure & Euler Totient Order 6):
+    The non-dissipative Error-Kernel K_error = (Z/9Z)^x is closed under multiplication
+    and every element u in K_error satisfies Euler's totient theorem u^6 = 1 (mod 9). -/
+theorem zmod9_unit_group_closure_and_totient :
+    (forall a b : ZMod 9, IsErrorKernel a -> IsErrorKernel b -> IsErrorKernel (a * b)) /\
+    (forall u : ZMod 9, IsErrorKernel u -> u ^ 6 = 1) := by
+  decide
+
+/-- Effective state projection of the 8-state (2x2x2) Orthogonal Parameter Cube (d, l, r).
+    Returns (effective_domain, effective_lexical, effective_resonance). -/
+def project_orthogonal_state (d l r : Bool) : Bool × Bool × Bool :=
+  let eff_l := if d then l else false
+  let eff_r := if d then r else false
+  let eff_d := if d && (eff_l || eff_r) then true else false
+  (eff_d, eff_l, eff_r)
+
+/-- THEOREM 1G (8-State Orthogonal Parameter Cube Auto-Guard Invariance):
+    1. When d = false, all 4 states collapse to Universal Cusp (false, false, false).
+    2. State (true, false, false) auto-guards to Universal Cusp (false, false, false).
+    3. Exactly 3 states out of 8 activate specialized domain routing (eff_d = true). -/
+theorem orthogonal_8state_autoguard_invariance :
+    (forall l r : Bool, project_orthogonal_state false l r = (false, false, false)) /\
+    (project_orthogonal_state true false false = (false, false, false)) /\
+    (project_orthogonal_state true true false = (true, true, false)) /\
+    (project_orthogonal_state true false true = (true, false, true)) /\
+    (project_orthogonal_state true true true = (true, true, true)) := by
+  decide
+
 -- ============================================================================
 -- SECTION 2: Q16.16 Fixed-Point Quadratic Recurrence & Overflow Safety
 -- ============================================================================

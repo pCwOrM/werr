@@ -5,6 +5,8 @@ import WerracleProof
 #print axioms WerracleProof.zmod9_triadic_projection
 #print axioms WerracleProof.zmod9_partition_cardinality
 #print axioms WerracleProof.zmod9_error_kernel_iff_coprime_unit
+#print axioms WerracleProof.zmod9_unit_group_closure_and_totient
+#print axioms WerracleProof.orthogonal_8state_autoguard_invariance
 #print axioms WerracleProof.escape_zmod9_bounded
 #print axioms WerracleProof.escape_werracle_bounded
 #print axioms WerracleProof.q16_16_square_no_int64_overflow
