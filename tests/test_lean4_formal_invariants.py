@@ -106,6 +106,36 @@ class TestLean4FormalInvariants(unittest.TestCase):
                 f"GAP-0331 maximal ideal correspondence failed for x={x} in Z/9Z"
             )
 
+    def test_04c_theorem_1f_unit_group_closure_and_totient(self):
+        """
+        Theorem 1F: K_error = {1,2,4,5,7,8} is closed under multiplication in Z/9Z
+        and every element u in K_error satisfies Euler's totient theorem u^6 = 1 (mod 9).
+        """
+        for a in self.K_error:
+            self.assertEqual(pow(a, 6, 9), 1, f"Euler totient u^6 mod 9 != 1 for u={a}")
+            for b in self.K_error:
+                prod = (a * b) % 9
+                self.assertIn(prod, self.K_error, f"Unit group closure failed for {a} * {b} = {prod}")
+
+    def test_04d_theorem_1g_orthogonal_8state_autoguard(self):
+        """
+        Theorem 1G: Exhaustive verification of the 8-state (2x2x2) Orthogonal Parameter Cube.
+        """
+        active_domain_count = 0
+        for d in (False, True):
+            for l in (False, True):
+                for r in (False, True):
+                    eff_l = l if d else False
+                    eff_r = r if d else False
+                    eff_d = True if (d and (eff_l or eff_r)) else False
+                    if not d:
+                        self.assertEqual((eff_d, eff_l, eff_r), (False, False, False))
+                    if d and not l and not r:
+                        self.assertEqual((eff_d, eff_l, eff_r), (False, False, False))
+                    if eff_d:
+                        active_domain_count += 1
+        self.assertEqual(active_domain_count, 3, "Exactly 3 of 8 states must activate specialized domain routing")
+
     def test_05_theorems_2a_2b_fuel_bounded_escape(self):
         """
         Theorems 2A & 2B: Kuadratik kaçış döngüsü max_iter adımıyla sınırlıdır.
