@@ -50,6 +50,14 @@ theorem zmod9_partition_cardinality :
     (Finset.univ.filter (fun x : ZMod 9 => IsErrorKernel x)).card = 6 := by
   decide
 
+/-- THEOREM 1E (GAP-0331 Bridge: ZModnZObj.isUnit_iff <-> Error-Kernel):
+    In the local ring Z/9Z, an element belongs to the non-dissipative Error-Kernel K_error = {1, 2, 4, 5, 7, 8}
+    if and only if its canonical residue is coprime to 9 (i.e., it belongs to the group of invertible units (Z/9Z)^x),
+    whereas the resonant sub-ideal I_3 = {0, 3, 6} is precisely the unique maximal ideal of non-units. -/
+theorem zmod9_error_kernel_iff_coprime_unit :
+    forall x : ZMod 9, (IsErrorKernel x <-> Nat.Coprime x.val 9) := by
+  decide
+
 -- ============================================================================
 -- SECTION 2: Q16.16 Fixed-Point Quadratic Recurrence & Overflow Safety
 -- ============================================================================
