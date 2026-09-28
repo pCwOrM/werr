@@ -544,20 +544,6 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   doi       = {10.5281/zenodo.22939253}
 }
 
-@article{dagli2026werracle_arxiv,
-  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
-  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
-  year          = {2026},
-  month         = {September},
-  eprint        = {2609.30719},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CR},
-  doi           = {10.48550/arXiv.2609.30719},
-  url           = {https://arxiv.org/abs/2609.30719},
-  note          = {CERN Zenodo: 10.5281/zenodo.22942598. TÜRKPATENT Priority: TR 2026/016285.}
-}
-
 @article{dagli2026wormhole,
   title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
   author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
