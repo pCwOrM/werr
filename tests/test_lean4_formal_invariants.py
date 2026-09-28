@@ -85,6 +85,27 @@ class TestLean4FormalInvariants(unittest.TestCase):
         self.assertEqual(self.I3 & self.K_error, set(), "I_3 and K_error must be disjoint")
         self.assertEqual(self.I3 | self.K_error, set(self.Z9), "I_3 union K_error must span all Z/9Z")
 
+    def test_04b_theorem_1e_gap0331_coprime_unit_bridge(self):
+        """
+        Theorem 1E (GAP-0331 Bridge: ZModnZObj.isUnit_iff <-> Error-Kernel):
+        An element x in Z/9Z belongs to the Error-Kernel K_error = {1,2,4,5,7,8}
+        iff gcd(x, 9) == 1 (i.e., x is an invertible unit in (Z/9Z)^x).
+        Conversely, x belongs to the Resonant Sub-Ideal I_3 = {0,3,6} iff x is a non-unit.
+        """
+        import math
+        for x in self.Z9:
+            is_coprime_unit = (math.gcd(x, 9) == 1)
+            self.assertEqual(
+                x in self.K_error,
+                is_coprime_unit,
+                f"GAP-0331 unit-kernel correspondence failed for x={x} in Z/9Z"
+            )
+            self.assertEqual(
+                x in self.I3,
+                not is_coprime_unit,
+                f"GAP-0331 maximal ideal correspondence failed for x={x} in Z/9Z"
+            )
+
     def test_05_theorems_2a_2b_fuel_bounded_escape(self):
         """
         Theorems 2A & 2B: Kuadratik kaçış döngüsü max_iter adımıyla sınırlıdır.

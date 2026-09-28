@@ -4,6 +4,7 @@ import WerracleProof
 #print axioms WerracleProof.zmod9_resonant_ideal_absorption
 #print axioms WerracleProof.zmod9_triadic_projection
 #print axioms WerracleProof.zmod9_partition_cardinality
+#print axioms WerracleProof.zmod9_error_kernel_iff_coprime_unit
 #print axioms WerracleProof.escape_zmod9_bounded
 #print axioms WerracleProof.escape_werracle_bounded
 #print axioms WerracleProof.q16_16_square_no_int64_overflow
