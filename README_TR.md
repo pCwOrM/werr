@@ -14,6 +14,7 @@
 [![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
 [![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-lexovian.pcworm.net-00f0ff.svg)](https://lexovian.pcworm.net/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
+[![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Formel Doğrulama: Lean 4](https://img.shields.io/badge/Formel%20Doğrulama-Lean%204%20(0%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
@@ -484,7 +485,7 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
   * **Durum:** Versiyon 2.0 Camera-Ready / Hakem Değerlendirme Revizyonu (Eylül 2026). Makale LaTeX ve Camera-Ready PDF senkronize edildi.
 
 * **Kuramsal Temel Araştırması:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (inceleme aşamasında)  
+  * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: [arXiv:2609.33066](https://arxiv.org/abs/2609.33066)  
   * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Durum:** Akademik incelemede / CERN Zenodo tescilli.
 

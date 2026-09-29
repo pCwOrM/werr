@@ -580,7 +580,7 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Status:** Version 2.0 Camera-Ready / Peer Review Revision (September 2026). Paper LaTeX source and camera-ready PDF synchronized.
 
 * **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (under review)  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: [arXiv:2609.33066](https://arxiv.org/abs/2609.33066)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Status:** Under academic review / CERN Zenodo registered.  
 
@@ -782,7 +782,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   year          = {2026},
   doi           = {10.5281/zenodo.22867037},
   url           = {https://doi.org/10.5281/zenodo.22867037},
-  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: submit/8092292}
+  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: 2609.33066}
 }
 
 @article{dagli2026werracle,
