@@ -14,6 +14,7 @@
 [![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
 [![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-werrsoma.answerr.me-00f0ff.svg)](https://werrsoma.answerr.me/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
+[![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Formel Doğrulama: Lean 4](https://img.shields.io/badge/Formel%20Doğrulama-Lean%204%20(0%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
@@ -57,7 +58,12 @@
 ⚙️ **Motor Optimizasyon Raporu:** [Etiket tokenizasyonu, kelime sınırları ve kalibrasyon ilkeleri teknik raporu](docs/OPTIMIZATION_REPORT_TR.md).  
 🛡️ **Resmi Mühürlü PDF Denetim Raporu:** [Yayın Kalitesinde Denetim Raporu PDF İndir](docs/werr_official_benchmarks_report.pdf) │ [HTML Etkileşimli Rapor](docs/werr_official_benchmarks_report.html) │ [Kriptografik SHA-256 Manifestosu](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22978460) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
+<<<<<<< HEAD
 🧬 **Biyo-Sentetik Tüm Beyin Drosophila Konnektomu (WerrSoma):** [158 Bin Biyolojik Nöron & 3.99 Milyon Sinaps In Silico Entegrasyonu](https://github.com/Lexovian/WerrSoma) │ [Canlı 3D Web Portalı: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Kalıcı DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Patent Başvurusu: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).
+=======
+🧬 **Biyo-Sentetik Tüm Beyin Drosophila Konnektomu (WerrSoma):** [158 Bin Biyolojik Nöron & 3.99 Milyon Sinaps In Silico Entegrasyonu](https://github.com/Lexovian/WerrSoma) │ [Canlı 3D Web Portalı: lexovian.pcworm.net](https://lexovian.pcworm.net/) │ [Kalıcı DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Patent Başvurusu: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).  
+📐 **Çekirdek Cebir Formalizasyonu (GAP-0331):** [Lean 4 Modüler Halka Tersinirlik Portu](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Tartışması #6613](https://github.com/gap-system/gap/discussions/6613) │ Genişletilmiş Öklid Algoritması ile $\mathbb{Z}/9\mathbb{Z}$ yapıcı Bézout tersinirlik (`werr.modular_algebra`, 0 sorry).
+>>>>>>> 4b8aa7bdec15e73de2b56768d081d761e603784b
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
@@ -483,7 +489,7 @@ Bu araştırma hakemli açık bilim standartları doğrultusunda şu şekilde ya
   * **Durum:** Versiyon 2.0 Camera-Ready / Hakem Değerlendirme Revizyonu (Eylül 2026). Makale LaTeX ve Camera-Ready PDF senkronize edildi.
 
 * **Kuramsal Temel Araştırması:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (inceleme aşamasında)  
+  * **Ön Baskı Arşivi:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: [arXiv:2609.33066](https://arxiv.org/abs/2609.33066)  
   * **Yazarlar:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Durum:** Akademik incelemede / CERN Zenodo tescilli.
 
@@ -542,20 +548,6 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   year      = {2026},
   url       = {https://github.com/pCwOrM/werr},
   doi       = {10.5281/zenodo.22939253}
-}
-
-@article{dagli2026werracle_arxiv,
-  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
-  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
-  year          = {2026},
-  month         = {September},
-  eprint        = {2609.30719},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CR},
-  doi           = {10.48550/arXiv.2609.30719},
-  url           = {https://arxiv.org/abs/2609.30719},
-  note          = {CERN Zenodo: 10.5281/zenodo.22942598. TÜRKPATENT Priority: TR 2026/016285.}
 }
 
 @article{dagli2026wormhole,
