@@ -17,6 +17,7 @@
 [![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
 [![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-werrsoma.answerr.me-00f0ff.svg)](https://werrsoma.answerr.me/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22983889%20(v2)-024dad.svg)](https://doi.org/10.5281/zenodo.22983889)
+[![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
@@ -59,7 +60,12 @@
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
+<<<<<<< HEAD
 🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses In Silico Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Permanent DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).
+=======
+🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses In Silico Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: lexovian.pcworm.net](https://lexovian.pcworm.net/) │ [Permanent DOI: 10.5281/zenodo.22996626](https://doi.org/10.5281/zenodo.22996626) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.22996626).  
+📐 **Core Algebra Formalization (GAP-0331):** [Verified Lean 4 Modular Ring Inversion](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Discussion #6613](https://github.com/gap-system/gap/discussions/6613) │ Constructive Bézout Extended Euclidean inversion over $\mathbb{Z}/9\mathbb{Z}$ (`werr.modular_algebra`, 0 sorry).
+>>>>>>> 4b8aa7bdec15e73de2b56768d081d761e603784b
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
@@ -578,7 +584,7 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Status:** Version 2.0 Camera-Ready / Peer Review Revision (September 2026). Paper LaTeX source and camera-ready PDF synchronized.
 
 * **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (under review)  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: [arXiv:2609.33066](https://arxiv.org/abs/2609.33066)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Status:** Under academic review / CERN Zenodo registered.  
 
@@ -595,8 +601,7 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 
 * **Web3 & On-Chain AI Circuit Breaker (Werracle):** *Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts*  
-  * **arXiv Publication:** [arXiv:2609.30719](https://arxiv.org/abs/2609.30719) `[cs.CR, cs.AI, cs.DC]` &bull; DOI: [10.48550/arXiv.2609.30719](https://doi.org/10.48550/arXiv.2609.30719)  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942598](https://doi.org/10.5281/zenodo.22942598))  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942599](https://doi.org/10.5281/zenodo.22942599)) &bull; arXiv: `submit/8126137`  
   * **Live Sandbox & Repo:** [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) &bull; [Interactive Simulator](https://pcworm.github.io/werracle/)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 
@@ -774,20 +779,6 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   note          = {Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
 }
 
-@article{dagli2026werracle_arxiv,
-  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
-  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
-  year          = {2026},
-  month         = {September},
-  eprint        = {2609.30719},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CR},
-  doi           = {10.48550/arXiv.2609.30719},
-  url           = {https://arxiv.org/abs/2609.30719},
-  note          = {CERN Zenodo: 10.5281/zenodo.22942598. TÜRKPATENT Priority: TR 2026/016285.}
-}
-
 @article{dagli2026mandelbrot,
   title         = {Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
   author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
@@ -795,7 +786,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   year          = {2026},
   doi           = {10.5281/zenodo.22867037},
   url           = {https://doi.org/10.5281/zenodo.22867037},
-  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: submit/8092292}
+  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: 2609.33066}
 }
 
 @article{dagli2026werracle,
