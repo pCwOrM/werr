@@ -11,13 +11,16 @@
 [![License: Dual BSL 1.1 / MIT](https://img.shields.io/badge/License-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
+[![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
+[![GAP Lean 4: arXiv 2609.38492](https://img.shields.io/badge/arXiv-2609.38492%20(GAP%20Lean4)-b31b1b.svg)](https://arxiv.org/abs/2609.38492)
+[![OED: arXiv 2609.30115](https://img.shields.io/badge/arXiv-2609.30115%20(OED)-b31b1b.svg)](https://arxiv.org/abs/2609.30115)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
 [![WerrSoma Whole-Brain Connectome](https://img.shields.io/badge/WerrSoma%20Connectome-158K%20Neurons%20%7C%203.99M%20Synapses-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
 [![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
 [![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-werrsoma.answerr.me-00f0ff.svg)](https://werrsoma.answerr.me/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22983889%20(v2)-024dad.svg)](https://doi.org/10.5281/zenodo.22983889)
-[![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
@@ -792,11 +795,12 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 @article{dagli2026werracle,
   title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
   author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal       = {Zenodo Open Science Archive},
+  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
   year          = {2026},
-  doi           = {10.5281/zenodo.22942599},
-  url           = {https://doi.org/10.5281/zenodo.22942599},
-  note          = {arXiv: submit/8126137}
+  month         = {September},
+  doi           = {10.48550/arXiv.2609.30719},
+  url           = {https://arxiv.org/abs/2609.30719},
+  note          = {Zenodo DOI: 10.5281/zenodo.22942598; TÜRKPATENT Priority: TR 2026/016285}
 }
 
 @software{werr2026,
@@ -821,12 +825,23 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 @article{dagli2026lean4_oed,
   title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
   author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal      = {Zenodo Open Science Archive},
+  journal      = {arXiv preprint arXiv:2609.33066 [cs.LG, cs.AI, cs.LO]},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22983889},
-  url          = {https://doi.org/10.5281/zenodo.22983889},
+  doi          = {10.48550/arXiv.2609.33066},
+  url          = {https://arxiv.org/abs/2609.33066},
   note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22974543; Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+}
+
+@article{dagli2026gap_lean4_arxiv,
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {{Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions}},
+  journal      = {arXiv preprint arXiv:2609.38492 [cs.LO]},
+  year         = {2026},
+  month        = sep,
+  doi          = {10.48550/arXiv.2609.38492},
+  url          = {https://arxiv.org/abs/2609.38492},
+  note         = {Zenodo DOI: 10.5281/zenodo.23045504; Mathlib 4 Compatible, 35 Theorems, 0 sorry}
 }
 
 @article{dagli2026werrsoma,
