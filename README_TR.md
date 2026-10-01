@@ -10,11 +10,14 @@
 
 [![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
+[![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
+[![GAP Lean 4: arXiv 2609.38492](https://img.shields.io/badge/arXiv-2609.38492%20(GAP%20Lean4)-b31b1b.svg)](https://arxiv.org/abs/2609.38492)
+[![OED: arXiv 2609.30115](https://img.shields.io/badge/arXiv-2609.30115%20(OED)-b31b1b.svg)](https://arxiv.org/abs/2609.30115)
 [![WerrSoma Tüm Beyin Konnektom](https://img.shields.io/badge/WerrSoma%20Konnektom-158K%20N%C3%B6ron%20%7C%203.99M%20Sinaps-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
 [![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996626-024dad.svg)](https://doi.org/10.5281/zenodo.22996626)
 [![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-werrsoma.answerr.me-00f0ff.svg)](https://werrsoma.answerr.me/)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
-[![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Formel Doğrulama: Lean 4](https://img.shields.io/badge/Formel%20Doğrulama-Lean%204%20(0%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
 [![Kara Delik Page Eğrisi DOI](https://img.shields.io/badge/Kara%20Delik%20Page%20E%C4%9Fri%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Makale v2.0: Camera--Ready](https://img.shields.io/badge/Makale%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
@@ -561,15 +564,37 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 
+@article{dagli2026werracle,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
+  year          = {2026},
+  month         = {September},
+  doi           = {10.48550/arXiv.2609.30719},
+  url           = {https://arxiv.org/abs/2609.30719},
+  note          = {Zenodo DOI: 10.5281/zenodo.22942598; TÜRKPATENT Priority: TR 2026/016285}
+}
+
 @article{dagli2026lean4_oed,
   title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
   author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal      = {Zenodo Open Science Archive},
+  journal      = {arXiv preprint arXiv:2609.33066 [cs.LG, cs.AI, cs.LO]},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22974544},
-  url          = {https://doi.org/10.5281/zenodo.22974544},
+  doi          = {10.48550/arXiv.2609.33066},
+  url          = {https://arxiv.org/abs/2609.33066},
   note         = {Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+}
+
+@article{dagli2026gap_lean4_arxiv,
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {{Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions}},
+  journal      = {arXiv preprint arXiv:2609.38492 [cs.LO]},
+  year         = {2026},
+  month        = sep,
+  doi          = {10.48550/arXiv.2609.38492},
+  url          = {https://arxiv.org/abs/2609.38492},
+  note         = {Zenodo DOI: 10.5281/zenodo.23045504; Mathlib 4 Uyumlu, 35 Teorem, 0 sorry}
 }
 
 @article{dagli2026werrsoma,
