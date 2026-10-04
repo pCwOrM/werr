@@ -584,7 +584,7 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
 
 @article{dagli2026gap_lean4_arxiv,
   author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  title        = {{Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions}},
+  title        = "{Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions}",
   journal      = {arXiv preprint arXiv:2609.38492 [cs.LO]},
   year         = {2026},
   month        = sep,
