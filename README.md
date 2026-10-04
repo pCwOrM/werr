@@ -45,6 +45,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
+[![WerreduR Pedagogy](https://img.shields.io/badge/WerreduR-Fractal%20Pedagogy-blue.svg)](https://github.com/jesmaat/WerreduR)
 [![Featured in Awesome Edge AI](https://img.shields.io/badge/Awesome-Edge%20AI%20Agents-blue.svg)](https://github.com/yh-yao/awesome-edge-ai-agents)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
@@ -64,6 +65,7 @@
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
 🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Version DOI: 10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) (Concept: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625)) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.23072929).  
+🎓 **Procedural Fractal Pedagogy (WerreduR / PFP):** [Zero-Storage Educational Reflex Engine & 1PL Rasch Benchmarks](https://github.com/jesmaat/WerreduR) │ [Zenodo: 10.5281/zenodo.23034488 (v3.0)](https://doi.org/10.5281/zenodo.23034488) (Concept: [10.5281/zenodo.22999420](https://doi.org/10.5281/zenodo.22999420)) │ *Target: Q1 AIED Journal (Elsevier CAEAI)* │ **TÜRKPATENT Priority: TR 2026/016285**.  
 📐 **Core Algebra Formalization (GAP-0331):** [Verified Lean 4 Modular Ring Inversion](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Discussion #6613](https://github.com/gap-system/gap/discussions/6613) │ Constructive Bézout Extended Euclidean inversion over $\mathbb{Z}/9\mathbb{Z}$ (`werr.modular_algebra`, 0 sorry).
 
 <p align="center">
@@ -739,13 +741,13 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 ## 👥 Authors & Academic Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  
-  Anadolu University, Eskişehir, Turkey & ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
+  Anadolu University, Eskişehir, Turkey & ITouch Systems, Çukurova Teknokent, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
 
 * **Dr. Zerrin Dağlı**  
   Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Science College, Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros Science High School, MEV (Toros University), Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
@@ -849,6 +851,25 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   doi          = {10.5281/zenodo.23072929},
   url          = {https://doi.org/10.5281/zenodo.23072929},
   note         = {158,262 neurons, 3.99M synapses. Sub-4ms latency, zero VRAM. TÜRKPATENT Priority: TR 2026/016633. Concept DOI: 10.5281/zenodo.22996625. Live 3D Portal: https://werrsoma.answerr.me/}
+}
+
+@misc{werredur2026package,
+  author       = {Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {{WerreduR}: Procedural Fractal Pedagogy ({PFP}) Client-Side Engine and Replication Suite (Version 3.0)},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.23034488},
+  url          = {https://doi.org/10.5281/zenodo.23034488},
+  note         = {Target: Computers & Education: Artificial Intelligence (Elsevier). Priority Patent: TR 2026/016285.}
+}
+
+@misc{dagli2026werrdataset,
+  author       = {Da{\u{g}}l{\i}, Volkan},
+  title        = {{WERR Open Decisions}: World's First Universal Fractal Natural Language Decision Map Dataset},
+  year         = {2026},
+  publisher    = {Hugging Face},
+  howpublished = {\url{https://huggingface.co/datasets/pCwOrM/werr_open_decisions}},
+  note         = {Open-access benchmark dataset for continuous fractal boundary decision mappings.}
 }
 ```
 
