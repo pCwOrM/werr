@@ -35,19 +35,37 @@ runner/
 private_archive_rsa/
 *ssh*
 *password*
+*secret*
+*credential*
+*token*
 *.pem
 *.key
-*.env
+*.env*
+*.cert
+*.ppk
+*id_rsa*
+*id_ed25519*
+credentials/
+secrets/
+
+# TÜRKPATENT Local Administrative Submissions & Applicant Receipts
+turkpatent_*/
+*.tahakkuk
+*dekont*
+*makbuz*
+
+# Private research, roadmap, and test vaults (STRICTLY EXCLUDED)
+private_archive*/
+_isolated_test_vault/
+_isolated_test_vault.*
+*roadmap*
+*open_problem*
+*crown_core*
+*rsa*
 
 # Scrap/temporary graphic generation slices
 assets/[0-9A-F][0-9A-F]*.png
 benchmarks/snake/*.gif
 benchmarks/snake/*.mp4
-
-# Private research, roadmap, and RSA working archives (STRICTLY EXCLUDED)
-private_archive*/
-*roadmap*
-*open_problem*
-*rsa*
 
 
