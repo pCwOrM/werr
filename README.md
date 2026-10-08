@@ -11,10 +11,17 @@
 [![License: Dual BSL 1.1 / MIT](https://img.shields.io/badge/License-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
+[![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
+[![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
+[![GAP Lean 4: arXiv 2609.38492](https://img.shields.io/badge/arXiv-2609.38492%20(GAP%20Lean4)-b31b1b.svg)](https://arxiv.org/abs/2609.38492)
+[![OED: arXiv 2609.30115](https://img.shields.io/badge/arXiv-2609.30115%20(OED)-b31b1b.svg)](https://arxiv.org/abs/2609.30115)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
 [![Zenodo Werr DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22939253-024dad.svg)](https://doi.org/10.5281/zenodo.22939253)
-[![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22974544-024dad.svg)](https://doi.org/10.5281/zenodo.22974544)
-[![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22974544)
+[![WerrSoma Whole-Brain Connectome](https://img.shields.io/badge/WerrSoma%20Connectome-158K%20Neurons%20%7C%203.99M%20Synapses-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
+[![WerrSoma DOI](https://img.shields.io/badge/WerrSoma%20DOI-10.5281%2Fzenodo.22996625-024dad.svg)](https://doi.org/10.5281/zenodo.22996625)
+[![WerrSoma Portal](https://img.shields.io/badge/WerrSoma%20Portal-werrsoma.answerr.me-00f0ff.svg)](https://werrsoma.answerr.me/)
+[![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22983889%20(v2)-024dad.svg)](https://doi.org/10.5281/zenodo.22983889)
+[![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Black Hole Page Curve DOI](https://img.shields.io/badge/Black%20Hole%20Page%20Curve%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
@@ -38,6 +45,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
+[![WerreduR Pedagogy](https://img.shields.io/badge/WerreduR-Fractal%20Pedagogy-blue.svg)](https://github.com/jesmaat/WerreduR)
 [![Featured in Awesome Edge AI](https://img.shields.io/badge/Awesome-Edge%20AI%20Agents-blue.svg)](https://github.com/yh-yao/awesome-edge-ai-agents)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
@@ -49,13 +57,16 @@
 
 🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
 📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22939253).  
-📜 **Lean 4 Formal Verification & 40-Core Gauntlet:** [Zero-Storage Neural Synthesis Monograph](https://doi.org/10.5281/zenodo.22974544) │ [Zenodo Record 22974544](https://zenodo.org/records/22974544) │ [Preprint PDF](https://zenodo.org/records/22974544/files/Zero_Storage_Neural_Synthesis_Lean4_OED.pdf) │ [Replication Bundle](https://zenodo.org/records/22974544/files/zenodo_bundle_lean4_oed_verification.zip).  
+📜 **Lean 4 Formal Verification & 40-Core Gauntlet:** [Zero-Storage Neural Synthesis Monograph (v2)](https://doi.org/10.5281/zenodo.22983889) │ [Zenodo Record 22983889](https://zenodo.org/records/22983889) │ [Preprint PDF](https://zenodo.org/records/22983889/files/Zero_Storage_Neural_Synthesis_Lean4_OED_v2.pdf) │ [Replication Bundle](https://zenodo.org/records/22983889/files/zenodo_bundle_lean4_oed_verification_v2.zip).  
 ⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
-🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).
+🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
+🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Version DOI: 10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) (Concept: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625)) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.23072929).  
+🎓 **Procedural Fractal Pedagogy (WerreduR / PFP):** [Zero-Storage Educational Reflex Engine & 1PL Rasch Benchmarks](https://github.com/jesmaat/WerreduR) │ [Zenodo: 10.5281/zenodo.23034488 (v3.0)](https://doi.org/10.5281/zenodo.23034488) (Concept: [10.5281/zenodo.22999420](https://doi.org/10.5281/zenodo.22999420)) │ *Target: Q1 AIED Journal (Elsevier CAEAI)* │ **TÜRKPATENT Priority: TR 2026/016285**.  
+📐 **Core Algebra Formalization (GAP-0331):** [Verified Lean 4 Modular Ring Inversion](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Discussion #6613](https://github.com/gap-system/gap/discussions/6613) │ Constructive Bézout Extended Euclidean inversion over $\mathbb{Z}/9\mathbb{Z}$ (`werr.modular_algebra`, 0 sorry).
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
@@ -574,15 +585,31 @@ This research builds upon peer-reviewed open science preprints and is published 
   * **Status:** Version 2.0 Camera-Ready / Peer Review Revision (September 2026). Paper LaTeX source and camera-ready PDF synchronized.
 
 * **Foundational Companion Research:** *Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries*  
-  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: `submit/8092292` (under review)  
+  * **Preprint Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)) &bull; arXiv: [arXiv:2609.33066](https://arxiv.org/abs/2609.33066)  
   * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Status:** Under academic review / CERN Zenodo registered.  
 
-* **Quantum Gravity & Black Hole Thermodynamics Research:** *A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve*  
-  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22962000](https://doi.org/10.5281/zenodo.22962000)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22978460 (v2)](https://zenodo.org/records/22978460)  
+* **Quantum Gravity & Black Hole Thermodynamics Research:** *Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification*  
+  * **Permanent Archive:** CERN Zenodo ([Version 2 DOI: 10.5281/zenodo.22978460](https://doi.org/10.5281/zenodo.22978460)) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999) │ [Zenodo Record: 22978460 (v2)](https://zenodo.org/records/22978460)  
   * **Documentation Monograph:** [`docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md`](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md)  
-  * **Authors:** Mert Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
+  * **Authors:** Volkan Dağlı (`@pCwOrM`), Dr. Zerrin Dağlı, Dağhan Dağlı  
   * **Theoretical & Numerical Contribution:** Applying WERR's core principles (error as an information carrier, uncoupled $\mathbb{Z}/9\mathbb{Z}$ residue space, and boundary divergence) to the 50-year-old Black Hole Information Paradox. Bare-metal 40-core Dual Intel Xeon gauntlet validation demonstrates $S_{\text{final}} = 0.0000\text{ nats}$ (100% unitarity preserved), $R^2 = 0.9822$ Page curve replication, and suppression of the AMPS firewall by 573x ($\|T_{\mu\nu}\| \approx 1.35$ vs $773.67$). All raw data and simulation code published under verifiable SHA-256 seal.
+
+* **Phase III Paradigm Shift (Orbital Error Dynamics - OED):** *Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis*  
+  * **arXiv Preprint:** [arXiv:2609.30115](https://arxiv.org/abs/2609.30115) `[cs.NE]` &bull; DOI: [10.48550/arXiv.2609.30115](https://doi.org/10.48550/arXiv.2609.30115)  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22900465](https://doi.org/10.5281/zenodo.22900465))  
+  * **Patent Protection:** Turkish Patent and Trademark Office **TR 2026/016285** (Priority: September 22, 2026)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+
+* **Web3 & On-Chain AI Circuit Breaker (Werracle):** *Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts*  
+  * **Permanent Archive:** CERN Zenodo ([DOI: 10.5281/zenodo.22942599](https://doi.org/10.5281/zenodo.22942599)) &bull; arXiv: `submit/8126137`  
+  * **Live Sandbox & Repo:** [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) &bull; [Interactive Simulator](https://pcworm.github.io/werracle/)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+
+* **Formal Verification & 40-Core Gauntlet (Lean 4):** *Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation*  
+  * **Permanent Archive:** CERN Zenodo ([Version 2 DOI: 10.5281/zenodo.22983889](https://doi.org/10.5281/zenodo.22983889)) &bull; arXiv: `submit/8136026`  
+  * **Lean 4 Proofs:** `WerracleProof.lean` (10 machine-verified theorems, 0 sorry, Lean v4.34.1 + Mathlib4)  
+  * **Authors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
 
   <p align="center">
     <a href="docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md">
@@ -714,13 +741,13 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 ## 👥 Authors & Academic Affiliations
 
 * **Volkan Dağlı** *(Corresponding Author)*  
-  Anadolu University, Eskişehir, Turkey & ITouch Systems, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
+  Anadolu University, Eskişehir, Turkey & ITouch Systems, Çukurova Teknokent, Mersin, Turkey &bull; ORCID: [0009-0000-1587-8703](https://orcid.org/0009-0000-1587-8703) &bull; GitHub: [`@pCwOrM`](https://github.com/pCwOrM)
 
 * **Dr. Zerrin Dağlı**  
   Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Science College, Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros Science High School, MEV (Toros University), Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
@@ -728,7 +755,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 
 ```bibtex
 @article{dagli2026werr,
-  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}han, Da{\u{g}}l{\i}},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   title         = {Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains},
   journal       = {arXiv preprint arXiv:2609.25498},
   year          = {2026},
@@ -740,6 +767,40 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   note          = {CERN Zenodo Archive: https://doi.org/10.5281/zenodo.22939253; Companion Concept: 10.5281/zenodo.22774934}
 }
 
+@article{dagli2026orbital,
+  title         = {Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {arXiv preprint arXiv:2609.30115},
+  year          = {2026},
+  eprint        = {2609.30115},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE},
+  doi           = {10.5281/zenodo.22900465},
+  url           = {https://arxiv.org/abs/2609.30115},
+  note          = {Patent Pending: Turkish Patent and Trademark Office TR 2026/016285}
+}
+
+@article{dagli2026mandelbrot,
+  title         = {Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {Zenodo Open Science Archive},
+  year          = {2026},
+  doi           = {10.5281/zenodo.22867037},
+  url           = {https://doi.org/10.5281/zenodo.22867037},
+  note          = {Concept DOI: 10.5281/zenodo.22774934; arXiv: 2609.33066}
+}
+
+@article{dagli2026werracle,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {arXiv preprint arXiv:2609.30719 [cs.CR, cs.AI, cs.DC]},
+  year          = {2026},
+  month         = {September},
+  doi           = {10.48550/arXiv.2609.30719},
+  url           = {https://arxiv.org/abs/2609.30719},
+  note          = {Zenodo DOI: 10.5281/zenodo.22942598; TÜRKPATENT Priority: TR 2026/016285}
+}
+
 @software{werr2026,
   author    = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
   title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
@@ -749,25 +810,66 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 }
 
 @article{dagli2026wormhole,
-  title        = {A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve},
-  author       = {Da{\u{g}}l{\i}, Mert and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = {Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
   doi          = {10.5281/zenodo.22978460},
   url          = {https://doi.org/10.5281/zenodo.22978460},
-  note         = {Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 
 @article{dagli2026lean4_oed,
   title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
   author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  journal      = {Zenodo Open Science Archive},
+  journal      = {arXiv preprint arXiv:2609.33066 [cs.LG, cs.AI, cs.LO]},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22974544},
-  url          = {https://doi.org/10.5281/zenodo.22974544},
-  note         = {Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+  doi          = {10.48550/arXiv.2609.33066},
+  url          = {https://arxiv.org/abs/2609.33066},
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22974543; Formally verified in Lean 4 (Mathlib4, 0 sorry). 40-core bare-metal gauntlet benchmark verified. TÜRKPATENT Priority: TR 2026/016285.}
+}
+
+@article{dagli2026gap_lean4_arxiv,
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = "{Machine-Checked Computational Group Theory in Lean 4: Operational Schreier-Sims Stabilizer Chains, BSGS Sifting, and Backtrack Ordered Partitions}",
+  journal      = {arXiv preprint arXiv:2609.38492 [cs.LO]},
+  year         = {2026},
+  month        = sep,
+  doi          = {10.48550/arXiv.2609.38492},
+  url          = {https://arxiv.org/abs/2609.38492},
+  note         = {Zenodo DOI: 10.5281/zenodo.23045504; Mathlib 4 Compatible, 35 Theorems, 0 sorry}
+}
+
+@article{dagli2026werrsoma,
+  title        = {Bio-Synthetic Neuromorphic Interfacing: Integration of a Zero-Memory Fractal Decision Engine with the Whole-Brain Drosophila Melanogaster Connectome},
+  author       = {Da{\u{g}}l{\i}, Da{\u{g}}han and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  month        = {October},
+  doi          = {10.5281/zenodo.23072929},
+  url          = {https://doi.org/10.5281/zenodo.23072929},
+  note         = {158,262 neurons, 3.99M synapses. Sub-4ms latency, zero VRAM. TÜRKPATENT Priority: TR 2026/016633. Concept DOI: 10.5281/zenodo.22996625. Live 3D Portal: https://werrsoma.answerr.me/}
+}
+
+@misc{werredur2026package,
+  author       = {Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  title        = "{WerreduR}: Procedural Fractal Pedagogy ({PFP}) Client-Side Engine and Replication Suite (Version 3.0)",
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.23034488},
+  url          = {https://doi.org/10.5281/zenodo.23034488},
+  note         = {Target: Computers & Education: Artificial Intelligence (Elsevier). Priority Patent: TR 2026/016285.}
+}
+
+@misc{dagli2026werrdataset,
+  author       = {Da{\u{g}}l{\i}, Volkan},
+  title        = "{WERR Open Decisions}: World's First Universal Fractal Natural Language Decision Map Dataset",
+  year         = {2026},
+  publisher    = {Hugging Face},
+  howpublished = {\url{https://huggingface.co/datasets/pCwOrM/werr_open_decisions}},
+  note         = {Open-access benchmark dataset for continuous fractal boundary decision mappings.}
 }
 ```
 

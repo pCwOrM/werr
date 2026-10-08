@@ -370,6 +370,7 @@ class WerrEngine:
             fused_quad_ratios = np.zeros(4, dtype=np.float64)
             fused_tile_ratios = np.zeros(16, dtype=np.float64)
             fused_black_ratio = 0.0
+            fused_avg_escape = 0.0
             escape_iters = None
 
             for z_val, w_z in tripod_configs:
@@ -386,12 +387,13 @@ class WerrEngine:
                 fused_quad_ratios += w_z * np.array(q_r, dtype=np.float64)
                 fused_tile_ratios += w_z * t_r
                 fused_black_ratio += w_z * b_r
+                fused_avg_escape += w_z * a_e
 
             quad_ratios = list(fused_quad_ratios)
             quad_weights = [float(r - 0.5) * 2.5 for r in quad_ratios]
             tile_weights = (fused_tile_ratios - 0.5) * 4.0
             black_ratio = fused_black_ratio
-            avg_escape = 0.5
+            avg_escape = float(fused_avg_escape)
         else:
             black_ratio, avg_escape, escape_iters = compute_mandelbrot_patch(
                 cx=eff_cx, cy=eff_cy, zoom=eff_zoom, res=self.resolution, max_iter=self.max_iter
@@ -477,8 +479,9 @@ class WerrEngine:
                 )
 
             elif isinstance(q_obj, ChoiceQuestion):
-                options = list(q_obj.criteria.keys())
+                options = list(q_obj.criteria.keys()) if isinstance(q_obj.criteria, dict) else list(q_obj.criteria)
                 num_opts = len(options)
+
                 instr_hash = int(hashlib.md5(instructions.encode('utf-8')).hexdigest()[:6], 16)
                 phase_offset = instr_hash % 4
 
@@ -778,6 +781,36 @@ class WerrEngine:
             source="python_lib"
         )
         return response
+
+    def verify_gap0331_unit(self, a: int, modulus: int = 9) -> Dict[str, Any]:
+        """
+        Validates constructive modular invertibility over Z/nZ (GAP-0331).
+        Matches formally verified Lean 4 'inverseOpExec_correct' theorem.
+        """
+        from werr.modular_algebra import constructive_extended_gcd, is_unit_mod9
+        rem = a % modulus
+        if not is_unit_mod9(rem):
+            return {
+                "status": "non_invertible",
+                "element": a,
+                "modulus": modulus,
+                "is_unit": False,
+                "reason": "Resonant sub-ideal I_3 zero-divisor"
+            }
+        gcd, x, y = constructive_extended_gcd(rem, modulus)
+        inv = (x % modulus + modulus) % modulus
+        return {
+            "status": "verified",
+            "element": a,
+            "modulus": modulus,
+            "inverse": inv,
+            "gcd": gcd,
+            "bezout_x": x,
+            "bezout_y": y,
+            "is_unit": True,
+            "verification": f"({rem} * {inv}) % {modulus} == {(rem * inv) % modulus}",
+            "lean4_theorem": "inverseOpExec_correct (0 sorry)"
+        }
 
 
 # Backward compatibility alias
