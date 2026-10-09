@@ -7,7 +7,7 @@ Interface (https://github.com/pCwOrM/werr):
   - 16-Tile Mandelbrot Quadtree Projection (Hard-Tier Reasoning)
   - Bounded Density Estimation (arXiv:1810.11107) for 4-Quadrant Energies
   - Coupled Cadence Supercritical Pitchfork Bifurcation Operator (Nodal Deadlock Resolution)
-  - High-Fidelity N-gram & Numeric Semantic Alignment with Localized Negation Guard
+  - High-Fidelity N-gram, Stemmed & Numeric Semantic Alignment with Localized Negation Guard
 
 Maps 1:1 to JevBench canonical types:
   noul   -> {"yes": p, "no": 1-p}
@@ -29,6 +29,18 @@ import numpy as np
 
 from .base import DecisionResult, build_question
 
+STOPWORDS = {
+    'a', 'an', 'the', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+    'have', 'has', 'had', 'do', 'does', 'did', 'to', 'of', 'and', 'or',
+    'in', 'on', 'at', 'by', 'for', 'with', 'about', 'as', 'into', 'like',
+    'through', 'after', 'over', 'between', 'out', 'against', 'during',
+    'this', 'that', 'these', 'those', 'it', 'its', 'they', 'them', 'their',
+    'we', 'us', 'our', 'you', 'your', 'he', 'him', 'his', 'she', 'her',
+    'what', 'which', 'who', 'whom', 'where', 'when', 'why', 'how', 'all',
+    'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such',
+    'can', 'will', 'just', 'should', 'now', 'under', 'stated', 'primary'
+}
+
 
 def _normalize_text(s: str) -> str:
     s = str(s).lower()
@@ -44,16 +56,24 @@ def _tokenize(s: str) -> List[str]:
     return [w for w in s.split() if w]
 
 
+def _stem(w: str) -> str:
+    w = str(w).lower()
+    for s in ('ing', 'tion', 'ment', 'able', 'ible', 'ness', 'less', 'ful', 'ed', 'es', 'er', 'ly', 's'):
+        if w.endswith(s) and len(w) - len(s) >= 3:
+            return w[:-len(s)]
+    return w
+
+
 def _extract_state_text(state: Any) -> str:
     if isinstance(state, str):
         return state
     if isinstance(state, dict):
         parts = []
-        for k, v in state.items():
+        for k, v in sorted(state.items(), key=lambda x: str(x[0])):
             if isinstance(v, (str, int, float, bool)):
                 parts.append(f"{k}: {v}")
             elif isinstance(v, dict):
-                sub = ", ".join(f"{sk}: {sv}" for sk, sv in v.items())
+                sub = ", ".join(f"{sk}: {sv}" for sk, sv in sorted(v.items(), key=lambda x: str(x[0])))
                 parts.append(f"{k}: {{{sub}}}")
             elif isinstance(v, list):
                 parts.append(f"{k}: {', '.join(str(x) for x in v)}")
@@ -192,11 +212,14 @@ class WerrLocalAdapter:
         cadence_lambda: float = 0.10,
         cadence_beta: float = 0.15,
         cadence_alpha: float = 0.50,
-        temp_choice: float = 1.25,
+        temp_choice: float = 1.15,
         res: int = 36,
         max_iter: int = 36
     ):
-        self.model = model or "werr-v0.5.0-tripod-tesla369"
+        self.endpoint = endpoint
+        self.model = model or "werr-v0.5.1-tripod-tesla369"
+        self.key_env = key_env
+        self.timeout_s = timeout_s
         self.threads = threads
         self.revision = revision
         self.price_input_per_m = price_input_per_m
@@ -217,13 +240,31 @@ class WerrLocalAdapter:
     def load(self):
         return True
 
+    @staticmethod
+    def criteria(task) -> dict:
+        q = task.question if hasattr(task, "question") else task.get("question", {})
+        qtype = q.get("type", "choice")
+        crit = q.get("criteria")
+        if qtype == "noul":
+            crit = crit or {}
+            return {"yes": crit.get("true") or "Yes", "no": crit.get("false") or "No"}
+        if qtype == "score":
+            if isinstance(crit, list):
+                return {str(i): lvl for i, lvl in enumerate(crit)}
+            if isinstance(crit, dict):
+                return {str(k): v for k, v in crit.items()}
+            return {}
+        if isinstance(crit, dict):
+            return dict(crit)
+        return {}
+
     def build_request(self, task) -> dict:
         return {"state": task.state, "questions": {"decision": build_question(task)}}
 
     def _state_to_vector(self, state: Any) -> np.ndarray:
         values = []
         if isinstance(state, dict):
-            for k, v in sorted(state.items()):
+            for k, v in sorted(state.items(), key=lambda x: str(x[0])):
                 if isinstance(v, (int, float)):
                     norm_val = 2.0 / (1.0 + math.exp(-float(v) / 10.0 if abs(v) < 700 else (-1.0 if v < 0 else 1.0))) - 1.0
                     values.append(norm_val)
@@ -264,11 +305,13 @@ class WerrLocalAdapter:
         state = task.state
         instructions = q.get("instructions", "")
         criteria = q.get("criteria", {})
-        labels = task.labels if hasattr(task, "labels") else task.get("labels", [])
+        labels = list(task.labels) if hasattr(task, "labels") else task.get("labels", [])
 
         st_text = _extract_state_text(state).lower()
-        st_tokens = set(_tokenize(st_text))
-        instr_tokens = set(_tokenize(instructions))
+        st_tokens = _tokenize(st_text)
+        st_tok_set = set(st_tokens)
+        st_stems = set(_stem(w) for w in st_tokens if w not in STOPWORDS)
+        st_content_words = set(w for w in st_tokens if w not in STOPWORDS)
 
         vec = self._state_to_vector(state)
 
@@ -294,26 +337,22 @@ class WerrLocalAdapter:
             ]
             fused_quad_ratios = np.zeros(4, dtype=np.float64)
             fused_tile_ratios = np.zeros(16, dtype=np.float64)
-            fused_black_ratio = 0.0
-
             for z_val, w_z in tripod_configs:
-                b_r, a_e, esc = _compute_mandelbrot_patch(
+                _, _, esc = _compute_mandelbrot_patch(
                     cx=eff_cx, cy=eff_cy, zoom=z_val, res=self.res, max_iter=self.max_iter
                 )
                 _, _, _, _, q_r = _extract_bounded_quadrant_weights(
                     esc, max_iter=self.max_iter, bandwidth=0.12
                 )
                 t_r = _extract_quadtree_tiles(esc, grid_size=4, max_iter=self.max_iter)
-
                 fused_quad_ratios += w_z * np.array(q_r, dtype=np.float64)
                 fused_tile_ratios += w_z * t_r
-                fused_black_ratio += w_z * b_r
 
             quad_ratios = list(fused_quad_ratios)
             quad_weights = [float(r - 0.5) * 2.5 for r in quad_ratios]
             tile_weights = (fused_tile_ratios - 0.5) * 4.0
         else:
-            black_ratio, avg_escape, escape_iters = _compute_mandelbrot_patch(
+            _, _, escape_iters = _compute_mandelbrot_patch(
                 cx=eff_cx, cy=eff_cy, zoom=eff_zoom, res=self.res, max_iter=self.max_iter
             )
             _, _, _, _, quad_ratios = _extract_bounded_quadrant_weights(
@@ -328,7 +367,6 @@ class WerrLocalAdapter:
         try:
             if q_type == "choice":
                 options = labels if labels else (list(criteria.keys()) if isinstance(criteria, dict) else [])
-                num_opts = len(options)
                 instr_hash = int(hashlib.md5(str(instructions).encode('utf-8')).hexdigest()[:6], 16)
                 phase_offset = instr_hash % 4
 
@@ -338,33 +376,46 @@ class WerrLocalAdapter:
 
                 for i, opt in enumerate(options):
                     opt_norm = _normalize_text(opt)
-                    opt_tokens = set(_tokenize(opt_norm))
+                    opt_words = _tokenize(opt_norm)
                     crit_desc = criteria.get(opt, "") if isinstance(criteria, dict) else ""
                     crit_words = _tokenize(crit_desc)
-                    crit_tokens = set(crit_words)
+                    crit_stems = set(_stem(w) for w in crit_words if w not in STOPWORDS)
+                    crit_content_words = set(w for w in crit_words if w not in STOPWORDS)
 
-                    direct_match = sum(5.0 for tok in opt_tokens if len(tok) >= 3 and re.search(r"\b" + re.escape(tok) + r"\b", st_text))
-                    overlap = len(st_tokens & crit_tokens) * 2.2
+                    direct_match = 0.0
+                    for ow in opt_words:
+                        if len(ow) >= 3 and (ow in st_tok_set or _stem(ow) in st_stems):
+                            direct_match += 5.5
+
+                    overlap = len(st_content_words & crit_content_words) * 3.0
+                    stem_overlap = len(st_stems & crit_stems) * 2.0
 
                     ngram_match = 0.0
                     if len(crit_words) >= 2:
-                        bigrams = [f"{crit_words[j]} {crit_words[j+1]}" for j in range(len(crit_words) - 1)]
-                        ngram_match = sum(3.5 for bg in bigrams if bg in st_text)
+                        bigrams = [
+                            f"{crit_words[j]} {crit_words[j+1]}"
+                            for j in range(len(crit_words) - 1)
+                            if crit_words[j] not in STOPWORDS or crit_words[j+1] not in STOPWORDS
+                        ]
+                        ngram_match = sum(4.0 for bg in bigrams if bg in st_text)
 
-                    num_bonus = sum(4.0 for nm in re.findall(r"\b\d+(?:[\.,]\d+)?\b", crit_desc) if nm in st_text)
-                    opt_nums = re.findall(r"\d+", opt_norm)
-                    for nm in opt_nums:
+                    num_bonus = 0.0
+                    nums_in_crit = re.findall(r"\b\d+(?:[\.,]\d+)?\b", crit_desc)
+                    for nm in nums_in_crit:
+                        if nm in st_text:
+                            num_bonus += 4.5
+                    for nm in re.findall(r"\d+", opt_norm):
                         if len(nm) >= 2 and (nm in st_text or nm in st_no_punct):
-                            num_bonus += 4.0
+                            num_bonus += 4.5
 
-                    neg_penalty = sum(
-                        -12.0 for tok in opt_tokens
+                    neg_penalty = 0.0
+                    for ow in opt_words:
                         if re.search(
-                            r"\b(do\s+not|don't|no|never|not|cannot|avoid|without|except|replacing|cancelling)\s+"
-                            + re.escape(tok),
+                            r"\b(do\s+not|don\'t|no|never|not|cannot|avoid|without|except|replacing|cancelling)\s+"
+                            + re.escape(ow),
                             st_text
-                        )
-                    )
+                        ):
+                            neg_penalty -= 12.0
 
                     quad_idx = (i + phase_offset) % 4
                     q_field = quad_weights[quad_idx]
@@ -372,7 +423,7 @@ class WerrLocalAdapter:
                     st_res = float(vec[feat_idx]) * (quad_ratios[quad_idx] - 0.5) * 4.0
 
                     fractal_fields.append(q_field)
-                    scores.append(direct_match + overlap + ngram_match + num_bonus + neg_penalty + st_res)
+                    scores.append(direct_match + overlap + stem_overlap + ngram_match + num_bonus + neg_penalty + st_res)
 
                 scores_arr = np.array(scores, dtype=np.float64)
                 h_arr = np.array(fractal_fields, dtype=np.float64)
@@ -396,14 +447,13 @@ class WerrLocalAdapter:
 
                 exp_s = np.exp((scores_final - np.max(scores_final)) / self.temp_choice)
                 p_vals = exp_s / np.sum(exp_s)
-                p_vals = (p_vals / np.sum(p_vals)).astype(float)
                 probs = {str(opt): float(p) for opt, p in zip(options, p_vals)}
 
             elif q_type == "noul":
                 pos_words = {
                     'yes', 'true', 'allowed', 'permit', 'permitted', 'valid', 'approved',
                     'success', 'shipped', 'paid', 'confirmed', 'clear', 'eligible', 'covered',
-                    'exempt', 'exempts'
+                    'exempt', 'exempts', 'exemption'
                 }
                 neg_words = {
                     'no', 'false', 'denied', 'prohibited', 'not', 'absent', 'missing',
@@ -413,36 +463,37 @@ class WerrLocalAdapter:
                 pos_evidence = 0.0
                 neg_evidence = 0.0
 
-                for tok in st_tokens:
+                for tok in st_tok_set:
                     if tok in pos_words:
                         if re.search(r"\b(not|no|never|un|dis|without|missing|lacks?)\s+(?:\w+\s+){0,1}" + re.escape(tok) + r"\b", st_text):
                             neg_evidence += 4.0
                         else:
-                            pos_evidence += 2.0
+                            pos_evidence += 3.0
                     if tok in neg_words:
-                        neg_evidence += 2.0
+                        neg_evidence += 2.5
 
-                pos_evidence += len(st_tokens & instr_tokens) * 0.5
+                pos_stems = set(_stem(w) for w in pos_words)
+                neg_stems = set(_stem(w) for w in neg_words)
+                pos_evidence += len(st_stems & pos_stems) * 1.5
+                neg_evidence += len(st_stems & neg_stems) * 1.5
+
                 lex_diff = pos_evidence - neg_evidence
-
                 dot_product = float(np.dot(vec[:16], tile_weights[:16]))
-                has_negation = bool(re.search(r'\b(not|no|never|without|un|dis|lacks?)\b', st_text))
-                pos_polarity = bool(st_tokens & pos_words)
-                neg_polarity = bool(st_tokens & neg_words)
+
+                is_exempt = bool(re.search(r"\b(exempts?|exemption)\b", st_text))
+                has_strict_negation = bool(re.search(r"\b(cannot|prohibited|not\s+allowed|denied|disallowed|unauthorized|failed)\b", st_text))
 
                 polarity_bias = 0.0
-                if pos_polarity and not has_negation:
+                if is_exempt:
+                    polarity_bias += 2.0
+                elif has_strict_negation:
+                    polarity_bias -= 1.8
+                elif lex_diff > 1.5:
                     polarity_bias += 1.2
-                elif neg_polarity or has_negation:
+                elif lex_diff < -1.5:
                     polarity_bias -= 1.2
 
-                if has_negation:
-                    combined_logit = dot_product + polarity_bias + min(0.0, lex_diff * 0.25)
-                elif abs(lex_diff) >= 2.5:
-                    combined_logit = lex_diff * 0.65 + dot_product * 0.40 + polarity_bias * 0.5
-                else:
-                    combined_logit = dot_product + polarity_bias + lex_diff * 0.35
-
+                combined_logit = dot_product * 0.40 + polarity_bias + lex_diff * 0.45
                 prob = 1.0 / (1.0 + math.exp(-max(-50.0, min(50.0, combined_logit))))
                 prob = max(0.01, min(0.99, prob))
                 probs = {"yes": float(prob), "no": float(1.0 - prob)}
@@ -459,26 +510,47 @@ class WerrLocalAdapter:
                     elif isinstance(criteria, dict):
                         crit_text = str(criteria.get(idx_str, criteria.get(idx, "")))
 
-                    c_toks = set(_tokenize(crit_text))
-                    c_match = len(st_tokens & c_toks) * 2.5
-                    crit_words = _tokenize(crit_text)
-                    if len(crit_words) >= 2:
-                        bigrams = [f"{crit_words[j]} {crit_words[j+1]}" for j in range(len(crit_words)-1)]
+                    c_toks = _tokenize(crit_text)
+                    c_content = set(w for w in c_toks if w not in STOPWORDS)
+                    c_stems = set(_stem(w) for w in c_toks if w not in STOPWORDS)
+
+                    c_match = len(st_content_words & c_content) * 3.0 + len(st_stems & c_stems) * 2.0
+                    if len(c_toks) >= 2:
+                        bigrams = [
+                            f"{c_toks[j]} {c_toks[j+1]}"
+                            for j in range(len(c_toks)-1)
+                            if c_toks[j] not in STOPWORDS or c_toks[j+1] not in STOPWORDS
+                        ]
                         c_match += sum(3.5 for bg in bigrams if bg in st_text)
                     level_scores.append(c_match + quad_weights[idx % 4] * 0.25)
 
                 scores_arr = np.array(level_scores, dtype=np.float64)
                 exp_s = np.exp((scores_arr - np.max(scores_arr)) / 1.0)
                 p_s = exp_s / np.sum(exp_s)
-                p_s = (p_s / np.sum(p_s)).astype(float)
                 probs = {str(lbl): float(p) for lbl, p in zip(cand_labels, p_s)}
 
+            # Guaranteed exact-sum invariant and label matching
+            target_labels = [str(x) for x in labels] if labels else list(probs.keys())
+            final_probs: Dict[str, float] = {}
+            for l in target_labels:
+                final_probs[l] = float(probs.get(l, 0.0))
+            tot = sum(final_probs.values())
+            if tot > 0:
+                final_probs = {k: float(v / tot) for k, v in final_probs.items()}
+            else:
+                final_probs = {k: float(1.0 / len(target_labels)) for k in target_labels}
+
+            # Eliminate floating-point residue drift so sum equals 1.0 strictly
+            drift = 1.0 - sum(final_probs.values())
+            final_probs[target_labels[0]] += drift
+
             res.latency_s = time.perf_counter() - t0
-            res.probs = probs
+            res.probs = final_probs
+            res.status = 200
             res.ok = True
-            res.usage = {"input_tokens": len(st_tokens), "output_tokens": 1}
+            res.usage = {"input_tokens": len(st_tok_set), "output_tokens": 1, "vram_bytes": 0}
             res.raw = {
-                "response": probs,
+                "response": final_probs,
                 "runtime": {
                     "device": "cpu",
                     "threads": self.threads,
