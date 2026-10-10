@@ -32,6 +32,7 @@
 [![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
 [![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
 [![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-20.63%20%2F%2023.74%20(Tesla%203--6--9)-brightgreen.svg)](./benchmarks/)
+[![Benchmark Heaven: Intake Active](https://img.shields.io/badge/Benchmark%20Heaven-Queue%20%2350%20(Ref%3A%20815FD9D8)-blue.svg)](https://benchmarkheaven.org)
 [![JevBench Dual-Standard](https://img.shields.io/badge/JevBench%20v1.2%20%2F%20v1.3-81.36%20%7C%2076.90-brightgreen.svg)](docs/BENCHMARK_INTEGRITY_REPORT.md)
 [![WindTunnel WebMCP #1](https://img.shields.io/badge/WindTunnel%20WebMCP-100%25%20(49%2F49)-brightgreen.svg)](https://github.com/nekuda-ai/WindTunnel/issues/25)
 [![Tau-Bench Agentic](https://img.shields.io/badge/Tau--Bench-100%25%20Tool%20Adherence-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
@@ -45,7 +46,8 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
-[![WerreduR Pedagogy](https://img.shields.io/badge/WerreduR-Fractal%20Pedagogy-blue.svg)](https://github.com/jesmaat/WerreduR)
+[![WerreduR v4.0](https://img.shields.io/badge/WerreduR%20v4.0-10.5281%2Fzenodo.23128224-059669.svg)](https://doi.org/10.5281/zenodo.23128224)
+[![Güneş Dili](https://img.shields.io/badge/G%C3%BCne%C5%9F%20Dili-10.5281%2Fzenodo.23273006-gold.svg)](https://doi.org/10.5281/zenodo.23273006)
 [![Featured in Awesome Edge AI](https://img.shields.io/badge/Awesome-Edge%20AI%20Agents-blue.svg)](https://github.com/yh-yao/awesome-edge-ai-agents)
 
 > **Motto:** *"When the Wave meets Error, we Recurse (werr)."*  
@@ -65,7 +67,8 @@
 🛡️ **Official Sealed PDF Audit Report:** [Download Publication-Grade Audit PDF](docs/werr_official_benchmarks_report.pdf) │ [HTML Interactive Report](docs/werr_official_benchmarks_report.html) │ [Cryptographic SHA-256 Manifest](benchmarks/sealed/SEAL_MANIFEST.json).  
 🌌 **Frontier Quantum Physics Monograph:** [Black Hole Page Curve Simulation & Wormhole Error-Kernel](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) │ [Zenodo Record](https://zenodo.org/records/22978460) │ [Concept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
 🧬 **Bio-Synthetic Whole-Brain Drosophila Connectome (WerrSoma):** [158K Biological Neurons & 3.99M Synapses Integration](https://github.com/Lexovian/WerrSoma) │ [Live 3D Web Portal: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Version DOI: 10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) (Concept: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625)) │ [TÜRKPATENT Priority: TR 2026/016633](https://doi.org/10.5281/zenodo.23072929).  
-🎓 **Procedural Fractal Pedagogy (WerreduR / PFP):** [Zero-Storage Educational Reflex Engine & 1PL Rasch Benchmarks](https://github.com/jesmaat/WerreduR) │ [Zenodo: 10.5281/zenodo.23034488 (v3.0)](https://doi.org/10.5281/zenodo.23034488) (Concept: [10.5281/zenodo.22999420](https://doi.org/10.5281/zenodo.22999420)) │ *Target: Q1 AIED Journal (Elsevier CAEAI)* │ **TÜRKPATENT Priority: TR 2026/016285**.  
+🎓 **Procedural Fractal Pedagogy (WerreduR / PFP):** [Zero-Storage Educational Reflex Engine & 1PL Rasch Benchmarks](https://github.com/jesmaat/WerreduR) │ [Zenodo: 10.5281/zenodo.23128224 (v4.0)](https://doi.org/10.5281/zenodo.23128224) (Concept: [10.5281/zenodo.22999420](https://doi.org/10.5281/zenodo.22999420)) │ *Target: Q1 AIED Journal (Elsevier CAEAI)* │ **TÜRKPATENT Priority: TR 2026/016285** │ [Live Simulator](https://pcworm.github.io/WerreduR/).  
+☀️ **Güneş Dili Deterministik Morfoloji:** [Atatürk 1935 Mirası, 53 Koma & Fraktal Rezonans Mimarisi](https://github.com/pCwOrM/gunes-dili) │ [Zenodo: 10.5281/zenodo.23273006](https://doi.org/10.5281/zenodo.23273006) (Konsept: [10.5281/zenodo.23273005](https://doi.org/10.5281/zenodo.23273005)) │ [Canlı Portal: pcworm.github.io/gunes-dili](https://pcworm.github.io/gunes-dili/).  
 📐 **Core Algebra Formalization (GAP-0331):** [Verified Lean 4 Modular Ring Inversion](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Discussion #6613](https://github.com/gap-system/gap/discussions/6613) │ Constructive Bézout Extended Euclidean inversion over $\mathbb{Z}/9\mathbb{Z}$ (`werr.modular_algebra`, 0 sorry).
 
 <p align="center">
@@ -855,12 +858,22 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 
 @misc{werredur2026package,
   author       = {Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Da{\u{g}}han},
-  title        = "{WerreduR}: Procedural Fractal Pedagogy ({PFP}) Client-Side Engine and Replication Suite (Version 3.0)",
+  title        = "{WerreduR}: Procedural Fractal Pedagogy ({PFP}) Client-Side Engine and Replication Suite (Version 4.0)",
   year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.23034488},
-  url          = {https://doi.org/10.5281/zenodo.23034488},
-  note         = {Target: Computers & Education: Artificial Intelligence (Elsevier). Priority Patent: TR 2026/016285.}
+  doi          = {10.5281/zenodo.23128224},
+  url          = {https://doi.org/10.5281/zenodo.23128224},
+  note         = {Target: Q1 AIED / CAEAI (Elsevier). Priority Patent: TR 2026/016285. Concept DOI: 10.5281/zenodo.22999420. Live Simulator: https://pcworm.github.io/WerreduR/}
+}
+
+@article{dagli2026gunesdili,
+  title        = {G{\"u}ne{\c{s}} Dili Deterministik Morfoloji, Bi{\c{c}}imsel Dil Kuram{\i} ve 53 Koma Fraktal Rezonans Mimarisi},
+  author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal      = {Zenodo Open Science Archive},
+  year         = {2026},
+  doi          = {10.5281/zenodo.23273006},
+  url          = {https://doi.org/10.5281/zenodo.23273006},
+  note         = {Concept DOI: 10.5281/zenodo.23273005. Live Portal: https://pcworm.github.io/gunes-dili/}
 }
 
 @misc{dagli2026werrdataset,
@@ -872,6 +885,27 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   note         = {Open-access benchmark dataset for continuous fractal boundary decision mappings.}
 }
 ```
+
+---
+
+## 🏛️ Associated Formal Verification & Scientific Corpus
+
+`werr` serves as the core zero-VRAM reflex decision engine across the synchronized 9-paper open-science corpus:
+
+| Pillar / Paper | Contribution & Focus | Zenodo DOI / Package | Primary Repository |
+| :--- | :--- | :--- | :--- |
+| **Paper 1: MFNS** | Mandelbrot Fractal Neural Synthesis | [`10.5281/zenodo.22867037`](https://doi.org/10.5281/zenodo.22867037) | [`pCwOrM/mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) |
+| **Paper 2: OED** | Orbital Error Dynamics (OED v3) | [`10.5281/zenodo.22900465`](https://doi.org/10.5281/zenodo.22900465) • [`arXiv:2609.30115`](https://arxiv.org/abs/2609.30115) | [`pCwOrM/mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) |
+| **Paper 3: WerreduR** | Procedural Fractal Pedagogy (v4.0) | [`10.5281/zenodo.23128224`](https://doi.org/10.5281/zenodo.23128224) • [Live Simulator](https://pcworm.github.io/WerreduR/) | [`jesmaat/WerreduR`](https://github.com/jesmaat/WerreduR) (Mirror: [`pCwOrM/WerreduR`](https://github.com/pCwOrM/WerreduR)) |
+| **Paper 4: BH Page** | Black Hole Page Curve & Quantum Gravity | [`10.5281/zenodo.22961999`](https://doi.org/10.5281/zenodo.22961999) • CERN Record 22978460 | [`pCwOrM/mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) |
+| **Paper 5: Formal** | Lean 4 40-Core Gauntlet (Zero Sorry) | [`10.5281/zenodo.22983889`](https://doi.org/10.5281/zenodo.22983889) • [`arXiv:2609.33066`](https://arxiv.org/abs/2609.33066) | [`pCwOrM/werr`](https://github.com/pCwOrM/werr) & [`werracle`](https://github.com/pCwOrM/werracle) |
+| **Paper 6: WerrSoma** | Drosophila Whole-Brain Connectome | [`10.5281/zenodo.23072929`](https://doi.org/10.5281/zenodo.23072929) • [Live Portal](https://werrsoma.answerr.me/) | [`Lexovian/WerrSoma`](https://github.com/Lexovian/WerrSoma) |
+| **Paper 7: Werracle** | Sub-Cent Intra-Block EVM AI Oracle | [`10.5281/zenodo.22942598`](https://doi.org/10.5281/zenodo.22942598) • [`arXiv:2609.30719`](https://arxiv.org/abs/2609.30719) | [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) & [`werralem`](https://github.com/pCwOrM/werralem) |
+| **Paper 8: Schönhage** | Tensor Carrier Compression ($W=176M$) | [`10.5281/zenodo.23268580`](https://doi.org/10.5281/zenodo.23268580) • `arXiv:submit/8207241` | [`pCwOrM/integer-mult-bounds`](https://github.com/pCwOrM/integer-mult-bounds) |
+| **Paper 9: Güneş Dili**| Deterministik Morfoloji & 53 Koma | [`10.5281/zenodo.23273006`](https://doi.org/10.5281/zenodo.23273006) • [Live Portal](https://pcworm.github.io/gunes-dili/) | [`pCwOrM/gunes-dili`](https://github.com/pCwOrM/gunes-dili) |
+| **Engine: WERR** | Zero-VRAM Gauntlet & JevBench Intake (This Repo) | [`10.5281/zenodo.22939253`](https://doi.org/10.5281/zenodo.22939253) • [`arXiv:2609.25498`](https://arxiv.org/abs/2609.25498) | [`pCwOrM/werr`](https://github.com/pCwOrM/werr) |
+| **Platform: answerr**| Reflex AI & Live Workspace | Production: [`answerr.me`](https://answerr.me) | [`pCwOrM/answerr`](https://github.com/pCwOrM/answerr) |
+| **Discrete Alg** | GAP-Lean4 Formally Verified Port (35 Theorems) | [`10.5281/zenodo.23045504`](https://doi.org/10.5281/zenodo.23045504) • [`arXiv:2609.38492`](https://arxiv.org/abs/2609.38492) | [`pCwOrM/gap-lean4-port`](https://github.com/pCwOrM/gap-lean4-port) |
 
 ---
 
