@@ -21,7 +21,7 @@ We gratefully acknowledge the researchers, engineers, and open-science contribut
   Authored [`examples/typed_reflex_quickstart.py`](examples/typed_reflex_quickstart.py), providing a self-contained, zero-VRAM System-1 reflex pipeline demonstrating `NoulQuestion`, `ChoiceQuestion`, `ScoreQuestion`, and the 24-byte Mandelbrot boundary coordinate seed $\Theta = (c_x, c_y, \text{zoom})$. Creator of deterministic agent safety and execution-surface verification tools ([`vibeguard`](https://github.com/wufangyong973/vibeguard), [`mcp-guard`](https://github.com/wufangyong973/mcp-guard), [`agent-constraint-auditor`](https://github.com/wufangyong973/agent-constraint-auditor), [`l2-safety-proxy`](https://github.com/wufangyong973/l2-safety-proxy)).
 
 * **Dan Hawkley ([@thinkthoughts](https://github.com/thinkthoughts) / [@Precedent_Vice](https://x.com/Precedent_Vice))** — *Author of the General Divisor Theorem Monograph & Principal Lean 4 Kernel Verification Architect ([`pCwOrM/general-divisor-theorem` PR #1](https://github.com/pCwOrM/general-divisor-theorem/pull/1))*  
-  Discharged all axioms and bridge obligations across `GeneralDivisorTheorem.lean`, `VolkanBridge.lean`, and `DensityBridge.lean` into **39 kernel-checked Lean 4 theorems and lemmas** (`0 axioms`, `0 sorry`), proving the exact per-period count `gdt_count_per_period` ($\#\{0 \le n < T_{\min}\} = \varphi(R)$).
+  Discharged all axioms and bridge obligations across `GeneralDivisorTheorem.lean`, `VolkanBridge.lean`, and `DensityBridge.lean` into **39 kernel-checked Lean 4 theorems and lemmas** (`0 axioms`, `0 sorry`), proving the exact per-period count `gdt_count_per_period` ($\operatorname{card}\{0 \le n < T_{\min}\} = \varphi(R)$).
 
 ---
 
