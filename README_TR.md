@@ -40,6 +40,7 @@
 [![Kriptografik Denetim](https://img.shields.io/badge/Denetim-SHA--256%20Mühürlü-blueviolet.svg)](benchmarks/sealed/SEAL_MANIFEST.json)
 [![answerr Platformu](https://img.shields.io/badge/answerr-Platform-8b5cf6.svg)](https://github.com/pCwOrM/answerr)
 [![werracle Web3 Oracle](https://img.shields.io/badge/werracle-On--Chain%20Oracle-f59e0b.svg?logo=ethereum&logoColor=white)](https://github.com/pCwOrM/werracle)
+[![Ekosistem: WERRobotics](https://img.shields.io/badge/WERRobotics-Arduino%20%26%20Edge%20AI-ff9100.svg?logo=arduino&logoColor=white)](https://github.com/pCwOrM/WERRobotics)
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/pCwOrM)
 [![Support on USDT TRC20](https://img.shields.io/badge/Destek-USDT%20TRC20-009393?logo=tether&logoColor=white)](#-sponsorluk-ve-hibe-destekleri)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
@@ -63,6 +64,7 @@
 🌌 **Kuantum Kütleçekimi & Termodinamik Monografı:** [Kara Delik Don Page Eğrisi Simülasyonu ve Solucan Deliği Hata Çekirdeği](docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH_TR.md) │ [Zenodo Kaydı](https://zenodo.org/records/22978460) │ [Konsept DOI: 10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999).  
 🧬 **Biyo-Sentetik Tüm Beyin Drosophila Konnektomu (WerrSoma):** [158 Bin Biyolojik Nöron & 3.99 Milyon Sinaps Entegrasyonu](https://github.com/Lexovian/WerrSoma) │ [Canlı 3D Web Portalı: werrsoma.answerr.me](https://werrsoma.answerr.me/) │ [Versiyon DOI: 10.5281/zenodo.23072929](https://doi.org/10.5281/zenodo.23072929) (Çatı: [10.5281/zenodo.22996625](https://doi.org/10.5281/zenodo.22996625)) │ [TÜRKPATENT Patent Başvurusu: TR 2026/016633](https://doi.org/10.5281/zenodo.23072929).  
 📐 **Çekirdek Cebir Formalizasyonu (GAP-0331):** [Lean 4 Modüler Halka Tersinirlik Portu](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Tartışması #6613](https://github.com/gap-system/gap/discussions/6613) │ Genişletilmiş Öklid Algoritması ile $\mathbb{Z}/9\mathbb{Z}$ yapıcı Bézout tersinirlik (`werr.modular_algebra`, 0 sorry).
+🤖 **Gömülü Robotik ve Arduino Uç Karar Çekirdeği (WERRobotics):** [Sıfır-Bellekli C/C++11 Sistem-1 Gömülü Motoru (`WerrCoreEdge.h`)](https://github.com/pCwOrM/WERRobotics) │ ATmega328P / ESP32 / STM32 üzerinde 0 Byte Heap, < 128 Byte Stack │ Otonom Engelden Kaçan, Biyonik Kelebek ve Market Yönlendirme Donanım Yazılımları.
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
