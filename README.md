@@ -53,6 +53,7 @@
 [![Zero VRAM](https://img.shields.io/badge/VRAM-0%20Bytes-emerald.svg)](#-comparison-jev-typesafe-ai-vs-werr)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
 [![WerreduR v4.0](https://img.shields.io/badge/WerreduR%20v4.0-10.5281%2Fzenodo.23128224-059669.svg)](https://doi.org/10.5281/zenodo.23128224)
+[![Ecosystem: WERRobotics](https://img.shields.io/badge/WERRobotics-Arduino%20%26%20Edge%20AI-ff9100.svg?logo=arduino&logoColor=white)](https://github.com/pCwOrM/WERRobotics)
 [![Güneş Dili](https://img.shields.io/badge/G%C3%BCne%C5%9F%20Dili-10.5281%2Fzenodo.23273006-gold.svg)](https://doi.org/10.5281/zenodo.23273006)
 [![Featured in Awesome Edge AI](https://img.shields.io/badge/Awesome-Edge%20AI%20Agents-blue.svg)](https://github.com/yh-yao/awesome-edge-ai-agents)
 
@@ -76,6 +77,7 @@
 🎓 **Procedural Fractal Pedagogy (WerreduR / PFP):** [Zero-Storage Educational Reflex Engine & 1PL Rasch Benchmarks](https://github.com/jesmaat/WerreduR) │ [Zenodo: 10.5281/zenodo.23128224 (v4.0)](https://doi.org/10.5281/zenodo.23128224) (Concept: [10.5281/zenodo.22999420](https://doi.org/10.5281/zenodo.22999420)) │ *Target: Q1 AIED Journal (Elsevier CAEAI)* │ **TÜRKPATENT Priority: TR 2026/016285** │ [Live Simulator](https://pcworm.github.io/WerreduR/).  
 ☀️ **Güneş Dili Deterministik Morfoloji:** [Atatürk 1935 Mirası, 53 Koma & Fraktal Rezonans Mimarisi](https://github.com/pCwOrM/gunes-dili) │ [Zenodo: 10.5281/zenodo.23273006](https://doi.org/10.5281/zenodo.23273006) (Konsept: [10.5281/zenodo.23273005](https://doi.org/10.5281/zenodo.23273005)) │ [Canlı Portal: pcworm.github.io/gunes-dili](https://pcworm.github.io/gunes-dili/).  
 📐 **Core Algebra Formalization (GAP-0331):** [Verified Lean 4 Modular Ring Inversion](https://github.com/pCwOrM/gap-lean4-port) │ [GAP Discussion #6613](https://github.com/gap-system/gap/discussions/6613) │ Constructive Bézout Extended Euclidean inversion over $\mathbb{Z}/9\mathbb{Z}$ (`werr.modular_algebra`, 0 sorry).
+🤖 **Bare-Metal Edge Robotics & Arduino Reflex Kernel (WERRobotics):** [Zero-Memory Embedded C/C++11 System-1 Engine (`WerrCoreEdge.h`)](https://github.com/pCwOrM/WERRobotics) │ 0 Bytes Heap, < 128 Bytes Stack on ATmega328P / ESP32 / STM32 │ Obstacle Reflex, Bionic Kinematics & Market Router Firmware.
 
 <p align="center">
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
@@ -919,6 +921,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 | **Engine: WERR** | Zero-VRAM Gauntlet & JevBench Intake (This Repo) | [`10.5281/zenodo.22939253`](https://doi.org/10.5281/zenodo.22939253) | [`10.5281/zenodo.22867425`](https://doi.org/10.5281/zenodo.22867425) | [`arXiv:2609.25498`](https://arxiv.org/abs/2609.25498) • [HF Paper](https://huggingface.co/papers/2609.25498) • [HF Dataset](https://huggingface.co/datasets/pCwOrM/werr_open_decisions) | [`pCwOrM/werr`](https://github.com/pCwOrM/werr) |
 | **Platform: answerr**| Reflex AI & Live Workspace | Production: [`answerr.me`](https://answerr.me) | - | Dual-Cognition Reflex Platform | [`pCwOrM/answerr`](https://github.com/pCwOrM/answerr) |
 | **Discrete Alg** | GAP-Lean4 Formally Verified Port (35 Theorems) | [`10.5281/zenodo.23045504`](https://doi.org/10.5281/zenodo.23045504) | [`10.5281/zenodo.23045503`](https://doi.org/10.5281/zenodo.23045503) | [`arXiv:2609.38492`](https://arxiv.org/abs/2609.38492) • [HF Paper](https://huggingface.co/papers/2609.38492) (Claimed) | [`pCwOrM/gap-lean4-port`](https://github.com/pCwOrM/gap-lean4-port) |
+| **Edge Robotics: WERRobotics** | Zero-Memory Arduino & Embedded Reflex Kernel (`v0.5.1`) | [`10.5281/zenodo.22939253`](https://doi.org/10.5281/zenodo.22939253) | [`10.5281/zenodo.22867425`](https://doi.org/10.5281/zenodo.22867425) | ATmega328P / ESP32 / STM32 (`0 Bytes Heap`, `TR 2026/016633`) | [`pCwOrM/WERRobotics`](https://github.com/pCwOrM/WERRobotics) |
 
 ---
 
