@@ -8,7 +8,7 @@
 
 # ⚡ WERR: Sıfır-Bellekli Fraktal Sistem-1 Karar Motoru (Dalgalar ve Hatalar)
 
-[![Lisans: BSL 1.1 / MIT](https://img.shields.io/badge/Lisans-BSL%201.1%20%2F%20MIT-blue.svg)](./LICENSE)
+[![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-blue.svg)](./LICENSE)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
