@@ -24,7 +24,7 @@
 [![arXiv:2610.14263](https://img.shields.io/badge/arXiv-2610.14263%20%5Bcs.CC%5D-b31b1b.svg)](https://arxiv.org/abs/2610.14263)
 [![arXiv DOI: 10.48550/arXiv.2610.14263](https://img.shields.io/badge/DOI-10.48550%2FarXiv.2610.14263-b31b1b.svg)](https://doi.org/10.48550/arXiv.2610.14263)
 [![CrocSwap PR #226: Incorporated](https://img.shields.io/badge/CrocSwap%20Main-PR%20%23226%20Incorporated%20(50d76881)-brightgreen.svg)](https://github.com/CrocSwap/integer-mult-bounds/blob/50d768818f579d4e165b4c257c6ee25bca300802/docs/research/community-reconciliation-next100-review.md)
-[![GDT: Lean 4 Formalization](https://img.shields.io/badge/GDT-Lean%204%20(2%2C287%20Checks%20PASS)-brightgreen.svg)](https://github.com/pCwOrM/general-divisor-theorem)
+[![GDT: Lean 4 Formalization](https://img.shields.io/badge/GDT-Lean%204%20(39%20Theorems%20%7C%200%20Sorry)-brightgreen.svg)](https://github.com/pCwOrM/general-divisor-theorem)
 [![Niemeier Moonshine](https://img.shields.io/badge/Niemeier%20A8%5E3-Lean%204%20(0%20Sorry)-brightgreen.svg)](https://github.com/pCwOrM/niemeier-a8-umbral-moonshine)
 [![Paper 5: Lean 4 & Gauntlet DOI](https://img.shields.io/badge/Paper%205%20DOI-10.5281%2Fzenodo.22983889%20(v2)-024dad.svg)](https://doi.org/10.5281/zenodo.22983889)
 [![Formal Verification: Lean 4](https://img.shields.io/badge/Formal%20Verification-Lean%204%20(Zero%20Sorry)-9333ea.svg)](https://doi.org/10.5281/zenodo.22983889)
@@ -200,6 +200,11 @@ response = engine.decide(
 if response.boolean("is_safe") and response.score("priority") > 1.0:
     print(f"Routing to: {response.choice('route')} in {response.latency_ms} ms")
 ```
+
+> 💡 **Runnable Quickstart Script:** Run the self-contained typed reflex example ([`examples/typed_reflex_quickstart.py`](examples/typed_reflex_quickstart.py), contributed by [@wufangyong973](https://github.com/wufangyong973) in [PR #12](https://github.com/pCwOrM/werr/pull/12) • [Contributors](CONTRIBUTORS.md)):
+> ```bash
+> python examples/typed_reflex_quickstart.py
+> ```
 
 ### ⚙️ Multi-Scale Dynamic Harmonic Architecture (v0.5.0)
 
