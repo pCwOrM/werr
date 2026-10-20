@@ -1313,6 +1313,7 @@
       <a href="#demo" id="nav-demo">Simulator</a>
       <a href="#benchmark-arena" id="nav-arena" style="color: var(--cyan); font-weight: 700;">⚡ Live Benchmark</a>
       <a href="https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html" id="nav-gauntlet" style="color: var(--emerald); font-weight: 800;">⚔️ The Gauntlet</a>
+      <a href="https://werracle.io" target="_blank" style="color: var(--amber); font-weight: 700;" title="On-Chain EVM AI Decision Oracle">🛡️ Werracle Web3 ↗</a>
       <a href="#karsilastirma" id="nav-comp">Comparison</a>
       <a href="#kod" id="nav-code">Quickstart</a>
       <a href="https://github.com/pCwOrM/werr" target="_blank">GitHub</a>
@@ -1678,7 +1679,7 @@
         <span style="font-size: 1.2rem;">🔒</span>
         <strong style="color: var(--text-main); font-size: 1rem;" id="priv-banner-title">Zero-PII Open Telemetry & Science Guarantee</strong>
         <span class="badge-pill" style="margin-bottom: 0; padding: 0.2rem 0.6rem; font-size: 0.72rem; color: var(--emerald); border-color: var(--emerald);">
-          🟢 Server: api.answerr.me:4431
+          🟢 Server: api.answerr.me
         </span>
       </div>
       <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;" id="priv-banner-desc">
@@ -1686,7 +1687,7 @@
       </p>
     </div>
     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-      <a href="https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.82rem; white-space: nowrap;" id="priv-btn-dataset">
+      <a href="https://api.answerr.me/werr/dataset/werr_open_decisions.jsonl" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 0.95rem; font-size: 0.82rem; white-space: nowrap;" id="priv-btn-dataset">
         📊 Download Open Dataset (.JSONL)
       </a>
     </div>
@@ -1704,7 +1705,10 @@
         🌐 <strong>answerr (Cloud / System-2):</strong> <a href="https://answerr.me" target="_blank" style="color: var(--cyan); font-weight: 600; text-decoration: none;">answerr.me</a> &bull; Conscious Reasoning &bull; AI IDE
       </div>
       <div style="font-size: 0.92rem; color: var(--text-muted);">
-        ⚡ <strong>werr (Embedded / System-1):</strong> <code style="color: var(--emerald); font-weight: 700;">pip install werr</code> &bull; 0-Byte VRAM &bull; Sub-0.5ms Reflex
+        ⚡ <strong>werr (Embedded / System-1):</strong> <a href="https://werr.io" target="_blank" style="color: var(--emerald); font-weight: 700; text-decoration: none;">werr.io</a> &bull; <code style="color: var(--emerald); font-weight: 700;">pip install werr</code> &bull; 0-Byte VRAM Reflex
+      </div>
+      <div style="font-size: 0.92rem; color: var(--text-muted);">
+        🛡️ <strong>werracle (On-Chain / EVM):</strong> <a href="https://werracle.io" target="_blank" style="color: var(--amber); font-weight: 700; text-decoration: none;">werracle.io</a> &bull; Sub-Cent AI Reflex &bull; DeFi Circuit Breaker
       </div>
     </div>
   </div>
@@ -1878,7 +1882,7 @@
         <div class="bench-grid-2col" style="margin-bottom: 1rem;">
           <div class="bench-card-col">
             <div id="lbl-jev-endpoint" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Endpoint URL:</div>
-            <input type="text" id="jev-endpoint-input" class="custom-text-input" value="https://api.answerr.me:4431/v1/systemone" style="font-family: var(--font-mono); font-size: 0.85rem; width: 100%;">
+            <input type="text" id="jev-endpoint-input" class="custom-text-input" value="https://api.answerr.me/v1/systemone" style="font-family: var(--font-mono); font-size: 0.85rem; width: 100%;">
           </div>
           <div class="bench-card-col">
             <div id="lbl-jev-wirespec" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.4rem;">Wire Spec:</div>
@@ -4004,7 +4008,7 @@ GitHub Repository       : https://github.com/pCwOrM/werr
       recaptcha_token: token || undefined
     };
 
-    fetch("https://api.answerr.me:4431/werr/telemetry", {
+    fetch("https://api.answerr.me/werr/telemetry", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -4254,7 +4258,7 @@ GitHub Repository       : https://github.com/pCwOrM/werr
     const btn = document.getElementById('btn-run-jevbench-live');
     const out = document.getElementById('jev-live-output');
     const endpointInput = document.getElementById('jev-endpoint-input');
-    const endpoint = (endpointInput ? endpointInput.value.trim() : '') || 'https://api.answerr.me:4431/v1/systemone';
+    const endpoint = (endpointInput ? endpointInput.value.trim() : '') || 'https://api.answerr.me/v1/systemone';
 
     btn.disabled = true;
     btn.innerHTML = '⏳ Dispatching...';
@@ -4512,7 +4516,7 @@ GitHub Repository       : https://github.com/pCwOrM/werr
     // 1. Dispatch Model A (Real WERR Endpoint via POST /v1/chat/completions)
     try {
       const token = await getRecaptchaToken("lmsys_bench");
-      const resp = await fetch("https://api.answerr.me:4431/v1/chat/completions", {
+      const resp = await fetch("https://api.answerr.me/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
