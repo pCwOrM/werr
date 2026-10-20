@@ -13,6 +13,7 @@
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
+[![Werracle: SSRN 7626279](https://img.shields.io/badge/SSRN-7626279%20(Werracle)-002f6c.svg?logo=elsevier)](https://ssrn.com/abstract=7626279)
 [![GAP Lean 4: arXiv 2609.38492](https://img.shields.io/badge/arXiv-2609.38492%20(GAP%20Lean4)-b31b1b.svg)](https://arxiv.org/abs/2609.38492)
 [![OED: arXiv 2609.30115](https://img.shields.io/badge/arXiv-2609.30115%20(OED)-b31b1b.svg)](https://arxiv.org/abs/2609.30115)
 [![ORCID: 0009-0000-1587-8703](https://img.shields.io/badge/ORCID-0009--0000--1587--8703-a6ce39.svg)](https://orcid.org/0009-0000-1587-8703)
@@ -817,6 +818,16 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   note          = {Zenodo DOI: 10.5281/zenodo.22942598; TÜRKPATENT Priority: TR 2026/016285}
 }
 
+
+@article{dagli2026werracle_ssrn,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {Elsevier SSRN Electronic Journal},
+  year          = {2026},
+  month         = {October},
+  note          = {SSRN Abstract ID: 7626279},
+  url           = {https://ssrn.com/abstract=7626279}
+}
 @software{werr2026,
   author    = {Volkan Dağlı and Zerrin Dağlı and Dağhan Dağlı},
   title     = {werr: Zero-Memory System-One Decision Engine via Waves and Errors},
@@ -913,7 +924,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
 | **Paper 4: BH Page** | Black Hole Page Curve & Quantum Gravity (v5) | [`10.5281/zenodo.23072120`](https://doi.org/10.5281/zenodo.23072120) | [`10.5281/zenodo.22961999`](https://doi.org/10.5281/zenodo.22961999) | CERN Record 22978460 • Quantum Stabilizers | [`pCwOrM/mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis) |
 | **Paper 5: Formal** | Lean 4 40-Core Gauntlet (v2) | [`10.5281/zenodo.22983889`](https://doi.org/10.5281/zenodo.22983889) | [`10.5281/zenodo.22974543`](https://doi.org/10.5281/zenodo.22974543) | [`arXiv:2609.33066`](https://arxiv.org/abs/2609.33066) • [HF Paper](https://huggingface.co/papers/2609.33066) (Claimed) | [`pCwOrM/werr`](https://github.com/pCwOrM/werr) & [`werracle`](https://github.com/pCwOrM/werracle) |
 | **Paper 6: WerrSoma** | Drosophila Connectome (158K Neurons, v1.1) | [`10.5281/zenodo.23072929`](https://doi.org/10.5281/zenodo.23072929) | [`10.5281/zenodo.22996625`](https://doi.org/10.5281/zenodo.22996625) | `arXiv:submit/8161759` [on hold] • [Live 3D Portal](https://werrsoma.answerr.me/) | [`Lexovian/WerrSoma`](https://github.com/Lexovian/WerrSoma) (Mirror: [`pCwOrM/WerrSoma`](https://github.com/pCwOrM/WerrSoma)) |
-| **Paper 7: Werracle** | Sub-Cent Intra-Block EVM AI Oracle (v1) | [`10.5281/zenodo.22942599`](https://doi.org/10.5281/zenodo.22942599) | [`10.5281/zenodo.22942598`](https://doi.org/10.5281/zenodo.22942598) | [`arXiv:2609.30719`](https://arxiv.org/abs/2609.30719) • [HF Paper](https://huggingface.co/papers/2609.30719) (Claimed) | [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) & [`werralem`](https://github.com/pCwOrM/werralem) |
+| **Paper 7: Werracle** | Sub-Cent Intra-Block EVM AI Oracle (v1) | [`10.5281/zenodo.22942599`](https://doi.org/10.5281/zenodo.22942599) | [`10.5281/zenodo.22942598`](https://doi.org/10.5281/zenodo.22942598) | [`arXiv:2609.30719`](https://arxiv.org/abs/2609.30719) • [**SSRN: 7626279**](https://ssrn.com/abstract=7626279) • [HF Paper](https://huggingface.co/papers/2609.30719) (Claimed) | [`pCwOrM/werracle`](https://github.com/pCwOrM/werracle) & [`werralem`](https://github.com/pCwOrM/werralem) |
 | **Paper 8: Schönhage**| Tensor Carrier Compression ($W=176M$) | [`10.5281/zenodo.23268580`](https://doi.org/10.5281/zenodo.23268580) | [`10.5281/zenodo.23268579`](https://doi.org/10.5281/zenodo.23268579) | [`arXiv:2610.14263`](https://arxiv.org/abs/2610.14263) ([PDF](https://arxiv.org/pdf/2610.14263) • [DOI: `10.48550/arXiv.2610.14263`](https://doi.org/10.48550/arXiv.2610.14263) • `submit/8207241` [published]) • [CrocSwap #226 (Incorporated)](https://github.com/CrocSwap/integer-mult-bounds/pull/226) • [Contributors](https://github.com/CrocSwap/integer-mult-bounds/blob/50d768818f579d4e165b4c257c6ee25bca300802/CONTRIBUTORS.md) • [Audit `50d76881`](https://github.com/CrocSwap/integer-mult-bounds/blob/50d768818f579d4e165b4c257c6ee25bca300802/docs/research/community-reconciliation-next100-review.md) | [`pCwOrM/integer-mult-bounds`](https://github.com/pCwOrM/integer-mult-bounds) |
 | **Paper 9: Güneş Dili**| Deterministik Morfoloji & 53 Koma | [`10.5281/zenodo.23273006`](https://doi.org/10.5281/zenodo.23273006) | [`10.5281/zenodo.23273005`](https://doi.org/10.5281/zenodo.23273005) | Lean 4 Machine Verified • [Live Portal](https://pcworm.github.io/gunes-dili/) | [`pCwOrM/gunes-dili`](https://github.com/pCwOrM/gunes-dili) |
 | **Paper 10: GDT** | General Divisor Theorem & Residue Conditioning | [`10.5281/zenodo.23316070`](https://doi.org/10.5281/zenodo.23316070) | [`10.5281/zenodo.23316070`](https://doi.org/10.5281/zenodo.23316070) | Lean 4 Machine Verified (2,287 Checks PASS) | [`pCwOrM/general-divisor-theorem`](https://github.com/pCwOrM/general-divisor-theorem) |

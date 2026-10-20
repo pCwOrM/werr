@@ -12,6 +12,7 @@
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![Makale 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formel)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
+[![Werracle: SSRN 7626279](https://img.shields.io/badge/SSRN-7626279%20(Werracle)-002f6c.svg?logo=elsevier)](https://ssrn.com/abstract=7626279)
 [![GAP Lean 4: arXiv 2609.38492](https://img.shields.io/badge/arXiv-2609.38492%20(GAP%20Lean4)-b31b1b.svg)](https://arxiv.org/abs/2609.38492)
 [![OED: arXiv 2609.30115](https://img.shields.io/badge/arXiv-2609.30115%20(OED)-b31b1b.svg)](https://arxiv.org/abs/2609.30115)
 [![WerrSoma Tüm Beyin Konnektom](https://img.shields.io/badge/WerrSoma%20Konnektom-158K%20N%C3%B6ron%20%7C%203.99M%20Sinaps-00f0ff.svg)](https://github.com/Lexovian/WerrSoma)
@@ -573,6 +574,16 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   note          = {Zenodo DOI: 10.5281/zenodo.22942598; TÜRKPATENT Priority: TR 2026/016285}
 }
 
+
+@article{dagli2026werracle_ssrn,
+  title         = {Werracle: Sub-Cent Intra-Block AI Reflex Oracles and Flash-Loan Circuit Breakers for EVM Smart Contracts},
+  author        = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
+  journal       = {Elsevier SSRN Electronic Journal},
+  year          = {2026},
+  month         = {October},
+  note          = {SSRN Abstract ID: 7626279},
+  url           = {https://ssrn.com/abstract=7626279}
+}
 @article{dagli2026lean4_oed,
   title        = {Zero-Storage Procedural Neural Synthesis via Boundary Dynamics: Formal Verification in Lean 4 and Bare-Metal Gauntlet Validation},
   author       = {Da{\u{g}}l{\i}, Volkan and Da{\u{g}}l{\i}, Zerrin and Da{\u{g}}l{\i}, Da{\u{g}}han},
