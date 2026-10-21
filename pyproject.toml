@@ -24,8 +24,12 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pCwOrM/werr"
-"Web Simulator" = "https://pcworm.github.io/werr/"
+"Homepage" = "https://werr.io"
+"Academic Portal" = "https://werr.io"
+"Corporate Portal" = "https://werracle.com"
+"Web3 Protocol" = "https://werracle.io"
+"Repository" = "https://github.com/pCwOrM/werr"
+"Web Simulator" = "https://werr.io"
 "answerr Platform" = "https://answerr.me"
 "Base Research" = "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
 
