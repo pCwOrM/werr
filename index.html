@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#04070f">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1321,7 +1321,7 @@
     .canvas-container > *, .hud-metrics > *, .hud-box { min-width: 0; }
     .hud-metrics { max-width: 100%; }
     .hud-value, .hud-label { overflow-wrap: anywhere; }
-    @media (max-width: 360px) { .hud-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+     }
     /* nav: no wrapped labels on laptops, scrollable link strip on phones (was hidden) */
     .brand { flex-shrink: 0; }
     .nav-links a { white-space: nowrap; }
@@ -1414,6 +1414,18 @@ html.light .wnav.solid { background: rgba(243, 247, 251, .88); }
   .wmenu { display: inline-flex; margin-left: auto; }
 }
 @media (max-width: 420px) { .wtools .lang-btn { padding: .3rem .5rem !important; font-size: .78rem !important; } }
+
+
+@media (max-width: 480px) {
+  .wnav-in { padding: 0 8px !important; gap: 8px !important; }
+  .wbrand { font-size: 17px !important; gap: 6px !important; }
+  .wbrand img { width: 26px !important; height: 26px !important; }
+  .wtools { gap: 4px !important; margin-left: auto !important; }
+  .wtools .theme-btn { width: 28px !important; height: 28px !important; min-height: 28px !important; padding: 0 !important; font-size: 0.8rem !important; }
+  .wtools .lang-switch { gap: 2px !important; }
+  .wtools .lang-btn { min-height: 28px !important; height: 28px !important; padding: 2px 6px !important; font-size: 0.72rem !important; }
+  .wmenu { padding: 5px 9px !important; font-size: 12px !important; }
+}
 
 /* ---------- hero ---------- */
 .whero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; padding: 120px 0 64px; }
@@ -1518,8 +1530,8 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
 .corpus-list a:hover { color: var(--wave); }
 @media (max-width: 900px) { .corpus-list { grid-template-columns: minmax(0, 1fr); } .cosmos { height: 58svh; } }
 
-.wpreview { position: fixed; left: 14px; bottom: 14px; z-index: 70; font: 500 12px var(--f-text); color: var(--mist); background: rgba(10,18,34,.9); border: 1px solid var(--line); padding: 4px 10px; border-radius: 8px; }
-.wpreview a { color: var(--wave); display: inline-block; padding: 6px 2px; }
+
+
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
 
@@ -1556,7 +1568,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
   <canvas id="dive" aria-hidden="true"></canvas>
   <canvas id="diveOverlay" aria-hidden="true"></canvas>
   <div class="whero-in">
-    <div class="whero-badge"><span>⚡</span> <span id="hero-badge">v0.3.0 • Open Source • Zero-Memory Decision Engine</span></div>
+    <div class="whero-badge"><span>⚡</span> <span id="hero-badge">v0.5.1 • Source-Available (BSL 1.1) • Zero-Memory Decision Engine</span></div>
     <h1>w<span class="e">e</span><span class="rr">rr</span></h1>
     <div class="whero-motto hero-motto" id="hero-motto">When the Wave meets <span class="highlight">Error (err)</span>, we <span class="highlight">Recurse (werr)</span>.</div>
     <p class="whero-sub" id="hero-subtitle">Traditional AI decisions require gigabytes of weights and billions of tensor parameters. <strong>werr</strong> delivers instant, sub-millisecond cognitive reflexes with <strong>0 Bytes of VRAM</strong> using a 24-byte mathematical seed.</p>
@@ -1938,7 +1950,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
         🌐 <strong>answerr (Cloud / System-2):</strong> <a href="https://answerr.me" target="_blank" style="color: var(--cyan); font-weight: 600; text-decoration: none;">answerr.me</a> &bull; Conscious Reasoning &bull; AI IDE
       </div>
       <div style="font-size: 0.92rem; color: var(--text-muted);">
-        ⚡ <strong>werr (Embedded / System-1):</strong> <a href="https://werr.io" target="_blank" style="color: var(--emerald); font-weight: 700; text-decoration: none;">werr.io</a> &bull; <code style="color: var(--emerald); font-weight: 700;">pip install werr</code> &bull; 0-Byte VRAM Reflex
+        ⚡ <strong>werr (Embedded / System-1):</strong> <a href="https://werr.io" target="_blank" style="color: var(--emerald); font-weight: 700; text-decoration: none;">werr.io</a> &bull; <code style="color: var(--emerald); font-weight: 700;">pip install git+https://github.com/pCwOrM/werr.git</code> &bull; 0-Byte VRAM Reflex
       </div>
       <div style="font-size: 0.92rem; color: var(--text-muted);">
         🛡️ <strong>werracle (On-Chain / EVM):</strong> <a href="https://werracle.io" target="_blank" style="color: var(--amber); font-weight: 700; text-decoration: none;">werracle.io</a> &bull; Sub-Cent AI Reflex &bull; DeFi Circuit Breaker
@@ -2325,7 +2337,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
           <span style="font-size: 0.78rem; color: var(--text-muted);">
-            Benchmark Harness: <a href="https://arena.ai/" target="_blank" style="color: var(--cyan);">Arena.ai</a> &bull; <a href="https://chat.lmsys.org/" target="_blank" style="color: var(--cyan);">LMSYS Chatbot Arena</a> &bull; OpenAI Specification
+            Benchmark Harness: <a href="https://arena.ai/" target="_blank" style="color: var(--cyan);">Arena.ai</a> &bull; <a href="https://lmarena.ai/" target="_blank" style="color: var(--cyan);">LMSYS Chatbot Arena</a> &bull; OpenAI Specification
           </span>
           <a href="https://answerr.me/docs.html#endpoint-chat" target="_blank" class="btn btn-secondary btn-sm">
             📡 View OpenAI Adapter Docs ↗
@@ -2701,7 +2713,7 @@ if __name__ == "__main__":
   </footer>
 
 </div>
-<div class="wpreview"><span>Preview</span> · <a href="./">werr.io</a></div>
+
 <script>
   // Comprehensive Bilingual Dictionary
   const i18n = {
@@ -2716,7 +2728,7 @@ if __name__ == "__main__":
       arenaGithubBtn: "📋 All Benchmarks on GitHub ↗",
       arenaWebBtn: "🌐 Interactive Web Gauntlet ↗",
 
-      heroBadge: "v0.3.0 • Open Source • Zero-Memory Decision Engine",
+      heroBadge: "v0.5.1 • Source-Available (BSL 1.1) • Zero-Memory Decision Engine",
       heroMotto: 'When the Wave meets <span class="highlight">Error (err)</span>, we <span class="highlight">Recurse (werr)</span>.',
       heroSubtitle: 'Traditional AI decisions require gigabytes of weights and billions of tensor parameters. <strong>werr</strong> delivers instant, sub-millisecond cognitive reflexes with <strong>0 Bytes of VRAM</strong> using a 24-byte mathematical seed.',
       btnHeroDemo: "⚡ Launch Decision Simulator",
@@ -2903,7 +2915,7 @@ if __name__ == "__main__":
       arenaGithubBtn: "📋 Tüm Kıyaslamalar GitHub'da ↗",
       arenaWebBtn: "🌐 İnteraktif Web Gauntlet ↗",
 
-      heroBadge: "v0.3.0 • Açık Kaynak • Sıfır-Bellekli Karar Motoru",
+      heroBadge: "v0.5.1 • Kaynak Kodu Açık (BSL 1.1) • Sıfır-Bellekli Karar Motoru",
       heroMotto: 'Dalga <span class="highlight">Hata Sınırıyla (err)</span> Karşılaşınca <span class="highlight">Özyinelemeye Girer (werr)</span>.',
       heroSubtitle: 'Geleneksel yapay zekâ kararları gigabaytlarca ağırlık ve milyarlarca tensör parametresi gerektirir. <strong>werr</strong>, 24-baytlık matematiksel bir tohumla <strong>0 Byte VRAM</strong> harcayarak mikrosaniye hızında anlık zihinsel refleksler üretir.',
       btnHeroDemo: "⚡ Canlı Karar Simülatörü",
@@ -3882,7 +3894,7 @@ if __name__ == "__main__":
       id: recordId,
       timestamp: new Date().toISOString(),
       source: "web_interactive_lab",
-      version: "werr-0.3.0-web",
+      version: "werr-0.5.1-web",
       domain: activeUnifiedPreset,
       gate: gateInfo.gate,
       seed: {
@@ -5372,46 +5384,43 @@ const ease = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
    CORPUS: three.js constellation + accessible list
    ===================================================================== */
 const CORPUS = [
-  // Cluster 0: Papers & Preprints (Cyan #3cc8ff)
-  {g: 0, n: "werr: Zero-Memory Fractal Decision Engine", s: "arXiv:2609.25498 [cs.NE]", u: "https://arxiv.org/abs/2609.25498"},
-  {g: 0, n: "Lean 4 Formal Verification (Foundations)", s: "arXiv:2609.33066 [cs.LO]", u: "https://arxiv.org/abs/2609.33066"},
-  {g: 0, n: "Werracle: Intra-Block Reflex Oracle", s: "arXiv:2609.30719 [cs.CR]", u: "https://arxiv.org/abs/2609.30719"},
-  {g: 0, n: "Werracle on SSRN: Elsevier Series", s: "SSRN: 7626279", u: "https://ssrn.com/abstract=7626279"},
-  {g: 0, n: "Schönhage Tensor Wire Complexity Bounds", s: "arXiv:2610.14263 [cs.CC]", u: "https://arxiv.org/abs/2610.14263"},
-  {g: 0, n: "Machine-Checked Group Theory in Lean 4", s: "arXiv:2609.38492 [cs.LO]", u: "https://arxiv.org/abs/2609.38492"},
-  {g: 0, n: "Optimal Experimental Design via Boundary Resonances", s: "arXiv:2609.30115 [cs.AI]", u: "https://arxiv.org/abs/2609.30115"},
-  {g: 0, n: "Procedural Fractal Pedagogy (SSRN Series)", s: "SSRN: 7641538 (Approved)", u: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7641538"},
-  {g: 0, n: "Werr Elliptic Sieve: NSF ICARM Monograph", s: "CERN Zenodo 23436282", u: "https://doi.org/10.5281/zenodo.23436282"},
-  {g: 0, n: "Niemeier Lattice A8³ & Umbral Moonshine", s: "CERN Zenodo: 23324066", u: "https://doi.org/10.5281/zenodo.23324066"},
+  // Cluster 0: Research Papers & Peer-Reviewed Monographs (Cyan #3cc8ff)
+  {g: 0, n: "[Paper] werr: Zero-Memory Fractal Decision Engine", s: "arXiv:2609.25498 [cs.NE]", u: "https://arxiv.org/abs/2609.25498"},
+  {g: 0, n: "[Paper] Zero-Storage Neural Synthesis & Lean 4 Formalization", s: "arXiv:2609.33066 [cs.LO]", u: "https://arxiv.org/abs/2609.33066"},
+  {g: 0, n: "[Paper] Werracle: Intra-Block Reflex Oracles for EVM", s: "arXiv:2609.30719 [cs.CR]", u: "https://arxiv.org/abs/2609.30719"},
+  {g: 0, n: "[Paper] Werracle on Elsevier SSRN", s: "SSRN: 7626279", u: "https://ssrn.com/abstract=7626279"},
+  {g: 0, n: "[Paper] Schönhage Tensor Wire Complexity Bounds", s: "arXiv:2610.14263 [cs.CC]", u: "https://arxiv.org/abs/2610.14263"},
+  {g: 0, n: "[Paper] Machine-Checked Group Theory in Lean 4", s: "arXiv:2609.38492 [cs.LO]", u: "https://arxiv.org/abs/2609.38492"},
+  {g: 0, n: "[Paper] Optimal Experimental Design via Boundary Resonances", s: "arXiv:2609.30115 [cs.AI]", u: "https://arxiv.org/abs/2609.30115"},
+  {g: 0, n: "[Paper] Procedural Fractal Pedagogy (ZPD Reflexes)", s: "SSRN: 7641538 (Approved)", u: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7641538"},
+  {g: 0, n: "[Paper] Werr Multi-Layer Algebraic Sieve Monograph", s: "CERN Zenodo: 23436282", u: "https://doi.org/10.5281/zenodo.23436282"},
+  {g: 0, n: "[Paper] Niemeier Lattice A8³ & Umbral Moonshine", s: "CERN Zenodo: 23324066", u: "https://doi.org/10.5281/zenodo.23324066"},
 
-  // Cluster 1: Lean 4 Proofs & Certified Mathematics (Gold #f6b73c)
-  {g: 1, n: "NSF ICARM Leaderboard: 230 Verified Curves (#1 Records)", s: "elliptic-rank.icarm.cloud", u: "https://elliptic-rank.icarm.cloud/user/114"},
-  {g: 1, n: "General Divisor Theorem (GDT v3.0)", s: "Lean 4 • 81 Theorems (0 sorry)", u: "https://github.com/pCwOrM/general-divisor-theorem"},
-  {g: 1, n: "Niemeier A8³ Lattice & K3 Hodge Duality", s: "Lean 4 • 0 Axioms / 0 Sorry", u: "https://github.com/pCwOrM/niemeier-a8-umbral-moonshine"},
-  {g: 1, n: "Schönhage Tensor Record (-377,890 Wires)", s: "CrocSwap PR #226 Incorporated", u: "https://github.com/pCwOrM/integer-mult-bounds"},
-  {g: 1, n: "GAP-0331 Schreier-Sims Modular Inversion", s: "Lean 4 • 35 Theorems", u: "https://github.com/pCwOrM/gap-lean4-port"},
-  {g: 1, n: "Werracle EVM Circuit Breaker Proofs", s: "Lean 4 • 40 Theorems (Rungs 1-6)", u: "https://github.com/pCwOrM/werracle/blob/main/formal_proofs/CERTIFICATE.md"},
-  {g: 1, n: "PFP Horizon Invariant Proof", s: "Lean 4 • 7 Machine Proofs", u: "https://github.com/jesmaat/WerreduR/blob/main/legacy/lean4/PFP_HorizonProof.lean"},
+  // Cluster 1: Machine-Verified Formal Proofs & Certified Records (Gold #f6b73c)
+  {g: 1, n: "[Certified Leaderboard] NSF ICARM: 230 Verified Curves (#1 Records)", s: "elliptic-rank.icarm.cloud", u: "https://elliptic-rank.icarm.cloud/user/114"},
+  {g: 1, n: "[Formal Proof] General Divisor Theorem in Lean 4", s: "81 Theorems • 0 sorry", u: "https://github.com/pCwOrM/general-divisor-theorem"},
+  {g: 1, n: "[Formal Proof] Niemeier A8³ Lattice & K3 Hodge Duality in Lean 4", s: "10 Invariants • 0 sorry", u: "https://github.com/pCwOrM/niemeier-a8-umbral-moonshine"},
+  {g: 1, n: "[Code Record] Schönhage Tensor Wire Complexity (-377K Wires)", s: "CrocSwap PR #226 Incorporated", u: "https://github.com/pCwOrM/integer-mult-bounds"},
+  {g: 1, n: "[Formal Proof] GAP-0331 Schreier-Sims Modular Inversion in Lean 4", s: "35 Theorems • 0 sorry", u: "https://github.com/pCwOrM/gap-lean4-port"},
+  {g: 1, n: "[Formal Proof] Werracle EVM Circuit Breaker Invariant Suite", s: "40 Theorems (Rungs 1-6)", u: "https://github.com/pCwOrM/werracle/blob/main/formal_proofs/CERTIFICATE.md"},
+  {g: 1, n: "[Formal Proof] PFP Horizon Convergence Invariant in Lean 4", s: "7 Theorems • 0 sorry", u: "https://github.com/jesmaat/WerreduR/blob/main/legacy/lean4/PFP_HorizonProof.lean"},
 
-  // Cluster 2: Systems, Platforms & Hardware (Emerald #3ee6a8)
-  {g: 2, n: "Werracle Web3 Protocol", s: "EVM Live Oracle • werracle.io", u: "https://werracle.io"},
-  {g: 2, n: "Werracle Corporate Governance", s: "Infrastructure • werracle.com", u: "https://werracle.com"},
-  {g: 2, n: "answerr Cognitive Intelligence Platform", s: "System-2 Reflex Core • answerr.me", u: "https://answerr.me"},
-  {g: 2, n: "WerrSoma Whole-Brain Drosophila Connectome", s: "158K Neurons • TR 2026/016633", u: "https://werrsoma.answerr.me/"},
-  {g: 2, n: "WerreduR: Adaptive Difficulty Control", s: "Procedural Reflex v4.0", u: "https://github.com/jesmaat/WerreduR"},
-  {g: 2, n: "WERRobotics Edge AI & Arduino Firmware", s: "Ultra-Low Power Microcontroller AI", u: "https://github.com/pCwOrM/WERRobotics"},
-  {g: 2, n: "Güneş Dili Morphological Synthesizer", s: "Deterministic Turkic Morpho-Grammar", u: "https://github.com/pCwOrM/gunes-dili"},
-  {g: 2, n: "Mandelbrot Fractal Neural Synthesis Master Repo", s: "Open Science Monorepo", u: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"},
+  // Cluster 2: Production Systems, Deployed Protocols & Edge AI (Emerald #3ee6a8)
+  {g: 2, n: "[Web3 Protocol] Werracle On-Chain AI Reflex Oracle", s: "Live Aurora EVM • werracle.io", u: "https://werracle.io"},
+  {g: 2, n: "[Corporate Portal] Werracle Governance & Node SLAs", s: "Enterprise Hub • werracle.com", u: "https://werracle.com"},
+  {g: 2, n: "[Cognitive Platform] answerr System-2 Dialogue & Reasoning", s: "Live Production • answerr.me", u: "https://answerr.me"},
+  {g: 2, n: "[Neuromorphic] WerrSoma Drosophila 158K Whole-Brain Connectome", s: "TR 2026/016633 • werrsoma.answerr.me", u: "https://werrsoma.answerr.me/"},
+  {g: 2, n: "[Pedagogy Engine] WerreduR Adaptive Difficulty Controller", s: "Procedural Reflex v4.0", u: "https://github.com/jesmaat/WerreduR"},
+  {g: 2, n: "[Embedded AI] WERRobotics Microcontroller Firmware", s: "Zero-VRAM Arduino AI", u: "https://github.com/pCwOrM/WERRobotics"},
+  {g: 2, n: "[Linguistics] Güneş Dili Morphological Synthesizer", s: "Deterministic Grammar Engine", u: "https://github.com/pCwOrM/gunes-dili"},
+  {g: 2, n: "[Master Repo] Mandelbrot Fractal Neural Synthesis", s: "Core Monorepo", u: "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"},
 
-  // Cluster 3: Archival Datasets & CERN Zenodo Vaults (Purple #b18cff)
-  {g: 3, n: "WERR Core Engine Archive", s: "CERN Zenodo: 10.5281/zenodo.22939253", u: "https://doi.org/10.5281/zenodo.22939253"},
-  {g: 3, n: "Werr Elliptic Sieve Concept Vault", s: "CERN Zenodo: 10.5281/zenodo.23436282", u: "https://doi.org/10.5281/zenodo.23436282"},
-  {g: 3, n: "General Divisor Theorem (Release v3.0)", s: "CERN Zenodo: 10.5281/zenodo.23425590", u: "https://doi.org/10.5281/zenodo.23425590"},
-  {g: 3, n: "Niemeier Lattice A8³ Moonshine Vault", s: "CERN Zenodo: 10.5281/zenodo.23324066", u: "https://doi.org/10.5281/zenodo.23324066"},
-  {g: 3, n: "Lean 4 Suite & Master Gauntlet Bundle", s: "CERN Zenodo: 10.5281/zenodo.22983889", u: "https://doi.org/10.5281/zenodo.22983889"},
-  {g: 3, n: "Black Hole Page Curve Unitary Archive", s: "CERN Zenodo: 10.5281/zenodo.22961999", u: "https://doi.org/10.5281/zenodo.22961999"},
-  {g: 3, n: "Foundational Fractal Cognition Theory", s: "CERN Zenodo: 10.5281/zenodo.22774934", u: "https://doi.org/10.5281/zenodo.22774934"},
-  {g: 3, n: "WERR Open Decisions Dataset", s: "Hugging Face Datasets", u: "https://huggingface.co/datasets/pCwOrM/werr_open_decisions"}
+  // Cluster 3: CERN Zenodo Archives & Open Datasets (Purple #b18cff)
+  {g: 3, n: "[Open Dataset] WERR Open Decisions on Hugging Face", s: "First Universal Procedural Dataset", u: "https://huggingface.co/datasets/pCwOrM/werr_open_decisions"},
+  {g: 3, n: "[CERN Archive] WERR Engine Core Replication Bundle", s: "Zenodo Concept: 10.5281/zenodo.22939253", u: "https://doi.org/10.5281/zenodo.22939253"},
+  {g: 3, n: "[CERN Archive] Lean 4 Master Proof Suite & Gauntlet Bundle", s: "Zenodo Release: 10.5281/zenodo.22983889", u: "https://doi.org/10.5281/zenodo.22983889"},
+  {g: 3, n: "[CERN Archive] Black Hole Page Curve Unitary Archive", s: "Zenodo Release: 10.5281/zenodo.22961999", u: "https://doi.org/10.5281/zenodo.22961999"},
+  {g: 3, n: "[CERN Archive] Foundational Fractal Cognition Theory", s: "Zenodo Concept: 10.5281/zenodo.22774934", u: "https://doi.org/10.5281/zenodo.22774934"}
 ];
 const GCOL = ["#3cc8ff", "#f6b73c", "#3ee6a8", "#b18cff"];
 function buildCorpusList(){
