@@ -426,11 +426,13 @@
       text-align: center;
     }
 
-    .video-preview-card img {
+    .video-preview-card img,
+    .video-preview-card video {
       max-width: 100%;
       border-radius: 8px;
       border: 1px solid #30363d;
-      margin: 14px 0;
+      margin: 14px auto;
+      display: block;
     }
 
     /* Hub Cards & Application Sections */
@@ -705,7 +707,10 @@ canvas{border-radius:16px}
     <p style="color: var(--text-muted); font-size: 14px;">
       Bu demoda kaydedilen resmi test videosu (İnsan kontrolünden WERR otopilotuna geçiş):
     </p>
-    <img src="terminal_snake_showcase.gif" alt="Terminal Snake Showcase Animation">
+    <video autoplay loop muted playsinline preload="metadata" style="max-width: 100%; border-radius: 8px; border: 1px solid #30363d; margin: 14px auto; display: block;">
+      <source src="terminal_snake_showcase.mp4" type="video/mp4">
+      <img src="terminal_snake_showcase.gif" alt="Terminal Snake Showcase Animation" loading="lazy" decoding="async">
+    </video>
     <div>
       <a href="terminal_snake_showcase.mp4" download class="nav-btn" style="background: var(--cyan); color: #000; font-weight: 700; border: none;">
         ⬇ MP4 Videosunu İndir (490 KB)
