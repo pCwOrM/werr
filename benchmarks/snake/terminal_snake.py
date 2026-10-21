@@ -2,7 +2,7 @@
 """
 Terminal ASCII Snake: Zero-Storage Procedural Fractal Neural Synthesis
 ======================================================================
-Powered by 'answerr' / 'wevv' Reflex Decision Engine.
+Powered by 'answerr' / 'werr' Reflex Decision Engine.
 
 Senaryo 1:
 - 1. Aşama: Manuel Oyun (İnsan Kontrolü / WASD & Ok Tuşları)
