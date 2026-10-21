@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WERR Zero-Memory Master Benchmarks Audit Report</title>
   <style>
@@ -98,9 +102,40 @@
       img, svg { max-width: 100%; height: auto; }
       pre, code { white-space: pre-wrap; overflow-wrap: anywhere; }
     }
-  </style>
+  
+.wbar-top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:16px;padding:0 clamp(16px,4vw,40px);height:58px;background:rgba(4,7,15,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1c2b48;font:600 14px Manrope,system-ui,sans-serif}
+.wbar-top a{color:#8fa3c2;text-decoration:none;padding:8px 0;white-space:nowrap}
+.wbar-top a:hover{color:#eaf4ff}
+.wbar-top .b{display:flex;align-items:center;gap:8px;color:#eaf4ff;font:800 19px Syne,system-ui,sans-serif;letter-spacing:-.02em;margin-right:auto}
+.wbar-top .b img{width:28px;height:28px}
+.wbar-top .wm{letter-spacing:-.02em;word-spacing:0}.wbar-top .wm span{margin:0!important;padding:0!important;letter-spacing:inherit}.wbar-top .we{color:#3cc8ff}.wbar-top .wrr{color:#f6b73c}
+@media (max-width:520px){.wbar-top .hide-sm{display:none}}
+@media print{.wbar-top{display:none}}
+
+@media screen{
+  html{background:#04070f}
+  body{background:#04070f;color:#dbe7f7;font:400 16px/1.65 Manrope,system-ui,sans-serif!important;max-width:none}
+  body>*:not(.wbar-top){max-width:980px;margin-left:auto!important;margin-right:auto!important;padding-left:clamp(16px,4vw,40px);padding-right:clamp(16px,4vw,40px)}
+  .header{border-bottom:1px solid #1c2b48!important;padding:40px clamp(16px,4vw,40px) 20px!important;flex-wrap:wrap;gap:12px}
+  .title{font:800 clamp(28px,4.4vw,48px)/1.02 Syne,system-ui,sans-serif!important;letter-spacing:-.035em;color:#eaf4ff!important}
+  .subtitle{color:#8fa3c2!important;font-size:15px!important}
+  .badge{background:rgba(60,200,255,.12)!important;color:#3cc8ff!important;font-size:12px!important}
+  h2,h3{font-family:Manrope,system-ui,sans-serif;color:#eaf4ff}
+  table{font-size:14px!important;border-color:#1c2b48}
+  th,td{border-color:#1c2b48!important;padding:9px 12px!important}
+  th{background:#0a1222!important;color:#eaf4ff!important}
+  td{color:#dbe7f7}
+  .highlight{color:#f6b73c!important}
+  .card{background:#0a1222!important;border-color:#1c2b48!important;border-radius:14px!important;padding:14px 18px!important}
+  .hash-box{background:#070d1a!important;color:#9fdcff!important;font:12px "JetBrains Mono",monospace!important;overflow-wrap:anywhere}
+  a{color:#3cc8ff}
+  tr[style*="background"],td[style*="background"],th[style*="background"]{background:#0f1a31!important;color:#f6b73c!important}
+}
+</style>
 </head>
 <body>
+<div class="wbar-top" role="navigation"><a class="b" href="../index.html"><img src="../assets/werr_logo_core_fav_trans.svg" alt=""><span class="wm">w<span class="we">e</span><span class="wrr">rr</span></span></a><a href="../index.html">← werr</a><a href="../index.html#demo">Simulator</a><a class="hide-sm" href="../index.html#benchmark-arena">Benchmarks</a><a class="hide-sm" href="../index.html#corpus">Corpus</a></div>
+
 
   <div class="header">
     <div>
