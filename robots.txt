@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /test/
+Disallow: /benchmarks/
+Disallow: /dataset/
+Disallow: /tests/
 
 Sitemap: https://werr.io/sitemap.xml

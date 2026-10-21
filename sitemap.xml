@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://werr.io/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://werr.io/demos/snake.html</loc></url>
-  <url><loc>https://werr.io/docs/werr_official_benchmarks_report.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://werr.io/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://werr.io/assets/werr_logo_core.svg</image:loc>
+      <image:title>WERR Zero-Memory Fractal Decision Engine</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://werr.io/assets/werr_answerr_twin_ecosystem.svg</image:loc>
+      <image:title>WERR &amp; answerr Cognitive Ecosystem</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://werr.io/demos/snake.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://werr.io/docs/werr_official_benchmarks_report.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
