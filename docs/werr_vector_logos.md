@@ -218,7 +218,7 @@ Web sitesinin ana sayfasında bulut ile yerel motorun işbölümü net vurgulanm
 
 * **Karşılaştırma Kutusu (Feature Card):**
   * **answerr (Bulut Karar Platformu):** Zapier, n8n, Webhook'lar ve REST/SSE API ile sıfır-halüsinasyon kararları bulutta koordine eder.
-  * **werr (Gömülü Geometrik Çekirdek):** `pip install werr` veya `werr.h` ile doğrudan uygulamanın belleğinde 0 Bayt VRAM ile çalışır.
+  * **werr (Gömülü Geometrik Çekirdek):** `pip install git+https://github.com/pCwOrM/werr.git` veya `werr.h` ile doğrudan uygulamanın belleğinde 0 Bayt VRAM ile çalışır.
 * **Çağrı Butonları (Call-To-Action):**
   * `[ 🌐 answerr Cloud API'yi Keşfet ]` $\to$ `https://answerr.me`
-  * `[ ⚡ werr Çekirdeğini Uygulamana Göm ]` $\to$ `pip install werr`
+  * `[ ⚡ werr Çekirdeğini Uygulamana Göm ]` $\to$ `pip install git+https://github.com/pCwOrM/werr.git`

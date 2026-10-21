@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /test/
-Disallow: /archive_*
-Disallow: /private_archive_rsa/
 
 Sitemap: https://werr.io/sitemap.xml
