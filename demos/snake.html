@@ -2,6 +2,10 @@
 <html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WERR Reflex Snake | 0-Storage Procedural Neural Synthesis Canlı Testi</title>
   <meta name="description" content="Mandelbrot fraktal karar motoru ile sıfır ağırlık (0.00 KB) ve 0.08ms gecikmeyle çalışan Yılan Oyunu canlı test ve telemetri sayfası.">
@@ -500,9 +504,27 @@
       gap: 10px;
       margin-top: auto;
     }
-  </style>
+  
+.wbar-top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:16px;padding:0 clamp(16px,4vw,40px);height:58px;background:rgba(4,7,15,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1c2b48;font:600 14px Manrope,system-ui,sans-serif}
+.wbar-top a{color:#8fa3c2;text-decoration:none;padding:8px 0;white-space:nowrap}
+.wbar-top a:hover{color:#eaf4ff}
+.wbar-top .b{display:flex;align-items:center;gap:8px;color:#eaf4ff;font:800 19px Syne,system-ui,sans-serif;letter-spacing:-.02em;margin-right:auto}
+.wbar-top .b img{width:28px;height:28px}
+.wbar-top .wm{letter-spacing:-.02em;word-spacing:0}.wbar-top .wm span{margin:0!important;padding:0!important;letter-spacing:inherit}.wbar-top .we{color:#3cc8ff}.wbar-top .wrr{color:#f6b73c}
+@media (max-width:520px){.wbar-top .hide-sm{display:none}}
+@media print{.wbar-top{display:none}}
+
+:root{--bg-body:#04070f;--bg-card:#0a1222;--bg-inner:#070d1a;--bg-hover:#0f1a31;--border:#1c2b48;--border-accent:rgba(60,200,255,.4);--text-main:#eaf4ff;--text-muted:#8fa3c2;--emerald:#3ee6a8;--cyan:#3cc8ff;--amber:#f6b73c;--rose:#ff4d5e;--font-sans:Manrope,system-ui,sans-serif}
+body{background:#04070f radial-gradient(1200px 600px at 70% -10%,rgba(60,200,255,.14),transparent 60%)!important;padding-top:0!important}
+.container{padding-top:24px}
+.container>header{display:none!important}
+h1{font-family:Syne,system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.035em!important;line-height:1.02!important;font-size:clamp(30px,4.6vw,56px)!important}
+canvas{border-radius:16px}
+</style>
 </head>
 <body>
+<div class="wbar-top" role="navigation"><a class="b" href="../index.html"><img src="../assets/werr_logo_core_fav_trans.svg" alt=""><span class="wm">w<span class="we">e</span><span class="wrr">rr</span></span></a><a href="../index.html">← werr</a><a href="../index.html#demo">Simulator</a><a class="hide-sm" href="../index.html#benchmark-arena">Benchmarks</a><a class="hide-sm" href="../index.html#corpus">Corpus</a></div>
+
 
 <div class="container">
   <!-- Top Navigation -->
@@ -514,7 +536,7 @@
     <div class="nav-links" style="flex-wrap: wrap;">
       <a href="../index.html" class="nav-btn">← Ana Portal</a>
       <a href="../index.html#demo" class="nav-btn">Halk Laboratuvarı</a>
-      <a href="../index.html#features" class="nav-btn">4-Quadrant Lab</a>
+      <a href="../index.html#benchmark-arena" class="nav-btn">4-Quadrant Lab</a>
       <a href="https://github.com/pCwOrM/werr/tree/main/benchmarks/snake" target="_blank" class="nav-btn" style="border-color: var(--cyan); color: #fff;">Werr Benchmark Sayfası ↗</a>
       <a href="https://github.com/pCwOrM/werr" target="_blank" class="nav-btn">GitHub Repo ↗</a>
     </div>
@@ -820,7 +842,7 @@
         <p>128x128 Mandelbrot penceresinin 4 çeyreğinden anlık ağırlık türetimini ve 2D karar sınırlarını etkileşimli ısı haritası üzerinde canlı test edin.</p>
       </div>
       <div class="hub-footer-links">
-        <a href="../index.html#features" class="nav-btn" style="background: linear-gradient(135deg, #0284c7, #10b981); color: #fff; width: 100%; text-align: center; border: none; font-weight: 700;">Laboratuvarı Aç ↗</a>
+        <a href="../index.html#benchmark-arena" class="nav-btn" style="background: linear-gradient(135deg, #0284c7, #10b981); color: #fff; width: 100%; text-align: center; border: none; font-weight: 700;">Laboratuvarı Aç ↗</a>
       </div>
     </div>
 
