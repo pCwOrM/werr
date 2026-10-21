@@ -966,3 +966,16 @@ WERR is an independent, patented open-source mathematical AI research project. C
 
 * **Official Contacts:** `vdagli@itouch.com.tr` (Corporate) | `pcworm@pcworm.net` (Lead Research) | `ask@answerr.me` (Autonomous Agent) | Web: `https://answerr.me`
 
+
+## 🏛️ Historical Ecosystem Archives & Preservation
+
+In accordance with open science archival integrity, all preceding versions and interactive baseline portals are permanently preserved in the repository with non-indexed public endpoints:
+
+| Ecosystem Pillar | Version / Description | Archive Endpoint |
+| :--- | :--- | :--- |
+| **WERR Core Portal** | `v0.3.0` Pre-Test Root Archive | [`werr.io/archive_v0.3.0_index_pre_test.html`](https://werr.io/archive_v0.3.0_index_pre_test.html) |
+| **WERR Snake AI** | Snake Reflex Demo `v1.0` Archive | [`werr.io/demos/snake_archive_v1.html`](https://werr.io/demos/snake_archive_v1.html) |
+| **WERR Benchmarks** | Official Benchmark Report `v1.0` Archive | [`werr.io/docs/werr_official_benchmarks_report_archive_v1.html`](https://werr.io/docs/werr_official_benchmarks_report_archive_v1.html) |
+| **Werracle Web3** | Classic `v1.0` EVM AI Oracle Archive | [`werracle.io/v1_classic.html`](https://werracle.io/v1_classic.html) |
+| **Werracle Web3** | Architecture `v2.0` Initial Sandbox Archive | [`werracle.io/v2_initial_archive.html`](https://werracle.io/v2_initial_archive.html) |
+| **Werracle Corporate**| Corporate Portal `v1.0` (Dark Theme Archive)| [`werracle.com/archive_dark_v1.html`](https://werracle.com/archive_dark_v1.html) |

@@ -647,3 +647,16 @@ WERR, bağımsız ve patent korumalı açık kaynaklı matematiksel yapay zekâ 
 * **Resmi İletişim Kanalları:** `vdagli@itouch.com.tr` (Kurumsal) | `pcworm@pcworm.net` (Baş Araştırmacı) | `ask@answerr.me` (Otonom Ajan) | Web: `https://answerr.me`
 
 
+
+## 🏛️ Tarihsel Ekosistem Arşivleri ve Kalıcı Koruma
+
+Açık bilim arşivleme ilkeleri uyarınca, önceki tüm sürüm ve arayüzler kaynak kodda kalıcı olarak korunmaktadır:
+
+| Ekosistem Bileşeni | Sürüm / Açıklama | Arşiv Bağlantısı |
+| :--- | :--- | :--- |
+| **WERR Motor Portalı** | `v0.3.0` Kök Sayfa Arşivi | [`werr.io/archive_v0.3.0_index_pre_test.html`](https://werr.io/archive_v0.3.0_index_pre_test.html) |
+| **WERR Snake AI** | Snake Refleks Demosu `v1.0` Arşivi | [`werr.io/demos/snake_archive_v1.html`](https://werr.io/demos/snake_archive_v1.html) |
+| **WERR Kıyaslamalar** | Resmi Kıyaslama Raporu `v1.0` Arşivi | [`werr.io/docs/werr_official_benchmarks_report_archive_v1.html`](https://werr.io/docs/werr_official_benchmarks_report_archive_v1.html) |
+| **Werracle Web3** | Klasik `v1.0` EVM AI Oracle Arşivi | [`werracle.io/v1_classic.html`](https://werracle.io/v1_classic.html) |
+| **Werracle Web3** | Mimari `v2.0` İlk Deneme Alanı Arşivi | [`werracle.io/v2_initial_archive.html`](https://werracle.io/v2_initial_archive.html) |
+| **Werracle Kurumsal** | Kurumsal Portal `v1.0` (Koyu Tema Arşivi) | [`werracle.com/archive_dark_v1.html`](https://werracle.com/archive_dark_v1.html) |
