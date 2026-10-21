@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WERR Zero-Memory Master Benchmarks Audit Report</title>
   <style>
     @page {
@@ -89,6 +90,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  
+    @media screen and (max-width: 760px) {
+      body { font-size: 15px; padding: 12px; }
+      table { display: block; overflow-x: auto; max-width: 100%; }
+      img, svg { max-width: 100%; height: auto; }
+      pre, code { white-space: pre-wrap; overflow-wrap: anywhere; }
     }
   </style>
 </head>
