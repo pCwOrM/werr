@@ -10,6 +10,11 @@
 
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-blue.svg)](./LICENSE)
 [![CI Workflow](https://github.com/pCwOrM/werr/actions/workflows/ci.yml/badge.svg)](https://github.com/pCwOrM/werr/actions/workflows/ci.yml)
+[![Live Portal: werr.io](https://img.shields.io/badge/Live%20Portal-werr.io-0284c7.svg?logo=cloudflare&logoColor=white)](https://werr.io/)
+[![Web3 Protocol: werracle.io](https://img.shields.io/badge/Web3%20Protocol-werracle.io-f59e0b.svg)](https://werracle.io/)
+[![Corporate: werracle.com](https://img.shields.io/badge/Corporate%20Portal-werracle.com-2b3bd1.svg)](https://werracle.com/)
+[![NSF ICARM Record: 230 Curves](https://img.shields.io/badge/NSF%20ICARM-230%20Verified%20Curves%20(Rank%20Leaderboard)-blue)](https://elliptic-rank.icarm.cloud/user/114)
+[![Cloud Vault: R2 Active](https://img.shields.io/badge/Cloud%20Vault-Cloudflare%20R2%20Active-f38020.svg?logo=cloudflare&logoColor=white)](https://werracle.com/)
 [![arXiv: 2609.25498](https://img.shields.io/badge/arXiv-2609.25498-b31b1b.svg)](https://arxiv.org/abs/2609.25498)
 [![Paper 5: arXiv 2609.33066](https://img.shields.io/badge/arXiv-2609.33066%20(Lean4%20Formal)-b31b1b.svg)](https://arxiv.org/abs/2609.33066)
 [![Werracle: arXiv 2609.30719](https://img.shields.io/badge/arXiv-2609.30719%20(Werracle)-b31b1b.svg)](https://arxiv.org/abs/2609.30719)
@@ -33,10 +38,10 @@
 [![Paper v2.0: Camera--Ready](https://img.shields.io/badge/Paper%20v2.0-Camera--Ready-emerald.svg)](paper/Universal_Fractal_Natural_Language_Decision_Map_CameraReady.pdf)
 [![Foundational Theory DOI](https://img.shields.io/badge/Foundational%20Theory%20DOI-10.5281%2Fzenodo.22774934-024dad.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![Preprint Status](https://img.shields.io/badge/Preprint-arXiv%3A2609.25498-blue.svg)](https://arxiv.org/abs/2609.25498)
-[![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://pcworm.github.io/werr/)
+[![Live Demo: GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-38bdf8.svg)](https://werr.io/)
 [![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-blue.svg)](pyproject.toml)
 [![GitHub Education: Community Exchange](https://img.shields.io/badge/GitHub%20Education-Community%20Exchange-2ea44f?logo=github&logoColor=white)](https://education.github.com/globalcampus/exchange)
-[![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://pcworm.github.io/werr/#benchmark-arena)
+[![Live Benchmark Arena](https://img.shields.io/badge/Live%20Benchmark-WebMCP%20%7C%20JevBench%20%7C%20Gym%20%7C%20Arena%20%7C%20Tau--Bench-blueviolet.svg)](https://werr.io/#benchmark-arena)
 [![The Gauntlet Master Benchmarks](https://img.shields.io/badge/The%20Gauntlet-Official%20Benchmark%20Directory-brightgreen.svg)](./benchmarks/)
 [![JevBench v1.4.1](https://img.shields.io/badge/JevBench%20v1.4.1-20.63%20%2F%2023.74%20(Tesla%203--6--9)-brightgreen.svg)](./benchmarks/)
 [![Benchmark Heaven: Intake Active](https://img.shields.io/badge/Benchmark%20Heaven-Queue%20%2350%20(Ref%3A%20815FD9D8)-blue.svg)](https://benchmarkheaven.org)
@@ -65,10 +70,10 @@
 🌐 **Language Switcher / Dil Seçici:**  
 **English (Default)** | [🇹🇷 Türkçe Dokümantasyon (README_TR.md)](README_TR.md)
 
-🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://pcworm.github.io/werr/) *(Supports English & Türkçe, Light & Dark mode).*  
+🌐 **Interactive Web Lab:** [Try the Live Decision Simulator on GitHub Pages](https://werr.io/) *(Supports English & Türkçe, Light & Dark mode).*  
 📄 **Official arXiv Paper:** [Read on arXiv:2609.25498 [cs.NE]](https://arxiv.org/abs/2609.25498) │ [Direct PDF](https://arxiv.org/pdf/2609.25498) │ [CERN Zenodo Archive](https://doi.org/10.5281/zenodo.22939253).  
 📜 **Lean 4 Formal Verification & 40-Core Gauntlet:** [Zero-Storage Neural Synthesis Monograph (v2)](https://doi.org/10.5281/zenodo.22983889) │ [Zenodo Record 22983889](https://zenodo.org/records/22983889) │ [Preprint PDF](https://zenodo.org/records/22983889/files/Zero_Storage_Neural_Synthesis_Lean4_OED_v2.pdf) │ [Replication Bundle](https://zenodo.org/records/22983889/files/zenodo_bundle_lean4_oed_verification_v2.zip).  
-⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://pcworm.github.io/werr/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
+⚡ **Online Live Benchmark Arena:** [Run WebMCP, JevBench, Gymnasium RL, Arena.ai Blind Match & Tau-Bench Live in Browser](https://werr.io/#benchmark-arena) *(100% Client-Side, 0 VRAM, Instant CPU Execution).*  
 ⚔️ **The Zero-VRAM Gauntlet (Master Benchmark Directory):** [Explore Complete Benchmarks Directory & Showdown](benchmarks/) *(Detailed Markdown monographs for Snake, Jevenator 2, WindTunnel & JevBench).*  
 📜 **Open-Source Benchmark Integrity Report:** [Read the full audit on JevBench v1.2 / v1.3 metric shifts and dual verification (81.36 / 76.90)](docs/BENCHMARK_INTEGRITY_REPORT.md).  
 ⚙️ **Engine Optimization Report:** [Read the full technical report on label tokenization, calibration, and zero-overfitting invariants](docs/OPTIMIZATION_REPORT.md).  
