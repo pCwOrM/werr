@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>404: State Not Found | WERR</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(14, 18, 28, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --cyan: #00ffcc;
+      --purple: #a78bfa;
+      --text: #f0f6fc;
+      --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(ellipse at 50% 20%, rgba(0, 255, 204, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.06) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0, 255, 204, 0.1);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(0, 255, 204, 0.08);
+      border: 1px solid rgba(0, 255, 204, 0.25);
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .error-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(64px, 15vw, 96px);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, #00ffcc 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(20px, 5vw, 24px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .telemetry {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #7ee787;
+      text-align: left;
+      margin-bottom: 28px;
+      overflow-x: auto;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--cyan);
+      color: #050811;
+      border: 1px solid var(--cyan);
+    }
+    .btn-primary:hover {
+      background: #33ffd6;
+      box-shadow: 0 0 16px rgba(0, 255, 204, 0.4);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #555c68;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <main class="card">
+    <div class="badge">● ERR_STATE_OUT_OF_BOUNDS</div>
+    <div class="error-code">404</div>
+    <h1>State Not Found / Durum Bulunamadı</h1>
+    <p>
+      The requested route does not exist in the deterministic WERR manifold.<br>
+      Aradığınız sayfa veya durum WERR ekosisteminde bulunamadı.
+    </p>
+
+    <div class="telemetry">
+      <div>[WERR-KERNEL] HTTP 404: URI_UNRESOLVED</div>
+      <div>[DETERMINISM] Proof invariant checked: 0 sorry</div>
+      <div>[STATUS] Ready to redirect to operational anchors.</div>
+    </div>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">← Return Home</a>
+      <a href="/docs/werr_official_benchmarks_report.html" class="btn btn-secondary">Benchmarks Report</a>
+      <a href="/demos/snake.html" class="btn btn-secondary">Snake Demo</a>
+      <a href="https://github.com/pCwOrM/werr" target="_blank" rel="noopener" class="btn btn-secondary">GitHub ↗</a>
+    </div>
+  </main>
+
+  <footer>
+    WERR™ · Zero-VRAM Fractal Intelligence · <a href="https://werr.io" style="color: inherit; text-decoration: underline;">werr.io</a>
+  </footer>
+</body>
+</html>
