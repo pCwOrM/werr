@@ -82,7 +82,7 @@
 * **3. Eylemsel Emir (Türkçe *"Ver!"*):** Biyolojik omurilik refleksleri tereddüt etmeden eyleme geçer. Türkçedeki emir kipiyle: *"Karar werr!"*, *"Yanıt werr!"*, *"İzin werr!"*, *"Tepki werr!"*. Beyinsel müzakereye girmeden $< 1$~ms içinde karar üretir.
 * **4. Üçlü Ekosistem Sinerjisi (`answerr` $\leftrightarrow$ `werr` $\leftrightarrow$ `werracle`):**
   * **`answerr`** ([answerr.me](https://answerr.me)): Sistem-2 derin akıl yürütme, kod sentezi ve bulut yapay zeka portalı.
-  * **`werr`** (`pip install werr`): Makine-yerel Sistem-1 uç refleks çekirdeği ($< 0.5$ ms gecikme, 0 Bayt VRAM).
+  * **`werr`** (`pip install git+https://github.com/pCwOrM/werr.git`): Makine-yerel Sistem-1 uç refleks çekirdeği ($< 0.5$ ms gecikme, 0 Bayt VRAM).
   * **`werracle`** ([github.com/pCwOrM/werracle](https://github.com/pCwOrM/werracle)): EVM akıllı sözleşmeleri için sıfır-depolamalı yapay zeka kahini (~21k gas, tek bir `bytes32` depolama yuvası, blok-içi flaş kredi savunması; canlı simülatör: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)).
 
 ---
