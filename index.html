@@ -6,9 +6,16 @@
   <title>werr | Zero-Memory Fractal System-One Decision Engine (Waves & Errors)</title>
   <meta name="description" content="When the Wave meets Error, we Recurse (werr). A 0-byte memory alternative to LLM decision-making based on Mandelbrot geometry.">
   <link rel="icon" type="image/svg+xml" href="assets/werr_logo_core_fav_black.svg">
+  <link rel="canonical" href="https://werr.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://werr.io/">
+  <meta property="og:title" content="werr | Zero-Memory Fractal Decision Engine">
+  <meta property="og:description" content="A 0-byte-memory alternative to LLM decision-making: typed yes/no, choice and score decisions synthesized from Mandelbrot geometry in microseconds.">
+  <meta property="og:image" content="https://werr.io/assets/og-werr.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="assets/rendered_werr_logo_core.png">
   
   <!-- Google reCAPTCHA v3 for Telemetry Ingestion Protection -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux" async defer></script>
   
   <style>
     :root {
@@ -696,7 +703,7 @@
     /* Interactive Lab Grid */
     .lab-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
       gap: 2rem;
       margin: 1.5rem 0 3rem;
     }
@@ -715,7 +722,7 @@
 
     @media (max-width: 900px) {
       .lab-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         margin: 1.5rem 0 2rem;
       }
       .nav-links { display: none; }
@@ -1296,6 +1303,32 @@
         font-size: 0.75rem;
         padding: 0.6rem 0.75rem;
       }
+    }
+  
+    /* 2026-10-21 mobile fit: grid children may shrink below their content width */
+    .lab-grid > *, .card, .decision-block { min-width: 0; }
+    .custom-textarea, textarea, input[type=text], select { max-width: 100%; box-sizing: border-box; }
+    .decision-header, .card-header { flex-wrap: wrap; gap: .4rem; }
+    pre, code { overflow-wrap: anywhere; }
+    pre { white-space: pre-wrap; }
+    .action-callout > * { min-width: 0; }
+    .action-label, .action-value { overflow-wrap: anywhere; }
+    .toast-popup { max-width: calc(100vw - 32px); }
+    .canvas-container > *, .hud-metrics > *, .hud-box { min-width: 0; }
+    .hud-metrics { max-width: 100%; }
+    .hud-value, .hud-label { overflow-wrap: anywhere; }
+    @media (max-width: 360px) { .hud-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    /* nav: no wrapped labels on laptops, scrollable link strip on phones (was hidden) */
+    .brand { flex-shrink: 0; }
+    .nav-links a { white-space: nowrap; }
+    @media (max-width: 1360px) { .nav-links { gap: 1rem; } .nav-links a { font-size: 0.86rem; } }
+    @media (max-width: 1200px) { #nav-comp, #nav-code { display: none; } }
+    @media (max-width: 900px) {
+      nav { flex-wrap: wrap; row-gap: 0.6rem; }
+      .nav-links { display: flex !important; order: 3; width: 100%; overflow-x: auto; gap: 1.1rem; padding: 0.2rem 0 0.5rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links a { padding: 0.35rem 0; }
+      #nav-comp, #nav-code { display: inline; }
     }
   </style>
 </head>
@@ -3968,7 +4001,25 @@ GitHub Repository       : https://github.com/pCwOrM/werr
   // Telemetry Dispatchers & Google reCAPTCHA v3 Protection
   const RECAPTCHA_SITE_KEY = "6LdP-JgqAAAAAJLdy_W8uowqstSa4XKlJTOkVAux";
 
-  function getRecaptchaToken(action = "werr_eval") {
+  // reCAPTCHA loads on first use instead of on page load (it is ~1.6 MB with its frame)
+  let recaptchaLoading = null;
+  function ensureRecaptcha() {
+    if (typeof grecaptcha !== 'undefined') return Promise.resolve();
+    if (!recaptchaLoading) {
+      recaptchaLoading = new Promise((res) => {
+        const sc = document.createElement('script');
+        sc.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+        sc.async = true; sc.onload = res; sc.onerror = res;
+        document.head.appendChild(sc);
+        setTimeout(res, 6000);
+      });
+    }
+    return recaptchaLoading;
+  }
+  ['pointerdown', 'keydown', 'touchstart'].forEach(ev => addEventListener(ev, () => ensureRecaptcha(), {once: true, passive: true}));
+
+  async function getRecaptchaToken(action = "werr_eval") {
+    await ensureRecaptcha();
     return new Promise((resolve) => {
       try {
         if (typeof grecaptcha !== 'undefined' && grecaptcha.ready) {
