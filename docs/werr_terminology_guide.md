@@ -154,4 +154,4 @@ AI IDE ve web araçlarındaki birincil butonlarda geleneksel *"Submit / Run / Ex
 > *When you need microsecond reflexes, embed **werr**."*
 
 * **answerr (Bulut Karar Platformu):** Zapier, n8n, Webhook'lar ve REST/SSE API ile sıfır-halüsinasyon kararları bulutta koordine eder.
-* **werr (Gömülü Geometrik Çekirdek):** `pip install werr` veya `werr.h` ile doğrudan uygulamanın belleğinde 0 Bayt VRAM ile çalışır.
+* **werr (Gömülü Geometrik Çekirdek):** `pip install git+https://github.com/pCwOrM/werr.git` veya `werr.h` ile doğrudan uygulamanın belleğinde 0 Bayt VRAM ile çalışır.

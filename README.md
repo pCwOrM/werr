@@ -598,7 +598,7 @@ python tests/test_jevenator2_isolated.py
 
 ## 📄 Academic Publication & Preprint Status
 
-This research builds upon peer-reviewed open science preprints and is published as follows:
+This research builds upon open science publications, formal machine-checked proofs, and preprints and is published as follows:
 
 * **Primary Paper (Version 2.0 Camera-Ready):** *Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains*  
   * **arXiv Preprint:** [arXiv:2609.25498](https://arxiv.org/abs/2609.25498) `[cs.NE, cs.AI, cs.CL]` &bull; DOI: [10.48550/arXiv.2609.25498](https://doi.org/10.48550/arXiv.2609.25498)  
