@@ -645,22 +645,21 @@ Werr / Werracle / Answerr ekosistemi, **bağımsız akademik araştırma ve pate
 #### 1. 🏢 Ticari İşletim ve Fikrî Mülkiyet Lisanslama Katmanı (`ITouch Systems`)
 * **Resmi Ticari Unvan:** **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** (*ITouch Systems*)
 * **Merkez ve Resmi Kayıtlar:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Vergi Dairesi ve VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Sanayi Sicil: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
-* **Toplam Ticari ve Ar-Ge Gücü (8 Kişilik ITouch Ekibi — 2 Ortak + 6 Uzman Personel):**
-  * **Şirket Ortakları (2 Ortak):**
-    1. **Volkan Dağlı** — *Kurucu Ortak, Büyük Ortak ve CTO (Teknoloji Direktörü)*
-    2. **Bekirhan Dağlı** — *Şirket Ortağı ve İcra Kurulu Başkanı / CEO (Çevre Mühendisi; eski Siber Güvenlik Sektörü Uzmanı ve eski TİM-TEB Girişim Evi Proje Sorumlusu)*
-  * **Bordrolu Kadrolu Ar-Ge ve Finans Uzmanları (2 Personel):**
-    3. **Burak Salar** — *Mekatronik Mühendisi ve MBA*
-    4. **Fatih İlkin Sercan** — *Ekonomist & Sermaye Piyasası ve Borsa Uzmanı (Lisans: Anadolu Üniversitesi İktisat [16.06.2012]; Yüksek Lisans: Marmara Üniversitesi Bankacılık ve Sigortacılık Enstitüsü — Sermaye Piyasası ve Borsa YL [20.06.2016])*
-  * **Hizmet Sözleşmeli Çözüm Ortağı Uzmanları (4 Personel):**
+* **Yönetim, Mühendislik ve Operasyon Ekibi (8 Kişilik ITouch Ekibi):**
+  * **Yönetim ve Ortaklar:**
+    1. **Volkan Dağlı** — *Kurucu & CTO* (ODTÜ Fizik, Anadolu Üniversitesi Yönetim Bilişim Sistemleri, Bilişim Teknolojileri YL)
+    2. **Bekirhan Dağlı** — *Ortak & CEO* (Çevre Mühendisi)
+  * **Mühendislik, Finans ve Operasyon:**
+    3. **Burak Salar** — *Mekatronik Mühendisi, MBA*
+    4. **Fatih İlkin Sercan** — *Ekonomist, Sermaye Piyasası ve Borsa YL (Anadolu Üniversitesi İktisat; Marmara Üniversitesi YL)*
     5. **Mustafa Kalender** — *Bilgisayar Mühendisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    6. **Mustafa Ünal** — *Yazılım Geliştirme Uzmanı — Ustalık ve Usta Öğreticilik Belgesi Sahibi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Mustafa Ünal** — *Yazılım Geliştirme Usta Öğreticisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Bilgisayar Programcısı ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
-    8. **Semih Salar** — *İşletme Mezunu & İş Geliştirme / Operasyon Uzmanı ([Türeken Ajans](https://tureken.com/))*
-* **Münhasır Ticari Haklar ve Markalar:** Patentlerin tam vekâlet sahibi ve yazılımların hak sahibi olan **Volkan Dağlı**'nın (Büyük Ortak ve CTO) resmi yetkilendirmesiyle; tüm yazılım, patent ve yayınların ticari kullanım, satış ve kurumsal lisanslama hakları ile **`Werr®`**, **`Werracle®`** ve **`Answerr®`** markaları (TÜRKPATENT başvuruları ITouch Systems adına) münhasıran **ITouch Bilişim Sistemleri Ltd. Şti.**'ye aittir.
+    8. **Semih Salar** — *İşletme ([Tureken Ajans](https://tureken.com/))*
+* **Münhasır Ticari Haklar ve Markalar:** Patentlerin tam vekâlet sahibi ve yazılımların hak sahibi olan **Volkan Dağlı**'nın (Kurucu & CTO) resmi yetkilendirmesiyle; tüm yazılım, patent ve yayınların ticari kullanım, satış ve kurumsal lisanslama hakları ile **`Werr®`**, **`Werracle®`** ve **`Answerr®`** markaları (TÜRKPATENT başvuruları ITouch Systems adına) münhasıran **ITouch Bilişim Sistemleri Ltd. Şti.**'ye aittir.
 
 #### 2. 🎓 Akademik Araştırma ve Patent Yazarlığı Katmanı
-* **Volkan Dağlı** — *Baş Araştırmacı ve Baş Mimar* (Akademik Bağlılık: **Anadolu Üniversitesi**; Ticari Rol: **Kurucu Ortak, Büyük Ortak ve CTO, ITouch Systems**).
+* **Volkan Dağlı** — *Baş Araştırmacı ve Baş Mimar* (Akademik Bağlılık: **Anadolu Üniversitesi**; Ticari Rol: **Kurucu & CTO, ITouch Systems**).
 * **Dr. Zerrin Dağlı** — *Akademik Danışman ve Ortak Yazar* (Akademik Bağlılık: **Mersin Üniversitesi**; yalnızca bağımsız **Akademik Danışman** ve bilimsel ortak yazar olarak yer almakta olup **hiçbir ticari rolü veya şirket bağı yoktur**).
 * **Dağhan Dağlı** — *Stajyer / Gönüllü Genç Araştırmacı* (Bağlılık: **Toros Üniversitesi — Toros Fen Lisesi**; bilimsel yayınlarda yalnızca ticari olmayan stajyer/gönüllü araştırmacı olarak yer almaktadır).
 * **Patentler (`TÜRKPATENT TR 2026/016285` ve `TR 2026/016633`):** **Volkan Dağlı**, **Dr. Zerrin Dağlı** ve **Dağhan Dağlı** adına şahsi ortak buluş olarak kayıtlıdır; **tüm temsil, vekâlet ve ticari lisanslama yetkisi Volkan Dağlı'ya verilmiş** olup ticari hakları münhasıran **ITouch Bilişim Sistemleri Ltd. Şti.** tarafından yürütülmektedir.

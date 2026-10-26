@@ -965,22 +965,21 @@ The Werr / Werracle / Answerr ecosystem operates under a strict institutional se
 #### 1. 🏢 Commercial Operating & IP Licensing Layer (`ITouch Systems`)
 * **Legal Entity:** **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** (*ITouch Systems*)
 * **Headquarters & Registration:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Tax Office & VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Industrial Registry: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
-* **Total Commercial & R&D Force (8-Person Team — 2 Partners + 6 Specialists):**
-  * **Company Partners (2 Partners):**
-    1. **Volkan Dağlı** — *Co-Founder, Major Partner & Chief Technology Officer (CTO)*
-    2. **Bekirhan Dağlı** — *Partner & Chief Executive Officer / CEO (Environmental Engineer; former Cybersecurity Industry Specialist & former Project Manager at TİM-TEB Startup House / Girişim Evi)*
-  * **In-House Payroll R&D & Financial Specialists (2 Staff):**
-    3. **Burak Salar** — *Mechatronics Engineer & MBA*
-    4. **Fatih İlkin Sercan** — *Economist & Capital Markets Specialist (B.Sc. in Economics, Anadolu University [2012]; M.Sc. in Capital Markets and Stock Exchange, Marmara University — Institute of Banking and Insurance [2016])*
-  * **Contracted Partner-Company Engineering & Operations Specialists (4 Staff):**
-    5. **Mustafa Kalender** — *Computer Engineer (Contracted via [Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    6. **Mustafa Ünal** — *Certified Software Development Master & Master Instructor / Usta Öğretici (Contracted via [Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    7. **Prenses Metin** — *Computer Programmer (Contracted via [Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
-    8. **Semih Salar** — *Business Administration & Operations Specialist (Contracted via [Türeken Ajans](https://tureken.com/))*
-* **Exclusive Commercial Rights & Trademarks:** By formal authorization of **Volkan Dağlı** (as Major Partner, CTO, and authorized patent/software rights representative), all commercial operating, distribution, and enterprise licensing rights for the software, patents, and research outputs — together with the registered trademarks **`Werr®`**, **`Werracle®`**, and **`Answerr®`** (TÜRKPATENT filings under ITouch Systems) — belong exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
+* **Executive & Engineering Team (8 Members — ITouch Systems):**
+  * **Leadership & Partners:**
+    1. **Volkan Dağlı** — *Founder & CTO* (B.Sc. in Physics, METU; B.Sc. in MIS, Anadolu University; M.Sc. in IT)
+    2. **Bekirhan Dağlı** — *Partner & CEO* (B.Sc. in Environmental Engineering)
+  * **Engineering, Finance & Operations:**
+    3. **Burak Salar** — *Mechatronics Engineer, MBA*
+    4. **Fatih İlkin Sercan** — *Economist & M.Sc. in Capital Markets (Anadolu University; Marmara University)*
+    5. **Mustafa Kalender** — *Computer Engineer ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Mustafa Ünal** — *Software Development Master Instructor ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    7. **Prenses Metin** — *Computer Programmer ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
+    8. **Semih Salar** — *Business Administration ([Tureken Ajans](https://tureken.com/))*
+* **Exclusive Commercial Rights & Trademarks:** By formal authorization of **Volkan Dağlı** (Founder & CTO), all commercial operating, distribution, and enterprise licensing rights for the software, patents, and research outputs — together with the registered trademarks **`Werr®`**, **`Werracle®`**, and **`Answerr®`** (TÜRKPATENT filings under ITouch Systems) — belong exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
 
 #### 2. 🎓 Academic Research & Patent Authorship Layer
-* **Volkan Dağlı** — *Principal Investigator & Lead Architect* (Academic Affiliation: **Anadolu University**; Commercial Role: **Co-Founder, Major Partner & CTO, ITouch Systems**).
+* **Volkan Dağlı** — *Principal Investigator & Lead Architect* (Academic Affiliation: **Anadolu University**; Commercial Role: **Founder & CTO, ITouch Systems**).
 * **Dr. Zerrin Dağlı** — *Academic Advisor & Co-Author* (Academic Affiliation: **Mersin University**; serves strictly as an independent Academic Advisor and scientific co-author with **no commercial role or corporate tie**).
 * **Dağhan Dağlı** — *Research Intern / Volunteer Junior Researcher* (Affiliation: **Toros University — Toros Science High School / Toros Fen Lisesi**; contributes to scientific publications and formal verification strictly as a non-commercial student researcher).
 * **Patents (`TÜRKPATENT TR 2026/016285` & `TR 2026/016633`):** Registered jointly as personal inventions by **Volkan Dağlı**, **Dr. Zerrin Dağlı**, and **Dağhan Dağlı**, with **full power of attorney, representation, and commercial licensing authority vested in Volkan Dağlı** and licensed exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
