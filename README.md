@@ -967,15 +967,15 @@ The Werr / Werracle / Answerr ecosystem operates under a strict institutional se
 * **Headquarters & Registration:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Tax Office & VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Industrial Registry: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
 * **Executive & Engineering Team (8 Members — ITouch Systems):**
   * **Leadership & Partners:**
-    1. **Volkan Dağlı** — *Founder & CTO* (Physicist, MIS & M.Sc. in IT)
-    2. **Bekirhan Dağlı** — *Partner & CEO* (B.Sc. in Environmental Engineering)
+    1. **Volkan Dağlı** — *Founder & CTO* (Physicist, MIS Specialist & M.Sc. in IT)
+    2. **Bekirhan Dağlı** — *Partner & CEO* (Environmental Engineer)
   * **Engineering, Finance & Operations:**
     3. **Burak Salar** — *Mechatronics Engineer, MBA*
     4. **Fatih İlkin Sercan** — *Economist & M.Sc. in Capital Markets and Stock Exchange*
     5. **Mustafa Kalender** — *Computer Engineer ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    6. **Mustafa Ünal** — *Software Development Master Instructor ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Mustafa Ünal** — *Software Development Specialist & Master Instructor ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Computer Programmer ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
-    8. **Semih Salar** — *Business Administration ([Tureken Ajans](https://tureken.com/))*
+    8. **Semih Salar** — *Business Administration Specialist ([Tureken Ajans](https://tureken.com/))*
 * **Exclusive Commercial Rights & Trademarks:** By formal authorization of **Volkan Dağlı** (Founder & CTO), all commercial operating, distribution, and enterprise licensing rights for the software, patents, and research outputs — together with the registered trademarks **`Werr®`**, **`Werracle®`**, and **`Answerr®`** (TÜRKPATENT filings under ITouch Systems) — belong exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
 
 #### 2. 🎓 Academic Research & Patent Authorship Layer
