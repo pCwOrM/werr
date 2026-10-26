@@ -648,13 +648,13 @@ Werr / Werracle / Answerr ekosistemi, **bağımsız akademik araştırma ve pate
 * **Toplam Ticari ve Ar-Ge Gücü (8 Kişilik ITouch Ekibi — 2 Ortak + 6 Uzman Personel):**
   * **Şirket Ortakları (2 Ortak):**
     1. **Volkan Dağlı** — *Kurucu Ortak, Büyük Ortak ve CTO (Teknoloji Direktörü)*
-    2. **Bekirhan Dağlı** — *Şirket Ortağı (Çevre Mühendisi ve Siber Güvenlik Uzmanı)*
+    2. **Bekirhan Dağlı** — *Şirket Ortağı ve İcra Kurulu Başkanı / CEO (Çevre Mühendisi; eski Siber Güvenlik Sektörü Uzmanı ve eski TİM-TEB Girişim Evi Proje Sorumlusu)*
   * **Bordrolu Kadrolu Ar-Ge ve Finans Uzmanları (2 Personel):**
     3. **Burak Salar** — *Mekatronik Mühendisi ve MBA*
     4. **Fatih İlkin Sercan** — *Ekonomist & Sermaye Piyasası ve Borsa Uzmanı (Lisans: Anadolu Üniversitesi İktisat [16.06.2012]; Yüksek Lisans: Marmara Üniversitesi Bankacılık ve Sigortacılık Enstitüsü — Sermaye Piyasası ve Borsa YL [20.06.2016])*
   * **Hizmet Sözleşmeli Çözüm Ortağı Uzmanları (4 Personel):**
     5. **Mustafa Kalender** — *Bilgisayar Mühendisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    6. **Kıdemli Yazılım Geliştirme Uzmanı** — *Yazılım Geliştirme Ustalık ve Usta Öğreticilik Belgesi Sahibi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Mustafa Ünal** — *Yazılım Geliştirme Uzmanı — Ustalık ve Usta Öğreticilik Belgesi Sahibi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Bilgisayar Programcısı ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
     8. **Semih Salar** — *İşletme Mezunu & İş Geliştirme / Operasyon Uzmanı ([Türeken Ajans](https://tureken.com/))*
 * **Münhasır Ticari Haklar ve Markalar:** Patentlerin tam vekâlet sahibi ve yazılımların hak sahibi olan **Volkan Dağlı**'nın (Büyük Ortak ve CTO) resmi yetkilendirmesiyle; tüm yazılım, patent ve yayınların ticari kullanım, satış ve kurumsal lisanslama hakları ile **`Werr®`**, **`Werracle®`** ve **`Answerr®`** markaları (TÜRKPATENT başvuruları ITouch Systems adına) münhasıran **ITouch Bilişim Sistemleri Ltd. Şti.**'ye aittir.

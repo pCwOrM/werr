@@ -968,13 +968,13 @@ The Werr / Werracle / Answerr ecosystem operates under a strict institutional se
 * **Total Commercial & R&D Force (8-Person Team — 2 Partners + 6 Specialists):**
   * **Company Partners (2 Partners):**
     1. **Volkan Dağlı** — *Co-Founder, Major Partner & Chief Technology Officer (CTO)*
-    2. **Bekirhan Dağlı** — *Partner (Environmental Engineer & Cybersecurity Specialist)*
+    2. **Bekirhan Dağlı** — *Partner & Chief Executive Officer / CEO (Environmental Engineer; former Cybersecurity Industry Specialist & former Project Manager at TİM-TEB Startup House / Girişim Evi)*
   * **In-House Payroll R&D & Financial Specialists (2 Staff):**
     3. **Burak Salar** — *Mechatronics Engineer & MBA*
     4. **Fatih İlkin Sercan** — *Economist & Capital Markets Specialist (B.Sc. in Economics, Anadolu University [2012]; M.Sc. in Capital Markets and Stock Exchange, Marmara University — Institute of Banking and Insurance [2016])*
   * **Contracted Partner-Company Engineering & Operations Specialists (4 Staff):**
     5. **Mustafa Kalender** — *Computer Engineer (Contracted via [Tetra Ar-Ge](https://tetraarge.com.tr/))*
-    6. **Senior Software Development Specialist** — *Certified Software Development Master & Master Instructor / Usta Öğretici (Contracted via [Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Mustafa Ünal** — *Certified Software Development Master & Master Instructor / Usta Öğretici (Contracted via [Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Computer Programmer (Contracted via [Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
     8. **Semih Salar** — *Business Administration & Operations Specialist (Contracted via [Türeken Ajans](https://tureken.com/))*
 * **Exclusive Commercial Rights & Trademarks:** By formal authorization of **Volkan Dağlı** (as Major Partner, CTO, and authorized patent/software rights representative), all commercial operating, distribution, and enterprise licensing rights for the software, patents, and research outputs — together with the registered trademarks **`Werr®`**, **`Werracle®`**, and **`Answerr®`** (TÜRKPATENT filings under ITouch Systems) — belong exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
