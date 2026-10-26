@@ -641,7 +641,7 @@ WERR, bağımsız ve patent korumalı açık kaynaklı matematiksel yapay zekâ 
 ### 💳 Resmi Bağış ve Destek Cüzdanı
 | Kanal / Platform | Ağ (Network) | Alıcı Cüzdan Adresi |
 | :--- | :--- | :--- |
-| **Resmi Cüzdan (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPSBgLJu` |
+| **Resmi Cüzdan (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPsBgLJu` |
 | **Resmi Tüzel Kişilik** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
 
 * **Resmi İletişim Kanalları:** `ask@answerr.me` (Resmi İletişim & AI Ajanı) | `info@itouch.com.tr` (Kurumsal) | Web: `https://answerr.me`

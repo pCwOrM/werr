@@ -961,7 +961,7 @@ WERR is an independent, patented open-source mathematical AI research project. C
 ### 💳 Official Receiving Wallet
 | Channel / Platform | Network | Receiving Address |
 | :--- | :--- | :--- |
-| **Official Wallet (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPSBgLJu` |
+| **Official Wallet (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPsBgLJu` |
 | **Official Corporate Entity** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
 
 * **Official Contacts:** `ask@answerr.me` (Official Inquiries & AI Agent) | `info@itouch.com.tr` (Corporate) | Web: `https://answerr.me`
