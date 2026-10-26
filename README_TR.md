@@ -645,11 +645,18 @@ Werr / Werracle / Answerr ekosistemi, **bağımsız akademik araştırma ve pate
 #### 1. 🏢 Ticari İşletim ve Fikrî Mülkiyet Lisanslama Katmanı (`ITouch Systems`)
 * **Resmi Ticari Unvan:** **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** (*ITouch Systems*)
 * **Merkez ve Resmi Kayıtlar:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Vergi Dairesi ve VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Sanayi Sicil: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
-* **Şirket Ortakları (2 Ortak):**
-  1. **Volkan Dağlı** — *Kurucu Ortak, Büyük Ortak ve CTO (Teknoloji Direktörü)*
-  2. **Bekirhan Dağlı** — *Şirket Ortağı (Çevre Mühendisi ve Siber Güvenlik Uzmanı)*
-* **Ar-Ge, Mühendislik ve Finansal Operasyon Ekibi (4 Uzman Personel):**
-  * *1 Mekatronik Mühendisi • 1 Bilgisayar Mühendisi • 1 İktisatçı ve Bankacılık Yüksek Lisans Uzmanı • 1 Bilgisayar Programcılığı Uzmanı*
+* **Toplam Ticari ve Ar-Ge Gücü (8 Kişilik ITouch Ekibi — 2 Ortak + 6 Uzman Personel):**
+  * **Şirket Ortakları (2 Ortak):**
+    1. **Volkan Dağlı** — *Kurucu Ortak, Büyük Ortak ve CTO (Teknoloji Direktörü)*
+    2. **Bekirhan Dağlı** — *Şirket Ortağı (Çevre Mühendisi ve Siber Güvenlik Uzmanı)*
+  * **Bordrolu Kadrolu Ar-Ge ve Finans Uzmanları (2 Personel):**
+    3. **Burak Salar** — *Mekatronik Mühendisi ve MBA*
+    4. **Fatih İlkin Sercan** — *Ekonomist & Sermaye Piyasası ve Borsa Uzmanı (Lisans: Anadolu Üniversitesi İktisat [16.06.2012]; Yüksek Lisans: Marmara Üniversitesi Bankacılık ve Sigortacılık Enstitüsü — Sermaye Piyasası ve Borsa YL [20.06.2016])*
+  * **Hizmet Sözleşmeli Çözüm Ortağı Uzmanları (4 Personel):**
+    5. **Mustafa Kalender** — *Bilgisayar Mühendisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    6. **Kıdemli Yazılım Geliştirme Uzmanı** — *Yazılım Geliştirme Ustalık ve Usta Öğreticilik Belgesi Sahibi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
+    7. **Prenses Metin** — *Bilgisayar Programcısı ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
+    8. **Semih Salar** — *İşletme Mezunu & İş Geliştirme / Operasyon Uzmanı ([Türeken Ajans](https://tureken.com/))*
 * **Münhasır Ticari Haklar ve Markalar:** Patentlerin tam vekâlet sahibi ve yazılımların hak sahibi olan **Volkan Dağlı**'nın (Büyük Ortak ve CTO) resmi yetkilendirmesiyle; tüm yazılım, patent ve yayınların ticari kullanım, satış ve kurumsal lisanslama hakları ile **`Werr®`**, **`Werracle®`** ve **`Answerr®`** markaları (TÜRKPATENT başvuruları ITouch Systems adına) münhasıran **ITouch Bilişim Sistemleri Ltd. Şti.**'ye aittir.
 
 #### 2. 🎓 Akademik Araştırma ve Patent Yazarlığı Katmanı
