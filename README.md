@@ -958,13 +958,36 @@ This software and its reflex decision algorithms are licensed under the **[Busin
 
 WERR is an independent, patented open-source mathematical AI research project. Contributions accelerate our Zero-VRAM edge AI benchmarks, EVM on-chain oracle verifiers, and public goods academic tooling.
 
-### 💳 Official Receiving Wallet
-| Channel / Platform | Network | Receiving Address |
-| :--- | :--- | :--- |
-| **Official Wallet (Binance)** | TRC20 (TRON) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPsBgLJu` |
-| **Official Corporate Entity** | Teknokent | ITOUCH BİLİŞİM SİSTEMLERİ LTD. ŞTİ. (Çukurova Teknokent) |
+### 🏛️ Corporate Operating Structure & Academic Research Governance
 
-* **Official Contacts:** `ask@answerr.me` (Official Inquiries & AI Agent) | `info@itouch.com.tr` (Corporate) | Web: `https://answerr.me`
+The Werr / Werracle / Answerr ecosystem operates under a strict institutional separation between **independent academic research & patent authorship** and **commercial corporate operations**:
+
+#### 1. 🏢 Commercial Operating & IP Licensing Layer (`ITouch Systems`)
+* **Legal Entity:** **ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Limited Şirketi** (*ITouch Systems*)
+* **Headquarters & Registration:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Tax Office & VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Industrial Registry: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
+* **Company Partners (2 Partners):**
+  1. **Volkan Dağlı** — *Co-Founder, Major Partner & Chief Technology Officer (CTO)*
+  2. **Bekirhan Dağlı** — *Partner (Environmental Engineer & Cybersecurity Specialist)*
+* **R&D, Engineering & Financial Operations Team (4 Specialist Staff Members):**
+  * *1 Mechatronics Engineer • 1 Computer Engineer • 1 Economist & M.Sc. in Banking Specialist • 1 Computer Programming Specialist*
+* **Exclusive Commercial Rights & Trademarks:** By formal authorization of **Volkan Dağlı** (as Major Partner, CTO, and authorized patent/software rights representative), all commercial operating, distribution, and enterprise licensing rights for the software, patents, and research outputs — together with the registered trademarks **`Werr®`**, **`Werracle®`**, and **`Answerr®`** (TÜRKPATENT filings under ITouch Systems) — belong exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
+
+#### 2. 🎓 Academic Research & Patent Authorship Layer
+* **Volkan Dağlı** — *Principal Investigator & Lead Architect* (Academic Affiliation: **Anadolu University**; Commercial Role: **Co-Founder, Major Partner & CTO, ITouch Systems**).
+* **Dr. Zerrin Dağlı** — *Academic Advisor & Co-Author* (Academic Affiliation: **Mersin University**; serves strictly as an independent Academic Advisor and scientific co-author with **no commercial role or corporate tie**).
+* **Dağhan Dağlı** — *Research Intern / Volunteer Junior Researcher* (Affiliation: **Toros University — Toros Science High School / Toros Fen Lisesi**; contributes to scientific publications and formal verification strictly as a non-commercial student researcher).
+* **Patents (`TÜRKPATENT TR 2026/016285` & `TR 2026/016633`):** Registered jointly as personal inventions by **Volkan Dağlı**, **Dr. Zerrin Dağlı**, and **Dağhan Dağlı**, with **full power of attorney, representation, and commercial licensing authority vested in Volkan Dağlı** and licensed exclusively to **ITouch Bilişim Sistemleri Ltd. Şti.**
+
+### 💳 Official Treasury Wallets & Instant 1-Click B2B API Checkout
+| Channel / Payment Method | Network / Rail | Verified Address / Checkout Endpoint |
+| :--- | :--- | :--- |
+| **1-Click Web3 & Multi-Pay Checkout** | Base USDC / TRC20 USDT / **iyzico 3D Card** | [**`radar.werracle.com/v1/radar/dashboard#subscribe-section`**](https://radar.werracle.com/v1/radar/dashboard#subscribe-section) |
+| **Instant Commercial Invoice (PDF)** | Official ITouch Systems Tax Invoice | [**`radar.werracle.com/v1/radar/invoice/sample.pdf`**](https://radar.werracle.com/v1/radar/invoice/sample.pdf) |
+| **Official EVM Treasury (Binance)** | Base / Ethereum (ERC20) / Arbitrum / BSC (`USDC` & `USDT`) | `0x4945ef6e124eea2176ddf050b33db42b0ae8c7f7` |
+| **Official TRON Treasury (Binance)** | TRC20 (TRON Network — `USDT`) | `TLMhaDJTVYBHBSGJ9nCQGLvqnYFPsBgLJu` |
+| **Official Corporate Entity** | Çukurova Teknokent (VKN: `4690944558`) | ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Ltd. Şti. |
+
+* **Official Contacts:** `contact@werracle.com` (Corporate & Protocol) | `ask@answerr.me` (Support & General Inquiries) | `labs@werr.io` (Werr Labs Research) | `billing@werr.io` (Billing & Invoices)
 
 
 ## 🏛️ Historical Ecosystem Archives & Preservation
