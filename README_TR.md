@@ -647,11 +647,11 @@ Werr / Werracle / Answerr ekosistemi, **bağımsız akademik araştırma ve pate
 * **Merkez ve Resmi Kayıtlar:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Vergi Dairesi ve VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Sanayi Sicil: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
 * **Yönetim, Mühendislik ve Operasyon Ekibi (8 Kişilik ITouch Ekibi):**
   * **Yönetim ve Ortaklar:**
-    1. **Volkan Dağlı** — *Kurucu & CTO* (ODTÜ Fizik, Anadolu Üniversitesi Yönetim Bilişim Sistemleri, Bilişim Teknolojileri YL)
+    1. **Volkan Dağlı** — *Kurucu & CTO* (Fizik, Yönetim Bilişim Sistemleri & Bilişim Teknolojileri YL)
     2. **Bekirhan Dağlı** — *Ortak & CEO* (Çevre Mühendisi)
   * **Mühendislik, Finans ve Operasyon:**
     3. **Burak Salar** — *Mekatronik Mühendisi, MBA*
-    4. **Fatih İlkin Sercan** — *Ekonomist, Sermaye Piyasası ve Borsa YL (Anadolu Üniversitesi İktisat; Marmara Üniversitesi YL)*
+    4. **Fatih İlkin Sercan** — *Ekonomist, Sermaye Piyasası ve Borsa YL*
     5. **Mustafa Kalender** — *Bilgisayar Mühendisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     6. **Mustafa Ünal** — *Yazılım Geliştirme Usta Öğreticisi ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Bilgisayar Programcısı ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*

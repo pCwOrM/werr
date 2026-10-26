@@ -967,11 +967,11 @@ The Werr / Werracle / Answerr ecosystem operates under a strict institutional se
 * **Headquarters & Registration:** Çukurova Teknokent, Balcalı Mah. Güney Kampüs/5 Sk. No: 4/1 İç Kapı No: 26, 01330 Sarıçam / Adana, Türkiye • Tax Office & VKN: **Yüreğir V.D. 4690944558** • MERSİS: `0469094455800001` • Industrial Registry: `827254` • KEP: `itouchbilisim@hs01.kep.tr`
 * **Executive & Engineering Team (8 Members — ITouch Systems):**
   * **Leadership & Partners:**
-    1. **Volkan Dağlı** — *Founder & CTO* (B.Sc. in Physics, METU; B.Sc. in MIS, Anadolu University; M.Sc. in IT)
+    1. **Volkan Dağlı** — *Founder & CTO* (Physicist, MIS & M.Sc. in IT)
     2. **Bekirhan Dağlı** — *Partner & CEO* (B.Sc. in Environmental Engineering)
   * **Engineering, Finance & Operations:**
     3. **Burak Salar** — *Mechatronics Engineer, MBA*
-    4. **Fatih İlkin Sercan** — *Economist & M.Sc. in Capital Markets (Anadolu University; Marmara University)*
+    4. **Fatih İlkin Sercan** — *Economist & M.Sc. in Capital Markets and Stock Exchange*
     5. **Mustafa Kalender** — *Computer Engineer ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     6. **Mustafa Ünal** — *Software Development Master Instructor ([Tetra Ar-Ge](https://tetraarge.com.tr/))*
     7. **Prenses Metin** — *Computer Programmer ([Gifted Coder Technology](https://giftedcodertechnology.com.tr/))*
