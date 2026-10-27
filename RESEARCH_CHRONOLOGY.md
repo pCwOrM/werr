@@ -4,7 +4,7 @@
 > **Repository:** [pCwOrM/werr](https://github.com/pCwOrM/werr)  
 > **Archival Snapshot Date:** October 2026  
 > **Licensor:** ITouch Bilişim Sistemleri Ltd. Şti. (`ITouch Systems` · Çukurova Teknokent / Cukurova University Science Park)  
-> **Scientific Co-Authors & Inventors:** Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı  
+> **Scientific Co-Authors & Inventors:** Volkan Dağlı (Anadolu University), Dr. Zerrin Dağlı (Mersin University), Dağhan Dağlı (Toros University)  
 >
 > *Notice: This document permanently preserves the cumulative historical research logs, ablation matrices, experimental hardware telemetry, and empirical benchmarks of the werr initiative. It serves as an unalterable academic ledger supporting our published monographs, CERN Zenodo records, and patent disclosures.*
 

@@ -208,7 +208,7 @@ If you cite or replicate this research in scientific publications, please use th
 * **Open-Science, Educational & Evaluation Use:** The Licensed Work is free to run, inspect, benchmark, test, fork, and replicate for all non-commercial academic research and personal evaluations under the **Business Source License 1.1 (BSL 1.1)**.
 * **Commercial Operations & Production Licensing:** Any commercial production use, hosted SaaS deployment, or proprietary redistribution requires a commercial license from the Licensor:
   * **Licensor:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Systems` · Çukurova Teknokent / Cukurova University Science Park, Adana, Türkiye).
-  * **Scientific Co-Authors & Inventors:** Volkan Dağlı (*Anadolu University*), Dr. Zerrin Dağlı (*Academic Advisor, Co-Author & Co-Inventor*), Dağhan Dağlı (*Co-Author & Co-Inventor — Toros University / Toros Science High School*).
+  * **Scientific Co-Authors & Inventors:** Volkan Dağlı (*Anadolu University*), Dr. Zerrin Dağlı (*Mersin University — Academic Advisor, Co-Author & Co-Inventor*), Dağhan Dağlı (*Toros University — Co-Author & Co-Inventor*).
   * **Patent Applications:** TÜRKPATENT **TR 2026/016285** & **TR 2026/016633**.
   * **Inquiries:** `contact@werracle.com` · `ask@answerr.me`
 
