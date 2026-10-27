@@ -1,5 +1,5 @@
 """
-werr: Core System-One Fractal Decision Engine (v0.5.1)
+werr: Core System-One Fractal Decision Engine (v0.5.2)
 Evaluates typed questions (noul, choice, score) directly from deterministic
 Mandelbrot geometry with zero matrix weights (0 Byte VRAM/RAM tensors).
 
@@ -619,7 +619,7 @@ class WerrEngine:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
         return WerrResponse(
-            model=f"werr-0.5.1-{self.domain_mode}",
+            model=f"werr-0.5.2-{self.domain_mode}",
             answers=answers,
             latency_ms=round(elapsed_ms, 2),
             memory_tensor_bytes=0,

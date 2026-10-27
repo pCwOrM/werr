@@ -59,7 +59,7 @@ class WerrJevWireHandler(BaseHTTPRequestHandler):
             self._send_json(200, {
                 "status": "healthy",
                 "system": "werr",
-                "version": "0.5.1",
+                "version": "0.5.2",
                 "engine": "System-One Zero-Memory Fractal Kernel",
                 "wire_format": "TypeSafe /v1/systemone Compatible",
             })
