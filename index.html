@@ -5112,7 +5112,7 @@ GitHub Repository       : https://github.com/pCwOrM/werr
 (() => {
 "use strict";
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const RM = false; // Hero & interactive fractal visualizations always active across desktop & mobile
 const MOBILE = matchMedia("(max-width: 860px)").matches;
 
 /* ---------------- translations for the new parts ---------------- */
@@ -5177,7 +5177,7 @@ const ease = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
   const sc = $("#scope"), sx = sc.getContext("2d");
   const gl = cv.getContext("webgl", {antialias: false, premultipliedAlpha: false});
   const GATE = {cx: -0.101096, cy: 0.956286};   // the engine's api gate seed
-  const START = MOBILE ? {x: -0.16, y: 0.86, S: 0.42} : {x: -0.62, y: 0.42, S: 1.25};
+  const START = MOBILE ? {x: -0.16, y: 0.86, S: 0.42} : {x: -0.22, y: 0.78, S: 0.55};
   let C = {x: START.x, y: START.y}, S = START.S;          // view centre and half-height (complex units)
   let prog = null, U = {};
   if (gl){
@@ -5326,8 +5326,7 @@ const ease = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
     drawOverlay(now, Math.min(1, p));
     if (!MOBILE) drawScope(now);
   }
-  (function loop(now){ if (visible && !document.hidden) frame(now); if (!RM) requestAnimationFrame(loop); })(performance.now());
-  if (RM) frame(performance.now());
+  (function loop(now){ if (visible && !document.hidden) frame(now); requestAnimationFrame(loop); })(performance.now());
 })();
 
 /* =====================================================================
