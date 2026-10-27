@@ -6,7 +6,7 @@
 [![Tau-Bench](https://img.shields.io/badge/Tau--Bench-10%2F10%20Ge%C3%A7ti-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Jevenator 2 Görsel](https://img.shields.io/badge/Jevenator%202-38.0x%20H%C4%B1zl%C4%B1-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Kriptografik Denetim](https://img.shields.io/badge/Denetim-SHA--256%20M%C3%BCh%C3%BCrl%C3%BC-blueviolet.svg)](sealed/SEAL_MANIFEST.json)
-[![Canlı Web Arenası](https://img.shields.io/badge/Canl%C4%B1%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
+[![Canlı Web Arenası](https://img.shields.io/badge/Canl%C4%B1%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/fractal-neural-synthesis/benchmarks.html)
 [![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL%201.1-red.svg)](../LICENSE)
 
 <p align="center">
@@ -190,7 +190,7 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 ### 6. 🌀 Sürekli Manifoldlar: Two-Moons & Two-Spirals
 * **Kapsam:** Geri-yayılım (backpropagation) veya gradyan inişi olmadan topolojik doğrusal olmayan sınıflandırma.
 * **Doğruluk:** **Two-Moons: %99.30** │ **Two-Spirals: %98.50**.
-* **Dokümantasyon:** Kapsamlı matematiksel çıkarımlar [Mandelbrot Akademik Teknik Raporu (HTML)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Kaynağı](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)) monografında yer almaktadır.
+* **Dokümantasyon:** Kapsamlı matematiksel çıkarımlar [Mandelbrot Akademik Teknik Raporu (HTML)](https://pcworm.github.io/fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Kaynağı](https://github.com/pCwOrM/fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)) monografında yer almaktadır.
 
 ---
 
@@ -262,8 +262,8 @@ benchmarks/
 
 ## 🌐 Ekosistem Bağlantıları
 
-* 🌐 **İnteraktif Web Arenası:** [GitHub Pages üzerinde `benchmarks.html`'i Aç](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
-* 📜 **Temel Bilim Makalesi ve Laboratuvarlar:** [Mandelbrot Fractal Neural Synthesis Portalı](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+* 🌐 **İnteraktif Web Arenası:** [GitHub Pages üzerinde `benchmarks.html`'i Aç](https://pcworm.github.io/fractal-neural-synthesis/benchmarks.html)
+* 📜 **Temel Bilim Makalesi ve Laboratuvarlar:** [Mandelbrot Fractal Neural Synthesis Portalı](https://pcworm.github.io/fractal-neural-synthesis/)
 * ⚡ **WERR Ana Deposu:** [werr GitHub Repository](https://github.com/pCwOrM/werr)
 * 🧠 **Canlı İkili Bilişsel API:** [answerr Platformu (answerr.me)](https://answerr.me)
 * 🏛️ **Kalıcı Zenodo WERR Arşivi:** [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426)

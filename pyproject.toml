@@ -31,7 +31,7 @@ dependencies = [
 "Repository" = "https://github.com/pCwOrM/werr"
 "Web Simulator" = "https://werr.io"
 "answerr Platform" = "https://answerr.me"
-"Base Research" = "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis"
+"Base Research" = "https://github.com/pCwOrM/fractal-neural-synthesis"
 
 [tool.setuptools.packages.find]
 where = ["."]

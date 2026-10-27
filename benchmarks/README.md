@@ -6,7 +6,7 @@
 [![Tau-Bench Pass](https://img.shields.io/badge/Tau--Bench-10%2F10%20Passed-brightgreen.svg)](https://github.com/sierra-research/tau-bench/issues/95)
 [![Jevenator 2 Vision](https://img.shields.io/badge/Jevenator%202-38.0x%20Faster-brightgreen.svg)](https://github.com/mmastrac/jevenator2/issues/1)
 [![Sealed Cryptographic Audit](https://img.shields.io/badge/Audit-SHA--256%20Sealed-blueviolet.svg)](sealed/SEAL_MANIFEST.json)
-[![Live Web Arena](https://img.shields.io/badge/Interactive%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
+[![Live Web Arena](https://img.shields.io/badge/Interactive%20Web-The%20Gauntlet-38bdf8.svg)](https://pcworm.github.io/fractal-neural-synthesis/benchmarks.html)
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-red.svg)](../LICENSE)
 
 <p align="center">
@@ -203,7 +203,7 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 ### 6. 🌀 Continuous Manifolds: Two-Moons & Two-Spirals
 * **Scope:** Topological non-linear classification without backpropagation or gradient descent.
 * **Accuracy:** **Two-Moons: 99.30%** │ **Two-Spirals: 98.50%**.
-* **Documentation:** Detailed derivation published in the companion monograph [Mandelbrot Academic Technical Monograph (HTML)](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Source](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)).
+* **Documentation:** Detailed derivation published in the companion monograph [Mandelbrot Academic Technical Monograph (HTML)](https://pcworm.github.io/fractal-neural-synthesis/docs/Mandelbrot_Akademik_Teknik_Raporu.html) ([GitHub Source](https://github.com/pCwOrM/fractal-neural-synthesis/blob/master/docs/Mandelbrot_Akademik_Teknik_Raporu.html)).
 
 ---
 
@@ -275,8 +275,8 @@ benchmarks/
 
 ## 🌐 Connected Ecosystem Links
 
-* 🌐 **Interactive Web Gauntlet:** [Launch `benchmarks.html` on GitHub Pages](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/benchmarks.html)
-* 📜 **Base Research Paper & Labs:** [Mandelbrot Fractal Neural Synthesis Portal](https://pcworm.github.io/mandelbrot-fractal-neural-synthesis/)
+* 🌐 **Interactive Web Gauntlet:** [Launch `benchmarks.html` on GitHub Pages](https://pcworm.github.io/fractal-neural-synthesis/benchmarks.html)
+* 📜 **Base Research Paper & Labs:** [Mandelbrot Fractal Neural Synthesis Portal](https://pcworm.github.io/fractal-neural-synthesis/)
 * ⚡ **WERR Engine Home:** [werr Main Repository](https://github.com/pCwOrM/werr)
 * 🧠 **Live Dual-Cognition API:** [answerr Platform (answerr.me)](https://answerr.me)
 * 🏛️ **Permanent Zenodo WERR Archive:** [DOI: 10.5281/zenodo.22867426](https://doi.org/10.5281/zenodo.22867426)

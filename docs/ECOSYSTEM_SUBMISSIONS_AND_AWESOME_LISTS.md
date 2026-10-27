@@ -213,7 +213,7 @@ ask@answerr.me / pcworm@pcworm.net
 * **Category:** *Quantum Information & Entanglement Entropy Simulations*
 * **Snippet to Add into `README.md`:**
 ```markdown
-- [WERR Black Hole Page Curve](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis/blob/master/docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) - Open-science 40-core high-performance simulation exploring unitary entanglement entropy recovery during black hole evaporation via discrete residue grids and micro-wormhole ER=EPR phase resonance (Zenodo: [10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999)).
+- [WERR Black Hole Page Curve](https://github.com/pCwOrM/fractal-neural-synthesis/blob/master/docs/BLACKHOLE_PAGE_CURVE_WORMHOLE_RESEARCH.md) - Open-science 40-core high-performance simulation exploring unitary entanglement entropy recovery during black hole evaporation via discrete residue grids and micro-wormhole ER=EPR phase resonance (Zenodo: [10.5281/zenodo.22961999](https://doi.org/10.5281/zenodo.22961999)).
 ```
 
 ---

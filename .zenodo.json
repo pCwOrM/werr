@@ -49,7 +49,7 @@
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis",
+      "identifier": "https://github.com/pCwOrM/fractal-neural-synthesis",
       "relation": "isDerivedFrom",
       "resource_type": "software",
       "scheme": "url"

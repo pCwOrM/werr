@@ -261,7 +261,7 @@ def create_snake_video(
         draw.text((hud_x + 14, cur_y), "KONTROLLER: [W] Devret/Geri Al  |  [WASD/OK]: Manuel", fill=(110, 118, 129), font=font_hud)
 
         # 5. Footer Watermark
-        draw.text((width - 430, height - 24), "GitHub: pCwOrM/mandelbrot-fractal-neural-synthesis", fill=(88, 96, 105), font=font_hud)
+        draw.text((width - 430, height - 24), "GitHub: pCwOrM/fractal-neural-synthesis", fill=(88, 96, 105), font=font_hud)
 
         frames.append(img)
 

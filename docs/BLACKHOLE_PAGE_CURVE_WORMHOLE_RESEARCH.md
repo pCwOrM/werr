@@ -156,7 +156,7 @@ To maintain unimpeachable academic integrity, all simulation artifacts, logs, an
   month        = {September},
   doi          = {10.5281/zenodo.22978460},
   url          = {https://doi.org/10.5281/zenodo.22978460},
-  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
 
@@ -165,7 +165,7 @@ To maintain unimpeachable academic integrity, all simulation artifacts, logs, an
 ## 🌐 7. Cross-Repository & Related Works
 
 1. **Mandelbrot Fractal Neural Synthesis (Paper 1):**  
-   *Preprint:* [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037) &bull; *GitHub:* [`pCwOrM/mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis)
+   *Preprint:* [10.5281/zenodo.22867037](https://doi.org/10.5281/zenodo.22867037) &bull; *GitHub:* [`pCwOrM/fractal-neural-synthesis`](https://github.com/pCwOrM/fractal-neural-synthesis)
 2. **Orbital Error Dynamics (Paper 2):**  
    *Preprint:* [10.5281/zenodo.22900465](https://doi.org/10.5281/zenodo.22900465) &bull; *Patent Pending:* TR 2026/016285
 3. **Universal Fractal Natural Language Decision Map (Paper 3 / WERR):**  

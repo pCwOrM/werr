@@ -130,6 +130,6 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
   month        = {September},
   doi          = {10.5281/zenodo.22978460},
   url          = {https://doi.org/10.5281/zenodo.22978460},
-  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/mandelbrot-fractal-neural-synthesis and https://github.com/pCwOrM/werr}
+  note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
