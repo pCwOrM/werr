@@ -4,22 +4,22 @@
   "creators": [
     {
       "name": "Dağlı, Volkan",
-      "affiliation": "Anadolu University & ITouch Systems, Turkey",
+      "affiliation": "Anadolu University & ITouch Systems, Cukurova University Science Park, Adana, Turkey",
       "orcid": "0009-0000-1587-8703"
     },
     {
       "name": "Dağlı, Zerrin",
-      "affiliation": "Mersin University, Mersin, Turkey",
+      "affiliation": "Cukurova University Science Park & ITouch Systems, Adana, Turkey",
       "orcid": "0000-0001-9490-6425"
     },
     {
       "name": "Dağlı, Dağhan",
-      "affiliation": "Toros Science College, Mersin, Turkey",
+      "affiliation": "Toros University — Toros Science High School, Mersin, Turkey",
       "orcid": "0009-0003-2492-8313"
     }
   ],
   "access_right": "open",
-  "license": "MIT",
+  "license": "BUSL-1.1",
   "keywords": [
     "fractal decision engine",
     "system-1",
