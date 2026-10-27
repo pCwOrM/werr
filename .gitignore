@@ -69,3 +69,14 @@ benchmarks/snake/*.gif
 benchmarks/snake/*.mp4
 
 
+
+# Security & Credentials
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*credentials*.json
+*credentials*.py
+*.secret*
