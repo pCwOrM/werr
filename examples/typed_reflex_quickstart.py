@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 WERR™ Official Typed Reflex Quickstart — System-1 Deterministic Engine.
-"Önce Edep, Sonra İlim" — First Courtesy & Character, Then Knowledge.
 
 Official corporate and academic quickstart developed and maintained by:
   ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ
