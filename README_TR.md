@@ -118,7 +118,7 @@ Tüm WERR karar mantığı, matematiksel ve tip güvenliği tanımlanmış üç 
 | `choice(q, opts)` | Ayrık Rota Seçici | `int \in [0, N-1]` | $\mathcal{O}(N \cdot k)$ | Çok yollu arbitraj, model yönlendirme, strateji seçimi |
 | `score(metric, val)` | Sürekli Şiddet Skoru | `float \in [0.0, 1.0]` | $\mathcal{O}(k)$ sabiti | Kredi sağlık katsayısı, teminat tasfiye riski, SLA ağırlığı |
 
-*Not: $k$, Mandelbrot kaçış algoritmasındaki sabit döngü derinliğidir (varsayılan $k=64$). Bellek ayrımı (allocation) gerektirmez.*
+*Not: $k$, Fraktal kaçış algoritmasındaki sabit döngü derinliğidir (varsayılan $k=64$). Bellek ayrımı (allocation) gerektirmez.*
 
 ---
 

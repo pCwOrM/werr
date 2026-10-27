@@ -52,7 +52,7 @@ from werr.datatypes import (  # noqa: E402
 )
 
 # The zero-VRAM coordinate parameters. WERR carries no weight matrix;
-# each reflex is read from a point on the Mandelbrot boundary:
+# each reflex is read from a point on the Universal Fractal Boundary:
 #
 #   c_x, c_y -- the complex centre ``c = c_x + i*c_y`` of the fractal
 #               patch (the "Universal Cusp") the decision is read from.
