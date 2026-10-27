@@ -117,4 +117,4 @@ Each JSONL record represents an operational decision event:
 
 ## 📜 License
 Licensed under the **Business Source License 1.1 (BSL 1.1)**. Converts to Apache 2.0 on 2030-01-01. Free for academic, educational, and research benchmarking.
-Corporate Licensor: **ITouch Systems** (ITouch Bilişim Sistemleri Ltd. Şti., Çukurova Teknokent). Contact: `ask@answerr.me` / `info@itouch.com.tr`.
+Corporate Licensor: **ITouch Systems** (ITouch Bilişim Sistemleri Ltd. Şti., Çukurova Üniversitesi Teknokent). Contact: `ask@answerr.me` / `info@itouch.com.tr`.

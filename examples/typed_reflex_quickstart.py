@@ -1,22 +1,29 @@
 #!/usr/bin/env python3
 """
-Typed WERR reflex quickstart with strict Python 3.10+ annotations.
+WERR™ Official Typed Reflex Quickstart — System-1 Deterministic Engine.
+"Önce Edep, Sonra İlim" — First Courtesy & Character, Then Knowledge.
 
-A standalone example for students and researchers integrating WERR,
-covering the three steps that usually matter first:
+Official corporate and academic quickstart developed and maintained by:
+  ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ
+  (Çukurova Üniversitesi Teknokent / Cukurova University Science Park, Adana, Türkiye)
+  Licensor of WERR™, Werracle™, and answerr™.
+  Scientific Co-Authors & Inventors: Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı.
 
-  1. initialize a typed program state,
-  2. evaluate typed reflex decisions against it,
-  3. extract the zero-VRAM confidence coordinates.
+A standalone reference implementation for researchers and enterprise engineers
+integrating WERR, demonstrating the three foundational pillars of deterministic reflexes:
 
-Run it from the repository root::
+  1. Initialize a typed, normalized program state vector.
+  2. Evaluate deterministic System-1 reflex decisions with zero tensor weights.
+  3. Extract the 24-byte coordinate seed Theta = (c_x, c_y, zoom) for cryptographic auditability.
+
+Run it from the repository root:
 
     python examples/typed_reflex_quickstart.py
 
 WERR is a zero-memory System-One decision engine: it stores no weight
 tensor. Instead, every reflex is parameterized by a 24-byte coordinate
-tuple ``Theta = (c_x, c_y, zoom)`` -- three Float64 values, 8 bytes
-each, matching ``WerrResponse.coordinate_bytes``.
+tuple Theta = (c_x, c_y, zoom) — three Float64 values, 8 bytes
+each, matching WerrResponse.coordinate_bytes.
 """
 from __future__ import annotations
 

@@ -203,7 +203,7 @@ Bu araştırmayı bilimsel yayınlarınızda referans gösterirken veya tekrarla
 
 * **Açık Bilim, Eğitim ve Değerlendirme Kullanımı:** Lisanslı Eser; **Business Source License 1.1 (BSL 1.1)** kapsamında ticari olmayan tüm akademik araştırmalar, kişisel incelemeler, kıyaslama, test ve çatallama (fork) süreçleri için serbestçe çalıştırılabilir, kaynak kodu incelenebilir ve yinelenebilir.
 * **Ticari Faaliyetler ve Üretim Lisanslaması:** Her türlü ticari üretim kullanımı, barındırılan SaaS dağıtımı veya tescilli yeniden dağıtım, Lisans Veren'den ticari lisans alınmasını gerektirir:
-  * **Lisans Veren:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Sistemleri` · Çukurova Teknokent, Adana, Türkiye).
+  * **Lisans Veren:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Sistemleri` · Çukurova Üniversitesi Teknokent, Adana, Türkiye).
   * **Bilimsel Ortak Yazarlar ve Mucitler:** Volkan Dağlı (*Anadolu Üniversitesi*), Dr. Zerrin Dağlı (*Mersin Üniversitesi — Akademik Danışman, Ortak Yazar ve Ortak Mucit*), Dağhan Dağlı (*Toros Üniversitesi — Ortak Yazar ve Ortak Mucit*).
   * **Hak Devri ve Yetki Silsilesi:** Bilimsel ortak yazarlar ve mucitler, fikri mülkiyet yönetimi ve temsil yetkisini Volkan Dağlı'ya; Volkan Dağlı ise münhasır küresel ticari lisanslama, marka ve operasyon haklarını ITouch Bilişim Sistemleri Ltd. Şti.'ye devretmiştir.
   * **Ticari Markalar:** `WERR™`, `Werracle™`, `answerr™` ve `WerrSoma™` markalarının mülkiyeti münhasıran ITouch Bilişim Sistemleri Ltd. Şti.'ye aittir.
@@ -213,6 +213,6 @@ Bu araştırmayı bilimsel yayınlarınızda referans gösterirken veya tekrarla
 ---
 
 <div align="center">
-  <sub>ITouch Bilişim Sistemleri tarafından geliştirilmiştir · Çukurova Teknokent, Adana, Türkiye</sub><br>
+  <sub>ITouch Bilişim Sistemleri tarafından geliştirilmiştir · Çukurova Üniversitesi Teknokent, Adana, Türkiye</sub><br>
   <sub>Telif Hakkı &copy; 2026 ITouch Bilişim Sistemleri Ltd. Şti. Tüm hakları saklıdır.</sub>
 </div>
