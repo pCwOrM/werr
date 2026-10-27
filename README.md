@@ -209,6 +209,8 @@ If you cite or replicate this research in scientific publications, please use th
 * **Commercial Operations & Production Licensing:** Any commercial production use, hosted SaaS deployment, or proprietary redistribution requires a commercial license from the Licensor:
   * **Licensor:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Systems` · Çukurova Teknokent / Cukurova University Science Park, Adana, Türkiye).
   * **Scientific Co-Authors & Inventors:** Volkan Dağlı (*Anadolu University*), Dr. Zerrin Dağlı (*Mersin University — Academic Advisor, Co-Author & Co-Inventor*), Dağhan Dağlı (*Toros University — Co-Author & Co-Inventor*).
+  * **Chain of Title & Assignment:** The scientific co-authors have irrevocably assigned administrative and IP management authority to Volkan Dağlı, who has transferred exclusive global commercial licensing and operational rights to ITouch Systems.
+  * **Trademarks:** `WERR™`, `Werracle™`, `answerr™`, and `WerrSoma™` are trademarks owned exclusively by ITouch Systems.
   * **Patent Applications:** TÜRKPATENT **TR 2026/016285** & **TR 2026/016633**.
   * **Inquiries:** `contact@werracle.com` · `ask@answerr.me`
 
