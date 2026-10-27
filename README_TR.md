@@ -5,7 +5,7 @@
 
 [![Lisans: BSL 1.1](https://img.shields.io/badge/Lisans-BSL_1.1-0ea5e9.svg)](LICENSE)
 [![Biçimsel Doğrulama: Lean 4](https://img.shields.io/badge/Lean_4-0_sorry_(Doğrulandı)-10b981.svg)](https://github.com/pCwOrM/gap-lean4-port)
-[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-6366f1.svg)](https://pypi.org/project/werr/)
+[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-6366f1.svg)](https://pypi.org/project/werrio/)
 [![Zenodo DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22774934-f59e0b.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![ArXiv Ön Baskı](https://img.shields.io/badge/arXiv-2609.25498-b91c1c.svg)](https://arxiv.org/abs/2609.25498)
 
@@ -67,7 +67,7 @@ WERR, sıfır bağımlılıklı Python paketi ve Rust/C çekirdeği olarak sunul
 ### Kurulum
 
 ```bash
-pip install werr
+pip install werrio
 ```
 
 *Veya en güncel sürümü doğrudan GitHub üzerinden yükleyin:*

@@ -3,7 +3,7 @@ requires = ["setuptools>=84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "werr"
+name = "werrio"
 version = "0.5.1"
 authors = [
   { name="ITouch Systems", email="info@itouch.com.tr" },
@@ -35,5 +35,5 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["werr*", "wevv*"]
+include = ["werr*", "wevv*", "werrio*"]
 exclude = ["dataset*", "tests*", "examples*"]
