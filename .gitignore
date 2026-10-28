@@ -80,3 +80,4 @@ id_ed25519*
 *credentials*.json
 *credentials*.py
 *.secret*
+!assets/favicon*.png
