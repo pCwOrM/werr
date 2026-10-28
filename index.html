@@ -1674,7 +1674,19 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
 .cosmos .hint { position: absolute; right: 14px; bottom: 12px; font-size: 12px; color: #8fa3c2; pointer-events: none; }
 .cosmos .legend { position: absolute; left: 14px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: #b9c9e2; pointer-events: none; }
 .cosmos .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
-.corpus-list { margin-top: 26px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.corpus-list { margin-top: 36px; display: flex; flex-direction: column; gap: 28px; }
+.corpus-pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.corpus-pillar-card { background: rgba(14, 20, 36, 0.65); border: 1px solid var(--border); border-radius: 14px; padding: 22px; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; }
+.corpus-pillar-card:hover { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.corpus-pillar-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
+.corpus-pillar-title { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.corpus-pillar-desc { font-size: 0.88rem; color: var(--mist); line-height: 1.5; margin-bottom: 14px; }
+.corpus-pillar-math { font-family: var(--f-mono); font-size: 0.8rem; color: var(--cyan); background: rgba(0,0,0,0.35); padding: 8px 10px; border-radius: 6px; }
+.corpus-portal-banner { background: radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.15) 0%, rgba(14, 20, 36, 0.9) 70%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 18px; padding: 36px 28px; text-align: center; }
+.corpus-portal-btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; padding: 13px 26px; border-radius: 10px; background: var(--cyan); color: #04070f; text-decoration: none; transition: all 0.2s; }
+.corpus-portal-btn:hover { background: #fff; color: #04070f; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(56,189,248,0.4); text-decoration: none; }
+.corpus-portal-subbtn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; padding: 13px 22px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #e2e8f0; text-decoration: none; transition: all 0.2s; }
+.corpus-portal-subbtn:hover { border-color: var(--cyan); color: #fff; text-decoration: none; }
 .corpus-list h3 { font: 700 14px var(--f-text); color: var(--gold); margin: 18px 0 6px; }
 .corpus-list a { display: block; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--foam); text-decoration: none; font-size: 15px; }
 .corpus-list a small { display: block; color: var(--mist); font: 400 12.5px "JetBrains Mono", monospace; overflow-wrap: anywhere; }
@@ -5663,8 +5675,93 @@ const CORPUS = [
 const GCOL = ["#3cc8ff", "#f6b73c", "#3ee6a8", "#b18cff"];
 function buildCorpusList(){
   const host = $("#corpusList"); if (!host) return;
-  const names = [t("co.c1"), t("co.c2"), t("co.c3"), t("co.c4")];
-  host.innerHTML = [0, 1, 2, 3].map(g => `<div><h3>${names[g]}</h3>${CORPUS.filter(c => c.g === g).map(c => `<a href="${c.u}">${c.n}<small>${c.s}</small></a>`).join("")}</div>`).join("");
+  const isTr = currentLang === 'tr';
+
+  const pillars = [
+    {
+      badge: isTr ? "SÜTUN 01 · GÜVENLİK" : "PILLAR 01 · SAFETY",
+      badgeColor: "rgba(56, 189, 248, 0.15)",
+      badgeBorder: "rgba(56, 189, 248, 0.3)",
+      badgeTextColor: "#38bdf8",
+      title: isTr ? "Deterministik Karar & OED" : "Deterministic Decision & OED",
+      desc: isTr ? "Orbital Error Dynamics (OED) ile sıfır ağırlıklı dinamik yüzey çıkarımı. Lyapunov değişmezliği ile sıfır halüsinasyon." : "Zero-storage dynamic weight derivation via Orbital Error Dynamics. Lyapunov stability guarantees zero hallucination.",
+      math: "O(1) VRAM · λ < 0 (Strict Invariance)"
+    },
+    {
+      badge: isTr ? "SÜTUN 02 · KRİPTOGRAFİ" : "PILLAR 02 · CRYPTOGRAPHY",
+      badgeColor: "rgba(16, 185, 129, 0.15)",
+      badgeBorder: "rgba(16, 185, 129, 0.3)",
+      badgeTextColor: "#10b981",
+      title: isTr ? "Werracle Blok İçi EVM AI" : "Werracle Intra-Block EVM AI",
+      desc: isTr ? "Ethereum, Arbitrum ve Base akıllı kontratlarında işlem bloğu içinde 15.000 gas altında çalışan otonom risk ve likidasyon oraklı." : "Sub-cent risk liquidation oracle executing within single EVM transactions under 15,000 gas execution cost.",
+      math: "< 15,000 gas · < $0.0008 on L2"
+    },
+    {
+      badge: isTr ? "SÜTUN 03 · SAF MATEMATİK" : "PILLAR 03 · PURE MATH",
+      badgeColor: "rgba(246, 183, 60, 0.15)",
+      badgeBorder: "rgba(246, 183, 60, 0.3)",
+      badgeTextColor: "#f6b73c",
+      title: isTr ? "GDT & Schönhage Sıkıştırması" : "GDT & Schönhage Compression",
+      desc: isTr ? "General Divisor Theorem (GDT) ve CrocSwap PR #226 ile birleşen -377.000 R1CS tel sıkıştırmalı dünya çarpım rekoru." : "General Divisor Theorem and world-record -377K R1CS wire reduction merged into CrocSwap production DeFi.",
+      math: "-377K R1CS wires · O(N log N · 2^{log* N})"
+    },
+    {
+      badge: isTr ? "SÜTUN 04 · NÖRAL & BİYOLOJİ" : "PILLAR 04 · NEURAL & BIO",
+      badgeColor: "rgba(168, 85, 247, 0.15)",
+      badgeBorder: "rgba(168, 85, 247, 0.3)",
+      badgeTextColor: "#a855f7",
+      title: isTr ? "WerrSoma & 158K Nöron" : "WerrSoma & 158K Connectome",
+      desc: isTr ? "Drosophila tüm beyin konnektomunun (139K nöron, 54.5M sinaps) belleksiz algoritmik sentezi ve Güneş Dili 53-Koma morfolojisi." : "Procedural whole-brain Drosophila connectome synthesis and Turkish 53-Comma agglutinative acoustic state machine.",
+      math: "139,255 Neurons · 54.5M Synapses"
+    },
+    {
+      badge: isTr ? "SÜTUN 05 · FORMAL İSPAT" : "PILLAR 05 · FORMAL PROOFS",
+      badgeColor: "rgba(244, 63, 94, 0.15)",
+      badgeBorder: "rgba(244, 63, 94, 0.3)",
+      badgeTextColor: "#f43f5e",
+      title: isTr ? "Lean 4 Doğrulama Gauntlet" : "Lean 4 Verification Gauntlet",
+      desc: isTr ? "41 makine denetimli matematiksel teorem ve kesinlikle sıfır 'sorry' eksiksizliği. GAP-Lean 4 transpilasyon mimarisi." : "41 machine-checked formal theorems with strictly zero 'sorry' placeholders and GAP-to-Lean 4 automated transpiler.",
+      math: "41 Theorems · 0 sorry · Machine-Checked"
+    }
+  ];
+
+  const cardsHtml = pillars.map(p => `
+    <div class="corpus-pillar-card">
+      <span class="corpus-pillar-badge" style="background:${p.badgeColor}; border:1px solid ${p.badgeBorder}; color:${p.badgeTextColor}">${p.badge}</span>
+      <h3 class="corpus-pillar-title">${p.title}</h3>
+      <p class="corpus-pillar-desc">${p.desc}</p>
+      <div class="corpus-pillar-math">${p.math}</div>
+    </div>
+  `).join("");
+
+  const bannerHtml = `
+    <div class="corpus-portal-banner">
+      <div style="font-size:0.8rem; font-weight:700; color:var(--cyan); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">
+        ${isTr ? "MERKEZİ ARAŞTIRMA PORTALI" : "CENTRAL RESEARCH REPOSITORY"}
+      </div>
+      <h3 style="font-size:clamp(1.4rem, 2.5vw, 2rem); font-weight:700; color:#fff; margin-bottom:12px;">
+        ${isTr ? "Tüm Akademik Külliyat, Ön Baskılar ve Veri Setleri" : "The Grand Academic Corpus, Preprints & Datasets"}
+      </h3>
+      <p style="color:var(--mist); max-width:62ch; margin:0 auto 24px; font-size:0.95rem;">
+        ${isTr ? "11 hakemli ön baskı, kalıcı Zenodo CERN DOI arşivleri, SSRN kayıtları ve KaTeX destekli araştırma laboratuvarı merkezi portalımızda canlıdır." : "Explore 11 peer-reviewed preprints, permanent Zenodo CERN DOI records, SSRN papers, and KaTeX-powered interactive labs at our central hub."}
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="https://pcworm.github.io/fractal-neural-synthesis/corpus.html" target="_blank" rel="noopener" class="corpus-portal-btn">
+          <span>📚</span>
+          <span>${isTr ? "Tüm Külliyatı İncele (fractal-neural-synthesis ↗)" : "Explore Full Corpus (fractal-neural-synthesis ↗)"}</span>
+        </a>
+        <a href="https://pcworm.github.io/fractal-neural-synthesis/benchmarks.html" target="_blank" rel="noopener" class="corpus-portal-subbtn">
+          <span>⚔️</span>
+          <span>${isTr ? "The Gauntlet Kıyaslamaları ↗" : "The Gauntlet Benchmarks ↗"}</span>
+        </a>
+      </div>
+    </div>
+  `;
+
+  host.innerHTML = `
+    <div class="corpus-pillars-grid">${cardsHtml}</div>
+    ${bannerHtml}
+  `;
 }
 (function corpus(){
   const box = $("#cosmos"); let started = false;
