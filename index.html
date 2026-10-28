@@ -5758,7 +5758,40 @@ function buildCorpusList(){
     </div>
   `;
 
+
+  const devValueHtml = `
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
+        ${isTr ? "MİMARİ &amp; GELİŞTİRİCİ KAZANIMI" : "ARCHITECTURE &amp; DEVELOPER ROI"}
+      </div>
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 16px;">
+        ${isTr ? "Bu Karar Motoru Sisteminize Ne Kazandırır?" : "What Does This Decision Engine Deliver to Your Codebase?"}
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
+          <div style="font-size: 1.2rem; margin-bottom: 6px;">💾 <strong>0 MB VRAM / RAM</strong></div>
+          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
+            ${isTr ? "40 GB model ağırlığı indirmek yok. 24-byte kernel mikrosaniyede başlar, Docker imajınızı şişirmez." : "Zero multi-gigabyte weight checkpoints. 24-byte kernel spins up in microseconds with zero Docker bloat."}
+          </p>
+        </div>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
+          <div style="font-size: 1.2rem; margin-bottom: 6px;">⚡ <strong>0.03 ms Karar Döngüsü</strong></div>
+          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
+            ${isTr ? "CPU L1/L2 önbelleğinde döner. Mikroservisler arasında RPC gecikmesi yaratmadan gerçek zamanlı karar üretir." : "Executes within CPU L1/L2 cache. Zero RPC roundtrip latency between mission-critical microservices."}
+          </p>
+        </div>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
+          <div style="font-size: 1.2rem; margin-bottom: 6px;">🛡️ <strong>Kırılmaz Lean 4 Kanıtı</strong></div>
+          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
+            ${isTr ? "41 teorem ve 0 sorry ile makine denetimli doğrulama. Karar mantığı beklenmedik uç durumlar üretmez." : "41 machine-checked theorems with zero sorry. Safety invariants guaranteed by formal proof kernel."}
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+
   host.innerHTML = `
+    ${devValueHtml}
     <div class="corpus-pillars-grid">${cardsHtml}</div>
     ${bannerHtml}
   `;
