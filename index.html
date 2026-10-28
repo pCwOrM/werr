@@ -1728,14 +1728,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
               <div class="drop-item-sub" id="drop-werracle-desc">Corporate &amp; Ecosystem Data Room</div>
             </div>
           </a>
-          <div class="drop-divider"></div>
-          <a href="demos/snake.html" target="_blank" rel="noopener" class="drop-item" role="menuitem">
-            <div class="drop-item-icon">🐍</div>
-            <div class="drop-item-body">
-              <div class="drop-item-title" id="drop-snake-title">Bionic Snake Arena <span class="ext-arrow">↗</span></div>
-              <div class="drop-item-sub" id="drop-snake-desc">Gymnasium 24-Frame Visual AI Demo</div>
-            </div>
-          </a>
+
         </div>
       </div>
       <a href="https://github.com/pCwOrM/werr" class="nav-gh" target="_blank" rel="noopener" aria-label="GitHub Repository">
@@ -2945,8 +2938,6 @@ if __name__ == "__main__":
       dropAnswerrDesc: "Deterministic Decision Gate SaaS",
       dropRadarDesc: "DeFi Risk DaaS & Horizon",
       dropWerracleDesc: "Corporate & Ecosystem Data Room",
-      dropSnakeTitle: "Bionic Snake Arena",
-      dropSnakeDesc: "Gymnasium 24-Frame Visual AI Demo",
       navGauntlet: "⚔️ The Gauntlet",
       btnArenaGauntlet: "The Gauntlet (Master Wall)",
       arenaHodriLabel: "⚔️ Hodri Meydan — Reproduce Locally",
@@ -3138,8 +3129,6 @@ if __name__ == "__main__":
       dropAnswerrDesc: "Deterministik Karar Kapısı DaaS",
       dropRadarDesc: "DeFi Risk Radarı & Likidite Ufku",
       dropWerracleDesc: "Kurumsal Veri Odası & Ekosistem",
-      dropSnakeTitle: "Biyonik Yılan Simülatörü",
-      dropSnakeDesc: "Gymnasium 24-Kare Biyonöral Yapay Zekâ",
       navGauntlet: "⚔️ Kıyaslama Duvarı",
       btnArenaGauntlet: "Kıyaslama Duvarı (The Gauntlet)",
       arenaHodriLabel: "⚔️ Hodri Meydan — Yerel Olarak Deneyin",
@@ -3483,11 +3472,6 @@ if __name__ == "__main__":
     setTxt('drop-answerr-desc', t.dropAnswerrDesc);
     setTxt('drop-radar-desc', t.dropRadarDesc);
     setTxt('drop-werracle-desc', t.dropWerracleDesc);
-    const dropSnakeTitleEl = document.getElementById('drop-snake-title');
-    if (dropSnakeTitleEl) {
-      dropSnakeTitleEl.innerHTML = (t.dropSnakeTitle || (lang === 'tr' ? 'Biyonik Yılan Simülatörü' : 'Bionic Snake Arena')) + ' <span class="ext-arrow">↗</span>';
-    }
-    setTxt('drop-snake-desc', t.dropSnakeDesc);
     setTxt('nav-arena', t.navArena || (lang === 'tr' ? 'Kıyaslamalar' : 'Benchmarks'));
     setTxt('nav-corpus', t.navCorpus || (lang === 'tr' ? 'Külliyat & İspatlar' : 'Corpus & Proofs'));
     setTxt('nav-comp', t.navComp);
