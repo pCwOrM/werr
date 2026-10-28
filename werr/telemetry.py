@@ -24,7 +24,7 @@ _SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 TELEMETRY_ENDPOINT = os.getenv(
     "WERR_TELEMETRY_ENDPOINT",
-    os.getenv("WEVV_TELEMETRY_ENDPOINT", "https://api.answerr.me:4431/werr/telemetry")
+    os.getenv("WEVV_TELEMETRY_ENDPOINT", "https://api.answerr.me/werr/telemetry")
 )
 
 SENSITIVE_KEY_PATTERN = re.compile(
