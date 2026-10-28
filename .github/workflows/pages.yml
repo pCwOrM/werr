@@ -29,6 +29,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Prune Non-Public Archives & Test Environments from Pages Artifact
+        run: |
+          rm -rf _archive
+          rm -rf archive
+          rm -rf test
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

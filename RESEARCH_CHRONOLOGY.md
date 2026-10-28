@@ -992,9 +992,9 @@ In accordance with open science archival integrity, all preceding versions and i
 
 | Ecosystem Pillar | Version / Description | Archive Endpoint |
 | :--- | :--- | :--- |
-| **WERR Core Portal** | `v0.3.0` Pre-Test Root Archive | [`werr.io/archive_v0.3.0_index_pre_test.html`](https://werr.io/archive_v0.3.0_index_pre_test.html) |
-| **WERR Snake AI** | Snake Reflex Demo `v1.0` Archive | [`werr.io/demos/snake_archive_v1.html`](https://werr.io/demos/snake_archive_v1.html) |
-| **WERR Benchmarks** | Official Benchmark Report `v1.0` Archive | [`werr.io/docs/werr_official_benchmarks_report_archive_v1.html`](https://werr.io/docs/werr_official_benchmarks_report_archive_v1.html) |
+| **WERR Core Portal** | `v0.3.0` Pre-Test Root Archive | [`_archive/site_v0.3.0/archive_v0.3.0_index_pre_test.html`](_archive/site_v0.3.0/archive_v0.3.0_index_pre_test.html) |
+| **WERR Snake AI** | Snake Reflex Demo `v1.0` Archive | [`_archive/demos/snake_archive_v1.html`](_archive/demos/snake_archive_v1.html) |
+| **WERR Benchmarks** | Official Benchmark Report `v1.0` Archive | [`_archive/docs/werr_official_benchmarks_report_archive_v1.html`](_archive/docs/werr_official_benchmarks_report_archive_v1.html) |
 | **Werracle Web3** | Classic `v1.0` EVM AI Oracle Archive | [`werracle.io/v1_classic.html`](https://werracle.io/v1_classic.html) |
 | **Werracle Web3** | Architecture `v2.0` Initial Sandbox Archive | [`werracle.io/v2_initial_archive.html`](https://werracle.io/v2_initial_archive.html) |
 | **Werracle Corporate**| Corporate Portal `v1.0` (Dark Theme Archive)| [`werracle.com/archive_dark_v1.html`](https://werracle.com/archive_dark_v1.html) |
@@ -1658,9 +1658,9 @@ Açık bilim arşivleme ilkeleri uyarınca, önceki tüm sürüm ve arayüzler k
 
 | Ekosistem Bileşeni | Sürüm / Açıklama | Arşiv Bağlantısı |
 | :--- | :--- | :--- |
-| **WERR Motor Portalı** | `v0.3.0` Kök Sayfa Arşivi | [`werr.io/archive_v0.3.0_index_pre_test.html`](https://werr.io/archive_v0.3.0_index_pre_test.html) |
-| **WERR Snake AI** | Snake Refleks Demosu `v1.0` Arşivi | [`werr.io/demos/snake_archive_v1.html`](https://werr.io/demos/snake_archive_v1.html) |
-| **WERR Kıyaslamalar** | Resmi Kıyaslama Raporu `v1.0` Arşivi | [`werr.io/docs/werr_official_benchmarks_report_archive_v1.html`](https://werr.io/docs/werr_official_benchmarks_report_archive_v1.html) |
+| **WERR Motor Portalı** | `v0.3.0` Kök Sayfa Arşivi | [`_archive/site_v0.3.0/archive_v0.3.0_index_pre_test.html`](_archive/site_v0.3.0/archive_v0.3.0_index_pre_test.html) |
+| **WERR Snake AI** | Snake Refleks Demosu `v1.0` Arşivi | [`_archive/demos/snake_archive_v1.html`](_archive/demos/snake_archive_v1.html) |
+| **WERR Kıyaslamalar** | Resmi Kıyaslama Raporu `v1.0` Arşivi | [`_archive/docs/werr_official_benchmarks_report_archive_v1.html`](_archive/docs/werr_official_benchmarks_report_archive_v1.html) |
 | **Werracle Web3** | Klasik `v1.0` EVM AI Oracle Arşivi | [`werracle.io/v1_classic.html`](https://werracle.io/v1_classic.html) |
 | **Werracle Web3** | Mimari `v2.0` İlk Deneme Alanı Arşivi | [`werracle.io/v2_initial_archive.html`](https://werracle.io/v2_initial_archive.html) |
 | **Werracle Kurumsal** | Kurumsal Portal `v1.0` (Koyu Tema Arşivi) | [`werracle.com/archive_dark_v1.html`](https://werracle.com/archive_dark_v1.html) |

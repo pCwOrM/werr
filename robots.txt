@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /_archive/
+Disallow: /archive/
 Disallow: /test/
 Disallow: /benchmarks/
 Disallow: /dataset/
