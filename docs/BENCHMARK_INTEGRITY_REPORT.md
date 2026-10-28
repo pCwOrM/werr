@@ -46,6 +46,9 @@ In established benchmarking protocols (aligned with MLCommons, NeurIPS Datasets 
 | **2026-09-21 22:59** | **Metric Revision (v1.3.0)** | Instead of running the queued submission under active v1.2 rules, maintainers pushed commit `75e6224` introducing JevBench v1.3.0, featuring an aggressive "near-chance penalty" curve specifically targeting tiers under 50% accuracy. |
 | **2026-09-22 06:12** | **Public Live Arena Deployed** | Interactive WebMCP & in-browser evaluation HUD released at [pcworm.github.io/werr](https://pcworm.github.io/werr/#benchmark-arena) allowing zero-install audit by any researcher. |
 | **2026-09-22 19:20** | **Dual-Standard Calibration** | Werr engine calibrated to decisively clear **both** v1.2 and v1.3 standards. |
+| **2026-10-07 09:33** | **Portal Intake Migration** | Maintainer standardized all model submissions through enchmarkheaven.com/submit. |
+| **2026-10-09 17:27** | **Formal Queue Intake** | Air-gapped WerrLocalAdapter submitted via Benchmark Heaven portal (Queue #50, Ref: 815FD9D8). |
+| **2026-10-28 16:54** | **Issue Resolution & Formal Closure** | Maintainer confirmed receipt and active handling of the Werr air-gapped submission in the Benchmark Heaven processing queue, closing Issue #10. |
 
 ---
 
