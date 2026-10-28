@@ -106,6 +106,12 @@ class JevWireAdapter:
             probs = {}
             for i, lbl in enumerate(cand_labels):
                 probs[str(lbl)] = ans.probabilities.get(i, ans.probabilities.get(str(lbl), round(1.0 / len(cand_labels), 4)))
+            tot = sum(probs.values())
+            if tot > 0:
+                probs = {k: round(v / tot, 6) for k, v in probs.items()}
+                drift = round(1.0 - sum(probs.values()), 6)
+                if cand_labels:
+                    probs[str(cand_labels[0])] = round(probs[str(cand_labels[0])] + drift, 6)
 
         else:
             predicted = labels[0] if labels else "unknown"
