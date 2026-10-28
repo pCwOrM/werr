@@ -1402,18 +1402,167 @@ html.light .wnav.solid { background: rgba(243, 247, 251, .88); }
 .wbrand { display: flex; align-items: center; gap: 9px; text-decoration: none; font: 800 21px var(--f-display); letter-spacing: -.02em; color: var(--foam); flex-shrink: 0; }
 .wbrand img { width: 34px; height: 34px; }
 .wbrand .e { color: var(--wave); } .wbrand .rr { color: var(--gold); }
-.wlinks { display: flex; gap: 20px; margin-left: auto; align-items: center; }
-.wlinks a { color: var(--mist); text-decoration: none; font: 600 14.5px var(--f-text); white-space: nowrap; padding: 6px 0; }
+.wlinks { display: flex; gap: 18px; margin-left: auto; align-items: center; }
+.wlinks a { color: var(--mist); text-decoration: none; font: 600 14px var(--f-text); white-space: nowrap; padding: 6px 0; transition: color .2s ease; }
 .wlinks a:hover { color: var(--foam); }
 .wlinks a.hl { color: var(--gold); }
+
+/* ---------- ecosystem dropdown ---------- */
+.wnav-dropdown { position: relative; display: inline-flex; align-items: center; }
+.wnav-drop-btn {
+  background: transparent;
+  border: none;
+  color: var(--mist);
+  font: 600 14px var(--f-text);
+  white-space: nowrap;
+  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+.wnav-drop-btn:hover,
+.wnav-dropdown:hover .wnav-drop-btn,
+.wnav-dropdown.open .wnav-drop-btn {
+  color: var(--foam);
+}
+.drop-arrow {
+  transition: transform .22s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--mist);
+}
+.wnav-dropdown:hover .drop-arrow,
+.wnav-dropdown.open .drop-arrow {
+  transform: rotate(180deg);
+  color: var(--wave);
+}
+.wnav-drop-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 290px;
+  background: rgba(8, 14, 26, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(60, 200, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(60, 200, 255, 0.12);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+html.light .wnav-drop-menu {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(60, 200, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1), 0 0 16px rgba(60, 200, 255, 0.08);
+}
+.wnav-dropdown:hover .wnav-drop-menu,
+.wnav-dropdown:focus-within .wnav-drop-menu,
+.wnav-dropdown.open .wnav-drop-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.drop-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background .18s ease, transform .18s ease !important;
+  border-bottom: none !important;
+}
+.drop-item:hover {
+  background: rgba(60, 200, 255, 0.1) !important;
+  transform: translateX(2px);
+}
+html.light .drop-item:hover {
+  background: rgba(60, 200, 255, 0.12) !important;
+}
+.drop-item-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.drop-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+.drop-item-title {
+  font: 700 13.5px var(--f-text);
+  color: var(--foam);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+html.light .drop-item-title {
+  color: #0c182b;
+}
+.ext-arrow {
+  color: var(--gold);
+  font-size: 11px;
+}
+.drop-item-sub {
+  font: 400 11px var(--f-mono, monospace);
+  color: var(--mist);
+  line-height: 1.3;
+}
+html.light .drop-item-sub {
+  color: #475569;
+}
+.drop-divider {
+  height: 1px;
+  background: var(--line, rgba(60, 200, 255, 0.15));
+  margin: 4px 6px;
+}
+.nav-gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .wtools { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .wtools .theme-btn, .wtools .lang-btn { min-height: 36px; }
 .wmenu { display: none; border: 1px solid var(--line); background: transparent; color: var(--foam); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--f-text); cursor: pointer; }
 @media (max-width: 1080px) {
-  .wlinks { position: fixed; inset: 66px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--abyss); border-bottom: 1px solid var(--line); padding: 6px clamp(16px, 4vw, 40px) 16px; transform: translateY(-130%); transition: transform .35s; margin: 0; }
+  .wlinks { position: fixed; inset: 66px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--abyss); border-bottom: 1px solid var(--line); padding: 6px clamp(16px, 4vw, 40px) 16px; transform: translateY(-130%); transition: transform .35s; margin: 0; max-height: calc(100vh - 66px); overflow-y: auto; }
   .wlinks.open { transform: none; }
   .wlinks a { padding: 13px 0; font-size: 16px; border-bottom: 1px solid var(--tide); }
   .wmenu { display: inline-flex; margin-left: auto; }
+
+  /* Mobile Dropdown */
+  .wnav-dropdown { width: 100%; display: flex; flex-direction: column; align-items: stretch; }
+  .wnav-drop-btn { width: 100%; justify-content: space-between; padding: 13px 0; font-size: 16px; border-bottom: 1px solid var(--tide); }
+  .wnav-drop-menu {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: none;
+    background: rgba(4, 7, 15, 0.5);
+    border: 1px solid var(--tide);
+    border-radius: 8px;
+    margin: 6px 0 10px;
+    padding: 6px;
+    min-width: 0;
+    display: none;
+  }
+  .wnav-dropdown.open .wnav-drop-menu {
+    display: flex;
+  }
+  .drop-item { padding: 10px !important; border-bottom: none !important; }
 }
 @media (max-width: 420px) { .wtools .lang-btn { padding: .3rem .5rem !important; font-size: .78rem !important; } }
 
@@ -1545,14 +1694,50 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
   <div class="wnav-in">
     <a href="#top" class="wbrand" aria-label="werr home"><img src="assets/werr_logo_core_fav_trans.svg" alt="" width="34" height="34"><span>w<span class="e">e</span><span class="rr">rr</span></span></a>
     <div class="wlinks" id="wlinks">
-      <a href="#halka-anlatim" id="nav-guide">Guide</a>
+      <a href="#halka-anlatim" id="nav-guide">Plain Guide</a>
       <a href="#demo" id="nav-demo">Simulator</a>
       <a href="#benchmark-arena" id="nav-arena">Benchmarks</a>
       <a href="#corpus" id="nav-corpus">Corpus &amp; Proofs</a>
       <a href="#kod" id="nav-code">Quickstart</a>
-      <a href="https://answerr.me/pro/pricing.html" class="hl" target="_blank" rel="noopener" title="Answerr Pro Decision Gate SaaS">Answerr Pro ↗</a>
-      <a href="https://radar.werracle.com/pricing#subscribe-section" class="hl" target="_blank" rel="noopener" title="Werracle Risk Radar DaaS">Radar API ↗</a>
-      <a href="https://werracle.com" target="_blank" rel="noopener" title="Werracle Corporate & Data Room">werracle.com ↗</a>
+      <div class="wnav-dropdown" id="nav-ecosystem-dropdown">
+        <button type="button" class="wnav-drop-btn" id="nav-ecosystem-btn" aria-expanded="false" aria-haspopup="true">
+          <span id="nav-ecosystem">Ecosystem</span>
+          <svg class="drop-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="wnav-drop-menu" id="nav-ecosystem-menu" role="menu">
+          <a href="https://answerr.me/pro/pricing.html" target="_blank" rel="noopener" class="drop-item" role="menuitem">
+            <div class="drop-item-icon">⚡</div>
+            <div class="drop-item-body">
+              <div class="drop-item-title">Answerr Pro <span class="ext-arrow">↗</span></div>
+              <div class="drop-item-sub" id="drop-answerr-desc">Deterministic Decision Gate SaaS</div>
+            </div>
+          </a>
+          <a href="https://radar.werracle.com/pricing#subscribe-section" target="_blank" rel="noopener" class="drop-item" role="menuitem">
+            <div class="drop-item-icon">📡</div>
+            <div class="drop-item-body">
+              <div class="drop-item-title">Radar API <span class="ext-arrow">↗</span></div>
+              <div class="drop-item-sub" id="drop-radar-desc">DeFi Risk DaaS &amp; Horizon</div>
+            </div>
+          </a>
+          <a href="https://werracle.com" target="_blank" rel="noopener" class="drop-item" role="menuitem">
+            <div class="drop-item-icon">🌐</div>
+            <div class="drop-item-body">
+              <div class="drop-item-title">werracle.com <span class="ext-arrow">↗</span></div>
+              <div class="drop-item-sub" id="drop-werracle-desc">Corporate &amp; Ecosystem Data Room</div>
+            </div>
+          </a>
+          <div class="drop-divider"></div>
+          <a href="demos/snake.html" target="_blank" rel="noopener" class="drop-item" role="menuitem">
+            <div class="drop-item-icon">🐍</div>
+            <div class="drop-item-body">
+              <div class="drop-item-title" id="drop-snake-title">Bionic Snake Arena <span class="ext-arrow">↗</span></div>
+              <div class="drop-item-sub" id="drop-snake-desc">Gymnasium 24-Frame Visual AI Demo</div>
+            </div>
+          </a>
+        </div>
+      </div>
       <a href="https://github.com/pCwOrM/werr" class="nav-gh" target="_blank" rel="noopener" aria-label="GitHub Repository">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
       </a>
@@ -2756,6 +2941,12 @@ if __name__ == "__main__":
       navDemo: "Simulator",
       navComp: "Comparison",
       navCode: "Quickstart",
+      navEcosystem: "Ecosystem",
+      dropAnswerrDesc: "Deterministic Decision Gate SaaS",
+      dropRadarDesc: "DeFi Risk DaaS & Horizon",
+      dropWerracleDesc: "Corporate & Ecosystem Data Room",
+      dropSnakeTitle: "Bionic Snake Arena",
+      dropSnakeDesc: "Gymnasium 24-Frame Visual AI Demo",
       navGauntlet: "⚔️ The Gauntlet",
       btnArenaGauntlet: "The Gauntlet (Master Wall)",
       arenaHodriLabel: "⚔️ Hodri Meydan — Reproduce Locally",
@@ -2943,6 +3134,12 @@ if __name__ == "__main__":
       navDemo: "Simülatör",
       navComp: "Karşılaştırma",
       navCode: "Hızlı Başlangıç",
+      navEcosystem: "Ekosistem",
+      dropAnswerrDesc: "Deterministik Karar Kapısı DaaS",
+      dropRadarDesc: "DeFi Risk Radarı & Likidite Ufku",
+      dropWerracleDesc: "Kurumsal Veri Odası & Ekosistem",
+      dropSnakeTitle: "Biyonik Yılan Simülatörü",
+      dropSnakeDesc: "Gymnasium 24-Kare Biyonöral Yapay Zekâ",
       navGauntlet: "⚔️ Kıyaslama Duvarı",
       btnArenaGauntlet: "Kıyaslama Duvarı (The Gauntlet)",
       arenaHodriLabel: "⚔️ Hodri Meydan — Yerel Olarak Deneyin",
@@ -3282,6 +3479,15 @@ if __name__ == "__main__":
     // Nav
     setTxt('nav-guide', t.navGuide);
     setTxt('nav-demo', t.navDemo);
+    setTxt('nav-ecosystem', t.navEcosystem || (lang === 'tr' ? 'Ekosistem' : 'Ecosystem'));
+    setTxt('drop-answerr-desc', t.dropAnswerrDesc);
+    setTxt('drop-radar-desc', t.dropRadarDesc);
+    setTxt('drop-werracle-desc', t.dropWerracleDesc);
+    const dropSnakeTitleEl = document.getElementById('drop-snake-title');
+    if (dropSnakeTitleEl) {
+      dropSnakeTitleEl.innerHTML = (t.dropSnakeTitle || (lang === 'tr' ? 'Biyonik Yılan Simülatörü' : 'Bionic Snake Arena')) + ' <span class="ext-arrow">↗</span>';
+    }
+    setTxt('drop-snake-desc', t.dropSnakeDesc);
     setTxt('nav-arena', t.navArena || (lang === 'tr' ? 'Kıyaslamalar' : 'Benchmarks'));
     setTxt('nav-corpus', t.navCorpus || (lang === 'tr' ? 'Külliyat & İspatlar' : 'Corpus & Proofs'));
     setTxt('nav-comp', t.navComp);
@@ -5163,6 +5369,21 @@ addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 30), {p
 const links = $("#wlinks"), mb = $("#wmenu");
 mb.addEventListener("click", () => { const o = links.classList.toggle("open"); mb.setAttribute("aria-expanded", o); });
 $$("#wlinks a").forEach(a => a.addEventListener("click", () => { links.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); }));
+
+const dropBtn = $("#nav-ecosystem-btn"), dropDown = $("#nav-ecosystem-dropdown");
+if (dropBtn && dropDown) {
+  dropBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = dropDown.classList.toggle("open");
+    dropBtn.setAttribute("aria-expanded", isOpen);
+  });
+  document.addEventListener("click", (e) => {
+    if (!dropDown.contains(e.target)) {
+      dropDown.classList.remove("open");
+      dropBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 /* ---------------- shared math ---------------- */
 function escapeCount(cr, ci, max){ let x = 0, y = 0, n = 0; while (n < max && x*x + y*y <= 4){ const t2 = x*x - y*y + cr; y = 2*x*y + ci; x = t2; n++; } return n; }
