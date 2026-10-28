@@ -1328,7 +1328,7 @@
     .brand { flex-shrink: 0; }
     .nav-links a { white-space: nowrap; }
     @media (max-width: 1360px) { .nav-links { gap: 1rem; } .nav-links a { font-size: 0.86rem; } }
-    @media (max-width: 1200px) { #nav-comp, #nav-code { display: none; } }
+    @media (max-width: 1200px) { #nav-comp { display: none; } }  /* Quickstart stays: it is the first developer action */
     @media (max-width: 900px) {
       nav { flex-wrap: wrap; row-gap: 0.6rem; }
       .nav-links { display: flex !important; order: 3; width: 100%; overflow-x: auto; gap: 1.1rem; padding: 0.2rem 0 0.5rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
@@ -1708,9 +1708,9 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
     <div class="wlinks" id="wlinks">
       <a href="#halka-anlatim" id="nav-guide">Plain Guide</a>
       <a href="#demo" id="nav-demo">Simulator</a>
+      <a href="#kod" id="nav-code">Quickstart</a>
       <a href="#benchmark-arena" id="nav-arena">Benchmarks</a>
       <a href="#corpus" id="nav-corpus">Corpus &amp; Proofs</a>
-      <a href="#kod" id="nav-code">Quickstart</a>
       <div class="wnav-dropdown" id="nav-ecosystem-dropdown">
         <button type="button" class="wnav-drop-btn" id="nav-ecosystem-btn" aria-expanded="false" aria-haspopup="true">
           <span id="nav-ecosystem">Ecosystem</span>
@@ -2148,6 +2148,176 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
       </div>
       <div style="font-size: 0.92rem; color: var(--text-muted);">
         🛡️ <strong>werracle (On-Chain / EVM):</strong> <a href="https://werracle.io" target="_blank" rel="noopener" style="color: var(--amber); font-weight: 700; text-decoration: none;">werracle.io</a> &bull; Sub-Cent AI Reflex &bull; DeFi Circuit Breaker
+      </div>
+    </div>
+  </div>
+
+  <!-- Python Quickstart & Examples (moved up: install is the first thing a developer wants after trying the simulator) -->
+  <h2 class="section-title" id="kod">Quickstart & Examples</h2>
+  <div class="card">
+    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="code-install-lbl">Install with zero heavy dependencies:</div>
+    <div class="code-box">pip install git+https://github.com/pCwOrM/werr.git</div>
+    
+    <!-- Code Tab Switcher -->
+    <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem;">
+      <button class="lang-btn active" id="tab-btn-quick" onclick="switchCodeTab('quick')">⚡ 3-Line Quickstart</button>
+      <button class="lang-btn" id="tab-btn-cli" onclick="switchCodeTab('cli')">💻 Interactive CLI (sor.py)</button>
+    </div>
+
+    <!-- Quickstart Tab -->
+    <div id="tab-content-quick" style="margin-top: 1rem;">
+      <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="code-usage-lbl">Run the decision engine in just 3 lines:</div>
+      <div class="code-box">from werr import create_smart_router, NoulQuestion, ChoiceQuestion
+
+# 1. Initialize 24-byte zero-memory engine
+engine = create_smart_router()
+
+# 2. Evaluate program state into typed decisions
+response = engine.decide(
+    state={"role": "member", "req_rate": 12.5, "failed": 0},
+    questions={
+        "allow": NoulQuestion("Should request execute?"),
+        "route": ChoiceQuestion("Target service", criteria={"prod": "Primary", "deny": "Block"})
+    }
+)
+
+# 3. Fast smart if-statement:
+if response.boolean("allow"):
+    print("Allowed! Dispatch to:", response.choice("route"))</div>
+    </div>
+
+    <!-- Interactive CLI Tab -->
+    <div id="tab-content-cli" style="display: none; margin-top: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+        <span style="font-size: 0.9rem; color: var(--text-muted);" id="cli-desc">
+          Standalone terminal simulator with automatic dependency checks (`werr`), interactive role menu, and CLI arguments:
+        </span>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="examples/sor.py" download="sor.py" class="btn btn-primary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;" id="btn-download-cli">
+            📥 Download sor.py
+          </a>
+          <button onclick="copyCliCode()" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;" id="btn-copy-cli">
+            📋 Copy Code
+          </button>
+          <a href="https://github.com/pCwOrM/werr/blob/main/examples/sor.py" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="code-box" id="sor-code-block" style="max-height: 420px; overflow-y: auto; white-space: pre;">#!/usr/bin/env python3
+"""
+werr: İnteraktif Karar Simülatörü (Interactive Decision CLI)
+Evrensel Fraktal Sentez Geometrisi (Fractal Synthesis) ile Sıfır-Bellekli (0 Byte VRAM) Karar Motoru.
+"""
+import sys
+
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
+# 1. Gerekli Kütüphane Kontrolü (Dependency Check)
+try:
+    import werr
+except ImportError:
+    print("\n" + "=" * 60)
+    print(" [!] HATA: 'werr' karar motoru kütüphanesi kurulu değil!")
+    print("=" * 60)
+    print(" Bu betiği çalıştırabilmek için lütfen önce şu komutla kurun:")
+    print("   pip install git+https://github.com/pCwOrM/werr.git")
+    print("=" * 60 + "\n")
+    sys.exit(1)
+
+# Tanımlı Roller ve Güvenlik Seviyeleri
+ROLLER = {
+    "1": ("admin", "Sistem Yöneticisi (Admin)", 0, 1.0),
+    "2": ("member", "Kayıtlı Normal Üye (Member)", 0, 3.0),
+    "3": ("guest", "Doğrulanmamış Misafir (Guest - Sıfır Güven)", 2, 12.0),
+    "4": ("attacker", "Şüpheli Saldırgan / Bot (Attacker)", 18, 120.0)
+}
+
+def main():
+    # 2. Rol Belirleme (Komut Satırı Argümanı veya İnteraktif Menü)
+    secilen_rol = None
+    hata_sayisi = 0
+    istek_hizi = 1.0
+
+    if len(sys.argv) > 1:
+        arg = sys.argv[1].lower()
+        for num, (r_name, r_desc, def_hata, def_hiz) in ROLLER.items():
+            if arg == num or arg == r_name:
+                secilen_rol = r_name
+                hata_sayisi = def_hata
+                istek_hizi = def_hiz
+                break
+        if not secilen_rol:
+            print(f"[!] Bilinmeyen rol '{arg}'. Geçerli roller: admin, member, guest, attacker")
+            sys.exit(1)
+    else:
+        print("\n" + "=" * 50)
+        print("    🌊 WERR İNTERAKTİF KARAR MOTORU SİMÜLATÖRÜ")
+        print("=" * 50)
+        print(" Lütfen test etmek istediğiniz güvenlik rolünü seçin:")
+        for num, (r_name, r_desc, _, _) in ROLLER.items():
+            print(f"   {num}) {r_desc}")
+        print("-" * 50)
+        secim = input(" Seçiminiz [1-4] (Varsayılan: 2 - Member): ").strip() or "2"
+        if secim in ROLLER:
+            secilen_rol, _, hata_sayisi, istek_hizi = ROLLER[secim]
+        else:
+            secilen_rol, _, hata_sayisi, istek_hizi = ROLLER["2"]
+
+    # 3. werr Motorunu Başlat (24-byte seed, 0 byte VRAM)
+    engine = werr.create_smart_router()
+
+    durum = {
+        "user_role": secilen_rol,
+        "failed_attempts": hata_sayisi,
+        "req_frequency": istek_hizi
+    }
+
+    # 4. Tipli Karar Sorularını Paralel Sor (Jev System-1 Primitives)
+    karar = engine.decide(
+        state=durum,
+        questions={
+            "gecis_izni": werr.NoulQuestion("İşleme izin verilsin mi?"),
+            "hedef_rota": werr.ChoiceQuestion("Yönlendirilecek mikroservis", criteria={
+                "direct_api": "Doğrudan API (Hızlı Yol)",
+                "rate_limiter": "Hız Sınırlayıcı Kuyruk",
+                "sandbox_audit": "İnceleme Odası (Karantina / Auth Challenge)",
+                "drop_packet": "Engelle & Paketi Düşür"
+            }),
+            "tehlike_skoru": werr.ScoreQuestion("Tehlike Derecesi (0-3 Skalası)", criteria=[
+                "Normal/Temiz", "Hafif Anomali", "Yüksek Risk", "Kritik Tehdit"
+            ])
+        }
+    )
+
+    # 5. Sonuçları Göster
+    izin = karar.boolean("gecis_izni")
+    durum_etiketi = "✅ İZİN VERİLDİ (ALLOWED)" if izin else "⛔ ENGELLENDİ (DENIED)"
+    ans_noul = karar.answers["gecis_izni"]
+
+    print("\n" + "=" * 50)
+    print(f" GİRDİ DURUMU : Rol={secilen_rol.upper()} | Hata={hata_sayisi} | Hız={istek_hizi} req/s")
+    print(f" KARAR ÇIKTISI: {durum_etiketi}")
+    print("=" * 50)
+    print(f" • Geçiş İzni    : {izin} (Olasılık: p={ans_noul.noul:.4f}, Güven: %{ans_noul.confidence*100:.1f})")
+    print(f" • Yönlendirme   : {karar.choice('hedef_rota')}")
+    print(f" • Tehlike Skoru : {karar.score('tehlike_skoru'):.2f} / 3.0")
+    print(f" • Karar Hızı    : {karar.latency_ms:.2f} ms")
+    print(f" • Bellek İzleri : 0 Byte Tensör VRAM (24 Byte Koordinat Tohumu)")
+    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, api.answerr.me)")
+    print("=" * 50)
+    print(" ℹ️  [Açık Bilim & Gizlilik]: Fraktal optimizasyonu için yalnızca anonim koordinat")
+    print("     ve karar çıktıları kaydedilir. (Kapatmak için: export WERR_TELEMETRY=0)")
+    print("=" * 50 + "\n")
+
+if __name__ == "__main__":
+    main()</div>
+      <div style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);" id="cli-run-hint">
+        <strong>Run in terminal:</strong> <code>python sor.py</code> (interactive menu) or <code>python sor.py member</code> (direct role)
       </div>
     </div>
   </div>
@@ -2716,176 +2886,6 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
     <div class="corpus-list" id="corpusList"></div>
   </section>
 
-  <h2 class="section-title" id="kod">Quickstart & Examples</h2>
-  <div class="card">
-    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="code-install-lbl">Install with zero heavy dependencies:</div>
-    <div class="code-box">pip install git+https://github.com/pCwOrM/werr.git</div>
-    
-    <!-- Code Tab Switcher -->
-    <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem;">
-      <button class="lang-btn active" id="tab-btn-quick" onclick="switchCodeTab('quick')">⚡ 3-Line Quickstart</button>
-      <button class="lang-btn" id="tab-btn-cli" onclick="switchCodeTab('cli')">💻 Interactive CLI (sor.py)</button>
-    </div>
-
-    <!-- Quickstart Tab -->
-    <div id="tab-content-quick" style="margin-top: 1rem;">
-      <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;" id="code-usage-lbl">Run the decision engine in just 3 lines:</div>
-      <div class="code-box">from werr import create_smart_router, NoulQuestion, ChoiceQuestion
-
-# 1. Initialize 24-byte zero-memory engine
-engine = create_smart_router()
-
-# 2. Evaluate program state into typed decisions
-response = engine.decide(
-    state={"role": "member", "req_rate": 12.5, "failed": 0},
-    questions={
-        "allow": NoulQuestion("Should request execute?"),
-        "route": ChoiceQuestion("Target service", criteria={"prod": "Primary", "deny": "Block"})
-    }
-)
-
-# 3. Fast smart if-statement:
-if response.boolean("allow"):
-    print("Allowed! Dispatch to:", response.choice("route"))</div>
-    </div>
-
-    <!-- Interactive CLI Tab -->
-    <div id="tab-content-cli" style="display: none; margin-top: 1rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
-        <span style="font-size: 0.9rem; color: var(--text-muted);" id="cli-desc">
-          Standalone terminal simulator with automatic dependency checks (`werr`), interactive role menu, and CLI arguments:
-        </span>
-        <div style="display: flex; gap: 0.5rem;">
-          <a href="examples/sor.py" download="sor.py" class="btn btn-primary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;" id="btn-download-cli">
-            📥 Download sor.py
-          </a>
-          <button onclick="copyCliCode()" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;" id="btn-copy-cli">
-            📋 Copy Code
-          </button>
-          <a href="https://github.com/pCwOrM/werr/blob/main/examples/sor.py" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;">
-            GitHub
-          </a>
-        </div>
-      </div>
-      <div class="code-box" id="sor-code-block" style="max-height: 420px; overflow-y: auto; white-space: pre;">#!/usr/bin/env python3
-"""
-werr: İnteraktif Karar Simülatörü (Interactive Decision CLI)
-Evrensel Fraktal Sentez Geometrisi (Fractal Synthesis) ile Sıfır-Bellekli (0 Byte VRAM) Karar Motoru.
-"""
-import sys
-
-if hasattr(sys.stdout, 'reconfigure'):
-    try:
-        sys.stdout.reconfigure(encoding='utf-8')
-    except Exception:
-        pass
-
-# 1. Gerekli Kütüphane Kontrolü (Dependency Check)
-try:
-    import werr
-except ImportError:
-    print("\n" + "=" * 60)
-    print(" [!] HATA: 'werr' karar motoru kütüphanesi kurulu değil!")
-    print("=" * 60)
-    print(" Bu betiği çalıştırabilmek için lütfen önce şu komutla kurun:")
-    print("   pip install git+https://github.com/pCwOrM/werr.git")
-    print("=" * 60 + "\n")
-    sys.exit(1)
-
-# Tanımlı Roller ve Güvenlik Seviyeleri
-ROLLER = {
-    "1": ("admin", "Sistem Yöneticisi (Admin)", 0, 1.0),
-    "2": ("member", "Kayıtlı Normal Üye (Member)", 0, 3.0),
-    "3": ("guest", "Doğrulanmamış Misafir (Guest - Sıfır Güven)", 2, 12.0),
-    "4": ("attacker", "Şüpheli Saldırgan / Bot (Attacker)", 18, 120.0)
-}
-
-def main():
-    # 2. Rol Belirleme (Komut Satırı Argümanı veya İnteraktif Menü)
-    secilen_rol = None
-    hata_sayisi = 0
-    istek_hizi = 1.0
-
-    if len(sys.argv) > 1:
-        arg = sys.argv[1].lower()
-        for num, (r_name, r_desc, def_hata, def_hiz) in ROLLER.items():
-            if arg == num or arg == r_name:
-                secilen_rol = r_name
-                hata_sayisi = def_hata
-                istek_hizi = def_hiz
-                break
-        if not secilen_rol:
-            print(f"[!] Bilinmeyen rol '{arg}'. Geçerli roller: admin, member, guest, attacker")
-            sys.exit(1)
-    else:
-        print("\n" + "=" * 50)
-        print("    🌊 WERR İNTERAKTİF KARAR MOTORU SİMÜLATÖRÜ")
-        print("=" * 50)
-        print(" Lütfen test etmek istediğiniz güvenlik rolünü seçin:")
-        for num, (r_name, r_desc, _, _) in ROLLER.items():
-            print(f"   {num}) {r_desc}")
-        print("-" * 50)
-        secim = input(" Seçiminiz [1-4] (Varsayılan: 2 - Member): ").strip() or "2"
-        if secim in ROLLER:
-            secilen_rol, _, hata_sayisi, istek_hizi = ROLLER[secim]
-        else:
-            secilen_rol, _, hata_sayisi, istek_hizi = ROLLER["2"]
-
-    # 3. werr Motorunu Başlat (24-byte seed, 0 byte VRAM)
-    engine = werr.create_smart_router()
-
-    durum = {
-        "user_role": secilen_rol,
-        "failed_attempts": hata_sayisi,
-        "req_frequency": istek_hizi
-    }
-
-    # 4. Tipli Karar Sorularını Paralel Sor (Jev System-1 Primitives)
-    karar = engine.decide(
-        state=durum,
-        questions={
-            "gecis_izni": werr.NoulQuestion("İşleme izin verilsin mi?"),
-            "hedef_rota": werr.ChoiceQuestion("Yönlendirilecek mikroservis", criteria={
-                "direct_api": "Doğrudan API (Hızlı Yol)",
-                "rate_limiter": "Hız Sınırlayıcı Kuyruk",
-                "sandbox_audit": "İnceleme Odası (Karantina / Auth Challenge)",
-                "drop_packet": "Engelle & Paketi Düşür"
-            }),
-            "tehlike_skoru": werr.ScoreQuestion("Tehlike Derecesi (0-3 Skalası)", criteria=[
-                "Normal/Temiz", "Hafif Anomali", "Yüksek Risk", "Kritik Tehdit"
-            ])
-        }
-    )
-
-    # 5. Sonuçları Göster
-    izin = karar.boolean("gecis_izni")
-    durum_etiketi = "✅ İZİN VERİLDİ (ALLOWED)" if izin else "⛔ ENGELLENDİ (DENIED)"
-    ans_noul = karar.answers["gecis_izni"]
-
-    print("\n" + "=" * 50)
-    print(f" GİRDİ DURUMU : Rol={secilen_rol.upper()} | Hata={hata_sayisi} | Hız={istek_hizi} req/s")
-    print(f" KARAR ÇIKTISI: {durum_etiketi}")
-    print("=" * 50)
-    print(f" • Geçiş İzni    : {izin} (Olasılık: p={ans_noul.noul:.4f}, Güven: %{ans_noul.confidence*100:.1f})")
-    print(f" • Yönlendirme   : {karar.choice('hedef_rota')}")
-    print(f" • Tehlike Skoru : {karar.score('tehlike_skoru'):.2f} / 3.0")
-    print(f" • Karar Hızı    : {karar.latency_ms:.2f} ms")
-    print(f" • Bellek İzleri : 0 Byte Tensör VRAM (24 Byte Koordinat Tohumu)")
-    print(f" • Telemetri     : 🔒 Açık Bilim Karar Telemetrisi (0-PII, api.answerr.me)")
-    print("=" * 50)
-    print(" ℹ️  [Açık Bilim & Gizlilik]: Fraktal optimizasyonu için yalnızca anonim koordinat")
-    print("     ve karar çıktıları kaydedilir. (Kapatmak için: export WERR_TELEMETRY=0)")
-    print("=" * 50 + "\n")
-
-if __name__ == "__main__":
-    main()</div>
-      <div style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);" id="cli-run-hint">
-        <strong>Run in terminal:</strong> <code>python sor.py</code> (interactive menu) or <code>python sor.py member</code> (direct role)
-      </div>
-    </div>
-  </div>
-
-  
   <!-- Commercial Cloud & B2B APIs -->
   <section id="commercial-services" style="margin-top:clamp(64px,8vw,100px);">
     <div class="halk-tag">COMMERCIAL CLOUD &amp; B2B API SERVICES</div>
@@ -5743,7 +5743,7 @@ function buildCorpusList(){
         ${isTr ? "Tüm Akademik Külliyat, Ön Baskılar ve Veri Setleri" : "The Grand Academic Corpus, Preprints & Datasets"}
       </h3>
       <p style="color:var(--mist); max-width:62ch; margin:0 auto 24px; font-size:0.95rem;">
-        ${isTr ? "11 hakemli ön baskı, kalıcı Zenodo CERN DOI arşivleri, SSRN kayıtları ve KaTeX destekli araştırma laboratuvarı merkezi portalımızda canlıdır." : "Explore 11 peer-reviewed preprints, permanent Zenodo CERN DOI records, SSRN papers, and KaTeX-powered interactive labs at our central hub."}
+        ${isTr ? "11 ön baskı, kalıcı Zenodo CERN DOI arşivleri, SSRN kayıtları ve KaTeX destekli araştırma laboratuvarı merkezi portalımızda canlıdır." : "Explore 11 preprints, permanent Zenodo CERN DOI records, SSRN papers, and KaTeX-powered interactive labs at our central hub."}
       </p>
       <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
         <a href="https://pcworm.github.io/fractal-neural-synthesis/corpus.html" target="_blank" rel="noopener" class="corpus-portal-btn">
@@ -5759,39 +5759,7 @@ function buildCorpusList(){
   `;
 
 
-  const devValueHtml = `
-    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
-        ${isTr ? "MİMARİ &amp; GELİŞTİRİCİ KAZANIMI" : "ARCHITECTURE &amp; DEVELOPER ROI"}
-      </div>
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 16px;">
-        ${isTr ? "Bu Karar Motoru Sisteminize Ne Kazandırır?" : "What Does This Decision Engine Deliver to Your Codebase?"}
-      </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
-          <div style="font-size: 1.2rem; margin-bottom: 6px;">💾 <strong>0 MB VRAM / RAM</strong></div>
-          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
-            ${isTr ? "40 GB model ağırlığı indirmek yok. 24-byte kernel mikrosaniyede başlar, Docker imajınızı şişirmez." : "Zero multi-gigabyte weight checkpoints. 24-byte kernel spins up in microseconds with zero Docker bloat."}
-          </p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
-          <div style="font-size: 1.2rem; margin-bottom: 6px;">⚡ <strong>0.03 ms Karar Döngüsü</strong></div>
-          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
-            ${isTr ? "CPU L1/L2 önbelleğinde döner. Mikroservisler arasında RPC gecikmesi yaratmadan gerçek zamanlı karar üretir." : "Executes within CPU L1/L2 cache. Zero RPC roundtrip latency between mission-critical microservices."}
-          </p>
-        </div>
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
-          <div style="font-size: 1.2rem; margin-bottom: 6px;">🛡️ <strong>Kırılmaz Lean 4 Kanıtı</strong></div>
-          <p style="font-size: 0.85rem; color: var(--mist); line-height: 1.4; margin: 0;">
-            ${isTr ? "41 teorem ve 0 sorry ile makine denetimli doğrulama. Karar mantığı beklenmedik uç durumlar üretmez." : "41 machine-checked theorems with zero sorry. Safety invariants guaranteed by formal proof kernel."}
-          </p>
-        </div>
-      </div>
-    </div>
-  `;
-
   host.innerHTML = `
-    ${devValueHtml}
     <div class="corpus-pillars-grid">${cardsHtml}</div>
     ${bannerHtml}
   `;
