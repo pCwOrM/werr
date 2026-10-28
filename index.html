@@ -5800,7 +5800,7 @@ function buildCorpusList(){
   const box = $("#cosmos"); let started = false;
   new IntersectionObserver(es => { if (es[0].isIntersecting && !started){ started = true; go(); } }, {rootMargin: "300px"}).observe(box);
   async function go(){
-    let T; try { T = await import("https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js"); } catch(e){ box.style.display = "none"; return; }
+    let T; try { T = await import("/assets/vendor/three-0.170.0.module.min.js"); } catch(e){ box.style.display = "none"; return; }
     const renderer = new T.WebGLRenderer({antialias: true, alpha: true});
     renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
     box.insertBefore(renderer.domElement, box.firstChild);
