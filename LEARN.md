@@ -29,7 +29,7 @@ Following Daniel Kahneman's cognitive framework:
 
 WERR provides the machine-native substrate for **System 1**.
 
-### B. Escape Dynamics as Decision Boundaries
+### B. Polynomial Escape Dynamics & Procedural Decision Boundaries
 Traditional networks partition state space using learned hyperplane weights ($W \cdot x + b$).  
 WERR maps normalized multi-dimensional state vectors into the complex plane $\mathbb{C}$ and evaluates iterative polynomial escape trajectories:
 $$Z_{n+1} = Z_n^2 + C$$

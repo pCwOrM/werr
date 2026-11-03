@@ -10,7 +10,7 @@
 [![ArXiv Ön Baskı](https://img.shields.io/badge/arXiv-2609.25498-b91c1c.svg)](https://arxiv.org/abs/2609.25498)
 
 <p align="center">
-  <b>Yapay sinir ağı ağırlıkları, bellek (VRAM) veya gecikme maliyeti gerektirmeksizin; Mandelbrot sınır kaçış dinamiklerinden doğrudan tip güvenli kararlar üreten deterministik, prosedürel Sistem-1 refleks motoru.</b>
+  <b>Yapay sinir ağı ağırlıkları, bellek (VRAM) veya gecikme maliyeti gerektirmeksizin; polinomiyal kaçış dinamiklerinden ve yordamsal sınır geometrisinden doğrudan tip güvenli kararlar üreten deterministik, prosedürel Sistem-1 refleks motoru.</b>
 </p>
 
 [Hızlı Başlangıç](#-30-saniyede-hızlı-başlangıç) •

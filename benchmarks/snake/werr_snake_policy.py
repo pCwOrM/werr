@@ -69,13 +69,13 @@ class WerrSnakePolicy:
         )
         self.metadata = {
             "name": "werr-0.5.1",
-            "architecture": "0-VRAM Fractal Escape-Time Kernel",
+            "architecture": "0-VRAM Polynomial Escape-Time Kernel (Procedural Boundary Dynamics)",
             "vram_bytes": 0,
             "hardware": get_hardware_name(),
             "platform": platform.platform(),
             "python": platform.python_version(),
             "network": "offline (isolated sandbox)",
-            "policy": "werr fractal manifold probabilities over directional game criteria",
+            "policy": "werr polynomial boundary escape probabilities over directional game criteria",
             "guarded": guarded,
             "prompt": prompt,
         }

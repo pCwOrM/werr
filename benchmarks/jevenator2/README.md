@@ -27,7 +27,7 @@ Evaluated across the official Jevenator 2 test suite:
 
 | Metric / Dimension | Maisa djev (Diffusion-Gemma) | **WERR (Fractal System-One)** | Advantage / Gain |
 | :--- | :---: | :---: | :---: |
-| **Model Architecture** | Diffusion-Gemma Vision-LLM | **Mandelbrot Escape Boundary Kernel** | Procedural Zero-Tensor |
+| **Model Architecture** | Diffusion-Gemma Vision-LLM | **Procedural Boundary Kernel (0-VRAM)** | Procedural Zero-Tensor |
 | **VRAM / Weights Memory** | ~8 GB GPU VRAM | **0 Bytes VRAM (24-Byte Seed)** | **Infinitely Lighter** |
 | **Hardware Required** | NVIDIA RTX / Cloud GPU | **Standard Commodity CPU** | Ubiquitous Edge Execution |
 | **Mean Frame Latency (35 cells)** | 761.8 ms | **27.39 ms** | **27.8× Faster** |

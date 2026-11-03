@@ -116,7 +116,7 @@ Testing whether procedural fractal boundaries benefit from multi-domain gates:
 | Hand-Crafted Multi-Domain Gates | 64.0% | 52.8% | 40.5% | 51.5% |
 | **Monolithic Universal Kernel (Werr)** | **68.0%** | **55.6%** | **45.2%** | **55.4%** |
 
-*Conclusion:* The monolithic universal fractal escape space demonstrates superior cross-domain generalization over partitioned domain rotators.
+*Conclusion:* The monolithic universal polynomial decision space demonstrates superior cross-domain generalization over partitioned domain rotators.
 
 ---
 

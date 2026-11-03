@@ -138,7 +138,7 @@ class WerrFractalReflexEngine:
             nx, ny = hx + dx, hy + dy
             free_cells = get_free_space(nx, ny, max_depth=35)
 
-            # Procedural Mandelbrot Escape Dynamics for this orientation
+            # Procedural polynomial escape dynamics (z_{n+1} = z_n^2 + c) for this orientation
             zx = c_mod_x + (i * 0.0003)
             zy = c_mod_y + (i * 0.0003)
             escape_iter = 0

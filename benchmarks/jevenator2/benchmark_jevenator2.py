@@ -168,7 +168,7 @@ def run_benchmark(verbose: bool = True) -> Dict:
     print("=" * 80)
     print(f"{'Metric / Dimension':<32} | {'Maisa djev (Gemma)':<22} | {'WERR (Fractal System-1)':<22}")
     print("-" * 80)
-    print(f"{'Model Architecture':<32} | {'Diffusion-Gemma LLM':<22} | {'Mandelbrot Escape Kernel':<22}")
+    print(f"{'Model Architecture':<32} | {'Diffusion-Gemma LLM':<22} | {'Procedural Boundary Kernel':<22}")
     print(f"{'VRAM / Weights Memory':<32} | {'~8 GB GPU VRAM':<22} | {'0 Bytes (24-Byte Seed)':<22}")
     print(f"{'Hardware Target':<32} | {'NVIDIA RTX / Cloud GPU':<22} | {'Commodity CPU':<22}")
     print(f"{'Mean Frame Latency (35 cells)':<32} | {f'{djev_mean_latency:.1f} ms':<22} | {f'{mean_latency:.2f} ms':<22}")

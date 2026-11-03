@@ -19,7 +19,7 @@ Introducing WERR: the first Zero-Memory Fractal Decision Engine.
 ### Tweet 2/8 (Mechanisms & Mathematics)
 ```text
 2/8 🌀 How does Zero-Weight AI work?
-Instead of neural weights, WERR synthesizes instant typed decisions (noul, choice, score) from Mandelbrot escape dynamics.
+Instead of neural weights, WERR synthesizes instant typed decisions (noul, choice, score) from polynomial escape dynamics.
 A 24-byte seed (cx, cy, zoom) replaces billions of floats.
 100% deterministic, 0 hallucinations! #MachineLearning
 ```

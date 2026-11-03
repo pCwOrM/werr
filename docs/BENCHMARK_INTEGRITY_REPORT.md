@@ -24,7 +24,7 @@ Commercial cloud LLM infrastructure operates on a paradigm where every discrete 
 - Latencies ranging from 500 ms to 4,000 ms.
 - Ongoing API token costs ($0.01 to $1.00+ per 1,000 inferences).
 
-Werr was designed to provide an alternative: a **zero-memory (< 24 bytes seed), deterministic mathematical decision engine** executing numerical Mandelbrot boundary escape iterations on commodity CPUs in **sub-5 milliseconds** with **zero ongoing token cost ($0.0000)** and zero external cloud dependency.
+Werr was designed to provide an alternative: a **zero-memory (< 24 bytes seed), deterministic mathematical decision engine** executing numerical polynomial escape iterations along procedural boundary cusps on commodity CPUs in **sub-5 milliseconds** with **zero ongoing token cost ($0.0000)** and zero external cloud dependency.
 
 When evaluated on the public JevBench benchmark suite (231 tasks across Easy, Original, and Hard tiers), Werr demonstrated that edge heuristics and phase-resonance dynamics achieve competitive classification accuracy while operating orders of magnitude faster and at zero cost.
 

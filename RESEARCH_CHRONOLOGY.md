@@ -109,7 +109,7 @@
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formal Verification, 40-Core Gauntlet & Tesla 3-6-9 Harmonics" width="100%">
 </p>
 
-`werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic Mandelbrot fractal escape dynamics and quadrant subdivision.
+`werr` is an open-source, machine-native **System-One decision engine** for software applications. Instead of running large language models or maintaining multi-gigabyte weight tensors in VRAM, `werr` synthesizes instant, typed decisions (`noul`, `choice`, `score`) on-the-fly from deterministic polynomial escape dynamics and procedural boundary geometry.
 
 ---
 
@@ -250,7 +250,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 #### 2. Lexical & Resonance Ontology Dimension (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
 * **`mode="production"` (Default in Production)**: Full activation of bilingual lexical dictionaries (English & Türkçe) and physical sensor threshold heuristics (`smoke_detected`, `gas_ppm`, temperature extremes). Active on production servers (`mechsrv` / `answerr.me`).
 * **`mode="resonance"`**: Mathematical $\mathbb{Z}/9\mathbb{Z}$ cyclic quotient ring modular resonance topology (Lean 4 Mathlib `ZMod 9` closed sub-ideal $\mathcal{I}_3 = \{0, 3, 6\} \cong 3\mathbb{Z}/9\mathbb{Z}$ / shorthand: Tesla 3-6-9 frequency dictionary). Delivers ultra-low latency (**13.8 ms** in multi-domain mode) while achieving **52.81%** accuracy on JevBench.
-* **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Strips all external lexical dictionaries; operates purely on chaotic Mandelbrot boundary escape dynamics and criteria $N$-gram geometry.
+* **`mode="pure_fractal"` (or `enable_ontologies=False`)**: Strips all external lexical dictionaries; operates purely on chaotic polynomial escape dynamics, procedural boundary geometry, and criteria $N$-gram geometry.
 
 ```python
 from werr import WerrEngine
@@ -592,7 +592,7 @@ The benchmark evaluates a System-One model's ability to divide visual scenes int
 
 | Metric / Dimension | Maisa djev (Diffusion-Gemma) | **WERR (Fractal System-One)** | Advantage / Gain |
 | :--- | :---: | :---: | :---: |
-| **Model Architecture** | Diffusion-Gemma Vision-LLM | **Mandelbrot Escape Boundary Kernel** | Procedural Zero-Tensor |
+| **Model Architecture** | Diffusion-Gemma Vision-LLM | **Procedural Boundary Kernel (0-VRAM)** | Procedural Zero-Tensor |
 | **VRAM / Weights Memory** | ~8 GB GPU VRAM | **0 Bytes VRAM (24-Byte Seed)** | **Infinitely Lighter** |
 | **Hardware Required** | NVIDIA RTX / Cloud GPU | **Standard Commodity CPU** | Ubiquitous Edge Execution |
 | **Mean Frame Latency (35 cells)** | 761.8 ms | **27.39 ms** | **27.8× Faster** |
@@ -764,7 +764,7 @@ werr             # Interactive terminal simulator
 ## 🔗 Ecosystem Architecture & Connections
 
 1. **Foundational Scientific Theory & Interactive Client Labs:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/fractal-neural-synthesis)  
-   The mathematical basis for zero-storage procedural parameter derivation from the Mandelbrot escape boundary ($\partial \mathcal{M}$) (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
+   The mathematical basis for zero-storage procedural parameter derivation from the polynomial escape boundary ($\partial \mathcal{M}$) (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). Houses the interactive 1v1 AI Snake Arena GUI (`demos/snake.html` with mobile touch controls and human vs fractal autopilot) and quadrant visualizers.
 
 2. **Machine-Native Reflex Engine & Benchmarks (This Repository):** [`werr`](https://github.com/pCwOrM/werr)  
    The in-process System-1 reflex kernel running on standard CPU with 0 Bytes VRAM, providing terminal benchmark visualizers (`benchmarks/snake/visualize_snake.py`) and verified world-record benchmark suites (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2).
@@ -1077,7 +1077,7 @@ In accordance with open science archival integrity, all preceding versions and i
   <img src="assets/twitter_lean4_tesla_gauntlet.png" alt="WERR Lean 4 Formel Doğrulama, 40-Çekirdek Gauntlet & Tesla 3-6-9 Harmonikleri" width="100%">
 </p>
 
-`werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik Mandelbrot fraktal kaçış dinamiği ($\partial \mathcal{M}$) ve 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
+`werr`, modern yazılımlar ve uç cihazlar için geliştirilmiş, makine-yerel (machine-native) bir **Sistem-1 refleks karar motorudur**. Devasa dil modellerini çalıştırmak veya VRAM'de gigabaytlarca ağırlık tensörü tutmak yerine `werr`, deterministik polinomiyal kaçış dinamiği ve yordamsal sınır geometrisi ($\partial \mathcal{M}$) ile 4-çeyrek bölünmesi üzerinden anlık, tipli kararları (`noul`, `choice`, `score`) dinamik olarak sentezler.
 
 ---
 
@@ -1177,7 +1177,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 `werr` v0.5.0, çok ölçekli sınır örneklemesi, sınırlı yoğunluk kestirimi ve sürekli çatallanma dinamiğini dikey parametrik boyutlarda birleştiren **Çok Ölçekli Dinamik Harmonik Mimariyi** sunar:
 
 #### 🌟 Üç Temel Algoritmik Sütun (v0.5.0)
-1. **Tripod Çok Ölçekli Harmonik Çekirdek (`tripod=True`, Varsayılan Açık)**: Kaotik sınır dinamiklerini tek bir odak ölçeğinde değerlendirmek yerine WERR, kaçış sınırını üç harmonik odak ölçeğinde eşzamanlı değerlendirir: $0.6\times$ (makro topolojik havza), $1.0\times$ (nominal sınır cusp'ı) ve $1.6\times$ (ince çok-fraktallı iplikçikler). Ağırlıklı geometrik ensemble ($w = [0.25, 0.50, 0.25]$) ile sınır tuzaklanmasını önler ve JevBench doğruluğunu tüm katmanlarda **%54.55'e** (Easy %85.42, Hard %44.14) yükseltir.
+1. **Tripod Çok Ölçekli Harmonik Çekirdek (`tripod=True`, Varsayılan Açık)**: Kaotik sınır dinamiklerini tek bir odak ölçeğinde değerlendirmek yerine WERR, polinomiyal kaçış sınırını üç harmonik odak ölçeğinde eşzamanlı değerlendirir: $0.6\times$ (makro topolojik havza), $1.0\times$ (nominal sınır cusp'ı) ve $1.6\times$ (ince çok-fraktallı iplikçikler). Ağırlıklı geometrik ensemble ($w = [0.25, 0.50, 0.25]$) ile sınır tuzaklanmasını önler ve JevBench doğruluğunu tüm katmanlarda **%54.55'e** (Easy %85.42, Hard %44.14) yükseltir.
 2. **Sınırlı Yoğunluk Normalizasyonu (Bounded Density, arXiv:1810.11107)**: $L_\infty / L_1$ sınırlı kadran yoğunluk kestirimini (`extract_bounded_quadrant_weights`) devreye alarak kaçış hızı dağılımlarının uç noktalarda doymasını engeller.
 3. **Çatallanma Kenar Genişletme Operatörü (Pitchfork Bifurcation Offset)**: Sürekli dinamik sistem çatallanmasını ($F_i = \sum_{j \neq i} [\text{sgn}(S_i - S_j) \cdot |S_i - S_j|^\alpha + \beta (H_i - H_j)]$, `apply_cadence_bifurcation`) kullanarak yapay basamak fonksiyonlarına gerek kalmaksızın kilitlenen karar durumlarını deterministik olarak çözer ve sınırları netleştirir.
 
@@ -1188,7 +1188,7 @@ if response.boolean("is_safe") and response.score("priority") > 1.0:
 #### 2. Leksikal ve Rezonans Ontoloji Boyutu (`mode="production"`, `mode="resonance"`, `mode="pure_fractal"`)
 * **`mode="production"` (Üretimde Varsayılan)**: İki dilli (Türkçe/İngilizce) sözcük sözlükleri, fiziksel tehlike kuralları ve sensör eşikleri eksiksiz devrededir. Üretim sunucularında (`mechsrv` / `answerr.me`) varsayılan olarak bu mod koşar.
 * **`mode="resonance"`**: Matematiksel $\mathbb{Z}/9\mathbb{Z}$ devirli bölüm halkası modüler rezonans topolojisi (Lean 4 Mathlib `ZMod 9` kapalı alt-ideali $\mathcal{I}_3 = \{0, 3, 6\} \cong 3\mathbb{Z}/9\mathbb{Z}$ / mühendislik kısaltması: Tesla 3-6-9 frekans sözlüğü). Çoklu alan modunda ultra-düşük gecikme (**13.8 ms**) sunarken JevBench üzerinde **%52.81** doğruluk sağlar.
-* **`mode="pure_fractal"` (veya `enable_ontologies=False`)**: Dış sözlükleri ve leksikal kuralları tamamen devre dışı bırakır; yalnızca kaotik Mandelbrot sınır kaçış dinamikleri ve kriter $N$-gram geometrisiyle çalışır.
+* **`mode="pure_fractal"` (veya `enable_ontologies=False`)**: Dış sözlükleri ve leksikal kuralları tamamen devre dışı bırakır; yalnızca kaotik polinomiyal kaçış dinamikleri, yordamsal sınır geometrisi ve kriter $N$-gram geometrisiyle çalışır.
 
 ```python
 from werr import WerrEngine
@@ -1473,7 +1473,7 @@ werr attacker    # Engellendi (Anlık omurilik refleksi)
 ## 🔗 Ekosistem Mimarisi ve Kardeş Depo Bağlantıları
 
 1. **Temel Bilimsel Teori ve İnteraktif İstemci Laboratuvarları:** [`mandelbrot-fractal-neural-synthesis`](https://github.com/pCwOrM/fractal-neural-synthesis)  
-   Mandelbrot kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
+   polinomiyal kaçış sınırından ($\partial \mathcal{M}$) sıfır-depolamalı yordamsal parametre türetiminin kuramsal temeli (Zenodo DOI: [10.5281/zenodo.22774934](https://doi.org/10.5281/zenodo.22774934)). İnteraktif 1v1 Yılan Arenası web arayüzü (`demos/snake.html`) ve kadran görselleştiricilerini barındırır.
 
 2. **Makine-Yerel Refleks Motoru ve Kıyaslama Paketleri (Bu Depo):** [`werr`](https://github.com/pCwOrM/werr)  
    Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench, Jevenator 2) sunar.

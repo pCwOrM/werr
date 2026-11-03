@@ -955,7 +955,7 @@ canvas{border-radius:16px}
         continue;
       }
 
-      // Procedural Mandelbrot escape
+      // Procedural polynomial escape dynamics (z_{n+1} = z_n^2 + c)
       const cx = base_cx + (dx_target * 0.0008);
       const cy = base_cy + (dy_target * 0.0008);
       let zx = cx, zy = cy, iters = 0;

@@ -10,7 +10,7 @@
 [![ArXiv Preprint](https://img.shields.io/badge/arXiv-2609.25498-b91c1c.svg)](https://arxiv.org/abs/2609.25498)
 
 <p align="center">
-  <b>A deterministic, procedural System-1 reflex engine that derives typed decisions directly from Mandelbrot boundary escape dynamics—requiring zero neural weights, zero VRAM, and sub-microsecond compute latency.</b>
+  <b>A deterministic, procedural System-1 reflex engine that derives typed decisions directly from polynomial escape dynamics and procedural boundary geometry—requiring zero neural weights, zero VRAM, and sub-microsecond compute latency.</b>
 </p>
 
 [Quickstart](#-quickstart-in-30-seconds) •

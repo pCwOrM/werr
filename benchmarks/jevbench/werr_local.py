@@ -1,7 +1,7 @@
 """Werr (0-VRAM Zero-Memory Fractal System-One Decision Engine) JevBench Adapter.
 
 Interface (https://github.com/pCwOrM/werr):
-  Zero-parameter, zero-weight, zero-VRAM deterministic fractal escape-time kernel with:
+  Zero-parameter, zero-weight, zero-VRAM deterministic polynomial escape-time kernel with:
   - Multi-Scale Harmonic Tripod (0.60x, 1.00x, 1.60x scales)
   - Continuous 16-dim Latent State-to-Wave Boundary Modulation
   - 16-Tile Mandelbrot Quadtree Projection (Hard-Tier Reasoning)
@@ -556,7 +556,7 @@ class WerrLocalAdapter:
                     "threads": self.threads,
                     "memory_weights": "0 Bytes",
                     "coordinate_bytes": 24,
-                    "architecture": "Universal Mandelbrot Boundary Cusp Tripod Kernel (0-VRAM)"
+                    "architecture": "Procedural Boundary Dynamics Tripod Kernel (0-VRAM)"
                 }
             }
         except Exception as exc:

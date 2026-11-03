@@ -21,7 +21,7 @@
 ### STEP 2: 100-Question Multi-Domain Test Execution
 - Executed `/home/pcworm/myenv/bin/python /home/pcworm/wevv_repo/scripts/test_100_questions.py`.
 - **Total Execution Time:** `3.19 seconds`
-- **Mean Fractal Decision Latency:** `8.009 ms / decision` (sub-step fractal escape projection < 2.0 ms).
+- **Mean Fractal Decision Latency:** `8.009 ms / decision` (sub-step polynomial escape projection < 2.0 ms).
 - **Auto-Seed Gate Distribution:**
   - `Gate: api_security` (20 questions)
   - `Gate: iot_safety` (20 questions)

@@ -566,7 +566,7 @@ window.MathJax = {
     In conventional NLP pipelines, adding multi-stage token filtering incurs parsing latency overhead. However, empirical benchmarks upon deploying the Semantic Damping Filter revealed an unexpected speedup: <strong>inference accelerated by 2.5&times;</strong>, slashing median latency from 8.41 ms to 3.31 ms.
   </p>
   <p>
-    This acceleration is governed by the fractal escape dynamics: in the unfiltered baseline, unattenuated prompt prose and Trojan tokens caused chaotic coordinate perturbations pushing the grid into turbulent boundary fringes of \(\partial \mathcal{M}\) (\(\lambda \approx 0\)), where orbits linger near \(|Z_n| \approx 2.0\) and force evaluation up to \(M_{\max} = 100\). By applying \(\mathcal{T}_{\text{desc}} = 0.045\), semantic damping extinguishes coordinate jitter, locking \(C_{\text{eff}}\) into steep potential basins where points escape in \(K \le 4\text{--}8\) iterations. Mean escape iterations per cell (\(\bar{K} = \frac{1}{N^2}\sum K(j,k)\)) dropped by <strong>45.8%</strong> (42.6 &rarr; 23.1), converting a security filter into a <strong>dynamical compute accelerator</strong>.
+    This acceleration is governed by the polynomial escape dynamics: in the unfiltered baseline, unattenuated prompt prose and Trojan tokens caused chaotic coordinate perturbations pushing the grid into turbulent boundary fringes of \(\partial \mathcal{M}\) (\(\lambda \approx 0\)), where orbits linger near \(|Z_n| \approx 2.0\) and force evaluation up to \(M_{\max} = 100\). By applying \(\mathcal{T}_{\text{desc}} = 0.045\), semantic damping extinguishes coordinate jitter, locking \(C_{\text{eff}}\) into steep potential basins where points escape in \(K \le 4\text{--}8\) iterations. Mean escape iterations per cell (\(\bar{K} = \frac{1}{N^2}\sum K(j,k)\)) dropped by <strong>45.8%</strong> (42.6 &rarr; 23.1), converting a security filter into a <strong>dynamical compute accelerator</strong>.
   </p>
 
   <h3>C. Deterministic Quadrant Phase Rotation</h3>
@@ -754,7 +754,7 @@ window.MathJax = {
 
   <h3>C. Domainless Monolithic vs. Multi-Domain Routing Ablation</h3>
   <p>
-    A foundational question in procedural fractal intelligence is whether partitioned multi-domain router gates are strictly necessary, or whether a monolithic universal fractal escape space generalizes more effectively. To resolve this, we benchmarked the pure monolithic kernel against the multi-domain routing network across all 231 decisions of the JevBench public suite (Table IV).
+    A foundational question in procedural fractal intelligence is whether partitioned multi-domain router gates are strictly necessary, or whether a monolithic universal polynomial decision space generalizes more effectively. To resolve this, we benchmarked the pure monolithic kernel against the multi-domain routing network across all 231 decisions of the JevBench public suite (Table IV).
   </p>
   <table class="academic-table">
     <caption><strong>Table IV.</strong> Domainless Monolithic vs. Multi-Domain Routing Ablation Benchmark</caption>

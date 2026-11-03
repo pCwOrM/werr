@@ -21,7 +21,7 @@ class WerrVisionPolicy:
     """
     Zero-VRAM Procedural Vision Localizer.
     Evaluates spatial cell patches via normalized chromatic-luminance resonance
-    modulated onto the Mandelbrot boundary escape manifold.
+    modulated onto the procedural boundary escape manifold.
     """
     def __init__(self, cx_seed: float = -0.7445, cy_seed: float = 0.1250, zoom: float = 65.0):
         self.cx_seed = cx_seed
@@ -108,7 +108,7 @@ class WerrVisionPolicy:
 
     def evaluate_cell_noul(self, sim: float, mu: float, sigma: float, max_iter: int = 30) -> float:
         """
-        Maps normalized feature similarity onto Mandelbrot escape dynamics.
+        Maps normalized feature similarity onto polynomial escape dynamics.
         Generates deterministic, continuous noul probability [0.0, 1.0].
         """
         # Normalized z-score relative to scene context

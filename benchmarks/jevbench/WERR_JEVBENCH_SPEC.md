@@ -22,7 +22,7 @@ This submission contains only the in-tree runtime adapter (`jevbench/adapters/we
 
 ## 2. Decision Mechanism: Zero Rules / Zero Task Heuristics
 
-All decisions are derived via deterministic nonlinear boundary escape dynamics:
+All decisions are derived via deterministic Procedural Boundary Dynamics (polynomial escape dynamics):
 1. **Continuous 16-Dimensional Latent Modulation**: The input state is mapped to a continuous 16-dimensional vector to perturb the neutral boundary cusp `(-0.7436438870371587, 0.1318259042053119)` without any task ID or outside metadata dependence.
 2. **Multi-Scale Harmonic Tripod**: Multi-scale zoom evaluations (`0.60x`, `1.00x`, `1.60x`) are fused to evaluate stable boundary containment.
 3. **Coupled Pitchfork Bifurcation Operator**: Supercritical pitchfork bifurcation dynamically resolves close probability deadlocks ($< 0.85$).
