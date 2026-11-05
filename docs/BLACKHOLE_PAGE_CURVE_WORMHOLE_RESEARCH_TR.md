@@ -1,4 +1,9 @@
 # 🌌 Solucan Deliği Hata Çekirdeği İnvaryantları ile Üniter Kara Delik Page Eğrisi Rekonstrüksiyonu
+
+> [!IMPORTANT]
+> **Canonical Cumulative Synthesis (Version 5.0 Available):**  
+> The definitive Version 5.0 synthesis monograph integrating Kleinian Horizon Orbifolds ($\mathbb{C}^2/\mathbb{Z}_9$), Voronoi GKP Isometric Stabilizers, Casimir Raychaudhuri Defocusing, and 10 Machine-Checked Lean 4 Theorems (`0 sorry`) is permanently archived under **Concept DOI (Always Latest): [`10.5281/zenodo.22961999`](https://doi.org/10.5281/zenodo.22961999)** and **Version 5.0 DOI: [`10.5281/zenodo.23072120`](https://doi.org/10.5281/zenodo.23072120)**.
+
 ## Yayınımsız Durum Korunumu, 40-Çekirdek Yalın-Donanım Telemetrisi ve Formal Doğrulama
 
 [![Zenodo Kaydı](https://img.shields.io/badge/Zenodo-Kayıt%2022978460%20(v2)-024dad.svg)](https://zenodo.org/records/22978460)
@@ -128,8 +133,9 @@ Simülasyon, donanım platformumuz olan `mechsrv` (Dual Intel Xeon E5-2630 v4, 4
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22978460},
-  url          = {https://doi.org/10.5281/zenodo.22978460},
+  doi          = {10.5281/zenodo.22961999},
+  note         = {Concept DOI resolving to latest Version 5.0 (10.5281/zenodo.23072120); Version 2.0 record: 10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22961999},
   note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```

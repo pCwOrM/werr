@@ -1,77 +1,46 @@
 cff-version: 1.2.0
-message: "If you use this software or cite the research, please cite our official arXiv publication."
+message: "If you use this software, formal proofs, or empirical datasets in your research, please cite our canonical works below."
+type: software
+title: "WERR: Zero-Memory Procedural System-1 Decision Engine via Polynomial Escape Dynamics"
+abstract: "Deterministic, zero-storage System-1 reflex decision engine synthesizing typed decisions (noul, choice, score) from 24-byte complex polynomial boundary seeds and ZMod 9 principal ideal invariants."
 authors:
   - family-names: "Dağlı"
     given-names: "Volkan"
     orcid: "https://orcid.org/0009-0000-1587-8703"
+    affiliation: "Anadolu University & ITouch Systems, Çukurova University Science Park"
   - family-names: "Dağlı"
     given-names: "Zerrin"
     orcid: "https://orcid.org/0000-0001-9490-6425"
+    affiliation: "Mersin University & Yusuf Kalkavan Anatolian High School"
   - family-names: "Dağlı"
     given-names: "Dağhan"
     orcid: "https://orcid.org/0009-0003-2492-8313"
-title: "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains"
-version: "0.5.2"
-doi: "10.48550/arXiv.2609.25498"
-date-released: "2026-09-23"
-url: "https://github.com/pCwOrM/werr"
+    affiliation: "Toros Science High School, Mersin Education Foundation (Toros University)"
 repository-code: "https://github.com/pCwOrM/werr"
-preferred-citation:
-  type: article
-  authors:
-    - family-names: "Dağlı"
-      given-names: "Volkan"
-      orcid: "https://orcid.org/0009-0000-1587-8703"
-    - family-names: "Dağlı"
-      given-names: "Zerrin"
-      orcid: "https://orcid.org/0000-0001-9490-6425"
-    - family-names: "Dağlı"
-      given-names: "Dağhan"
-      orcid: "https://orcid.org/0009-0003-2492-8313"
-  title: "Universal Fractal Natural Language Decision Map: Real-Time Edge Triage Across Heterogeneous Domains"
-  journal: "arXiv preprint arXiv:2609.25498"
-  year: 2026
-  eprint: "2609.25498"
-  archivePrefix: "arXiv"
-  primaryClass: "cs.NE"
-  doi: "10.48550/arXiv.2609.25498"
-  url: "https://arxiv.org/abs/2609.25498"
-references:
-  - type: article
-    authors:
-      - family-names: "Dağlı"
-        given-names: "Mert"
-      - family-names: "Dağlı"
-        given-names: "Zerrin"
-      - family-names: "Dağlı"
-        given-names: "Dağhan"
-    title: "A Wormhole Error-Kernel with Tension, Blind-Spot and Seek Functions: A Conceptual Proposal and Exploratory Toy Simulation of the Black Hole Page Curve"
-    doi: "10.5281/zenodo.22978460"
-    year: 2026
-    notes: "Concept DOI: 10.5281/zenodo.22961999"
-  - type: article
-    authors:
-      - family-names: "Dağlı"
-        given-names: "Volkan"
-      - family-names: "Dağlı"
-        given-names: "Zerrin"
-      - family-names: "Dağlı"
-        given-names: "Dağhan"
-    title: "Mandelbrot Fractal Neural Synthesis: Zero-Storage Procedural Weight Derivation and Non-Linear Decision Boundaries"
-    doi: "10.5281/zenodo.22774934"
-    year: 2026
-  - type: article
-    authors:
-      - family-names: "Dağlı"
-        given-names: "Dağhan"
-        orcid: "https://orcid.org/0009-0003-2492-8313"
-      - family-names: "Dağlı"
-        given-names: "Volkan"
-        orcid: "https://orcid.org/0009-0000-1587-8703"
-      - family-names: "Dağlı"
-        given-names: "Zerrin"
-        orcid: "https://orcid.org/0000-0001-9490-6425"
-    title: "Bio-Synthetic Neuromorphic Interfacing: In Silico Integration of the Princeton FlyWire Drosophila Whole-Brain Connectome (158K Neurons) with a Zero-Memory Fractal System-One Decision Engine (WERR)"
-    doi: "10.5281/zenodo.22996626"
-    year: 2026
-    notes: "TÜRKPATENT Priority: TR 2026/016633. Live Portal: https://werrsoma.answerr.me/"
+url: "https://werr.io"
+doi: "10.5281/zenodo.22867425"
+version: "2.0.0"
+date-released: "2026-10-25"
+license: "LicenseRef-BSL-1.1"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22867425"
+    description: "CERN Zenodo Concept DOI (Always resolves to the latest version)"
+  - type: doi
+    value: "10.5281/zenodo.22939253"
+    description: "CERN Zenodo Version-Pinned DOI"
+  - type: other
+    value: "TR 2026/016285"
+    description: "TÜRKPATENT National Priority Application (Procedural Weight & On-Chain Decision Synthesis)"
+  - type: other
+    value: "TR 2026/016633"
+    description: "TÜRKPATENT National Priority Application (Bio-Synthetic Neuromorphic Connectome & Hardware Coprocessor)"
+keywords:
+  - "procedural boundary dynamics"
+  - "polynomial escape dynamics"
+  - "zero-storage neural synthesis"
+  - "lean4 formal verification"
+  - "on-chain ai oracle"
+  - "werr"
+  - "werracle"
+  - "answerr"

@@ -1,5 +1,10 @@
 # 🌌 Unitary Black Hole Page Curve Reconstruction via Wormhole Error-Kernel Invariants: Non-Dissipative State Preservation, 40-Core Bare-Metal Telemetry, and Formal Verification
 
+> [!IMPORTANT]
+> **Canonical Cumulative Synthesis (Version 5.0 Available):**  
+> The definitive Version 5.0 synthesis monograph integrating Kleinian Horizon Orbifolds ($\mathbb{C}^2/\mathbb{Z}_9$), Voronoi GKP Isometric Stabilizers, Casimir Raychaudhuri Defocusing, and 10 Machine-Checked Lean 4 Theorems (`0 sorry`) is permanently archived under **Concept DOI (Always Latest): [`10.5281/zenodo.22961999`](https://doi.org/10.5281/zenodo.22961999)** and **Version 5.0 DOI: [`10.5281/zenodo.23072120`](https://doi.org/10.5281/zenodo.23072120)**.
+
+
 [![Zenodo Record](https://img.shields.io/badge/Zenodo-Record%2022978460%20(v2)-024dad.svg)](https://zenodo.org/records/22978460)
 [![Concept DOI](https://img.shields.io/badge/Concept%20DOI-10.5281%2Fzenodo.22961999-024dad.svg)](https://doi.org/10.5281/zenodo.22961999)
 [![Version 2 DOI](https://img.shields.io/badge/Version%202%20DOI-10.5281%2Fzenodo.22978460-024dad.svg)](https://doi.org/10.5281/zenodo.22978460)
@@ -154,8 +159,9 @@ To maintain unimpeachable academic integrity, all simulation artifacts, logs, an
   journal      = {Zenodo Open Science Archive},
   year         = {2026},
   month        = {September},
-  doi          = {10.5281/zenodo.22978460},
-  url          = {https://doi.org/10.5281/zenodo.22978460},
+  doi          = {10.5281/zenodo.22961999},
+  note         = {Concept DOI resolving to latest Version 5.0 (10.5281/zenodo.23072120); Version 2.0 record: 10.5281/zenodo.22978460},
+  url          = {https://doi.org/10.5281/zenodo.22961999},
   note         = {Version 2.0; Concept DOI: 10.5281/zenodo.22961999; Supplementary Software: https://github.com/pCwOrM/fractal-neural-synthesis and https://github.com/pCwOrM/werr}
 }
 ```
