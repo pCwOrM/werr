@@ -1,6 +1,6 @@
 {
-  "name": "werr | Zero-Memory Fractal Decision Engine",
-  "short_name": "werr",
+  "name": "WERR — Zero-VRAM System-1 Decision Engine",
+  "short_name": "WERR",
   "icons": [
     {
       "src": "assets/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0a0e17",
-  "background_color": "#0a0e17",
+  "theme_color": "#04070f",
+  "background_color": "#04070f",
   "display": "standalone"
 }
