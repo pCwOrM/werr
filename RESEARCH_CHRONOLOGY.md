@@ -1568,7 +1568,7 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Üniversitesi (Toros Science College), Mersin, Türkiye &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros Üniversitesi, Mersin, Türkiye &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
