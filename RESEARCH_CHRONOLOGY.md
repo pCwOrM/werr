@@ -448,17 +448,17 @@ With the v0.5.1 orthogonal parameter rules, boundary density alignment, and OOD 
 
 | # | Benchmark / Verification Suite | Optimal Parameter State | Previous Sealed Baseline | **WERR v0.5.1 Score** | Verification Status |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Snake AI Autonomous Reflex (600 Steps)** | `Pure Fractal [0,0,0]` (`cx=-0.7445, cy=0.1250`) | `12 Food` \| `425 Interventions` | **`21 Food (+75%)`** \| **`160 Interventions (-62%)`** (`P50: 4.68 ms`) | **Exceeded** 🏆 |
+| **1** | **Snake AI Autonomous Reflex (600 Steps)** | `Pure Fractal [0,0,0]` (`cx=-0.7445, cy=0.1250`) | `12 Food` &#124; `425 Interventions` | **`21 Food (+75%)`** &#124; **`160 Interventions (-62%)`** (`P50: 4.68 ms`) | **Exceeded** 🏆 |
 | **2** | **JevBench 231 Public Suite (v1.4.1 Air-Gapped)** | `Hybrid [1,1,1]` *(OOD Guard)* & `Pure [0,0,0]` | `123/231 (53.25%, v1.4=20.63)` *(Adapter)*<br>`126/231 (54.55%, v1.4=23.74)` *(Cusp)* | **`127/231 (54.98%, v1.4=25.35)`**<br>*(100% Parity: Local & Wire Adapter)* | **New Record** 🏆 |
 | **3** | **WindTunnel WebMCP Tool Selection (49 Tasks)** | `Structural Schema Routing` | `49/49 (100.0%)` | **`49/49 (100.0%)`** (`P50: 1.85 ms`) | **100% Preserved** |
-| **4** | **Jevenator 2 Vision & 24-Frame Tracking (840 Decisions)** | `Spatial + Temporal EMA` | `Shapes: 100% (B, F)` \| `Dyson FP: 0` \| `20.04 ms` | **`Shapes: 100% (B, F)`** \| **`Dyson FP: 0`** \| **`19.14 ms (39.8x vs djev)`** | **Preserved / Faster** |
+| **4** | **Jevenator 2 Vision & 24-Frame Tracking (840 Decisions)** | `Spatial + Temporal EMA` | `Shapes: 100% (B, F)` &#124; `Dyson FP: 0` &#124; `20.04 ms` | **`Shapes: 100% (B, F)`** &#124; **`Dyson FP: 0`** &#124; **`19.14 ms (39.8x vs djev)`** | **Preserved / Faster** |
 | **5** | **Edge 50 Real-World Triage (25 IoT + 25 API Security)** | `Hybrid [1,1,1]` *(Domain + Lexical + Resonance)* | `21/50 (42.0%)` *(v0.5.0 Grand Matrix)* | **`49/50 (98.0%)`** (`IoT: 24/25, API: 25/25`) | **Exceeded (+56.0%)** 🏆 |
 | **6** | **100-Question Turkish Multi-Domain Suite (`test_100_tr`)** | `Hybrid [1,1,1]` | `92/100 (92.0%)` | **`92/100 (92.0%)`** | **100% Preserved** |
 | **7** | **100-Question English Multi-Domain Suite (`test_100_en`)** | `Hybrid [1,1,1]` | `100/100 Completed` (`5/5 Domains`) | **`100/100 Completed`** (`5/5 Domains`, `Mean: 6.75 ms`) | **100% Preserved** |
-| **8** | **100-Question OOD & Alien Vocabulary Suite (English)** | `Pure Fractal [0,0,0]` | `100/100 Deterministic` \| `5 choices` \| `46.60 ms` | **`100/100 Deterministic`** \| **`13 choices`** \| **`8.96 ms (5.2x faster)`** | **Exceeded** |
-| **9** | **100-Question OOD & Alien Vocabulary Suite (Turkish)** | `Pure Fractal [0,0,0]` | `100/100 Deterministic` \| `8.85 ms` | **`100/100 Deterministic`** \| **`10 choices`** \| **`7.45 ms`** | **Preserved / Faster** |
+| **8** | **100-Question OOD & Alien Vocabulary Suite (English)** | `Pure Fractal [0,0,0]` | `100/100 Deterministic` &#124; `5 choices` &#124; `46.60 ms` | **`100/100 Deterministic`** &#124; **`13 choices`** &#124; **`8.96 ms (5.2x faster)`** | **Exceeded** |
+| **9** | **100-Question OOD & Alien Vocabulary Suite (Turkish)** | `Pure Fractal [0,0,0]` | `100/100 Deterministic` &#124; `8.85 ms` | **`100/100 Deterministic`** &#124; **`10 choices`** &#124; **`7.45 ms`** | **Preserved / Faster** |
 | **10** | **100-Question Chordial Resonance Filter Stress Suite** | `Hybrid [1,1,1]` | `5/5 Categories (100% Immunity)` | **`5/5 Categories (100/100 — 0 Traps Selected)`** | **100% Preserved** |
-| **11** | **100-Question Organic Dynamic Calibration (EMA) Suite** | `Hybrid [1,1,1]` | `100 EMA Samples` \| `0/10 Trap` \| `10/10 Heavy Industry` | **`100 EMA Samples`** \| **`0/10 Trap`** \| **`10/10 Emergency Valve`** | **100% Preserved** |
+| **11** | **100-Question Organic Dynamic Calibration (EMA) Suite** | `Hybrid [1,1,1]` | `100 EMA Samples` &#124; `0/10 Trap` &#124; `10/10 Heavy Industry` | **`100 EMA Samples`** &#124; **`0/10 Trap`** &#124; **`10/10 Emergency Valve`** | **100% Preserved** |
 | **12** | **1,245 Open Decisions Telemetry Replay (`dataset/`)** | `Hybrid [1,1,1]` | `1076/1245 (86.43%)` | **`1076/1245 (86.43%)`** | **100% Preserved** |
 
 ### 📈 Cumulative Evolution Matrix across JevBench Versions
@@ -789,7 +789,7 @@ Scientific progress is inherently bidirectional. We extend our sincere gratitude
   Mersin University, Mersin, Turkey &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Science High School, MEV (Toros University), Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros University, Mersin, Turkey &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
@@ -1019,7 +1019,7 @@ WERR is an independent, patented open-source mathematical AI research project. C
 ### 🏛️ Corporate & Academic Attribution
 
 * **Commercial Operations & Licensing:** Developed and operated by **ITouch Systems** (*ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Ltd. Şti.*, Çukurova Üniversitesi Teknokent, Adana, Türkiye). *Werr™*, *Werracle™*, and *Answerr™* are registered trademarks of ITouch Systems.
-* **Scientific Research & Patents:** Authored by **Volkan Dağlı** (*Anadolu University*), **Dr. Zerrin Dağlı** (*Mersin University*), and **Dağhan Dağlı** (*Toros University — Toros Science High School*). Patent applications: **TÜRKPATENT TR 2026/016285** & **TR 2026/016633**.
+* **Scientific Research & Patents:** Authored by **Volkan Dağlı** (*Anadolu University*), **Dr. Zerrin Dağlı** (*Mersin University*), and **Dağhan Dağlı** (*Toros University — Toros University*). Patent applications: **TÜRKPATENT TR 2026/016285** & **TR 2026/016633**.
 * **API Subscriptions & Grants:** [Instant API Checkout (`radar.werracle.com`)](https://radar.werracle.com/pricing#subscribe-section) • Contact: `contact@werracle.com` | `ask@answerr.me`
 
 ---
@@ -1366,17 +1366,17 @@ v0.5.1 ortogonal parametre kuralları, kadran sınır yoğunluk eşitlemesi ve O
 
 | # | Benchmark / Test Paketi | Optimal Parametre Modu | Önceki Mühürlü Skor (Baseline) | **WERR v0.5.1 Skoru** | Doğrulama Durumu |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Snake AI Otonom Refleks (600 Adım)** | `Pure Fractal [0,0,0]` (`cx=-0.7445, cy=0.1250`) | `12 Yem` \| `425 Müdahale` | **`21 Yem (+%75)`** \| **`160 Müdahale (-%62)`** (`P50: 4.68 ms`) | **Üstüne Çıktı** 🏆 |
+| **1** | **Snake AI Otonom Refleks (600 Adım)** | `Pure Fractal [0,0,0]` (`cx=-0.7445, cy=0.1250`) | `12 Yem` &#124; `425 Müdahale` | **`21 Yem (+%75)`** &#124; **`160 Müdahale (-%62)`** (`P50: 4.68 ms`) | **Üstüne Çıktı** 🏆 |
 | **2** | **JevBench 231 Public Suite (v1.4.1 Air-Gapped)** | `Hybrid [1,1,1]` *(OOD Guard)* & `Pure [0,0,0]` | `123/231 (%53.25, v1.4=20.63)` *(Adaptör)*<br>`126/231 (%54.55, v1.4=23.74)` *(Cusp)* | **`127/231 (%54.98, v1.4=25.35)`**<br>*(Local & Wire Adaptör %100 Eşit)* | **Yeni Rekor** 🏆 |
 | **3** | **WindTunnel WebMCP Araç Seçimi (49 Görev)** | `Structural Schema Routing` | `49/49 (%100.0)` | **`49/49 (%100.0)`** (`P50: 1.85 ms`) | **%100 Korundu** |
-| **4** | **Jevenator 2 Görsel & 24-Kare Takip (840 Karar)** | `Spatial + Temporal EMA` | `Shapes: %100 (B, F)` \| `Dyson FP: 0` \| `20.04 ms` | **`Shapes: %100 (B, F)`** \| **`Dyson FP: 0`** \| **`19.14 ms (39.8x hız)`** | **Korundu / Hızlandı** |
+| **4** | **Jevenator 2 Görsel & 24-Kare Takip (840 Karar)** | `Spatial + Temporal EMA` | `Shapes: %100 (B, F)` &#124; `Dyson FP: 0` &#124; `20.04 ms` | **`Shapes: %100 (B, F)`** &#124; **`Dyson FP: 0`** &#124; **`19.14 ms (39.8x hız)`** | **Korundu / Hızlandı** |
 | **5** | **Edge 50 Gerçek Dünya Triyajı (25 IoT + 25 API)** | `Hybrid [1,1,1]` *(Domain + Sözcük + Rezonans)* | `21/50 (%42.0)` *(v0.5.0 Grand Matrix)* | **`49/50 (%98.0)`** (`IoT: 24/25, API: 25/25`) | **Üstüne Çıktı (+%56.0)** 🏆 |
 | **6** | **100 Soruluk Türkçe Çoklu-Domain Testi (`test_100_tr`)** | `Hybrid [1,1,1]` | `92/100 (%92.0)` | **`92/100 (%92.0)`** | **%100 Korundu** |
 | **7** | **100 Soruluk İngilizce Çoklu-Domain Testi (`test_100_en`)** | `Hybrid [1,1,1]` | `100/100 Tamamlandı` (`5/5 Domain`) | **`100/100 Tamamlandı`** (`5/5 Domain`, `Ort: 6.75 ms`) | **%100 Korundu** |
-| **8** | **100 Soruluk OOD & Yabancı Terimler (İngilizce)** | `Pure Fractal [0,0,0]` | `100/100 Deterministik` \| `5 seçim` \| `46.60 ms` | **`100/100 Deterministik`** \| **`13 seçim`** \| **`8.96 ms (5.2x hızlı)`** | **Üstüne Çıktı** |
-| **9** | **100 Soruluk OOD & Yabancı Terimler (Türkçe)** | `Pure Fractal [0,0,0]` | `100/100 Deterministik` \| `8.85 ms` | **`100/100 Deterministik`** \| **`10 seçim`** \| **`7.45 ms`** | **Korundu / Hızlandı** |
+| **8** | **100 Soruluk OOD & Yabancı Terimler (İngilizce)** | `Pure Fractal [0,0,0]` | `100/100 Deterministik` &#124; `5 seçim` &#124; `46.60 ms` | **`100/100 Deterministik`** &#124; **`13 seçim`** &#124; **`8.96 ms (5.2x hızlı)`** | **Üstüne Çıktı** |
+| **9** | **100 Soruluk OOD & Yabancı Terimler (Türkçe)** | `Pure Fractal [0,0,0]` | `100/100 Deterministik` &#124; `8.85 ms` | **`100/100 Deterministik`** &#124; **`10 seçim`** &#124; **`7.45 ms`** | **Korundu / Hızlandı** |
 | **10** | **100 Soruluk Kordiyal Rezonans Filtre Stres Testi** | `Hybrid [1,1,1]` | `5/5 Kategori (%100 Bağışıklık)` | **`5/5 Kategori (100/100 — 0 Tuzak)`** | **%100 Korundu** |
-| **11** | **100 Soruluk Organik Dinamik Kalibrasyon (EMA)** | `Hybrid [1,1,1]` | `100 EMA Örneği` \| `0/10 Tuzak` \| `10/10 Ağır Sanayi` | **`100 EMA Örneği`** \| **`0/10 Tuzak`** \| **`10/10 Acil Tahliye`** | **%100 Korundu** |
+| **11** | **100 Soruluk Organik Dinamik Kalibrasyon (EMA)** | `Hybrid [1,1,1]` | `100 EMA Örneği` &#124; `0/10 Tuzak` &#124; `10/10 Ağır Sanayi` | **`100 EMA Örneği`** &#124; **`0/10 Tuzak`** &#124; **`10/10 Acil Tahliye`** | **%100 Korundu** |
 | **12** | **1.245 Açık Karar Telemetri Tekrarı (`dataset/`)** | `Hybrid [1,1,1]` | `1076/1245 (%86.43)` | **`1076/1245 (%86.43)`** | **%100 Korundu** |
 
 ### 📈 JevBench Sürümleri Boyunca Kümülatif Evrim Matrisi
@@ -1568,7 +1568,7 @@ Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**
   Mersin Üniversitesi, Mersin, Türkiye &bull; ORCID: [0000-0001-9490-6425](https://orcid.org/0000-0001-9490-6425)
 
 * **Dağhan Dağlı**  
-  Toros Fen Lisesi (Toros Science College), Mersin, Türkiye &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
+  Toros Üniversitesi (Toros Science College), Mersin, Türkiye &bull; ORCID: [0009-0003-2492-8313](https://orcid.org/0009-0003-2492-8313) &bull; GitHub: [`@Lexovian`](https://github.com/Lexovian)
 
 ---
 
@@ -1685,7 +1685,7 @@ WERR, bağımsız ve patent korumalı açık kaynaklı matematiksel yapay zekâ 
 ### 🏛️ Kurumsal ve Akademik Künye
 
 * **Ticari İşletim ve Lisanslama:** **ITouch Systems** (*ITouch Bilişim Sistemleri Mühendislik Danışmanlık Sanayi ve Ticaret Ltd. Şti.*, Çukurova Üniversitesi Teknokent, Adana) tarafından geliştirilmekte ve işletilmektedir. *Werr®*, *Werracle®* ve *Answerr®* markaları ITouch Systems bünyesindedir.
-* **Bilimsel Araştırma ve Patentler:** **Volkan Dağlı** (*Anadolu Üniversitesi*), **Dr. Zerrin Dağlı** (*Mersin Üniversitesi*) ve **Dağhan Dağlı** (*Toros Üniversitesi — Toros Fen Lisesi*). Patent başvuruları: **TÜRKPATENT TR 2026/016285** ve **TR 2026/016633**.
+* **Bilimsel Araştırma ve Patentler:** **Volkan Dağlı** (*Anadolu Üniversitesi*), **Dr. Zerrin Dağlı** (*Mersin Üniversitesi*) ve **Dağhan Dağlı** (*Toros Üniversitesi — Toros Üniversitesi*). Patent başvuruları: **TÜRKPATENT TR 2026/016285** ve **TR 2026/016633**.
 * **API Aboneliği ve İletişim:** [Anında API Aboneliği (`radar.werracle.com`)](https://radar.werracle.com/v1/radar/dashboard#subscribe-section) • İletişim: `contact@werracle.com` | `ask@answerr.me`
 
 ---
@@ -1702,4 +1702,3 @@ Açık bilim arşivleme ilkeleri uyarınca, önceki tüm sürüm ve arayüzler k
 | **Werracle Web3** | Klasik `v1.0` EVM AI Oracle Arşivi | [`werracle.io/v1_classic.html`](https://werracle.io/v1_classic.html) |
 | **Werracle Web3** | Mimari `v2.0` İlk Deneme Alanı Arşivi | [`werracle.io/v2_initial_archive.html`](https://werracle.io/v2_initial_archive.html) |
 | **Werracle Kurumsal** | Kurumsal Portal `v1.0` (Koyu Tema Arşivi) | [`werracle.com/archive_dark_v1.html`](https://werracle.com/archive_dark_v1.html) |
-
