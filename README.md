@@ -4,6 +4,8 @@
 ### Zero-Memory Fractal Reflex Decision Engine · Waves & Errors
 
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL_1.1-0ea5e9.svg)](LICENSE)
+[![Gemma 4 SWE Agent: Apache 2.0](https://img.shields.io/badge/Gemma4_SWE_Agent-Apache_2.0-22c55e.svg)](gemma4_swe_agent/LICENSE)
+[![Kaggle Paper DOI](https://img.shields.io/badge/Kaggle_Paper-10.34740%2Fkaggle%2Fw%2F125932-20beff.svg)](https://doi.org/10.34740/kaggle/w/125932)
 [![Formal Verification: Lean 4](https://img.shields.io/badge/Lean_4-0_sorry_(Verified)-10b981.svg)](https://github.com/pCwOrM/gap-lean4-port)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-6366f1.svg)](https://pypi.org/project/werrio/)
 [![Concept DOI](https://img.shields.io/badge/Concept_DOI-10.5281%2Fzenodo.22867425-024dad.svg)](https://doi.org/10.5281/zenodo.22867425)
@@ -276,7 +278,8 @@ All monographs, formal Lean 4 specifications, and empirical datasets across the 
 
 ## ⚖️ License & Intellectual Property
 
-* **Open-Science, Educational & Evaluation Use:** The Licensed Work is free to run, inspect, benchmark, test, fork, and replicate for all non-commercial academic research and personal evaluations under the **Business Source License 1.1 (BSL 1.1)**.
+* **Kaggle / Google Gemma 4 Competition Apache 2.0 Exception ([`gemma4_swe_agent/`](gemma4_swe_agent/)):** All code, declarative ADK YAML configurations, dual-process routing implementations, verification bridges, and tests inside [`gemma4_swe_agent/`](gemma4_swe_agent/), together with the Competition interfaces required to reproduce our **Google - The Gemma 4 Developer Agent Paper Track** submission ([DOI: `10.34740/kaggle/w/125932`](https://doi.org/10.34740/kaggle/w/125932)), are explicitly dual-licensed **without commercial use restriction** under the OSI-approved **[Apache License, Version 2.0](gemma4_swe_agent/LICENSE)** (see [`LICENSE`](LICENSE) Additional Use Grant Section 4).
+* **Open-Science, Educational & Evaluation Use (Core Repository):** All remaining components of the Licensed Work (Werracle smart contracts, OEV/DeFi oracles, `answerr.me` SaaS, and general commercial deployments) remain free to run, inspect, benchmark, test, fork, and replicate for non-commercial research and personal evaluation under the **Business Source License 1.1 (BSL 1.1)** until `2030-01-01`.
 * **Commercial Operations & Production Licensing:** Any commercial production use, hosted SaaS deployment, or proprietary redistribution requires a commercial license from the Licensor:
   * **Licensor:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Systems` · Cukurova University Science Park, Adana, Türkiye).
   * **Scientific Co-Authors & Inventors:** Volkan Dağlı (*Anadolu University*), Dr. Zerrin Dağlı (*Mersin University — Academic Advisor, Co-Author & Co-Inventor*), Dağhan Dağlı (*Toros University — Co-Author & Co-Inventor*).

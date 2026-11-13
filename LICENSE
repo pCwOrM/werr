@@ -43,6 +43,18 @@ Additional Use Grant:
      MERSİS No: 0469094455800001 | Ticaret Sicil No: 77766 | Tax ID / VKN: 4690944558 (Yüreğir V.D.)
      Sanayi Sicil No: 827254 | Trademarks: WERR™, Werracle™, answerr™, WerrSoma™ (registered / pending trademarks of ITouch Systems: ITouch® No: 2018/43211, 2022/209583; TEKNOSANAT® No: 2024/169039)
      KEP: itouchbilisim@hs01.kep.tr | Email: info@itouch.com.tr | Web: https://answerr.me
+  4. Apache License 2.0 Exception & Kaggle / Google Gemma 4 Competition Carve-Out:
+     Notwithstanding Sections 2 and 3 above, the entire `gemma4_swe_agent/` directory (including all
+     declarative ADK agent YAML configurations, prompts, dual-process routing code, verification bridges,
+     evaluation scripts, and tests therein), together with all Competition Submission materials and source code
+     interfaces strictly required by the Sponsor to evaluate, reproduce, or build derivative autonomous
+     developer agents from our Submissions to Kaggle's "Google - The Gemma 4 Developer Agent Competition"
+     and "Google - The Gemma 4 Developer Agent Paper Track" (Writeup DOI: 10.34740/kaggle/w/125932), are
+     hereby granted and dual-licensed WITHOUT ANY COMMERCIAL USE RESTRICTION under the Open Source
+     Initiative-approved **Apache License, Version 2.0** (see `gemma4_swe_agent/LICENSE` and
+     https://www.apache.org/licenses/LICENSE-2.0). All other components of the Licensed Work outside this
+     scope (including Werracle smart contracts, OEV/MEV/DeFi oracle deployments, answerr.me SaaS, and
+     unrelated commercial products) remain governed by this Business Source License 1.1 until the Change Date.
 
 Change Date:
   2030-01-01
@@ -52,8 +64,11 @@ Change License:
 
 Patent Notice:
   Certain procedural algorithms and neural synthesis formulations embodied in this work are subject 
-  to pending patent application TÜRKPATENT TR 2026/016285 and TR 2026/016633. No commercial patent license or implied patent 
-  rights are granted herein without an express written agreement from the patent applicant.
+  to pending patent application TÜRKPATENT TR 2026/016285, TR 2026/016633, and TR 2026/020266. Except for
+  the express patent grant contained in Apache License, Version 2.0 solely for the `gemma4_swe_agent/`
+  module and the Google/Kaggle Gemma 4 Competition deliverables specified in Additional Use Grant Section 4,
+  no commercial patent license or implied patent rights are granted herein without an express written
+  agreement from the patent applicant.
 
 ================================================================================
 
