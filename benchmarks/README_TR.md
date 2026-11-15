@@ -40,7 +40,7 @@
 > | **Yılan İnteraktif Devir** (insan → WERR otopilot) | `python benchmarks/snake/terminal_snake.py --showcase` |
 > | **Yılan Tam Kıyaslama** (600 adım puanlama) | `python benchmarks/snake/benchmark_snake.py` |
 > | **Jevenator 2 Görsel Takip** (27.8× hız) | `python benchmarks/jevenator2/benchmark_jevenator2.py` |
-> | **Canlı REST API** (0.40 ms gecikme) | `curl -X POST https://api.answerr.me:4431/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
+> | **Canlı REST API** (0.40 ms gecikme) | `curl -X POST https://api.answerr.me/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
 >
 > **Tüm testler deterministik, hava boşluklu ve yalnızca CPU'da çalışır.** Modeliniz bu rakamların herhangi birini geçiyorsa — bir issue açın. Meydan açık.
 
@@ -160,7 +160,7 @@ Aşağıda bağımsız test paketlerimizden elde edilen resmi veriler yer almakt
 > Bilimsel ilerleme doğası gereği çift yönlüdür. **Florian Standhartinger**'e ve JevBench açık kaynak ekibine ([fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)) en içten mesleki saygılarımızı sunuyoruz. Onların titiz dış denetimi Werr'deki kalıntı sezgiselleri tamamen kazıyıp bizi çoklu belirteç $N$-gram kriter rezonansına yükseltirken; Werr'in arenadaki ilk 0-VRAM fraktal yarışmacı olarak yarattığı paradigma sarsıntısı da JevBench'in mimari olgunlaşmasını hızlandırdı (kapalı set testleri, şanstan arındırılmış zeka baseline'ı ve harmonik ceza kapıları v1.3 ile v1.4'te hızla hayata geçirildi). Arenada yerleşik ezberleri bozan gerçek bir rakibin bulunması her iki tarafı da daha hızlı gelişmeye zorladı. Açık bilimde demir demiri biler.
 
 * **Bütünlük Denetimi:** Metrik kaymaları ve sıra dinamiklerine dair akademik analiz [`docs/BENCHMARK_INTEGRITY_REPORT.md`](../docs/BENCHMARK_INTEGRITY_REPORT.md) dosyasında yayımlanmıştır.
-* **Canlı Ağ:** [`answerr`](https://github.com/pCwOrM/answerr) ikili bilişsel REST API'si (`api.answerr.me:4431`) üzerinden test edilmiştir.
+* **Canlı Ağ:** [`answerr`](https://github.com/pCwOrM/answerr) ikili bilişsel REST API'si (`api.answerr.me`) üzerinden test edilmiştir.
 
 ---
 
@@ -233,7 +233,7 @@ python benchmarks/snake/visualize_snake.py
 python benchmarks/snake/terminal_snake.py --showcase
 
 # 5. Canlı Tip-Güvenli REST API'yi test edin:
-curl -X POST https://api.answerr.me:4431/v1/systemone \
+curl -X POST https://api.answerr.me/v1/systemone \
   -H "Content-Type: application/json" \
   -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'
 ```

@@ -576,7 +576,7 @@ python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
 
 > 🌐 **Cross-Repository Ecosystem Integration:**  
 > - **Interactive Browser 1v1 Arena:** Explore the web GUI with mobile touch D-pad, swipe gestures, and human-vs-fractal autopilot in [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/fractal-neural-synthesis/demos/snake.html).  
-> - **Cloud Reflex Gateway:** Stream decisions to remote agents via [`answerr`](https://github.com/pCwOrM/answerr) over `POST /v1/systemone` at `https://api.answerr.me:4431`.
+> - **Cloud Reflex Gateway:** Stream decisions to remote agents via [`answerr`](https://github.com/pCwOrM/answerr) over `POST /v1/systemone` at `https://api.answerr.me`.
 
 ---
 
@@ -704,7 +704,7 @@ To calibrate and continuously optimize the universal fractal decision map, `werr
 Telemetry records are aggregated in MariaDB (`werr_db`) on the dedicated cluster node `api.answerr.me`. Every night at **00:00 UTC**, an automated crontab dual-sync pipeline exports fresh records and publishes them synchronously to both GitHub and Hugging Face:
 
 * 🤗 **Hugging Face Hub Dataset:** [https://huggingface.co/datasets/pCwOrM/werr_open_decisions](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
-* 🌐 **Direct Download (1,318+ Records):** [https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl](https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl)
+* 🌐 **Direct Download (1,318+ Records):** [https://api.answerr.me/werr/dataset/werr_open_decisions.jsonl](https://api.answerr.me/werr/dataset/werr_open_decisions.jsonl)
 * 📂 **Repository Mirror:** [`dataset/werr_open_decisions.jsonl`](dataset/werr_open_decisions.jsonl)
 * 📑 **Empirical Test Reports:**
   - [Batch #1 (Scenarios 1–20)](docs/reports/batch1_telemetry_report_en.md) | [Türkçe](docs/reports/batch1_telemetry_report_tr.md)
@@ -720,7 +720,7 @@ While v0.2.1 initialized empirical quadrant normalization from static benchmarks
 * **Realized On-Chain Web3 AI Oracle (`werracle`):** The decentralized on-chain decision oracle is now fully realized and operational in [`werracle`](https://github.com/pCwOrM/werracle) (Live simulator: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)). Benchmarked on Anvil EVM (`mechsrv`, Chain ID 4242), atomic Boolean reflex gating (`noul`) consumes only **21,438 gas** and dynamic Uniswap v4 fee hooks consume **23,150 gas** within a single 32-byte storage slot (`bytes32`). For earlier foundational design notes, see [`docs/roadmap_blockchain_decision_oracle.md`](docs/roadmap_blockchain_decision_oracle.md).
 
 ### 🛡️ Server Hardening & Defensive Architecture
-The remote ingestion endpoint on `api.answerr.me:4431/werr/telemetry` (with backward-compatible alias `/wevv/telemetry`) is hardened against abusive bots and brute-force traffic:
+The remote ingestion endpoint on `api.answerr.me/werr/telemetry` (with backward-compatible alias `/wevv/telemetry`) is hardened against abusive bots and brute-force traffic:
 1. **Token Bucket Rate Limiting:** 30 requests/minute with a 5 req/s burst limit.
 2. **Auto-Jail (Anti-Bruteforce):** Clients generating repeated violations (HTTP 413, 422, or rapid bursts) are automatically jailed for 15 minutes (HTTP 403).
 3. **Strict Payload Guard:** Hard cap of 32 KB per request (`LimitRequestBody 32768`).
@@ -732,7 +732,7 @@ The remote ingestion endpoint on `api.answerr.me:4431/werr/telemetry` (with back
 
 ## 🏛️ Production Runtime & Isolated Architecture (`mechsrv` / `api.answerr.me`)
 
-The live production deployment on `mechsrv` (`api.answerr.me:4431`) is engineered with **complete physical and OS-level sandbox isolation** between production APIs and developer experimentation:
+The live production deployment on `mechsrv` (`api.answerr.me`) is engineered with **complete physical and OS-level sandbox isolation** between production APIs and developer experimentation:
 
 | Layer / Component | Location & Service | Isolation & Security Guarantee |
 | :--- | :--- | :--- |
@@ -770,7 +770,7 @@ werr             # Interactive terminal simulator
    The in-process System-1 reflex kernel running on standard CPU with 0 Bytes VRAM, providing terminal benchmark visualizers (`benchmarks/snake/visualize_snake.py`) and verified world-record benchmark suites (WindTunnel WebMCP 49/49, JevBench #1, Jevenator 2).
 
 3. **Dual-Cognition Production Workspace & REST Gateway:** [`answerr`](https://github.com/pCwOrM/answerr)  
-   The fullstack conversational platform and high-throughput production API ([answerr.me](https://answerr.me), `api.answerr.me:4431`) that pairs `werr` System-1 spinal reflexes with Google Gemini Flash System-2 deliberation, exposing the live `POST /v1/systemone` wire endpoint.
+   The fullstack conversational platform and high-throughput production API ([answerr.me](https://answerr.me), `api.answerr.me`) that pairs `werr` System-1 spinal reflexes with Google Gemini Flash System-2 deliberation, exposing the live `POST /v1/systemone` wire endpoint.
 
 ---
 
@@ -1446,7 +1446,7 @@ python benchmarks/snake/visualize_snake.py --mode mp4 --steps 200
 
 > 🌐 **Ekosistem Entegrasyonu:**  
 > - **İnteraktif Web 1v1 Arenası:** Dokunmatik mobil D-pad, kaydırma jestleri ve insan-fraktal otopilot içeren tarayıcı arayüzü temel araştırma deposunda yer alır: [`mandelbrot-fractal-neural-synthesis/demos/snake.html`](https://pcworm.github.io/fractal-neural-synthesis/demos/snake.html).  
-> - **Bulut Refleks Ağ Geçidi:** Uzak web ajanları ve servisler için kararlar [`answerr`](https://github.com/pCwOrM/answerr) üzerindeki `POST /v1/systemone` uç noktasından (`https://api.answerr.me:4431`) canlı olarak sunulur.
+> - **Bulut Refleks Ağ Geçidi:** Uzak web ajanları ve servisler için kararlar [`answerr`](https://github.com/pCwOrM/answerr) üzerindeki `POST /v1/systemone` uç noktasından (`https://api.answerr.me`) canlı olarak sunulur.
 
 ---
 
@@ -1475,14 +1475,14 @@ Evrensel fraktal karar haritasını kalibre etmek ve optimize etmek amacıyla `w
 Telemetri kayıtları `api.answerr.me` küme düğümündeki MariaDB (`werr_db`) üzerinde toplanır. Her gece **00:00 UTC** saatinde çalışan otomatik crontab boru hattı, veritabanındaki güncel kararları eşzamanlı olarak hem GitHub deposuna hem de Hugging Face Hub'a senkronize eder:
 
 * 🤗 **Hugging Face Hub Veri Seti:** [https://huggingface.co/datasets/pCwOrM/werr_open_decisions](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
-* 🌐 **Doğrudan İndirme (1.318+ Kayıt):** [https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl](https://api.answerr.me:4431/werr/dataset/werr_open_decisions.jsonl)
+* 🌐 **Doğrudan İndirme (1.318+ Kayıt):** [https://api.answerr.me/werr/dataset/werr_open_decisions.jsonl](https://api.answerr.me/werr/dataset/werr_open_decisions.jsonl)
 * 📂 **Depo Aynası:** [`dataset/werr_open_decisions.jsonl`](dataset/werr_open_decisions.jsonl)
 
 ---
 
 ## 🏛️ Üretim Çalışma Zamanı ve Yalıtılmış Mimari (`mechsrv` / `api.answerr.me`)
 
-`mechsrv` (`api.answerr.me:4431`) üzerindeki canlı üretim dağıtımı, üretim API'leri ile geliştirici testleri arasında **tam fiziksel ve işletim sistemi düzeyinde sandbox izolasyonu** ile çalışır:
+`mechsrv` (`api.answerr.me`) üzerindeki canlı üretim dağıtımı, üretim API'leri ile geliştirici testleri arasında **tam fiziksel ve işletim sistemi düzeyinde sandbox izolasyonu** ile çalışır:
 
 | Katman / Bileşen | Konum ve Servis | İzolasyon ve Güvenlik Garantisi |
 | :--- | :--- | :--- |
@@ -1517,7 +1517,7 @@ werr attacker    # Engellendi (Anlık omurilik refleksi)
    Standart CPU üzerinde 0 Bayt VRAM ile çalışan süreç-içi Sistem-1 omurilik motoru; terminal görselleştiricileri (`visualize_snake.py`) ve bağımsız kıyaslama paketlerini (WindTunnel WebMCP 49/49, JevBench, Jevenator 2) sunar.
 
 3. **İkili Bilişsel Üretim Platformu ve REST Ağ Geçidi:** [`answerr`](https://github.com/pCwOrM/answerr)  
-   `werr` Sistem-1 omurilik reflekslerini Google Gemini Flash Sistem-2 müzakeresiyle birleştiren, `POST /v1/systemone` ve `/v1/decide` uç noktalarını sunan tam yığın üretim platformu ([answerr.me](https://answerr.me), `api.answerr.me:4431`).
+   `werr` Sistem-1 omurilik reflekslerini Google Gemini Flash Sistem-2 müzakeresiyle birleştiren, `POST /v1/systemone` ve `/v1/decide` uç noktalarını sunan tam yığın üretim platformu ([answerr.me](https://answerr.me), `api.answerr.me`).
 
 4. **Sıfır-Depolamalı Zincir-Üstü Yapay Zekâ Kahini (EVM & Web3):** [`werracle`](https://github.com/pCwOrM/werracle)  
    EVM akıllı sözleşmeleri içinde tek bir 32 baytlık depolama yuvasında (`bytes32`) çalışan ve 21.438 gas (`noul`) ile blok-içi (intra-block) atomik flaş kredi ve MEV savunması sağlayan on-chain karar kahini. Anvil testnet üzerinde (`mechsrv`, Chain ID 4242) ve Uniswap v4 dinamik likidite kancası (`WerracleFeeHook.sol`, 23.150 gas) ile doğrulanmıştır (Canlı Simülatör: [pcworm.github.io/werracle](https://pcworm.github.io/werracle/)).

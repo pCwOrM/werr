@@ -40,7 +40,7 @@
 > | **Snake Interactive Handover** (human → WERR autopilot) | `python benchmarks/snake/terminal_snake.py --showcase` |
 > | **Snake Full Benchmark** (600-step scoring) | `python benchmarks/snake/benchmark_snake.py` |
 > | **Jevenator 2 Vision** (27.8× speedup) | `python benchmarks/jevenator2/benchmark_jevenator2.py` |
-> | **Live REST API** (0.40 ms wire latency) | `curl -X POST https://api.answerr.me:4431/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
+> | **Live REST API** (0.40 ms wire latency) | `curl -X POST https://api.answerr.me/v1/systemone -H "Content-Type: application/json" -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'` |
 >
 > **All tests are deterministic, air-gapped, and CPU-only.** If your model beats any of these numbers — open an issue. The gauntlet is open.
 
@@ -172,7 +172,7 @@ Independent side-by-side comparison of **WERR Fractal System-1** against commerc
 > Scientific progress is inherently bidirectional. We extend our genuine respect to **Florian Standhartinger** and the JevBench team ([fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench)). Just as their rigorous audit motivated us to completely purge residual heuristics and elevate Werr to generalized multi-token $N$-gram criteria resonance, Werr’s emergence as the first 0-VRAM fractal contender catalyzed JevBench's rapid architectural maturation—spurring the introduction of sealed-item protocols, chance-corrected intelligence baselines, and harmonic penalty gates across v1.3 and v1.4. Having a real, non-conformist paradigm challenger in the arena pushed both sides to evolve faster. In open science, iron sharpens iron.
 
 * **Integrity Audit:** Full academic analysis on metric shifts and queue dynamics published in [`docs/BENCHMARK_INTEGRITY_REPORT.md`](../docs/BENCHMARK_INTEGRITY_REPORT.md).
-* **Live Gateway:** Evaluated via [`answerr`](https://github.com/pCwOrM/answerr) dual-cognition REST API (`api.answerr.me:4431`).
+* **Live Gateway:** Evaluated via [`answerr`](https://github.com/pCwOrM/answerr) dual-cognition REST API (`api.answerr.me`).
 
 
 ---
@@ -246,7 +246,7 @@ python benchmarks/snake/visualize_snake.py
 python benchmarks/snake/terminal_snake.py --showcase
 
 # 5. Test the live TypeSafe wire REST API:
-curl -X POST https://api.answerr.me:4431/v1/systemone \
+curl -X POST https://api.answerr.me/v1/systemone \
   -H "Content-Type: application/json" \
   -d '{"task_id":"gauntlet-01","domain":"ecommerce","input":"Cancel order #4928"}'
 ```
