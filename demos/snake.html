@@ -14,28 +14,31 @@
   <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WERR Reflex Snake — Live Zero-VRAM AI Arena (0.00 KB Weights · 0.08ms Reflex) | werr.io</title>
+  <title>WERR Reflex Snake — 0-VRAM AI Arena (0.08ms) | werr.io</title>
   <meta name="description" content="WERR prosedürel fraktal karar motoru ile sıfır ağırlık (0.00 KB) ve 0.08ms gecikmeyle çalışan Yılan Oyunu canlı test ve telemetri arenası.">
 
   <!-- OpenGraph / WhatsApp / Twitter Cards -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://werr.io/demos/snake.html">
   <meta property="og:site_name" content="werr.io">
-  <meta property="og:title" content="WERR Reflex Snake — Live Zero-VRAM AI Arena (0.00 KB Weights · 0.08ms Reflex)">
+  <meta property="og:title" content="WERR Reflex Snake — 0-VRAM AI Arena (0.08ms) | werr.io">
   <meta property="og:description" content="Yılan oyununda kontrolü insandan 0-VRAM Yapay Zekaya devredin! 0.00 KB ağırlık, 0.08 ms anlık refleks, %100 yerel CPU yürütümü.">
   <meta property="og:image" content="https://werr.io/assets/og-werr.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WERR Reflex Snake Zero-VRAM Arena">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@pCwOrM">
   <meta name="twitter:creator" content="@pCwOrM">
-  <meta name="twitter:title" content="WERR Reflex Snake — Live Zero-VRAM AI Arena (0.00 KB Weights · 0.08ms Reflex)">
+  <meta name="twitter:title" content="WERR Reflex Snake — 0-VRAM AI Arena (0.08ms) | werr.io">
   <meta name="twitter:description" content="Yılan oyununda kontrolü insandan 0-VRAM Yapay Zekaya devredin! 0.00 KB ağırlık, 0.08 ms anlık refleks, %100 yerel CPU yürütümü.">
   <meta name="twitter:image" content="https://werr.io/assets/og-werr.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"WERR Reflex Snake","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires WebGL / HTML5 Canvas","description":"Zero-VRAM procedural AI snake benchmark arena operating with 0.08ms reflex latency on CPU."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"WERR Reflex Snake","url":"https://werr.io/demos/snake.html","image":"https://werr.io/assets/og-werr.jpg","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires WebGL / HTML5 Canvas","description":"Zero-VRAM procedural AI snake benchmark arena operating with 0.08ms reflex latency on CPU."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WERR","item":"https://werr.io/"},{"@type":"ListItem","position":2,"name":"WERR Reflex Snake","item":"https://werr.io/demos/snake.html"}]}]}</script>
 
   <style>
     :root {
@@ -546,10 +549,10 @@ canvas{border-radius:16px}
 </style>
 </head>
 <body>
-<div class="wbar-top" role="navigation"><a class="b" href="../index.html"><img src="../assets/werr_logo_core_fav_trans.svg" alt=""><span class="wm">w<span class="we">e</span><span class="wrr">rr</span></span></a><a href="../index.html">← werr</a><a href="../index.html#demo">Simulator</a><a class="hide-sm" href="../index.html#benchmark-arena">Benchmarks</a><a class="hide-sm" href="../index.html#corpus">Corpus</a></div>
+<div class="wbar-top" role="navigation"><a class="b" href="../index.html"><img src="../assets/werr_logo_core_fav_trans.svg" alt="" width="28" height="28"><span class="wm">w<span class="we">e</span><span class="wrr">rr</span></span></a><a href="../index.html">← werr</a><a href="../index.html#demo">Simulator</a><a class="hide-sm" href="../index.html#benchmark-arena">Benchmarks</a><a class="hide-sm" href="../index.html#corpus">Corpus</a></div>
 
 
-<div class="container">
+<main id="main" class="container">
   <!-- Top Navigation -->
   <header>
     <a href="../index.html" class="logo">
@@ -729,7 +732,7 @@ canvas{border-radius:16px}
     </p>
     <video autoplay loop muted playsinline preload="metadata" style="max-width: 100%; border-radius: 8px; border: 1px solid #30363d; margin: 14px auto; display: block;">
       <source src="terminal_snake_showcase.mp4" type="video/mp4">
-      <img src="terminal_snake_showcase.gif" alt="Terminal Snake Showcase Animation" loading="lazy" decoding="async">
+      <img src="terminal_snake_showcase.gif" alt="Terminal Snake Showcase Animation" width="1120" height="640" loading="lazy" decoding="async">
     </video>
     <div>
       <a href="terminal_snake_showcase.mp4" download class="nav-btn" style="background: var(--cyan); color: #000; font-weight: 700; border: none;">
@@ -909,7 +912,7 @@ canvas{border-radius:16px}
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <!-- Interactive Client-side Script -->
 <script>

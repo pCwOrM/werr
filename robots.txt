@@ -1,10 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /benchmarks/sealed/werr_official_benchmarks_report.html
 Disallow: /_archive/
 Disallow: /archive/
 Disallow: /test/
 Disallow: /benchmarks/
 Disallow: /dataset/
 Disallow: /tests/
+Disallow: /private_archive_rsa/
+Disallow: /runner/
+Disallow: /gemma4_swe_agent/
 
 Sitemap: https://werr.io/sitemap.xml

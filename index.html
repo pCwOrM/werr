@@ -2,13 +2,13 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#04070f">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <title>WERR — Zero-VRAM System-1 Reflex & Decision Engine | 24-Byte Seed, &lt;1ms Latency</title>
-  <meta name="description" content="When the Wave meets Error, we Recurse (werr). A 0-byte memory alternative to LLM decision-making based on polynomial escape dynamics and procedural boundary geometry.">
+  <title>WERR — Zero-VRAM System-1 Decision Engine | 24-Byte Seed</title>
+  <meta name="description" content="Zero-VRAM System-1 AI decision engine using 24-byte polynomial escape seeds for sub-millisecond typed outputs—no neural weights or cloud LLM calls.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -16,22 +16,26 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
   <link rel="canonical" href="https://werr.io/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://werr.io/#site","url":"https://werr.io/","name":"WERR — Zero-VRAM Decision Engine","inLanguage":["en","tr"]},{"@type":"SoftwareSourceCode","name":"werr","description":"Zero-memory fractal decision engine: decisions derived from a 24-byte coordinate seed via polynomial escape dynamics, no stored weights.","codeRepository":"https://github.com/pCwOrM/werr","programmingLanguage":"Python","license":"https://github.com/pCwOrM/werr/blob/main/LICENSE","version":"0.5.2","author":{"@type":"Person","name":"Volkan Dağlı"},"publisher":{"@type":"Organization","name":"ITouch Systems","url":"https://itouch.com.tr/"},"sameAs":["https://arxiv.org/abs/2609.25498","https://doi.org/10.5281/zenodo.22939253"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://werr.io/#site","url":"https://werr.io/","name":"WERR — Zero-VRAM Decision Engine","inLanguage":["en","tr"],"publisher":{"@id":"https://werr.io/#org"}},{"@type":"Organization","@id":"https://werr.io/#org","name":"ITouch Systems","url":"https://itouch.com.tr/","sameAs":["https://werr.io/","https://werracle.io/","https://werracle.com/","https://radar.werracle.com/","https://answerr.me/","https://github.com/pCwOrM/werr"]},{"@type":"SoftwareSourceCode","@id":"https://werr.io/#software","name":"werr","description":"Zero-memory fractal decision engine: decisions derived from a 24-byte coordinate seed via polynomial escape dynamics, no stored weights.","codeRepository":"https://github.com/pCwOrM/werr","programmingLanguage":"Python","license":"https://github.com/pCwOrM/werr/blob/main/LICENSE","version":"0.5.2","author":{"@type":"Person","name":"Volkan Dağlı"},"publisher":{"@id":"https://werr.io/#org"},"sameAs":["https://arxiv.org/abs/2609.25498","https://doi.org/10.5281/zenodo.22939253","https://werracle.io/","https://answerr.me/"]}]}</script>
 
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
   <meta property="og:url" content="https://werr.io/">
   <meta property="og:title" content="WERR — Zero-VRAM System-1 Decision Engine (24-Byte Seed · &lt;1ms Reflex)">
-  <meta property="og:description" content="A 0-byte-memory alternative to LLM decision-making: typed yes/no, choice and score decisions synthesized from polynomial escape dynamics in microseconds.">
+  <meta property="og:description" content="Zero-VRAM alternative to LLM decision-making: typed yes/no, choice and score decisions synthesized from polynomial escape dynamics in microseconds.">
   <meta property="og:site_name" content="werr.io">
   <meta property="og:image" content="https://werr.io/assets/og-werr.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WERR Zero-VRAM System-1 Fractal Decision Engine">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@pCwOrM">
   <meta name="twitter:creator" content="@pCwOrM">
   <meta name="twitter:title" content="WERR — Zero-VRAM System-1 Decision Engine (24-Byte Seed · &lt;1ms Reflex)">
-  <meta name="twitter:description" content="A 0-byte-memory alternative to LLM decision-making: typed yes/no, choice and score decisions synthesized from polynomial escape dynamics in microseconds.">
+  <meta name="twitter:description" content="Zero-VRAM alternative to LLM decision-making: typed yes/no, choice and score decisions synthesized from polynomial escape dynamics in microseconds.">
   <meta name="twitter:image" content="https://werr.io/assets/og-werr.jpg">
+  <meta name="twitter:image:alt" content="WERR Zero-VRAM System-1 Fractal Decision Engine">
   <link rel="apple-touch-icon" href="assets/rendered_werr_logo_core.png">
   
   <!-- Google reCAPTCHA v3 for Telemetry Ingestion Protection -->
@@ -1772,6 +1776,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
   </div>
 </div>
 
+<main id="main">
 <section class="whero" id="top" aria-label="werr">
   <canvas id="dive" aria-hidden="true"></canvas>
   <canvas id="diveOverlay" aria-hidden="true"></canvas>
@@ -2152,7 +2157,7 @@ html.light .cosmos { background: radial-gradient(ellipse at 50% 45%, #0d1c38 0%,
       <span class="badge-pill" style="margin-bottom: 0.5rem;">DUAL-COGNITION ECOSYSTEM</span>
       <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main);">answerr &amp; werr: The Two Hemispheres of Machine Intelligence</h3>
     </div>
-    <img src="assets/werr_answerr_twin_ecosystem.svg" alt="werr and answerr Twin Ecosystem Banner" style="width: 100%; max-width: 1050px; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+    <img src="assets/werr_answerr_twin_ecosystem.svg" alt="werr and answerr Twin Ecosystem Banner" width="1200" height="650" loading="lazy" decoding="async" style="width: 100%; max-width: 1050px; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
     <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
       <div style="font-size: 0.92rem; color: var(--text-muted);">
         🌐 <strong>answerr (Cloud / System-2):</strong> <a href="https://answerr.me" target="_blank" rel="noopener" style="color: var(--cyan); font-weight: 600; text-decoration: none;">answerr.me</a> &bull; Conscious Reasoning &bull; AI IDE
@@ -2929,6 +2934,7 @@ if __name__ == "__main__":
       </div>
     </div>
   </section>
+</main>
 
   <footer class="wfoot">
     <div class="wrapf">

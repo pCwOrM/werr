@@ -1,0 +1,21 @@
+# werr.io — Zero-VRAM System-1 Reflex & Decision Engine
+
+> When the Wave meets Error, we Recurse (`werr`). WERR synthesizes typed `noul`, `choice`, and `score` decisions on CPU in <1ms from a 24-byte coordinate seed via polynomial escape dynamics (`z -> z^2 + c`), requiring 0 bytes of persistent neural weights or VRAM. Developed by ITouch Systems.
+
+## Canonical Pages
+- [WERR Home & Interactive Decision Simulator](https://werr.io/): Interactive Mandelbrot fractal escape simulator, benchmarks, and 24-byte seed architecture.
+- [WERR Reflex Snake Arena](https://werr.io/demos/snake.html): Live 0.00 KB weight / 0.08ms CPU reflex demo comparing WERR against cloud and local LLMs.
+- [Official Benchmarks Audit Report](https://werr.io/docs/werr_official_benchmarks_report.html): Reproducible verification results across Snake, WindTunnel WebMCP, JevBench, Jevenator 2, and Tau-Bench.
+- [Cryptographic Seal Verification Report](https://werr.io/benchmarks/sealed/werr_official_benchmarks_report.html): SHA-256 hashes and formal reproducibility seal.
+
+## Key Technical Facts
+- Version: 0.5.2 (Business Source License 1.1 / BSL 1.1)
+- Parameter footprint: 24-byte coordinate triplet `(cx, cy, zoom)` + rule bits; 0 bytes persistent tensor weights, 0 MB VRAM.
+- Research citations: [arXiv:2609.25498](https://arxiv.org/abs/2609.25498), [Zenodo DOI:10.5281/zenodo.22939253](https://doi.org/10.5281/zenodo.22939253)
+- GitHub: https://github.com/pCwOrM/werr
+
+## Connected Ecosystem
+- [answerr.me](https://answerr.me/): Deterministic natural-language policy compiler and System-1 decision gate SaaS powered by WERR.
+- [werracle.io](https://werracle.io/): 32-byte zero-storage EVM & NEAR on-chain AI decision oracle protocol.
+- [werracle.com](https://werracle.com/): Corporate home and institutional data room (ITouch Systems).
+- [radar.werracle.com](https://radar.werracle.com/): Live DeFi liquidation risk, Morpho Blue health-factor, and Chainlink SVR intelligence API.
