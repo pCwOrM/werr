@@ -18,4 +18,4 @@
 - [answerr.me](https://answerr.me/): Deterministic natural-language policy compiler and System-1 decision gate SaaS powered by WERR.
 - [werracle.io](https://werracle.io/): 32-byte zero-storage EVM & NEAR on-chain AI decision oracle protocol.
 - [werracle.com](https://werracle.com/): Corporate home and institutional data room (ITouch Systems).
-- [radar.werracle.com](https://radar.werracle.com/): Live DeFi liquidation risk, Morpho Blue health-factor, and Chainlink SVR intelligence API.
+- [radar.werracle.com](https://radar.werracle.com/): Live DeFi liquidation risk, Anti-Liquidation Shield API (`POST /v1/radar/shield/check`, `/shield/position`), 12-chain open-race & live solver feeds, 24/7 `/alerts/subscribe` webhooks, and Faz-2 oracle-shock SSE streaming.
