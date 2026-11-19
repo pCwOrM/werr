@@ -3,7 +3,7 @@
 > When the Wave meets Error, we Recurse (`werr`). WERR synthesizes typed `noul`, `choice`, and `score` decisions on CPU in <1ms from a 24-byte coordinate seed via polynomial escape dynamics (`z -> z^2 + c`), requiring 0 bytes of persistent neural weights or VRAM. Developed by ITouch Systems.
 
 ## Canonical Pages
-- [WERR Home & Interactive Decision Simulator](https://werr.io/): Interactive Mandelbrot fractal escape simulator, benchmarks, and 24-byte seed architecture.
+- [WERR Home & Interactive Decision Simulator](https://werr.io/): Interactive procedural fractal boundary simulator, benchmarks, and 24-byte seed architecture.
 - [WERR Reflex Snake Arena](https://werr.io/demos/snake.html): Live 0.00 KB weight / 0.08ms CPU reflex demo comparing WERR against cloud and local LLMs.
 - [Official Benchmarks Audit Report](https://werr.io/docs/werr_official_benchmarks_report.html): Reproducible verification results across Snake, WindTunnel WebMCP, JevBench, Jevenator 2, and Tau-Bench.
 - [Cryptographic Seal Verification Report](https://werr.io/benchmarks/sealed/werr_official_benchmarks_report.html): SHA-256 hashes and formal reproducibility seal.

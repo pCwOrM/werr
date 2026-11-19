@@ -557,7 +557,7 @@ canvas{border-radius:16px}
   <header>
     <a href="../index.html" class="logo">
       <span class="logo-badge">WERR v1.0</span>
-      <strong style="font-size: 16px;">Mandelbrot Fractal Neural Synthesis</strong>
+      <strong style="font-size: 16px;">Fractal Neural Synthesis</strong>
     </a>
     <div class="nav-links" style="flex-wrap: wrap;">
       <a href="../index.html" class="nav-btn">← Ana Portal</a>
@@ -572,7 +572,7 @@ canvas{border-radius:16px}
   <div class="hero">
     <h1>WERR Reflex Snake: 0-Ağırlıklı Karar Motoru</h1>
     <p>
-      Kontrolü insandan (%100 yerel ve 0 Bayt tensör depolamalı) Mandelbrot Fraktal Refleks Yapay Zekasına devredin.
+      Kontrolü insandan (%100 yerel ve 0 Bayt tensör depolamalı) Fraktal Refleks Yapay Zekasına devredin.
       0.08 ms anlık mikrosaniyelik refleks ile elmaları toplayışını izleyin.
     </p>
   </div>
@@ -583,7 +583,7 @@ canvas{border-radius:16px}
       <div class="dot dot-red"></div>
       <div class="dot dot-yellow"></div>
       <div class="dot dot-green"></div>
-      <span style="margin-left: 10px;">pCwOrM@edge-node: ~/mandelbrot-neural-synthesis/demos/snake.py</span>
+      <span style="margin-left: 10px;">pCwOrM@edge-node: ~/fractal-neural-synthesis/demos/snake.py</span>
     </div>
 
     <div class="terminal-content">
@@ -765,7 +765,7 @@ canvas{border-radius:16px}
       <div>
         <span class="hub-badge badge-test">TOPOLOGY TEST</span>
         <h3>2. Two Moons & Two Spirals Non-Linear Testi</h3>
-        <p>Hiçbir tensör eğitimi yapmadan, doğrudan Mandelbrot karmaşık kaçış dinamiğiyle doğrusal olmayan iki iç içe geçmiş spiral ve ay verisetini sınıflandırma testi.</p>
+        <p>Hiçbir tensör eğitimi yapmadan, doğrudan polinom kaçış dinamiğiyle doğrusal olmayan iki iç içe geçmiş spiral ve ay verisetini sınıflandırma testi.</p>
         <div class="code-box">python src/two_moons_spirals_benchmark.py</div>
       </div>
       <div class="hub-footer-links">
@@ -778,7 +778,7 @@ canvas{border-radius:16px}
       <div>
         <span class="hub-badge badge-test">LOGIC GATES TEST</span>
         <h3>3. XOR / NAND / NOR %100 Doğruluk Testi</h3>
-        <p>Çift Mandelbrot penceresi (128x128) ile XOR problemini ve temel mantık kapılarını %100 doğruluk ve sıfır hata ile çözen parametre optimizasyon testi.</p>
+        <p>Çift fraktal penceresi (128x128) ile XOR problemini ve temel mantık kapılarını %100 doğruluk ve sıfır hata ile çözen parametre optimizasyon testi.</p>
         <div class="code-box">python src/fractal_neuron.py</div>
       </div>
       <div class="hub-footer-links">
@@ -868,7 +868,7 @@ canvas{border-radius:16px}
       <div>
         <span class="hub-badge badge-app">CANLI WEB UYGULAMASI</span>
         <h3>4-Quadrant Fraktal Nöron Laboratuvarı</h3>
-        <p>128x128 Mandelbrot penceresinin 4 çeyreğinden anlık ağırlık türetimini ve 2D karar sınırlarını etkileşimli ısı haritası üzerinde canlı test edin.</p>
+        <p>128x128 fraktal penceresinin 4 çeyreğinden anlık ağırlık türetimini ve 2D karar sınırlarını etkileşimli ısı haritası üzerinde canlı test edin.</p>
       </div>
       <div class="hub-footer-links">
         <a href="../index.html#benchmark-arena" class="nav-btn" style="background: linear-gradient(135deg, #0284c7, #10b981); color: #fff; width: 100%; text-align: center; border: none; font-weight: 700;">Laboratuvarı Aç ↗</a>
@@ -1121,7 +1121,7 @@ canvas{border-radius:16px}
     if (isWerr) {
       document.getElementById('hud-status').innerText = '[OTOPİLOT] 2. AŞAMA: WERR Refleks';
       document.getElementById('hud-status').className = 'metric-val metric-highlight';
-      document.getElementById('hud-engine').innerText = 'Mandelbrot Rezonans Çekirdeği';
+      document.getElementById('hud-engine').innerText = 'Fraktal Rezonans Çekirdeği';
       document.getElementById('hud-latency').innerText = `${latency.toFixed(3)} ms (ölçülen · tipik insan tepkisi ~150 ms)`;
       document.getElementById('hud-latency').className = 'metric-val metric-highlight';
     } else {
