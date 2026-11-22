@@ -4,7 +4,7 @@ WERR™ Official Typed Reflex Quickstart — System-1 Deterministic Engine.
 
 Official corporate and academic quickstart developed and maintained by:
   ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ
-  (Çukurova Üniversitesi Teknokent / Cukurova University Science Park, Adana, Türkiye)
+  (Çukurova Üniversitesi Teknokent / Cukurova University Technopark, Adana, Türkiye)
   Licensor of WERR™, Werracle™, and answerr™.
   Scientific Co-Authors & Inventors: Volkan Dağlı, Dr. Zerrin Dağlı, Dağhan Dağlı.
 

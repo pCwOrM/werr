@@ -283,7 +283,7 @@ All monographs, formal Lean 4 specifications, and empirical datasets across the 
 * **Kaggle / Google Gemma 4 Competition Apache 2.0 Exception ([`gemma4_swe_agent/`](gemma4_swe_agent/)):** All code, declarative ADK YAML configurations, dual-process routing implementations, verification bridges, and tests inside [`gemma4_swe_agent/`](gemma4_swe_agent/), together with the Competition interfaces required to reproduce our **Google - The Gemma 4 Developer Agent Paper Track** submission ([DOI: `10.34740/kaggle/w/125932`](https://doi.org/10.34740/kaggle/w/125932)), are explicitly dual-licensed **without commercial use restriction** under the OSI-approved **[Apache License, Version 2.0](gemma4_swe_agent/LICENSE)** (see [`LICENSE`](LICENSE) Additional Use Grant Section 4).
 * **Open-Science, Educational & Evaluation Use (Core Repository):** All remaining components of the Licensed Work (Werracle smart contracts, OEV/DeFi oracles, `answerr.me` SaaS, and general commercial deployments) remain free to run, inspect, benchmark, test, fork, and replicate for non-commercial research and personal evaluation under the **Business Source License 1.1 (BSL 1.1)** until `2030-01-01`.
 * **Commercial Operations & Production Licensing:** Any commercial production use, hosted SaaS deployment, or proprietary redistribution requires a commercial license from the Licensor:
-  * **Licensor:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Systems` · Cukurova University Science Park, Adana, Türkiye).
+  * **Licensor:** `ITOUCH BİLİŞİM SİSTEMLERİ MÜHENDİSLİK DANIŞMANLIK SANAYİ VE TİCARET LİMİTED ŞİRKETİ` (`ITouch Systems` · Cukurova University Technopark, Adana, Türkiye).
   * **Scientific Co-Authors & Inventors:** Volkan Dağlı (*Anadolu University*), Dr. Zerrin Dağlı (*Mersin University — Academic Advisor, Co-Author & Co-Inventor*), Dağhan Dağlı (*Toros University — Co-Author & Co-Inventor*).
   * **Chain of Title & Assignment:** The scientific co-authors have irrevocably assigned administrative and IP management authority to Volkan Dağlı, who has transferred exclusive global commercial licensing and operational rights to ITouch Systems.
   * **Trademarks:** `WERR™`, `Werracle™`, `answerr™`, and `WerrSoma™` are trademarks owned exclusively by ITouch Systems.
@@ -293,6 +293,6 @@ All monographs, formal Lean 4 specifications, and empirical datasets across the 
 ---
 
 <div align="center">
-  <sub>Developed by ITouch Systems · Cukurova University Science Park, Adana, Turkey</sub><br>
+  <sub>Developed by ITouch Systems · Cukurova University Technopark, Adana, Turkey</sub><br>
   <sub>Copyright &copy; 2026 ITouch Bilişim Sistemleri Ltd. Şti. All rights reserved.</sub>
 </div>
