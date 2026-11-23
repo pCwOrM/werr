@@ -70,6 +70,8 @@ __all__ = [
     "create_security_guard",
     "create_smart_router",
     "create_risk_evaluator",
+    "create_fast_reflex",
+    "create_bioneural_reflex",
     # GAP-0331 Constructive Modular Invariants
     "constructive_extended_gcd",
     "constructive_inverse_mod",

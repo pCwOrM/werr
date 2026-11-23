@@ -80,6 +80,23 @@ class TestGap0331ModularAlgebra(unittest.TestCase):
         self.assertEqual(fail_ver["status"], "non_invertible")
         self.assertFalse(fail_ver["is_unit"])
 
+    def test_schonhage_damping_and_rational_firewall(self):
+        """Verifies Schönhage sub-logarithmic damping, rational firewall margin, and v0.5.2 reflex presets."""
+        import werr
+        from werr.fractal import KAPPA_SCHONHAGE, apply_schonhage_depth_damping
+        from werr.router import verify_rational_firewall_margin
+        from werr.presets import create_fast_reflex, create_bioneural_reflex
+
+        self.assertEqual(werr.__version__, "0.5.2")
+        self.assertAlmostEqual(KAPPA_SCHONHAGE, 826215307 / 20000000000000, places=15)
+        self.assertEqual(apply_schonhage_depth_damping(10.0, 1), 10.0)
+        self.assertLess(apply_schonhage_depth_damping(10.0, 100), 10.0)
+        self.assertTrue(verify_rational_firewall_margin(1, 1000))
+        self.assertFalse(verify_rational_firewall_margin(1, 10**9))
+        self.assertFalse(verify_rational_firewall_margin(1, 0))
+        self.assertEqual(create_fast_reflex().resolution, 24)
+        self.assertEqual(create_bioneural_reflex().max_iter, 24)
+
 
 if __name__ == "__main__":
     unittest.main()

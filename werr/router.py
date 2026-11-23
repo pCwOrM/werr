@@ -349,3 +349,19 @@ class AutoSeedRouter:
 
         response.domain = domain
         return response, domain, confidence
+
+
+# -----------------------------------------------------------------------------
+# ZERO-FLOAT RATIONAL FIREWALL MARGIN CHECK (2026 SCHÖNHAGE KAPPA CERTIFIED)
+# -----------------------------------------------------------------------------
+def verify_rational_firewall_margin(
+    num: int,
+    den: int,
+    threshold_num: int = 826215307,
+    threshold_den: int = 20000000000000
+) -> bool:
+    """Exact integer cross-multiplication: num/den > threshold_num/threshold_den."""
+    if den <= 0:
+        return False
+    return (num * threshold_den) > (threshold_num * den)
+
