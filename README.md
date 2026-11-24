@@ -13,9 +13,9 @@
 [![Foundational DOI](https://img.shields.io/badge/Foundational_DOI-10.5281%2Fzenodo.22774934-f59e0b.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![arXiv Preprint](https://img.shields.io/badge/arXiv-2609.25498_%7C_2609.33066-b91c1c.svg)](https://arxiv.org/abs/2609.25498)
 [![Elsevier SSRN](https://img.shields.io/badge/SSRN-7659198_%7C_7641538_%7C_7626279-002f6c.svg)](https://papers.ssrn.com/abstract=7659198)
-[![Hugging Face](https://img.shields.io/badge/Hugging_Face-6_Papers_%C2%B7_2_Datasets-ffcc00.svg)](https://huggingface.co/datasets/pCwOrM/werr_open_decisions)
+[![Hugging Face: WERR Lab](https://img.shields.io/badge/Hugging_Face-WERR_Lab_%C2%B7_7_Papers_%C2%B7_2_Models_%C2%B7_2_Datasets-ffcc00.svg)](https://huggingface.co/werr-lab)
 [![NSF ICARM](https://img.shields.io/badge/NSF_ICARM-230_Curves_%C2%B7_30x_%231_Gold-0ea5e9.svg)](https://elliptic-rank.icarm.cloud/user/114)
-[![Schönhage Record](https://img.shields.io/badge/Sch%C3%B6nhage_Tensor--377%2C890_Wires_(CrocSwap_%23226)-10b981.svg)](https://github.com/CrocSwap/integer-mult-bounds/pull/226)
+[![Schönhage Record](https://img.shields.io/badge/Sch%C3%B6nhage_Tensor-%E2%88%92377%2C890_Wires_(CrocSwap_%23226)-10b981.svg)](https://github.com/CrocSwap/integer-mult-bounds/pull/226)
 [![Featured: Awesome Physics & Lean 4](https://img.shields.io/badge/Featured-Awesome_Physics_%2316_%7C_Best_of_Lean4_%23292-8b5cf6.svg)](https://github.com/wbierbower/awesome-physics/pull/16)
 
 <p align="center">
