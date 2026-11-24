@@ -33,6 +33,25 @@
 
 </div>
 
+<p align="center">
+  <img src="assets/demo.gif" alt="WERR Zero-Memory Reflex Engine Demo" width="820" />
+</p>
+
+## ⚡ 30-Second Quick Start
+
+```bash
+git clone https://github.com/pCwOrM/werr.git && cd werr
+python examples/typed_reflex_quickstart.py
+```
+
+**Observed Output:**
+```text
+allowed: False (p=0.0001, conf=0.9998)
+route  : rate_limiter (conf=0.9913)
+risk   : 3.00 / 3.0
+seed   : theta=(-0.7399, 0.1334, 129.5) = 24 bytes
+```
+
 ---
 
 ## 🏛️ The Paradigm
