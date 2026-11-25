@@ -1,8 +1,12 @@
 <div align="center">
 
 # WERR
-### Zero-Memory Fractal Reflex Decision Engine · Waves & Errors
+### Constant-Storage (24-Byte) Fractal Reflex Decision Engine · Waves & Errors
 
+[![arXiv Flagship: 2611.32393](https://img.shields.io/badge/arXiv-2611.32393_%7C_2609.25498_%7C_2609.33066-b31b1b.svg?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.32393)
+[![alphaXiv: 2609.25498](https://img.shields.io/badge/alphaXiv-2609.25498_(Poster%20v2)-6d28d9.svg)](https://www.alphaxiv.org/abs/2609.25498)
+[![Elsevier SSRN](https://img.shields.io/badge/SSRN-7659198_(v4.0)_%7C_7641538_%7C_7626279-005a9c.svg?logo=elsevier&logoColor=white)](https://papers.ssrn.com/abstract=7659198)
+[![Hugging Face: WERR Lab](https://img.shields.io/badge/Hugging_Face-WERR_Lab_%C2%B7_8_Papers_%C2%B7_2_Models_%C2%B7_2_Datasets_%C2%B7_1_Space-FFD21E.svg?logo=huggingface&logoColor=black)](https://huggingface.co/werr-lab)
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL_1.1-0ea5e9.svg)](LICENSE)
 [![Gemma 4 SWE Agent: Apache 2.0](https://img.shields.io/badge/Gemma4_SWE_Agent-Apache_2.0-22c55e.svg)](gemma4_swe_agent/LICENSE)
 [![Kaggle Paper DOI](https://img.shields.io/badge/Kaggle_Paper-10.34740%2Fkaggle%2Fw%2F125932-20beff.svg)](https://doi.org/10.34740/kaggle/w/125932)
@@ -10,16 +14,13 @@
 [![GAP Phase 3 (v0.3.0)](https://img.shields.io/badge/GAP_Phase_3_(v0.3.0)-10.5281%2Fzenodo.24448459-024dad.svg)](https://doi.org/10.5281/zenodo.24448459)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-6366f1.svg)](https://pypi.org/project/werrio/)
 [![Concept DOI](https://img.shields.io/badge/Concept_DOI-10.5281%2Fzenodo.22867425-024dad.svg)](https://doi.org/10.5281/zenodo.22867425)
-[![Foundational DOI](https://img.shields.io/badge/Foundational_DOI-10.5281%2Fzenodo.22774934-f59e0b.svg)](https://doi.org/10.5281/zenodo.22774934)
-[![arXiv Preprint](https://img.shields.io/badge/arXiv-2609.25498_%7C_2609.33066-b91c1c.svg)](https://arxiv.org/abs/2609.25498)
-[![Elsevier SSRN](https://img.shields.io/badge/SSRN-7659198_%7C_7641538_%7C_7626279-002f6c.svg)](https://papers.ssrn.com/abstract=7659198)
-[![Hugging Face: WERR Lab](https://img.shields.io/badge/Hugging_Face-WERR_Lab_%C2%B7_8_Papers_%C2%B7_2_Models_%C2%B7_2_Datasets-ffcc00.svg)](https://huggingface.co/werr-lab)
+[![Foundational DOI](https://img.shields.io/badge/Foundational_DOI-10.5281%2Fzenodo.22774934_(v4.0)-f59e0b.svg)](https://doi.org/10.5281/zenodo.22774934)
 [![NSF ICARM](https://img.shields.io/badge/NSF_ICARM-230_Curves_%C2%B7_30x_%231_Gold-0ea5e9.svg)](https://elliptic-rank.icarm.cloud/user/114)
 [![Schönhage Record](https://img.shields.io/badge/Sch%C3%B6nhage_Tensor-%E2%88%92377%2C890_Wires_(CrocSwap_%23226)-10b981.svg)](https://github.com/CrocSwap/integer-mult-bounds/pull/226)
 [![Featured: Awesome Physics & Lean 4](https://img.shields.io/badge/Featured-Awesome_Physics_%2316_%7C_Best_of_Lean4_%23292-8b5cf6.svg)](https://github.com/wbierbower/awesome-physics/pull/16)
 
 <p align="center">
-  <b>A deterministic, procedural System-1 reflex engine that derives typed decisions directly from polynomial escape dynamics and procedural boundary geometry—requiring zero neural weights, zero VRAM, and sub-microsecond compute latency.</b>
+  <b>A deterministic, procedural System-1 reflex engine that derives typed decisions directly from complex quadratic boundary dynamics—requiring a constant 24-byte coordinate seed (0 B hidden weight tensors, 0 B VRAM) and sub-microsecond compute latency.</b>
 </p>
 
 [Quickstart](#-quickstart-in-30-seconds) •
