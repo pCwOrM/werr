@@ -52,6 +52,14 @@ risk   : 3.00 / 3.0
 seed   : theta=(-0.7399, 0.1334, 129.5) = 24 bytes
 ```
 
+## 🧠 Codebase Knowledge Graph & Call-Flow
+
+<p align="center">
+  <img src="assets/architecture_graph.svg" alt="WERR Codebase Knowledge Graph" width="860" />
+</p>
+
+> Explore the interactive AST dependency graph ([`docs/architecture/graph.html`](docs/architecture/graph.html)) or the Mermaid call-flow explorer ([`docs/architecture/callflow.html`](docs/architecture/callflow.html)), generated deterministically via `graphify`.
+
 ---
 
 ## 🏛️ The Paradigm
